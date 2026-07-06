@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 extension WireframeThemeSkeletonComponentTokensProvider: SkeletonComponentTokens {
     /// Has for value token colors.opacityLowest (= light: "#05052E0A" / dark: "#EFF5FF0A")
     @objc public final var colorBg: MultipleColorSemanticToken { colors.opacityLowest }
-    /// Has for value token colors.opacityTransparent (= light: "#05052E00" / dark: "#EFF5FF00")
-    @objc public final var colorGradientStartEnd: MultipleColorSemanticToken { colors.opacityTransparent }
     /// Has for value token colors.opacityLower (= light: "#05052E14" / dark: "#EFF5FF14")
     @objc public final var colorGradientMiddle: MultipleColorSemanticToken { colors.opacityLower }
+    /// Has for value token colors.opacityTransparent (= light: "#05052E00" / dark: "#EFF5FF00")
+    @objc public final var colorGradientStartEnd: MultipleColorSemanticToken { colors.opacityTransparent }
 }

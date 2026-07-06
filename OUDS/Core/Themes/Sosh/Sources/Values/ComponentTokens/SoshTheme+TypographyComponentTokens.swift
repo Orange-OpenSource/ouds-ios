@@ -24,9 +24,9 @@ extension SoshThemeTypographyComponentTokensProvider: TypographyComponentTokens 
     /// Has for value token false
     @objc public final var headingLargeMarker: Bool { false }
     /// Has for value token spaces.paddingBlockNone (= 0)
-    @objc public final var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlockNone }
-    /// Has for value token spaces.paddingBlockNone (= 0)
     @objc public final var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlockNone }
+    /// Has for value token spaces.paddingBlockNone (= 0)
+    @objc public final var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlockNone }
 }
 
 // swiftlint:enable identifier_name

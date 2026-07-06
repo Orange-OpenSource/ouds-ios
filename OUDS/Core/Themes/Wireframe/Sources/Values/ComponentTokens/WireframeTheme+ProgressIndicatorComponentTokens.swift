@@ -21,18 +21,18 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension WireframeThemeProgressIndicatorComponentTokensProvider: ProgressIndicatorComponentTokens {
-    /// Has for value token MultipleColorSemanticToken(light: WireframeBrandColorRawTokens.functionalGrayLight320, dark: WireframeBrandColorRawTokens.functionalGrayDark480) (= light: "#CDD3E0FF" / dark: "#374258FF")
-    @objc public final var colorContentTrack: MultipleColorSemanticToken { MultipleColorSemanticToken(light: WireframeBrandColorRawTokens.functionalGrayLight320, dark: WireframeBrandColorRawTokens.functionalGrayDark480) }
     /// Has for value token borders.radiusPill (= 2000)
     @objc public final var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.radiusPill (= 2000)
     @objc public final var borderRadiusRounded: BorderRadiusSemanticToken { borders.radiusPill }
-    /// Has for value token spaces.paddingBlockXsmall (= 8)
-    @objc public final var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockXsmall }
-    /// Has for value token spaces.columnGapSmall (= 8)
-    @objc public final var spaceColumnGap: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token MultipleColorSemanticToken(light: WireframeBrandColorRawTokens.functionalGrayLight320, dark: WireframeBrandColorRawTokens.functionalGrayDark480) (= light: "#CDD3E0FF" / dark: "#374258FF")
+    @objc public final var colorContentTrack: MultipleColorSemanticToken { MultipleColorSemanticToken(light: WireframeBrandColorRawTokens.functionalGrayLight320, dark: WireframeBrandColorRawTokens.functionalGrayDark480) }
     /// Has for value token dimensions._10xsmall (= 4)
     @objc public final var sizeLinearIndicatorHeight: SizeSemanticToken { dimensions._10xsmall }
+    /// Has for value token spaces.columnGapSmall (= 8)
+    @objc public final var spaceColumnGap: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.paddingBlockXsmall (= 8)
+    @objc public final var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockXsmall }
 }
 
 // swiftlint:enable line_length

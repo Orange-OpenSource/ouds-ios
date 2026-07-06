@@ -21,134 +21,170 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
-    /// Has for value token colors.surfaceBrandPrimary (= "#FF7900FF")
-    @objc open var colorBgBrandEnabled: MultipleColorSemanticToken { colors.surfaceBrandPrimary }
-    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorBgBrandHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) (= light: "#000000FF" / dark: "#EEEEEEFF")
-    @objc open var colorBgBrandPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) (= light: "#000000FF" / dark: "#EEEEEEFF")
-    @objc open var colorBgBrandLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
-    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorBgBrandFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgDefaultEnabled: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgDefaultHover: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgDefaultPressed: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgDefaultLoading: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgDefaultDisabled: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgDefaultFocus: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.actionSupportHover (= light: "#00000014" / dark: "#FFFFFF14")
-    @objc open var colorBgMinimalHover: MultipleColorSemanticToken { colors.actionSupportHover }
-    /// Has for value token colors.actionSupportPressed (= light: "#0000001F" / dark: "#FFFFFF1F")
-    @objc open var colorBgMinimalPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
-    /// Has for value token colors.actionSupportFocus (= light: "#00000014" / dark: "#FFFFFF14")
-    @objc open var colorBgMinimalFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgAiEnabled: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgAiHover: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgAiPressed: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgAiLoading: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgAiDisabled: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBgAiFocus: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.contentOnBrandPrimary (= "#000000FF")
-    @objc open var colorContentBrandEnabled: MultipleColorSemanticToken { colors.contentOnBrandPrimary }
-    /// Has for value token colors.contentOnActionHover (= light: "#FFFFFFFF" / dark: "#000000FF")
-    @objc open var colorContentBrandHover: MultipleColorSemanticToken { colors.contentOnActionHover }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
-    @objc open var colorContentBrandPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
-    @objc open var colorContentBrandLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token colors.contentOnActionFocus (= light: "#FFFFFFFF" / dark: "#000000FF")
-    @objc open var colorContentBrandFocus: MultipleColorSemanticToken { colors.contentOnActionFocus }
-    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
-    @objc open var colorContentDefaultEnabled: MultipleColorSemanticToken { colors.actionEnabled }
-    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorContentDefaultHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
-    @objc open var colorContentDefaultPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.actionLoading (= light: "#F15E00FF" / dark: "#FF7900FF")
-    @objc open var colorContentDefaultLoading: MultipleColorSemanticToken { colors.actionLoading }
-    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
-    @objc open var colorContentDefaultDisabled: MultipleColorSemanticToken { colors.actionDisabled }
-    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorContentDefaultFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
-    @objc open var colorContentMinimalEnabled: MultipleColorSemanticToken { colors.actionEnabled }
-    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorContentMinimalHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
-    @objc open var colorContentMinimalPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
-    @objc open var colorContentMinimalLoading: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
-    @objc open var colorContentMinimalDisabled: MultipleColorSemanticToken { colors.actionDisabled }
-    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorContentMinimalFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
-    @objc open var colorContentAiEnabled: MultipleColorSemanticToken { colors.actionEnabled }
-    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorContentAiHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
-    @objc open var colorContentAiPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.actionLoading (= light: "#F15E00FF" / dark: "#FF7900FF")
-    @objc open var colorContentAiLoading: MultipleColorSemanticToken { colors.actionLoading }
-    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
-    @objc open var colorContentAiDisabled: MultipleColorSemanticToken { colors.actionDisabled }
-    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorContentAiFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
-    @objc open var colorBorderDefaultEnabled: MultipleColorSemanticToken { colors.actionEnabled }
-    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorBorderDefaultHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
-    @objc open var colorBorderDefaultPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.actionLoading (= light: "#F15E00FF" / dark: "#FF7900FF")
-    @objc open var colorBorderDefaultLoading: MultipleColorSemanticToken { colors.actionLoading }
-    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
-    @objc open var colorBorderDefaultDisabled: MultipleColorSemanticToken { colors.actionDisabled }
-    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
-    @objc open var colorBorderDefaultFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBorderAiEnabled: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBorderAiHover: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBorderAiPressed: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBorderAiLoading: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
-    @objc open var colorBorderAiDisabled: MultipleColorSemanticToken { colors.actionDisabled }
-    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
-    @objc open var colorBorderAiFocus: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token borders.radiusPill (= 2000)
+    @objc open var borderRadiusAiIconOnly: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.radiusDefault (= 0)
     @objc open var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusMedium (= 8)
     @objc open var borderRadiusRounded: BorderRadiusSemanticToken { borders.radiusMedium }
     /// Has for value token borders.radiusPill (= 2000)
-    @objc open var borderRadiusAiIconOnly: BorderRadiusSemanticToken { borders.radiusPill }
-    /// Has for value token borders.radiusPill (= 2000)
     @objc open var borderRadiusSocial: BorderRadiusSemanticToken { borders.radiusPill }
+    /// Has for value token borders.widthDefault (= 1)
+    @objc open var borderWidthAi: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium (= 2)
+    @objc open var borderWidthAiInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthDefault (= 1)
     @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium (= 2)
     @objc open var borderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthNone (= 0)
     @objc open var borderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
-    /// Has for value token borders.widthDefault (= 1)
-    @objc open var borderWidthAi: BorderWidthSemanticToken { borders.widthDefault }
-    /// Has for value token borders.widthMedium (= 2)
-    @objc open var borderWidthAiInteraction: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgAiDisabled: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgAiEnabled: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgAiFocus: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgAiHover: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgAiLoading: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgAiPressed: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.surfaceBrandPrimary (= "#FF7900FF")
+    @objc open var colorBgBrandEnabled: MultipleColorSemanticToken { colors.surfaceBrandPrimary }
+    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorBgBrandFocus: MultipleColorSemanticToken { colors.actionFocus }
+    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorBgBrandHover: MultipleColorSemanticToken { colors.actionHover }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorBgBrandLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorBgBrandPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgDefaultDisabled: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgDefaultEnabled: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgDefaultFocus: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgDefaultHover: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgDefaultLoading: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBgDefaultPressed: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.actionSupportFocus (= light: "#00000014" / dark: "#FFFFFF14")
+    @objc open var colorBgMinimalFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
+    /// Has for value token colors.actionSupportHover (= light: "#00000014" / dark: "#FFFFFF14")
+    @objc open var colorBgMinimalHover: MultipleColorSemanticToken { colors.actionSupportHover }
+    /// Has for value token colors.actionSupportPressed (= light: "#0000001F" / dark: "#FFFFFF1F")
+    @objc open var colorBgMinimalPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
+    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
+    @objc open var colorBorderAiDisabled: MultipleColorSemanticToken { colors.actionDisabled }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBorderAiEnabled: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBorderAiFocus: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBorderAiHover: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBorderAiLoading: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
+    @objc open var colorBorderAiPressed: MultipleColorSemanticToken { colors.opacityTransparent }
+    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
+    @objc open var colorBorderDefaultDisabled: MultipleColorSemanticToken { colors.actionDisabled }
+    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorBorderDefaultEnabled: MultipleColorSemanticToken { colors.actionEnabled }
+    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorBorderDefaultFocus: MultipleColorSemanticToken { colors.actionFocus }
+    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorBorderDefaultHover: MultipleColorSemanticToken { colors.actionHover }
+    /// Has for value token colors.actionLoading (= light: "#F15E00FF" / dark: "#FF7900FF")
+    @objc open var colorBorderDefaultLoading: MultipleColorSemanticToken { colors.actionLoading }
+    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
+    @objc open var colorBorderDefaultPressed: MultipleColorSemanticToken { colors.actionPressed }
+    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
+    @objc open var colorContentAiDisabled: MultipleColorSemanticToken { colors.actionDisabled }
+    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentAiEnabled: MultipleColorSemanticToken { colors.actionEnabled }
+    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorContentAiFocus: MultipleColorSemanticToken { colors.actionFocus }
+    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorContentAiHover: MultipleColorSemanticToken { colors.actionHover }
+    /// Has for value token colors.actionLoading (= light: "#F15E00FF" / dark: "#FF7900FF")
+    @objc open var colorContentAiLoading: MultipleColorSemanticToken { colors.actionLoading }
+    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
+    @objc open var colorContentAiPressed: MultipleColorSemanticToken { colors.actionPressed }
+    /// Has for value token colors.contentOnBrandPrimary (= "#000000FF")
+    @objc open var colorContentBrandEnabled: MultipleColorSemanticToken { colors.contentOnBrandPrimary }
+    /// Has for value token colors.contentOnActionFocus (= light: "#FFFFFFFF" / dark: "#000000FF")
+    @objc open var colorContentBrandFocus: MultipleColorSemanticToken { colors.contentOnActionFocus }
+    /// Has for value token colors.contentOnActionHover (= light: "#FFFFFFFF" / dark: "#000000FF")
+    @objc open var colorContentBrandHover: MultipleColorSemanticToken { colors.contentOnActionHover }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
+    @objc open var colorContentBrandLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
+    @objc open var colorContentBrandPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
+    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
+    @objc open var colorContentDefaultDisabled: MultipleColorSemanticToken { colors.actionDisabled }
+    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentDefaultEnabled: MultipleColorSemanticToken { colors.actionEnabled }
+    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorContentDefaultFocus: MultipleColorSemanticToken { colors.actionFocus }
+    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorContentDefaultHover: MultipleColorSemanticToken { colors.actionHover }
+    /// Has for value token colors.actionLoading (= light: "#F15E00FF" / dark: "#FF7900FF")
+    @objc open var colorContentDefaultLoading: MultipleColorSemanticToken { colors.actionLoading }
+    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
+    @objc open var colorContentDefaultPressed: MultipleColorSemanticToken { colors.actionPressed }
+    /// Has for value token colors.actionDisabled (= light: "#00000033" / dark: "#FFFFFF33")
+    @objc open var colorContentMinimalDisabled: MultipleColorSemanticToken { colors.actionDisabled }
+    /// Has for value token colors.actionEnabled (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentMinimalEnabled: MultipleColorSemanticToken { colors.actionEnabled }
+    /// Has for value token colors.actionFocus (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorContentMinimalFocus: MultipleColorSemanticToken { colors.actionFocus }
+    /// Has for value token colors.actionHover (= light: "#000000AD" / dark: "#FFFFFFA3")
+    @objc open var colorContentMinimalHover: MultipleColorSemanticToken { colors.actionHover }
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentMinimalLoading: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token colors.actionPressed (= light: "#F15E00FF" / dark: "#FF7900FF")
+    @objc open var colorContentMinimalPressed: MultipleColorSemanticToken { colors.actionPressed }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
+    @objc open var sizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
+    @objc open var sizeIconOnlyDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
+    @objc open var sizeIconOnlySmall: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelMediumSizeSmall (= 16)
+    @objc open var sizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
+    @objc open var sizeMaxSizeIconOnlyDefault: SizeSemanticToken { sizes.minInteractiveAreaDefault }
+    /// Has for value token sizes.minInteractiveAreaSmall (= 40)
+    @objc open var sizeMaxSizeIconOnlySmall: SizeSemanticToken { sizes.minInteractiveAreaSmall }
+    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
+    @objc open var sizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveAreaDefault }
+    /// Has for value token sizes.minInteractiveAreaSmall (= 40)
+    @objc open var sizeMinHeightSmall: SizeSemanticToken { sizes.minInteractiveAreaSmall }
+    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
+    @objc open var sizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveAreaDefault }
+    /// Has for value token sizes.minInteractiveAreaSmall (= 40)
+    @objc open var sizeMinWidthSmall: SizeSemanticToken { sizes.minInteractiveAreaSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
+    @objc open var sizeProgressIndicatorDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelMediumSizeSmall (= 16)
+    @objc open var sizeProgressIndicatorSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    /// Has for value token spaces.columnGapXsmall (= 6)
+    @objc open var spaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGap2xsmall (= 4)
+    @objc open var spaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
+    /// Has for value token spaces.columnGap2xsmall (= 4)
+    @objc open var spaceColumnGapIconChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
+    /// Has for value token spaces.columnGap3xsmall (= 2)
+    @objc open var spaceColumnGapIconChevronSmall: SpaceSemanticToken { spaces.columnGap3xsmall }
+    /// Has for value token spaces.columnGapSmall (= 8)
+    @objc open var spaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.columnGapXsmall (= 6)
+    @objc open var spaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.insetMedium (= 12)
     @objc open var spaceInsetIconOnlyDefault: SpaceSemanticToken { spaces.insetMedium }
     /// Has for value token spaces.insetSmall (= 10)
@@ -159,10 +195,16 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var spaceInsetProgressIndicatorOnlySmall: SpaceSemanticToken { spaces.inset4xsmall }
     /// Has for value token spaces.paddingBlockMedium (= 12)
     @objc open var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlockMedium }
-    /// Has for value token spaces.paddingInline3xlarge (= 28)
-    @objc open var spacePaddingInlineStartIconEndDefault: SpaceSemanticToken { spaces.paddingInline3xlarge }
-    /// Has for value token spaces.paddingInline2xlarge (= 24)
-    @objc open var spacePaddingInlineStartIconEndSmall: SpaceSemanticToken { spaces.paddingInline2xlarge }
+    /// Has for value token spaces.paddingBlockSmall (= 10)
+    @objc open var spacePaddingBlockSmall: SpaceSemanticToken { spaces.paddingBlockSmall }
+    /// Has for value token spaces.paddingInlineLarge (= 16)
+    @objc open var spacePaddingInlineChevronEndDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInlineMedium (= 12)
+    @objc open var spacePaddingInlineChevronEndSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
+    /// Has for value token spaces.paddingInlineLarge (= 16)
+    @objc open var spacePaddingInlineChevronStartDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInlineMedium (= 12)
+    @objc open var spacePaddingInlineChevronStartSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
     /// Has for value token spaces.paddingInline3xlarge (= 28)
     @objc open var spacePaddingInlineEndIconStartDefault: SpaceSemanticToken { spaces.paddingInline3xlarge }
     /// Has for value token spaces.paddingInline2xlarge (= 24)
@@ -175,52 +217,10 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var spacePaddingInlineIconStartDefault: SpaceSemanticToken { spaces.paddingInlineXlarge }
     /// Has for value token spaces.paddingInlineLarge (= 16)
     @objc open var spacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.paddingInlineLarge }
-    /// Has for value token spaces.paddingInlineLarge (= 16)
-    @objc open var spacePaddingInlineChevronStartDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
-    /// Has for value token spaces.paddingInlineMedium (= 12)
-    @objc open var spacePaddingInlineChevronStartSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
-    /// Has for value token spaces.paddingInlineLarge (= 16)
-    @objc open var spacePaddingInlineChevronEndDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
-    /// Has for value token spaces.paddingInlineMedium (= 12)
-    @objc open var spacePaddingInlineChevronEndSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
-    /// Has for value token spaces.paddingBlockSmall (= 10)
-    @objc open var spacePaddingBlockSmall: SpaceSemanticToken { spaces.paddingBlockSmall }
-    /// Has for value token spaces.columnGapSmall (= 8)
-    @objc open var spaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
-    /// Has for value token spaces.columnGapXsmall (= 6)
-    @objc open var spaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
-    /// Has for value token spaces.columnGapXsmall (= 6)
-    @objc open var spaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGapXsmall }
-    /// Has for value token spaces.columnGap2xsmall (= 4)
-    @objc open var spaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
-    /// Has for value token spaces.columnGap2xsmall (= 4)
-    @objc open var spaceColumnGapIconChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
-    /// Has for value token spaces.columnGap3xsmall (= 2)
-    @objc open var spaceColumnGapIconChevronSmall: SpaceSemanticToken { spaces.columnGap3xsmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
-    @objc open var sizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.iconWithLabelMediumSizeSmall (= 16)
-    @objc open var sizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
-    @objc open var sizeIconOnlyDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
-    @objc open var sizeIconOnlySmall: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
-    @objc open var sizeProgressIndicatorDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.iconWithLabelMediumSizeSmall (= 16)
-    @objc open var sizeProgressIndicatorSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
-    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
-    @objc open var sizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.minInteractiveAreaSmall (= 40)
-    @objc open var sizeMinHeightSmall: SizeSemanticToken { sizes.minInteractiveAreaSmall }
-    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
-    @objc open var sizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.minInteractiveAreaSmall (= 40)
-    @objc open var sizeMinWidthSmall: SizeSemanticToken { sizes.minInteractiveAreaSmall }
-    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
-    @objc open var sizeMaxSizeIconOnlyDefault: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.minInteractiveAreaSmall (= 40)
-    @objc open var sizeMaxSizeIconOnlySmall: SizeSemanticToken { sizes.minInteractiveAreaSmall }
+    /// Has for value token spaces.paddingInline3xlarge (= 28)
+    @objc open var spacePaddingInlineStartIconEndDefault: SpaceSemanticToken { spaces.paddingInline3xlarge }
+    /// Has for value token spaces.paddingInline2xlarge (= 24)
+    @objc open var spacePaddingInlineStartIconEndSmall: SpaceSemanticToken { spaces.paddingInline2xlarge }
 }
 
 // swiftlint:enable line_length

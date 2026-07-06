@@ -23,10 +23,10 @@ import OUDSTokensSemantic
 extension OrangeThemeTypographyComponentTokensProvider: TypographyComponentTokens {
     /// Has for value token true
     @objc open var headingLargeMarker: Bool { true }
-    /// Has for value token spaces.paddingBlock3xsmall (= 4)
-    @objc open var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlock3xsmall }
     /// Has for value token spaces.paddingBlock4xsmall (= 2)
     @objc open var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlock4xsmall }
+    /// Has for value token spaces.paddingBlock3xsmall (= 4)
+    @objc open var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlock3xsmall }
 }
 
 // swiftlint:enable identifier_name
