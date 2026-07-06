@@ -179,6 +179,30 @@ To be aligned with new `OUDSImage` API, the parameter names of `alert status` ca
 
 **Reason for Change**: Use new `OUDSImage` API
 
+### Badge icon status
+
+To be aligned with new `OUDSImage` API, the `accent` and `neutral` `badge icon status` cases have been updated.
+
+**Before (v2.3.0)**:
+```swift
+.neutral(icon: Image("someImage"), flipped: false, renderingMode: .original)
+.accent(icon: Image("someImage"), flipped: false, renderingMode: .original)
+```
+
+**After (v3.0.0)**:
+```swift
+.neutral(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+.accent(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+```
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `.neutral(icon:flipped:renderingMode)` by `.neutral(image:)`
+- Replace any use of `.accent(icon:flipped:renderingMode:)` by `.accent(image:)`
+
+**Reason for Change**: Use new `OUDSImage` API
+
 ### Compatibility
 
 - **Backward Compatibility**: No
