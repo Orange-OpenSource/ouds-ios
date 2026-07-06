@@ -15,8 +15,6 @@ import Foundation
 import OUDSThemesContract
 import OUDSThemesOrange
 
-// swiftlint:disable line_length
-
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 ///
 /// Uses its own tokens providers for tests:
@@ -88,5 +86,3 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
-
-// swiftlint:enable line_length

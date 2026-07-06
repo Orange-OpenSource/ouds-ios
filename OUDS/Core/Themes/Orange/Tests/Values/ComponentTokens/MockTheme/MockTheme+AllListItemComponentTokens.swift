@@ -19,7 +19,6 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 final class MockThemeListItemComponentTokenProvider: OrangeThemeListItemComponentTokensProvider {
 
@@ -123,4 +122,3 @@ final class MockThemeListItemComponentTokenProvider: OrangeThemeListItemComponen
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name
