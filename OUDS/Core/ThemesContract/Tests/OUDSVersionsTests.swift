@@ -71,6 +71,20 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentButtonVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    @Test func componentInteractiveIconVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentInteractiveIcon, regexp: Self.oudsVersionsFormat)
+    }
+
+    // MARK: - Tests - Component versions - AI assistant
+
+    @Test func componentAssistantButtonVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentAssistantButtonVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentAssistantIconVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentAssistantIconVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     // MARK: - Tests - Component versions - Navigation
 
     @Test func componentLinkVersionMustBeConform() throws {
@@ -113,6 +127,22 @@ struct OUDSVersionsTests {
 
     @Test func componentRadioButtonVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.componentRadioButtonVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentStaticListItemVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentStaticListItemVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentStaticCardItemVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentStaticCardItemVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentNavigationListItemVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentNavigationListItemVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentNavigationCardItemVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentNavigationCardItemVersion, regexp: Self.oudsVersionsFormat)
     }
 
     @Test func componentSwitchVersionMustBeConform() throws {
@@ -193,5 +223,25 @@ struct OUDSVersionsTests {
 
     @Test func componentInlineAlertVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.componentInlineAlertVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentModalDialogVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentModalDialogVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    // MARK: - Tests - Component versions - Foundations
+
+    @Test func componentTypographyVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentTypographyVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    // MARK: - Tests - Component versions - Indicator
+
+    @Test func componentProgressIndicatorVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentProgressIndicatorVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentStatusIconVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentStatusIconVersion, regexp: Self.oudsVersionsFormat)
     }
 }

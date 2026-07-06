@@ -4,7 +4,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...develop)
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...develop)
+
+### Added
+
+- Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- Semantic tokens of `colors` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579) 
+- Components tokens for `list item` (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- Components tokens for `button` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Changed
+
+- `elevation` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `color` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `link` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `button` component tokens for `Orange Compact` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `alert` component tokens for `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `text input` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `text area` component tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `tag` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `link` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `icon` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `button` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Removed
+
+- **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
+
+## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0)
 
 ### Added
 

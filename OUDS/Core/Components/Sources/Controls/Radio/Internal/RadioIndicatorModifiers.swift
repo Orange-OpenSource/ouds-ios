@@ -298,7 +298,7 @@ private struct SizeFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.controlItem.sizeControlIndicator,
-                   height: theme.controlItem.sizeControlIndicator)
+            .frame(width: theme.listItem.sizeControlIndicator,
+                   height: theme.listItem.sizeControlIndicator)
     }
 }

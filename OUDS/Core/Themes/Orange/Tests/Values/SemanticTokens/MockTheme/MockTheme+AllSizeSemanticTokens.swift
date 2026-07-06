@@ -218,7 +218,9 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
 
     // MARK: - Semantic token - Sizing - Interactive area
 
-    override var minInteractiveArea: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var minInteractiveAreaDefault: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var minInteractiveAreaSmall: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var minInteractiveAreaSmallest: SizeSemanticToken { Self.mockThemeSizeRawToken }
 }
 
 // swiftlint:enable required_deinit
