@@ -131,12 +131,7 @@ The tokens provider for `control item` has been renamed to `list item`.
 
 **Reason for Change**: "control item" does not exist anymore in Figma but "list item" does
 
-### Compatibility
-
-- **Backward Compatibility**: No
-- **v2.3.0 Support**: None
-
-## Changes in layout of OUDS chip picker data
+### Changes in layout of OUDS chip picker data
 
 To be aligned with new `OUDSImage` logic, the `Layout` for the `OUDSChipPickerData` has been refactored.
 
@@ -159,6 +154,35 @@ To be aligned with new `OUDSImage` logic, the `Layout` for the `OUDSChipPickerDa
 - Replace any use of `.textAndIcon(text:icon)` by `.textAndImage(text:image:)`
 
 **Reason for Change**: Use new `OUDSImage` API
+
+### Alert status cases parameter names
+
+To be aligned with new `OUDSImage` API, the parameter names of `alert status` cases have been changed.
+
+**Before (v2.3.0)**:
+```swift
+.neutral(icon: someOudsImage)
+.accent(icon: someOudsImage)
+```
+
+**After (v3.0.0)**:
+```swift
+.neutral(image: someOudsImage)
+.accent(image: someOudsImage)
+```
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `.neutral(icon:)` by `.neutral(image:)`
+- Replace any use of `.accent(icon:)` by `.accent(image:)`
+
+**Reason for Change**: Use new `OUDSImage` API
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v2.3.0 Support**: None
 
 ## v2.2.0 → v2.3.0
 
