@@ -75,32 +75,6 @@ public struct OUDSFilterChip: View {
 
     // MARK: - Initializers — icon + LocalizedStringKey text
 
-    /// Creates a filter chip with a localized text and icon.
-    ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - selected: Flag to know if chip is selected, by default is unselected
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSFilterChip(image:_:tableName:bundle:selected:action:) instead.")
-    public init(icon: Image,
-                _ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                selected: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                action: @escaping () -> Void)
-    {
-        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode),
-                  text: resolvedText,
-                  selected: selected,
-                  action: action)
-    }
-
     /// Creates a filter chip with a localized text and icon, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -132,19 +106,6 @@ public struct OUDSFilterChip: View {
 
     /// Creates a filter chip with text and icon.
     ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - text: The text to display in the chip, should not be empty
-    ///    - selected: Flag to know if chip is selected, by default is unselected
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSFilterChip(image:text:selected:action:) instead.")
-    public init(icon: Image, text: String, selected: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, selected: selected, action: action)
-    }
-
-    /// Creates a filter chip with text and icon.
-    ///
     /// ```swift
     ///     OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), text: "Label", selected: true) {}
     /// ```
@@ -164,32 +125,6 @@ public struct OUDSFilterChip: View {
     }
 
     // MARK: - Initializers — icon + LocalizedStringKey accessibilityLabel
-
-    /// Creates a filter chip with an icon only and a localized accessibility label.
-    ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - key: The text to vocalize with Voice Over, as a `LocalizedStringKey` for the given `Bundle`
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - selected: Flag to know if chip is selected, by default is unselected
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSFilterChip(image:accessibilityLabel:tableName:bundle:selected:action:) instead.")
-    public init(icon: Image,
-                accessibilityLabel key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                selected: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                action: @escaping () -> Void)
-    {
-        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode),
-                  accessibilityLabel: resolvedText,
-                  selected: selected,
-                  action: action)
-    }
 
     /// Creates a filter chip with an icon only and a localized accessibility label.
     ///
@@ -218,19 +153,6 @@ public struct OUDSFilterChip: View {
     }
 
     // MARK: - Initializers — icon + String accessibilityLabel (canonical)
-
-    /// Creates a filter chip with an icon only.
-    ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip action
-    ///    - selected: Flag to know if chip is selected, by default is unselected
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSFilterChip(image:accessibilityLabel:selected:action:) instead.")
-    public init(icon: Image, accessibilityLabel: String, selected: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, selected: selected, action: action)
-    }
 
     /// Creates a filter chip with an icon only.
     ///

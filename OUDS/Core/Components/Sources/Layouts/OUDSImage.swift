@@ -17,10 +17,6 @@ import SwiftUI
 
 // MARK: - OUDS Image
 
-/// Old name of ``OUDSImage`` (before v2.3.0)
-@available(*, deprecated, message: "Use OUDSImage type instead of OUDSIcon.")
-public typealias OUDSIcon = OUDSImage // To not break public API where OUDSIcon were used before
-
 /// Use to provide an asset to ouds in order to be added in some components.
 /// The icon can be flipped for RTL consideration and an associated `acessibilityLabel`must be provided
 /// if the icon is not decorative.
