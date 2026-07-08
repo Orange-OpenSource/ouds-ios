@@ -100,7 +100,7 @@ OUDSStaticListItem(
 
 #### Navigable list item
 
-Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemAffordanceType`` defines the visual indicator shown:
+Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemIndicatorType`` defines the visual indicator shown:
 
 @TabNavigator {
     @Tab("Orange") {

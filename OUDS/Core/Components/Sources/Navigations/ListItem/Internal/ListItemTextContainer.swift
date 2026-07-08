@@ -63,10 +63,7 @@ struct ListItemTextContainer<Slot: View>: View {
                         }
                     case let .custom(customView, _):
                         customView
-                            // TODO: (ouds/💠_control/list-item/space/padding-block/slot-text-container)
-                            .padding(.top, theme.listItem.spacePaddingBlockSlotTextContainer)
-                            // TODO: ouds/💠_control/list-item/space/padding-block/bottom-slot-text-container
-                            .padding(.bottom, theme.listItem.spacePaddingBlockBottomSlotListItemContainer)
+                            .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer) // TODO: #265 - Not sure for these tokens
                     }
                 }
                 .multilineTextAlignment(.leading)
@@ -95,10 +92,7 @@ struct ListItemTextContainer<Slot: View>: View {
 
             if !(slot is EmptyView) {
                 slot
-                    // TODO: (ouds/💠_control/list-item/space/padding-block/slot-text-container)
-                    .padding(.top, theme.listItem.spacePaddingBlockSlotTextContainer)
-                    // TODO: ouds/💠_control/list-item/space/padding-block/bottom-slot-text-container
-                    .padding(.bottom, theme.listItem.spacePaddingBlockBottomSlotListItemContainer)
+                    .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer) // TODO: #265 - Not sure for these tokens
             }
         }
         .padding(.top, topPadding)
@@ -111,10 +105,8 @@ struct ListItemTextContainer<Slot: View>: View {
         if alignment == .top {
             switch itemSize {
             case .standard:
-                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-default
                 theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerDefault
             case .small:
-                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-small
                 theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerSmall
             }
         } else {
@@ -133,10 +125,8 @@ struct ListItemTextContainer<Slot: View>: View {
     private var minHeight: CGFloat {
         let rawSize = switch itemSize {
         case .standard:
-            // TODO: ouds/💠_control/list-item/size/asset/medium
             theme.listItem.sizeAssetMedium
         case .small:
-            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.listItem.sizeAssetSmall
         }
 

@@ -121,18 +121,14 @@ public struct OUDSListItemFlag: View {
 
     private var frameHeight: CGFloat {
         let rawSize = if itemSize == .small {
-            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.listItem.sizeAssetSmall
         } else {
             switch size {
             case .medium:
-                // TODO: ouds/💠_control/list-item/size/asset/medium
                 theme.listItem.sizeAssetMedium
             case .large:
-                // TODO: ouds/💠_control/list-item/size/asset/large
                 theme.listItem.sizeAssetLarge
             case .extraLarge:
-                // TODO: ouds/💠_control/list-item/size/asset/xLarge
                 theme.listItem.sizeAssetXlarge
             }
         }

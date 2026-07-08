@@ -568,7 +568,7 @@ OUDSNavigationListItem(
 ) { navigateToProfile() }
 ```
 
-#### `OUDSNavigationListItemAffordanceType`
+#### `OUDSNavigationListItemIndicatorType`
 
 | Case | Affordance position | Use for | Leading element |
 |------|--------------------|---------|----|

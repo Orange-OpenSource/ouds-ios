@@ -91,7 +91,7 @@ public struct OUDSListItemIcon: View {
         ///
         /// - Parameters:
         ///   - asset: The `Image` to display as the icon.
-        ///   - badge: When `true`, a small notification badge (``OUDSBadge`` with `.negative` status)
+        ///   - badge: When `true`, a small notification badge (``OUDSBadgeStandard`` with `.negative` status)
         ///     is displayed at the top-trailing corner of the icon. Defaults to `false`.
         case neutral(asset: Image, badge: Bool = false)
 

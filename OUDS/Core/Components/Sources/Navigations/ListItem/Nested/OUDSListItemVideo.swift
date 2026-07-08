@@ -16,7 +16,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 // The video element for list item component is tailored for iOS.
-// The result is not acceptable today (v2.2.0) with watchOS, tvOS, macOS and visionOS.
+// The result is not acceptable today (v3.0.0) with watchOS, tvOS, macOS and visionOS.
 // Thus this API is only available and compilable for iOS.
 
 /// A video element that can be used at the leading or trailing position of a list item
@@ -203,8 +203,6 @@ public struct OUDSListItemVideo: View {
     // MARK: Helpers
 
     private var radius: BorderRadiusSemanticToken {
-        // TODO: ouds/💠_control/list-item/border/radius/media-rounded-corner
-        // TODO: ouds/💠_control/list-item/border/radius/media
         roundedMedia ? theme.listItem.borderRadiusMediaRounded : theme.listItem.borderRadiusMedia
     }
 
@@ -214,18 +212,14 @@ public struct OUDSListItemVideo: View {
 
     private var assetSize: CGFloat {
         let rawSize = if itemSize == .small {
-            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.listItem.sizeAssetSmall
         } else {
             switch size {
             case .medium:
-                // TODO: ouds/💠_control/list-item/size/asset/medium
                 theme.listItem.sizeAssetMedium
             case .large:
-                // TODO: ouds/💠_control/list-item/size/asset/large
                 theme.listItem.sizeAssetLarge
             case .extraLarge:
-                // TODO: ouds/💠_control/list-item/size/asset/xLarge
                 theme.listItem.sizeAssetXlarge
             }
         }

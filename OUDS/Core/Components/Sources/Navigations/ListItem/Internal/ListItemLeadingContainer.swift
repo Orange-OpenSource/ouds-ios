@@ -56,10 +56,8 @@ struct ListItemLeadingContainer: View {
     private var minHeight: CGFloat {
         let rawSize = switch itemSize {
         case .standard:
-            // TODO: ouds/💠_control/list-item/size/asset/medium
             theme.listItem.sizeAssetMedium
         case .small:
-            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.listItem.sizeAssetSmall
         }
 

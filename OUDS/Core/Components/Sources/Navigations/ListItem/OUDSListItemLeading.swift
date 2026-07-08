@@ -123,6 +123,6 @@ import SwiftUI
     ///
     /// See ``OUDSListItemAvatar`` for available types (`.icon`, `.image`, `.initials`)
     /// and sizes (`.medium`, `.large`, `.extraLarge`).
-    /// An optional ``OUDSBadge`` can be attached to the avatar.
+    /// An optional ``OUDSBadgeStandard`` can be attached to the avatar.
     case avatar(OUDSListItemAvatar)
 }

@@ -57,10 +57,8 @@ struct ListItemContent<Slot: View>: View {
             }
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
-            // TODO: ouds/💠_control/list-item/size/min-width
             .padding(.horizontal, theme.listItem.spacePaddingInline)
             .frame(maxWidth: .infinity, alignment: .topLeading)
-            // TODO: ouds/💠_control/list-item/space/padding-inline
             .frame(minWidth: theme.listItem.sizeMinWidth, minHeight: minHeight)
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
@@ -106,20 +104,16 @@ struct ListItemContent<Slot: View>: View {
         case .small:
             switch containersAlignment {
             case .top:
-                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-counterweight-small
                 theme.listItem.spacePaddingBlockTopAlignmentTopCounterweightSmall
             case .center:
-                // TODO: ouds/💠_control/list-item/space/padding-block/small
                 theme.listItem.spacePaddingBlockSmall
             }
 
         case .standard:
             switch containersAlignment {
             case .top:
-                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-counterweight-default
                 theme.listItem.spacePaddingBlockTopAlignmentTopCounterweightDefault
             case .center:
-                // TODO: ouds/💠_control/list-item/space/padding-block/default
                 theme.listItem.spacePaddingBlockDefault
             }
         }
@@ -128,10 +122,8 @@ struct ListItemContent<Slot: View>: View {
     private var bottomPadding: Double {
         switch itemSize {
         case .small:
-            // TODO: ouds/💠_control/list-item/space/padding-block/small
             theme.listItem.spacePaddingBlockSmall
         case .standard:
-            // TODO: ouds/💠_control/list-item/space/padding-block/default
             theme.listItem.spacePaddingBlockDefault
         }
     }
@@ -139,10 +131,8 @@ struct ListItemContent<Slot: View>: View {
     private var minHeight: SizeSemanticToken {
         switch itemSize {
         case .small:
-            // TODO: ouds/💠_control/list-item/size/min-height-small
             theme.listItem.sizeMinHeightSmall
         case .standard:
-            // TODO: ouds/💠_control/list-item/size/min-height-defaull
             theme.listItem.sizeMinHeightDefault
         }
     }

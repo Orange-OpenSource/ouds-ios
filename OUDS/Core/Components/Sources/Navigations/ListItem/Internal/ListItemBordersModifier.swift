@@ -23,6 +23,7 @@ struct ListItemBordersModifier: ViewModifier {
     // MARK: Properties
 
     let interactionState: OUDSButtonInteractionState
+
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
 
@@ -81,7 +82,6 @@ struct ListItemBordersModifier: ViewModifier {
         }
 
         if let color {
-            // TODO: ouds/💠_control/list-item/border/width/default
             content
                 .border(style: theme.borders.styleDefault,
                         width: theme.listItem.borderWidthDefault,
