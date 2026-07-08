@@ -13,6 +13,8 @@
 
 import SwiftUI
 
+// MARK: - OUDS Navigation List Item
+
 /// A list item component used to display a row of interactive, navigable content within a list.
 ///
 /// ``OUDSNavigationListItem`` is an interactive variant of the list item that triggers an action when tapped.
@@ -90,7 +92,7 @@ import SwiftUI
 /// - `.text(.labelStrong(Text))`: An emphasized (bold) label
 /// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
 /// - `.badge(.count(OUDSBadgeCount)`: A badge with count
-/// - `.badge(.standard(ODSBadgeStandard)`: A badge with standard status
+/// - `.badge(.standard(OUDSBadgeStandard)`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset
@@ -120,12 +122,12 @@ import SwiftUI
 ///     .oudsListItemStyle(.outlined)
 /// ```
 ///
-/// ## Accesibility considerations
+/// ## Accessibility considerations
 ///
 /// You should test with Voice Over your `OUDSNavigationListItem` to check which parts are vocalized and if they are well vocalized, specially for
 /// the avatars, badges, tags and slot views.  Do not vocalize decorative elements.
 ///
-/// If flags are used, do not suppose users known the flags and add in the texts parts of the `OUDSNavigationListItem` the country or region name.
+/// If flags are used, do not suppose users know the flags and add in the texts parts of the `OUDSNavigationListItem` the country or region name.
 ///
 /// Be sure the available texts are enough to explain to the users the navigation depending to its indicator type.
 ///
@@ -152,11 +154,11 @@ import SwiftUI
 /// ![A list item component in light and dark modes with Wireframe theme](component_navigation_list_item_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSNavigationListItem<Slot: View>: View {
 
-    // MARK: - Stored Properties
+    // MARK: Properties
 
     private let data: OUDSListItemData
     private let slot: Slot
@@ -165,7 +167,7 @@ public struct OUDSNavigationListItem<Slot: View>: View {
     private let leading: OUDSListItemLeading?
     private let trailing: OUDSListItemTrailing?
 
-    // MARK: - Initializer
+    // MARK: Initializers
 
     /// Creates a navigable list item with textual data, an indicator type, and an optional action with additional slot.
     /// A slot (`View`) area is reserved under texts and before helper text.
@@ -244,7 +246,7 @@ public struct OUDSNavigationListItem<Slot: View>: View {
         self.action = action
     }
 
-    // MARK: - Body
+    // MARK: Body
 
     public var body: some View {
         OUDSInteractionButton(isReadOnly: false) {
@@ -266,7 +268,7 @@ public struct OUDSNavigationListItem<Slot: View>: View {
 
 /// The navigation indicator, describing the type of navigation triggered when the item is tapped.
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @frozen public enum OUDSNavigationListItemIndicatorType {
     /// When item is tapped, the next page is opened in navigation.
     /// A forward chevron is displayed at the trailing edge.

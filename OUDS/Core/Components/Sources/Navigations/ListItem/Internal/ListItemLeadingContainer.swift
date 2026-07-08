@@ -17,7 +17,7 @@ import SwiftUI
 /// This is the leading container of the ``ListItemContent``.
 struct ListItemLeadingContainer: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let leading: OUDSListItemLeading
     let interactionState: OUDSButtonInteractionState
@@ -26,7 +26,7 @@ struct ListItemLeadingContainer: View {
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         HStack {
@@ -51,7 +51,7 @@ struct ListItemLeadingContainer: View {
         .frame(minHeight: minHeight, alignment: .center)
     }
 
-    // MARK: - Size helper
+    // MARK: Size helper
 
     private var minHeight: CGFloat {
         let rawSize = switch itemSize {

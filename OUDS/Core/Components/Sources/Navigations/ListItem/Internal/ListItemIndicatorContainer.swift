@@ -18,7 +18,7 @@ import SwiftUI
 /// For RTL, the next and previous indicators change their assets according to the `LayoutDirection`.
 struct ListItemIndicatorContainer: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let type: OUDSNavigationListItemIndicatorType?
     let interactionState: OUDSButtonInteractionState
@@ -27,7 +27,7 @@ struct ListItemIndicatorContainer: View {
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.layoutDirection) private var layoutDirection
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         if let asset {
@@ -39,11 +39,11 @@ struct ListItemIndicatorContainer: View {
         }
     }
 
-    // MARK: - Helpers
+    // MARK: Helpers
 
     private var asset: Image? {
         if let assetName {
-            Image(assetName, bundle: theme.resourcesBundle)
+            Image(decorative: assetName, bundle: theme.resourcesBundle)
                 .renderingMode(.template)
         } else {
             nil

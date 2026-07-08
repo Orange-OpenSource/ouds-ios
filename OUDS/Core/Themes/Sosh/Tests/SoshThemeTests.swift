@@ -15,6 +15,8 @@ import OUDSThemesContract
 @testable import OUDSThemesSosh
 import Testing
 
+// swiftlint:disable force_cast
+
 /// Check if the theme has the default configuration and tokens providers with the expected types.
 struct SoshThemeTests {
 
@@ -52,7 +54,7 @@ struct SoshThemeTests {
 
     @Test func defaultColorModeSemanticTokensProvider() {
         #expect(theme.colorModes is SoshThemeColorModeSemanticTokensProvider)
-        #expect(try #require((theme.colorModes as? SoshThemeColorModeSemanticTokensProvider)?.colors) is SoshThemeColorSemanticTokensProvider)
+        #expect((theme.colorModes as! SoshThemeColorModeSemanticTokensProvider).colors is SoshThemeColorSemanticTokensProvider)
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() {
@@ -193,3 +195,5 @@ struct SoshThemeTests {
         #expect(theme.typography is SoshThemeTypographyComponentTokensProvider)
     }
 }
+
+// swiftlint:enable force_cast

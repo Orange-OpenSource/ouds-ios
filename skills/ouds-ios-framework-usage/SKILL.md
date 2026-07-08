@@ -513,7 +513,7 @@ Two components share the same data model and slot/leading/trailing API:
 OUDSListItemData(label: "Label")
 OUDSListItemData(
     label: "Label",
-    isBoldLabel: true,          // renders label in bold
+    hasBoldLabel: true,          // renders label in bold
     description: "Description", // secondary text below label
     overline: "Overline",       // small text above label (hidden in .small size)
     extraLabel: "Extra Label",  // additional text below description (hidden in .small size)

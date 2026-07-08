@@ -100,7 +100,7 @@ struct WireframeThemeTests {
     @Test func defaultAccordionComponentTokensProvider() throws {
         #expect(theme.accordion is WireframeThemeAccordionComponentTokensProvider)
     }
-    
+
     @Test func defaultAlertComponentTokensProvider() {
         #expect(theme.alert is WireframeThemeAlertComponentTokensProvider)
     }
@@ -149,7 +149,7 @@ struct WireframeThemeTests {
         #expect(theme.pinCodeInput is WireframeThemePinCodeInputComponentTokensProvider)
     }
 
-    @Test func defaultProgressIndicatorComponentTokensProvider()  {
+    @Test func defaultProgressIndicatorComponentTokensProvider() {
         #expect(theme.progressIndicator is WireframeThemeProgressIndicatorComponentTokensProvider)
     }
 

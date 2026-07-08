@@ -17,7 +17,7 @@ import SwiftUI
 /// Trailing container of the ``ListItemContent``.
 struct ListItemTrailingContainer: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let trailing: OUDSListItemTrailing
     let interactionState: OUDSButtonInteractionState
@@ -62,7 +62,7 @@ struct ListItemTrailingContainer: View {
         .frame(minHeight: minHeight, alignment: .center)
     }
 
-    // MARK: - Size helper
+    // MARK: Size helper
 
     private var minHeight: CGFloat {
         let rawSize = switch itemSize {

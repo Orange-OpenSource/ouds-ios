@@ -89,13 +89,15 @@ import SwiftUI
 /// vertically aligned using the ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier
 /// (`.center` by default, or `.top`).
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemAvatar: View {
 
+    // MARK: Types and sizes
+
     /// The type of badge displayed on the avatar.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum BadgeType {
         /// A standard badge in its status.
         ///
@@ -114,7 +116,7 @@ public struct OUDSListItemAvatar: View {
 
     /// The type of content displayed inside the avatar.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum AvatarType {
         /// A custom image that fills the avatar circle.
         /// The image is resized to fill the avatar frame and clipped to a circular shape.
@@ -138,7 +140,7 @@ public struct OUDSListItemAvatar: View {
     /// (via ``SwiftUICore/View/oudsListItemSize(_:)``), this parameter is ignored
     /// and the smallest size is always used.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum Size {
         /// The medium size, used as the default in standard list items.
         case medium
@@ -150,7 +152,18 @@ public struct OUDSListItemAvatar: View {
         case extraLarge
     }
 
-    // MARK: - Initializer
+    // MARK: Properties
+
+    let type: AvatarType
+    let size: Size
+    let badgeType: BadgeType?
+
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    // MARK: Initializer
 
     /// Creates an avatar view to be displayed at the leading or trailing position
     /// of a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
@@ -174,18 +187,7 @@ public struct OUDSListItemAvatar: View {
         self.badgeType = badgeType
     }
 
-    // MARK: - Properties
-
-    let type: AvatarType
-    let size: Size
-    let badgeType: BadgeType?
-
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-
-    // MARK: - Body
+    // MARK: Body
 
     public var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -218,7 +220,7 @@ public struct OUDSListItemAvatar: View {
         }
     }
 
-    // MARK: - Size helpers
+    // MARK: Size helpers
 
     private var frameSize: SizeSemanticToken {
         let rawSize = switch itemSize {
@@ -254,7 +256,7 @@ public struct OUDSListItemAvatar: View {
         }
     }
 
-    // MARK: - Color helpers
+    // MARK: Color helpers
 
     private var foregroundColor: MultipleColorSemanticToken {
         isEnabled ? theme.colors.contentInverse : theme.colors.contentOnActionDisabled
@@ -264,7 +266,7 @@ public struct OUDSListItemAvatar: View {
         isEnabled ? theme.colors.surfaceInverseHigh : theme.colors.actionDisabled
     }
 
-    // MARK: - Font helpers
+    // MARK: Font helpers
 
     private var font: MultipleFontCompositeSemanticToken {
         switch itemSize {
@@ -303,7 +305,7 @@ public struct OUDSListItemAvatar: View {
               letterSpacing: theme.listItem.fontLetterSpacingAvatarInitialXlarge)
     }
 
-    // MARK: Badge helper
+    // MARK: - Badge helpers
 
     private func badge(from badgeType: BadgeType) -> some View {
         Group {

@@ -19,7 +19,7 @@ import SwiftUI
 /// The layout (divider, background, size) are updated according to the interaction state ``InteractionState``.
 struct ListItemContent<Slot: View>: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let data: OUDSListItemData
     let slot: Slot
@@ -32,7 +32,7 @@ struct ListItemContent<Slot: View>: View {
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.oudsListItemContainersAlignment) private var containersAlignment
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
@@ -72,7 +72,7 @@ struct ListItemContent<Slot: View>: View {
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
     }
 
-    // MARK: - Containers
+    // MARK: Containers
 
     @ViewBuilder
     private func leadingContainer(_ leading: OUDSListItemLeading) -> some View {
@@ -90,7 +90,7 @@ struct ListItemContent<Slot: View>: View {
         ListItemTrailingContainer(trailing: trailing, interactionState: interactionState)
     }
 
-    // MARK: - Computed properties
+    // MARK: Computed properties
 
     private var verticalAlignment: VerticalAlignment {
         switch containersAlignment {

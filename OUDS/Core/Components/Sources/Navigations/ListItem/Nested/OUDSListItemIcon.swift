@@ -76,14 +76,16 @@ import SwiftUI
 ///     )
 /// ```
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemIcon: View {
+
+    // MARK: Type
 
     /// Defines the type of icon to display.
     /// Each type determines the icon asset and its semantic foreground color.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum IconType {
         /// A custom icon from a provided `Image` asset, rendered with the default content color.
         ///
@@ -112,7 +114,7 @@ public struct OUDSListItemIcon: View {
     /// When the icon is embedded in a list item with `.small` size, this parameter is ignored
     /// and a smallest size is always used.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum Size {
         /// The default icon size.
         case medium
@@ -121,7 +123,7 @@ public struct OUDSListItemIcon: View {
         case large
     }
 
-    // MARK: - Initializer
+    // MARK: Initializer
 
     /// Creates an icon element for use in a list item at the leading or trailing position.
     ///
@@ -140,7 +142,7 @@ public struct OUDSListItemIcon: View {
         self.size = size
     }
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private let type: IconType
     private let size: Size
@@ -150,7 +152,7 @@ public struct OUDSListItemIcon: View {
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    // MARK: - Body
+    // MARK: Body
 
     public var body: some View {
         Group {
@@ -187,7 +189,7 @@ public struct OUDSListItemIcon: View {
         .frame(width: assetSize, height: assetSize)
     }
 
-    // MARK: - Private Helpers
+    // MARK: Private Helpers
 
     private var asset: Image {
         let assetName =

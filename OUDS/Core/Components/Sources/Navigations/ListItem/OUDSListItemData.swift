@@ -26,7 +26,7 @@ import SwiftUI
 ///   Can be a plain text `String` or a custom `View`. Always visible regardless of the item size.
 /// - **label**: A computed property returning the string value of the label for backward compatibility.
 ///   Returns the text for string labels, or the accessibility label for custom view labels.
-/// - **isBoldLabel**: A computed property returning `true` when the label is a bold text.
+/// - **hasBoldLabel**: A computed property returning `true` when the label is a bold text.
 ///   Always returns `false` for custom view labels.
 /// - **description**: A secondary text displayed below the label, providing additional context.
 /// - **overline**: A small text displayed above the label, often used for categories or metadata.
@@ -43,7 +43,7 @@ import SwiftUI
 ///     let data = OUDSListItemData(label: "Label")
 ///
 ///     // Label with bold style
-///     let data = OUDSListItemData(label: "Label", isBoldLabel: true)
+///     let data = OUDSListItemData(label: "Label", hasBoldLabel: true)
 ///
 ///     // Custom view as label with accessibility label
 ///     let data = OUDSListItemData(
@@ -57,7 +57,7 @@ import SwiftUI
 ///     // Full content with text label
 ///     let data = OUDSListItemData(
 ///         label: "Label",
-///         isBoldLabel: false,
+///         hasBoldLabel: false,
 ///         description: "Description",
 ///         overline: "Overline",
 ///         extraLabel: "Extra Label",
@@ -89,7 +89,7 @@ import SwiftUI
 /// ## Custom view label
 ///
 /// When providing a custom view as label:
-/// - The `isBoldLabel` property is not applicable; all styling is controlled by the provided view.
+/// - The `hasBoldLabel` property is not applicable; all styling is controlled by the provided view.
 /// - You must provide an `accessibilityLabel` parameter so that Voice Over can vocalize the label.
 ///   This `accessibilityLabel` is used in the combined accessibility label of the list item text container.
 /// - The custom view is rendered inside the same `HStack` as a text label would be,
@@ -111,7 +111,7 @@ import SwiftUI
 ///     .oudsListItemSize(.small)
 /// ```
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemData {
 
@@ -137,7 +137,7 @@ public struct OUDSListItemData {
     /// for the list item text parts, ensuring Voice Over can vocalize the label even when it is
     /// an arbitrary view.
     ///
-    /// - Since: 2.3.0
+    /// - Since: 3.0.0
     public enum Label {
         /// A plain text string label.
         ///
@@ -192,7 +192,7 @@ public struct OUDSListItemData {
     ///
     /// - Parameters:
     ///   - label: The primary text of the list item.
-    ///   - isBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
+    ///   - hasBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
     ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
     ///   - overline: An optional text displayed above the label. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
@@ -201,13 +201,13 @@ public struct OUDSListItemData {
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
     public init(
         label: String,
-        isBoldLabel: Bool = false,
+        hasBoldLabel: Bool = false,
         description: String? = nil,
         overline: String? = nil,
         extraLabel: String? = nil,
         helperText: String? = nil)
     {
-        labelContent = .text(label, isBold: isBoldLabel)
+        labelContent = .text(label, isBold: hasBoldLabel)
         self.description = description
         self.overline = overline
         self.extraLabel = extraLabel
@@ -266,7 +266,7 @@ public struct OUDSListItemData {
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - isBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
+    ///   - hasBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
     ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
     ///   - overline: An optional text displayed above the label. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
@@ -277,7 +277,7 @@ public struct OUDSListItemData {
         key: LocalizedStringKey,
         tableName: String? = nil,
         bundle: Bundle = .main,
-        isBoldLabel: Bool = false,
+        hasBoldLabel: Bool = false,
         description: String? = nil,
         overline: String? = nil,
         extraLabel: String? = nil,
@@ -285,7 +285,7 @@ public struct OUDSListItemData {
     {
         self.init(
             label: key.resolved(tableName: tableName, bundle: bundle),
-            isBoldLabel: isBoldLabel,
+            hasBoldLabel: hasBoldLabel,
             description: description,
             overline: overline,
             extraLabel: extraLabel,

@@ -18,13 +18,14 @@ import SwiftUI
 /// A `ViewModifier` to apply to `ListItemContent` views so as to define the background
 struct ListItemBackgroundModifier: ViewModifier {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let interactionState: OUDSButtonInteractionState
+
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
 
-    // MARK: - Body
+    // MARK: Body
 
     func body(content: Content) -> some View {
         switch style {
@@ -47,7 +48,7 @@ struct ListItemBackgroundModifier: ViewModifier {
         }
     }
 
-    // MARK: - Helpers
+    // MARK: Helpers
 
     @ViewBuilder
     private func background(content: Content, withInteractionOnly: Bool) -> some View {

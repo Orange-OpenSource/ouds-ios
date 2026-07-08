@@ -110,41 +110,39 @@ import SwiftUI
 /// - Trailing elements such as avatars and icons are rendered in their smallest available size.
 /// - The extra label in ``TextType/labelAndExtraLabel(_:_:)`` is **ignored**.
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSListItemTrailing {
+
+    // MARK: - Text Type
 
     /// Defines the type of trailing text displayed in the list item.
     ///
     /// Each variant controls the visual style and content of the text shown at the trailing position.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum TextType {
         /// A default-styled label.
-        case label(Text)
+        case label(String)
 
         /// A muted (less prominent) label, typically displayed in a secondary color.
-        case labelMuted(Text)
+        case labelMuted(String)
 
         /// A strong (emphasized) label, typically displayed with a bold or prominent style.
-        case labelStrong(Text)
+        case labelStrong(String)
 
         /// A default label paired with an additional extra label displayed below it.
         ///
         /// **Note:** For small size of the list item (via ``SwiftUICore/View/oudsListItemSize(_:)``),
         /// the extra label is **ignored** and only the primary label is shown.
-        case labelAndExtraLabel(Text, Text)
+        case labelAndExtraLabel(String, String)
     }
 
-    /// A textual element with configurable style.
-    ///
-    /// See ``TextType`` for available styles: `.label`, `.labelMuted`, `.labelStrong`,
-    /// and `.labelAndExtraLabel`.
-    case text(TextType)
+    // MARK: - Badge Type
 
     /// The type of badge displayed.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum BadgeType {
         /// A standard badge
         case standard(OUDSBadgeStandard)
@@ -152,6 +150,14 @@ import SwiftUI
         /// A badge with count
         case count(OUDSBadgeCount)
     }
+
+    // MARK: - Values
+
+    /// A textual element with configurable style.
+    ///
+    /// See ``TextType`` for available styles: `.label`, `.labelMuted`, `.labelStrong`,
+    /// and `.labelAndExtraLabel`.
+    case text(TextType)
 
     /// A badge component providing status or count information.
     ///

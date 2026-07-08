@@ -20,13 +20,13 @@ import SwiftUI
 /// The divider and the ouline effetct can be affected by the rounded corner flag of the theme `Tuning`.
 struct ListItemBordersModifier: ViewModifier {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let interactionState: OUDSButtonInteractionState
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
 
-    // MARK: - Body
+    // MARK: Body
 
     func body(content: Content) -> some View {
         switch style {
@@ -48,7 +48,7 @@ struct ListItemBordersModifier: ViewModifier {
         }
     }
 
-    // MARK: - Rounded corners
+    // MARK: Rounded corners
 
     private var roundedCorners: Bool {
         switch style {
@@ -63,7 +63,7 @@ struct ListItemBordersModifier: ViewModifier {
         roundedCorners ? theme.listItem.borderRadiusRounded : theme.listItem.borderRadiusDefault
     }
 
-    // MARK: - Border modifiers
+    // MARK: Border modifiers
 
     @ViewBuilder
     private func outlined(content: Content, onInteractionOnly: Bool) -> some View {

@@ -76,7 +76,7 @@ import SwiftUI
 /// When the list item is displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), leading elements such as avatars and icons
 /// are rendered in their smallest available size.
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSListItemLeading {
     /// A status or custom icon displayed at the leading position.

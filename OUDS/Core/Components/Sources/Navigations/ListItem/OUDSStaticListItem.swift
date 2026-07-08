@@ -70,7 +70,7 @@ import SwiftUI
 /// - `.text(.labelStrong(Text))`: An emphasized (bold) label
 /// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
 /// - `.badge(.count(OUDSBadgeCount)`: A badge with count
-/// - `.badge(.standard(ODSBadgeStandard)`: A badge with standard status
+/// - `.badge(.standard(OUDSBadgeStandard)`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset
@@ -95,12 +95,12 @@ import SwiftUI
 ///         .oudsListItemStyle(.outlined)
 /// ```
 ///
-/// ## Accesibility considerations
+/// ## Accessibility considerations
 ///
 /// You should test with Voice Over your `OUDSStaticListItem` to check which parts are vocalized and if they are well vocalized, specially for
 /// the avatars, badges, tags and slot views.  Do not vocalize decorative elements.
 ///
-/// If flags are used, do not suppose users known the flags and add in the texts parts of the `OUDSStaticListItem` the country or region name.
+/// If flags are used, do not suppose users know the flags and add in the texts parts of the `OUDSStaticListItem` the country or region name.
 ///
 /// ## Design documentation
 ///
@@ -125,11 +125,11 @@ import SwiftUI
 /// ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSStaticListItem<Slot: View>: View {
 
-    // MARK: - Stored Properties
+    // MARK: - Properties
 
     private let data: OUDSListItemData
     private let slot: Slot
@@ -138,7 +138,7 @@ public struct OUDSStaticListItem<Slot: View>: View {
 
     @Environment(\.isEnabled) private var isEnabled
 
-    // MARK: - Initializer
+    // MARK: - Initializers
 
     /// Creates a list item to display static data, without interaction or navigation.
     /// A slot (`View`) area is reserved under texts and before helper text.

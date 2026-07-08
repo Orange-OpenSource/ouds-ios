@@ -80,7 +80,7 @@ OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
 // List item with full textual content
 OUDSStaticListItem(data: OUDSListItemData(
     label: "Label",
-    isBoldLabel: true,
+    hasBoldLabel: true,
     description: "Description",
     overline: "Overline",
     extraLabel: "Extra label",

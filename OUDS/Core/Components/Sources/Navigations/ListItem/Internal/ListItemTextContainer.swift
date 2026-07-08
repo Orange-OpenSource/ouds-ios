@@ -26,18 +26,18 @@ import SwiftUI
 ///   Voice Over vocalization.
 struct ListItemTextContainer<Slot: View>: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let data: OUDSListItemData
     let slot: Slot
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemContainersAlignment) private var alignment
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.oudsListItemContainersAlignment) private var alignment
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
@@ -105,7 +105,7 @@ struct ListItemTextContainer<Slot: View>: View {
         .frame(maxWidth: .infinity, minHeight: minHeight, alignment: .topLeading)
     }
 
-    // MARK: - Helpers
+    // MARK: Helpers
 
     private var topPadding: CGFloat {
         if alignment == .top {

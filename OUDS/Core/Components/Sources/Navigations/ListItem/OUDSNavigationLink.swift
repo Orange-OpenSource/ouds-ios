@@ -28,20 +28,24 @@ import SwiftUI
 ///     }
 /// ```
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, *)
 public struct OUDSNavigationLink<Destination: View>: View {
 
     // MARK: - Properties
 
-    /// The label of the ``OUDSNavigationListItem``, used then as naivgaiton title
+    /// The label of the ``OUDSNavigationListItem``, used then as navigation title
     private let title: String
+
     /// Set to `true`  if the label must be bold, false otherwise
-    private let isBoldLabel: Bool
+    private let hasBoldLabel: Bool
+
     /// The type of indicator for the ``OUDSNavigationListItem``, e.g. `.next` or `.previous` to define the chevron.
     private let indicatorType: OUDSNavigationListItemIndicatorType
+
     /// The style to apply to the ``OUDSNavigationListItem``
     private let style: OUDSListItemContentStyle
+
     /// The ``SwiftUICore/View`` to display when the user taps on the element
     @ViewBuilder private let destination: () -> Destination
 
@@ -55,18 +59,18 @@ public struct OUDSNavigationLink<Destination: View>: View {
     ///
     /// - Parameters:
     ///    - title: The label for the ``OUDSNavigationListItem``
-    ///    - isBoldLabel: Flag to rise if title must be bold or not, default set to *false*
+    ///    - hasBoldLabel: Flag to rise if title must be bold or not, default set to *false*
     ///    - indicatorType: The type of link to apply, default set to `.next`
     ///    - style: The type of style to apply, default set to `.standard(divider: false, background: false)`
     ///    - destination: A closure providing the view to display when the user taps the item.
     public init(title: String,
-                isBoldLabel: Bool = false,
+                hasBoldLabel: Bool = false,
                 indicatorType: OUDSNavigationListItemIndicatorType = .next,
                 style: OUDSListItemContentStyle = .standard(.backgroundOnInteractionOnly(withDivider: true)),
                 destination: @escaping () -> Destination)
     {
         self.title = title
-        self.isBoldLabel = isBoldLabel
+        self.hasBoldLabel = hasBoldLabel
         self.indicatorType = indicatorType
         self.style = style
         self.destination = destination
@@ -80,20 +84,20 @@ public struct OUDSNavigationLink<Destination: View>: View {
     ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - isBoldLabel: Flag to rise if title must be bold or not, default set to *false*
+    ///    - hasBoldLabel: Flag to rise if title must be bold or not, default set to *false*
     ///    - indicatorType: The type of link to apply, default set to `.next`
     ///    - style: The type of style to apply, default set to `.standard(divider: false, background: false)`
     ///    - destination: A closure providing the view to display when the user taps the item.
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                isBoldLabel: Bool = false,
+                hasBoldLabel: Bool = false,
                 indicatorType: OUDSNavigationListItemIndicatorType = .next,
                 style: OUDSListItemContentStyle = .standard(.backgroundOnInteractionOnly(withDivider: true)),
                 destination: @escaping () -> Destination)
     {
         self.init(title: key.resolved(tableName: tableName, bundle: bundle),
-                  isBoldLabel: isBoldLabel,
+                  hasBoldLabel: hasBoldLabel,
                   indicatorType: indicatorType,
                   style: style,
                   destination: destination)
@@ -102,7 +106,7 @@ public struct OUDSNavigationLink<Destination: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        OUDSNavigationListItem(data: .init(label: title, isBoldLabel: isBoldLabel), indicatorType: indicatorType) {
+        OUDSNavigationListItem(data: .init(label: title, hasBoldLabel: hasBoldLabel), indicatorType: indicatorType) {
             isActive = true
         }
         .oudsListItemStyle(style)

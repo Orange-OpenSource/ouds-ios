@@ -36,22 +36,24 @@ struct VideoPlayerView: UIViewRepresentable {
 
 // swiftlint:disable static_over_final_class
 
+// MARK: - Player UIView
+
 /// `AVPlayer` in SwiftUI lifecycle can be buggy ; use of UIKit API is prefered
 /// to let the video be played at the best moment when view appears.
 final class PlayerUIView: UIView {
 
-    // MARK: - Layer
+    // MARK: Layer
 
     override class var layerClass: AnyClass {
         AVPlayerLayer.self
     }
 
-    // swiftlint:disable:next force_cast
     private var playerLayer: AVPlayerLayer {
+        // swiftlint:disable:next force_cast
         layer as! AVPlayerLayer
     }
 
-    // MARK: - Player
+    // MARK: Player
 
     var player: AVPlayer? {
         get { playerLayer.player }
@@ -61,7 +63,7 @@ final class PlayerUIView: UIView {
         }
     }
 
-    // MARK: - Init
+    // MARK: Init
 
     init(player: AVPlayer) {
         super.init(frame: .zero)
@@ -75,7 +77,7 @@ final class PlayerUIView: UIView {
 
     deinit {}
 
-    // MARK: - Layout
+    // MARK: Layout
 
     override func layoutSubviews() {
         super.layoutSubviews()

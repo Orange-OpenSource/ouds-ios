@@ -14,18 +14,18 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Displayes a helper message below ``ListItemContent`` text.
+/// Displays an helper message below ``ListItemContent`` text.
 /// and updates text color according to the ``InteractionState``.
 struct ListItemHelperTextContainer: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let text: TextualContent?
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         if let text, !text.isEmpty {
@@ -38,7 +38,7 @@ struct ListItemHelperTextContainer: View {
         }
     }
 
-    // MARK: - Helper
+    // MARK: Helper
 
     private var color: MultipleColorSemanticToken {
         interactionState == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted

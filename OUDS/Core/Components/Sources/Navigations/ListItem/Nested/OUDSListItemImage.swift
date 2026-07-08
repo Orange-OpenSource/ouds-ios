@@ -18,7 +18,7 @@ import SwiftUI
 /// An icon element that can be used at the leading or trailing position of a list item
 /// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
-/// ``OUDSListItemImage`` displays an image (square or wide)
+/// ``OUDSListItemImage`` displays an image (square or wide).
 ///
 /// ## Sizes
 ///
@@ -55,15 +55,17 @@ import SwiftUI
 ///     )
 /// ```
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemImage: View {
+
+    // MARK: Size
 
     /// Defines the available sizes (i.e. height) for the image.
     /// When the image is embedded in a list item with `.small` size, this parameter is ignored
     /// and a smallest size is always used.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum Size {
         /// The medium size, used as the default in standard list items.
         case medium
@@ -75,7 +77,7 @@ public struct OUDSListItemImage: View {
         case extraLarge
     }
 
-    // MARK: - Initializer
+    // MARK: Initializer
 
     /// Creates an icon element for use in a list item at the leading or trailing position.
     ///
@@ -108,8 +110,8 @@ public struct OUDSListItemImage: View {
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
 
     // MARK: Body
 

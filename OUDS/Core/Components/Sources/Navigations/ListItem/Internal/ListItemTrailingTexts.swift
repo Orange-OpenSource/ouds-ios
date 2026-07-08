@@ -16,7 +16,7 @@ import SwiftUI
 
 struct ListItemTrailingTexts: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let textType: OUDSListItemTrailing.TextType
 
@@ -25,30 +25,30 @@ struct ListItemTrailingTexts: View {
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.oudsListItemContainersAlignment) private var alignment
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .trailing, spacing: theme.listItem.spaceRowGap) {
             switch textType {
             case let .label(label):
-                label
+                Text(label)
                     .labelDefaultLarge(theme)
                     .foregroundColor(labelColor)
             case let .labelMuted(label):
-                label
+                Text(label)
                     .labelDefaultLarge(theme)
                     .foregroundColor(labelColor)
             case let .labelStrong(label):
-                label
+                Text(label)
                     .labelStrongLarge(theme)
                     .foregroundColor(labelColor)
             case let .labelAndExtraLabel(label, extraLabel):
-                label
+                Text(label)
                     .labelDefaultLarge(theme)
                     .foregroundColor(labelColor)
 
                 if itemSize == .standard {
-                    extraLabel
+                    Text(extraLabel)
                         .labelStrongMedium(theme)
                         .foregroundColor(isEnabled ? theme.colors.contentDefault : theme.colors.contentDisabled)
                 }
@@ -57,7 +57,7 @@ struct ListItemTrailingTexts: View {
         .padding(.top, topPadding)
     }
 
-    // MARK: - Helpers
+    // MARK: Helpers
 
     private var labelColor: MultipleColorSemanticToken {
         if !isEnabled {

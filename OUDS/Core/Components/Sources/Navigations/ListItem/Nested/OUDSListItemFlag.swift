@@ -52,26 +52,17 @@ import SwiftUI
 ///     )
 /// ```
 ///
-/// - Since: 2.2.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemFlag: View {
 
-    // MARK: Properties
-
-    private let asset: Image
-    private let size: Size
-
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    // MARK: Size
 
     /// Defines the available sizes (i.e. height) for the image of the country flag.
     /// When the image is embedded in a list item with `.small` size, this parameter is ignored
     /// and a smallest size is always used.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum Size {
         /// The medium size, used as the default in standard list items.
         case medium
@@ -83,7 +74,17 @@ public struct OUDSListItemFlag: View {
         case extraLarge
     }
 
-    // MARK: - Initializer
+    // MARK: Properties
+
+    private let asset: Image
+    private let size: Size
+
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    // MARK: Initializer
 
     /// Creates an icon element for use in a list item at the leading or trailing position.
     ///

@@ -15,69 +15,66 @@ import AVFoundation
 import OUDSTokensSemantic
 import SwiftUI
 
-// Control UIKit import to let macOS build the documentation
-
-// MARK: - List Item Video
-
 // The video element for list item component is tailored for iOS.
 // The result is not acceptable today (v2.2.0) with watchOS, tvOS, macOS and visionOS.
 // Thus this API is only available and compilable for iOS.
-//
 
-// A video element that can be used at the leading or trailing position of a list item
-// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
-//
-// ``OUDSListItemVideo`` displays a video from url (muted, autoplay)
-//
-// ## Sizes
-//
-// The ``Size`` enum defines the available sizes:
-// - **`.medium`**: The default size, suited for standard list items.
-// - **`.large`**: A larger variant for increased visual prominence.
-// - **`.extraLarge`**: The largest variant, typically used for profile-like displays.
-//
-// **Note:** When the video is embedded in a list item with small size
-// (via `SwiftUI/View/oudsListItemSize(_:)`), the icon is always rendered at its smallest size.
-//
-// ## Code samples
-//
-// ```swift
-//     // A video in pause mode and default(i.e. medium) size
-//     OUDSListItemVideo(url: URL(string: "<your_url_path>")
-//
-//     // A video in pause mode and large size
-//     OUDSListItemVideo(url: URL(string: "<your_url_path>", size: .large)
-//
-//     // A muted, autoplayed video in extra lage size
-//     OUDSListItemVideo(url: URL(string: "<your_url_path>", muted: true, autoplay: true, size: .large)
-//
-//     // Usage as leading element in a list item
-//     let video = OUDSListItemVideo(url: URL(string: "<your_url_path>", autoplay: true)
-//     OUDSStaticListItem(
-//         data: OUDSListItemData(label: "Information"),
-//         leading: .video(video)
-//     )
-//
-//     // Usage as trailing element in a list item
-//     let video = OUDSListItemVideo(url: URL(string: "<your_url_path>", autoplay: true)
-//     OUDSStaticListItem(
-//         data: OUDSListItemData(label: "Warning"),
-//         trailing: .video(video)
-//     )
-// ```
-//
-// - Since: 2.2.0
+/// A video element that can be used at the leading or trailing position of a list item
+/// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+///
+/// ``OUDSListItemVideo`` displays a video from url (muted, autoplay)
+///
+/// ## Sizes
+///
+/// The ``Size`` enum defines the available sizes:
+/// - **`.medium`**: The default size, suited for standard list items.
+/// - **`.large`**: A larger variant for increased visual prominence.
+/// - **`.extraLarge`**: The largest variant, typically used for profile-like displays.
+///
+/// **Note:** When the video is embedded in a list item with small size
+/// (via `SwiftUI/View/oudsListItemSize(_:)`), the icon is always rendered at its smallest size.
+///
+/// ## Code samples
+///
+/// ```swift
+///     // A video in pause mode and default(i.e. medium) size
+///     OUDSListItemVideo(url: URL(string: "<your_url_path>")
+///
+///     // A video in pause mode and large size
+///     OUDSListItemVideo(url: URL(string: "<your_url_path>", size: .large)
+///
+///     // A muted, autoplayed video in extra lage size
+///     OUDSListItemVideo(url: URL(string: "<your_url_path>", muted: true, autoplay: true, size: .large)
+///
+///     // Usage as leading element in a list item
+///     let video = OUDSListItemVideo(url: URL(string: "<your_url_path>", autoplay: true)
+///     OUDSStaticListItem(
+///         data: OUDSListItemData(label: "Information"),
+///         leading: .video(video)
+///     )
+///
+///     // Usage as trailing element in a list item
+///     let video = OUDSListItemVideo(url: URL(string: "<your_url_path>", autoplay: true)
+///     OUDSStaticListItem(
+///         data: OUDSListItemData(label: "Warning"),
+///         trailing: .video(video)
+///     )
+/// ```
+///
+/// - Since: 3.0.0
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 @available(visionOS, unavailable)
 public struct OUDSListItemVideo: View {
 
+    // MARK: - Size
+
     /// Defines the available sizes (i.e. height) for the video.
     /// When the video is embedded in a list item with `.small` size, this parameter is ignored
     /// and a smallest size is always used.
     ///
-    /// - Since: 2.2.0
+    /// - Since: 3.0.0
     @frozen public enum Size {
         /// The medium size, used as the default in standard list items.
         case medium
@@ -98,18 +95,18 @@ public struct OUDSListItemVideo: View {
     let tapToToggleMute: Bool
     let size: Size
 
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-
     @State private var player: AVPlayer
     @State private var isPlaying: Bool
     @State private var isMuted: Bool
     @State private var loopObserver: (any NSObjectProtocol)?
 
-    // MARK: Init
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
+
+    // MARK: Initializers
 
     /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
     ///
@@ -198,7 +195,7 @@ public struct OUDSListItemVideo: View {
                 refreshPlayer(with: newURL)
             }
         #endif
-        #else
+        #else // not os(iOS) && canImport(UIKit)
         EmptyView()
         #endif
     }
