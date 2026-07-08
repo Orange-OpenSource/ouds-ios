@@ -23,10 +23,10 @@ struct ListItemContent<Slot: View>: View {
 
     let data: OUDSListItemData
     let slot: Slot
-    let affordanceType: OUDSNavigationListItemAffordanceType?
+    let indicatorType: OUDSNavigationListItemIndicatorType?
     let leading: OUDSListItemLeading?
     let trailing: OUDSListItemTrailing?
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize
@@ -36,9 +36,9 @@ struct ListItemContent<Slot: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
-                if affordanceType == .previous {
-                    ListItemAffordanceContainer(type: affordanceType, interactionState: interactionState)
+            HStack(alignment: verticalAlignment, spacing: theme.listItem.spaceColumnGap) {
+                if indicatorType == .previous {
+                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                 }
 
                 if let leading {
@@ -51,25 +51,23 @@ struct ListItemContent<Slot: View>: View {
                     trailingContainer(trailing)
                 }
 
-                if affordanceType == .next || affordanceType == .external {
-                    ListItemAffordanceContainer(type: affordanceType, interactionState: interactionState)
+                if indicatorType == .next || indicatorType == .external {
+                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                 }
             }
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
-            .padding(.horizontal, theme.controlItem.spacePaddingInline)
+            // TODO: ouds/💠_control/list-item/size/min-width
+            .padding(.horizontal, theme.listItem.spacePaddingInline)
             .frame(maxWidth: .infinity, alignment: .topLeading)
-            .frame(minWidth: theme.controlItem.sizeMinWidth, minHeight: minHeight)
+            // TODO: ouds/💠_control/list-item/space/padding-inline
+            .frame(minWidth: theme.listItem.sizeMinWidth, minHeight: minHeight)
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
 
-            let helperTextContent: TextualContent? = if let helperText = data.helperText {
-                .raw(helperText)
-            } else {
-                nil
+            if let helperText = data.helperText {
+                ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)
             }
-
-            ListItemHelperTextContainer(text: helperTextContent, interactionState: interactionState)
         }
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
     }
@@ -78,8 +76,8 @@ struct ListItemContent<Slot: View>: View {
 
     @ViewBuilder
     private func leadingContainer(_ leading: OUDSListItemLeading) -> some View {
-        // Remove leading element if previous affordance is presented
-        if affordanceType != .previous {
+        // Remove leading element if previous indicator is presented
+        if indicatorType != .previous {
             ListItemLeadingContainer(leading: leading, interactionState: interactionState)
         }
     }
@@ -108,17 +106,21 @@ struct ListItemContent<Slot: View>: View {
         case .small:
             switch containersAlignment {
             case .top:
-                theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopCounterweight
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-counterweight-small
+                theme.listItem.spacePaddingBlockTopAlignmentTopCounterweightSmall
             case .center:
-                theme.controlItem.spacePaddingBlockDensityCompact
+                // TODO: ouds/💠_control/list-item/space/padding-block/small
+                theme.listItem.spacePaddingBlockSmall
             }
 
         case .standard:
             switch containersAlignment {
             case .top:
-                theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-counterweight-default
+                theme.listItem.spacePaddingBlockTopAlignmentTopCounterweightDefault
             case .center:
-                theme.controlItem.spacePaddingBlockDensityDefault
+                // TODO: ouds/💠_control/list-item/space/padding-block/default
+                theme.listItem.spacePaddingBlockDefault
             }
         }
     }
@@ -126,18 +128,22 @@ struct ListItemContent<Slot: View>: View {
     private var bottomPadding: Double {
         switch itemSize {
         case .small:
-            theme.controlItem.spacePaddingBlockDensityCompact
+            // TODO: ouds/💠_control/list-item/space/padding-block/small
+            theme.listItem.spacePaddingBlockSmall
         case .standard:
-            theme.controlItem.spacePaddingBlockDensityDefault
+            // TODO: ouds/💠_control/list-item/space/padding-block/default
+            theme.listItem.spacePaddingBlockDefault
         }
     }
 
     private var minHeight: SizeSemanticToken {
         switch itemSize {
         case .small:
-            theme.controlItem.sizeMinHeightCompact
+            // TODO: ouds/💠_control/list-item/size/min-height-small
+            theme.listItem.sizeMinHeightSmall
         case .standard:
-            theme.controlItem.sizeMinHeightDefault
+            // TODO: ouds/💠_control/list-item/size/min-height-defaull
+            theme.listItem.sizeMinHeightDefault
         }
     }
 }

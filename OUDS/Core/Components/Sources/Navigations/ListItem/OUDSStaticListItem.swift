@@ -39,21 +39,16 @@ import SwiftUI
 ///     OUDSStaticListItem(data: data)
 ///
 ///     // List item with leading icon and trailing badge
-///     let icon = OUDSListItemIcon(type: .info, size: .medium)
-///     let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
-///
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         leading: .icon(icon),
-///         trailing: .badge(badge)
+///         leading: .icon(.init(type: .info, size: .medium)),
+///         trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 ///     )
 ///
 ///     // List item with avatar as leading and text as trailing
-///     let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
-///
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label", description: "Description"),
-///         leading: .avatar(avatar),
+///         leading: .avatar(.init(type: .icon, size: .medium)),
 ///         trailing: .text(.label(Text("Info")))
 ///     )
 /// ```
@@ -74,11 +69,12 @@ import SwiftUI
 /// - `.text(.labelMuted(Text))`: A muted (secondary) label
 /// - `.text(.labelStrong(Text))`: An emphasized (bold) label
 /// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
-/// - `.badge(OUDSBadge)`: A badge with count or status
+/// - `.badge(.count(OUDSBadgeCount)`: A badge with count
+/// - `.badge(.standard(ODSBadgeStandard)`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
-/// - `.image(asset:)`:  A static image asset
-/// - `.flag(asset:)`: A country flag image
+/// - `.image(OUDSListItemImage)`:  A static image asset
+/// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.video(URL)`: A video thumbnail loaded from a URL
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
@@ -131,7 +127,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSStaticListItem<Slot: View>: View { // TODO: #265 - Use suitable short link for DSM documentation
+public struct OUDSStaticListItem<Slot: View>: View {
 
     // MARK: - Stored Properties
 
@@ -204,7 +200,7 @@ public struct OUDSStaticListItem<Slot: View>: View { // TODO: #265 - Use suitabl
     public var body: some View {
         ListItemContent(data: data,
                         slot: slot,
-                        affordanceType: nil,
+                        indicatorType: nil,
                         leading: leading,
                         trailing: trailing,
                         interactionState: isEnabled ? .enabled : .disabled)

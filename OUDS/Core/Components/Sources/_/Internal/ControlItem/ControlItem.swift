@@ -63,7 +63,7 @@ struct ControlItem: View {
     // MARK: Body
 
     var body: some View {
-        InteractionButton(isReadOnly: layoutData.isReadOnly) {
+        OUDSInteractionButton(isReadOnly: layoutData.isReadOnly) {
             #if os(iOS)
             VibrationsManager.success()
             #endif

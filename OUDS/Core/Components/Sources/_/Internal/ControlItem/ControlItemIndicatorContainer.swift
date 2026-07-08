@@ -22,7 +22,7 @@ struct ControlItemIndicatorContainer: View {
 
     // MARK: - Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
 
@@ -41,6 +41,6 @@ struct ControlItemIndicatorContainer: View {
                 CheckboxIndicator(interactionState: interactionState, indicatorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }
-        .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
+        .frame(minHeight: theme.listItem.sizeAssetSmall, maxHeight: theme.listItem.sizeMaxHeightAssetsContainer, alignment: .center)
     }
 }

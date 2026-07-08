@@ -14,35 +14,41 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A container to display the affordance according to its type and apply the right color based on the `InteractionState`.
-/// For RTL,  the next and previous affordance change there assets according to the `LayoutDirection`.
-struct ListItemAffordanceContainer: View {
+/// A container to display the indicator according to its type and apply the right color based on the `InteractionState`.
+/// For RTL, the next and previous indicators change their assets according to the `LayoutDirection`.
+struct ListItemIndicatorContainer: View {
 
     // MARK: - Properties
 
-    let type: OUDSNavigationListItemAffordanceType?
-    let interactionState: InteractionState
+    let type: OUDSNavigationListItemIndicatorType?
+    let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemSize) private var size
+    @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: - Body
 
     var body: some View {
-        if let assetName {
+        if let asset {
             HStack {
-                Image(decorative: assetName, bundle: theme.resourcesBundle)
-                    .renderingMode(.template)
-                    .resizable()
+                OUDSScaledIcon(image: OUDSImage(asset: asset), size: theme.listItem.sizeAssetSmall)
                     .foregroundColor(color)
-                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
             }
             .frame(minHeight: minHeight, alignment: .center)
         }
     }
 
     // MARK: - Helpers
+
+    private var asset: Image? {
+        if let assetName {
+            Image(assetName, bundle: theme.resourcesBundle)
+                .renderingMode(.template)
+        } else {
+            nil
+        }
+    }
 
     private var assetName: String? {
         switch type {
@@ -60,7 +66,7 @@ struct ListItemAffordanceContainer: View {
     private var color: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
-            theme.colors.actionEnabled
+            theme.link.colorChevronEnabled
         case .hover:
             theme.colors.actionHover
         case .pressed:
@@ -74,11 +80,13 @@ struct ListItemAffordanceContainer: View {
     }
 
     private var minHeight: CGFloat {
-        switch size {
-        case .small:
-            theme.controlItem.sizeAssetSmall
+        switch itemSize {
         case .standard:
-            theme.controlItem.sizeAssetMedium
+            // TODO: ouds/💠_control/list-item/size/asset/medium
+            theme.listItem.sizeAssetMedium
+        case .small:
+            // TODO: ouds/💠_control/list-item/size/asset/small
+            theme.listItem.sizeAssetSmall
         }
     }
 }

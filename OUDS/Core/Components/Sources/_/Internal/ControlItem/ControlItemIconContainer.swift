@@ -23,7 +23,7 @@ struct ControlItemIconContainer: View {
 
     // MARK: - Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let layoutData: ControlItemLabel.LayoutData
 
     @Environment(\.theme) private var theme
@@ -59,7 +59,7 @@ struct ControlItemIconContainer: View {
                     .renderingMode(.template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
-                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
+                    .frame(width: theme.listItem.sizeAssetSmall, height: theme.listItem.sizeAssetSmall)
                     .toFlip(layoutData.flipIcon)
             }
         }

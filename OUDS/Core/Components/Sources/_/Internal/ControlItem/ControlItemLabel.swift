@@ -22,7 +22,7 @@ struct ControlItemLabel: View {
 
     // MARK: - Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let layoutData: LayoutData
 
     @Environment(\.theme) private var theme
@@ -48,7 +48,7 @@ struct ControlItemLabel: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.controlItem.spaceColumnGap) {
+        HStack(alignment: .center, spacing: theme.listItem.spaceColumnGap) {
             texts()
         }
     }
@@ -56,7 +56,7 @@ struct ControlItemLabel: View {
     // MARK: - Layout Items
 
     private func texts() -> some View {
-        VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
+        VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
             Text(layoutData.label)
                 .labelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)

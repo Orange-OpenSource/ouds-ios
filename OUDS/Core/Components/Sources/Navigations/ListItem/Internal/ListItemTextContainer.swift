@@ -17,6 +17,13 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
+///
+/// The label area supports two modes via ``OUDSListItemData/Label``:
+/// - **`.text(String, isBold: Bool)`**: The label is rendered as a styled `Text` view.
+///   When `isBold` is `true`, a bold typography is applied.
+/// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
+///   as-is inside the label area. The provided `accessibilityLabel` is used in the combined
+///   Voice Over vocalization.
 struct ListItemTextContainer<Slot: View>: View {
 
     // MARK: - Properties
@@ -28,12 +35,12 @@ struct ListItemTextContainer<Slot: View>: View {
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContainersAlignment) private var alignment
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
-
             VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
 
                 if let overline = data.overline,
@@ -44,14 +51,22 @@ struct ListItemTextContainer<Slot: View>: View {
                         .labelModerateSmall(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
-                        .padding(.top, topPadding)
                 }
 
-                Group {
-                    if data.isBoldLabel {
-                        Text(data.label).labelStrongLarge(theme)
-                    } else {
-                        Text(data.label).labelDefaultLarge(theme)
+                HStack {
+                    switch data.labelContent {
+                    case let .text(labelText, isBold):
+                        if isBold {
+                            Text(labelText).labelStrongLarge(theme)
+                        } else {
+                            Text(labelText).labelDefaultLarge(theme)
+                        }
+                    case let .custom(customView, _):
+                        customView
+                            // TODO: (ouds/💠_control/list-item/space/padding-block/slot-text-container)
+                            .padding(.top, theme.listItem.spacePaddingBlockSlotTextContainer)
+                            // TODO: ouds/💠_control/list-item/space/padding-block/bottom-slot-text-container
+                            .padding(.bottom, theme.listItem.spacePaddingBlockBottomSlotListItemContainer)
                     }
                 }
                 .multilineTextAlignment(.leading)
@@ -80,22 +95,30 @@ struct ListItemTextContainer<Slot: View>: View {
 
             if !(slot is EmptyView) {
                 slot
+                    // TODO: (ouds/💠_control/list-item/space/padding-block/slot-text-container)
+                    .padding(.top, theme.listItem.spacePaddingBlockSlotTextContainer)
+                    // TODO: ouds/💠_control/list-item/space/padding-block/bottom-slot-text-container
+                    .padding(.bottom, theme.listItem.spacePaddingBlockBottomSlotListItemContainer)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .padding(.top, topPadding)
+        .frame(maxWidth: .infinity, minHeight: minHeight, alignment: .topLeading)
     }
 
     // MARK: - Helpers
 
     private var topPadding: CGFloat {
-        guard alignment == .top else {
-            return theme.spaces.fixedNone
-        }
-        switch itemSize {
-        case .small:
-            return theme.listItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
-        case .standard:
-            return theme.listItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+        if alignment == .top {
+            switch itemSize {
+            case .standard:
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-default
+                theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerDefault
+            case .small:
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-small
+                theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerSmall
+            }
+        } else {
+            theme.spaces.fixedNone
         }
     }
 
@@ -107,9 +130,26 @@ struct ListItemTextContainer<Slot: View>: View {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentMuted
     }
 
+    private var minHeight: CGFloat {
+        let rawSize = switch itemSize {
+        case .standard:
+            // TODO: ouds/💠_control/list-item/size/asset/medium
+            theme.listItem.sizeAssetMedium
+        case .small:
+            // TODO: ouds/💠_control/list-item/size/asset/small
+            theme.listItem.sizeAssetSmall
+        }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
+    }
+
     /// Forges the accessibility label for the list item text parts.
-    /// Prevents to user to have to make several swipes on the texts to vocalize them.
-    /// Groups only the overline, label, extra label and description (or only label and description in small size).
+    /// Prevents the user from having to make several swipes on the texts to vocalize them.
+    /// Groups the overline, label, extra label and description (or only label and description in small size).
+    ///
+    /// For text labels, the label string is included directly.
+    /// For custom view labels, the `accessibilityLabel` provided at init time is used,
+    /// ensuring Voice Over can vocalize the label even when it is an arbitrary view.
     private var accessibilityLabel: String {
         var parts: [String] = []
 
@@ -117,7 +157,12 @@ struct ListItemTextContainer<Slot: View>: View {
             parts.append(overline)
         }
 
-        parts.append(data.label)
+        // data.label returns the text for .text labels,
+        // or the accessibilityLabel for .custom labels.
+        let labelString = data.labelContent.stringValue
+        if !labelString.isEmpty {
+            parts.append(labelString)
+        }
 
         if itemSize != .small, let extraLabel = data.extraLabel {
             parts.append(extraLabel)

@@ -28,7 +28,7 @@ struct ListItemTrailingTexts: View {
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .trailing, spacing: theme.controlItem.spaceRowGap) {
+        VStack(alignment: .trailing, spacing: theme.listItem.spaceRowGap) {
             switch textType {
             case let .label(label):
                 label
@@ -79,9 +79,9 @@ struct ListItemTrailingTexts: View {
         case .top:
             switch itemSize {
             case .standard:
-                theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+                theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerDefault
             case .small:
-                theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
+                theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerSmall
             }
         }
     }

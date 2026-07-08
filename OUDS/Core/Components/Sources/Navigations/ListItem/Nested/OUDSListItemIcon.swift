@@ -15,8 +15,6 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: #265 - Replace with incoming icon component
-
 /// An icon element that can be used at the leading or trailing position of a list item
 /// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
@@ -40,7 +38,6 @@ import SwiftUI
 /// ## Sizes
 ///
 /// The ``Size`` enum defines the available sizes:
-/// - **`.small`**: The smallest size, corresponding to the theme's `controlItem.sizeAssetSmall` token.
 /// - **`.medium`**: The default size, corresponding to the theme's `controlItem.sizeAssetMedium` token.
 /// - **`.large`**: The largest size, corresponding to the theme's `controlItem.sizeAssetLarge` token.
 ///
@@ -56,9 +53,6 @@ import SwiftUI
 ///
 ///     // Warning icon with large size
 ///     OUDSListItemIcon(type: .warning, size: .large)
-///
-///     // Positive icon with small size
-///     OUDSListItemIcon(type: .positive, size: .small)
 ///
 ///     // Negative icon with medium size
 ///     OUDSListItemIcon(type: .negative, size: .medium)
@@ -78,7 +72,7 @@ import SwiftUI
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .icon(OUDSListItemIcon(type: .warning, size: .small))
+///         trailing: .icon(OUDSListItemIcon(type: .warning, size: .medium))
 ///     )
 /// ```
 ///
@@ -116,13 +110,10 @@ public struct OUDSListItemIcon: View {
 
     /// Defines the available sizes for the icon.
     /// When the icon is embedded in a list item with `.small` size, this parameter is ignored
-    /// and the smallest size is always used.
+    /// and a smallest size is always used.
     ///
     /// - Since: 2.2.0
     @frozen public enum Size {
-        /// The smallest icon size.
-        case small
-
         /// The default icon size.
         case medium
 
@@ -156,6 +147,8 @@ public struct OUDSListItemIcon: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: - Body
 
@@ -165,8 +158,8 @@ public struct OUDSListItemIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSIcon(assetName: "ic_alert_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                        OUDSIcon(assetName: "ic_alert_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        OUDSImage(assetName: "ic_alert_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        OUDSImage(assetName: "ic_alert_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
                     }
                 } else {
                     asset.foregroundColor(theme.colors.actionDisabled)
@@ -179,11 +172,11 @@ public struct OUDSListItemIcon: View {
                         .renderingMode(.template)
                         .foregroundColor(foregroundColor)
                     if badge {
-                        OUDSBadge(accessibilityLabel: "", status: .negative, size: badgeSize)
+                        OUDSBadgeStandard(accessibilityLabel: "", status: .negative, size: badgeSize)
                             .border(style: theme.borders.styleDefault,
                                     width: theme.borders.widthThin,
                                     radius: theme.borders.radiusPill,
-                                    color: theme.controlItem.colorBadgeSafetyArea)
+                                    color: theme.listItem.colorBgBadgeSafetyArea)
                     }
                 }
 
@@ -235,23 +228,32 @@ public struct OUDSListItemIcon: View {
         }
     }
 
-    private var assetSize: CGFloat {
-        switch size {
+    private var assetSize: SizeSemanticToken {
+        let rawSize = switch itemSize {
+        case .standard:
+            switch size {
+            case .medium:
+                theme.listItem.sizeAssetMedium
+            case .large:
+                theme.listItem.sizeAssetLarge
+            }
         case .small:
-            theme.controlItem.sizeAssetSmall
-        case .medium:
-            theme.controlItem.sizeAssetMedium
-        case .large:
-            theme.controlItem.sizeAssetLarge
+            theme.listItem.sizeAssetSmall
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
-    private var badgeSize: OUDSBadge.StandardSize {
-        switch size {
-        case .small, .medium:
+    private var badgeSize: OUDSBadgeStandard.Size {
+        if itemSize == .small {
             .extraSmall
-        case .large:
-            .small
+        } else {
+            switch size {
+            case .medium:
+                .extraSmall
+            case .large:
+                .small
+            }
         }
     }
 }

@@ -20,10 +20,11 @@ struct ListItemLeadingContainer: View {
     // MARK: - Properties
 
     let leading: OUDSListItemLeading
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: - Body
 
@@ -32,36 +33,36 @@ struct ListItemLeadingContainer: View {
             switch leading {
             case let .icon(icon):
                 icon
-            case let .image(asset: asset, description: description):
-                ListItemImage(asset: asset, description: description)
-            case let .flag(asset: asset):
-                ListItemFlag(asset: asset)
+            case let .image(image):
+                image
+            case let .flag(flag):
+                flag
                     .accessibilityHidden(true)
             case let .avatar(avatar):
                 avatar
                     .accessibilityHidden(true)
             #if os(iOS)
-            case let .video(url, autoplay, muted, tapToTogglePlay, tapToToggleMute):
-                ListItemVideo(url: url,
-                              autoplay: autoplay,
-                              muted: muted,
-                              tapToTogglePlay: tapToTogglePlay,
-                              tapToToggleMute: tapToToggleMute)
+            case let .video(video):
+                video
             #endif
             }
         }
         .disabled(interactionState == .disabled)
-        .frame(minHeight: assetSize, alignment: .center)
+        .frame(minHeight: minHeight, alignment: .center)
     }
 
-    // MARK: - Size
+    // MARK: - Size helper
 
-    private var assetSize: CGFloat {
-        switch itemSize {
+    private var minHeight: CGFloat {
+        let rawSize = switch itemSize {
         case .standard:
-            theme.controlItem.sizeAssetMedium
+            // TODO: ouds/💠_control/list-item/size/asset/medium
+            theme.listItem.sizeAssetMedium
         case .small:
-            theme.controlItem.sizeAssetSmall
+            // TODO: ouds/💠_control/list-item/size/asset/small
+            theme.listItem.sizeAssetSmall
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 }

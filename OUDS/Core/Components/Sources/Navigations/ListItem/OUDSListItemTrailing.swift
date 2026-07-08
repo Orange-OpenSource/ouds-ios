@@ -22,13 +22,13 @@ import SwiftUI
 /// ## Available options
 ///
 /// - `text(_:)`: A textual element with various styles (see ``TextType``).
-/// - `badge(_:)`: A badge component (see ``OUDSBadge``).
+/// - `badge(_:)`: A badge component (see ``OUDSBadgeStandard`` or ``OUDSBadgeCount``).
 /// - `tag(_:)`: A tag component (see ``OUDSTag``).
 /// - `icon(_:)`: A status or custom icon (see ``OUDSListItemIcon``).
-/// - `image(asset:)`: A static image asset.
-/// - `flag(asset:)`: A country flag image.
-/// - `video(_:autoplay:muted:tapToTogglePlay:tapToToggleMute:)`: A video loaded from a URL **(iOS only)**.
-/// - `avatar(_:)`: An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
+/// - `image(_:)`: A static image asset (see ``OUDSListItemImage``).
+/// - `flag(_:)`: A country flag image (see ``OUDSListItemFlag``).
+/// - `video(_:)`: A video loaded from a URL **(iOS only)** (see ``OUDSListItemVideo``).
+/// - `avatar(_:)`:  An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
 ///
 /// ## Code samples
 ///
@@ -51,11 +51,10 @@ import SwiftUI
 ///         trailing: .text(.labelAndExtraLabel(Text("Label"), Text("Extra")))
 ///     )
 ///
-///     // Trailing with a badge
-///     let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
+///     // Trailing with a badge according to type
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Notifications"),
-///         trailing: .badge(badge)
+///         trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 ///     )
 ///
 ///     // Trailing with a tag
@@ -73,21 +72,23 @@ import SwiftUI
 ///     )
 ///
 ///     // Trailing with an image
+///     let image = OUDSListItemImage(asset: Image("il_placeholder"), size: .meidum)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         trailing: .image(asset: Image("il_placeholder"))
+///         trailing: .image(image)
 ///     )
 ///
 ///     // Trailing with a country flag
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "France"),
-///         trailing: .flag(asset: Image("il_flag_fr"))
+///         trailing: .flag(.init(asset: Image("il_flag_fr"), size: .medium))
 ///     )
 ///
 ///     // Trailing with a video thumbnail
+///     let video = OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!, size: .meidum)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Watch"),
-///         trailing: .video(URL(string: "https://example.com/video.mp4")!)
+///         trailing: .video(video)
 ///     )
 ///
 ///     // Trailing with an avatar
@@ -141,10 +142,21 @@ import SwiftUI
     /// and `.labelAndExtraLabel`.
     case text(TextType)
 
+    /// The type of badge displayed.
+    ///
+    /// - Since: 2.2.0
+    @frozen public enum BadgeType {
+        /// A standard badge
+        case standard(OUDSBadgeStandard)
+
+        /// A badge with count
+        case count(OUDSBadgeCount)
+    }
+
     /// A badge component providing status or count information.
     ///
-    /// See ``OUDSBadge`` for available configurations.
-    case badge(OUDSBadge)
+    /// See ``OUDSBadgeStandard``  or ``OUDSBadgeCount``for available configurations.
+    case badge(BadgeType)
 
     /// A tag component providing categorization or status information.
     ///
@@ -164,39 +176,34 @@ import SwiftUI
     ///
     /// ```swift
     ///     // Decorative image
-    ///     .image(asset: Image(decorative: "il_placeholder"))
+    ///     .image(.init(asset: Image(decorative: "il_placeholder")))
     ///
     ///     // Not decorative image
-    ///     .image(asset: Image("meaningful_image"), description: "A nice landscape")
+    ///     .image(.init(asset: Image("meaningful_image"), description: "A nice landscape"))
     /// ```
-    case image(asset: Image, description: String? = nil)
+    case image(OUDSListItemImage)
 
     /// A country flag image.
-    case flag(asset: Image)
+    case flag(OUDSListItemFlag)
 
     /// A video loaded from the given URL.
     ///
-    /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
+    /// The video is displayed as-is. Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``
+    /// to apply rounded corners.
     ///
-    /// - Parameters:
-    ///   - url: The URL of the video (local `file://` or remote `https://` HLS / MP4).
-    ///   - autoplay: Whether the video starts playing automatically when the item appears. Defaults to `false`.
-    ///   - muted: Whether the video is muted. Defaults to `true`.
-    ///   - tapToTogglePlay: Whether a tap on the video toggles play / pause. Defaults to `false`.
-    ///   - tapToToggleMute: Whether a tap on the video toggles mute / unmute. Defaults to `false`.
-    ///
-    /// When both `tapToTogglePlay` and `tapToToggleMute` are `true`, a single tap performs both actions.
-    /// When `autoplay` is `false` and `tapToTogglePlay` is `false`, the first frame is shown as a static thumbnail.
+    /// ```swift
+    ///     .video(.init(url: <your_video_url>))
+    /// ```
     @available(macOS, unavailable)
     @available(tvOS, unavailable)
     @available(watchOS, unavailable)
     @available(visionOS, unavailable)
-    case video(URL, autoplay: Bool = false, muted: Bool = true, tapToTogglePlay: Bool = false, tapToToggleMute: Bool = false)
+    case video(OUDSListItemVideo)
 
     /// An avatar with icon, initials, or image.
     ///
     /// See ``OUDSListItemAvatar`` for available types (`.icon`, `.image`, `.initials`)
     /// and sizes (`.medium`, `.large`, `.extraLarge`).
-    /// An optional ``OUDSBadge`` can be attached to the avatar.
+    /// An optional Badge can be attached to the avatar.
     case avatar(OUDSListItemAvatar)
 }

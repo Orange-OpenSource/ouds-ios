@@ -26,7 +26,7 @@ struct ControlItemContent: View {
 
     // MARK: Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
 
@@ -37,7 +37,7 @@ struct ControlItemContent: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
+            HStack(alignment: verticalAlignment, spacing: theme.listItem.spaceColumnGap) {
                 switch layoutData.orientation {
                 case .default:
                     indicatorContainer()
@@ -49,8 +49,8 @@ struct ControlItemContent: View {
                     indicatorContainer()
                 }
             }
-            .padding(.vertical, theme.controlItem.spacePaddingBlockDefault)
-            .padding(.horizontal, theme.controlItem.spacePaddingInline)
+            .padding(.vertical, theme.listItem.spacePaddingBlockDefault)
+            .padding(.horizontal, theme.listItem.spacePaddingInline)
             .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
 
@@ -58,13 +58,13 @@ struct ControlItemContent: View {
                 textView(for: errorText)
                     .labelDefaultMedium(theme)
                     .foregroundColor(theme.colors.contentStatusNegative)
-                    .padding(.top, theme.controlItem.spacePaddingBlockTopHelperText)
-                    .padding(.horizontal, theme.controlItem.spacePaddingInline)
+                    .padding(.top, theme.listItem.spacePaddingBlockTopHelperText)
+                    .padding(.horizontal, theme.listItem.spacePaddingInline)
             }
         }
-        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeightDefault, alignment: .center)
+        .frame(minWidth: theme.listItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.listItem.sizeMinHeightDefault, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
-        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
+        .clipShape(RoundedRectangle(cornerRadius: theme.listItem.borderRadiusDefault))
     }
 
     // MARK: Containers
@@ -76,7 +76,7 @@ struct ControlItemContent: View {
     private func labelContainer() -> some View {
         ControlItemLabel(interactionState: interactionState, layoutData: layoutData)
             .readSize { size in
-                verticalAlignment = size.height > theme.controlItem.sizeMaxHeightAssetsContainer ? .top : .center
+                verticalAlignment = size.height > theme.listItem.sizeMaxHeightAssetsContainer ? .top : .center
             }
     }
 
@@ -96,6 +96,6 @@ struct ControlItemContent: View {
     }
 
     private var maxWidth: CGFloat {
-        layoutData.constrainedMaxWidth ? theme.controlItem.sizeMaxWidth : .infinity
+        layoutData.constrainedMaxWidth ? theme.listItem.sizeMaxWidth : .infinity
     }
 }

@@ -21,7 +21,7 @@ struct ListItemHelperTextContainer: View {
     // MARK: - Properties
 
     let text: TextualContent?
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
 
@@ -33,8 +33,8 @@ struct ListItemHelperTextContainer: View {
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
-                .padding(.top, theme.controlItem.spacePaddingBlockTopHelperText)
-                .padding(.horizontal, theme.controlItem.spacePaddingInline)
+                .padding(.top, theme.listItem.spacePaddingBlockTopHelperText)
+                .padding(.horizontal, theme.listItem.spacePaddingInline)
         }
     }
 
