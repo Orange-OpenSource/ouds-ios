@@ -27,7 +27,7 @@ import SwiftUI
 /// - `icon(_:)`: A status or custom icon (see ``OUDSListItemIcon``).
 /// - `image(_:)`: A static image asset (see ``OUDSListItemImage``).
 /// - `flag(_:)`: A country flag image (see ``OUDSListItemFlag``).
-/// - `video(_:)`: A video loaded from a URL **(iOS only)** (see ``OUDSListItemVideo``).
+/// - `video(_:)`: A video loaded from a URL **(iOS only)** (see `OUDSListItemVideo`).
 /// - `avatar(_:)`:  An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
 ///
 /// ## Code samples

@@ -22,7 +22,7 @@ import SwiftUI
 /// A video element that can be used at the leading or trailing position of a list item
 /// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
-/// ``OUDSListItemVideo`` displays a video from url (muted, autoplay)
+/// `OUDSListItemVideo` displays a video from url (muted, autoplay)
 ///
 /// ## Sizes
 ///
