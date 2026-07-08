@@ -107,7 +107,7 @@ public struct OUDSListItemFlag: View {
 
     public var body: some View {
         HStack {
-            OUDSScaledIcon(image: OUDSImage(asset: asset), size: theme.listItem.sizeFlagHeight)
+            OUDSScaledIcon(image: OUDSImage(asset: asset, renderingMode: .original), size: theme.listItem.sizeFlagHeight)
                 .opacity(opacity)
         }
         .frame(minWidth: frameHeight, alignment: .center)
