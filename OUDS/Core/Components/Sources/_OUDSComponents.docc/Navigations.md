@@ -89,12 +89,11 @@ OUDSStaticListItem(data: OUDSListItemData(
 
 // List item with a leading icon and a trailing badge
 let icon = OUDSListItemIcon(type: .info, size: .medium)
-let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Notifications"),
     leading: .icon(icon),
-    trailing: .badge(badge)
+    trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 )
 ```
 
@@ -128,7 +127,7 @@ OUDSNavigationListItem(
 // External navigation
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Open website"),
-    affordanceType: .external
+    indicatorType: .external
 ) {
     openURL(url)
 }
@@ -136,7 +135,7 @@ OUDSNavigationListItem(
 // Backward navigation
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Go back"),
-    affordanceType: .previous
+    indicatorType: .previous
 ) {
     // Navigate back
 }
@@ -147,7 +146,7 @@ let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Profile", description: "View your profile"),
     leading: .avatar(avatar),
-    trailing: .text(.labelMuted(Text("Details")))
+    trailing: .text(.labelMuted("Details"))
 ) {
     // Navigate to profile
 }

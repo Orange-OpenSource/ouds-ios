@@ -499,11 +499,11 @@ OUDSLink(text: "Text", indicator: .external, isFullWidth: true, size: .default) 
 
 ### Navigations — List Items
 
-> Availability: iOS 15+, macOS 13+, visionOS 1+, watchOS 11+, tvOS 16+. Since: 2.2.0.
+> Availability: iOS 15+, macOS 13+, visionOS 1+, watchOS 11+, tvOS 16+. Since: 3.0.0.
 
 Two components share the same data model and slot/leading/trailing API:
 - **`OUDSStaticListItem`** — non-interactive, display-only row.
-- **`OUDSNavigationListItem`** — tappable row with a navigation affordance (chevron or external-link icon).
+- **`OUDSNavigationListItem`** — tappable row with a navigation indicator (chevron or external-link icon).
 
 #### `OUDSListItemData` — textual content model
 
@@ -531,17 +531,17 @@ OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Label", description: "Description"),
     leading: .icon(OUDSListItemIcon(type: .info, size: .medium)),
-    trailing: .badge(OUDSBadge(count: 3, accessibilityLabel: "3 new", status: .negative, size: .medium))
+    trailing: .badge(.count(.init(3, accessibilityLabel: "3 new", status: .negative, size: .medium)))
 )
 
 // With a custom slot view (rendered between text block and helperText)
 OUDSStaticListItem(data: OUDSListItemData(label: "Label"), slot: myCustomView)
 ```
 
-#### `OUDSNavigationListItem` — tappable with affordance
+#### `OUDSNavigationListItem` — tappable with indicator
 
 ```swift
-// Default affordance: .next (forward chevron at trailing edge)
+// Default indicator: .next (forward chevron at trailing edge)
 OUDSNavigationListItem(data: OUDSListItemData(label: "Next screen")) {
     // navigate forward
 }
@@ -549,28 +549,28 @@ OUDSNavigationListItem(data: OUDSListItemData(label: "Next screen")) {
 // .external: external-link icon at trailing edge (use for URLs, out-of-app content)
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Open website"),
-    affordanceType: .external
+    indicatorType: .external
 ) { openURL(url) }
 
 // .previous: backward chevron at leading edge — leading: parameter is silently ignored
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Go back"),
-    affordanceType: .previous
+    indicatorType: .previous
 ) { dismiss() }
 
 // Full example with leading avatar, trailing muted text, custom slot
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Profile", description: "View your profile"),
     slot: mySlotView,
-    affordanceType: .next,
+    indicatorType: .next,
     leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
-    trailing: .text(.labelMuted(Text("Details")))
+    trailing: .text(.labelMuted("Details"))
 ) { navigateToProfile() }
 ```
 
 #### `OUDSNavigationListItemIndicatorType`
 
-| Case | Affordance position | Use for | Leading element |
+| Case | Indicator position | Use for | Leading element |
 |------|--------------------|---------|----|
 | `.next` (default) | Trailing chevron | In-app forward navigation | Visible |
 | `.previous` | Leading chevron | In-app back navigation | **Always hidden** |
@@ -581,27 +581,28 @@ OUDSNavigationListItem(
 #### Leading slot — `OUDSListItemLeading`
 
 ```swift
-.leading = .icon(OUDSListItemIcon(type: .info, size: .medium))    // status/custom icon
-.leading = .image(asset: Image("il_placeholder"))                  // static image
-.leading = .flag(asset: Image("il_flag_fr"))                       // country flag
-.leading = .video(URL(string: "https://example.com/video.mp4")!)   // video thumbnail
-.leading = .avatar(OUDSListItemAvatar(type: .icon, size: .medium)) // circular avatar
+leading: .icon(OUDSListItemIcon(type: .info, size: .medium))           // status/custom icon
+leading: .image(OUDSListItemImage(asset: Image("il_placeholder")))      // static image
+leading: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))            // country flag
+leading: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // video (iOS only)
+leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))        // circular avatar
 ```
 
 #### Trailing slot — `OUDSListItemTrailing`
 
 ```swift
-.trailing = .text(.label(Text("Info")))
-.trailing = .text(.labelMuted(Text("Secondary")))       // muted/secondary color
-.trailing = .text(.labelStrong(Text("Strong")))         // bold/emphasized
-.trailing = .text(.labelAndExtraLabel(Text("Label"), Text("Extra"))) // stacked; extra hidden in .small
-.trailing = .badge(OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium))
-.trailing = .tag(OUDSTag(label: "New"))
-.trailing = .icon(OUDSListItemIcon(type: .warning, size: .small))
-.trailing = .image(asset: Image("il_placeholder"))
-.trailing = .flag(asset: Image("il_flag_fr"))
-.trailing = .video(URL(string: "https://example.com/video.mp4")!)
-.trailing = .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
+trailing: .text(.label("Info"))
+trailing: .text(.labelMuted("Secondary"))              // muted/secondary color
+trailing: .text(.labelStrong("Strong"))                // bold/emphasized
+trailing: .text(.labelAndExtraLabel("Label", "Extra")) // stacked; extra hidden in .small
+trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
+trailing: .badge(.standard(.init(accessibilityLabel: "Alert", status: .negative, size: .small)))
+trailing: .tag(OUDSTag(label: "New"))
+trailing: .icon(OUDSListItemIcon(type: .warning, size: .medium))
+trailing: .image(OUDSListItemImage(asset: Image("il_placeholder")))
+trailing: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))
+trailing: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // iOS only
+trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
 ```
 
 #### `OUDSListItemAvatar` — circular avatar
@@ -611,7 +612,9 @@ OUDSListItemAvatar(type: .icon, size: .medium)                   // predefined p
 OUDSListItemAvatar(type: .image(Image("avatar")), size: .large)  // custom image
 OUDSListItemAvatar(type: .initials("AB"), size: .medium)         // up to 2-char initials
 OUDSListItemAvatar(type: .icon, size: .large,
-                   badge: OUDSBadge(accessibilityLabel: "New", status: .negative, size: .small))
+                   badgeType: .standard(.negative, accessibilityLabel: "New"))
+OUDSListItemAvatar(type: .initials("JD"), size: .large,
+                   badgeType: .icon(.positive, accessibilityLabel: "Online"))
 ```
 
 > Badge size recommendations: `.medium` avatar → `.extraSmall` badge · `.large` → `.small` badge · `.extraLarge` → `.medium` badge.
@@ -620,13 +623,13 @@ OUDSListItemAvatar(type: .icon, size: .large,
 #### `OUDSListItemIcon` — status icon
 
 ```swift
-OUDSListItemIcon(type: .neutral(asset: Image("ic_heart")))          // custom image, default color
+OUDSListItemIcon(type: .neutral(asset: Image("ic_heart")))           // custom image, default color
 OUDSListItemIcon(type: .neutral(asset: Image("ic_bell"), badge: true)) // with negative dot badge
 OUDSListItemIcon(type: .positive)    // predefined checkmark, positive (green)
 OUDSListItemIcon(type: .info)        // predefined info icon, informational (blue)
 OUDSListItemIcon(type: .warning)     // predefined warning icon, warning color, two-layer rendering
 OUDSListItemIcon(type: .negative)    // predefined alert icon, negative (red)
-OUDSListItemIcon(type: .info, size: .small)   // .small | .medium (default) | .large
+OUDSListItemIcon(type: .info, size: .large)   // .medium (default) | .large
 ```
 
 > In `.small` list item size, the icon size parameter is ignored — smallest variant is always used.
@@ -642,13 +645,18 @@ Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`
 // Vertical alignment of leading/trailing/text containers: .center (default) or .top
 .oudsListItemContainerAlignment(.top)
 
-// Content style
-.oudsListItemStyle(.outlined)                              // visible border around each item
-.oudsListItemStyle(.standard(divider: true, background: false))  // default
-.oudsListItemStyle(.standard(divider: false, background: true))  // background fill, no divider
+// General-purpose style modifier — .card or .standard
+.oudsListItemStyle(.card(.outlined))                                        // visible border around each item
+.oudsListItemStyle(.card(.background(withDivider: true)))                   // card with background and divider
+.oudsListItemStyle(.standard(.background(withDivider: true)))               // background always visible
+.oudsListItemStyle(.standard(.backgroundOnInteractionOnly(withDivider: true))) // default
 
-// Card style shorthand (hasDivider: false, hasBackground: true by default)
-.oudsListCardStyle(hasDivider: false, hasBackground: true)
+// Convenience: card style only — defaults to .background(withDivider: true)
+.oudsListCardStyle(.outlined)
+.oudsListCardStyle(.background(withDivider: false))
+
+// Convenience: standard style only — defaults to .backgroundOnInteractionOnly(withDivider: true)
+.oudsListItemStandardStyle(.background(withDivider: true))
 
 // Rounded corners on image/video media elements (default: false)
 .oudsListItemRoundedMedia(true)
@@ -670,11 +678,11 @@ VStack {
 
 1. **`OUDSStaticListItem`** has no tap interaction — `isEnabled` only affects visual opacity.
 2. **`OUDSNavigationListItem`** manages `.enabled`, `.hover`, `.pressed`, `.disabled` states automatically.
-3. **`.previous` affordance** — the `leading:` parameter is **silently hidden**; do not pass a leading element expecting it to appear.
+3. **`.previous` indicator** — the `leading:` parameter is **silently hidden**; do not pass a leading element expecting it to appear.
 4. **`.small` size** — hides `overline`, `extraLabel`, and trailing `labelAndExtraLabel`'s extra label; forces avatar/icon/badge to their smallest variant.
 5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
 6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
-7. **`oudsListCardStyle(hasDivider:hasBackground:)`** — shorthand for applying `.standard(divider:hasDivider, background:hasBackground)` (defaults: divider `false`, background `true`).
+7. **`oudsListCardStyle(_:)`** — shorthand for `.card` style; parameter is `OUDSListItemContentStyle.Card` (default: `.background(withDivider: true)`). **`oudsListItemStandardStyle(_:)`** — shorthand for `.standard` style (default: `.backgroundOnInteractionOnly(withDivider: true)`).
 
 ---
 
