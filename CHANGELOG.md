@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+-  GitHub Actions `github/codeql-action/upload-sarif` from v4.36.2 to v4.37.0 for `scorecard` workflow
 - GitHub Actions `checkout` from v6.0.2 to v6.0.3 for all workflows
 
 ### Deprecated
