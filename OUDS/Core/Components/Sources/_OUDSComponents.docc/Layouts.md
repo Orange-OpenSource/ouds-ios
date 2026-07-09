@@ -76,7 +76,7 @@ Some components like ``OUDSButton`` or ``OUDSLink`` can be used on ``OUDSColored
 
 To do that, some steps must be followed in your component implementation:
 - Rise the flag to allow debugging (e.g. i #DEBUG mode)
-- Get the environement variable defined by the colored surface containing the applied color
+- Get the environment variable defined by the colored surface containing the applied color
 - In the component implementation, add a line of code comparing the color to test and that surface
 - Then keep an eye on your logs ; warnings will be added there if WCAG 2.1 3:1, 4.5:1 or 7:1 ratios are not reached, depending to the methods you call
  

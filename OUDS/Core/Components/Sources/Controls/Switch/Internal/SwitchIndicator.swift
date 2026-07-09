@@ -18,12 +18,12 @@ import SwiftUI
 // MARK: - Switch Indicator
 
 /// The indicator of the switch.
-/// Its content depends mainly to the ``InteractionState`` and from flags also.
+/// Its content depends mainly to the ``OUDSButtonInteractionState`` and from flags also.
 struct SwitchIndicator: View {
 
     // MARK: Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     @Binding var isOn: Bool
 
     @State private var offset = CGSize.zero
@@ -70,7 +70,7 @@ struct SwitchIndicator: View {
 
     // MARK: Private Helpers
 
-    private var interactionStateComputed: InteractionState {
+    private var interactionStateComputed: OUDSButtonInteractionState {
         if isDragging {
             return .pressed
         }
@@ -121,7 +121,7 @@ private struct Cursor: View {
 
     // MARK: Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let isOn: Bool
 
     @Environment(\.theme) private var theme

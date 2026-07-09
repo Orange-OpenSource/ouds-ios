@@ -135,7 +135,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     @frozen public enum NavigationType {
 
         /// The back button that can be added manualy if need. According to our design system, in could be the case for a sheet.
-        /// In a navigation, by default the system's one is displayed (without text). If prefered, this one can be added but the system one must be hidden
+        /// In a navigation, by default the system's one is displayed (without text). If preferred, this one can be added but the system one must be hidden
         /// using `View.navigationBarBackButtonHidden()`
         ///
         /// **Warning: if OS is iOS 26+ / Liquid Glass, the label will not appear**

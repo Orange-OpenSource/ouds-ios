@@ -49,7 +49,7 @@ struct TrailingActionContainer: View {
                 }
             }
         case .loading:
-            trailingButton(for: .init(icon: Image(decorative: "ic_heart"), actionHint: "", action: {}))
+            trailingButton(for: .init(image: OUDSImage(asset: Image(decorative: "ic_heart")), actionHint: "", action: {}))
                 .accessibilityHidden(true)
         }
     }
@@ -68,12 +68,18 @@ struct TrailingActionContainer: View {
     }
 
     private func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
-        OUDSButton(icon: trailingAction.icon,
-                   accessibilityLabel: trailingAction.actionHint,
-                   flipIcon: trailingAction.flipIcon,
-                   appearance: .minimal,
-                   style: status == .loading ? .loading : .default,
-                   action: trailingAction.action)
+        precondition(trailingAction.icon.asset != nil, "OUDSTextInput.TrailingAction.icon must be created with an asset Image")
+        // Inject the actionHint as accessibilityLabel into a new OUDSImage for OUDSButton icon-only
+        // swiftlint:disable:next force_unwrapping
+        let imageWithA11y = OUDSImage(asset: trailingAction.icon.asset!,
+                                      flipped: trailingAction.icon.flipped,
+                                      accessibilityLabel: trailingAction.actionHint,
+                                      renderingMode: trailingAction.icon.renderingMode)
+
+        return OUDSButton(image: imageWithA11y,
+                          appearance: .minimal,
+                          style: status == .loading ? .loading : .default,
+                          action: trailingAction.action)
     }
 }
 #endif

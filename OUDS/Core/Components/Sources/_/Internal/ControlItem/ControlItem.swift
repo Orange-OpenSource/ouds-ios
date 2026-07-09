@@ -15,7 +15,7 @@ import SwiftUI
 
 /// Modelizes the layout for a checkbox, radio button or switch with additional components like labels, icons and dividers.
 /// This `View` is not exposed publicly as it is not possible to define such variable / customizable component on *Figma* side.
-/// This internal component displays the indicator and defines the layout as a SwiftUI button through the internal `InteractionButton`.
+/// This internal component displays the indicator and defines the layout as a SwiftUI button through the `OUDSInteractionButton`.
 struct ControlItem: View {
 
     // MARK: Stored Properties
@@ -63,7 +63,7 @@ struct ControlItem: View {
     // MARK: Body
 
     var body: some View {
-        InteractionButton(isReadOnly: layoutData.isReadOnly) {
+        OUDSInteractionButton(isReadOnly: layoutData.isReadOnly) {
             #if os(iOS)
             VibrationsManager.success()
             #endif

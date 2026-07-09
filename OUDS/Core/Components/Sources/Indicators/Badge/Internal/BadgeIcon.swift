@@ -20,6 +20,7 @@ struct BadgeIcon: View {
     // MARK: Properties
 
     let configuration: BadgeIconConfiguration
+
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
 
@@ -31,16 +32,16 @@ struct BadgeIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSIcon(assetName: "ic_badge_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
-                        OUDSIcon(assetName: "ic_badge_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        OUDSImage(assetName: "ic_badge_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        OUDSImage(assetName: "ic_badge_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
                     }
                 } else {
-                    OUDSIcon(assetName: "ic_badge_warning_external_shape", color: theme.colors.actionDisabled)
+                    OUDSImage(assetName: "ic_badge_warning_external_shape", color: theme.colors.actionDisabled)
                 }
             default:
                 icon
                     .resizable()
-                    .renderingMode(.template)
+                    .renderingMode(renderingMode)
                     .toFlip(flipped)
             }
         }
@@ -70,7 +71,7 @@ struct BadgeIcon: View {
 
     private var icon: Image {
         switch configuration.status {
-        case let .neutral(icon, _), let .accent(icon, _):
+        case let .neutral(icon, _, _), let .accent(icon, _, _):
             icon
         case .warning:
             Image(decorative: "ic_badge_warning_external_shape", bundle: theme.resourcesBundle)
@@ -85,10 +86,19 @@ struct BadgeIcon: View {
 
     private var flipped: Bool {
         switch configuration.status {
-        case let .neutral(_, flipped), let .accent(_, flipped):
+        case let .neutral(_, flipped, _), let .accent(_, flipped, _):
             flipped
         default:
             false
+        }
+    }
+
+    private var renderingMode: Image.TemplateRenderingMode {
+        switch configuration.status {
+        case let .neutral(_, _, renderingMode), let .accent(_, _, renderingMode):
+            renderingMode
+        default:
+            .template
         }
     }
 }

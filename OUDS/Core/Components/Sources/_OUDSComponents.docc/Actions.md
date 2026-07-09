@@ -34,7 +34,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
 
 ```swift
     // Icon only with default appearance
-    OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
+    OUDSButton(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 
     // Text only with negative appearance
     OUDSButton(text: "Delete", appearance: .negative) {}

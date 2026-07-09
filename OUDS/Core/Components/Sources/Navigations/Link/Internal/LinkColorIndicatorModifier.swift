@@ -21,7 +21,7 @@ struct LinkColorIndicatorModifier: ViewModifier {
 
     // MARK: - Proeprties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsUseMonochrome) private var useMonochrome

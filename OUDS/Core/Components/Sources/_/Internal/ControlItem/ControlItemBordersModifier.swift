@@ -24,7 +24,7 @@ struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let layoutData: ControlItemLabel.LayoutData
     let isOn: Bool
 

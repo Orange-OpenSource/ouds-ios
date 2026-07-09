@@ -17,13 +17,13 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The indicator of the checkbox.
-/// Its content depends to the ``InteractionState`` and the ``OUDSCheckboxIndicatorState`` also.
+/// Its content depends to the ``OUDSButtonInteractionState`` and the ``OUDSCheckboxIndicatorState`` also.
 /// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct CheckboxIndicator: View {
 
     // MARK: - Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 

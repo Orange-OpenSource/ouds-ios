@@ -126,7 +126,7 @@ public struct OUDSSwitch: View {
     // MARK: Body
 
     public var body: some View {
-        InteractionButton(isReadOnly: isReadOnly) {
+        OUDSInteractionButton(isReadOnly: isReadOnly) {
             if reduceMotion {
                 $isOn.wrappedValue.toggle()
             } else {

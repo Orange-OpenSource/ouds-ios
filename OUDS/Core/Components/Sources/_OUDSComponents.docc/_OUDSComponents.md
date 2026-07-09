@@ -149,13 +149,29 @@ someView.accentColor(theme.colors.bgPrimary)
 someView.tint(theme.colors.bgPrimary)
 ```
 
+For `Shape` types, a similar helper fills the shape with a token-based color.
+The correct light or dark color variant is resolved automatically from the environment color scheme.
+
+```swift
+@Environment(\.theme) private var theme
+
+// Fill a shape with a token-based color
+Circle()
+    .fill(theme.colors.actionEnabled)
+
+// Fill with a custom fill style
+RoundedRectangle(cornerRadius: 8)
+    .fill(theme.colors.bgPrimary, style: FillStyle(eoFill: true))
+```
+
 ## Flip images according to layouts
 
 Images bring meanings, and are used in components. But sometimes, depending to your layouts (right to left (RTL) or left to right (LTR)), if the whole layout
 of your app changes, the images in use can loose meanings or have another one (except if they are asymetric).
 Even if some assets can be defined in a project with specific RTL/LTR variants, images can be loaded outside and in some case, in the end, must not be mirrored.
 
-If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want. The `flipIcon` flag available in components can be used.
+If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want.
+The `flipped` property of ``OUDSImage`` can be used when passing an icon to a component.
 
 ```swift
 // Get the layout direction in your View
@@ -164,10 +180,12 @@ If your application manages several languages with RTL and LTR, here is a simple
 // Because by default icons are not flipped, i.e. more LTR flavoured, use a simple comparison
 // (layoutDirection == .rightToLeft)
 
-// For example in a checkbox item
-OUDSCheckboxItem(...,
-                 flipIcon: (layoutDirection == .rightToLeft),
-                 )
+// For example in a checkbox item — wrap the asset in OUDSImage and set flipped:
+OUDSCheckboxItem("Label",
+                 isOn: $isOn,
+                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                  flipped: layoutDirection == .rightToLeft),
+                 isReversed: layoutDirection == .rightToLeft)
 ```
 
 ## Change font family according to locale or preferred language
@@ -207,3 +225,16 @@ private func registerFonts() {
     }
 }
 ```
+
+Then, for each weight variant you need, declare the PostScript name so OUDS can resolve the correct identifier from its font tokens:
+
+```swift
+registerFont(postScript: "WinkyRough-Regular_Light",   forCombination: PSFNMK("Winky Rough", Font.Weight.light))
+registerFont(postScript: "WinkyRough-Regular",         forCombination: PSFNMK("Winky Rough", Font.Weight.regular))
+registerFont(postScript: "WinkyRough-Regular_Medium",  forCombination: PSFNMK("Winky Rough", Font.Weight.medium))
+registerFont(postScript: "WinkyRough-Regular_SemiBold",forCombination: PSFNMK("Winky Rough", Font.Weight.semibold))
+registerFont(postScript: "WinkyRough-Regular_Bold",    forCombination: PSFNMK("Winky Rough", Font.Weight.bold))
+registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("Winky Rough", Font.Weight.black))
+```
+
+The full map is readable at any time via `kApplePostScriptFontNames`. Unregistered combinations fall back to the family name without spaces.

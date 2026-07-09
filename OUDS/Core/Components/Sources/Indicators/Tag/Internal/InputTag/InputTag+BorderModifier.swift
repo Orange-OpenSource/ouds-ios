@@ -19,7 +19,7 @@ struct InputTagBorderModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let state: InteractionState
+    let state: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
 

@@ -47,7 +47,7 @@ public struct OUDSLegacyTabBarModifier: ViewModifier {
         }
     }
 
-    /// Defines environement variable to precise the legacy tab bar must be forced
+    /// Defines environment variable to precise the legacy tab bar must be forced
     public func body(content: Content) -> some View {
         content
             .environment(\.forceOUDSLegacyTabBar, true)

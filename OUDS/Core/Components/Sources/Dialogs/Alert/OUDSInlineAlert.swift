@@ -31,8 +31,8 @@ import SwiftUI
 ///     OUDSInlineAlert(label: "Warning", status: .warning)
 ///
 ///     // Add a custom icon for accent and neutral status
-///     OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
-///     OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+///     OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
+///     OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_heart"))))
 /// ```
 ///
 /// ## Design documentation

@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
+
+### Added
+
+- Open API to use easily fixed and scaled icons, and interactions layers (Orange-OpenSource/ouds-ios#1569)
+- Skill to create local theme
+- Migration skill for AI agents
+- Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
+- View modifier to fill colors on `Shape`
+- Helper to register local fonts configurations for custom themes
+
+### Changed
+
+- Ruby Gem `fastlane` from v2.236.1 to v2.237.0
+- Ruby Gem `json` from v2.19.9 to v2.20.0
+- Swift Package `SwiftFormat` from v0.61.1 to v0.62.1
+- Swift Package `SwiftLintPlugins` from v0.63.3 to v0.65.0
+- GitHub Action `ruby/setup-ruby` from v1.313.0 to v1.316.0 for `build-and-test` GitHub Actions workflow
+- GitHub Actions `github/codeql-action/upload-sarif` from v4.36.2 to v4.37.0 for `scorecard` workflow
+- GitHub Actions `checkout` from v6.0.2 to v6.0.3 for all workflows
+
+### Deprecated
+
+- Components with several configuration parameters for images (Orange-OpenSource/ouds-ios#1511)
+
 ## [2.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.1.0...2.2.0) - 2026-06-18
 
 ### Added

@@ -19,8 +19,7 @@ struct LeadingIconContainer: View {
 
     // MARK: - Properties
 
-    let leadingIcon: Image?
-    let flip: Bool
+    let leadingIcon: OUDSImage?
     let status: OUDSTextInput.Status
 
     @Environment(\.theme) private var theme
@@ -28,13 +27,13 @@ struct LeadingIconContainer: View {
     // MARK: - Body
 
     var body: some View {
-        leadingIcon?
+        leadingIcon?.asset?
             .resizable()
-            .renderingMode(.template)
+            .renderingMode(leadingIcon?.renderingMode ?? .template)
             .aspectRatio(contentMode: .fit)
             .frame(height: theme.textInput.sizeLeadingIcon, alignment: .center)
             .foregroundColor(color)
-            .toFlip(flip)
+            .toFlip(leadingIcon?.flipped ?? false)
             .accessibilityHidden(true)
     }
 

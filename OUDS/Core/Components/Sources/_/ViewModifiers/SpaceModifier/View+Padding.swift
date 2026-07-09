@@ -19,7 +19,7 @@ extension View {
     /// Adds an equal padding amount to specific edges of this view using tokens.
     ///
     /// ```swift
-    ///    @Environement(\.theme) private var theme
+    ///    @Environment(\.theme) private var theme
     ///    Text("Hello world")
     ///       .padding(.all, theme.spaces.scaled2xlarge)
     /// ```

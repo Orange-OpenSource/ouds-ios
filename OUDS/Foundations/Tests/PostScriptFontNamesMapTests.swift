@@ -257,4 +257,33 @@ struct PostScriptFontNamesMapTests {
         #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.bold)] == "\(unknownFontFamily)")
         #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.regular)] == "\(unknownFontFamily)")
     }
+
+    // MARK: - registerFont
+
+    @Test("registerFont inserts a new PostScript name for a given combination")
+    func registerFontAddsEntry() throws {
+        registerFont(postScript: "WinkyRough-Regular", forCombination: PSFNMK("Winky Rough", Font.Weight.regular))
+        #expect(kApplePostScriptFontNames[PSFNMK("Winky Rough", Font.Weight.regular)] == "WinkyRough-Regular")
+    }
+
+    @Test("registerFont inserts multiple entries for different weights of the same family")
+    func registerFontAddsMultipleWeights() throws {
+        registerFont(postScript: "WinkyRough-Light", forCombination: PSFNMK("Winky Rough Multi", Font.Weight.light))
+        registerFont(postScript: "WinkyRough-Bold", forCombination: PSFNMK("Winky Rough Multi", Font.Weight.bold))
+        #expect(kApplePostScriptFontNames[PSFNMK("Winky Rough Multi", Font.Weight.light)] == "WinkyRough-Light")
+        #expect(kApplePostScriptFontNames[PSFNMK("Winky Rough Multi", Font.Weight.bold)] == "WinkyRough-Bold")
+    }
+
+    @Test("registerFont overwrites an existing entry for the same combination")
+    func registerFontOverwritesExistingEntry() throws {
+        registerFont(postScript: "WinkyRough-v1", forCombination: PSFNMK("Winky Rough Override", Font.Weight.medium))
+        registerFont(postScript: "WinkyRough-v2", forCombination: PSFNMK("Winky Rough Override", Font.Weight.medium))
+        #expect(kApplePostScriptFontNames[PSFNMK("Winky Rough Override", Font.Weight.medium)] == "WinkyRough-v2")
+    }
+
+    @Test("registerFont makes the entry reachable via the orKey subscript without fallback")
+    func registerFontIsReachableViaOrKeySubscript() throws {
+        registerFont(postScript: "WinkyRough-SemiBold", forCombination: PSFNMK("Winky Rough OrKey", Font.Weight.semibold))
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK("Winky Rough OrKey", Font.Weight.semibold)] == "WinkyRough-SemiBold")
+    }
 }

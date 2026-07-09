@@ -148,7 +148,7 @@ public struct OUDSRadio: View {
     // MARK: Body
 
     public var body: some View {
-        InteractionButton(isReadOnly: isReadOnly) {
+        OUDSInteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)

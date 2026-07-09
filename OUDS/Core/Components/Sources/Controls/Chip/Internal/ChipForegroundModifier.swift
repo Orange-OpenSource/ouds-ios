@@ -21,7 +21,7 @@ struct ChipForegroundModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let state: ChipInteractionState
+    let state: OUDSChipInteractionState
     let selected: Bool
 
     @Environment(\.theme) private var theme

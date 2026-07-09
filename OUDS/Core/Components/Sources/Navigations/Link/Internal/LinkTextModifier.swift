@@ -19,7 +19,7 @@ struct LinkTextModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let size: OUDSLink.Size
     let layout: OUDSLink.Layout
 
@@ -45,7 +45,7 @@ struct LinkTextModifier: ViewModifier {
 
 private struct LinkUnderlineModifier: ViewModifier {
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let layout: OUDSLink.Layout
 
     @State private var textWidth: CGFloat = 0

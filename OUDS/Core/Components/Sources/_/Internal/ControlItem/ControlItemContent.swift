@@ -14,7 +14,7 @@
 import OUDSThemesContract
 import SwiftUI
 
-/// The content for the ``ControlItem`` component according to the interaction state ``InteractionState``.
+/// The content for the ``ControlItem`` component according to the interaction state ``OUDSButtonInteractionState``.
 ///
 /// This state is used by:
 /// - the indicator according to ``ControlItem.IndicatorType`` to apply right tokens
@@ -26,7 +26,7 @@ struct ControlItemContent: View {
 
     // MARK: Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
 

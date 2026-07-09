@@ -41,11 +41,64 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         /// Layout with text only
         case text(text: String)
 
-        /// Layout with icon only and its accessibility label
-        case icon(icon: Image, accessibilityLabel: String)
+        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
+        // Not done yet to not break public API
+        /// Layout with icon only and its accessibility label.
+        /// The `renderingMode` controls whether the icon is tinted (`.template`, default) or displayed as-is (`.original`).
+        case icon(icon: Image, accessibilityLabel: String, renderingMode: Image.TemplateRenderingMode = .template)
 
-        /// Layout with text and icon
-        case textAndIcon(text: String, icon: Image)
+        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
+        // Not done yet to not break public API
+        /// Layout with text and icon.
+        /// The `renderingMode` controls whether the icon is tinted (`.template`, default) or displayed as-is (`.original`).
+        case textAndIcon(text: String, icon: Image, renderingMode: Image.TemplateRenderingMode = .template)
+
+        // MARK: - OUDSImage factories
+
+        /// Creates an icon-only layout from an ``OUDSImage``.
+        ///
+        /// ```swift
+        ///     OUDSChipPickerData(tag: "a",
+        ///                        layout: .icon(OUDSImage(asset: Image("ic_heart")),
+        ///                                      accessibilityLabel: "Heart"))
+        ///
+        ///     // Raw (non-tinted) image:
+        ///     OUDSChipPickerData(tag: "b",
+        ///                        layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
+        ///                                      accessibilityLabel: "Brand"))
+        /// ```
+        ///
+        /// - Parameters:
+        ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
+        ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip
+        @MainActor public static func icon(_ image: OUDSImage, accessibilityLabel: String) -> Layout {
+            precondition(image.image != nil, "OUDSChipPickerData.Layout.icon(icon:accessibilityLabel:renderingMode:) requires a reliable OUDSImage")
+            // swiftlint:disable:next force_unwrapping
+            return .icon(icon: image.image!, accessibilityLabel: accessibilityLabel, renderingMode: image.renderingMode)
+        }
+
+        /// Creates a text + icon layout from an ``OUDSImage``.
+        ///
+        /// ```swift
+        ///     OUDSChipPickerData(tag: "a",
+        ///                        layout: .textAndIcon("Label",
+        ///                                             image: OUDSImage(asset: Image("ic_heart"))))
+        ///
+        ///     // Raw (non-tinted) image:
+        ///     OUDSChipPickerData(tag: "b",
+        ///                        layout: .textAndIcon("Brand",
+        ///                                             image: OUDSImage(asset: Image("ic_brand"),
+        ///                                                              renderingMode: .original)))
+        /// ```
+        ///
+        /// - Parameters:
+        ///    - text: The text to display in the chip
+        ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
+        @MainActor public static func textAndIcon(_ text: String, image: OUDSImage) -> Layout {
+            precondition(image.image != nil, "OUDSChipPickerData.Layout.textAndIcon(text:icon:renderingMode:) requires a reliable OUDSImage")
+            // swiftlint:disable:next force_unwrapping
+            return .textAndIcon(text: text, icon: image.image!, renderingMode: image.renderingMode)
+        }
     }
 
     /// Defines the data to use to define the chip (``OUDSFilterChip``)

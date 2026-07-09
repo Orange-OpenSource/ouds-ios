@@ -14,6 +14,10 @@
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
+// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
+
+// swiftlint:disable line_length
+
 /// The data to use to populate the picker of ``OUDSRadioItem`` objects.
 /// Each property in this ``OUDSRadioPickerData`` is used to define the suitable ``OUDSRadioItem``.
 ///
@@ -33,8 +37,8 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     /// A description the ``OUDSRadioItem`` can have
     let description: String?
 
-    /// An optional image the ``OUDSRadioItem`` can have
-    let icon: Image?
+    /// An optional image the ``OUDSRadioItem`` can have, encapsulating the asset, flip flag and rendering mode
+    let icon: OUDSImage?
 
     /// Define if the ``OUDSRadioItem`` is outlined or not
     let isOutlined: Bool
@@ -58,25 +62,19 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
 
     /// Defines the data to use to define the radio buttons (``OUDSRadioItem``)
     ///
-    /// ```swift
-    ///     OUDSRadioPickerData(tag: "option1", label: "Option 1")
-    /// ```
-    ///
     /// - Parameters:
     ///    - tag: a value to discriminate one radio to another
     ///    - label: the mandatory text to add to ``OUDSRadioItem``
-    ///    - extraLabel: An optional additinal text, default set to nil
+    ///    - extraLabel: An optional additional text, default set to nil
     ///    - description: Another optional text, a description, default set to nil
     ///    - icon: An optional image, default set to nil
     ///    - isOutlined: True to outline the ``OUDSRadioItem``, false otherwise (default)
-    ///    - isReversed: True to use to reversed layour of the ``OUDSRadioItem``, false otherwise (default)
+    ///    - isReversed: True to use to reversed layout of the ``OUDSRadioItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
     ///    - isReadOnly: True if read only, false otherwise (default)
     ///    - hasDivider: True if a divider must be added for the current ``OUDSRadioItem``, false otherwise (default)
     ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
-    ///
-    /// **Remark: If `label`, `extraLabel` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are
-    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
+    @available(*, deprecated, message: "Use OUDSRadioPickerData(tag:label:extraLabel:description:image:isOutlined:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) instead.")
     public init(tag: Tag,
                 label: String,
                 extraLabel: String? = nil,
@@ -89,11 +87,66 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
                 hasDivider: Bool = false,
                 accessibilityIdentifier: String? = nil)
     {
+        self.init(tag: tag,
+                  label: label,
+                  extraLabel: extraLabel,
+                  description: description,
+                  image: icon.map { OUDSImage(asset: $0) },
+                  isOutlined: isOutlined,
+                  isReversed: isReversed,
+                  isError: isError,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  accessibilityIdentifier: accessibilityIdentifier)
+    }
+
+    /// Defines the data to use to define the radio buttons (``OUDSRadioItem``)
+    ///
+    /// ```swift
+    ///     OUDSRadioPickerData(tag: "option1", label: "Option 1")
+    ///
+    ///     OUDSRadioPickerData(tag: "option2",
+    ///                         label: "Option 2",
+    ///                         image: OUDSImage(asset: Image(systemName: "flame")))
+    ///
+    ///     // Raw (non-tinted) image:
+    ///     OUDSRadioPickerData(tag: "option3",
+    ///                         label: "Option 3",
+    ///                         image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - tag: a value to discriminate one radio to another
+    ///    - label: the mandatory text to add to ``OUDSRadioItem``
+    ///    - extraLabel: An optional additional text, default set to nil
+    ///    - description: Another optional text, a description, default set to nil
+    ///    - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///    - isOutlined: True to outline the ``OUDSRadioItem``, false otherwise (default)
+    ///    - isReversed: True to use to reversed layout of the ``OUDSRadioItem``, false otherwise (default)
+    ///    - isError: True if in an error context, false otherwise (default)
+    ///    - isReadOnly: True if read only, false otherwise (default)
+    ///    - hasDivider: True if a divider must be added for the current ``OUDSRadioItem``, false otherwise (default)
+    ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
+    ///
+    /// **Remark: If `label`, `extraLabel` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are
+    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
+    public init(tag: Tag,
+                label: String,
+                extraLabel: String? = nil,
+                description: String? = nil,
+                image: OUDSImage? = nil,
+                isOutlined: Bool = false,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                accessibilityIdentifier: String? = nil)
+    {
         self.tag = tag
         self.label = label
         self.extraLabel = extraLabel
         self.description = description
-        self.icon = icon
+        icon = image
         self.isOutlined = isOutlined
         self.isReversed = isReversed
         self.isError = isError
@@ -102,4 +155,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
         self.accessibilityIdentifier = accessibilityIdentifier
     }
 }
+
+// swiftlint:enable line_length
+
 #endif

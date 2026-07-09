@@ -22,7 +22,7 @@ struct ControlItemIndicatorContainer: View {
 
     // MARK: - Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
 

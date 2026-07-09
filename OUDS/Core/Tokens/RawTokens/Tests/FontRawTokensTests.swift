@@ -21,7 +21,7 @@ import TestsUtils
 
 /// The aim of this tests class is to look for regressions in **font raw tokens**.
 ///
-/// Indeed, each generation of Swift code by the *tokenator* may break theses tests because there are new values.
+/// Indeed, each generation of Swift code by the *tokenator* may break these tests because there are new values.
 /// In the semantics of **font raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Some of these tokens are also strongly based on their raw values (like font family names) and must be tested.
 /// Some tokens must noe be nul, or must be factor of some values. Or grater or lower than others.

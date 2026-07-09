@@ -16,7 +16,7 @@ import OUDSThemesOrangeCompact
 import Testing
 
 /// The aim of this tests class is to look for regressions in **Orange Compact brand border semantic tokens**.
-/// Indeed, each future generation of Swift code may break theses tests because there are new values.
+/// Indeed, each future generation of Swift code may break these tests because there are new values.
 /// In the semantics of **border semantic tokens**, there will be some unchanged things like relationships between tokens.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 struct BorderSemanticTokensTests {

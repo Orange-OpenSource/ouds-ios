@@ -23,7 +23,7 @@ struct ControlItemIconContainer: View {
 
     // MARK: - Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let layoutData: ControlItemLabel.LayoutData
 
     @Environment(\.theme) private var theme
@@ -53,14 +53,14 @@ struct ControlItemIconContainer: View {
                 .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
                 .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
         } else {
-            if let icon = layoutData.icon {
-                icon
+            if let asset = layoutData.icon?.asset {
+                asset
                     .resizable()
-                    .renderingMode(.template)
+                    .renderingMode(layoutData.icon?.renderingMode ?? .template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
                     .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
-                    .toFlip(layoutData.flipIcon)
+                    .toFlip(layoutData.icon?.flipped ?? false)
             }
         }
     }
