@@ -23,6 +23,7 @@ struct LinkButtonStyle: ButtonStyle {
 
     let layout: OUDSLink.Layout
     let size: OUDSLink.Size
+    let isFullWidth: Bool
 
     @State private var isHover: Bool
     @Environment(\.theme) private var theme
@@ -30,9 +31,10 @@ struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Initializer
 
-    init(layout: OUDSLink.Layout, size: OUDSLink.Size) {
+    init(layout: OUDSLink.Layout, size: OUDSLink.Size, isFullWidth: Bool) {
         self.layout = layout
         self.size = size
+        self.isFullWidth = isFullWidth
         isHover = false
     }
 
@@ -44,7 +46,7 @@ struct LinkButtonStyle: ButtonStyle {
             switch layout {
             case let .indicator(indicator):
                 configuration.label
-                    .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState, size: size, indicator: indicator))
+                    .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState, size: size, indicator: indicator, isFullWidth: isFullWidth))
             case .textOnly:
                 configuration.label
                     .labelStyle(LinkTextAndIconLabelStyle(interactionState: interactionState, size: size, layout: layout))
@@ -56,6 +58,8 @@ struct LinkButtonStyle: ButtonStyle {
         .padding(.horizontal, theme.link.spacePaddingInline)
         .padding(.vertical, theme.link.spacePaddingBlockDefault)
         .frame(minWidth: minWidth, minHeight: minHeight)
+        .frame(maxWidth: isFullWidth ? .infinity : nil)
+        .contentShape(Rectangle())
         #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in
                 self.isHover = isHover
@@ -83,6 +87,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
     let interactionState: OUDSButtonInteractionState
     let size: OUDSLink.Size
     let indicator: OUDSLink.Indicator
+    let isFullWidth: Bool
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(alignment: .center, spacing: spacing) {
@@ -90,6 +95,10 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
                     .modifier(LinkColorIndicatorModifier(interactionState: interactionState))
+
+                if isFullWidth {
+                    Spacer(minLength: 0)
+                }
             }
 
             configuration.title
@@ -97,15 +106,24 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
                 .modifier(LinkColorContentModifier(interactionState: interactionState))
 
             if indicator == .next {
+                if isFullWidth {
+                    Spacer(minLength: 0)
+                }
+
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
                     .modifier(LinkColorIndicatorModifier(interactionState: interactionState))
             }
         }
+        .frame(minWidth: indicatorMinWidth)
     }
 
     private var spacing: Double {
         size == .small ? theme.link.spaceColumnGapChevronSmall : theme.link.spaceColumnGapChevronDefault
+    }
+
+    private var indicatorMinWidth: Double {
+        size == .small ? theme.link.sizeMinWidthSmall : theme.link.sizeMinWidth
     }
 }
 
