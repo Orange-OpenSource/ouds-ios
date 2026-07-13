@@ -123,11 +123,32 @@ An old deprecated token has finally been removed from `icon` component tokens.
 ### Rename control item tokens providers
 
 The tokens provider for `control item` has been renamed to `list item`.
+This affects both the theme accessor and all public Swift types (classes, protocols).
 
 **Impact**: High
 
 **Required Action**:
 - Replace any use of `theme.controlItem` by `theme.listItem`
+- Rename Swift types according to the table below:
+
+| Old type (v2.3.0) | New type (v3.0.0) |
+|---|---|
+| `OrangeThemeControlItemComponentTokensProvider` | `OrangeThemeListItemComponentTokensProvider` |
+| `OrangeCompactThemeControlItemComponentTokensProvider` | `OrangeCompactThemeListItemComponentTokensProvider` |
+| `SoshThemeControlItemComponentTokensProvider` | `SoshThemeListItemComponentTokensProvider` |
+| `WireframeThemeControlItemComponentTokensProvider` | `WireframeThemeListItemComponentTokensProvider` |
+| `AllControlItemComponentTokensProvider` | `AllListItemComponentTokensProvider` |
+| `ControlItemComponentTokens` | `ListItemComponentTokens` |
+
+```swift
+// Before (v2.3.0)
+class MyProvider: OrangeThemeControlItemComponentTokensProvider { … }
+let provider: AllControlItemComponentTokensProvider = MyProvider()
+
+// After (v3.0.0)
+class MyProvider: OrangeThemeListItemComponentTokensProvider { … }
+let provider: AllListItemComponentTokensProvider = MyProvider()
+```
 
 **Reason for Change**: "control item" does not exist anymore in Figma but "list item" does
 
@@ -1007,8 +1028,8 @@ All Sosh raw tokens have been changed.
 - Remove effect raw token `blur160`
 - Remove color raw token `opacityGrayLight80800`
 - Remove color semantic tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`; use if relevant `colorAccent` bar component tokens
-- Remove radio component token `sizeIndicator`; use `controlItem.sizeControlIndicator` instead
-- Remove checkbox component token `sizeIndicator`; use `controlItem.sizeControlIndicator` instead
+- Remove radio component token `sizeIndicator`; use `theme.controlItem.sizeControlIndicator` instead (renamed `theme.listItem.sizeControlIndicator` since v3.0.0)
+- Remove checkbox component token `sizeIndicator`; use `theme.controlItem.sizeControlIndicator` instead (renamed `theme.listItem.sizeControlIndicator` since v3.0.0)
 - Remove following control item component tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`,
 `colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`
 - Remove use of all raw tokens for Sosh and use new ones

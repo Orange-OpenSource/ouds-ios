@@ -340,6 +340,7 @@ theme.colors.contentDefault
 ### Provider renamed: `controlItem` → `listItem`
 
 The `controlItem` tokens provider no longer exists in Figma and has been removed from the Swift API.
+This affects both the theme accessor and all public Swift types (classes, protocols).
 
 ```swift
 // Before (v2.3)
@@ -350,6 +351,29 @@ theme.listItem.someToken
 ```
 
 **Required action**: global find-and-replace `theme.controlItem` → `theme.listItem` across the codebase.
+
+All Swift types have been renamed accordingly:
+
+| Old type (v2.3) | New type (v3.0) |
+|---|---|
+| `OrangeThemeControlItemComponentTokensProvider` | `OrangeThemeListItemComponentTokensProvider` |
+| `OrangeCompactThemeControlItemComponentTokensProvider` | `OrangeCompactThemeListItemComponentTokensProvider` |
+| `SoshThemeControlItemComponentTokensProvider` | `SoshThemeListItemComponentTokensProvider` |
+| `WireframeThemeControlItemComponentTokensProvider` | `WireframeThemeListItemComponentTokensProvider` |
+| `AllControlItemComponentTokensProvider` | `AllListItemComponentTokensProvider` |
+| `ControlItemComponentTokens` | `ListItemComponentTokens` |
+
+```swift
+// Before (v2.3)
+class MyProvider: OrangeThemeControlItemComponentTokensProvider { … }
+let provider: AllControlItemComponentTokensProvider = MyProvider()
+
+// After (v3.0)
+class MyProvider: OrangeThemeListItemComponentTokensProvider { … }
+let provider: AllListItemComponentTokensProvider = MyProvider()
+```
+
+**Required action**: rename all subclasses and type annotations referencing the old types above.
 
 ---
 
@@ -444,7 +468,7 @@ swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|founda
 
 # v3.0 breaking changes — must return nothing
 grep -rn \
-  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:" \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:\|OrangeThemeControlItemComponentTokensProvider\|OrangeCompactThemeControlItemComponentTokensProvider\|SoshThemeControlItemComponentTokensProvider\|WireframeThemeControlItemComponentTokensProvider\|AllControlItemComponentTokensProvider\|ControlItemComponentTokens" \
   --include="*.swift" .
 
 # v2.x deprecated symbols — must return nothing
