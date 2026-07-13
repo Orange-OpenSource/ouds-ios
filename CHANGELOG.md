@@ -32,6 +32,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: Components token for `icon` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - **BREAKING**: Components token for `button` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 
+### Fixed
+
+- Icon assets for unordered list item not displayed (Orange-OpenSource/ouds-ios#1615)
+
 ### Removed
 
 - **BREAKING**: Deprecated `OUDSBadge` API
