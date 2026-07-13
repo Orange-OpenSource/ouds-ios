@@ -34,7 +34,7 @@ struct OUDSComponentAccessibilityTraitsModifier: ViewModifier {
     let traits: AccessibilityTraits
 
     func body(content: Content) -> some View {
-        content.environment(\.additionalTraits, traits)
+        content.transformEnvironment(\.additionalTraits) { $0.formUnion(traits) }
     }
 }
 
@@ -59,7 +59,7 @@ extension View {
     ///
     /// ```swift
     /// OUDSTextArea(label: "Title", text: $text)
-    ///     .oudsAccessibilityAddTraits([.isHeader, .updatesFrequently]) // Will traits to text editor
+    ///     .oudsAccessibilityAddTraits([.isHeader, .updatesFrequently]) // Will add traits to text editor
     /// ```
     ///
     /// - Parameter traits: An array of `AccessibilityTraits` values to add.
