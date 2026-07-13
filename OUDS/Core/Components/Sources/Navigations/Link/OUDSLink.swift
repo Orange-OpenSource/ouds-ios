@@ -195,7 +195,7 @@ public struct OUDSLink: View {
     ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
-    ///   The label stays anchored to the leading edge and the indicator to the trailing edge.
+    ///   The label stays anchored to the an edge and the indicator to the other edge.
     ///   Defaults to `false` (intrinsic sizing).
     ///   - action: The action to perform when the user triggers the link
     public init(text: String, indicator: Indicator, size: Size = .default, isFullWidth: Bool = false, action: @escaping () -> Void) {
@@ -219,7 +219,7 @@ public struct OUDSLink: View {
     ///   - indicator: Indicator displayed in the link
     ///   - size: Size of the link
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
-    ///   The label stays anchored to the leading edge and the indicator to the trailing edge.
+    ///   The label stays anchored to one edge and the indicator to the other edge.
     ///   Defaults to `false` (intrinsic sizing).
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,

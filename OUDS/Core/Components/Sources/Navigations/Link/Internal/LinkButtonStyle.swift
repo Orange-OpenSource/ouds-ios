@@ -115,15 +115,10 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
                     .modifier(LinkColorIndicatorModifier(interactionState: interactionState))
             }
         }
-        .frame(minWidth: indicatorMinWidth)
     }
 
     private var spacing: Double {
         size == .small ? theme.link.spaceColumnGapChevronSmall : theme.link.spaceColumnGapChevronDefault
-    }
-
-    private var indicatorMinWidth: Double {
-        size == .small ? theme.link.sizeMinWidthSmall : theme.link.sizeMinWidth
     }
 }
 
