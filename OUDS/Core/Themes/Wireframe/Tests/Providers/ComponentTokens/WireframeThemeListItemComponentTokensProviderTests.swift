@@ -43,10 +43,6 @@ struct WireframeThemeListItemComponentTokensProviderTests {
         #expect(provider.spaces is WireframeThemeSpaceSemanticTokensProvider)
     }
 
-    @Test func defaultFontSemanticTokensProvider() throws {
-        #expect(provider.fonts is WireframeThemeFontSemanticTokensProvider)
-    }
-
     @Test func defaultOpacitySemanticTokensProvider() throws {
         #expect(provider.opacities is WireframeThemeOpacitySemanticTokensProvider)
     }

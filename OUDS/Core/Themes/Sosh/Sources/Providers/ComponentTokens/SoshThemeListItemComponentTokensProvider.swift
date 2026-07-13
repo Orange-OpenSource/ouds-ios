@@ -39,9 +39,6 @@ final class SoshThemeListItemComponentTokensProvider: AllListItemComponentTokens
     /// Provider of space semantic tokens to use for list item spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of font semantic tokens to use for list item fonts
-    let fonts: AllFontSemanticTokensProvider
-
     /// Provider of opacity semantic tokens to use for list item opacities
     let opacities: AllOpacitySemanticTokensProvider
 
@@ -58,14 +55,12 @@ final class SoshThemeListItemComponentTokensProvider: AllListItemComponentTokens
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    ///    - fonts: Provider for font semantic tokens. If nil, a default one will be used (``SoshThemeFontSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil, a default one will be used (``SoshThemeOpacitySemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
-         fonts: AllFontSemanticTokensProvider? = nil,
          opacities: AllOpacitySemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
@@ -74,7 +69,6 @@ final class SoshThemeListItemComponentTokensProvider: AllListItemComponentTokens
         self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
-        self.fonts = (fonts ?? SoshThemeFontSemanticTokensProvider())
         self.opacities = (opacities ?? SoshThemeOpacitySemanticTokensProvider())
         self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG

@@ -41,9 +41,6 @@ final class OrangeCompactThemeListItemComponentTokensProvider: AllListItemCompon
     /// Provider of space semantic tokens to use for list item spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of font semantic tokens to use for list item fonts
-    let fonts: AllFontSemanticTokensProvider
-
     /// Provider of opacity semantic tokens to use for list item opacities
     let opacities: AllOpacitySemanticTokensProvider
 
@@ -60,14 +57,12 @@ final class OrangeCompactThemeListItemComponentTokensProvider: AllListItemCompon
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeCompactThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeCompactThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeCompactThemeSpaceSemanticTokensProvider``)
-    ///    - fonts: Provider for font semantic tokens. If nil, a default one will be used (``OrangeCompactThemeFontSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil, a default one will be used (``OrangeCompactThemeOpacitySemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeCompactThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
-         fonts: AllFontSemanticTokensProvider? = nil,
          opacities: AllOpacitySemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
@@ -76,7 +71,6 @@ final class OrangeCompactThemeListItemComponentTokensProvider: AllListItemCompon
         self.borders = (borders ?? OrangeCompactThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeCompactThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeCompactThemeSpaceSemanticTokensProvider())
-        self.fonts = (fonts ?? OrangeCompactThemeFontSemanticTokensProvider())
         self.opacities = (opacities ?? OrangeCompactThemeOpacitySemanticTokensProvider())
         self.dimensions = (dimensions ?? OrangeCompactThemeDimensionSemanticTokensProvider())
         #if DEBUG

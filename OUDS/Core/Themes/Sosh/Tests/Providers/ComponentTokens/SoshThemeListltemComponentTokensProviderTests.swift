@@ -43,10 +43,6 @@ struct SoshThemeListItemComponentTokensProviderTests {
         #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
     }
 
-    @Test func defaultFontSemanticTokensProvider() throws {
-        #expect(provider.fonts is SoshThemeFontSemanticTokensProvider)
-    }
-
     @Test func defaultOpacitySemanticTokensProvider() throws {
         #expect(provider.opacities is SoshThemeOpacitySemanticTokensProvider)
     }

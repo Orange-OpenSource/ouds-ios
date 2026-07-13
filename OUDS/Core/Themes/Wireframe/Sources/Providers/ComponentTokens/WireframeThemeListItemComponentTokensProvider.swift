@@ -41,9 +41,6 @@ final class WireframeThemeListItemComponentTokensProvider: AllListItemComponentT
     /// Provider of space semantic tokens to use for list item spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of font semantic tokens to use for list item fonts
-    let fonts: AllFontSemanticTokensProvider
-
     /// Provider of opacity semantic tokens to use for list item opacities
     let opacities: AllOpacitySemanticTokensProvider
 
@@ -60,14 +57,12 @@ final class WireframeThemeListItemComponentTokensProvider: AllListItemComponentT
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
-    ///    - fonts: Provider for font semantic tokens. If nil, a default one will be used (``WireframeThemeFontSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil, a default one will be used (``WireframeThemeOpacitySemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
-         fonts: AllFontSemanticTokensProvider? = nil,
          opacities: AllOpacitySemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
@@ -76,7 +71,6 @@ final class WireframeThemeListItemComponentTokensProvider: AllListItemComponentT
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
-        self.fonts = (fonts ?? WireframeThemeFontSemanticTokensProvider())
         self.opacities = (opacities ?? WireframeThemeOpacitySemanticTokensProvider())
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
