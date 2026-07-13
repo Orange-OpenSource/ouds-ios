@@ -48,6 +48,9 @@ import SwiftUI
 ///
 ///     // Navigate to previous page with link in a default size
 ///     OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+///
+///     // Full-width: label stays, chevron anchored to the right / left
+///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -86,6 +89,7 @@ public struct OUDSLink: View {
     private let layout: Layout
     private let text: String
     private let size: Size
+    private let isFullWidth: Bool
     private let action: () -> Void
 
     @Environment(\.theme) private var theme
@@ -136,6 +140,7 @@ public struct OUDSLink: View {
         layout = image.map { .textAndIcon($0) } ?? .textOnly
         self.text = text
         self.size = size
+        isFullWidth = false
         self.action = action
     }
 
@@ -166,10 +171,11 @@ public struct OUDSLink: View {
                 size: Size = .default,
                 action: @escaping () -> Void)
     {
-        self.init(text: key.resolved(tableName: tableName, bundle: bundle),
-                  image: image,
-                  size: size,
-                  action: action)
+        layout = image.map { .textAndIcon($0) } ?? .textOnly
+        text = key.resolved(tableName: tableName, bundle: bundle)
+        self.size = size
+        isFullWidth = false
+        self.action = action
     }
 
     // MARK: - Initializers — indicator (unchanged)
@@ -188,11 +194,15 @@ public struct OUDSLink: View {
     ///   When `OUDSLink.Indicator.back`, the indicator is displayed before the text.
     ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
+    ///   The label stays anchored to the an edge and the indicator to the other edge.
+    ///   Defaults to `false` (intrinsic sizing).
     ///   - action: The action to perform when the user triggers the link
-    public init(text: String, indicator: Indicator, size: Size = .default, action: @escaping () -> Void) {
+    public init(text: String, indicator: Indicator, size: Size = .default, isFullWidth: Bool = false, action: @escaping () -> Void) {
         layout = .indicator(indicator)
         self.text = text
         self.size = size
+        self.isFullWidth = isFullWidth
         self.action = action
     }
 
@@ -208,17 +218,22 @@ public struct OUDSLink: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - indicator: Indicator displayed in the link
     ///   - size: Size of the link
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
+    ///   The label stays anchored to one edge and the indicator to the other edge.
+    ///   Defaults to `false` (intrinsic sizing).
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 indicator: Indicator,
                 size: Size = .default,
+                isFullWidth: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
         text = key.resolved(tableName: tableName, bundle: bundle)
         self.size = size
+        self.isFullWidth = isFullWidth
         self.action = action
     }
 
@@ -256,7 +271,7 @@ public struct OUDSLink: View {
                 }
             }
         }
-        .buttonStyle(LinkButtonStyle(layout: layout, size: size))
+        .buttonStyle(LinkButtonStyle(layout: layout, size: size, isFullWidth: isFullWidth))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
     }
