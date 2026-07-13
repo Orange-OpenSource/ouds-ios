@@ -29,6 +29,7 @@ struct TextAreaInputText: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.additionalTraits) private var additionalTraits
 
     // MARK: - Body
 
@@ -56,6 +57,7 @@ struct TextAreaInputText: View {
                 .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
                 .frame(minHeight: theme.textArea.sizeMinHeightInput)
                 .frame(maxHeight: constrainedMaxHeight ? theme.textArea.sizeMinHeightInput : theme.textArea.sizeMaxHeightInput)
+                .accessibilityAddTraits(additionalTraits)
         }
     }
 
