@@ -224,7 +224,7 @@ To be aligned with new `OUDSImage` API, the `accent` and `neutral` `badge icon s
 
 **Reason for Change**: Use new `OUDSImage` API
 
-### Renamed layout modifier for legacy tab bar
+### Renamed legacy layout modifier
 
 The `.forceOUDSLegacyTabBar()` view modifier and its underlying `OUDSLegacyTabBarModifier` type have been renamed to reflect a broader layout scope.
 

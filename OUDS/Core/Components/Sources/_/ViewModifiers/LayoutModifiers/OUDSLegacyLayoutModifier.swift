@@ -34,7 +34,7 @@ import SwiftUI
 ///
 /// **Note: You should use this view modifier in your root view because the flag is defines in deeper levels is used for all navigations components like bars**
 ///
-/// - Since: 3.0.0
+/// - Since: 3.0.0H
 public struct OUDSLegacyLayoutModifier: ViewModifier {
 
     /// To prevent to pollute logs

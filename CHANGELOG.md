@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Detection of forced legacy layout for navigations elements
+- Detection of forced legacy layout for navigation elements
 - **BREAKING**: `.neutral` and `.accent` `badge icon status` signatures
 - **BREAKING**: `.neutral` and `.accent` `alert status` parameter name
 - **BREAKING**: `.icon` and `.textAndIcon` layouts for `chip picker data` object
@@ -43,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier` 
+- **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier`
 - **BREAKING**: Deprecated `OUDSBadge` API
 - **BREAKING**: Deprecated type `OUDSIcon`
 - **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
