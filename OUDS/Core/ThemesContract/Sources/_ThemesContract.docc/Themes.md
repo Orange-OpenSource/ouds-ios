@@ -21,7 +21,7 @@ Theme                                                                           
 All themes are based on a theme contract called `OUDSTheme`.
 
 _Themes_ use *tokens providers* which provide the *semantic tokens* and *component tokens* to apply in the project. 
-These tokens in most of cases can be overriden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). 
+These tokens in most of cases can be overridden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). 
 Thus we can split values and responsabilities in different _Swift Package Manager_ targets and keep overriding and inheritance possible.
 
 > Important: Only one theme, the Orange theme, can be subclassed.

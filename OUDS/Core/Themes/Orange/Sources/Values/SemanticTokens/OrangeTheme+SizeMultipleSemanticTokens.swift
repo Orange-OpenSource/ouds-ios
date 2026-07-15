@@ -21,7 +21,7 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 /// Defines provider objects for size semantic tokens (i.e. in the end `DimensionRawTokens`).
-/// These values can be overriden inside ``OrangeThemeSizeSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// These values can be overridden inside ``OrangeThemeSizeSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OrangeThemeSizeSemanticTokensProvider: SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
