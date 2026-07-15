@@ -27,7 +27,7 @@ To keep the same semantics as the ones used in our *Figma* specifications, _type
 
 Using more simple and primitive types will help also to test the library. With also type aliases we force users to use our types and not higher level types like _SwiftUI_ types. Type aliases pointing to raw values will improve also to use of thes values wuthout needing to deal with intermediate types.
 
-We also choose to add in _extension_ all the tokens values in a separated file so as to help the *tokenator* to build files to copy and paste easily in the project and keeping all the other objects. In fact, declaring the tokens *enums* in separated file helps us to document the associated tokens. The tokens are defined in an extension inside dedicated file which can be overriden anytime ; the result is trasnparent for the users.
+We also choose to add in _extension_ all the tokens values in a separated file so as to help the *tokenator* to build files to copy and paste easily in the project and keeping all the other objects. In fact, declaring the tokens *enums* in separated file helps us to document the associated tokens. The tokens are defined in an extension inside dedicated file which can be overridden anytime ; the result is trasnparent for the users.
 
 Example for ``ColorRawTokens``:
 
