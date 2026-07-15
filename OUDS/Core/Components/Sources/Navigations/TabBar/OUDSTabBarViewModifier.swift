@@ -18,10 +18,13 @@ import OUDSThemesContract
 import SwiftUI
 
 /// Defines the look and feel the tab bar must have by applying the OUDS tokens.
+/// Changes only colors and typgraphies, and does not add additional items like indicator of selected tab or divider.
+/// To use these elements in your tab view, use instead ``OUDSTabBar``.
 ///
 /// ## Rendering
 ///
 /// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
+///
 /// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and older versions:
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
@@ -31,8 +34,9 @@ import SwiftUI
 ///
 /// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on OUDS badge components.
 ///
+/// - Since: 3.0.0
 @available(iOS 15, *)
-struct TabBarViewModifier: ViewModifier {
+public struct OUDSTabBarViewModifier: ViewModifier {
 
     // MARK: Properties
 
@@ -44,16 +48,16 @@ struct TabBarViewModifier: ViewModifier {
 
     // MARK: Init
 
-    init() {}
+    public init() {}
 
     // MARK: Body
 
     #if os(macOS)
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
     }
     #else
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             // Do not use task(), it's async, effects may be applied too late
             .onAppear {

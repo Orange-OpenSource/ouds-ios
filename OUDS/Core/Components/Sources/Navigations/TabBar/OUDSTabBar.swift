@@ -319,7 +319,7 @@ public struct OUDSTabBar<Content: View>: View {
             TabView(selection: $selectedTab) {
                 content()
             }
-            .modifier(TabBarViewModifier())
+            .modifier(OUDSTabBarViewModifier())
 
             SelectedTabIndicator(selected: $selectedTab, count: tabCount, isTabBarHidden: $isTabBarHidden)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
