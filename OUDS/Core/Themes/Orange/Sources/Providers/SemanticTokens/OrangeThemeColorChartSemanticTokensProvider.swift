@@ -20,7 +20,7 @@ import OUDSThemesContract
 /// This provider should be integrated as a `AllColorChartSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 ///
-/// The tokens it exposes cannot be overriden as these colors are strongly related to the Orange brand.
+/// The tokens it exposes cannot be overridden as these colors are strongly related to the Orange brand.
 ///
 /// If you think you need to overide some colors or have your own set of colors, start a new discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a).
 ///
