@@ -28,6 +28,30 @@
         }
       }
     },
+    "core_alertMessage_info_a11y" : {
+      "comment" : "Component - Alerts",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معلومة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information"
+          }
+        }
+      }
+    },
     "core_alertMessage_negative_a11y" : {
       "comment" : "Component - Alerts",
       "extractionState" : "manual",
