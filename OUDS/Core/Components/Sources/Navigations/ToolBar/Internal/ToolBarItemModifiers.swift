@@ -60,6 +60,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
@@ -68,7 +69,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
         if !isEnabled {
             configuration.label.foregroundColor(theme.button.colorContentMinimalDisabled)
         } else {
-            if isLiquidGlassDisabled {
+            if isLiquidGlassDisabled || forceOUDSLegacyLayout {
                 if configuration.isPressed {
                     configuration.label.foregroundColor(theme.button.colorContentMinimalPressed)
                 } else {
@@ -102,12 +103,13 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        if isLiquidGlassDisabled {
+        if isLiquidGlassDisabled || forceOUDSLegacyLayout {
             configuration.label
                 .foregroundColor(foregroundColor)
         } else {
