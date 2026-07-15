@@ -36,6 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - For `alert` components, add default vocalisation on "info" status (Orange-OpenSource/ouds-ios#1561)
 - Icon assets for unordered `bullet list` item not displayed (Orange-OpenSource/ouds-ios#1615)
+- Missing "core_common_back" localized string for `back` button of `toolbar top` component (Orange-OpenSource/ouds-ios#1577) 
+- Icon assets for unordered list item not displayed (Orange-OpenSource/ouds-ios#1615)
 
 ### Removed
 
