@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Detection of forced legacy layout for navigation elements
 - **BREAKING**: `.neutral` and `.accent` `badge icon status` signatures
 - **BREAKING**: `.neutral` and `.accent` `alert status` parameter name
 - **BREAKING**: `.icon` and `.textAndIcon` layouts for `chip picker data` object
@@ -34,9 +35,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Missing `badges` on `toolbar top` component for app on iOS 27 with Xcode 26.5 and disabled Liquid Glass configuration (Orange-OpenSource/ouds-ios#1623)
 - Missing "core_common_back" localized string for `back` button of `toolbar top` component (Orange-OpenSource/ouds-ios#1577)
 - For `alert` components, add default vocalisation on "info" status (Orange-OpenSource/ouds-ios#1561)
 - Icon assets for unordered `bullet list` item not displayed (Orange-OpenSource/ouds-ios#1615)
+
+### Removed
+
+- **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier`
+- **BREAKING**: Deprecated `OUDSBadge` API
+- **BREAKING**: Deprecated type `OUDSIcon`
+- **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
+- **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
 
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 
