@@ -23,7 +23,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
-| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)` |
+| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier` |
 
 ---
 
@@ -42,7 +42,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 ```bash
 # Breaking changes (v3.0.0)
 grep -rn \
-  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b" \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier" \
   --include="*.swift" .
 
 # Active deprecations (v2.x)
@@ -459,6 +459,29 @@ The `.neutral(icon:)` and `.accent(icon:)` cases of alert status have two change
 
 ---
 
+### Modifier renamed: `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`
+
+The `.forceOUDSLegacyTabBar()` view modifier and its underlying `OUDSLegacyTabBarModifier` type have been renamed to reflect a broader layout scope.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `.forceOUDSLegacyTabBar()` | `.forceOUDSLegacyLayout()` |
+| `OUDSLegacyTabBarModifier` | `OUDSLegacyLayoutModifier` |
+
+```swift
+// Before (v2.3)
+SomeView().forceOUDSLegacyTabBar()
+let modifier: OUDSLegacyTabBarModifier = ...
+
+// After (v3.0)
+SomeView().forceOUDSLegacyLayout()
+let modifier: OUDSLegacyLayoutModifier = ...
+```
+
+**Required action**: global find-and-replace `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout` and `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`.
+
+---
+
 ## Verification checklist
 
 ```bash
@@ -468,7 +491,7 @@ swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|founda
 
 # v3.0 breaking changes — must return nothing
 grep -rn \
-  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:\|OrangeThemeControlItemComponentTokensProvider\|OrangeCompactThemeControlItemComponentTokensProvider\|SoshThemeControlItemComponentTokensProvider\|WireframeThemeControlItemComponentTokensProvider\|AllControlItemComponentTokensProvider\|ControlItemComponentTokens" \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:\|OrangeThemeControlItemComponentTokensProvider\|OrangeCompactThemeControlItemComponentTokensProvider\|SoshThemeControlItemComponentTokensProvider\|WireframeThemeControlItemComponentTokensProvider\|AllControlItemComponentTokensProvider\|ControlItemComponentTokens\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier" \
   --include="*.swift" .
 
 # v2.x deprecated symbols — must return nothing

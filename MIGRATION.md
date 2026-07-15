@@ -224,6 +224,39 @@ To be aligned with new `OUDSImage` API, the `accent` and `neutral` `badge icon s
 
 **Reason for Change**: Use new `OUDSImage` API
 
+### Renamed layout modifier for legacy tab bar
+
+The `.forceOUDSLegacyTabBar()` view modifier and its underlying `OUDSLegacyTabBarModifier` type have been renamed to reflect a broader layout scope.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|---|---|
+| `forceOUDSLegacyTabBar` | `forceOUDSLegacyLayout` |
+| `OUDSLegacyTabBarModifier` | `OUDSLegacyLayoutModifier` |
+
+**Before (v2.3.0)**:
+```swift
+SomeView()
+    .forceOUDSLegacyTabBar()
+
+let modifier: OUDSLegacyTabBarModifier = ...
+```
+
+**After (v3.0.0)**:
+```swift
+SomeView()
+    .forceOUDSLegacyLayout()
+
+let modifier: OUDSLegacyLayoutModifier = ...
+```
+
+**Required Action**:
+- Replace any call to `.forceOUDSLegacyTabBar()` with `.forceOUDSLegacyLayout()`
+- Replace any reference to `OUDSLegacyTabBarModifier` with `OUDSLegacyLayoutModifier`
+
+**Reason for Change**: The modifier is no longer specific to the tab bar; it applies to the overall layout.
+
 ### Compatibility
 
 - **Backward Compatibility**: No

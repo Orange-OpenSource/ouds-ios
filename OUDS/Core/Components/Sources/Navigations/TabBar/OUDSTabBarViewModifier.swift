@@ -43,7 +43,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyTabBar
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Init
@@ -154,7 +154,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
          It could mean in dark mode the text is not readable at all.
          Thus apply the unselector color only for cases where everything works, i.e. not Liquid Glass
          */
-        if forceOUDSLegacyTabBar || isLiquidGlassDisabled { // No Liquid Glass (i.e. iOS 26 with disabled option, and iOS < 26)
+        if forceOUDSLegacyLayout || isLiquidGlassDisabled { // No Liquid Glass (i.e. iOS 26 with disabled option, and iOS < 26)
             let unselectedUIColor = themeToApply.bar.colorContentUnselectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.normal.iconColor = unselectedUIColor
             tabBarItemAppearance.normal.titleTextAttributes = [
@@ -169,7 +169,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
 
         // MARK: Tab bar selected item
 
-        if forceOUDSLegacyTabBar || isLiquidGlassDisabled {
+        if forceOUDSLegacyLayout || isLiquidGlassDisabled {
             let selectedUIColor = themeToApply.bar.colorContentSelectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.selected.iconColor = selectedUIColor
             tabBarItemAppearance.selected.titleTextAttributes = [
