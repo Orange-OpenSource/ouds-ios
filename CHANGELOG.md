@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Icon assets for unordered list item not displayed (Orange-OpenSource/ouds-ios#1615)
+- For `alert` components, add default vocalisation on "info" status (Orange-OpenSource/ouds-ios#1561)
+- Icon assets for unordered `bullet list` item not displayed (Orange-OpenSource/ouds-ios#1615)
 
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 

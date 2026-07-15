@@ -88,6 +88,8 @@ struct AlertMessageContent: View {
             "core_alertMessage_warning_a11y".localized() + ","
         case .negative:
             "core_alertMessage_negative_a11y".localized() + ","
+        case .info:
+            "core_alertMessage_info_a11y".localized() + ","
         default:
             ""
         }
