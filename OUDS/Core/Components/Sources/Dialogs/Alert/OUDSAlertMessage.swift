@@ -103,6 +103,12 @@ public struct OUDSAlertMessage: View {
 
     @Environment(\.theme) private var theme
 
+    // MARK: - Constants
+
+    static let textsAccessibilityPriority = 300.0
+    static let actionLinkAccessibilityPriority = 200.0
+    static let closeButtonAccessibilityPriority = 100.0
+
     // MARK: - Link
 
     // swiftlint:disable nesting
@@ -479,6 +485,7 @@ public struct OUDSAlertMessage: View {
         .frame(minWidth: theme.alert.sizeMinWidth, minHeight: minHeight, alignment: .leading)
         .modifier(AlertMessageBackgroundModifier(status: status))
         .modifier(AlertMessageBorderModifier(status: status))
+        .accessibilityElement(children: .contain)
     }
 
     private var minHeight: SizeSemanticToken {

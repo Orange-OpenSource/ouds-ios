@@ -53,10 +53,12 @@ struct AlertMessageContent: View {
             }
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilityLabel)
+            .accessibilitySortPriority(OUDSAlertMessage.textsAccessibilityPriority)
 
             // Action
             if let link, self.link?.position == .bottom {
                 OUDSLink(text: link.text, size: .default, action: link.action)
+                    .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
             }
         }
         .padding(.vertical, theme.alert.spacePaddingBlock)
