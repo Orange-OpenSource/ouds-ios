@@ -383,7 +383,7 @@ struct PinCodeInputContainer: View {
         guard UIAccessibility.isVoiceOverRunning else { return }
         #endif
         let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
-        if #available(iOS 17, *), #available(macOS 14, *) {
+        if #available(iOS 17, visionOS 1, macOS 14, *) {
             var announcement = AttributedString(message)
             announcement.accessibilitySpeechAnnouncementPriority = .high
             AccessibilityNotification.Announcement(announcement).post()
