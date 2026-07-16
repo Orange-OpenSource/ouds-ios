@@ -826,6 +826,198 @@
         }
       }
     },
+    "core_pinCodeInput_digitLabel_a11y_1" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم الأول"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1st digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1er chiffre"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y_2" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم الثاني"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2nd digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2ème chiffre"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y_3" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم الثالث"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3rd digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3ème chiffre"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y_4" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم الرابع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4th digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4ème chiffre"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y_5" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم الخامس"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5th digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5ème chiffre"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y_6" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم السادس"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6th digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6ème chiffre"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y_7" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم السابع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7th digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7ème chiffre"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y_8" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم الثامن"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8th digit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8ème chiffre"
+          }
+        }
+      }
+    },
     "core_pinCodeInput_empty_a11y" : {
       "comment" : "Component - Pin Code Input",
       "extractionState" : "manual",
@@ -1187,5 +1379,5 @@
       }
     }
   },
-  "version" : "1.1"
+  "version" : "1.2"
 }
