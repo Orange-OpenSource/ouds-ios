@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Pin Code Input Container
+// swiftlint:disable type_body_length
 
 struct PinCodeInputContainer: View {
 
@@ -309,6 +309,7 @@ struct PinCodeInputContainer: View {
             } else if index < length.rawValue - 1 {
                 focusedIndex = index + 1
                 value = ""
+                announceFocusChanged(forInputAt: index + 1)
             } else {
                 value = ""
             }
@@ -339,12 +340,14 @@ struct PinCodeInputContainer: View {
                     digits[previousIndex] = ""
                     value = ""
                     focusedIndex = previousIndex
+                    announceFocusChanged(forInputAt: previousIndex)
                 }
             } else {
                 lastBackspaceIndex = index
                 digits[index] = ""
                 value = ""
                 focusedIndex = index
+                announceFocusChanged(forInputAt: index)
             }
         }
     }
@@ -374,5 +377,26 @@ struct PinCodeInputContainer: View {
             focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
         }
     }
+
+    private func announceFocusChanged(forInputAt index: Int) {
+        #if canImport(UIKit)
+        guard UIAccessibility.isVoiceOverRunning else { return }
+        #endif
+        let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
+        if #available(iOS 17, *), #available(macOS 14, *) {
+            var announcement = AttributedString(message)
+            announcement.accessibilitySpeechAnnouncementPriority = .high
+            AccessibilityNotification.Announcement(announcement).post()
+        } else {
+            #if canImport(UIKit)
+            UIAccessibility.post(
+                notification: .announcement,
+                argument: message)
+            #endif
+        }
+    }
 }
+
+// swiftlint:enable type_body_length
+
 #endif
