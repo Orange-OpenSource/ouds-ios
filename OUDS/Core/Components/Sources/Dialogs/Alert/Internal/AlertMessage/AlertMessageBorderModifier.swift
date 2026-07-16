@@ -31,6 +31,7 @@ struct AlertMessageBorderModifier: ViewModifier {
                     radius: radius,
                     color: color)
             .clipShape(RoundedRectangle(cornerRadius: radius))
+            .contentShape(RoundedRectangle(cornerRadius: radius))
     }
 
     // MARK: - Helpers

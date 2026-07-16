@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Pin Code Input Container
+// swiftlint:disable type_body_length
 
 struct PinCodeInputContainer: View {
 
@@ -160,18 +160,6 @@ struct PinCodeInputContainer: View {
         }
     }
 
-    /// Returns `true` when VoiceOver (or any assistive technology that relies on explicit focus
-    /// control) is currently running.
-    /// When `true`, automatic focus advancement to the next field is suppressed so that the user
-    /// can navigate fields at their own pace via VoiceOver swipe gestures.
-    private var isVoiceOverRunning: Bool {
-        #if canImport(UIKit)
-        UIAccessibility.isVoiceOverRunning
-        #else
-        false
-        #endif
-    }
-
     private func accessibilityValue(for index: Int) -> String {
         let value = digits[index]
         if value.isEmpty {
@@ -189,7 +177,7 @@ struct PinCodeInputContainer: View {
     /// - Parameter index: The 0-based index of the digit field
     /// - Returns: The localized positional label
     private func accessibilityLabel(for index: Int) -> String {
-        "core_pinCodeInput_digitLabel_a11y" <- (index + 1)
+        "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
     }
 
     /// Returns the accessibility label for the group container of all digit fields.
@@ -296,13 +284,8 @@ struct PinCodeInputContainer: View {
                 focusedIndex = nil
             } else {
                 value = ""
-                // Move focus to the next empty field only when VoiceOver is not running.
-                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
-                // would interrupt their navigation.
-                if !isVoiceOverRunning {
-                    let nextIndex = index + toDistribute.count
-                    focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
-                }
+                let nextIndex = index + toDistribute.count
+                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
             }
             return
         }
@@ -324,13 +307,9 @@ struct PinCodeInputContainer: View {
                 value = joined
                 focusedIndex = nil
             } else if index < length.rawValue - 1 {
-                // Move focus to the next field only when VoiceOver is not running.
-                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
-                // would interrupt their navigation.
-                if !isVoiceOverRunning {
-                    focusedIndex = index + 1
-                }
+                focusedIndex = index + 1
                 value = ""
+                announceFocusChanged(forInputAt: index + 1)
             } else {
                 value = ""
             }
@@ -361,12 +340,14 @@ struct PinCodeInputContainer: View {
                     digits[previousIndex] = ""
                     value = ""
                     focusedIndex = previousIndex
+                    announceFocusChanged(forInputAt: previousIndex)
                 }
             } else {
                 lastBackspaceIndex = index
                 digits[index] = ""
                 value = ""
                 focusedIndex = index
+                announceFocusChanged(forInputAt: index)
             }
         }
     }
@@ -392,14 +373,30 @@ struct PinCodeInputContainer: View {
             focusedIndex = nil
         } else {
             value = ""
-            // Move focus to the next empty field only when VoiceOver is not running.
-            // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
-            // would interrupt their navigation.
-            if !isVoiceOverRunning {
-                let nextIndex = index + toDistribute.count
-                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
-            }
+            let nextIndex = index + toDistribute.count
+            focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+        }
+    }
+
+    private func announceFocusChanged(forInputAt index: Int) {
+        #if canImport(UIKit)
+        guard UIAccessibility.isVoiceOverRunning else { return }
+        #endif
+        let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
+        if #available(iOS 17, visionOS 1, macOS 14, *) {
+            var announcement = AttributedString(message)
+            announcement.accessibilitySpeechAnnouncementPriority = .high
+            AccessibilityNotification.Announcement(announcement).post()
+        } else {
+            #if canImport(UIKit)
+            UIAccessibility.post(
+                notification: .announcement,
+                argument: message)
+            #endif
         }
     }
 }
+
+// swiftlint:enable type_body_length
+
 #endif
