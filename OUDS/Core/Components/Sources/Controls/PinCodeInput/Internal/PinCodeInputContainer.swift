@@ -177,7 +177,7 @@ struct PinCodeInputContainer: View {
     /// - Parameter index: The 0-based index of the digit field
     /// - Returns: The localized positional label
     private func accessibilityLabel(for index: Int) -> String {
-        "core_pinCodeInput_digitLabel_a11y" <- (index + 1)
+        "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
     }
 
     /// Returns the accessibility label for the group container of all digit fields.
