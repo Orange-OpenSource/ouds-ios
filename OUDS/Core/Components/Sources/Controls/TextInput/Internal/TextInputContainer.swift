@@ -69,7 +69,10 @@ struct TextInputContainer: View {
                                        prefix: prefix,
                                        suffix: suffix,
                                        status: status,
-                                       interactionState: interactionState)
+                                       interactionState: interactionState,
+                                       accessibilityLabel: accessibilityLabel,
+                                       accessibilityValue: accessibilityValue,
+                                       accessibilityHint: accessibilityHint?.rawValue ?? "")
                             .focused($focused, equals: true)
                     }
                 }
@@ -77,9 +80,6 @@ struct TextInputContainer: View {
                     focused = true
                 }
             }
-            .accessibilityLabel(accessibilityLabel)
-            .accessibilityValue(accessibilityValue)
-            .accessibilityHint(accessibilityHint?.rawValue ?? "")
 
             // Trailing action container
             TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)

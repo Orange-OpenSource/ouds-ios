@@ -583,7 +583,11 @@ public struct OUDSTextInput: View {
                 HelperErrorTextContainer(helperText: helperText, status: status)
                     .accessibilityHidden(true)
             }
-            .accessibilityElement(children: .contain)
+            // NOTE: .accessibilityElement(children: .contain) is intentionally absent here.
+            // It created a UIAccessibilityContainer barrier that prevented Full Keyboard Access
+            // (FKA) from reaching the UITextField via the UIKit view hierarchy. All a11y
+            // attributes (label, value, hint) are set directly on the TextField in InputText.swift,
+            // so VoiceOver behaviour is unaffected by this removal.
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)

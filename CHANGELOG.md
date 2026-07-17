@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Usage of `text input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
 - Vocalization priority for `alert message` components and usage with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1564)
 - `PIN code input` component usage with Voice Over (Orange-OpenSource/ouds-ios#1529)
 - Missing `badges` on `toolbar top` component for app on iOS 27 with Xcode 26.5 and disabled Liquid Glass configuration (Orange-OpenSource/ouds-ios#1623)
