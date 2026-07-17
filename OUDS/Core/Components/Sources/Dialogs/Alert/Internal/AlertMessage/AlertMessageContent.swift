@@ -23,6 +23,7 @@ struct AlertMessageContent: View {
     let description: TextualContent?
     let bulletList: [TextualContent]
     let link: OUDSAlertMessage.Link?
+    let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
 
@@ -53,10 +54,15 @@ struct AlertMessageContent: View {
             }
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilityLabel)
+            .accessibilitySortPriority(OUDSAlertMessage.textsAccessibilityPriority)
+            #if canImport(UIKit)
+                .modifier(AlertMessageFKACustomActionsModifier(link: link, onClose: onClose))
+            #endif
 
             // Action
             if let link, self.link?.position == .bottom {
                 OUDSLink(text: link.text, size: .default, action: link.action)
+                    .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
             }
         }
         .padding(.vertical, theme.alert.spacePaddingBlock)

@@ -103,6 +103,12 @@ public struct OUDSAlertMessage: View {
 
     @Environment(\.theme) private var theme
 
+    // MARK: - Constants
+
+    static let textsAccessibilityPriority = 300.0
+    static let actionLinkAccessibilityPriority = 200.0
+    static let closeButtonAccessibilityPriority = 100.0
+
     // MARK: - Link
 
     // swiftlint:disable nesting
@@ -471,7 +477,7 @@ public struct OUDSAlertMessage: View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertLeadingIcon(status: status)
                 .padding(.top, theme.alert.spacePaddingBlock)
-            AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link)
+            AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link, onClose: onClose)
             AlertMessageAction(link: link, onClose: onClose)
         }
         .padding(.leading, theme.alert.spacePaddingInline)
@@ -479,6 +485,7 @@ public struct OUDSAlertMessage: View {
         .frame(minWidth: theme.alert.sizeMinWidth, minHeight: minHeight, alignment: .leading)
         .modifier(AlertMessageBackgroundModifier(status: status))
         .modifier(AlertMessageBorderModifier(status: status))
+        .accessibilityElement(children: .contain)
     }
 
     private var minHeight: SizeSemanticToken {

@@ -29,6 +29,7 @@ struct AlertMessageAction: View {
         HStack(alignment: .center, spacing: theme.alert.spaceColumnGapAction) {
             if let link, self.link?.position == .topTrailing {
                 OUDSLink(text: link.text, size: .default, action: link.action)
+                    .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
             }
 
             if let onClose {
@@ -36,6 +37,7 @@ struct AlertMessageAction: View {
                                             accessibilityLabel: "core_alertMessage_close_a11y".localized()),
                            appearance: .minimal,
                            action: onClose)
+                    .accessibilitySortPriority(OUDSAlertMessage.closeButtonAccessibilityPriority)
             }
         }
     }
