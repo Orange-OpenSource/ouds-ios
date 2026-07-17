@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
 - `View modifier` to force keyboard closing on tap (Orange-OpenSource/ouds-ios#1530)
 - `View modifier` to apply theme to Liquid Glass SwiftUI `TabView` (Orange-OpenSource/ouds-ios#1459)
 - `View modifier` to add custom accessibility traits inside `text area` component (Orange-OpenSource/ouds-ios#1597)
