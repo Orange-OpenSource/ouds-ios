@@ -108,7 +108,7 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
     /// OUDSTabView(selectedTab: $selectedTab, count: 3) {
     ///     Tab("Home", image: "house", value: 0) { HomePage() }
     ///     Tab("Search", image: "magnifyingglass", value: 1) { SearchPage() }
-    ///     Tab("Profile", image: "person", value: 3) { ProfilePage() }
+    ///     Tab("Profile", image: "person", value: 2) { ProfilePage() }
     /// }
     /// ```
     ///
@@ -291,7 +291,8 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
 
     private var shouldShowTabIndicator: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        if forceOUDSLegacyLayout { return true }
+        if forceOUDSLegacyLayout { return tabCount > 0 }
+        guard tabCount > 0 else { return false }
         guard isLiquidGlassDisabled else { return false }
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
         return !isLandscape

@@ -601,10 +601,10 @@ OUDSLiquidGlassTabView {
 | macOS min | 13 | 15 | 26 |
 | visionOS min | 1 | 2 | 26 |
 | Tab API | `.tabItem { Label }.tag(n)` | `Tab(…, value: Int) { }` | `Tab("…", image:) { }` |
-| `Tab(role: .search)` | Non | Oui (avec `value:`) | Oui |
-| `selectedTab` binding | `Binding<Int>` | `Binding<Int>` | Aucun |
-| Indicateur sélection | Oui (portrait iPhone, iOS < 26) | Oui (même logique) | Non (iOS 26+ uniquement) |
-| Divider legacy | Oui | Oui | Oui (si Liquid Glass désactivé) |
+| `Tab(role: .search)` | No | Yes (with `value:`) | Yes |
+| `selectedTab` binding | `Binding<Int>` | `Binding<Int>` | None |
+| Selected-tab indicator | Yes (portrait iPhone, iOS < 26) | Yes (same logic) | No (iOS 26+ only) |
+| Legacy divider | Yes | Yes | Yes (if Liquid Glass is disabled) |
 
 ---
 
