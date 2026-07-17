@@ -196,7 +196,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 
 ## 7. Components
 
-**Index:** [Button](#actions--button) · [BulletList](#content-display--bullet-list) · [Checkbox](#controls--checkbox) · [Radio](#controls--radio-button) · [Switch](#controls--switch) · [PinCode](#controls--pin-code-input) · [Password](#controls--password-input) · [Chips](#controls--chips) · [TextInput](#controls--text-input) · [TextArea](#controls--text-area) · [AlertMessage](#dialogs--alert-message) · [InlineAlert](#dialogs--inline-alert) · [Badge](#indicators--badge) · [Tag](#indicators--tag) · [InputTag](#indicators--input-tag) · [ColoredSurface](#layouts--colored-surface) · [Divider](#layouts--divider) · [Link](#navigations--link) · [TabBar](#navigations--tab-bar) · [Toolbars](#navigations--toolbars)
+**Index:** [Button](#actions--button) · [BulletList](#content-display--bullet-list) · [Checkbox](#controls--checkbox) · [Radio](#controls--radio-button) · [Switch](#controls--switch) · [PinCode](#controls--pin-code-input) · [Password](#controls--password-input) · [Chips](#controls--chips) · [TextInput](#controls--text-input) · [TextArea](#controls--text-area) · [AlertMessage](#dialogs--alert-message) · [InlineAlert](#dialogs--inline-alert) · [Badge](#indicators--badge) · [Tag](#indicators--tag) · [InputTag](#indicators--input-tag) · [ColoredSurface](#layouts--colored-surface) · [Divider](#layouts--divider) · [Link](#navigations--link) · [TabBar](#navigations--tab-bar) · [TabView / LiquidGlassTabView](#navigations--tab-view--liquid-glass-tab-view) · [Toolbars](#navigations--toolbars)
 
 ---
 
@@ -521,6 +521,7 @@ OUDSLink(text: "Text", indicator: .back, isFullWidth: true, size: .default) {}
 ### Navigations — Tab Bar
 
 > Never combine with `OUDSToolBarBottom` on the same screen.
+> For iOS 18+ and `Tab`-based API, prefer `OUDSTabView` or `OUDSLiquidGlassTabView` instead.
 
 ```swift
 // iOS 15–25
@@ -538,6 +539,72 @@ OUDSTabBar {
 ```
 
 > Tab bar images: 26×26 pt. `OUDSTabBar(selected:count:content:)` (plain `Int`) is deprecated — use `selectedTab: Binding<Int>`.
+
+---
+
+### Navigations — Tab View / Liquid Glass Tab View
+
+> `OUDSTabView` requires iOS 18+ / macOS 15+ / visionOS 2+. For iOS 15–17, use `OUDSTabBar` instead.
+> `OUDSLiquidGlassTabView` requires iOS 26+ / macOS 26+ / visionOS 26+.
+> Never combine with `OUDSToolBarBottom` on the same screen.
+> Both apply the same OUDS appearance (colors, typography, divider, selected-tab indicator) as `OUDSTabBar`.
+
+Two components are provided because `Tab(role: .search)` and `Tab("…", image:) { }` without an explicit
+`value:` both have `TabValue == Never` in the SwiftUI type system, which is incompatible with
+`@TabContentBuilder<Int>` (required to expose a `Binding<Int>`).
+SwiftUI's own promotion from `Never` to `Int?` is only available through internal initialisers.
+
+**`OUDSTabView`** — iOS 18+, `Binding<Int>`, requires `value:` on every `Tab`
+
+```swift
+// iOS 18 and iOS 26 with Liquid Glass disabled:
+// binding + count required for the selected-tab indicator
+// Every Tab must carry an explicit value: Int
+@State private var selectedTab = 0
+
+OUDSTabView(selectedTab: $selectedTab, count: 4) {
+    Tab("first_tab_label", image: "first-tab-image", value: 0) { FirstView() }
+    Tab("second_tab_label", image: "second-tab-image", value: 1) { SecondView() }
+    Tab("third_tab_label", image: "third-tab-image", value: 2) { ThirdView() }
+    Tab(value: 3, role: .search) { SearchView() }
+}
+
+// iOS 26+ with Liquid Glass enabled: binding without count (no custom indicator)
+// Tab without value: is still not allowed — use OUDSLiquidGlassTabView instead
+@State private var selectedTab = 0
+if #available(iOS 26, *) {
+    OUDSTabView(selectedTab: $selectedTab) {
+        Tab("first_tab_label", image: "first-tab-image", value: 0) { FirstView() }
+        Tab("second_tab_label", image: "second-tab-image", value: 1) { SecondView() }
+        Tab("third_tab_label", image: "third-tab-image", value: 2) { ThirdView() }
+    }
+}
+```
+
+> Each `Tab` **must** carry `value: Int`. `Tab("…", image:) { }` without `value:` has `TabValue == Never`
+> and will not compile inside `OUDSTabView`. Tab bar images: 26×26 pt.
+
+**`OUDSLiquidGlassTabView`** — iOS 26+ only, no `value:` required, `Tab(role: .search)` supported, no selection binding
+
+```swift
+OUDSLiquidGlassTabView {
+    Tab("Tokens", image: "design-token") { TokensPage() }
+    Tab("Components", image: "component-atom") { ComponentsPage() }
+    Tab("About", image: "info-fill") { AboutPage() }
+    Tab(role: .search) { SearchPage() }
+}
+```
+
+| | `OUDSTabBar` | `OUDSTabView` | `OUDSLiquidGlassTabView` |
+|---|---|---|---|
+| iOS min | 15 | 18 | 26 |
+| macOS min | 13 | 15 | 26 |
+| visionOS min | 1 | 2 | 26 |
+| Tab API | `.tabItem { Label }.tag(n)` | `Tab(…, value: Int) { }` | `Tab("…", image:) { }` |
+| `Tab(role: .search)` | Non | Oui (avec `value:`) | Oui |
+| `selectedTab` binding | `Binding<Int>` | `Binding<Int>` | Aucun |
+| Indicateur sélection | Oui (portrait iPhone, iOS < 26) | Oui (même logique) | Non (iOS 26+ uniquement) |
+| Divider legacy | Oui | Oui | Oui (si Liquid Glass désactivé) |
 
 ---
 

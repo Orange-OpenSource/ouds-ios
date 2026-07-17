@@ -33,7 +33,7 @@ import SwiftUI
 /// or ``OUDSBadgeCount``, the native API is used instead.
 ///
 /// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version, not before.
-/// However if an app is built with Xcode 26 and the flag *UIDesignRequiresCompatibility* set to *YES*, then Loquid Glass won't be applied but the alternative layout.
+/// However if an app is built with Xcode 26 and the flag *UIDesignRequiresCompatibility* set to *YES*, then Liquid Glass won't be applied but the alternative layout.
 /// Nevertheless with Xcode 27 and for iOS 27, Liquid Glass will be always applied, whatever the value of the flag is.
 ///
 /// If you use SF Symbols for images, if they exist their *fill* variant will be automatically used in the tab bar (native behaviour).
@@ -81,7 +81,7 @@ import SwiftUI
 ///
 /// ## Selection of tabs
 ///
-/// For iOS lower than 26, a selected tab indicator can be displayed in the `OUDSTabBar` if the `count` parameter is defined (to the number of tabs in the component)
+/// For iOS lower than 26, a selected tab indicator is displayed in the `OUDSTabBar` ; the `count` parameter must be defined (to the number of tabs in the component),
 /// and if the `selectedTab` binding value is equal to a given tag associated to a tab item.
 /// Otherwise the indicator won't appear; these parameters are mandatory to compute the location of the indicator.
 /// This rule is only applied if selected tab indicator must be displayed.
@@ -136,6 +136,11 @@ import SwiftUI
 ///             .tag(2) // Must be used for the selectedTab binding
 ///     }
 /// ```
+///
+/// ## Alernative components
+///
+/// If you want to use SwiftUI `Tab` View with or without rules, used instead `OUDSTabView`.
+/// If you target apps with Liquid Glass enabled and need `Tab` or rules, using instead `OUDSLiquidGlassTabView`.
 ///
 /// ## Design documentation
 ///
