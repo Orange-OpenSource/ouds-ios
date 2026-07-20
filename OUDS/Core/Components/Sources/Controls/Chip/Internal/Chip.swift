@@ -164,7 +164,7 @@ private struct ChipText: View {
     var body: some View {
         Text(LocalizedStringKey(text))
             .labelModerateMedium(theme)
-            .multilineTextAlignment(.center)
+            .multilineTextAlignment(.leading)
     }
 }
 

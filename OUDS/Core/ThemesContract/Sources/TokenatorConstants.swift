@@ -62,12 +62,12 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component checkbox (2.4.0)
     public static let componentCheckboxVersion = "2.4.0"
-    /// Version of the Figma specifications for the component filter chip (1.4.0)
-    public static let componentFilterChipVersion = "1.4.0"
+    /// Version of the Figma specifications for the component filter chip (1.5.0)
+    public static let componentFilterChipVersion = "1.5.0"
     /// Version of the Figma specifications for the component filter chip expand (1.5.0)
     public static let componentFilterChipExpandVersion = "1.5.0"
-    /// Version of the Figma specifications for the component suggestion chip (1.4.0)
-    public static let componentSuggestionChipVersion = "1.4.0"
+    /// Version of the Figma specifications for the component suggestion chip (1.5.0)
+    public static let componentSuggestionChipVersion = "1.5.0"
     /// Version of the Figma specifications for the component password input (1.3.0)
     public static let componentPasswordInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component phone number input (1.3.0)

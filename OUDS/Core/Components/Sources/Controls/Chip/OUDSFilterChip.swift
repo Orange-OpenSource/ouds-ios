@@ -62,7 +62,7 @@ import SwiftUI
 ///
 /// ![A filter chip component in light and dark modes with Wireframe theme](component_filterChip_Wireframe)
 ///
-/// - Version: 1.4.0 (Figma component design version)
+/// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSFilterChip: View {
