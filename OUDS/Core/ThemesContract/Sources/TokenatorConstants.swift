@@ -123,8 +123,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Navigation
 
-    /// Version of the Figma specifications for the component link (2.2.0)
-    public static let componentLinkVersion = "2.2.0"
+    /// Version of the Figma specifications for the component link (2.3.0)
+    public static let componentLinkVersion = "2.3.0"
     /// Version of the Figma specifications for the component expand link (2.4.0)
     public static let componentExpandLinkVersion = "2.4.0"
     /// Version of the Figma specifications for the tab bar components (1.0.0)

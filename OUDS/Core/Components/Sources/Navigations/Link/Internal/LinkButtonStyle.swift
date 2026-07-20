@@ -26,8 +26,10 @@ struct LinkButtonStyle: ButtonStyle {
     let isFullWidth: Bool
 
     @State private var isHover: Bool
+
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsHorizontalSizeClass) private var oudsHorizontalSizeClass
 
     // MARK: Initializer
 
@@ -56,7 +58,7 @@ struct LinkButtonStyle: ButtonStyle {
             }
         }
         .padding(.horizontal, theme.link.spacePaddingInline)
-        .padding(.vertical, theme.link.spacePaddingBlockDefault)
+        .padding(.vertical, verticalPadding)
         .frame(minWidth: minWidth, minHeight: minHeight)
         .frame(maxWidth: isFullWidth ? .infinity : nil)
         .contentShape(Rectangle())
@@ -74,7 +76,19 @@ struct LinkButtonStyle: ButtonStyle {
     }
 
     private var minHeight: Double {
-        size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
+        if oudsHorizontalSizeClass == .regular {
+            size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
+        } else { // .compact, .extraCompact
+            theme.link.sizeMinHeightCompactDensity
+        }
+    }
+
+    private var verticalPadding: Double {
+        if oudsHorizontalSizeClass == .regular {
+            size == .small ? theme.link.spacePaddingBlockSmall : theme.link.spacePaddingBlockDefault
+        } else { // .compact, .extraCompact
+            size == .small ? theme.link.spacePaddingBlockCompactDensitySmall : theme.link.spacePaddingBlockCompactDensityDefault
+        }
     }
 }
 
