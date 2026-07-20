@@ -41,8 +41,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Actions
 
-    /// Version of the Figma specifications for the component button (3.3.0)
-    public static let componentButtonVersion = "3.3.0"
+    /// Version of the Figma specifications for the component button (3.2.0)
+    public static let componentButtonVersion = "3.2.0"
     /// Version of the Figma specifications for the component interactive icon (1.0.0)
     public static let componentInteractiveIcon = "1.0.0"
 
@@ -62,16 +62,16 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component checkbox (2.4.0)
     public static let componentCheckboxVersion = "2.4.0"
-    /// Version of the Figma specifications for the component filter chip (1.5.0)
-    public static let componentFilterChipVersion = "1.5.0"
+    /// Version of the Figma specifications for the component filter chip (1.4.0)
+    public static let componentFilterChipVersion = "1.4.0"
     /// Version of the Figma specifications for the component filter chip expand (1.5.0)
     public static let componentFilterChipExpandVersion = "1.5.0"
-    /// Version of the Figma specifications for the component suggestion chip (1.5.0)
-    public static let componentSuggestionChipVersion = "1.5.0"
-    /// Version of the Figma specifications for the component password input (1.3.1)
-    public static let componentPasswordInputVersion = "1.3.1"
-    /// Version of the Figma specifications for the component phone number input (1.3.1)
-    public static let componentPhoneNumberInputVersion = "1.3.1"
+    /// Version of the Figma specifications for the component suggestion chip (1.4.0)
+    public static let componentSuggestionChipVersion = "1.4.0"
+    /// Version of the Figma specifications for the component password input (1.3.0)
+    public static let componentPasswordInputVersion = "1.3.0"
+    /// Version of the Figma specifications for the component phone number input (1.3.0)
+    public static let componentPhoneNumberInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component pin code input (1.3.0)
     public static let componentPinCodeInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component quantity input (1.3.1)
@@ -90,10 +90,10 @@ public enum OUDSVersions {
     public static let componentSelectInputVersion = "1.3.1"
     /// Version of the Figma specifications for the component switch (1.5.0)
     public static let componentSwitchVersion = "1.5.0"
-    /// Version of the Figma specifications for the component text area (1.2.1)
-    public static let componentTextAreaVersion = "1.2.1"
-    /// Version of the Figma specifications for the component text input (1.4.1)
-    public static let componentTextInputVersion = "1.4.1"
+    /// Version of the Figma specifications for the component text area (1.2.0)
+    public static let componentTextAreaVersion = "1.2.0"
+    /// Version of the Figma specifications for the component text input (1.4.0)
+    public static let componentTextInputVersion = "1.4.0"
 
     // MARK: - Components versions - Dialog
 
@@ -123,8 +123,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Navigation
 
-    /// Version of the Figma specifications for the component link (2.3.0)
-    public static let componentLinkVersion = "2.3.0"
+    /// Version of the Figma specifications for the component link (2.2.0)
+    public static let componentLinkVersion = "2.2.0"
     /// Version of the Figma specifications for the component expand link (2.4.0)
     public static let componentExpandLinkVersion = "2.4.0"
     /// Version of the Figma specifications for the tab bar components (1.0.0)

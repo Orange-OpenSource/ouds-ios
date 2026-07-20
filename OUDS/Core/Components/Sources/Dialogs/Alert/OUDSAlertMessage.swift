@@ -87,7 +87,7 @@ import SwiftUI
 ///
 /// ![An alert message component in light and dark modes with Wireframe theme](component_alertMessage_Wireframe)
 ///
-/// - Version: 1.1.0 (Figma component design version)
+/// - Version: 1.1.1 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
 public struct OUDSAlertMessage: View {
