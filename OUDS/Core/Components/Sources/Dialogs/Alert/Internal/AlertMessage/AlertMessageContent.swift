@@ -67,6 +67,9 @@ struct AlertMessageContent: View {
         }
         .padding(.vertical, theme.alert.spacePaddingBlock)
         .fixedSize(horizontal: false, vertical: true)
+        .onAppear {
+            VoiceOverUtils.announce(accessibilityLabel)
+        }
     }
 
     // MARK: - Helpers
