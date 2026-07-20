@@ -56,7 +56,7 @@ struct LinkButtonStyle: ButtonStyle {
             }
         }
         .padding(.horizontal, theme.link.spacePaddingInline)
-        .padding(.vertical, theme.link.spacePaddingBlockDefault)
+        .padding(.vertical, verticalPadding)
         .frame(minWidth: minWidth, minHeight: minHeight)
         .frame(maxWidth: isFullWidth ? .infinity : nil)
         .contentShape(Rectangle())
@@ -75,6 +75,10 @@ struct LinkButtonStyle: ButtonStyle {
 
     private var minHeight: Double {
         size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
+    }
+
+    private var verticalPadding: Double {
+        size == .small ? theme.link.spacePaddingBlockSmall : theme.link.spacePaddingBlockDefault
     }
 }
 

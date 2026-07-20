@@ -79,7 +79,7 @@ import SwiftUI
 ///
 /// ![A link component in light and dark modes with Wireframe theme](component_link_Wireframe)
 ///
-/// - Version: 2.2.0 (Figma component design version)
+/// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.11.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLink: View {
