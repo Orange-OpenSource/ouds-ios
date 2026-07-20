@@ -112,11 +112,17 @@ struct PinCodeInputContainer: View {
                 // The label and value are set directly on the UITextField inside BackspaceDetectingTextField.
             }
         }
-        // .contain keeps each digit field individually reachable by VoiceOver swipe gestures inside the group.
-        // VoiceOver first announces the group label (groupAccessibilityLabel), then the user can swipe
-        // into the container to reach and vocalize each individual digit field.
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel(groupAccessibilityLabel)
+        // Accessibility grouping is applied conditionally:
+        // - When VoiceOver is active, we wrap the row in a `.contain` group with a global label
+        //   ("Enter the code with N digits"), so VoiceOver announces the group and lets the user
+        //   swipe into it to reach each digit individually.
+        // - When VoiceOver is NOT active (typical Full Keyboard Access scenario), we deliberately
+        //   avoid `.accessibilityElement(children: .contain)`. That modifier creates a
+        //   UIAccessibilityContainer barrier that hides the underlying UITextField children from
+        //   UIKit's focus system, making the whole component unreachable by Tab/Shift+Tab in FKA.
+        //   Without the container, each `UITextField` inside `BackspaceDetectingTextField` is a
+        //   native `UIFocusItem` and can be reached natively by FKA Tab navigation.
+        .modifier(PinCodeInputVoiceOverGroupModifier(groupLabel: groupAccessibilityLabel))
         .onAppear {
             // Focus on the first empty field if:
             // - autofocus is enabled (empty value case)
@@ -223,6 +229,7 @@ struct PinCodeInputContainer: View {
             index: index,
             a11yLabel: accessibilityLabel(for: index),
             a11yValue: accessibilityValue(for: index),
+            isFocused: focusedIndex == index,
             onBackspace: {
                 handleBackspace(at: index)
             },
@@ -398,5 +405,44 @@ struct PinCodeInputContainer: View {
 }
 
 // swiftlint:enable type_body_length
+
+// MARK: - VoiceOver-only Grouping Modifier
+
+/// Applies `.accessibilityElement(children: .contain)` and a group label ONLY when VoiceOver is running.
+///
+/// The PIN code component is a row of `BackspaceDetectingTextField` (a `UIViewRepresentable` wrapping
+/// a custom `UITextField`). We want two different accessibility behaviours:
+///
+/// - **VoiceOver ON**: expose the whole row as a single container with a spoken group label
+///   ("Enter the code with N digits"). The user can then swipe inside the container to reach and
+///   vocalize each digit individually.
+///
+/// - **VoiceOver OFF (typical Full Keyboard Access scenario)**: do **not** apply `.contain`.
+///   That modifier creates a `UIAccessibilityContainer` barrier which hides every underlying
+///   `UITextField` from UIKit's focus system, making the whole component unreachable by Tab in FKA.
+///   Without it, each `UITextField` remains a native `UIFocusItem` and is reached directly by
+///   FKA navigation, one digit at a time.
+struct PinCodeInputVoiceOverGroupModifier: ViewModifier {
+
+    // NOTE: People needing both Full Keyboard Access and VoiceOver simultaneously will get the
+    // VoiceOver behaviour (grouped container). See https://github.com/Orange-OpenSource/ouds-ios/issues/1631
+
+    let groupLabel: String
+
+    @Environment(\.accessibilityVoiceOverEnabled) private var isVoiceOverEnabled
+
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if isVoiceOverEnabled {
+            content
+                .accessibilityElement(children: .contain)
+                .accessibilityLabel(groupLabel)
+        } else {
+            // Do not add a container: keep each UITextField natively focusable by FKA.
+            // (┛ಠ_ಠ)┛彡┻━┻
+            content
+        }
+    }
+}
 
 #endif
