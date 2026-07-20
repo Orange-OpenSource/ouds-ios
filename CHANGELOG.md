@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Usage of `PIN code input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1631)
 - Usage of `text input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
 - Vocalization priority for `alert message` components and usage with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1564)
 - `PIN code input` component usage with Voice Over (Orange-OpenSource/ouds-ios#1529)

@@ -30,6 +30,8 @@ import SwiftUI
 /// - BackspaceTextField (UITextField): Custom UITextField that detects backspace
 struct BackspaceDetectingTextField: UIViewRepresentable {
 
+    // MARK: - Properties
+
     @Binding var text: String
     @Binding var displayText: String
 
@@ -37,8 +39,22 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
     let index: Int
     let a11yLabel: String
     let a11yValue: String
+    /// Whether this field is the one currently expected to be the first responder.
+    ///
+    /// SwiftUI's `@FocusState` does not always reliably drive `becomeFirstResponder()` on a
+    /// `UITextField` hosted through `UIViewRepresentable`, especially when the focus change is
+    /// programmatic (e.g. autofocus on appear, or moving to the next digit after a keystroke).
+    ///
+    /// This flag lets `updateUIView` explicitly call `becomeFirstResponder()` on the underlying
+    /// `UITextField` when it should be focused. We deliberately do NOT call
+    /// `resignFirstResponder()` when this flag is `false`: on iOS/FKA the focus loss is driven by
+    /// the user (Tab, tap on another view…) and forcing `resignFirstResponder()` here would fight
+    /// against the system.
+    let isFocused: Bool
     let onBackspace: () -> Void
     let onTextInserted: (String) -> Void
+
+    // MARK: - UI View Representable
 
     /// Creates the UITextField instance.
     ///
@@ -89,6 +105,26 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         // changes and the value string switches between "Empty" and the actual digit)
         uiView.accessibilityLabel = a11yLabel
         uiView.accessibilityValue = a11yValue
+
+        // Explicit first responder acquisition.
+        //
+        // Required because SwiftUI's `@FocusState` bound via `.focused($focusedIndex, equals:)`
+        // does not always relay focus changes down to a `UITextField` hosted inside a
+        // `UIViewRepresentable`. This is particularly noticeable for:
+        // - the initial autofocus on appear,
+        // - the auto-advance to the next digit after a keystroke,
+        // - the auto-recede to the previous digit after a backspace.
+        //
+        // We do NOT force `resignFirstResponder()` on `isFocused == false`: focus loss is driven
+        // by the user (Tab in Full Keyboard Access, tap on another view…) and forcing resignation
+        // would fight against the system.
+        //
+        // Dispatch async to avoid mutating focus during a SwiftUI layout pass.
+        if isFocused, !uiView.isFirstResponder {
+            DispatchQueue.main.async {
+                _ = uiView.becomeFirstResponder()
+            }
+        }
     }
 
     /// Creates the coordinator that acts as the `UITextFieldDelegate`.
