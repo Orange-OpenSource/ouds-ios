@@ -16,8 +16,6 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// swiftlint:disable type_body_length
-
 struct PinCodeInputContainer: View {
 
     // MARK: - Properties
@@ -386,25 +384,10 @@ struct PinCodeInputContainer: View {
     }
 
     private func announceFocusChanged(forInputAt index: Int) {
-        #if canImport(UIKit)
-        guard UIAccessibility.isVoiceOverRunning else { return }
-        #endif
         let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
-        if #available(iOS 17, visionOS 1, macOS 14, *) {
-            var announcement = AttributedString(message)
-            announcement.accessibilitySpeechAnnouncementPriority = .high
-            AccessibilityNotification.Announcement(announcement).post()
-        } else {
-            #if canImport(UIKit)
-            UIAccessibility.post(
-                notification: .announcement,
-                argument: message)
-            #endif
-        }
+        VoiceOverUtils.announce(message)
     }
 }
-
-// swiftlint:enable type_body_length
 
 // MARK: - VoiceOver-only Grouping Modifier
 

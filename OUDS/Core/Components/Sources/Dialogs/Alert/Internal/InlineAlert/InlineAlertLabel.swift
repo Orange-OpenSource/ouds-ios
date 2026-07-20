@@ -30,6 +30,9 @@ struct InlineAlertLabel: View {
             .foregroundColor(contentColor)
             .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
             .accessibilityLabel(accessibilityLabel)
+            .onAppear {
+                VoiceOverUtils.announce(accessibilityLabel)
+            }
     }
 
     // MARK: - Private helper
