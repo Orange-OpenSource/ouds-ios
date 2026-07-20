@@ -47,7 +47,7 @@ import SwiftUI
 ///     OUDSLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
 ///
 ///     // Navigate to previous page with link in a default size
-///     OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+///     OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
 ///
 ///     // Full-width: label stays, chevron anchored to the right / left
 ///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
@@ -79,7 +79,7 @@ import SwiftUI
 ///
 /// ![A link component in light and dark modes with Wireframe theme](component_link_Wireframe)
 ///
-/// - Version: 2.2.0 (Figma component design version)
+/// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.11.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLink: View {
@@ -104,7 +104,7 @@ public struct OUDSLink: View {
     /// Represents the arrow / chevron / indicator of an `OUDSLink`.
     /// - Since: 0.11.0
     @frozen public enum Indicator {
-        case back, next
+        case previous, next
     }
 
     enum Layout {
@@ -182,16 +182,16 @@ public struct OUDSLink: View {
 
     // swiftlint:disable function_default_parameter_at_end
 
-    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after indicator" (`OUDSLink.Indicator.next`) beside the text.
+    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.previous`) or "after indicator" (`OUDSLink.Indicator.next`) beside the text.
     ///
     /// ```swift
-    ///     OUDSLink(text: "Back", indicator: .back) { }
+    ///     OUDSLink(text: "Back", indicator: .previous) { }
     /// ```
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
     ///   - indicator: Indicator displayed in the link.
-    ///   When `OUDSLink.Indicator.back`, the indicator is displayed before the text.
+    ///   When `OUDSLink.Indicator.previous`, the indicator is displayed before the text.
     ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
@@ -209,7 +209,7 @@ public struct OUDSLink: View {
     /// Creates a link with a localized text and a navigation indicator, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .back) { }
+    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .previous) { }
     /// ```
     ///
     /// - Parameters:
@@ -280,7 +280,7 @@ public struct OUDSLink: View {
 
     private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
         switch navigationIndicator {
-        case .back:
+        case .previous:
             "ic_link_previous"
         case .next:
             "ic_link_next"

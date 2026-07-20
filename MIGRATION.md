@@ -257,6 +257,27 @@ let modifier: OUDSLegacyLayoutModifier = ...
 
 **Reason for Change**: The modifier is no longer specific to the tab bar; it applies to the overall layout.
 
+### OUDSLink indicator — `.back` renamed to `.previous`
+
+The `OUDSLink.Indicator` enum case for backward navigation has been renamed from `.back` to `.previous`.
+
+**Impact**: High
+
+**Before (v2.3.0)**:
+```swift
+OUDSLink(text: "Back", indicator: .back, size: .default) { }
+```
+
+**After (v3.0.0)**:
+```swift
+OUDSLink(text: "Back", indicator: .previous, size: .default) { }
+```
+
+**Required Action**:
+- Replace any use of `indicator: .back` with `indicator: .previous` in `OUDSLink` calls
+
+**Reason for Change**: Improved semantic clarity — `.previous` better describes the navigation direction relative to the current page.
+
 ### Compatibility
 
 - **Backward Compatibility**: No

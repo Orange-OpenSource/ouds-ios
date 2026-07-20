@@ -41,7 +41,7 @@ OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_heart")), size: .de
 OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
 
 // Navigate to previous page with link in a default size
-OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
 ```
 
 ### Tab bars

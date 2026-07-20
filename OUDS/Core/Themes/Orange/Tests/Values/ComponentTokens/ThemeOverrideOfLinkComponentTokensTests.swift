@@ -57,6 +57,11 @@ struct ThemeOverrideOfLinkComponentTokensTests {
         #expect(inheritedTheme.link.sizeIconSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
     }
 
+    @Test func inheritedThemeCanOverrideLinkComponentTokenSizeMinHeightCompactDensity() throws {
+        #expect(inheritedTheme.link.sizeMinHeightCompactDensity != abstractTheme.link.sizeMinHeightCompactDensity)
+        #expect(inheritedTheme.link.sizeMinHeightCompactDensity == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
+    }
+
     // MARK: - Colors
 
     @Test func inheritedThemeCanOverrideLinkMonoComponentTokenColorContentEnabled() throws {
