@@ -29,6 +29,7 @@ public protocol LinkComponentTokens {
 
     var sizeMinHeightSmall: SizeSemanticToken { get }
     var sizeMinHeightDefault: SizeSemanticToken { get }
+    var sizeMinHeightCompactDensity: SizeSemanticToken { get }
     var sizeMinWidthSmall: SizeSemanticToken { get }
     var sizeMinWidth: SizeSemanticToken { get }
     var sizeIconSmall: SizeSemanticToken { get }
