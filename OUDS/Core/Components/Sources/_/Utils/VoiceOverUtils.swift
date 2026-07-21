@@ -20,10 +20,13 @@ enum VoiceOverUtils {
     ///
     /// - Parameter message: The message to vocalize as is
     @MainActor static func announce(_ message: String) {
+        #if os(watchOS)
+        return
+        #else
         #if canImport(UIKit)
         guard UIAccessibility.isVoiceOverRunning else { return }
         #endif
-        if #available(iOS 17, visionOS 1, macOS 14, *) {
+        if #available(iOS 17, visionOS 1, macOS 14, tvOS 17, *) {
             var announcement = AttributedString(message)
             announcement.accessibilitySpeechAnnouncementPriority = .high
             AccessibilityNotification.Announcement(announcement).post()
@@ -34,5 +37,6 @@ enum VoiceOverUtils {
                 argument: message)
             #endif
         }
+        #endif
     }
 }
