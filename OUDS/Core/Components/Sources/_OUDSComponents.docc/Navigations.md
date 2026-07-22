@@ -27,12 +27,12 @@ Some components can be used for **navigation**.
 }
 
 The ``OUDSLink`` proposes layout with text only or text with icon.
-It also proposes layout to navigate forward or backward.
+It also proposes layout to navigate forward, backward and outside the app.
 The link can be displayed in `small` or `default` size.
 
 ```swift        
-// Text only in small size
-OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+// Text only in small size, with next indicator
+OUDSLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
 
 // Text and icon in default size
 OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_heart")), size: .default) {}
@@ -42,6 +42,9 @@ OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode
 
 // Navigate to previous page with link in a default size
 OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
+
+// Navigate to outside the app with link in a default size
+OUDSLink(text: "Open outside", indicator: .external, size: .default) { /* the action to process */ }
 ```
 
 ### Tab bars
