@@ -31,7 +31,7 @@ It also proposes layout to navigate forward, backward and outside the app.
 The link can be displayed in `small` or `default` size.
 
 ```swift        
-// Text only in small size, with next indicator
+// Text in small size, with next indicator
 OUDSLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
 
 // Text and icon in default size

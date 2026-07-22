@@ -52,7 +52,7 @@ import SwiftUI
 ///     // Full-width: label stays, chevron anchored to the right / left
 ///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
 ///
-///     // Full-width: label stays, chevron anchored to the right / left
+///     // Full-width: label stays, indicator anchored to the right / left
 ///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
 /// ```
 ///
