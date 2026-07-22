@@ -17,6 +17,10 @@ import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
+#if os(iOS)
+import GameController
+#endif
+
 /// Defines the look and feel the tab bar must have by applying the OUDS tokens.
 ///
 /// ## Rendering
@@ -76,6 +80,15 @@ struct TabBarViewModifier: ViewModifier {
             }
             .onChange(of: theme) { newTheme in
                 setupTabBarAppearance(andTheme: newTheme)
+            }
+            // React to physical keyboard connect/disconnect so the focused tab bar item font
+            // (regular vs bold) is refreshed accordingly. Used as a proxy for Full Keyboard Access, since
+            // iOS does not expose a public API to read the FKA setting.
+            .onReceive(NotificationCenter.default.publisher(for: .GCKeyboardDidConnect)) { _ in
+                setupTabBarAppearance(withColor: colorScheme)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .GCKeyboardDidDisconnect)) { _ in
+                setupTabBarAppearance(withColor: colorScheme)
             }
         #endif
         // Color scheme changes can rise a bit later after onAppear()
@@ -185,9 +198,19 @@ struct TabBarViewModifier: ViewModifier {
 
         let focusedUIColor = themeToApply.bar.colorContentSelectedFocus.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.focused.iconColor = focusedUIColor
+        // When a physical keyboard is connected (proxy for Full Keyboard Access, since iOS
+        // does not expose a public API to read the FKA setting), use the regular-weight font instead of the
+        // bold one for the focused state. The bold weight at the fixed small font size used by UITabBar
+        // (10pt on iPhone, 13pt on iPad) causes tab item titles to be truncated when navigating with the
+        // keyboard. See PhysicalKeyboardDetector for details.
+        #if os(iOS)
+        let focusedFont: UIFont = PhysicalKeyboardDetector.isPhysicalKeyboardConnected ? normalFont : selectedFont
+        #else
+        let focusedFont: UIFont = selectedFont
+        #endif
         tabBarItemAppearance.focused.titleTextAttributes = [
             .foregroundColor: focusedUIColor,
-            .font: selectedFont,
+            .font: focusedFont,
         ]
 
         // MARK: - Tab bar appearance
