@@ -40,7 +40,7 @@ import SwiftUI
 ///
 /// ## Navigation layout
 ///
-/// This layout is used to navigate backward or forward.
+/// This layout is used to navigate backward, forward and outside the app
 ///
 /// ```swift
 ///     // Navigate to next page with link in a small size
@@ -51,6 +51,9 @@ import SwiftUI
 ///
 ///     // Full-width: label stays, chevron anchored to the right / left
 ///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
+///
+///     // Full-width: label stays, indicator anchored to the right / left
+///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -79,7 +82,7 @@ import SwiftUI
 ///
 /// ![A link component in light and dark modes with Wireframe theme](component_link_Wireframe)
 ///
-/// - Version: 2.3.0 (Figma component design version)
+/// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.11.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLink: View {
@@ -104,7 +107,7 @@ public struct OUDSLink: View {
     /// Represents the arrow / chevron / indicator of an `OUDSLink`.
     /// - Since: 0.11.0
     @frozen public enum Indicator {
-        case previous, next
+        case previous, next, external
     }
 
     enum Layout {
@@ -185,7 +188,10 @@ public struct OUDSLink: View {
     /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.previous`) or "after indicator" (`OUDSLink.Indicator.next`) beside the text.
     ///
     /// ```swift
-    ///     OUDSLink(text: "Back", indicator: .previous) { }
+    ///     // A "back" link
+    ///     OUDSLink(text: "Back", indicator: .previous) { /* action to trigger */ }
+    ///     // An "open external" link
+    ///     OUDSLink(text: "Open", indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
     /// ```
     ///
     /// - Parameters:
@@ -209,7 +215,10 @@ public struct OUDSLink: View {
     /// Creates a link with a localized text and a navigation indicator, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .previous) { }
+    ///     // A "back" link
+    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .previous) { /* action to trigger */ }
+    ///     // An "open external" link
+    ///     OUDSLink(LocalizedStringKey("open_link"), bundle: Bundle.module, indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
     /// ```
     ///
     /// - Parameters:
@@ -284,6 +293,8 @@ public struct OUDSLink: View {
             "ic_link_previous"
         case .next:
             "ic_link_next"
+        case .external:
+            "ic_link_external"
         }
     }
 }

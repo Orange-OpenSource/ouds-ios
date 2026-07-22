@@ -119,7 +119,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
                 .modifier(LinkTextModifier(interactionState: interactionState, size: size, layout: .indicator(indicator)))
                 .modifier(LinkColorContentModifier(interactionState: interactionState))
 
-            if indicator == .next {
+            if indicator == .next || indicator == .external {
                 if isFullWidth {
                     Spacer(minLength: 0)
                 }

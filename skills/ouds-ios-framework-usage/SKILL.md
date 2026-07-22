@@ -512,9 +512,10 @@ OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic"), renderingMode: .orig
 // Full-width indicator: label in one edge, indicator in the other edge, entire width is tappable
 OUDSLink(text: "Text", indicator: .next, isFullWidth: true, size: .default) {}
 OUDSLink(text: "Text", indicator: .previous, isFullWidth: true, size: .default) {}
+OUDSLink(text: "Text", indicator: .external, isFullWidth: true, size: .default) {}
 ```
 
-> `isFullWidth` is only available on `indicator` layouts (`.previous` / `.next`). When `true`, the link stretches to fill all available horizontal width — the label anchors to the leading/trailong edge and the indicator to the trailing/leading edge. The entire width between them is tappable. Defaults to `false` (intrinsic sizing).
+> `isFullWidth` is only available on `indicator` layouts (`.previous` / `.next` / `.external`). When `true`, the link stretches to fill all available horizontal width — the label anchors to the leading/trailing edge and the indicator to the trailing/leading edge. The entire width between them is tappable. Defaults to `false` (intrinsic sizing).
 
 ---
 
