@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Truncated title on `tab bar` focused item when using *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1641)
 - `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)
 - Usage of `PIN code input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1631)
 - Usage of `password input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1533)
