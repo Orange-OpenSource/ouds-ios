@@ -505,8 +505,9 @@ OUDSVerticalDivider(color: .brandPrimary)
 ### Navigations — Link
 
 ```swift
-OUDSLink(text: "Text", size: .default) {}
-OUDSLink(text: "Text", indicator: .previous, size: .default) {}
+OUDSLink(text: "Text", size: .small) {}
+OUDSLink(text: "Text", indicator: .previous, size: .small) {}
+OUDSLink(text: "Text", indicator: .previous, size: .small, density: .compact) {}
 OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic")), size: .default) {}
 OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
 // Full-width indicator: label in one edge, indicator in the other edge, entire width is tappable
@@ -516,6 +517,8 @@ OUDSLink(text: "Text", indicator: .external, isFullWidth: true, size: .default) 
 ```
 
 > `isFullWidth` is only available on `indicator` layouts (`.previous` / `.next` / `.external`). When `true`, the link stretches to fill all available horizontal width — the label anchors to the leading/trailing edge and the indicator to the trailing/leading edge. The entire width between them is tappable. Defaults to `false` (intrinsic sizing).
+>
+> `density` parameter (since v3.0.0) is available as `.default` (standard spacing) or `.compact` (reduced spacing for interfaces with limited space). Applies to all layout types. Defaults to `.default`.
 
 ---
 
