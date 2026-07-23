@@ -44,7 +44,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Navigate to next page with link in a small size
-///     OUDSLink(text: "Feedback", indicator: .next, size: .small, density: .compac) { /* the action to process */ }
+///     OUDSLink(text: "Feedback", indicator: .next, size: .small, density: .compact) { /* the action to process */ }
 ///
 ///     // Navigate to previous page with link in a default size
 ///     OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
