@@ -23,19 +23,20 @@ struct LinkButtonStyle: ButtonStyle {
 
     let layout: OUDSLink.Layout
     let size: OUDSLink.Size
+    let density: OUDSLink.Density
     let isFullWidth: Bool
 
     @State private var isHover: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsHorizontalSizeClass) private var oudsHorizontalSizeClass
 
     // MARK: Initializer
 
-    init(layout: OUDSLink.Layout, size: OUDSLink.Size, isFullWidth: Bool) {
+    init(layout: OUDSLink.Layout, size: OUDSLink.Size, density: OUDSLink.Density, isFullWidth: Bool) {
         self.layout = layout
         self.size = size
+        self.density = density
         self.isFullWidth = isFullWidth
         isHover = false
     }
@@ -76,17 +77,19 @@ struct LinkButtonStyle: ButtonStyle {
     }
 
     private var minHeight: Double {
-        if oudsHorizontalSizeClass == .regular {
+        switch density {
+        case .default:
             size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
-        } else { // .compact, .extraCompact
+        case .compact:
             theme.link.sizeMinHeightCompactDensity
         }
     }
 
     private var verticalPadding: Double {
-        if oudsHorizontalSizeClass == .regular {
+        switch density {
+        case .default:
             size == .small ? theme.link.spacePaddingBlockSmall : theme.link.spacePaddingBlockDefault
-        } else { // .compact, .extraCompact
+        case .compact:
             size == .small ? theme.link.spacePaddingBlockCompactDensitySmall : theme.link.spacePaddingBlockCompactDensityDefault
         }
     }
