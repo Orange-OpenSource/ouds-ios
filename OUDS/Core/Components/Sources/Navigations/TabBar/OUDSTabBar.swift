@@ -42,8 +42,8 @@ import SwiftUI
 ///
 /// - This component is tailored for iOS
 /// - On iPadOS the tabs do not apply the fonts since iPadOS 18
-/// - Because macOS does not support UIKit and because UIKIt is used to define the style of the tab bar, there is not styling of the tab bar for macOS
-/// - visionOS with is specific UI does not apply colors on tab bars and things are glasssified
+/// - Because macOS does not support UIKit and because UIKIt is used to define the style of the tab bar, there is no styling of the tab bar for macOS
+/// - visionOS with its specific UI does not apply colors on tab bars and things are glasssified
 /// - The component is not available for watchOS
 /// - The component is not available for tvOS
 ///
