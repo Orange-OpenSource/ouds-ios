@@ -1,10 +1,10 @@
 ---
-name: ouds-ios-create-theme
+name: ouds-ios-guide-create-theme
 description: Use when the user wants to create a custom OUDS theme or brand theme for an iOS app — covers subclassing OrangeTheme, building a theme from scratch on OUDSTheme, mixing existing providers, local custom fonts (.ttf registration), and tuning.
 license: MIT
 ---
 
-# Skill: ouds-ios-create-theme
+# Skill: ouds-ios-guide-create-theme
 
 Step-by-step guide to create a **custom OUDS theme** for an iOS/iPadOS app.
 

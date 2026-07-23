@@ -1,10 +1,10 @@
 ---
-name: ouds-ios-migration
+name: ouds-ios-guide-migration
 description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to the current version (3.0.0 or higher), or when deprecated or removed OUDS APIs are detected in the codebase
 license: MIT
 ---
 
-# Skill: ouds-ios-migration
+# Skill: ouds-ios-guide-migration
 
 Migration guide from **v1.0.0** to **v3.0.0** (current). Covers all breaking changes and deprecated symbols.
 For full before/after examples, refer to `MIGRATION.md` in the project root.

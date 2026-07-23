@@ -1,10 +1,10 @@
 ---
-name: ouds-ios-figma-to-swift
+name: ouds-ios-guide-figma-to-swift
 description: How to derive a Swift token name from a Figma token path in the OUDS iOS project (raw, semantic and component tokens)
 license: MIT
 ---
 
-# Skill: ouds-ios-figma-to-swift
+# Skill: ouds-ios-guide-figma-to-swift
 
 ## 1. Quick-reference cheat sheet
 

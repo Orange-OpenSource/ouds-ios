@@ -1,5 +1,5 @@
 ---
-name: ouds-ios-vocabulary
+name: ouds-ios-guide-vocabulary
 description: Use when the user asks about OUDS-specific terms such as tokenator, token, raw token, semantic token, component token, theme, tuning, token provider, or component
 license: MIT
 ---
@@ -25,4 +25,4 @@ license: MIT
 | Task | Skill to load |
 |---|---|
 | Write or review Swift code using OUDS components or tokens | `ouds-ios-framework-usage` |
-| Convert a Figma token path to its Swift equivalent | `ouds-ios-figma-to-swift` |
+| Convert a Figma token path to its Swift equivalent | `ouds-ios-guide-figma-to-swift` |

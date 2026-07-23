@@ -18,11 +18,23 @@ Target platforms: iOS 15, iPadOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16. 
 
 Load skills on demand for detailed guidance:
 
-- **`ouds-ios-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)
-- **`ouds-ios-framework-usage`** — full usage reference: imports, themes, tokens, view modifiers, all components with code examples
-- **`ouds-ios-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
-- **`ouds-ios-migration`** — step-by-step migration guide from v1.0.0 to v2.3.0 (current); covers all breaking changes, removed APIs and deprecated symbols
-- **`ouds-ios-create-theme`** — step-by-step guide to create a custom OUDS theme (subclass OrangeTheme, from scratch on OUDSTheme, mix of providers, local fonts)
+Framework:
+- **`ouds-ios-framework-usage`** — setup and shared reference: imports, themes, token namespaces, view modifiers, image rules, shared control patterns, custom fonts. Load this first when any OUDS code is involved.
+
+Components:
+- **`ouds-ios-components-actions`** — OUDSButton
+- **`ouds-ios-components-content-display`** — OUDSBulletList
+- **`ouds-ios-components-controls`** — Checkbox, Radio, Switch, Chips, PinCodeInput, PasswordInput, TextInput, TextArea
+- **`ouds-ios-components-dialogs`** — OUDSAlertMessage, OUDSInlineAlert
+- **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag
+- **`ouds-ios-components-layouts`** — OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider
+- **`ouds-ios-components-navigations`** — OUDSLink, OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
+
+Guides:
+- **`ouds-ios-guide-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)
+- **`ouds-ios-guide-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
+- **`ouds-ios-guide-migration`** — step-by-step migration guide from v1.0.0 to v2.3.0 (current); covers all breaking changes, removed APIs and deprecated symbols
+- **`ouds-ios-guide-create-theme`** — step-by-step guide to create a custom OUDS theme (subclass OrangeTheme, from scratch on OUDSTheme, mix of providers, local fonts)
 
 ## Key files
 
@@ -34,11 +46,11 @@ Load skills on demand for detailed guidance:
 
 ## Critical rules
 
-- Always load the **`ouds-ios-vocabulary`** skill before discussing tokens or themes.
-- Always load the **`ouds-ios-framework-usage`** skill before writing or reviewing code that uses OUDS components or tokens.
-- Always load the **`ouds-ios-figma-to-swift`** skill when asked to find or map a Figma token name to its Swift equivalent.
-- Always load the **`ouds-ios-migration`** skill when the user wants to migrate OUDS code or when deprecated OUDS API usages are detected.
-- Always load the **`ouds-ios-create-theme`** skill when the user wants to create a custom OUDS theme or brand theme.
+- Always load the **`ouds-ios-guide-vocabulary`** skill before discussing tokens or themes.
+- Always load the **`ouds-ios-framework-usage`** skill first before writing or reviewing any code that uses OUDS. Then also load the matching **`ouds-ios-components-<family>`** skill (`actions`, `content-display`, `controls`, `dialogs`, `indicators`, `layouts`, `navigations`) for the specific component family you are working with.
+- Always load the **`ouds-ios-guide-figma-to-swift`** skill when asked to find or map a Figma token name to its Swift equivalent.
+- Always load the **`ouds-ios-guide-migration`** skill when the user wants to migrate OUDS code or when deprecated OUDS API usages are detected.
+- Always load the **`ouds-ios-guide-create-theme`** skill when the user wants to create a custom OUDS theme or brand theme.
 - Before committing: format → build → fix errors → run tests → lint (see `.github/copilot-instructions.md` §3).
 - Use `#available` for iOS 26 SDK APIs (min deployment is iOS 15).
 - Use `#if os(…)` for platform-specific code.
