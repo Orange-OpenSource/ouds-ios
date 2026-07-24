@@ -1,16 +1,3 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import OUDSSwiftUI
 import SwiftUI
 
@@ -74,13 +61,13 @@ struct ContentView: View {
                                         radios: genderRadioValues(),
                                         placement: .horizontal(false))
 
-                        let identityDeleteAction = OUDSTextInput.TrailingAction(icon: Image(systemName: "trash"), actionHint: "Delete") { identity = "" }
+                        let identityDeleteAction = OUDSTextInput.TrailingAction(image: .init(asset: Image(systemName: "trash")), actionHint: "Delete") { identity = "" }
                         OUDSTextInput(label: "Identity", text: $identity, placeholder: "Firstname and lastname", trailingAction: identityDeleteAction)
 
                         OUDSTextInput(label: "Email", text: $email,
                                       placeholder: "Email address",
                                       suffix: ".com",
-                                      leadingIcon: Image(systemName: "envelope"),
+                                      leadingImage: .init(asset: Image(systemName: "envelope")),
                                       helperText: "The email will be automatically completed with @orange.com")
 
                         OUDSChipPicker(selections: $selectedTopics, chips: topicsChipsValues())
@@ -97,9 +84,9 @@ struct ContentView: View {
                 }
                 .background(theme.colors.bgTertiary)
                 .border(style: theme.borders.styleDefault,
-                            width: theme.borders.widthThin,
-                            radius: theme.borders.radiusMedium,
-                            color: theme.colors.actionEnabled)
+                        width: theme.borders.widthThin,
+                        radius: theme.borders.radiusMedium,
+                        color: theme.colors.actionEnabled)
                 .shadow(theme.elevations.emphasized)
                 .padding(.bottom, theme.spaces.fixedLarge)
 
