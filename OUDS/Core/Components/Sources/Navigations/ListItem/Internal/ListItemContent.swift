@@ -16,7 +16,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The content for the ``OUDSStaticListItem`` and the ``OUDSNavigationListItem`` component described by the ``OUDSListItemData``.
-/// The layout (divider, background, size) are updated according to the interaction state ``InteractionState``.
+/// The layout (divider, background, size) are updated according to the interaction state ``OUDSButtonInteractionState``.
 struct ListItemContent<Slot: View>: View {
 
     // MARK: Properties

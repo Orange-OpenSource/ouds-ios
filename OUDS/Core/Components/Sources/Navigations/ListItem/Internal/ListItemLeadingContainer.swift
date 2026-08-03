@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// This is the leading container of the ``ListItemContent``.
+/// Leading container of the ``ListItemContent``.
 struct ListItemLeadingContainer: View {
 
     // MARK: Properties

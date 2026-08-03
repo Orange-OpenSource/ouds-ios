@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509)
 - `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
+- `list item` component (Orange-OpenSource/ouds-ios#265)
 - `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
 - `View modifier` to force keyboard closing on tap (Orange-OpenSource/ouds-ios#1530)
 - `View modifier` to apply theme to Liquid Glass SwiftUI `TabView` (Orange-OpenSource/ouds-ios#1459)
@@ -17,9 +18,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Flag to let `link` component take full width (Orange-OpenSource/ouds-ios#1576)
 - Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - Semantic tokens of `colors` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
-- `list item` component (Orange-OpenSource/ouds-ios#265)
-- Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
-- Semantic tokens of `colors` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579) 
 - Components tokens for `list item` (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - Components tokens for `button` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 
@@ -69,12 +67,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
 
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
-### Removed
-
-- **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
-- **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
-
-## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0)
 
 ### Added
 
@@ -103,7 +95,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `list item` component (v1.0.0) (Orange-OpenSource/ouds-ios#265)
 - Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
 - Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
 - `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
@@ -119,8 +110,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- `tab bar` layout is broken for iOS 27 with Xcode 26 and disabled Liquid Glass (Orange-OpenSource/ouds-ios#1557)
-- Textual contents of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
+- `tab bar` layout is broken for iOS 27 (Orange-OpenSource/ouds-ios#1557)
+- Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
 
 ### Deprecated
 

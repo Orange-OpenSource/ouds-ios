@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A container to display the indicator according to its type and apply the right color based on the `InteractionState`.
+/// A container to display the indicator according to its type and apply the right color based on the ``OUDSButtonInteractionState`.
 /// For RTL, the next and previous indicators change their assets according to the `LayoutDirection`.
 struct ListItemIndicatorContainer: View {
 

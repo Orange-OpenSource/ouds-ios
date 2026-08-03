@@ -55,12 +55,9 @@ struct ControlItemIconContainer: View {
         } else {
             if let icon = layoutData.icon {
                 icon
-                    .resizable()
-                    .renderingMode(.template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
                     .frame(width: theme.listItem.sizeAssetSmall, height: theme.listItem.sizeAssetSmall)
-                    .toFlip(layoutData.flipIcon)
             }
         }
     }

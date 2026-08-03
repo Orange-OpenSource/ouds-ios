@@ -15,7 +15,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Displays an helper message below ``ListItemContent`` text.
-/// and updates text color according to the ``InteractionState``.
+/// and updates text color according to the ``OUDSButtonInteractionState``.
 struct ListItemHelperTextContainer: View {
 
     // MARK: Properties
