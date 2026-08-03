@@ -42,6 +42,9 @@ import SwiftUI
 ///     // Not decorative image with large size
 ///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape", size: .large)
 ///
+///     // Adjust with square ratio
+///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape", ration: .square)
+///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Information"),
@@ -77,6 +80,17 @@ public struct OUDSListItemImage: View {
         case extraLarge
     }
 
+    /// Defines the aspect ratio of the image container.
+    ///
+    /// - Since: 3.0.0
+    @frozen public enum Ratio {
+        /// Use for square visual content such as products, logos, album covers or profile-related imagery.
+        case square
+
+        /// Use for landscape content such as editorial images or wide media thumbnails.
+        case widescreen
+    }
+
     // MARK: Initializer
 
     /// Creates an icon element for use in a list item at the leading or trailing position.
@@ -91,13 +105,17 @@ public struct OUDSListItemImage: View {
     ///
     /// - Parameters:
     ///   - asset: The asset contains the image
+    ///   - description: The description of the image if not decorative
     ///   - size: The size of the icon. Defaults to `.medium`.
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
     ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
-    ///   - description: The description of the image if not decorative
-    public init(asset: Image, size: Size = .medium, description: String? = nil) {
+    ///   - ratio: Ratio of the image. By default a `square` image.
+    ///   - contentMode:A flag indicating whether this view should fit or fill the parent context. Default set to `.fit`.
+    public init(asset: Image, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
         self.asset = asset
         self.size = size
+        self.ratio = ratio
+        self.contentMode = contentMode
         self.description = description
     }
 
@@ -105,6 +123,8 @@ public struct OUDSListItemImage: View {
 
     let asset: Image
     let size: Size
+    let ratio: Ratio
+    let contentMode: ContentMode
     let description: String?
 
     @Environment(\.theme) private var theme
@@ -118,9 +138,9 @@ public struct OUDSListItemImage: View {
     public var body: some View {
         asset
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode: contentMode)
             .opacity(opacity)
-            .frame(height: frameHeight, alignment: .center)
+            .frame(width: assetSize * ratioValue, height: assetSize, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .accessibilityLabel(description ?? "")
     }
@@ -131,11 +151,20 @@ public struct OUDSListItemImage: View {
         roundedMedia ? theme.listItem.borderRadiusMediaRounded : theme.listItem.borderRadiusMedia
     }
 
+    private var ratioValue: CGFloat {
+        switch ratio {
+        case .square:
+            1
+        case .widescreen:
+            16 / 9
+        }
+    }
+
     private var opacity: Double {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled
     }
 
-    private var frameHeight: CGFloat {
+    private var assetSize: CGFloat {
         let rawSize = if itemSize == .small {
             theme.listItem.sizeAssetSmall
         } else {

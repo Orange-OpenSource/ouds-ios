@@ -36,19 +36,19 @@ import SwiftUI
 ///     // Trailing with a default label text
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         trailing: .text(.label(Text("Info")))
+///         trailing: .text(.label("Info"))
 ///     )
 ///
 ///     // Trailing with a muted label
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         trailing: .text(.labelMuted(Text("Secondary")))
+///         trailing: .text(.labelMuted("Secondary"))
 ///     )
 ///
 ///     // Trailing with label and extra label
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         trailing: .text(.labelAndExtraLabel(Text("Label"), Text("Extra")))
+///         trailing: .text(.labelAndExtraLabel("Label", "Extra"))
 ///     )
 ///
 ///     // Trailing with a badge according to type
@@ -72,7 +72,7 @@ import SwiftUI
 ///     )
 ///
 ///     // Trailing with an image
-///     let image = OUDSListItemImage(asset: Image("il_placeholder"), size: .meidum)
+///     let image = OUDSListItemImage(asset: Image("il_placeholder"), size: .medium)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
 ///         trailing: .image(image)
@@ -85,7 +85,7 @@ import SwiftUI
 ///     )
 ///
 ///     // Trailing with a video thumbnail
-///     let video = OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!, size: .meidum)
+///     let video = OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!, size: .medium)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Watch"),
 ///         trailing: .video(video)

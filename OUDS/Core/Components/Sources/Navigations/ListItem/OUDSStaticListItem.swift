@@ -49,7 +49,7 @@ import SwiftUI
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label", description: "Description"),
 ///         leading: .avatar(.init(type: .icon, size: .medium)),
-///         trailing: .text(.label(Text("Info")))
+///         trailing: .text(.label(Info"))
 ///     )
 /// ```
 ///
@@ -65,12 +65,12 @@ import SwiftUI
 /// ## Trailing elements
 ///
 /// The trailing position (after the texts) accepts one optional element via ``OUDSListItemTrailing``, like:
-/// - `.text(.label(Text))`: A default-styled label
-/// - `.text(.labelMuted(Text))`: A muted (secondary) label
-/// - `.text(.labelStrong(Text))`: An emphasized (bold) label
-/// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
-/// - `.badge(.count(OUDSBadgeCount)`: A badge with count
-/// - `.badge(.standard(OUDSBadgeStandard)`: A badge with standard status
+/// - `.text(.label(String))`: A default-styled label
+/// - `.text(.labelMuted(String))`: A muted (secondary) label
+/// - `.text(.labelStrong(String))`: An emphasized (bold) label
+/// - `.text(.labelAndExtraLabel(String, String))`: A label with an additional extra label below
+/// - `.badge(.count(OUDSBadgeCount))`: A badge with count
+/// - `.badge(.standard(OUDSBadgeStandard))`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset
