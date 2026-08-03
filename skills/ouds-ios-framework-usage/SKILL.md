@@ -507,17 +507,38 @@ Two components share the same data model and slot/leading/trailing API:
 
 #### `OUDSListItemData` — textual content model
 
+Three public initializers are available: text label, custom view label, and localized text label.
+
 ```swift
-// All text fields are optional except label.
+// 1) Text label — all text fields are optional except label.
 // overline and extraLabel are hidden in .small size.
 OUDSListItemData(label: "Label")
 OUDSListItemData(
     label: "Label",
-    hasBoldLabel: true,          // renders label in bold
+    hasBoldLabel: true,         // renders label in bold
     description: "Description", // secondary text below label
     overline: "Overline",       // small text above label (hidden in .small size)
     extraLabel: "Extra Label",  // additional text below description (hidden in .small size)
     helperText: "Helper text"   // supporting text rendered below the row, outside the HStack
+)
+
+// 2) Custom view label — `accessibilityLabel:` is REQUIRED for VoiceOver.
+// It replaces the label in the combined vocalization of the text container.
+OUDSListItemData(
+    label: HStack {
+        Image(systemName: "star.fill")
+        Text("Favorite")
+    },
+    accessibilityLabel: "Favorite",     // vocalized by VoiceOver
+    description: "Custom label example"
+)
+
+// 3) Localized text label — looks up the key in the given bundle.
+OUDSListItemData(
+    key: "list_item.label",
+    bundle: .module,
+    hasBoldLabel: true,
+    description: "Description"
 )
 ```
 
@@ -530,7 +551,7 @@ OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
 // With leading icon and trailing badge
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Label", description: "Description"),
-    leading: .icon(OUDSListItemIcon(type: .info, size: .medium)),
+    leading: .icon(OUDSListItemIcon(status: .info, description: "Information", size: .medium)),
     trailing: .badge(.count(.init(3, accessibilityLabel: "3 new", status: .negative, size: .medium)))
 )
 
@@ -581,11 +602,12 @@ OUDSNavigationListItem(
 #### Leading slot — `OUDSListItemLeading`
 
 ```swift
-leading: .icon(OUDSListItemIcon(type: .info, size: .medium))           // status/custom icon
-leading: .image(OUDSListItemImage(asset: Image("il_placeholder")))      // static image
-leading: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))            // country flag
-leading: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // video (iOS only)
-leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))        // circular avatar
+leading: .icon(OUDSListItemIcon(status: .info, description: "Information", size: .medium))  // status/custom icon
+leading: .image(OUDSListItemImage(asset: Image("photo"), description: "User photo")) // meaningful image
+leading: .image(OUDSListItemImage(asset: Image(decorative: "il_placeholder")))       // decorative image (no description)
+leading: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))            // country flag (always hidden from VoiceOver)
+leading: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // video (iOS only, hidden from VoiceOver)
+leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))        // circular avatar (always hidden from VoiceOver)
 ```
 
 #### Trailing slot — `OUDSListItemTrailing`
@@ -598,11 +620,12 @@ trailing: .text(.labelAndExtraLabel("Label", "Extra")) // stacked; extra hidden 
 trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 trailing: .badge(.standard(.init(accessibilityLabel: "Alert", status: .negative, size: .small)))
 trailing: .tag(OUDSTag(label: "New"))
-trailing: .icon(OUDSListItemIcon(type: .warning, size: .medium))
-trailing: .image(OUDSListItemImage(asset: Image("il_placeholder")))
-trailing: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))
-trailing: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // iOS only
-trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
+trailing: .icon(OUDSListItemIcon(status: .warning, description: "Warning", size: .medium))
+trailing: .image(OUDSListItemImage(asset: Image("photo"), description: "Preview")) // meaningful image
+trailing: .image(OUDSListItemImage(asset: Image(decorative: "il_placeholder")))    // decorative image (no description)
+trailing: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))          // always hidden from VoiceOver
+trailing: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // iOS only, hidden from VoiceOver
+trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))            // always hidden from VoiceOver
 ```
 
 #### `OUDSListItemAvatar` — circular avatar
@@ -623,13 +646,16 @@ OUDSListItemAvatar(type: .initials("JD"), size: .large,
 #### `OUDSListItemIcon` — status icon
 
 ```swift
-OUDSListItemIcon(type: .neutral(asset: Image("ic_heart")))           // custom image, default color
-OUDSListItemIcon(type: .neutral(asset: Image("ic_bell"), badge: true)) // with negative dot badge
-OUDSListItemIcon(type: .positive)    // predefined checkmark, positive (green)
-OUDSListItemIcon(type: .info)        // predefined info icon, informational (blue)
-OUDSListItemIcon(type: .warning)     // predefined warning icon, warning color, two-layer rendering
-OUDSListItemIcon(type: .negative)    // predefined alert icon, negative (red)
-OUDSListItemIcon(type: .info, size: .large)   // .medium (default) | .large
+OUDSListItemIcon(status: .neutral(asset: Image("ic_heart")), description: "Favorite")           // custom image, default color
+OUDSListItemIcon(status: .neutral(asset: Image("ic_bell"), badge: true), description: "Notifications") // with negative dot badge
+OUDSListItemIcon(status: .positive, description: "Success")    // predefined checkmark, positive (green)
+OUDSListItemIcon(status: .info,     description: "Information")// predefined info icon, informational (blue)
+OUDSListItemIcon(status: .warning,  description: "Warning")    // predefined warning icon, warning color, two-layer rendering
+OUDSListItemIcon(status: .negative, description: "Error")      // predefined alert icon, negative (red)
+OUDSListItemIcon(status: .info, description: "Information", size: .large)   // .medium (default) | .large
+
+// `description` is used as the icon's VoiceOver accessibility label.
+// Pass an empty string ("") to make the icon fully decorative (hidden from VoiceOver).
 ```
 
 > In `.small` list item size, the icon size parameter is ignored — smallest variant is always used.
@@ -683,6 +709,30 @@ VStack {
 5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
 6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
 7. **`oudsListCardStyle(_:)`** — shorthand for `.card` style; parameter is `OUDSListItemContentStyle.Card` (default: `.background(withDivider: true)`). **`oudsListItemStandardStyle(_:)`** — shorthand for `.standard` style (default: `.backgroundOnInteractionOnly(withDivider: true)`).
+8. **Modifier defaults vs environment defaults** — when no `oudsListItemStyle` / `oudsListItemStandardStyle` / `oudsListCardStyle` modifier is applied, the environment default is `.standard(.backgroundOnInteractionOnly(withDivider: true))`. Calling `oudsListItemStyle()` with no argument uses `.standard(.background(withDivider: true))`. Prefer explicit values to avoid confusion.
+
+#### Accessibility — VoiceOver
+
+Leading/trailing elements are vocalized (or hidden) as follows:
+
+| Element | Behavior |
+|---|---|
+| `OUDSListItemIcon` | Exposed as a distinct accessibility element. `description` non-empty → vocalized; empty → hidden (decorative). |
+| `OUDSListItemImage` | Exposed as a distinct accessibility element. `description` non-nil and non-empty → vocalized; nil or empty → hidden (decorative). |
+| `OUDSListItemFlag` | **Always hidden** from VoiceOver. Duplicate the country info in `OUDSListItemData.label` / `description`. |
+| `OUDSListItemAvatar` | **Always hidden** from VoiceOver. Duplicate the user info in `OUDSListItemData.label` / `description`. Badge attached to the avatar carries its own `accessibilityLabel`. |
+| `OUDSListItemVideo` | **Always hidden** from VoiceOver. |
+| Trailing `.text`, `.badge`, `.tag` | Vocalized via their own accessibility labels. |
+
+Text container behavior:
+- The **text group** (overline, label, extraLabel, description) is combined into a single VoiceOver element with a `", "`-joined label.
+- `OUDSListItemData` custom view label (`init(label: some View, accessibilityLabel:)`) — `accessibilityLabel:` is **required**; it is used in the combined vocalization instead of the view content.
+
+Component-level behavior:
+- **`OUDSStaticListItem`** — VoiceOver focuses each visible non-hidden element (leading icon/image, combined text, trailing element) separately.
+- **`OUDSNavigationListItem`** — uses `accessibilityElement(children: .contain)` so leading/text/trailing remain distinct accessibility elements. The row is exposed with the `.isLink` trait (not `.isButton`). VoiceOver focuses each visible element sequentially: leading (if labelled), combined text, trailing (if labelled).
+
+Rule of thumb: pass a meaningful `description` on `OUDSListItemIcon` and `OUDSListItemImage` whenever the element carries information not already present in `OUDSListItemData.label` / `description`; pass an empty string / `nil` to mark it purely decorative.
 
 ---
 

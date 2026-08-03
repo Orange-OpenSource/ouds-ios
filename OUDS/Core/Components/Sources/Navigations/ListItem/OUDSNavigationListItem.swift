@@ -259,6 +259,7 @@ public struct OUDSNavigationListItem<Slot: View>: View {
                             trailing: trailing,
                             interactionState: interactionState)
         }
+        .accessibilityElement(children: .combine)
         .accessibilityRemoveTraits([.isButton])
         .accessibilityAddTraits([.isLink])
     }

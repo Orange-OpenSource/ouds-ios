@@ -125,20 +125,19 @@ public struct OUDSListItemIcon: View {
 
     // MARK: Initializer
 
-    // Creates an icon element for use in a list item at the leading or trailing position.
-    //
-    // ```swift
-    //     OUDSListItemIcon(status: .info)
-    //     OUDSListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), badge: true), size: .large)
-    // ```
-    //
-    // - Parameters:
-    //   - status: The type of icon to display. See ``IconStatus`` for available options.
-    //   - description: The description of the icon
-    //   - size: The size of the icon. Defaults to `.medium`.
-    //     **Note:** Ignored when the icon is embedded in a list item with small size
-    //     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
-
+    /// Creates an icon element for use in a list item at the leading or trailing position.
+    ///
+    /// ```swift
+    ///     OUDSListItemIcon(status: .info, description: "Information")
+    ///     OUDSListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), badge: true), description: "Like", size: .large)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - status: The type of icon to display. See ``IconStatus`` for available options.
+    ///   - description: The description of the icon
+    ///   - size: The size of the icon. Defaults to `.medium`.
+    ///     **Note:** Ignored when the icon is embedded in a list item with small size
+    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     public init(status: IconStatus, description: String, size: Size = .medium) {
         self.status = status
         self.description = description
@@ -191,7 +190,9 @@ public struct OUDSListItemIcon: View {
             }
         }
         .frame(width: assetSize, height: assetSize)
+        .accessibilityElement(children: .ignore)
         .accessibilityLabel(description)
+        .accessibilityHidden(description.isEmpty)
     }
 
     // MARK: Private Helpers

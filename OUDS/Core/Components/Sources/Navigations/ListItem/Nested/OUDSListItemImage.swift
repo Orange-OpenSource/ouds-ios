@@ -142,10 +142,16 @@ public struct OUDSListItemImage: View {
             .opacity(opacity)
             .frame(width: assetSize * ratioValue, height: assetSize, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: radius))
+            .accessibilityElement(children: .ignore)
             .accessibilityLabel(description ?? "")
+            .accessibilityHidden(isDecorative)
     }
 
     // MARK: Helpers
+
+    private var isDecorative: Bool {
+        description == nil || description?.isEmpty == true
+    }
 
     private var radius: BorderRadiusSemanticToken {
         roundedMedia ? theme.listItem.borderRadiusMediaRounded : theme.listItem.borderRadiusMedia
