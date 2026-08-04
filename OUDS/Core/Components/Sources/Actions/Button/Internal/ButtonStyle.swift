@@ -38,10 +38,13 @@ struct StyleForButton: ButtonStyle {
 
     private let appearance: OUDSButton.Appearance
     private let style: OUDSButton.Style
+    private let size: OUDSButton.Size
     private let isHover: Bool
     private let isFullWidth: Bool
 
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: Initializer
 
@@ -51,11 +54,18 @@ struct StyleForButton: ButtonStyle {
     /// - Parameters:
     ///    - appearance: The button appearance
     ///    - style: The button style
+    ///    - size: The size of the button
     ///    - isHover: Flag if button is hovered (e.g. by mouse)
     ///    - isFullWidth: Flag to rise to make the button take all screen width
-    init(appearance: OUDSButton.Appearance, style: OUDSButton.Style, isHover: Bool, isFullWidth: Bool) {
+    init(appearance: OUDSButton.Appearance,
+         style: OUDSButton.Style,
+         size: OUDSButton.Size,
+         isHover: Bool,
+         isFullWidth: Bool)
+    {
         self.appearance = appearance
         self.style = style
+        self.size = size
         self.isHover = isHover
         self.isFullWidth = isFullWidth
     }
@@ -67,15 +77,40 @@ struct StyleForButton: ButtonStyle {
         case .default:
             configuration
                 .label
-                .frame(maxWidth: isFullWidth ? .infinity : nil)
+                .frame(minWidth: minWidth,
+                       maxWidth: maxWidth,
+                       minHeight: minHeight,
+                       alignment: .center)
                 .contentShape(Rectangle())
                 .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
         case .loading:
             configuration.label
-                .frame(maxWidth: isFullWidth ? .infinity : nil)
+                .frame(maxWidth: maxWidth)
                 .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
-                .modifier(ButtonLoadingContentModifier(appearance: appearance))
+                .modifier(ButtonLoadingContentModifier(appearance: appearance, size: size))
         }
+    }
+
+    private var minWidth: CGFloat {
+        switch size {
+        case .default:
+            theme.button.sizeMinWidthDefault
+        case .small:
+            theme.button.sizeMinWidthSmall
+        }
+    }
+
+    private var minHeight: CGFloat {
+        switch size {
+        case .default:
+            theme.button.sizeMinHeightDefault
+        case .small:
+            theme.button.sizeMinHeightSmall
+        }
+    }
+
+    private var maxWidth: CGFloat? {
+        isFullWidth ? .infinity : nil
     }
 
     private func internalState(isPressed: Bool) -> ButtonInternalState {
