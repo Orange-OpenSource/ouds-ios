@@ -40,7 +40,6 @@ struct StyleForButton: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: Initializer
 

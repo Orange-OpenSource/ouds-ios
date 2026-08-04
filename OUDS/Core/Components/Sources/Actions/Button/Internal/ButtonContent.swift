@@ -68,7 +68,6 @@ struct ButtonText: View {
     let size: OUDSButton.Size
 
     @Environment(\.theme) private var theme
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         TextForButton(text: text, size: size)
