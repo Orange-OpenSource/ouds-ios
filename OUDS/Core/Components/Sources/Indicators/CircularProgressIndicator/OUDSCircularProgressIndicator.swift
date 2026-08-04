@@ -1,0 +1,186 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import SwiftUI
+
+/// A Circular Progress Indicator shows the progress of a task using a circle.
+/// It is useful when you need more visual focus or when space is limited.
+///
+/// Two variants are provided:
+///
+/// - **Determinate**: the caller provides a `progress` value in `[0, 1]`. Values outside this range are coerced.
+/// - **Indeterminate**: no `progress` is provided and the indicator loops continuously.
+///
+/// ## Statuses
+///
+/// - **Neutral**: default status used when progress has no specific semantic meaning. Suitable for generic loading,
+///  processing, synchronization or background tasks.
+/// - **Accent**: used to highlight primary or brand-related actions (uploads, downloads, installations, onboarding).
+/// - **Positive**: indicates successful progress or a process leading to a successful outcome.
+/// - **Info**: indicates informational or system-related processes (background synchronization, data retrieval).
+/// - **Warning**: indicates progress related to an operation that requires user attention or should be monitored.
+/// - **Negative**: indicates progress related to an error, recovery, cancellation or failure.
+///
+/// ## Gap size
+///
+/// - **default**: standard gap between the indicator and the track (about 14° of arc).
+/// - **small**: reduced gap for a more compact appearance.
+///
+/// ## Track
+///
+/// - `true` (default): the track is displayed. Recommended when the indicator is shown on its own and needs a clear
+///  structure. The track helps define the full range of progress and makes the value easier to read.
+/// - `false`: the track is hidden. Recommended when the indicator is embedded inside another component
+///  (button, tag, toast) or when a more minimal appearance is needed.
+///
+/// ## Size
+///
+/// The default size is **48pt** and scales with **Dynamic Type**.
+/// It can be overridden by applying a `.frame(width:height:)` on the view; the stroke width and the gap scale
+/// proportionally with the effective size.
+///
+/// ## Code samples
+///
+/// ```swift
+///     // Determinate — default (neutral, with track, default gap)
+///     OUDSCircularProgressIndicator(progress: 0.75)
+///
+///     // Determinate with an accent status and no track
+///     OUDSCircularProgressIndicator(progress: 0.5, status: .accent, track: false)
+///
+///     // Determinate with a warning status and a small gap
+///     OUDSCircularProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
+///
+///     // Indeterminate
+///     OUDSCircularProgressIndicator()
+///     OUDSCircularProgressIndicator(status: .info)
+///
+///     // Custom size — stroke and gap scale proportionally
+///     OUDSCircularProgressIndicator(progress: 0.6)
+///         .frame(width: 96, height: 96)
+/// ```
+///
+/// ## Accessibility considerations
+///
+/// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage) so that
+///   VoiceOver reads e.g. *"75 percent"*.
+/// - In **indeterminate** mode, the view is marked with the `.updatesFrequently` trait so that assistive technologies
+///   know the value is changing.
+/// - Animations are disabled when `accessibilityReduceMotion` is `true` or when Low Power Mode is enabled.
+///
+/// ## Colored surfaces
+///
+/// When placed on an ``OUDSColoredSurface``, the indicator switches to a **monochrome** rendering: the `status` is
+/// ignored and the content color of the surface (``theme.colors.contentDefault``) is used.
+///
+/// > TODO: expose dedicated monochrome tokens (foreground + track) for progress indicators once they are defined in
+/// > Figma tokens, similarly to what is done for `OUDSButton` (`theme.button.monoColor…`).
+///
+/// ## Design documentation
+///
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+///
+/// - Version: 1.0.0 (Figma component design version)
+/// - Since: 2.4.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+public struct OUDSCircularProgressIndicator: View {
+
+    // MARK: - Public types
+
+    /// The status of the progress indicator. It determines the color of the progress indicator.
+    ///
+    /// - Since: 2.4.0
+    @frozen
+    public enum Status: Sendable {
+
+        /// Default status used when progress has no specific semantic meaning.
+        case neutral
+
+        /// Used to highlight primary or brand-related actions.
+        case accent
+
+        /// Indicates successful progress or a process leading to a successful outcome.
+        case positive
+
+        /// Indicates informational or system-related processes.
+        case info
+
+        /// Indicates progress related to an operation that requires user attention or should be monitored.
+        case warning
+
+        /// Indicates progress related to an error, recovery, cancellation or failure.
+        case negative
+    }
+
+    /// The size of the gap between the progress indicator and the track.
+    ///
+    /// - Since: 2.4.0
+    @frozen
+    public enum GapSize: Sendable {
+
+        /// Standard gap size (about 14° of arc).
+        case `default`
+
+        /// Reduced gap size (about 1pt at the standard 48pt size).
+        case small
+    }
+
+    // MARK: - Stored properties
+
+    /// Internal — exposed with package-visibility so tests can assert on it via `@testable import`.
+    let configuration: CircularProgressIndicatorConfiguration
+
+    // MARK: - Initializers
+
+    /// Creates a **determinate** circular progress indicator.
+    ///
+    /// - Parameters:
+    ///    - progress: The current progress in the `[0, 1]` range. Values outside of this range are coerced.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
+    ///    - track: Whether the track is displayed. Defaults to `true`.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
+    public init(progress: Double,
+                status: Status = .neutral,
+                track: Bool = true,
+                gapSize: GapSize = .default)
+    {
+        configuration = CircularProgressIndicatorConfiguration(progress: progress,
+                                                               status: status,
+                                                               track: track,
+                                                               gapSize: gapSize)
+    }
+
+    /// Creates an **indeterminate** circular progress indicator.
+    ///
+    /// - Parameters:
+    ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
+    ///    - track: Whether the track is displayed. Defaults to `true`.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
+    public init(status: Status = .neutral,
+                track: Bool = true,
+                gapSize: GapSize = .default)
+    {
+        configuration = CircularProgressIndicatorConfiguration(progress: nil,
+                                                               status: status,
+                                                               track: track,
+                                                               gapSize: gapSize)
+    }
+
+    // MARK: - Body
+
+    public var body: some View {
+        CircularProgressIndicatorView(configuration: configuration)
+    }
+}
+
+// TODO: #409 - Disable animations if user asks for it in a11 settings

@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-components-indicators
-description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet) and OUDSInputTag (removable). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
+description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet), OUDSInputTag (removable) and OUDSCircularProgressIndicator (determinate / indeterminate, statuses, gap size, track). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
 license: MIT
 ---
 
@@ -40,3 +40,29 @@ OUDSTag(label: "Label", status: .neutral(bullet: true))
 ```swift
 OUDSInputTag("Label") { /* remove action */ }
 ```
+
+---
+
+## Circular Progress Indicator
+
+Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Gap sizes: `default`, `small`
+
+```swift
+// Determinate — progress is clamped to [0, 1]
+OUDSCircularProgressIndicator(progress: 0.75)
+OUDSCircularProgressIndicator(progress: 0.5, status: .accent, track: false)
+OUDSCircularProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
+
+// Indeterminate
+OUDSCircularProgressIndicator()
+OUDSCircularProgressIndicator(status: .info, track: true)
+
+// Custom size — stroke width and gap scale proportionally to the effective size
+OUDSCircularProgressIndicator(progress: 0.6)
+    .frame(width: 96, height: 96)
+```
+
+Notes:
+- Default size is `48pt` and scales with Dynamic Type.
+- On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
+- Animations are paused when `accessibilityReduceMotion` is on or when Low Power Mode is enabled.
