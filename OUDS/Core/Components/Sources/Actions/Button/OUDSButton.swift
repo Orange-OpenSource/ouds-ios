@@ -222,7 +222,7 @@ public struct OUDSButton: View {
     ///    - image: An image configuration defined asset to use, rendering mode or also flip to apply or not.
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
-    ///    - size : The size of the button, default set to `.default`
+    ///    - size: The size of the button, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
     public init(_ key: LocalizedStringKey,
@@ -260,7 +260,7 @@ public struct OUDSButton: View {
     ///    - image: An image configuration defined asset to use, rendering mode or also flip to apply or not.
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
-    ///    - size : The size of the button, default set to `.default`
+    ///    - size: The size of the button, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
     public init(text: String,
@@ -296,7 +296,7 @@ public struct OUDSButton: View {
     ///    - image: An image configuration defined asset to use, rendering mode or also flip to apply or not.
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
-    ///    - size : The size of the button, default set to `.default`
+    ///    - size: The size of the button, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
     public init(image: OUDSImage,
@@ -327,7 +327,7 @@ public struct OUDSButton: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
-    ///    - size : The size of the button, default set to `.default`
+    ///    - size: The size of the button, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
     public init(_ key: LocalizedStringKey,
@@ -353,7 +353,7 @@ public struct OUDSButton: View {
     ///    - text: The text of the button to display
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
-    ///    - size : The size of the button, default set to `.default`
+    ///    - size: The size of the button, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
     public init(text: String,
