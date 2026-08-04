@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./images/logo-OUDS.png" alt="Logo of Orange Unified Design System" height="150" />
+</p>
+
 <h1 align="center">OUDS iOS</h1>
 
 <p align="center">
@@ -9,7 +13,7 @@
   ·
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=feature_request.yml" title="Open an issue on GitHub">Request feature</a>
   ·
-  <a href="https://ios.unified-design-system.orange.com/" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
+  <a href="https://github.com/Orange-OpenSource/ouds-ios-documentation" title="Swift library technical documentation GitHub project">Swift documentation</a>
   ·
   <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki" title="Swift library wiki">Wiki</a>
   ·
@@ -26,8 +30,6 @@
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
-&nbsp;
-<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" title="GitHub Pages deployment status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" alt="GitHub Pages deployment status"></a>
 &nbsp;
 <a href="https://www.bestpractices.dev/projects/10674" title="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/10674/badge" alt="OpenSSF Best Practices"></a>
 &nbsp;
