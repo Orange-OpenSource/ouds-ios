@@ -16,73 +16,138 @@ import SwiftUI
 
 /// Animates the foreground arc of an indeterminate ``OUDSCircularProgressIndicator``.
 ///
-/// The animation combines:
-/// - a **continuous rotation** of the arc (fast loop),
-/// - a slower **grow / shrink** of the arc length that mimics the Material 3 indeterminate spinner.
+/// The animation reproduces the **Material 3** indeterminate circular progress spec by combining
+/// three time-based animations simultaneously:
+///
+/// 1. A **global rotation** of `360°` in `6 s` (linear, repeat forever).
+/// 2. An **additional rotation** of `90°` performed in `500 ms`, then resting for `1 s`
+///    (cycle of `1.5 s`, repeat forever). The rotation is accumulated across cycles to avoid a
+///    visual jump at the end of each cycle.
+/// 3. An **indicator sweep** that grows and shrinks between `5 %` and `90 %` of the full circle,
+///    with an easeInOut-like autoreversing curve.
+///
+/// The rendering itself is delegated to ``CircularProgressCanvas`` and computed from the current
+/// wall-clock time provided by ``TimelineView(.animation)``. This approach:
+///
+/// - avoids any ``GeometryReader`` or `@State`-driven invalidation that could propagate a layout
+///   invalidation up to the parent (which caused a glitch in ``NavigationStack`` toolbars);
+/// - is compatible with iOS 15+ (``TimelineView(.animation)`` and ``Canvas`` are both available);
+/// - remains deterministic regardless of view recycling.
 ///
 /// Motion is disabled and a static arc is displayed when either
-/// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled
-/// (via ``OUDSLowPowerModeObserver``), mirroring the behavior of the internal `LoaderIndicator`
-/// used by ``OUDSButton``.
+/// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled (via
+/// ``OUDSLowPowerModeObserver``), mirroring the behavior of the internal `LoaderIndicator` used
+/// by ``OUDSButton``.
 struct CircularProgressIndicatorAnimator: View {
 
-    // MARK: - Constants
+    // MARK: - Material 3 animation constants
 
-    /// Duration of the full rotation loop, in seconds.
-    private static let rotationDuration: Double = 1.2
+    /// Global rotation period (full 360° turn), in seconds.
+    private static let globalRotationPeriod: TimeInterval = 6.0
 
-    /// Fraction of the circle drawn when animations are disabled (accessibility / low-power).
-    private static let staticArcLength: CGFloat = 0.7
+    /// Total duration of one additional rotation cycle (animation + hold), in seconds.
+    private static let additionalRotationCycle: TimeInterval = 1.5
+
+    /// Duration of the additional rotation animation phase (before the hold), in seconds.
+    private static let additionalRotationAnimDuration: TimeInterval = 0.5
+
+    /// Angle covered by one additional rotation cycle, in degrees.
+    private static let additionalRotationTarget: Double = 90.0
+
+    /// Half-period of the sweep animation (grow phase or shrink phase), in seconds.
+    /// The full cycle (grow + shrink) is therefore `2 * progressHalfCycle`.
+    private static let progressHalfCycle: TimeInterval = 1.5
+
+    /// Minimum sweep of the indeterminate indicator, in `[0, 1]`.
+    private static let progressMin: CGFloat = 0.05
+
+    /// Maximum sweep of the indeterminate indicator, in `[0, 1]`.
+    private static let progressMax: CGFloat = 0.90
+
+    /// Sweep used when animations are disabled (accessibility / low power).
+    private static let staticSweep: CGFloat = 0.7
 
     // MARK: - Stored properties
 
-    let color: Color
-    let strokeWidth: CGFloat
+    let foregroundColor: Color
+    let trackColor: Color
     let strokeCap: CGLineCap
+    let gapSize: OUDSCircularProgressIndicator.GapSize
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
-
-    @State private var rotation: Double = 0
 
     // MARK: - Body
 
     var body: some View {
         if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
-            staticArc
-                .onAppear {
-                    // If not reset, the previous rotation animation may persist when the flag toggles back.
-                    rotation = 0
-                }
+            // Static arc, positioned like a determinate progress indicator would be.
+            CircularProgressCanvas(
+                foregroundColor: foregroundColor,
+                trackColor: trackColor,
+                strokeCap: strokeCap,
+                sweep: Self.staticSweep,
+                rotation: -90,
+                gapSize: gapSize)
         } else {
-            animatedArc
+            TimelineView(.animation) { context in
+                let time = context.date.timeIntervalSinceReferenceDate
+                CircularProgressCanvas(
+                    foregroundColor: foregroundColor,
+                    trackColor: trackColor,
+                    strokeCap: strokeCap,
+                    sweep: sweep(at: time),
+                    rotation: totalRotation(at: time),
+                    gapSize: gapSize)
+            }
         }
     }
 
-    // MARK: - Sub-views
+    // MARK: - Time-based animations
 
-    /// A non-animated arc drawn when motion is disabled.
-    private var staticArc: some View {
-        Circle()
-            .trim(from: 0, to: Self.staticArcLength)
-            .stroke(color, style: strokeStyle)
-            .rotationEffect(.degrees(-90))
+    /// Global rotation angle at time `t`, in degrees. Loops from `0°` to `360°` every ``globalRotationPeriod``.
+    private func globalRotation(at time: TimeInterval) -> Double {
+        let phase = time.truncatingRemainder(dividingBy: Self.globalRotationPeriod)
+        return (phase / Self.globalRotationPeriod) * 360.0
     }
 
-    /// The animated arc: continuous rotation on a fixed-length trim.
-    private var animatedArc: some View {
-        Circle()
-            .trim(from: 0, to: Self.staticArcLength)
-            .stroke(color, style: strokeStyle)
-            .rotationEffect(.degrees(rotation - 90))
-            .onAppear {
-                withAnimation(.linear(duration: Self.rotationDuration).repeatForever(autoreverses: false)) {
-                    rotation = 360
-                }
-            }
+    /// Additional rotation angle at time `t`, in degrees.
+    ///
+    /// The angle is accumulated across cycles (each cycle adds ``additionalRotationTarget``) so that
+    /// the total rotation never jumps back to `0°` — the animation stays visually smooth.
+    /// Within a cycle:
+    /// - during the first ``additionalRotationAnimDuration`` seconds, the rotation grows linearly from
+    ///   the previous plateau to plateau + ``additionalRotationTarget``;
+    /// - during the remaining time, the rotation stays constant (hold / pause).
+    private func additionalRotation(at time: TimeInterval) -> Double {
+        let completedCycles = floor(time / Self.additionalRotationCycle)
+        let phase = time - completedCycles * Self.additionalRotationCycle
+        let base = completedCycles * Self.additionalRotationTarget
+
+        if phase < Self.additionalRotationAnimDuration {
+            let ratio = phase / Self.additionalRotationAnimDuration
+            return base + Self.additionalRotationTarget * ratio
+        } else {
+            return base + Self.additionalRotationTarget
+        }
     }
 
-    private var strokeStyle: StrokeStyle {
-        StrokeStyle(lineWidth: strokeWidth, lineCap: strokeCap)
+    /// Total rotation at time `t`, in degrees: sum of global rotation and additional rotation, offset by
+    /// `-90°` so that the arc starts at the top of the circle (12 o'clock position) at `t = 0`.
+    private func totalRotation(at time: TimeInterval) -> Double {
+        globalRotation(at: time) + additionalRotation(at: time) - 90.0
+    }
+
+    /// Sweep at time `t`, in `[progressMin, progressMax]`.
+    ///
+    /// The value oscillates smoothly between ``progressMin`` and ``progressMax`` using a cosine curve,
+    /// which approximates Material 3's `EasingEmphasizedCubic` for an autoreversing infinite animation.
+    /// The full oscillation period is `2 * progressHalfCycle`.
+    private func sweep(at time: TimeInterval) -> CGFloat {
+        let fullCycle = 2.0 * Self.progressHalfCycle
+        let phase = time.truncatingRemainder(dividingBy: fullCycle) / fullCycle // 0..1
+        // (1 - cos(2π * phase)) / 2 produces a smooth 0 -> 1 -> 0 oscillation.
+        let eased = CGFloat((1.0 - cos(phase * 2.0 * .pi)) / 2.0)
+        return Self.progressMin + (Self.progressMax - Self.progressMin) * eased
     }
 }
