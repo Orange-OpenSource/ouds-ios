@@ -19,22 +19,18 @@ import SwiftUI
 ///
 /// Four appearances are proposed:
 /// - **default**: Default buttons are used for actions which are not mandatory or essential for the user.
-///
 /// - **strong**: The strong "call for action" on the page should be singular and prominent, limited to one per view.
 /// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc.
-///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
-///
 /// - **negative**: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically
 /// resulting in the opening of a confirmation dialog.
 ///
 /// Two styles are available:
 /// - **normal**: is the normal state of a button which can be disabled, pressed, hovered or normal (i.e. enabled)
 /// - **loading**: the style used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
-///
 struct StyleForButton: ButtonStyle {
 
-    // MARK: Stored Properties
+    // MARK: Properties
 
     private let appearance: OUDSButton.Appearance
     private let style: OUDSButton.Style
@@ -42,8 +38,8 @@ struct StyleForButton: ButtonStyle {
     private let isHover: Bool
     private let isFullWidth: Bool
 
-    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: Initializer

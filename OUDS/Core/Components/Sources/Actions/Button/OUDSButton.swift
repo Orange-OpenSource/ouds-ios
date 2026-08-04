@@ -396,9 +396,9 @@ public struct OUDSButton: View {
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
         #if !os(watchOS) && !os(tvOS)
-        .onHover { isHover in
-            self.isHover = isHover
-        }
+            .onHover { isHover in
+                self.isHover = isHover
+            }
         #endif
     }
 

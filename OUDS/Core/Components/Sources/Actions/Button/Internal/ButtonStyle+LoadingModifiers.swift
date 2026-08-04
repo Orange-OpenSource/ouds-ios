@@ -31,8 +31,8 @@ struct ButtonLoadingContentModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
     @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body
 

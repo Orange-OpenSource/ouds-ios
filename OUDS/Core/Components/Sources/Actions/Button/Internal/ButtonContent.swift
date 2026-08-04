@@ -20,6 +20,7 @@ struct ButtonIcon: View {
 
     let image: OUDSImage
     let size: OUDSButton.Size
+
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -65,6 +66,7 @@ struct ButtonText: View {
 
     let text: String
     let size: OUDSButton.Size
+
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -97,11 +99,11 @@ struct ButtonText: View {
 
 struct ButtonTextAndIcon: View {
 
-    @Environment(\.theme) private var theme
-
     let text: String
     let image: OUDSImage
     let size: OUDSButton.Size
+
+    @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center, spacing: spacing) {
@@ -163,10 +165,10 @@ struct ButtonTextAndIcon: View {
 
 private struct TextForButton: View {
 
-    @Environment(\.theme) private var theme
-
     let text: String
     let size: OUDSButton.Size
+
+    @Environment(\.theme) private var theme
 
     var body: some View {
         switch size {
