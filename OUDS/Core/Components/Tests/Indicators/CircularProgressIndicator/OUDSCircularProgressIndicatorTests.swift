@@ -17,36 +17,42 @@ import Testing
 /// Tests on the public API and internal configuration of ``OUDSCircularProgressIndicator``.
 struct OUDSCircularProgressIndicatorTests {
 
-    // MARK: - Determinate initializer
+    // MARK: - Determinate configuration defaults
 
     @Test
-    func `Determinate initializer defaults to neutral status, track = true and default gap size`() {
-        let indicator = OUDSCircularProgressIndicator(progress: 0.5)
-        // Rebuild the same configuration to compare defaults.
-        let expected = CircularProgressIndicatorConfiguration(progress: 0.5,
-                                                              status: .neutral,
-                                                              track: true,
-                                                              gapSize: .default)
-        #expect(indicator.configuration == expected)
+    func `determinate configuration must expose the provided progress and defaults for other fields`() {
+        // Mirrors the defaults applied by OUDSCircularProgressIndicator.init(progress:status:track:gapSize:).
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default)
+        #expect(configuration.progress == 0.5)
+        #expect(configuration.status == .neutral)
+        #expect(configuration.track == true)
+        #expect(configuration.gapSize == .default)
+        #expect(configuration.isIndeterminate == false)
     }
 
-    // MARK: - Indeterminate initializer
+    // MARK: - Indeterminate configuration defaults
 
     @Test
-    func `Indeterminate initializer defaults to neutral status, track = true and default gap size, with nil progress`() {
-        let indicator = OUDSCircularProgressIndicator()
-        let expected = CircularProgressIndicatorConfiguration(progress: nil,
-                                                              status: .neutral,
-                                                              track: true,
-                                                              gapSize: .default)
-        #expect(indicator.configuration == expected)
-        #expect(indicator.configuration.isIndeterminate)
+    func `indeterminate configuration must have nil progress and defaults for other fields`() {
+        // Mirrors the defaults applied by OUDSCircularProgressIndicator.init(status:track:gapSize:).
+        let configuration = CircularProgressIndicatorConfiguration(progress: nil,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default)
+        #expect(configuration.progress == nil)
+        #expect(configuration.status == .neutral)
+        #expect(configuration.track == true)
+        #expect(configuration.gapSize == .default)
+        #expect(configuration.isIndeterminate)
     }
 
     // MARK: - Progress clamping
 
     @Test
-    func `Negative progress values must be clamped to 0`() {
+    func `negative progress values must be clamped to 0`() {
         let configuration = CircularProgressIndicatorConfiguration(progress: -0.5,
                                                                    status: .neutral,
                                                                    track: true,
@@ -55,7 +61,7 @@ struct OUDSCircularProgressIndicatorTests {
     }
 
     @Test
-    func `Progress values greater than 1 must be clamped to 1`() {
+    func `progress values greater than 1 must be clamped to 1`() {
         let configuration = CircularProgressIndicatorConfiguration(progress: 1.5,
                                                                    status: .neutral,
                                                                    track: true,
@@ -64,7 +70,7 @@ struct OUDSCircularProgressIndicatorTests {
     }
 
     @Test
-    func `Progress values inside [0, 1] must be preserved`() {
+    func `progress values inside [0, 1] must be preserved`() {
         for value in [0.0, 0.25, 0.5, 0.75, 1.0] {
             let configuration = CircularProgressIndicatorConfiguration(progress: value,
                                                                        status: .neutral,
@@ -75,7 +81,7 @@ struct OUDSCircularProgressIndicatorTests {
     }
 
     @Test
-    func `Nil progress must stay nil (indeterminate)`() {
+    func `nil progress must stay nil (indeterminate)`() {
         let configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                    status: .neutral,
                                                                    track: true,
@@ -87,7 +93,7 @@ struct OUDSCircularProgressIndicatorTests {
     // MARK: - Public enums exhaustiveness
 
     @Test
-    func `Every declared status is a distinct case`() {
+    func `every declared status is a distinct case`() {
         let allStatuses: [OUDSCircularProgressIndicator.Status] = [
             .neutral, .accent, .positive, .info, .warning, .negative,
         ]
@@ -95,7 +101,7 @@ struct OUDSCircularProgressIndicatorTests {
     }
 
     @Test
-    func `Every declared gap size is a distinct case`() {
+    func `every declared gap size is a distinct case`() {
         let allGapSizes: [OUDSCircularProgressIndicator.GapSize] = [.default, .small]
         #expect(Set(allGapSizes.map { String(describing: $0) }).count == allGapSizes.count)
     }

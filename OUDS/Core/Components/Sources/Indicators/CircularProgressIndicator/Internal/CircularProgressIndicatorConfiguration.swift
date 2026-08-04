@@ -21,12 +21,12 @@ import Foundation
 /// - `gapSize`: the size of the gap between the indicator and the track.
 struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
-    /// Clamped progress in `[0, 1]`; `nil` means the indicator is indeterminate.
+    /// Clamped progress in `[0, 1]`; `nil` means the indicator is indeterminate
     let progress: Double?
 
-    /// Color status of the indicator.
+    /// Color status of the indicator
     let status: OUDSCircularProgressIndicator.Status
 
     /// Whether the track is displayed under the indicator arc.

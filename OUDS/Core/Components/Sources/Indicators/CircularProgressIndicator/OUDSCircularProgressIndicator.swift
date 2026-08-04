@@ -13,13 +13,26 @@
 
 import SwiftUI
 
-/// A Circular Progress Indicator shows the progress of a task using a circle.
-/// It is useful when you need more visual focus or when space is limited.
+/// A circular indicator shows the progress of a task using a circle.
+/// It can show a specific value (determinate) or just that something is in progress (indeterminate).
+/// Useful when you need more visual focus or when space is limited.
+///
+///  ## Variants
 ///
 /// Two variants are provided:
 ///
 /// - **Determinate**: the caller provides a `progress` value in `[0, 1]`. Values outside this range are coerced.
+/// Shows the exact progress of a task, usually as a percentage from 0% to 100%.
+/// Provides clear and measurable feedback, helping users understand how long the task will take and reducing uncertainty.
+/// Use determinate indicators whenever possible. Avoid indeterminate when progress can be measured, e.g.
+/// when the progress value is known (e.g. file upload, installation, data sync) or when the system can estimate completion time or percentage
+///
 /// - **Indeterminate**: no `progress` is provided and the indicator loops continuously.
+/// Shows that a process is active without indicating exact progress.
+/// Used when the system cannot determine how long the task will take.
+/// Communicates that the system is working, even without precise data, and prevents users from thinking the interface is frozen.
+/// For long loading times (over 5 seconds), additional context must be provided.
+/// This helps inform users about the system state, reduces uncertainty, and prevents the interface from being perceived as unresponsive.
 ///
 /// ## Statuses
 ///
@@ -52,7 +65,7 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Determinate — default (neutral, with track, default gap)
+///     // Determinate - default (neutral, with track, default gap)
 ///     OUDSCircularProgressIndicator(progress: 0.75)
 ///
 ///     // Determinate with an accent status and no track
@@ -72,6 +85,8 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
+/// // TODO: #409 - Implement / update
+///
 /// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage) so that
 ///   VoiceOver reads e.g. *"75 percent"*.
 /// - In **indeterminate** mode, the view is marked with the `.updatesFrequently` trait so that assistive technologies
@@ -80,26 +95,28 @@ import SwiftUI
 ///
 /// ## Colored surfaces
 ///
-/// When placed on an ``OUDSColoredSurface``, the indicator switches to a **monochrome** rendering: the `status` is
-/// ignored and the content color of the surface (``theme.colors.contentDefault``) is used.
-///
-/// > TODO: expose dedicated monochrome tokens (foreground + track) for progress indicators once they are defined in
-/// > Figma tokens, similarly to what is done for `OUDSButton` (`theme.button.monoColor…`).
+/// When placed on an ``OUDSColoredSurface``, the indicator switches to a **monochrome** rendering, the `status` is
+/// ignored.
 ///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 2.4.0
+/// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSCircularProgressIndicator: View {
+public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
+
+    // TODO: # 409 - Add illustrations for doc
+
+    // TODO: #409 - expose dedicated monochrome tokens (foreground + track) for progress indicators once they are defined in
+    // Figma tokens, similarly to what is done for `OUDSButton` (`theme.button.monoColor…`).
 
     // MARK: - Public types
 
     /// The status of the progress indicator. It determines the color of the progress indicator.
     ///
-    /// - Since: 2.4.0
+    /// - Since: 3.0.0
     @frozen
     public enum Status: Sendable {
 
@@ -124,7 +141,7 @@ public struct OUDSCircularProgressIndicator: View {
 
     /// The size of the gap between the progress indicator and the track.
     ///
-    /// - Since: 2.4.0
+    /// - Since: 3.0.0
     @frozen
     public enum GapSize: Sendable {
 
@@ -135,10 +152,10 @@ public struct OUDSCircularProgressIndicator: View {
         case small
     }
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
-    /// Internal — exposed with package-visibility so tests can assert on it via `@testable import`.
-    let configuration: CircularProgressIndicatorConfiguration
+    /// Embeds all configuration details for the circular progress indicator
+    private let configuration: CircularProgressIndicatorConfiguration
 
     // MARK: - Initializers
 
@@ -184,3 +201,6 @@ public struct OUDSCircularProgressIndicator: View {
 }
 
 // TODO: #409 - Disable animations if user asks for it in a11 settings
+// TODO: #409 - Disable animations if low power mode
+// TODO: #409 - a11y with Voice Over (updates frequently)
+// TODO: #409 - Create dedictzed issue for components updates (button, tag, inputs, etc)

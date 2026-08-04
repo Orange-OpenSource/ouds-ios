@@ -43,31 +43,31 @@ struct CircularProgressIndicatorAnimator: View {
     // MARK: - Material 3 animation constants
 
     /// Global rotation period (full 360° turn), in seconds.
-    private static let globalRotationPeriod: TimeInterval = 6.0
+    static let globalRotationPeriod: TimeInterval = 6.0
 
     /// Total duration of one additional rotation cycle (animation + hold), in seconds.
-    private static let additionalRotationCycle: TimeInterval = 1.5
+    static let additionalRotationCycle: TimeInterval = 1.5
 
     /// Duration of the additional rotation animation phase (before the hold), in seconds.
-    private static let additionalRotationAnimDuration: TimeInterval = 0.5
+    static let additionalRotationAnimDuration: TimeInterval = 0.5
 
     /// Angle covered by one additional rotation cycle, in degrees.
-    private static let additionalRotationTarget: Double = 90.0
+    static let additionalRotationTarget: Double = 90.0
 
     /// Half-period of the sweep animation (grow phase or shrink phase), in seconds.
     /// The full cycle (grow + shrink) is therefore `2 * progressHalfCycle`.
-    private static let progressHalfCycle: TimeInterval = 1.5
+    static let progressHalfCycle: TimeInterval = 1.5
 
     /// Minimum sweep of the indeterminate indicator, in `[0, 1]`.
-    private static let progressMin: CGFloat = 0.05
+    static let progressMin: CGFloat = 0.05
 
     /// Maximum sweep of the indeterminate indicator, in `[0, 1]`.
-    private static let progressMax: CGFloat = 0.90
+    static let progressMax: CGFloat = 0.90
 
     /// Sweep used when animations are disabled (accessibility / low power).
-    private static let staticSweep: CGFloat = 0.7
+    static let staticSweep: CGFloat = 0.7
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let foregroundColor: Color
     let trackColor: Color
