@@ -49,20 +49,49 @@ struct CircularProgressIndicatorView: View {
                     trackColor: trackColor,
                     strokeCap: strokeCap,
                     gapSize: configuration.gapSize,
-                    hasTrack: configuration.track)
+                    hasTrack: configuration.track,
+                    cyclingColors: cyclingColors)
             }
         }
         .frame(width: scaledDefaultSize, height: scaledDefaultSize)
         .modifier(CircularProgressAccessibilityModifier(configuration: configuration))
     }
 
-    // MARK: - Computed helpers
+    // MARK: - Helpers
 
+    /// The color used for the foreground arc when no color cycling is active (standard appearance,
+    /// monochrome on ``OUDSColoredSurface``, or Reduce Motion / Low Power fallback for the assistant
+    /// appearance).
     private var foregroundColor: Color {
         if useMonochrome {
             return theme.colors.contentDefault.color(for: colorScheme)
         }
+        if configuration.appearance == .assistant {
+            // Initial / fallback color for the AI assistant variant. The animator will pick the
+            // current color per frame from ``cyclingColors`` when it is not empty.
+            return theme.colors.colorAiPrimary.color(for: colorScheme)
+        }
         return statusColor.color(for: colorScheme)
+    }
+
+    /// The list of AI colors to cycle through in the indeterminate animator.
+    ///
+    /// Returns an empty array when the appearance is standard, when monochrome rendering is active
+    /// (colored surface) or when the indicator is determinate; in all those cases the animator
+    /// falls back to ``foregroundColor``.
+    private var cyclingColors: [Color] {
+        guard configuration.appearance == .assistant,
+              !useMonochrome,
+              configuration.isIndeterminate
+        else {
+            return []
+        }
+        return [
+            theme.colors.colorAiPrimary.color(for: colorScheme),
+            theme.colors.colorAiSecondary.color(for: colorScheme),
+            theme.colors.colorAiTertiary.color(for: colorScheme),
+            theme.colors.colorAiQuaternary.color(for: colorScheme),
+        ]
     }
 
     private var trackColor: Color {

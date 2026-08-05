@@ -24,7 +24,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Edge case: no progress
 
-    @Test
+    @Test @MainActor
     func `sweep of 0 degrees must produce a full circle track with no gap`() {
         // When progress = 0, there is no foreground arc, so the track must be a full circle with no notch.
         let layout = CircularProgressCanvasView.trackLayout(sweepDegrees: 0, gapSweepDegrees: 14)
@@ -34,7 +34,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Edge case: full progress
 
-    @Test
+    @Test @MainActor
     func `sweep of 360 degrees must produce no track`() {
         // When progress = 1, the foreground fills the circle, so no track is drawn.
         let layout = CircularProgressCanvasView.trackLayout(sweepDegrees: 360, gapSweepDegrees: 14)
@@ -43,7 +43,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Nominal case
 
-    @Test
+    @Test @MainActor
     func `sweep of 180 degrees with a 14 degrees gap must leave 152 degrees for the track`() {
         // Foreground = 180 degrees, one gap of 14 degrees on each side, so track = 360 - 180 - 28 = 152.
         let layout = CircularProgressCanvasView.trackLayout(sweepDegrees: 180, gapSweepDegrees: 14)
@@ -53,7 +53,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Edge case: sweep smaller than the gap
 
-    @Test
+    @Test @MainActor
     func `sweep smaller than the gap must shrink the effective gap to avoid oversized notches`() {
         // Foreground = 3.6 degrees, nominal gap = 14 degrees. Effective gap = min(3.6, 14) = 3.6.
         // Track = 360 - 3.6 - 2 * 3.6 = 349.2.
@@ -64,7 +64,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Boundary: sweep equal to the gap
 
-    @Test
+    @Test @MainActor
     func `sweep equal to the gap must produce an equal effective gap on each side`() {
         // Boundary: sweep == gap => effective gap == sweep.
         let layout = CircularProgressCanvasView.trackLayout(sweepDegrees: 14, gapSweepDegrees: 14)
@@ -74,7 +74,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Above boundary: full nominal gap applies
 
-    @Test
+    @Test @MainActor
     func `sweep just above the gap must apply the full nominal gap on both sides`() {
         // Above the boundary: effective gap == nominal gap.
         let layout = CircularProgressCanvasView.trackLayout(sweepDegrees: 20, gapSweepDegrees: 14)
@@ -84,7 +84,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Robustness
 
-    @Test
+    @Test @MainActor
     func `track length must always be positive or zero`() {
         // The track length must never be negative, even for pathological inputs.
         for sweep in [0.0, 45.0, 90.0, 180.0, 270.0, 359.9, 360.0] {
@@ -95,7 +95,7 @@ struct CircularProgressTrackLayoutTests {
 
     // MARK: - Edge case: zero nominal gap
 
-    @Test
+    @Test @MainActor
     func `zero gap must produce a track that is exactly complementary to the sweep`() {
         // If the gap is disabled (0), the layout must be exactly complementary to the sweep and cover the rest of the circle.
         let layout = CircularProgressCanvasView.trackLayout(sweepDegrees: 90, gapSweepDegrees: 0)
