@@ -58,8 +58,7 @@ struct ListItemContent<Slot: View>: View {
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
             .padding(.horizontal, theme.listItem.spacePaddingInline)
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .frame(minWidth: theme.listItem.sizeMinWidth, minHeight: minHeight)
+            .frame(maxWidth: .infinity, minHeight: minHeight, alignment: textFrameAlignment)
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
 
@@ -67,6 +66,7 @@ struct ListItemContent<Slot: View>: View {
                 ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)
             }
         }
+        .frame(minWidth: theme.listItem.sizeMinWidth)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
     }
 
@@ -89,6 +89,15 @@ struct ListItemContent<Slot: View>: View {
     }
 
     // MARK: Computed properties
+
+    private var textFrameAlignment: Alignment {
+        switch containersAlignment {
+        case .top:
+            .topLeading
+        case .center:
+            .center
+        }
+    }
 
     private var verticalAlignment: VerticalAlignment {
         switch containersAlignment {

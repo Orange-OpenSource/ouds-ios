@@ -96,7 +96,7 @@ struct ListItemTextContainer<Slot: View>: View {
             }
         }
         .padding(.top, topPadding)
-        .frame(maxWidth: .infinity, minHeight: minHeight, alignment: .topLeading)
+        .frame(maxWidth: .infinity, minHeight: minHeight, alignment: verticalAlignment)
     }
 
     // MARK: Helpers
@@ -131,6 +131,15 @@ struct ListItemTextContainer<Slot: View>: View {
         }
 
         return rawSize * dynamicTypeSize.percentageRate / 100
+    }
+
+    private var verticalAlignment: Alignment {
+        switch alignment {
+        case .top:
+            .topLeading
+        case .center:
+            .center
+        }
     }
 
     /// Forges the accessibility label for the list item text parts.

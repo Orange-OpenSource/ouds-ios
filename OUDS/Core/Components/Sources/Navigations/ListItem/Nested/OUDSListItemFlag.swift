@@ -107,10 +107,12 @@ public struct OUDSListItemFlag: View {
 
     public var body: some View {
         HStack {
-            OUDSScaledIcon(image: OUDSImage(asset: asset, renderingMode: .original), size: theme.listItem.sizeFlagHeight)
+            OUDSImage(asset: asset, renderingMode: .original)
+                .aspectRatio(contentMode: .fit)
+                .frame(height: flagHeight)
                 .opacity(opacity)
         }
-        .frame(minWidth: frameHeight, alignment: .center)
+        .frame(minWidth: minWidth, alignment: .center)
     }
 
     // MARK: Helpers
@@ -119,7 +121,11 @@ public struct OUDSListItemFlag: View {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled
     }
 
-    private var frameHeight: CGFloat {
+    private var flagHeight: SizeSemanticToken {
+        theme.listItem.sizeFlagHeight * dynamicTypeSize.percentageRate / 100
+    }
+
+    private var minWidth: SizeSemanticToken {
         let rawSize = if itemSize == .small {
             theme.listItem.sizeAssetSmall
         } else {
