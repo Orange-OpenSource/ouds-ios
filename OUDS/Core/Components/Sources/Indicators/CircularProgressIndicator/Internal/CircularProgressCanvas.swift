@@ -64,8 +64,8 @@ struct CircularProgressCanvas: View {
             let gapSweep = gapSweepDegrees(gapDistance: gapDistance, diameter: diameter)
 
             let sweepDegrees = clampedSweep * 360.0
-            // The track covers the remaining angle, minus one gap on each side of the foreground arc.
-            let trackDegrees = max(0.0, 360.0 - sweepDegrees - 2.0 * gapSweep)
+            let (trackStartOffset, trackDegrees) = Self.trackLayout(sweepDegrees: sweepDegrees,
+                                                                    gapSweepDegrees: gapSweep)
 
             let strokeStyle = StrokeStyle(lineWidth: strokeWidth, lineCap: strokeCap)
 
@@ -78,9 +78,9 @@ struct CircularProgressCanvas: View {
                 context.stroke(foregroundPath, with: .color(foregroundColor), style: strokeStyle)
             }
 
-            // Track: starts after the foreground + gap, sweeps by `trackDegrees`.
+            // Track: starts after the foreground + effective gap, sweeps by `trackDegrees`.
             if trackDegrees > 0 {
-                let trackStart = rotation + sweepDegrees + gapSweep
+                let trackStart = rotation + trackStartOffset
                 let trackPath = arcPath(center: center,
                                         radius: radius,
                                         startAngle: trackStart,
@@ -91,6 +91,34 @@ struct CircularProgressCanvas: View {
     }
 
     // MARK: - Helpers
+
+    /// Computes the track layout (start-angle offset and length in degrees) given the foreground sweep
+    /// and the nominal gap.
+    ///
+    /// The gap between the track and the foreground is **shrunk to zero when the foreground arc is
+    /// smaller than a full gap**, so that:
+    /// - `sweepDegrees == 0` produces a full-circle track (no notch), matching the visual expectation
+    ///   when `progress = 0`;
+    /// - very small progress values do not create an oversized gap larger than the arc itself;
+    /// - `sweepDegrees == 360` produces no track (fully filled foreground), no negative track length.
+    ///
+    /// This mirrors the Material 3 Android reference implementation which uses
+    /// `min(sweep, gapSizeSweep)` on both sides of the foreground arc.
+    ///
+    /// - Parameters:
+    ///    - sweepDegrees: length of the foreground arc, in degrees, expected in `[0, 360]`.
+    ///    - gapSweepDegrees: nominal gap between the two arcs, in degrees, expected `>= 0`.
+    /// - Returns: a tuple `(startOffsetDegrees, lengthDegrees)` where:
+    ///    - `startOffsetDegrees`: offset (in degrees) to add to the drawing rotation to get the track start angle;
+    ///    - `lengthDegrees`: length of the track arc, in degrees, always in `[0, 360]`.
+    static func trackLayout(sweepDegrees: Double,
+                            gapSweepDegrees: Double) -> (startOffsetDegrees: Double, lengthDegrees: Double)
+    {
+        let effectiveGap = min(sweepDegrees, gapSweepDegrees)
+        let length = max(0.0, 360.0 - sweepDegrees - 2.0 * effectiveGap)
+        let startOffset = sweepDegrees + effectiveGap
+        return (startOffset, length)
+    }
 
     /// Builds a stroked arc path centered at ``center`` with the given ``radius``.
     private func arcPath(center: CGPoint, radius: CGFloat, startAngle: Double, sweepDegrees: Double) -> Path {
