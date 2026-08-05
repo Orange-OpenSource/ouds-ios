@@ -16,14 +16,34 @@ import SwiftUI
 
 /// Draws both the track and the foreground arc of a circular progress indicator.
 ///
-/// The Canvas receives its effective size without renegotiating layout with the parent, which
-/// avoids the layout glitches observed with a ``GeometryReader`` when the indicator is embedded in
-/// a ``NavigationStack`` toolbar.
-///
 /// The layout of the two arcs mirrors the Material 3 reference implementation:
 /// - **Track** covers `360° - sweep - 2 * gap`
 /// - **Foreground** covers `sweep`
 /// - The whole drawing is rotated by ``rotation`` (in degrees).
+///
+/// ## Why `Shape` and not `Canvas`
+///
+/// Earlier versions of this view used a SwiftUI `Canvas` for drawing. The drawback of `Canvas` is
+/// that its draw closure is **not re-evaluated at every frame** during a `withAnimation` block —
+/// SwiftUI has no way to interpolate an opaque draw callback. As a consequence, animations driven
+/// by `withAnimation { … }` on a state variable feeding the `sweep` value were invisible: the
+/// canvas jumped directly to the final value.
+///
+/// The current implementation uses two ``CircularProgressArc`` shapes stacked in a `ZStack`. Each
+/// shape conforms to `Animatable` via `animatableData`, which lets SwiftUI re-invoke `path(in:)`
+/// at every animation frame with an interpolated value. Combined with an `.easeOut(duration:)` on
+/// the caller side (see ``CircularProgressIndicatorDeterminateView``), this produces a smooth arc
+/// reveal / update animation for the determinate mode. The indeterminate mode still works
+/// unchanged because it drives values from a ``TimelineView(.animation)`` which forces re-eval
+/// at every frame.
+///
+/// ## About the toolbar glitch
+///
+/// This view uses a `GeometryReader` internally to compute the effective diameter. To avoid the
+/// `NavigationStack` toolbar glitch previously observed, the caller **must** constrain this view's
+/// size using an explicit `.frame(width:height:)` at a higher level (this is done in
+/// ``CircularProgressIndicatorView``). Because the outer frame is fixed, the `GeometryReader` only
+/// reads that fixed size and does not renegotiate layout with the parent.
 struct CircularProgressCanvas: View {
 
     // MARK: - Constants
@@ -50,42 +70,37 @@ struct CircularProgressCanvas: View {
     // MARK: - Body
 
     var body: some View {
-        Canvas { context, size in
-            let diameter = min(size.width, size.height)
-            guard diameter > 0 else { return }
-
+        GeometryReader { proxy in
+            let diameter = min(proxy.size.width, proxy.size.height)
             let strokeWidth = diameter * Self.strokeWidthRatio
-            let radius = (diameter - strokeWidth) / 2.0
-            let center = CGPoint(x: size.width / 2.0, y: size.height / 2.0)
-
-            let clampedSweep = min(max(sweep, 0.0), 1.0)
             let gapDistance = gapDistance(for: diameter)
-            // Gap expressed as a fraction of the full circle (in degrees, then converted to fraction).
             let gapSweep = gapSweepDegrees(gapDistance: gapDistance, diameter: diameter)
 
-            let sweepDegrees = clampedSweep * 360.0
+            let clampedSweep = min(max(sweep, 0.0), 1.0)
+            let sweepDegrees = Double(clampedSweep) * 360.0
             let (trackStartOffset, trackDegrees) = Self.trackLayout(sweepDegrees: sweepDegrees,
                                                                     gapSweepDegrees: gapSweep)
 
             let strokeStyle = StrokeStyle(lineWidth: strokeWidth, lineCap: strokeCap)
 
-            // Foreground: starts at `rotation`, sweeps by `sweepDegrees`.
-            if sweepDegrees > 0 {
-                let foregroundPath = arcPath(center: center,
-                                             radius: radius,
-                                             startAngle: rotation,
-                                             sweepDegrees: sweepDegrees)
-                context.stroke(foregroundPath, with: .color(foregroundColor), style: strokeStyle)
-            }
+            ZStack {
+                // Both arcs are always kept in the view hierarchy — an empty arc (sweep = 0) draws
+                // nothing, but removing/inserting a Shape via `if` would trigger SwiftUI's default
+                // `.opacity` transition on appearance, which would look like the arc color fades in
+                // from a lighter shade instead of the fill growing at its final color. It would also
+                // hide the animation entirely when `track: false` (no reference to see the arc grow).
+                //
+                // The `Shape` conformance to `Animatable` lets SwiftUI interpolate `startAngleDegrees`
+                // and `sweepDegrees` frame by frame when the caller wraps a change in `withAnimation(…)`.
+                CircularProgressArc(startAngleDegrees: rotation + trackStartOffset,
+                                    sweepDegrees: trackDegrees,
+                                    strokeWidth: strokeWidth)
+                    .stroke(trackColor, style: strokeStyle)
 
-            // Track: starts after the foreground + effective gap, sweeps by `trackDegrees`.
-            if trackDegrees > 0 {
-                let trackStart = rotation + trackStartOffset
-                let trackPath = arcPath(center: center,
-                                        radius: radius,
-                                        startAngle: trackStart,
-                                        sweepDegrees: trackDegrees)
-                context.stroke(trackPath, with: .color(trackColor), style: strokeStyle)
+                CircularProgressArc(startAngleDegrees: rotation,
+                                    sweepDegrees: sweepDegrees,
+                                    strokeWidth: strokeWidth)
+                    .stroke(foregroundColor, style: strokeStyle)
             }
         }
     }
@@ -120,17 +135,6 @@ struct CircularProgressCanvas: View {
         return (startOffset, length)
     }
 
-    /// Builds a stroked arc path centered at ``center`` with the given ``radius``.
-    private func arcPath(center: CGPoint, radius: CGFloat, startAngle: Double, sweepDegrees: Double) -> Path {
-        var path = Path()
-        path.addArc(center: center,
-                    radius: radius,
-                    startAngle: .degrees(startAngle),
-                    endAngle: .degrees(startAngle + sweepDegrees),
-                    clockwise: false)
-        return path
-    }
-
     /// Gap distance in points for the given diameter, matching the Android reference implementation.
     private func gapDistance(for diameter: CGFloat) -> CGFloat {
         switch gapSize {
@@ -147,5 +151,53 @@ struct CircularProgressCanvas: View {
     private func gapSweepDegrees(gapDistance: CGFloat, diameter: CGFloat) -> Double {
         guard diameter > 0 else { return 0 }
         return Double((gapDistance / (.pi * diameter)) * 360.0)
+    }
+}
+
+// MARK: - Animatable arc shape
+
+/// A single arc shape whose `sweepDegrees` and `startAngleDegrees` can be animated by SwiftUI.
+///
+/// The conformance to `Animatable` (via `animatableData`) allows SwiftUI to re-evaluate
+/// `path(in:)` at every frame during a `withAnimation` block, interpolating the animatable pair
+/// linearly between the old and the new values. Combined with a `withAnimation(.easeOut(duration:))`
+/// on the caller side, this produces a smooth arc reveal or update animation.
+///
+/// The stroke width is not animated (it is a constant during any given animation), but it is used
+/// to shrink the arc radius so that the stroked line stays inscribed within the frame — otherwise
+/// `.stroke(_:style:)` (which centers the trait on the path) would draw half of its thickness
+/// outside the frame.
+private struct CircularProgressArc: Shape {
+
+    /// Start angle of the arc, in degrees (0° = 3 o'clock, positive = clockwise).
+    var startAngleDegrees: Double
+
+    /// Length of the arc, in degrees, in `[0, 360]`.
+    var sweepDegrees: Double
+
+    /// Stroke width in points, applied by the caller via `.stroke(_:style:)`. Not animated.
+    let strokeWidth: CGFloat
+
+    /// Enables SwiftUI to interpolate both angles simultaneously during a `withAnimation` block.
+    var animatableData: AnimatablePair<Double, Double> {
+        get { AnimatablePair(startAngleDegrees, sweepDegrees) }
+        set {
+            startAngleDegrees = newValue.first
+            sweepDegrees = newValue.second
+        }
+    }
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let diameter = min(rect.width, rect.height)
+        // Radius reduced by half the stroke width so the stroked line stays inscribed in the frame.
+        let radius = max(0.0, (diameter - strokeWidth) / 2.0)
+        let center = CGPoint(x: rect.midX, y: rect.midY)
+        path.addArc(center: center,
+                    radius: radius,
+                    startAngle: .degrees(startAngleDegrees),
+                    endAngle: .degrees(startAngleDegrees + sweepDegrees),
+                    clockwise: false)
+        return path
     }
 }

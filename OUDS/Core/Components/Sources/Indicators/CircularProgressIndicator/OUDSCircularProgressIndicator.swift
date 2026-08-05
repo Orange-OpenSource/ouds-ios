@@ -62,10 +62,21 @@ import SwiftUI
 /// It can be overridden by applying a `.frame(width:height:)` on the view; the stroke width and the gap scale
 /// proportionally with the effective size.
 ///
+/// ## Animation (determinate mode only)
+///
+/// When `animated` is `true` (default), the determinate indicator progressively fills from `0` to the target
+/// `progress` on first display, and animates any subsequent change of `progress`. When `animated` is `false`,
+/// the indicator is displayed instantly at its target value with no animation.
+///
+/// Animations are always disabled when `accessibilityReduceMotion` is `true` or when Low Power Mode is enabled,
+/// regardless of the `animated` flag.
+///
+/// The indeterminate mode is not affected by this flag: its Material 3 animation is intrinsic to the mode.
+///
 /// ## Code samples
 ///
 /// ```swift
-///     // Determinate - default (neutral, with track, default gap)
+///     // Determinate - default (neutral, with track, default gap, reveal animation on display)
 ///     OUDSCircularProgressIndicator(progress: 0.75)
 ///
 ///     // Determinate with an accent status and no track
@@ -73,6 +84,9 @@ import SwiftUI
 ///
 ///     // Determinate with a warning status and a small gap
 ///     OUDSCircularProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
+///
+///     // Determinate displayed instantly at its target value, without any animation
+///     OUDSCircularProgressIndicator(progress: 0.75, animated: false)
 ///
 ///     // Indeterminate
 ///     OUDSCircularProgressIndicator()
@@ -166,15 +180,21 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
+    ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on first
+    ///      display, and animates any subsequent change of `progress`. When `false`, the indicator is displayed
+    ///      instantly at its target value with no animation. Animations are always disabled when
+    ///      `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this flag.
     public init(progress: Double,
                 status: Status = .neutral,
                 track: Bool = true,
-                gapSize: GapSize = .default)
+                gapSize: GapSize = .default,
+                animated: Bool = true)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: progress,
                                                                status: status,
                                                                track: track,
-                                                               gapSize: gapSize)
+                                                               gapSize: gapSize,
+                                                               animated: animated)
     }
 
     /// Creates an **indeterminate** circular progress indicator.
@@ -187,10 +207,13 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
                 track: Bool = true,
                 gapSize: GapSize = .default)
     {
+        // `animated` is irrelevant in indeterminate mode (the Material 3 animation is intrinsic to the mode);
+        // we still pass a value so the configuration exposes a consistent shape across both modes.
         configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                status: status,
                                                                track: track,
-                                                               gapSize: gapSize)
+                                                               gapSize: gapSize,
+                                                               animated: true)
     }
 
     // MARK: - Body

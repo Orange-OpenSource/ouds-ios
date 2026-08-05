@@ -50,12 +50,12 @@ struct CircularProgressIndicatorView: View {
     var body: some View {
         Group {
             if let progress = configuration.progress {
-                CircularProgressCanvas(
+                CircularProgressIndicatorDeterminateView(
+                    progress: progress,
+                    animated: configuration.animated,
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
-                    sweep: CGFloat(progress),
-                    rotation: -90, // start at the top of the circle
                     gapSize: configuration.gapSize)
             } else {
                 CircularProgressIndicatorAnimator(

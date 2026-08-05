@@ -19,6 +19,8 @@ import Foundation
 /// - `status`: the color status of the indicator.
 /// - `track`: whether the track is displayed under the progress arc.
 /// - `gapSize`: the size of the gap between the indicator and the track.
+/// - `animated`: whether the determinate indicator animates on display and on progress updates.
+///   Ignored in indeterminate mode (the Material 3 animation is intrinsic to the mode).
 struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
 
     // MARK: - Properties
@@ -35,13 +37,25 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     /// Size of the gap between the indicator and the track.
     let gapSize: OUDSCircularProgressIndicator.GapSize
 
+    /// Whether the determinate indicator animates on first display (reveal from `0`) and on subsequent
+    /// changes of `progress`. Ignored in indeterminate mode.
+    let animated: Bool
+
     // MARK: - Initializer
 
     /// Creates a configuration. The `progress` value is clamped to `[0, 1]` when non-nil.
+    ///
+    /// - Parameters:
+    ///    - progress: The current progress in the `[0, 1]` range, or `nil` for indeterminate.
+    ///    - status: The color status of the indicator.
+    ///    - track: Whether the track is displayed.
+    ///    - gapSize: The size of the gap between the indicator and the track.
+    ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
     init(progress: Double?,
          status: OUDSCircularProgressIndicator.Status,
          track: Bool,
-         gapSize: OUDSCircularProgressIndicator.GapSize)
+         gapSize: OUDSCircularProgressIndicator.GapSize,
+         animated: Bool = true)
     {
         if let progress {
             self.progress = min(max(progress, 0.0), 1.0)
@@ -51,6 +65,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
         self.status = status
         self.track = track
         self.gapSize = gapSize
+        self.animated = animated
     }
 
     // MARK: - Helpers
