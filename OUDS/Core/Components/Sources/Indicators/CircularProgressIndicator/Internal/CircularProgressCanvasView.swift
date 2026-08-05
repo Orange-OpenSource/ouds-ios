@@ -14,46 +14,24 @@
 import OUDSTokensSemantic
 import SwiftUI
 
+/*
+ ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
+ */
+
 /// Draws both the track and the foreground arc of a circular progress indicator.
 ///
-/// The layout of the two arcs mirrors the Material 3 reference implementation:
+/// The layout of the two arcs mirrors the Android Material 3 reference implementation:
 /// - **Track** covers `360° - sweep - 2 * gap`
 /// - **Foreground** covers `sweep`
 /// - The whole drawing is rotated by ``rotation`` (in degrees).
-///
-/// ## Why `Shape` and not `Canvas`
-///
-/// Earlier versions of this view used a SwiftUI `Canvas` for drawing. The drawback of `Canvas` is
-/// that its draw closure is **not re-evaluated at every frame** during a `withAnimation` block —
-/// SwiftUI has no way to interpolate an opaque draw callback. As a consequence, animations driven
-/// by `withAnimation { … }` on a state variable feeding the `sweep` value were invisible: the
-/// canvas jumped directly to the final value.
-///
-/// The current implementation uses two ``CircularProgressArc`` shapes stacked in a `ZStack`. Each
-/// shape conforms to `Animatable` via `animatableData`, which lets SwiftUI re-invoke `path(in:)`
-/// at every animation frame with an interpolated value. Combined with an `.easeOut(duration:)` on
-/// the caller side (see ``CircularProgressIndicatorDeterminateView``), this produces a smooth arc
-/// reveal / update animation for the determinate mode. The indeterminate mode still works
-/// unchanged because it drives values from a ``TimelineView(.animation)`` which forces re-eval
-/// at every frame.
-///
-/// ## About the toolbar glitch
-///
-/// This view uses a `GeometryReader` internally to compute the effective diameter. To avoid the
-/// `NavigationStack` toolbar glitch previously observed, the caller **must** constrain this view's
-/// size using an explicit `.frame(width:height:)` at a higher level (this is done in
-/// ``CircularProgressIndicatorView``). Because the outer frame is fixed, the `GeometryReader` only
-/// reads that fixed size and does not renegotiate layout with the parent.
-struct CircularProgressCanvas: View {
+struct CircularProgressCanvasView: View {
 
     // MARK: - Constants
 
     /// Ratio between the stroke width and the diameter.
-    /// Exposed as `internal` (rather than `private`) so unit tests can assert its value.
     static let strokeWidthRatio: CGFloat = 0.125
 
     /// Angle (in degrees) of the default gap, converted into an arc length on the circle circumference.
-    /// Exposed as `internal` (rather than `private`) so unit tests can assert its value.
     static let defaultGapAngleDegrees: CGFloat = 14.0
 
     // MARK: - Properties
@@ -61,10 +39,8 @@ struct CircularProgressCanvas: View {
     let foregroundColor: Color
     let trackColor: Color
     let strokeCap: CGLineCap
-    /// Sweep of the foreground arc, in `[0, 1]` (fraction of the full circle).
-    let sweep: CGFloat
-    /// Global rotation applied to both arcs, in degrees.
-    let rotation: Double
+    let sweep: CGFloat // Sweep of the foreground arc, in `[0, 1]` (fraction of the full circle).
+    let rotation: Double // Global rotation applied to both arcs, in degrees.
     let gapSize: OUDSCircularProgressIndicator.GapSize
 
     // MARK: - Body
@@ -84,22 +60,14 @@ struct CircularProgressCanvas: View {
             let strokeStyle = StrokeStyle(lineWidth: strokeWidth, lineCap: strokeCap)
 
             ZStack {
-                // Both arcs are always kept in the view hierarchy — an empty arc (sweep = 0) draws
-                // nothing, but removing/inserting a Shape via `if` would trigger SwiftUI's default
-                // `.opacity` transition on appearance, which would look like the arc color fades in
-                // from a lighter shade instead of the fill growing at its final color. It would also
-                // hide the animation entirely when `track: false` (no reference to see the arc grow).
-                //
-                // The `Shape` conformance to `Animatable` lets SwiftUI interpolate `startAngleDegrees`
-                // and `sweepDegrees` frame by frame when the caller wraps a change in `withAnimation(…)`.
-                CircularProgressArc(startAngleDegrees: rotation + trackStartOffset,
-                                    sweepDegrees: trackDegrees,
-                                    strokeWidth: strokeWidth)
+                CircularProgressArcShape(startAngleDegrees: rotation + trackStartOffset,
+                                         sweepDegrees: trackDegrees,
+                                         strokeWidth: strokeWidth)
                     .stroke(trackColor, style: strokeStyle)
 
-                CircularProgressArc(startAngleDegrees: rotation,
-                                    sweepDegrees: sweepDegrees,
-                                    strokeWidth: strokeWidth)
+                CircularProgressArcShape(startAngleDegrees: rotation,
+                                         sweepDegrees: sweepDegrees,
+                                         strokeWidth: strokeWidth)
                     .stroke(foregroundColor, style: strokeStyle)
             }
         }
@@ -117,7 +85,7 @@ struct CircularProgressCanvas: View {
     /// - very small progress values do not create an oversized gap larger than the arc itself;
     /// - `sweepDegrees == 360` produces no track (fully filled foreground), no negative track length.
     ///
-    /// This mirrors the Material 3 Android reference implementation which uses
+    /// This mirrors the Android Material 3 reference implementation which uses
     /// `min(sweep, gapSizeSweep)` on both sides of the foreground arc.
     ///
     /// - Parameters:
@@ -136,14 +104,27 @@ struct CircularProgressCanvas: View {
     }
 
     /// Gap distance in points for the given diameter, matching the Android reference implementation.
+    ///
+    /// When ``strokeCap`` is `.round`, each arc end is prolongated by `strokeWidth / 2` on each
+    /// side because of the round line cap. Without any compensation, these round caps would eat up
+    /// the visible spacing between the foreground and the track (and can even overlap when the
+    /// nominal gap is small). We therefore add `strokeWidth` (= 2 × strokeWidth/2) to the nominal
+    /// gap so the visible spacing between the two arcs stays constant regardless of the stroke cap.
+    ///
+    /// This mirrors the Material 3 Android reference implementation which does
+    /// `gapSize + strokeWidth` when `strokeCap == Round`.
     private func gapDistance(for diameter: CGFloat) -> CGFloat {
+        let strokeWidth = diameter * Self.strokeWidthRatio
+        let capCompensation: CGFloat = (strokeCap == .round) ? strokeWidth : 0
+
         switch gapSize {
         case .default:
-            // 14° of arc converted into a distance on the circle.
-            Self.defaultGapAngleDegrees / 360.0 * .pi * diameter
+            // 14° of arc converted into a distance on the circle, plus optional round-cap compensation.
+            return Self.defaultGapAngleDegrees / 360.0 * .pi * diameter + capCompensation
         case .small:
-            // 1pt at the default size, scales linearly with the effective diameter.
-            diameter / CircularProgressIndicatorView.defaultSize
+            // 1pt at the default size, scales linearly with the effective diameter, plus optional
+            // round-cap compensation.
+            return diameter / CircularProgressIndicatorView.defaultSize + capCompensation
         }
     }
 
@@ -167,7 +148,7 @@ struct CircularProgressCanvas: View {
 /// to shrink the arc radius so that the stroked line stays inscribed within the frame — otherwise
 /// `.stroke(_:style:)` (which centers the trait on the path) would draw half of its thickness
 /// outside the frame.
-private struct CircularProgressArc: Shape {
+private struct CircularProgressArcShape: Shape {
 
     /// Start angle of the arc, in degrees (0° = 3 o'clock, positive = clockwise).
     var startAngleDegrees: Double

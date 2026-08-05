@@ -14,9 +14,13 @@
 import OUDSFoundations
 import SwiftUI
 
+/*
+ ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
+ */
+
 /// Animates the foreground arc of an indeterminate ``OUDSCircularProgressIndicator``.
 ///
-/// The animation reproduces the **Material 3** indeterminate circular progress spec by combining
+/// The animation reproduces the **Android Material 3** indeterminate circular progress specification by combining
 /// three time-based animations simultaneously:
 ///
 /// 1. A **global rotation** of `360°` in `6 s` (linear, repeat forever).
@@ -38,9 +42,9 @@ import SwiftUI
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled (via
 /// ``OUDSLowPowerModeObserver``), mirroring the behavior of the internal `LoaderIndicator` used
 /// by ``OUDSButton``.
-struct CircularProgressIndicatorAnimator: View {
+struct CircularProgressIndicatorAnimatorView: View {
 
-    // MARK: - Material 3 animation constants
+    // MARK: - Android Material 3 animation constants
 
     /// Global rotation period (full 360° turn), in seconds.
     static let globalRotationPeriod: TimeInterval = 6.0
@@ -82,7 +86,7 @@ struct CircularProgressIndicatorAnimator: View {
     var body: some View {
         if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
             // Static arc, positioned like a determinate progress indicator would be.
-            CircularProgressCanvas(
+            CircularProgressCanvasView(
                 foregroundColor: foregroundColor,
                 trackColor: trackColor,
                 strokeCap: strokeCap,
@@ -92,7 +96,7 @@ struct CircularProgressIndicatorAnimator: View {
         } else {
             TimelineView(.animation) { context in
                 let time = context.date.timeIntervalSinceReferenceDate
-                CircularProgressCanvas(
+                CircularProgressCanvasView(
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,

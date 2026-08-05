@@ -15,13 +15,17 @@ import Foundation
 import OUDSFoundations
 import SwiftUI
 
+/*
+ ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
+ */
+
 /// Internal view rendering the **determinate** variant of ``OUDSCircularProgressIndicator``.
 ///
 /// Handles two SwiftUI animations driven by the ``animated`` flag:
 /// - a **reveal** animation on first display (from `0` to the target `progress`);
 /// - an **update** animation whenever the target `progress` changes.
 ///
-/// Both animations use the **same critically-damped spring**, matching Material 3's
+/// Both animations use the **same critically-damped spring**, matching Android Material 3's
 /// `ProgressAnimationSpec` (`SpringSpec(dampingRatio: NoBouncy, stiffness: VeryLow)` on
 /// Android / Compose). The perceived duration is around 1.5 seconds and the fill remains
 /// visible during the whole animation — even without a track — which is the main visual
@@ -30,38 +34,30 @@ import SwiftUI
 /// Animations are disabled and the target value is applied instantly when either
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled
 /// (via ``OUDSLowPowerModeObserver``), mirroring the behavior of the indeterminate animator.
-///
-/// > TODO: #409 - Expose dedicated motion tokens (spring mass / stiffness / damping) for
-/// > progress indicators once available in Figma tokens. The three constants below are
-/// > currently hardcoded as `internal` values.
 struct CircularProgressIndicatorDeterminateView: View {
 
-    // MARK: - Material 3 spring animation constants
-    //
-    // These values reproduce Material 3 Android's `ProgressAnimationSpec`:
-    //
-    //   SpringSpec(dampingRatio: DampingRatioNoBouncy, stiffness: StiffnessVeryLow)
-    //
-    // - Compose `StiffnessVeryLow` = 50f
-    // - `DampingRatioNoBouncy` = 1.0 (critical damping, no bounce)
-    // - Critical damping formula: damping = 2 * sqrt(mass * stiffness) with mass = 1
-    //   => 2 * sqrt(50) ≈ 14.1421356
-    //
-    // These constants are exposed as `internal` (rather than `private`) so tests can assert
-    // their values.
+    // MARK: - Android Material 3 spring animation constants
+
+    /*
+     These values reproduce Android Material 3's `ProgressAnimationSpec`:
+
+       SpringSpec(dampingRatio: DampingRatioNoBouncy, stiffness: StiffnessVeryLow)
+
+        - Compose `StiffnessVeryLow` = 50f
+        - `DampingRatioNoBouncy` = 1.0 (critical damping, no bounce)
+        - Critical damping formula: damping = 2 * sqrt(mass * stiffness) with mass = 1
+        => 2 * sqrt(50) ≈ 14.1421356
+     */
 
     /// Mass of the spring used to animate the determinate progress.
-    /// > TODO: #409 - Replace by a motion token once available in Figma tokens.
     static let springMass: Double = 1.0
 
-    /// Stiffness of the spring. Very low, matching Material 3's `StiffnessVeryLow`.
+    /// Stiffness of the spring. Very low, matching Android Material 3's `StiffnessVeryLow`.
     /// Higher values make the animation faster; lower values make it slower.
-    /// > TODO: #409 - Replace by a motion token once available in Figma tokens.
     static let springStiffness: Double = 50.0
 
-    /// Damping of the spring. Critical damping (no bounce), matching Material 3's
+    /// Damping of the spring. Critical damping (no bounce), matching Android Material 3's
     /// `DampingRatioNoBouncy`. Computed as `2 * sqrt(springMass * springStiffness)`.
-    /// > TODO: #409 - Replace by a motion token once available in Figma tokens.
     static let springDamping: Double = 14.142135623730951
 
     // MARK: - Properties
@@ -83,7 +79,7 @@ struct CircularProgressIndicatorDeterminateView: View {
     // MARK: - Body
 
     var body: some View {
-        CircularProgressCanvas(
+        CircularProgressCanvasView(
             foregroundColor: foregroundColor,
             trackColor: trackColor,
             strokeCap: strokeCap,

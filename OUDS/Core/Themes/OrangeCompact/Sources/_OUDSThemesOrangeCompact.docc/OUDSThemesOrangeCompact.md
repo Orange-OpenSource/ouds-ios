@@ -94,11 +94,12 @@ let maxitTheme = OrangeCompactTheme(tuning: Tuning.MaxIt)
 
 A default tuning is applied for this theme:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ❌ false  
-rounded corners text inputs    | ✅ true
-rounded corners alert messages | ❌ false
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ❌ false  
+rounded corners text inputs         | ❌ false
+rounded corners alert messages      | ❌ false
+rounded corners progress indicators | ❌ false
 
 ## Typography
 

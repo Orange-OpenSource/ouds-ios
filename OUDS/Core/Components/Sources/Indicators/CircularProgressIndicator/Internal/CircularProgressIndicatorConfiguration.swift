@@ -20,7 +20,7 @@ import Foundation
 /// - `track`: whether the track is displayed under the progress arc.
 /// - `gapSize`: the size of the gap between the indicator and the track.
 /// - `animated`: whether the determinate indicator animates on display and on progress updates.
-///   Ignored in indeterminate mode (the Material 3 animation is intrinsic to the mode).
+///   Ignored in indeterminate mode (the Android Material 3 animation is intrinsic to the mode).
 struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
 
     // MARK: - Properties

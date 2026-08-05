@@ -17,7 +17,7 @@ import SwiftUI
 /// It can show a specific value (determinate) or just that something is in progress (indeterminate).
 /// Useful when you need more visual focus or when space is limited.
 ///
-///  ## Variants
+/// ## Variants
 ///
 /// Two variants are provided:
 ///
@@ -56,12 +56,6 @@ import SwiftUI
 /// - `false`: the track is hidden. Recommended when the indicator is embedded inside another component
 ///  (button, tag, toast) or when a more minimal appearance is needed.
 ///
-/// ## Size
-///
-/// The default size is **48pt** and scales with **Dynamic Type**.
-/// It can be overridden by applying a `.frame(width:height:)` on the view; the stroke width and the gap scale
-/// proportionally with the effective size.
-///
 /// ## Animation (determinate mode only)
 ///
 /// When `animated` is `true` (default), the determinate indicator progressively fills from `0` to the target
@@ -71,7 +65,7 @@ import SwiftUI
 /// Animations are always disabled when `accessibilityReduceMotion` is `true` or when Low Power Mode is enabled,
 /// regardless of the `animated` flag.
 ///
-/// The indeterminate mode is not affected by this flag: its Material 3 animation is intrinsic to the mode.
+/// The indeterminate mode is not affected by this flag: its Android Material 3 animation is intrinsic to the mode.
 ///
 /// ## Code samples
 ///
@@ -91,10 +85,6 @@ import SwiftUI
 ///     // Indeterminate
 ///     OUDSCircularProgressIndicator()
 ///     OUDSCircularProgressIndicator(status: .info)
-///
-///     // Custom size — stroke and gap scale proportionally
-///     OUDSCircularProgressIndicator(progress: 0.6)
-///         .frame(width: 96, height: 96)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -122,9 +112,6 @@ import SwiftUI
 public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
 
     // TODO: # 409 - Add illustrations for doc
-
-    // TODO: #409 - expose dedicated monochrome tokens (foreground + track) for progress indicators once they are defined in
-    // Figma tokens, similarly to what is done for `OUDSButton` (`theme.button.monoColor…`).
 
     // MARK: - Public types
 
@@ -207,8 +194,6 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
                 track: Bool = true,
                 gapSize: GapSize = .default)
     {
-        // `animated` is irrelevant in indeterminate mode (the Material 3 animation is intrinsic to the mode);
-        // we still pass a value so the configuration exposes a consistent shape across both modes.
         configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                status: status,
                                                                track: track,
@@ -222,8 +207,3 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
         CircularProgressIndicatorView(configuration: configuration)
     }
 }
-
-// TODO: #409 - Disable animations if user asks for it in a11 settings
-// TODO: #409 - Disable animations if low power mode
-// TODO: #409 - a11y with Voice Over (updates frequently)
-// TODO: #409 - Create dedictzed issue for components updates (button, tag, inputs, etc)

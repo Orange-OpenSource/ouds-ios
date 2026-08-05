@@ -85,6 +85,35 @@ An ``OUDSBadgeStandard`` is an empty badge like a coloured pastille.
 OUDSBadgeStandard(status: .info, size: .medium)
 ```
 
+### Progress Indicators
+
+#### Circular Progress Indicator
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A circular progress indicator component in light and dark modes with Orange theme](component_progress_indicator_circular_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A circular progress indicator component in light and dark modes with Orange Compact theme](component_progress_indicator_circular_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A circular progress indicator component in light and dark modes with Sosh theme](component_progress_indicator_circular_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A circular progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_circular_Wireframe)
+    }
+}
+
+An ``OUDSCircularProgressIndicator`` is a progress indicator which can be used to display determinate value or indeterminate value with animations.
+
+```swift            
+// A circular gauge filed at 75% in neutral color with a track displayed with a animation
+OUDSCircularProgressIndicator(progress: 0.75, status: .neutral)
+
+// A circular gauge without defined value and an accent color
+OUDSCircularProgressIndicator(status: .accent)
+```
+
 ### Tag
 
 @TabNavigator {

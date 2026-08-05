@@ -15,26 +15,12 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Internal view that draws an ``OUDSCircularProgressIndicator``.
-///
-/// This view uses a SwiftUI ``Canvas`` for the actual drawing, which receives its effective size
-/// without renegotiating layout with the parent (unlike ``GeometryReader``). This is critical to
-/// avoid layout glitches when the indicator is placed inside containers that are sensitive to
-/// content re-measurement, such as ``NavigationStack`` toolbars.
-///
-/// - The default component size is **48pt** and scales with **Dynamic Type** via ``ScaledMetric``.
-/// - The stroke width is **12.5%** of the diameter.
-/// - The default gap corresponds to a **14°** arc converted into a distance on the circle circumference.
-/// - The small gap corresponds to **1pt** at the default 48pt size and scales linearly.
-///
-/// The stroke cap uses `.round` when the theme's ``ProgressIndicatorComponentTokens/borderRadiusDefault``
-/// token is strictly positive, `.butt` otherwise.
 struct CircularProgressIndicatorView: View {
 
     // MARK: - Constants
 
     /// Default component size (matches the Android reference implementation and Material 3 defaults).
     static let defaultSize: CGFloat = 48.0
-    // TODO: #409 - Replace by a dedicated `sizeCircularIndicatorDefault` token once available in Figma token?
 
     // MARK: - Properties
 
@@ -58,7 +44,7 @@ struct CircularProgressIndicatorView: View {
                     strokeCap: strokeCap,
                     gapSize: configuration.gapSize)
             } else {
-                CircularProgressIndicatorAnimator(
+                CircularProgressIndicatorAnimatorView(
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
@@ -100,9 +86,11 @@ struct CircularProgressIndicatorView: View {
         }
     }
 
-    /// Stroke cap for both the track and the foreground arc.
     private var strokeCap: CGLineCap {
-        (theme.progressIndicator.borderRadiusDefault > 0) ? .round : .butt
+        let effectiveRadius = theme.tuning.hasRoundedProgressIndicators
+            ? theme.progressIndicator.borderRadiusRounded
+            : theme.progressIndicator.borderRadiusDefault
+        return (effectiveRadius > 0) ? .round : .butt
     }
 }
 

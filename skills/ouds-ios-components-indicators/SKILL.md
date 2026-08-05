@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-components-indicators
-description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet), OUDSInputTag (removable) and OUDSCircularProgressIndicator (determinate / indeterminate, statuses, gap size, track). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
+description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet), OUDSInputTag (removable) and OUDSCircularProgressIndicator (determinate / indeterminate, statuses, gap size, track, animated reveal). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
 license: MIT
 ---
 
@@ -49,11 +49,16 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Gap
 
 ```swift
 // Determinate — progress is clamped to [0, 1]
+// By default the arc animates from 0 to `progress` on first display and on every change,
+// using a Material 3 critically-damped spring (~1.5s).
 OUDSCircularProgressIndicator(progress: 0.75)
 OUDSCircularProgressIndicator(progress: 0.5, status: .accent, track: false)
 OUDSCircularProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
 
-// Indeterminate
+// Determinate without the reveal animation: the arc is shown instantly at its target value.
+OUDSCircularProgressIndicator(progress: 0.75, animated: false)
+
+// Indeterminate — Material 3 spinner (global rotation + additional 90° kicks + sweep respiration)
 OUDSCircularProgressIndicator()
 OUDSCircularProgressIndicator(status: .info, track: true)
 
@@ -64,5 +69,7 @@ OUDSCircularProgressIndicator(progress: 0.6)
 
 Notes:
 - Default size is `48pt` and scales with Dynamic Type.
+- Rounded stroke caps follow the theme tuning: `Tuning.hasRoundedProgressIndicators` picks between the default (butt) and the rounded cap, exactly like `hasRoundedButtons` does for buttons. The gap is auto-compensated so the visible spacing between the foreground arc and the track stays constant regardless of the cap.
 - On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
-- Animations are paused when `accessibilityReduceMotion` is on or when Low Power Mode is enabled.
+- Determinate animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on or when Low Power Mode is enabled — the arc is then shown instantly at its target value. The `animated: false` flag has the same effect on demand.
+- Indeterminate rotation is paused in the same conditions (Reduce Motion / Low Power Mode) and falls back to a static arc.
