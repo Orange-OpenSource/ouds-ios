@@ -112,6 +112,12 @@ OUDSCircularProgressIndicator(progress: 0.75, status: .neutral)
 
 // A circular gauge without defined value and an accent color
 OUDSCircularProgressIndicator(status: .accent)
+
+// An AI-assistant "thinking" indicator — indeterminate only, no track, no gap size
+// parameter. The foreground color cycles through the four theme.colors.colorAi*
+// semantic tokens (Primary → Secondary → Tertiary → Quaternary → …), one color per
+// sweep respiration cycle, with a short cross-fade between two successive colors.
+OUDSAssistantCircularProgressIndicator()
 ```
 
 ### Tag

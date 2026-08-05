@@ -102,5 +102,5 @@ extension Tuning {
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
                                      hasRoundedAlertMessages: true,
-                                     hasRoundedProgressIndicators: true)
+                                     hasRoundedProgressIndicators: false)
 }

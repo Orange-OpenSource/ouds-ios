@@ -60,6 +60,6 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.MaxIt.hasRoundedButtons == true)
         #expect(Tuning.MaxIt.hasRoundedTextInputs == true)
         #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
-        #expect(Tuning.MaxIt.hasRoundedProgressIndicators == true)
+        #expect(Tuning.MaxIt.hasRoundedProgressIndicators == false)
     }
 }
