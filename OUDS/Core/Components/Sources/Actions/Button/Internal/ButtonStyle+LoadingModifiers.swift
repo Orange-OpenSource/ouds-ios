@@ -27,11 +27,12 @@ struct ButtonLoadingContentModifier: ViewModifier {
     // MARK: Stored Properties
 
     let appearance: OUDSButton.Appearance
+    let size: OUDSButton.Size
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
     @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body
 
@@ -39,7 +40,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
         content
             .overlay {
                 LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .modifier(LoaderSizeModifier(size: size))
+                    .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
             }
     }
 
@@ -62,8 +63,13 @@ struct ButtonLoadingContentModifier: ViewModifier {
         }
     }
 
-    private var size: CGFloat {
-        theme.button.sizeProgressIndicatorDefault
+    private var sizeProgressIndicator: CGFloat {
+        switch size {
+        case .default:
+            theme.button.sizeProgressIndicatorDefault
+        case .small:
+            theme.button.sizeProgressIndicatorSmall
+        }
     }
 }
 

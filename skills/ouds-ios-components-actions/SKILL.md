@@ -14,6 +14,6 @@ license: MIT
 ```swift
 OUDSButton(text: "Label", appearance: .default) {}
 OUDSButton(text: "Label", appearance: .default, style: .loading) {}
-OUDSButton(text: "Label", icon: Image("ic"), appearance: .default) {}
-OUDSButton(icon: Image("ic"), accessibilityLabel: "Label") {}
+OUDSButton(text: "Label", icon: Image("ic"), appearance: .default, size: .small) {}
+OUDSButton(icon: Image("ic"), accessibilityLabel: "Label", size: .small) {}
 ```
