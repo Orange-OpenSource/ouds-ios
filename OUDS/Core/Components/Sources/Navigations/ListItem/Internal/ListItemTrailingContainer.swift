@@ -59,7 +59,7 @@ struct ListItemTrailingContainer: View {
             }
         }
         .disabled(interactionState == .disabled)
-        .frame(minHeight: minHeight, alignment: .center)
+        .frame(minHeight: minHeight, alignment: .trailing)
     }
 
     // MARK: Size helper

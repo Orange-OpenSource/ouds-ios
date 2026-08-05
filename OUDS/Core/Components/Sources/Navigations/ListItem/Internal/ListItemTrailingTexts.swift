@@ -55,6 +55,7 @@ struct ListItemTrailingTexts: View {
             }
         }
         .padding(.top, topPadding)
+        .multilineTextAlignment(.trailing)
     }
 
     // MARK: Helpers

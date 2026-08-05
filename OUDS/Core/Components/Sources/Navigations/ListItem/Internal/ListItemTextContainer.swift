@@ -68,7 +68,6 @@ struct ListItemTextContainer<Slot: View>: View {
                 }
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelsColor)
-                .frame(maxWidth: .infinity, alignment: .leading)
 
                 if let extraLabel = data.extraLabel,
                    !extraLabel.isEmpty,
@@ -138,7 +137,7 @@ struct ListItemTextContainer<Slot: View>: View {
         case .top:
             .topLeading
         case .center:
-            .center
+            .leading
         }
     }
 

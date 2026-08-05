@@ -58,7 +58,7 @@ struct ListItemContent<Slot: View>: View {
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
             .padding(.horizontal, theme.listItem.spacePaddingInline)
-            .frame(maxWidth: .infinity, minHeight: minHeight, alignment: textFrameAlignment)
+            .frame(minHeight: minHeight, alignment: textFrameAlignment)
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
 
