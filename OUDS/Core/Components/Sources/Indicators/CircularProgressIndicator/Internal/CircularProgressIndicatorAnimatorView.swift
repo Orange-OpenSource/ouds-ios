@@ -65,8 +65,14 @@ struct CircularProgressIndicatorAnimatorView: View {
     /// Minimum sweep of the indeterminate indicator, in `[0, 1]`.
     static let progressMin: CGFloat = 0.05
 
-    /// Maximum sweep of the indeterminate indicator, in `[0, 1]`.
-    static let progressMax: CGFloat = 0.90
+    /// Maximum sweep of the indeterminate indicator when the track is displayed, in `[0, 1]`.
+    /// Matches Compose Material 3's `CircularIndeterminateMaxProgress = 0.75f`, which keeps a
+    /// visible portion of the track at the peak of the sweep respiration.
+    static let progressMax: CGFloat = 0.75
+
+    /// Maximum sweep of the indeterminate indicator when NO track is displayed, in `[0, 1]`.
+    /// Since there is no track to hide, the foreground can grow closer to a full circle.
+    static let progressMaxWithoutTrack: CGFloat = 0.90
 
     /// Sweep used when animations are disabled (accessibility / low power).
     static let staticSweep: CGFloat = 0.7
@@ -77,6 +83,10 @@ struct CircularProgressIndicatorAnimatorView: View {
     let trackColor: Color
     let strokeCap: CGLineCap
     let gapSize: OUDSCircularProgressIndicator.GapSize
+    /// Whether a visible track is displayed under the foreground arc. Drives the maximum sweep
+    /// value used in ``sweep(at:)`` so that the track stays visible at the peak of the respiration
+    /// when it exists, and the foreground can grow larger when it doesn't.
+    let hasTrack: Bool
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
@@ -142,16 +152,19 @@ struct CircularProgressIndicatorAnimatorView: View {
         globalRotation(at: time) + additionalRotation(at: time) - 90.0
     }
 
-    /// Sweep at time `t`, in `[progressMin, progressMax]`.
+    /// Sweep at time `t`, in `[progressMin, maxSweep]` where `maxSweep` depends on ``hasTrack``.
     ///
-    /// The value oscillates smoothly between ``progressMin`` and ``progressMax`` using a cosine curve,
-    /// which approximates Material 3's `EasingEmphasizedCubic` for an autoreversing infinite animation.
-    /// The full oscillation period is `2 * progressHalfCycle`.
+    /// The value oscillates smoothly between ``progressMin`` and either ``progressMax`` (when
+    /// the track is displayed, keeping it visible at the peak) or ``progressMaxWithoutTrack``
+    /// (when there is no track to hide, allowing a larger foreground). The easing uses a cosine
+    /// curve which approximates Material 3's `EasingEmphasizedCubic` for an autoreversing
+    /// infinite animation. The full oscillation period is `2 * progressHalfCycle`.
     private func sweep(at time: TimeInterval) -> CGFloat {
         let fullCycle = 2.0 * Self.progressHalfCycle
         let phase = time.truncatingRemainder(dividingBy: fullCycle) / fullCycle // 0..1
         // (1 - cos(2π * phase)) / 2 produces a smooth 0 -> 1 -> 0 oscillation.
         let eased = CGFloat((1.0 - cos(phase * 2.0 * .pi)) / 2.0)
-        return Self.progressMin + (Self.progressMax - Self.progressMin) * eased
+        let maxSweep = hasTrack ? Self.progressMax : Self.progressMaxWithoutTrack
+        return Self.progressMin + (maxSweep - Self.progressMin) * eased
     }
 }

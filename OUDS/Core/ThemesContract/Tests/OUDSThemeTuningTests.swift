@@ -50,7 +50,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.OrangeBusiness.hasRoundedButtons == false)
         #expect(Tuning.OrangeBusiness.hasRoundedTextInputs == true)
         #expect(Tuning.OrangeBusiness.hasRoundedAlertMessages == true)
-        #expect(Tuning.OrangeBusiness.hasRoundedProgressIndicators == true)
+        #expect(Tuning.OrangeBusiness.hasRoundedProgressIndicators == false)
     }
 
     // MARK: - Max It

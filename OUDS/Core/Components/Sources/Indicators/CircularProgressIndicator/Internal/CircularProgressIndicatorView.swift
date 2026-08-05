@@ -48,7 +48,8 @@ struct CircularProgressIndicatorView: View {
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
-                    gapSize: configuration.gapSize)
+                    gapSize: configuration.gapSize,
+                    hasTrack: configuration.track)
             }
         }
         .frame(width: scaledDefaultSize, height: scaledDefaultSize)
@@ -57,14 +58,14 @@ struct CircularProgressIndicatorView: View {
 
     // MARK: - Computed helpers
 
-    private var foregroundColor: Color { // TODO: #409 - Check monochrome / high contrast mode, and surface color mode
+    private var foregroundColor: Color {
         if useMonochrome {
             return theme.colors.contentDefault.color(for: colorScheme)
         }
         return statusColor.color(for: colorScheme)
     }
 
-    private var trackColor: Color { // TODO: #409 - Check monochrome / high contrast mode, and surface color mode
+    private var trackColor: Color {
         guard configuration.track else { return .clear }
         return theme.progressIndicator.colorContentTrack.color(for: colorScheme)
     }

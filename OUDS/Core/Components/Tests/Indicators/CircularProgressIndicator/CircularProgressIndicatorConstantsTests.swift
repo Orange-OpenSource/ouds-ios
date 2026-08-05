@@ -93,8 +93,19 @@ struct CircularProgressAnimatorConstantsTests {
     }
 
     @Test
-    func `progress maximum sweep must be 90 percent`() {
-        #expect(CircularProgressIndicatorAnimatorView.progressMax == 0.90)
+    func `progress maximum sweep must be 75 percent (M3 spec)`() {
+        #expect(CircularProgressIndicatorAnimatorView.progressMax == 0.75)
+    }
+
+    @Test
+    func `progress maximum sweep without track must be 90 percent`() {
+        #expect(CircularProgressIndicatorAnimatorView.progressMaxWithoutTrack == 0.90)
+    }
+
+    @Test
+    func `progress maximum without track must be greater than or equal to progress maximum with track`() {
+        #expect(CircularProgressIndicatorAnimatorView.progressMaxWithoutTrack
+            >= CircularProgressIndicatorAnimatorView.progressMax)
     }
 
     @Test

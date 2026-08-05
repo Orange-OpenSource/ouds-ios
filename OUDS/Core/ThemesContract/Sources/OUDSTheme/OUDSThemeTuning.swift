@@ -94,7 +94,7 @@ extension Tuning {
     public static let OrangeBusiness = Tuning(hasRoundedButtons: false,
                                               hasRoundedTextInputs: true,
                                               hasRoundedAlertMessages: true,
-                                              hasRoundedProgressIndicators: true)
+                                              hasRoundedProgressIndicators: false)
 
     /// The theme tuning for *Max It* contains **rounded corners for buttons**,
     /// **rounded corners for text / PIN code / password / text area inputs**,
