@@ -91,21 +91,20 @@ OUDSBadgeStandard(status: .info, size: .medium)
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A circular progress indicator component in light and dark modes with Orange theme](component_progress_indicator_circular_Orange)
+        @Video(source: "component_progress_indicator_circular_Orange.video")
     }
     @Tab("Orange Compact") {
-        ![A circular progress indicator component in light and dark modes with Orange Compact theme](component_progress_indicator_circular_OrangeCompact)
+        @Video(source: "component_progress_indicator_circular_OrangeCompact.video")
     }
     @Tab("Sosh") {
-        ![A circular progress indicator component in light and dark modes with Sosh theme](component_progress_indicator_circular_Sosh)
+        @Video(source: "component_progress_indicator_circular_Sosh.video")
     }
     @Tab("Wireframe") {
-        ![A circular progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_circular_Wireframe)
+        @Video(source: "component_progress_indicator_circular_Wireframe.video")
     }
 }
 
 An ``OUDSCircularProgressIndicator`` is a progress indicator which can be used to display determinate value or indeterminate value with animations.
-The ``OUDSAssistantCircularProgressIndicator`` variant is dedicated to use cases for "assistants with work in progress".
 
 ```swift            
 // A circular gauge filed at 75% in neutral color with a track displayed with a animation
@@ -113,7 +112,28 @@ OUDSCircularProgressIndicator(progress: 0.75, status: .neutral)
 
 // A circular gauge without defined value and an accent color
 OUDSCircularProgressIndicator(status: .accent)
+```
 
+#### Assistant Circular Progress Indicator
+
+@TabNavigator {
+    @Tab("Orange") {
+        @Video(source: "component_progress_indicator_circular_assistant_Orange.video")
+    }
+    @Tab("Orange Compact") {
+        @Video(source: "component_progress_indicator_circular_assistant_OrangeCompact.video")
+    }
+    @Tab("Sosh") {
+        @Video(source: "component_progress_indicator_circular_assistant_Sosh.video")
+    }
+    @Tab("Wireframe") {
+        @Video(source: "component_progress_indicator_circular_assistant_Wireframe.video")
+    }
+}
+
+The ``OUDSAssistantCircularProgressIndicator`` variant is dedicated to use cases for "assistants with work in progress".
+
+```swift            
 // An AI-assistant "thinking" indicator — indeterminate only, no track, no gap size
 // parameter. The foreground color cycles through the four theme.colors.colorAi*
 // semantic tokens (Primary → Secondary → Tertiary → Quaternary → …), one color per

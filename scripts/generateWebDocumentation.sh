@@ -283,12 +283,14 @@ if [[ $use_git -eq 1 ]]; then
     # Do not remove theme-settings.json
     _ "🔨 Cleaning old documentation files"
 
-    # One-line deletion comman
+    # One-line deletion command
     find "$DOCS_DIRECTORY" -mindepth 1 \
         \( -type d -name "css" -o \
         -type d -name "data" -o \
         -type d -name "documentation" -o \
+        -type d -name "downloads" -o \
         -type d -name "images" -o \
+        -type d -name "videos" -o \
         -type d -name "img" -o \
         -type d -name "index" -o \
         -type d -name "js" \) \
