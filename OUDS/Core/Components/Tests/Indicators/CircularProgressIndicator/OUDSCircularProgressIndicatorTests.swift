@@ -105,17 +105,4 @@ struct OUDSCircularProgressIndicatorTests {
         let allGapSizes: [OUDSCircularProgressIndicator.GapSize] = [.default, .small]
         #expect(Set(allGapSizes.map { String(describing: $0) }).count == allGapSizes.count)
     }
-
-    // MARK: - Default appearance
-
-    @Test
-    func `configuration appearance must default to standard`() {
-        // The default value of `appearance` is `.standard`, so existing call sites that do not
-        // specify it (e.g. the standard OUDSCircularProgressIndicator) keep the previous behavior.
-        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
-                                                                   status: .neutral,
-                                                                   track: true,
-                                                                   gapSize: .default)
-        #expect(configuration.appearance == .standard)
-    }
 }

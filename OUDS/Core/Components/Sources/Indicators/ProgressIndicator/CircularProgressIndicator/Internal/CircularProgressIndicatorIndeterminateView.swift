@@ -13,11 +13,6 @@
 
 import OUDSFoundations
 import SwiftUI
-#if canImport(UIKit)
-import UIKit
-#elseif canImport(AppKit)
-import AppKit
-#endif
 
 /*
  ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
@@ -84,17 +79,6 @@ struct CircularProgressIndicatorIndeterminateView: View {
     /// Sweep used when animations are disabled (accessibility / low power).
     static let staticSweep: CGFloat = 0.7
 
-    // MARK: - AI assistant color cycling constants
-
-    /// Full duration of one sweep respiration cycle (grow + shrink), in seconds. Also the period
-    /// at which the AI assistant foreground color switches to the next one in ``cyclingColors``.
-    static let colorCyclePeriod: TimeInterval = 2.0 * Self.progressHalfCycle
-
-    /// Duration of the smooth cross-fade between two successive AI colors, in seconds. The fade
-    /// starts `crossFadeDuration` seconds before the end of a cycle and ends exactly at the cycle
-    /// boundary, so the transition is completed when the new cycle begins.
-    static let crossFadeDuration: TimeInterval = 0.3
-
     // MARK: - Properties
 
     let foregroundColor: Color
@@ -102,7 +86,6 @@ struct CircularProgressIndicatorIndeterminateView: View {
     let strokeCap: CGLineCap
     let gapSize: OUDSCircularProgressIndicator.GapSize
     let hasTrack: Bool
-    let cyclingColors: [Color]
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
@@ -122,7 +105,7 @@ struct CircularProgressIndicatorIndeterminateView: View {
             TimelineView(.animation) { context in
                 let time = context.date.timeIntervalSinceReferenceDate
                 CircularProgressCanvasView(
-                    foregroundColor: currentColor(at: time),
+                    foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
                     sweep: sweep(at: time),
@@ -181,87 +164,6 @@ struct CircularProgressIndicatorIndeterminateView: View {
         let eased = CGFloat((1.0 - cos(phase * 2.0 * .pi)) / 2.0)
         let maxSweep = hasTrack ? Self.progressMax : Self.progressMaxWithoutTrack
         return Self.progressMin + (maxSweep - Self.progressMin) * eased
-    }
-
-    // MARK: - AI assistant color cycling
-
-    /// Current foreground color at time `t`.
-    ///
-    /// - When ``cyclingColors`` is empty (standard appearance), returns ``foregroundColor``.
-    /// - Otherwise, picks the color of the current cycle and cross-fades into the next one during
-    ///   the last ``crossFadeDuration`` seconds of each cycle.
-    private func currentColor(at time: TimeInterval) -> Color {
-        guard !cyclingColors.isEmpty else { return foregroundColor }
-        let cycle = Self.colorCyclePeriod
-        let index = Self.colorIndex(at: time, cycle: cycle, count: cyclingColors.count)
-        let currentColor = cyclingColors[index]
-
-        // Compute the position within the current cycle.
-        let cyclesCompleted = floor(time / cycle)
-        let phaseInCycle = time - cyclesCompleted * cycle // in [0, cycle)
-        let fadeStart = cycle - Self.crossFadeDuration
-        guard phaseInCycle >= fadeStart else {
-            return currentColor
-        }
-        // Progress of the cross-fade in [0, 1], with 0 at fadeStart and 1 at the cycle boundary.
-        let t = (phaseInCycle - fadeStart) / Self.crossFadeDuration
-        let nextIndex = (index + 1) % cyclingColors.count
-        let nextColor = cyclingColors[nextIndex]
-        return Self.interpolate(from: currentColor, to: nextColor, ratio: CGFloat(t))
-    }
-
-    /// Returns the index (in `[0, count)`) of the color currently displayed at time `t`,
-    /// cycling every `cycle` seconds.
-    ///
-    /// Exposed as `static` so that it can be unit-tested without instantiating a SwiftUI view.
-    ///
-    /// - Parameters:
-    ///    - time: absolute time in seconds, expected `>= 0`.
-    ///    - cycle: cycle period in seconds, must be `> 0`.
-    ///    - count: number of colors in the cycle, must be `> 0`.
-    /// - Returns: the 0-based index of the current color.
-    static func colorIndex(at time: TimeInterval, cycle: TimeInterval, count: Int) -> Int {
-        guard cycle > 0, count > 0 else { return 0 }
-        let cyclesCompleted = Int(floor(time / cycle))
-        // Ensure non-negative modulo even if `time` were negative.
-        return ((cyclesCompleted % count) + count) % count
-    }
-
-    /// Linearly interpolates between two `Color`s in the sRGB color space using
-    /// `UIColor`/`NSColor` bridging, so the interpolation happens on real RGBA channels
-    /// (SwiftUI's `Color` does not expose components on iOS 15).
-    ///
-    /// The `ratio` is clamped to `[0, 1]`.
-    static func interpolate(from: Color, to: Color, ratio: CGFloat) -> Color {
-        let clamped = min(max(ratio, 0.0), 1.0)
-        #if canImport(UIKit)
-        let fromUI = UIColor(from)
-        let toUI = UIColor(to)
-        var fr: CGFloat = 0, fg: CGFloat = 0, fb: CGFloat = 0, fa: CGFloat = 0
-        var tr: CGFloat = 0, tg: CGFloat = 0, tb: CGFloat = 0, ta: CGFloat = 0
-        fromUI.getRed(&fr, green: &fg, blue: &fb, alpha: &fa)
-        toUI.getRed(&tr, green: &tg, blue: &tb, alpha: &ta)
-        return Color(
-            red: Double(fr + (tr - fr) * clamped),
-            green: Double(fg + (tg - fg) * clamped),
-            blue: Double(fb + (tb - fb) * clamped),
-            opacity: Double(fa + (ta - fa) * clamped))
-        #elseif canImport(AppKit)
-        let fromNS = NSColor(from).usingColorSpace(.sRGB) ?? NSColor(from)
-        let toNS = NSColor(to).usingColorSpace(.sRGB) ?? NSColor(to)
-        var fr: CGFloat = 0, fg: CGFloat = 0, fb: CGFloat = 0, fa: CGFloat = 0
-        var tr: CGFloat = 0, tg: CGFloat = 0, tb: CGFloat = 0, ta: CGFloat = 0
-        fromNS.getRed(&fr, green: &fg, blue: &fb, alpha: &fa)
-        toNS.getRed(&tr, green: &tg, blue: &tb, alpha: &ta)
-        return Color(
-            red: Double(fr + (tr - fr) * clamped),
-            green: Double(fg + (tg - fg) * clamped),
-            blue: Double(fb + (tb - fb) * clamped),
-            opacity: Double(fa + (ta - fa) * clamped))
-        #else
-        // Fallback for platforms without UIKit/AppKit component access.
-        return clamped < 0.5 ? from : to
-        #endif
     }
 }
 

@@ -111,8 +111,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Indicator
 
-    /// Version of the Figma specifications for the component progress indicator (1.0.0)
-    public static let componentProgressIndicatorVersion = "1.0.0"
+    /// Version of the Figma specifications for the component progress indicator (1.1.0)
+    public static let componentProgressIndicatorVersion = "1.1.0"
     /// Version of the Figma specifications for the component status icon(1.0.0)
     public static let componentStatusIconVersion = "1.0.0"
 

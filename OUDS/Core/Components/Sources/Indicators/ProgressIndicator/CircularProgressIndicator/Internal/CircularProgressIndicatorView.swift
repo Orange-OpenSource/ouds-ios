@@ -49,8 +49,7 @@ struct CircularProgressIndicatorView: View {
                     trackColor: trackColor,
                     strokeCap: strokeCap,
                     gapSize: configuration.gapSize,
-                    hasTrack: configuration.track,
-                    cyclingColors: cyclingColors)
+                    hasTrack: configuration.track)
             }
         }
         .frame(width: scaledDefaultSize, height: scaledDefaultSize)
@@ -59,39 +58,13 @@ struct CircularProgressIndicatorView: View {
 
     // MARK: - Helpers
 
-    /// The color used for the foreground arc when no color cycling is active (standard appearance,
-    /// monochrome on ``OUDSColoredSurface``, or Reduce Motion / Low Power fallback for the assistant
-    /// appearance).
+    /// The color used for the foreground arc. Falls back to the monochrome content color when the
+    /// indicator is placed on an ``OUDSColoredSurface``.
     private var foregroundColor: Color {
         if useMonochrome {
             return theme.colors.contentDefault.color(for: colorScheme)
         }
-        if configuration.appearance == .assistant {
-            // Initial / fallback color for the AI assistant variant. The animator will pick the
-            // current color per frame from ``cyclingColors`` when it is not empty.
-            return theme.colors.colorAiPrimary.color(for: colorScheme)
-        }
         return statusColor.color(for: colorScheme)
-    }
-
-    /// The list of AI colors to cycle through in the indeterminate animator.
-    ///
-    /// Returns an empty array when the appearance is standard, when monochrome rendering is active
-    /// (colored surface) or when the indicator is determinate; in all those cases the animator
-    /// falls back to ``foregroundColor``.
-    private var cyclingColors: [Color] {
-        guard configuration.appearance == .assistant,
-              !useMonochrome,
-              configuration.isIndeterminate
-        else {
-            return []
-        }
-        return [
-            theme.colors.colorAiPrimary.color(for: colorScheme),
-            theme.colors.colorAiSecondary.color(for: colorScheme),
-            theme.colors.colorAiTertiary.color(for: colorScheme),
-            theme.colors.colorAiQuaternary.color(for: colorScheme),
-        ]
     }
 
     private var trackColor: Color {
@@ -128,27 +101,22 @@ struct CircularProgressIndicatorView: View {
 
 /// Applies accessibility traits and values on the progress indicator.
 ///
-/// - Determinate (standard appearance): exposes the percentage value (e.g. *"75 percent"*) with the
-///   `.updatesFrequently` trait so assistive technologies read the changing progress. The element
-///   is also marked as `.isStaticText` and, on iOS 17+ / macOS 14+ / visionOS 1+ / watchOS 10+ /
-///   tvOS 17+, opts out of user interaction via `accessibilityRespondsToUserInteraction(false)` so
-///   that Full Keyboard Access (FKA) does not focus it — a progress indicator has no action to
-///   perform, so capturing keyboard focus would only pollute FKA navigation. On earlier OS
-///   versions, only the semantic `.isStaticText` trait is applied.
-/// - Indeterminate (standard appearance): hidden from VoiceOver (`.accessibilityHidden(true)`),
-///   which also excludes it from Full Keyboard Access navigation. There is no readable value to
-///   expose and keeping the element focusable would only pollute navigation.
-/// - Assistant appearance: always hidden from VoiceOver (`.accessibilityHidden(true)`), which also
-///   excludes it from Full Keyboard Access navigation.
+/// - Determinate: exposes the percentage value (e.g. *"75 percent"*) with the `.updatesFrequently`
+///   trait so assistive technologies read the changing progress. The element is also marked as
+///   `.isStaticText` and, on iOS 17+ / macOS 14+ / visionOS 1+ / watchOS 10+ / tvOS 17+, opts out
+///   of user interaction via `accessibilityRespondsToUserInteraction(false)` so that Full Keyboard
+///   Access (FKA) does not focus it — a progress indicator has no action to perform, so capturing
+///   keyboard focus would only pollute FKA navigation. On earlier OS versions, only the semantic
+///   `.isStaticText` trait is applied.
+/// - Indeterminate: hidden from VoiceOver (`.accessibilityHidden(true)`), which also excludes it
+///   from Full Keyboard Access navigation. There is no readable value to expose and keeping the
+///   element focusable would only pollute navigation.
 private struct CircularProgressAccessibilityModifier: ViewModifier {
 
     let configuration: CircularProgressIndicatorConfiguration
 
     func body(content: Content) -> some View {
-        if configuration.appearance == .assistant {
-            // AI assistant variant: always hidden from VoiceOver (and therefore from FKA too).
-            content.accessibilityHidden(true)
-        } else if let progress = configuration.progress {
+        if let progress = configuration.progress {
             // Determinate: expose the percentage value to VoiceOver but never capture Full
             // Keyboard Access focus — the indicator has no action to perform.
             let percent = Int((progress * 100).rounded())
@@ -163,7 +131,7 @@ private struct CircularProgressAccessibilityModifier: ViewModifier {
                 determinate
             }
         } else {
-            // Indeterminate standard: hidden from VoiceOver (and therefore from FKA too).
+            // Indeterminate: hidden from VoiceOver (and therefore from FKA too).
             content.accessibilityHidden(true)
         }
     }

@@ -114,33 +114,6 @@ OUDSCircularProgressIndicator(progress: 0.75, status: .neutral)
 OUDSCircularProgressIndicator(status: .accent)
 ```
 
-#### Assistant Circular Progress Indicator
-
-@TabNavigator {
-    @Tab("Orange") {
-        @Video(source: "component_progress_indicator_circular_assistant_Orange.video")
-    }
-    @Tab("Orange Compact") {
-        @Video(source: "component_progress_indicator_circular_assistant_OrangeCompact.video")
-    }
-    @Tab("Sosh") {
-        @Video(source: "component_progress_indicator_circular_assistant_Sosh.video")
-    }
-    @Tab("Wireframe") {
-        @Video(source: "component_progress_indicator_circular_assistant_Wireframe.video")
-    }
-}
-
-The ``OUDSAssistantCircularProgressIndicator`` variant is dedicated to use cases for "assistants with work in progress".
-
-```swift            
-// An AI-assistant "thinking" indicator — indeterminate only, no track, no gap size
-// parameter. The foreground color cycles through the four theme.colors.colorAi*
-// semantic tokens (Primary → Secondary → Tertiary → Quaternary → …), one color per
-// sweep respiration cycle, with a short cross-fade between two successive colors.
-OUDSAssistantCircularProgressIndicator()
-```
-
 ### Tag
 
 @TabNavigator {
