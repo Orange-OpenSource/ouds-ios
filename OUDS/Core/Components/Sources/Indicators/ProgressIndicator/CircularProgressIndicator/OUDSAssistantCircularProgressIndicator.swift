@@ -57,10 +57,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A circular progress indicator component in light and dark modes with Orange theme](component_progress_indicator_circular_assistant_Orange)
+///
+/// ### Orange Compact
+///
+/// ![A circular progress indicator component in light and dark modes with Orange Compact theme](component_progress_indicator_circular_assistant_OrangeCompact)
+///
+/// ### Sosh
+///
+/// ![A circular progress indicator component in light and dark modes with Sosh theme](component_progress_indicator_circular_assistant_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A circular progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_circular_assistant_Wireframe)
+///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSAssistantCircularProgressIndicator: View { // TODO: #409 - Add illustrations for documentation
+public struct OUDSAssistantCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
 
     // MARK: - Properties
 

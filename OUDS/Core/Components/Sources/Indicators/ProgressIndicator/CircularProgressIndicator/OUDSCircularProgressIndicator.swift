@@ -89,8 +89,6 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// // TODO: #409 - Implement / update
-///
 /// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage) so that
 ///   VoiceOver reads e.g. *"75 percent"*, and is marked with the `.updatesFrequently` trait so that assistive
 ///   technologies know the value is changing.
@@ -111,6 +109,24 @@ import SwiftUI
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A circular progress indicator component in light and dark modes with Orange theme](component_progress_indicator_circular_Orange)
+///
+/// ### Orange Compact
+///
+/// ![A circular progress indicator component in light and dark modes with Orange Compact theme](component_progress_indicator_circular_OrangeCompact)
+///
+/// ### Sosh
+///
+/// ![A circular progress indicator component in light and dark modes with Sosh theme](component_progress_indicator_circular_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A circular progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_circular_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0

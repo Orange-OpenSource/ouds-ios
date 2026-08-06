@@ -105,6 +105,7 @@ OUDSBadgeStandard(status: .info, size: .medium)
 }
 
 An ``OUDSCircularProgressIndicator`` is a progress indicator which can be used to display determinate value or indeterminate value with animations.
+The ``OUDSAssistantCircularProgressIndicator`` variant is dedicated to use cases for "assistants with work in progress".
 
 ```swift            
 // A circular gauge filed at 75% in neutral color with a track displayed with a animation
