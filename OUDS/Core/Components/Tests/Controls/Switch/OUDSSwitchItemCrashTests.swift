@@ -26,7 +26,7 @@ struct OUDSSwitchItemCrashTests {
     /// Verify that `OUDSSwitchItem` crashes when both `isReadOnly` and `isError` are set to `true`.
     /// This is forbidden by design as a component cannot be in both error and read-only states.
     @Test
-    func switchItemCrashesWhenReadOnlyAndError() async {
+    func `switch item crashes when read only and error`() async {
         await #expect(processExitsWith: .failure) {
             _ = OUDSSwitchItem("Test",
                                isOn: .constant(false),

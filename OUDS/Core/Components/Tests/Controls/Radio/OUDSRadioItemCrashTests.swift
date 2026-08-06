@@ -26,7 +26,7 @@ struct OUDSRadioItemCrashTests {
     /// Verify that `OUDSRadioItem` crashes when both `isReadOnly` and `isError` are set to `true`.
     /// This is forbidden by design as a component cannot be in both error and read-only states.
     @Test
-    func radioItemCrashesWhenReadOnlyAndError() async {
+    func `radio item crashes when read only and error`() async {
         await #expect(processExitsWith: .failure) {
             _ = OUDSRadioItem("Test",
                               isOn: .constant(false),

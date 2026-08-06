@@ -41,19 +41,25 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
     public let hasRoundedAlertMessages: Bool
 
+    /// If components like progress indicators (e.g. `OUDSCircularProgressIndicator` or `OUDSLinearProgressIndicator`) must have always rounded corners or not
+    public let hasRoundedProgressIndicators: Bool
+
     /// Defines the tuning for a theme
     ///
     /// - Parameters:
     ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
     ///    - hasRoundedTextInputs: If text-based inputs components must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedAlertMessages: If alert messages must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedAlertMessages: If alert messages components must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedProgressIndicators: If progress indicators components must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false,
-                hasRoundedAlertMessages: Bool = false)
+                hasRoundedAlertMessages: Bool = false,
+                hasRoundedProgressIndicators: Bool = false)
     {
         self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedTextInputs = hasRoundedTextInputs
         self.hasRoundedAlertMessages = hasRoundedAlertMessages
+        self.hasRoundedProgressIndicators = hasRoundedProgressIndicators
     }
 }
 
@@ -82,17 +88,20 @@ extension Tuning {
     /// There are no rounded corners.
     public static let OrangeFrance = Tuning.default
 
-    /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**,
-    /// **rounded corners for text / PIN code / password / text area inputs** and
-    /// **rounded corners for alert messages**.
+    /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**
+    /// and **progress indicators**, but
+    /// **rounded corners for text / PIN code / password / text area inputs**  and.
+    /// **rounded corners for alert messages**
     public static let OrangeBusiness = Tuning(hasRoundedButtons: false,
                                               hasRoundedTextInputs: true,
-                                              hasRoundedAlertMessages: true)
+                                              hasRoundedAlertMessages: true,
+                                              hasRoundedProgressIndicators: false)
 
     /// The theme tuning for *Max It* contains **rounded corners for buttons**,
-    /// **rounded corners for text / PIN code / password / text area inputs**
-    /// anddd **rounded corners for alert messages**.
+    /// **rounded corners for text / PIN code / password / text area inputs**,
+    /// **rounded corners for alert messages**  but not for **progress indicators**.
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
-                                     hasRoundedAlertMessages: true)
+                                     hasRoundedAlertMessages: true,
+                                     hasRoundedProgressIndicators: false)
 }

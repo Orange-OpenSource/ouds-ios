@@ -26,7 +26,7 @@ struct OUDSChipCrashTests {
     /// Verify that `OUDSFilterChip` crashes when text parameter is empty.
     /// An empty text is forbidden by design.
     @Test
-    func filterChipCrashesWithEmptyText() async {
+    func `filter chip crashes with empty text`() async {
         await #expect(processExitsWith: .failure) {
             _ = OUDSFilterChip(text: "") {}
         }
@@ -35,7 +35,7 @@ struct OUDSChipCrashTests {
     /// Verify that `OUDSSuggestionChip` crashes when text parameter is empty.
     /// An empty text is forbidden by design.
     @Test
-    func suggestionChipCrashesWithEmptyText() async {
+    func `suggestion chip crashes with empty text`() async {
         await #expect(processExitsWith: .failure) {
             _ = OUDSSuggestionChip(text: "") {}
         }

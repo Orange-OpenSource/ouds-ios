@@ -99,11 +99,12 @@ let theme = OrangeTheme(tuning: Tuning.OrangeFrance)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ❌ false  
-rounded corners text inputs    | ❌ false  
-rounded corners alert messages | ❌ false
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ❌ false  
+rounded corners text inputs         | ❌ false  
+rounded corners alert messages      | ❌ false
+rounded corners progress indicators | ❌ false
 
 ### "Orange Business" tuning
 
@@ -115,11 +116,12 @@ let theme = OrangeTheme(tuning: Tuning.OrangeBusiness)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ❌ false  
-rounded corners text inputs    | ✅ true 
-rounded corners alert messages | ✅ true 
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ❌ false  
+rounded corners text inputs         | ✅ true 
+rounded corners alert messages      | ✅ true 
+rounded corners progress indicators | ❌ false
 
 ### "Max it" tuning
 
@@ -131,11 +133,12 @@ let theme = OrangeTheme(tuning: Tuning.MaxIt)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ✅ true  
-rounded corners text inputs    | ✅ true  
-rounded corners alert messages | ✅ true
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ✅ true  
+rounded corners text inputs         | ✅ true  
+rounded corners alert messages      | ✅ true
+rounded corners progress indicators | ❌ false
 
 ## Typography
 

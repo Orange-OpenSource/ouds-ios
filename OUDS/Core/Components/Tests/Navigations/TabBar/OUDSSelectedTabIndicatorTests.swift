@@ -18,15 +18,15 @@ import Testing
 /// Tests the public static constants exposed by `SelectedTabIndicator`.
 struct OUDSSelectedTabIndicatorTests {
 
-    @Test func animationDurationValue() {
+    @Test func `animation duration value`() {
         #expect(SelectedTabIndicator.animationDuration == 0.2)
     }
 
-    @Test func asyncDelayValue() {
+    @Test func `async delay value`() {
         #expect(SelectedTabIndicator.asyncDelay == 0.1)
     }
 
-    @Test func asyncDelayIsLessThanAnimationDuration() {
+    @Test func `async delay is less than animation duration`() {
         #expect(SelectedTabIndicator.asyncDelay < SelectedTabIndicator.animationDuration)
     }
 }
