@@ -214,6 +214,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          link: AllLinkComponentTokensProvider? = nil,
                          listItem: AllListItemComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
+                         progressIndicator: AllProgressIndicatorComponentTokensProvider? = nil,
                          quantityInput: AllQuantityInputComponentTokensProvider? = nil,
                          radioButton: AllRadioButtonComponentTokensProvider? = nil,
                          selectInput: AllSelectInputComponentTokensProvider? = nil,
@@ -256,6 +257,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let progressIndicator = (progressIndicator ?? OrangeThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
         let selectInput = (selectInput ?? OrangeThemeSelectInputComponentTokensProvider(dimensions: dimensions))
@@ -292,6 +294,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,

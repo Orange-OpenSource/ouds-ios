@@ -289,12 +289,14 @@ if [[ $use_git -eq 1 ]]; then
     # Do not remove theme-settings.json
     _ "🔨 Cleaning old documentation files"
 
-    # One-line deletion comman
+    # One-line deletion command
     find "$DOCS_DIRECTORY" -mindepth 1 \
         \( -type d -name "css" -o \
         -type d -name "data" -o \
         -type d -name "documentation" -o \
+        -type d -name "downloads" -o \
         -type d -name "images" -o \
+        -type d -name "videos" -o \
         -type d -name "img" -o \
         -type d -name "index" -o \
         -type d -name "js" \) \
@@ -422,8 +424,3 @@ _ "🚀 There were about $files_count files to process!"
 _ "👋 Bye!"
 
 exit $EXIT_OK
-
-# In case of performances issues due to the large amount of files in the Git repository:
-#   run "git clean -fd ; git reset --hard ; rm -rf .build"
-#   Or use "git prune"
-#   Or reclone the repository

@@ -97,10 +97,6 @@ struct WireframeThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
-    @Test func defaultAccordionComponentTokensProvider() throws {
-        #expect(theme.accordion is WireframeThemeAccordionComponentTokensProvider)
-    }
-
     @Test func defaultAlertComponentTokensProvider() {
         #expect(theme.alert is WireframeThemeAlertComponentTokensProvider)
     }

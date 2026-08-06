@@ -156,6 +156,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let link = OrangeCompactThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = OrangeCompactThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let pinCodeInput = OrangeCompactThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
+        let progressIndicator = OrangeCompactThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeCompactThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeCompactThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = OrangeCompactThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
@@ -192,6 +193,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,

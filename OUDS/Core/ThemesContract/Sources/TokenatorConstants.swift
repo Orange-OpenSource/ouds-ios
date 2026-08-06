@@ -84,6 +84,20 @@ public enum OUDSVersions {
     public static let componentAlertMessageVersion = "1.1.1"
     /// Version of the Figma specifications for the component alert (inline alert) (1.0.0)
     public static let componentInlineAlertVersion = "1.0.0"
+    /// Version of the Figma specifications for the component dialog (modal dialog) (0.0.0)
+    public static let componentModalDialogVersion = "0.0.0"
+
+    // MARK: - Components versions - Foundations
+
+    /// Version of the Figma specifications for the component typgography) (1.0.0)
+    public static let componentTypographyVersion = "1.0.0"
+
+    // MARK: - Components versions - Indicator
+
+    /// Version of the Figma specifications for the component progress indicator (1.1.0)
+    public static let componentProgressIndicatorVersion = "1.1.0"
+    /// Version of the Figma specifications for the component status icon(1.0.0)
+    public static let componentStatusIconVersion = "1.0.0"
 
     // MARK: - Components versions - Layout
 

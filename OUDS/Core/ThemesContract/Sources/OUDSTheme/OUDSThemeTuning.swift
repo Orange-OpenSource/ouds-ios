@@ -60,6 +60,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
                 hasRoundedAlertMessages: Bool = false,
                 hasRoundedProgressIndicators: Bool = false,
                 hasRoundedListItems: Bool = false)
+
     {
         self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedTextInputs = hasRoundedTextInputs

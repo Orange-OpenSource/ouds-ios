@@ -99,10 +99,6 @@ struct SoshThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
-    @Test func defaultAccordionComponentTokensProvider() {
-        #expect(theme.accordion is SoshThemeAccordionComponentTokensProvider)
-    }
-
     @Test func defaultAlertComponentTokensProvider() {
         #expect(theme.alert is SoshThemeAlertComponentTokensProvider)
     }
@@ -189,10 +185,6 @@ struct SoshThemeTests {
 
     @Test func defaultTextInputComponentTokensProvider() {
         #expect(theme.textInput is SoshThemeTextInputComponentTokensProvider)
-    }
-
-    @Test func defaultTypographyComponentTokensProvider() {
-        #expect(theme.typography is SoshThemeTypographyComponentTokensProvider)
     }
 }
 

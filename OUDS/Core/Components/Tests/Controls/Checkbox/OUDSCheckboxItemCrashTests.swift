@@ -26,7 +26,7 @@ struct OUDSCheckboxItemCrashTests {
     /// Verify that `OUDSCheckboxItem` crashes when both `isReadOnly` and `isError` are set to `true`.
     /// This is forbidden by design as a component cannot be in both error and read-only states.
     @Test
-    func checkboxItemCrashesWhenReadOnlyAndError() async {
+    func `checkbox item crashes when read only and error`() async {
         await #expect(processExitsWith: .failure) {
             _ = OUDSCheckboxItem("Test",
                                  isOn: .constant(false),

@@ -138,6 +138,11 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to pin code input components like `OUDSPinCodeInput`
     public let pinCodeInput: AllPinCodeInputComponentTokensProvider
 
+    /// All components tokens related to progress indicator components
+    /// Hotfix for v2.4.0
+    /// No support planned, API already updated with v3.0.0
+    public let progressIndicator: AllProgressIndicatorComponentTokensProvider
+
     /// All components tokens related to quantity input components like `OUDSQuantityInput`
     public let quantityInput: AllQuantityInputComponentTokensProvider
 
@@ -214,6 +219,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
     ///    - pinCodeInput: All component tokens for pin code input
+    ///    - progressIndicator: All component tokens for progress indicator
     ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
     ///    - selectInput: All component tokens for select input
@@ -253,6 +259,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 link: AllLinkComponentTokensProvider,
                 listItem: AllListItemComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
+                progressIndicator: AllProgressIndicatorComponentTokensProvider,
                 quantityInput: AllQuantityInputComponentTokensProvider,
                 radioButton: AllRadioButtonComponentTokensProvider,
                 selectInput: AllSelectInputComponentTokensProvider,
@@ -297,6 +304,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.link = link
         self.listItem = listItem
         self.pinCodeInput = pinCodeInput
+        self.progressIndicator = progressIndicator
         self.quantityInput = quantityInput
         self.radioButton = radioButton
         self.selectInput = selectInput

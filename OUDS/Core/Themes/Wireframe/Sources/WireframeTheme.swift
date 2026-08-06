@@ -91,6 +91,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = WireframeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let progressIndicator = WireframeThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let quantityInput = WireframeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = WireframeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = WireframeThemeSelectInputComponentTokensProvider(dimensions: dimensions)
@@ -125,6 +126,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,

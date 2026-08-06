@@ -222,7 +222,17 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 
 ## 7. Components
 
-**Index:** [Button](#actions--button) · [BulletList](#content-display--bullet-list) · [Checkbox](#controls--checkbox) · [Radio](#controls--radio-button) · [Switch](#controls--switch) · [PinCode](#controls--pin-code-input) · [Password](#controls--password-input) · [Chips](#controls--chips) · [TextInput](#controls--text-input) · [TextArea](#controls--text-area) · [AlertMessage](#dialogs--alert-message) · [InlineAlert](#dialogs--inline-alert) · [Badge](#indicators--badge) · [Tag](#indicators--tag) · [InputTag](#indicators--input-tag) · [ColoredSurface](#layouts--colored-surface) · [Divider](#layouts--divider) · [Link](#navigations--link) · [TabBar](#navigations--tab-bar) · [Toolbars](#navigations--toolbars)
+Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
+
+| Family | Skill | Components |
+|---|---|---|
+| Actions | `ouds-ios-components-actions` | OUDSButton |
+| Content Display | `ouds-ios-components-content-display` | OUDSBulletList |
+| Controls | `ouds-ios-components-controls` | OUDSCheckbox, OUDSRadio, OUDSSwitch, OUDSSuggestionChip / OUDSFilterChip / OUDSChipPicker, OUDSPinCodeInput, OUDSPasswordInput, OUDSTextInput, OUDSTextArea |
+| Dialogs | `ouds-ios-components-dialogs` | OUDSAlertMessage, OUDSInlineAlert |
+| Indicators | `ouds-ios-components-indicators` | OUDSBadge*, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator |
+| Layouts | `ouds-ios-components-layouts` | OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider |
+| Navigations | `ouds-ios-components-navigations` | OUDSLink, OUDSTabBar, OUDSToolBarItem / `toolBarTop` / `toolBarBottom` |
 
 ---
 
