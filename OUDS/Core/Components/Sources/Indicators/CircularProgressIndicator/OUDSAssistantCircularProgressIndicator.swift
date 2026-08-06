@@ -42,6 +42,8 @@ import SwiftUI
 ///
 /// - The view is always hidden from VoiceOver (`.accessibilityHidden(true)`): there is no readable
 ///   value to expose and keeping the element focusable would only pollute VoiceOver navigation.
+///   As the view is hidden from the accessibility tree, it is also excluded from Full Keyboard
+///   Access navigation.
 /// - Motion is disabled when `accessibilityReduceMotion` is `true` or when Low Power Mode is
 ///   enabled: the arc is then displayed statically using `colorAiPrimary` and the color cycling
 ///   is paused.

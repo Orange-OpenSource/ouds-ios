@@ -94,8 +94,13 @@ import SwiftUI
 /// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage) so that
 ///   VoiceOver reads e.g. *"75 percent"*, and is marked with the `.updatesFrequently` trait so that assistive
 ///   technologies know the value is changing.
-/// - In **indeterminate** mode, the view is hidden from VoiceOver (`.accessibilityHidden(true)`): there is no
-///   readable value to expose and keeping the element focusable would only pollute VoiceOver navigation.
+/// - The indicator never captures **Full Keyboard Access** focus, as no interaction is possible on a progress
+///   indicator. On iOS 17+ / macOS 14+ / visionOS 1+ / watchOS 10+ / tvOS 17+, this is enforced via
+///   `accessibilityRespondsToUserInteraction(false)`; on earlier OS versions, the semantic `.isStaticText`
+///   trait is used.
+/// - In **indeterminate** mode, the view is hidden from VoiceOver (`.accessibilityHidden(true)`) — and therefore
+///   also excluded from Full Keyboard Access navigation: there is no readable value to expose and keeping the
+///   element focusable would only pollute navigation.
 /// - Animations are disabled when `accessibilityReduceMotion` is `true` or when Low Power Mode is enabled.
 ///
 /// ## Colored surfaces

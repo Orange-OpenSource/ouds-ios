@@ -129,27 +129,41 @@ struct CircularProgressIndicatorView: View {
 /// Applies accessibility traits and values on the progress indicator.
 ///
 /// - Determinate (standard appearance): exposes the percentage value (e.g. *"75 percent"*) with the
-///   `.updatesFrequently` trait so assistive technologies read the changing progress.
-/// - Indeterminate (standard appearance): hidden from VoiceOver — there is no readable value to expose
-///   and keeping the element focusable would only pollute VoiceOver navigation.
-/// - Assistant appearance: always hidden from VoiceOver, regardless of the (always indeterminate) mode.
+///   `.updatesFrequently` trait so assistive technologies read the changing progress. The element
+///   is also marked as `.isStaticText` and, on iOS 17+ / macOS 14+ / visionOS 1+ / watchOS 10+ /
+///   tvOS 17+, opts out of user interaction via `accessibilityRespondsToUserInteraction(false)` so
+///   that Full Keyboard Access (FKA) does not focus it — a progress indicator has no action to
+///   perform, so capturing keyboard focus would only pollute FKA navigation. On earlier OS
+///   versions, only the semantic `.isStaticText` trait is applied.
+/// - Indeterminate (standard appearance): hidden from VoiceOver (`.accessibilityHidden(true)`),
+///   which also excludes it from Full Keyboard Access navigation. There is no readable value to
+///   expose and keeping the element focusable would only pollute navigation.
+/// - Assistant appearance: always hidden from VoiceOver (`.accessibilityHidden(true)`), which also
+///   excludes it from Full Keyboard Access navigation.
 private struct CircularProgressAccessibilityModifier: ViewModifier {
 
     let configuration: CircularProgressIndicatorConfiguration
 
     func body(content: Content) -> some View {
         if configuration.appearance == .assistant {
-            // AI assistant variant: always hidden from VoiceOver (no readable value).
+            // AI assistant variant: always hidden from VoiceOver (and therefore from FKA too).
             content.accessibilityHidden(true)
         } else if let progress = configuration.progress {
-            // Determinate: expose the percentage value.
+            // Determinate: expose the percentage value to VoiceOver but never capture Full
+            // Keyboard Access focus — the indicator has no action to perform.
             let percent = Int((progress * 100).rounded())
-            content
+            let determinate = content
                 .accessibilityElement(children: .ignore)
-                .accessibilityAddTraits(.updatesFrequently)
+                .accessibilityAddTraits([.updatesFrequently, .isStaticText])
                 .accessibilityValue(Text(verbatim: "\(percent)%"))
+
+            if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
+                determinate.accessibilityRespondsToUserInteraction(false)
+            } else {
+                determinate
+            }
         } else {
-            // Indeterminate standard: hidden from VoiceOver (no readable value).
+            // Indeterminate standard: hidden from VoiceOver (and therefore from FKA too).
             content.accessibilityHidden(true)
         }
     }
