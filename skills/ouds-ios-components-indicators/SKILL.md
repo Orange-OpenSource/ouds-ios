@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-components-indicators
-description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet), OUDSInputTag (removable) and OUDSCircularProgressIndicator (determinate / indeterminate, statuses, gap size, track, animated reveal). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
+description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet), OUDSInputTag (removable), OUDSCircularProgressIndicator (determinate / indeterminate, statuses, gap size, track, animated reveal) and OUDSLinearProgressIndicator (determinate / indeterminate, statuses, gap size, track, stop indicator, helper text, animated reveal). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
 license: MIT
 ---
 
@@ -73,3 +73,49 @@ Notes:
 - On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
 - Determinate animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on or when Low Power Mode is enabled — the arc is then shown instantly at its target value. The `animated: false` flag has the same effect on demand.
 - Indeterminate rotation is paused in the same conditions (Reduce Motion / Low Power Mode) and falls back to a static arc.
+
+---
+
+## Linear Progress Indicator
+
+Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Gap sizes: `default` (4pt), `small` (1pt)
+
+```swift
+// Determinate — progress is clamped to [0, 1]
+// By default the bar animates from 0 to `progress` on first display and on every change,
+// using the same Material 3 critically-damped spring as the circular indicator (~1.5s).
+OUDSLinearProgressIndicator(progress: 0.75)
+OUDSLinearProgressIndicator(progress: 0.5, status: .accent, track: false)
+OUDSLinearProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
+
+// Determinate with a stop indicator (small square at the end of the track).
+// Required for accessibility when the track contrast is below 3:1 with its container.
+OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true)
+
+// Determinate with a centered helper text below the bar.
+// The helper text is exposed as the accessibility label (VoiceOver reads e.g. "Uploading. 75 percent").
+OUDSLinearProgressIndicator(progress: 0.75, helperText: "Uploading…")
+
+// Determinate without the reveal animation: the bar is shown instantly at its target value.
+OUDSLinearProgressIndicator(progress: 0.75, animated: false)
+
+// Indeterminate — Material 3 two-bar animation (1.8s cycle)
+OUDSLinearProgressIndicator()
+OUDSLinearProgressIndicator(status: .info, track: true, helperText: "Processing…")
+
+// Indeterminate without motion: the bar falls back to a static 70% fill.
+OUDSLinearProgressIndicator(animated: false)
+
+// Custom width — the bar fills the available horizontal space by default
+OUDSLinearProgressIndicator(progress: 0.6)
+    .frame(width: 240)
+```
+
+Notes:
+- Default bar height is `4pt` (theme token `sizeLinearIndicatorHeight`) and scales with Dynamic Type.
+- The bar fills the horizontal space of its container (`.frame(maxWidth: .infinity)`). Constrain its width with `.frame(width:)` if needed.
+- Rounded stroke caps follow the theme tuning: `Tuning.hasRoundedProgressIndicators`. The gap is auto-compensated so the visible spacing between the foreground bar and the track stays constant regardless of the cap.
+- On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
+- Determinate animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on, when Low Power Mode is enabled, or when `animated: false` is passed — the bar is then shown instantly at its target value.
+- Indeterminate animation is disabled in the same conditions (Reduce Motion / Low Power Mode / `animated: false`) and falls back to a static bar at 70%.
+- Accessibility: determinate exposes the percentage as `accessibilityValue`; when `helperText` is provided, it is exposed as `accessibilityLabel`. Indeterminate without helper text is hidden from VoiceOver; with a helper text, only the label is exposed (no value).

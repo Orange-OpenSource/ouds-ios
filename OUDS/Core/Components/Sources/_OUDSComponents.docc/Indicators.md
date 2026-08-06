@@ -114,6 +114,42 @@ OUDSCircularProgressIndicator(progress: 0.75, status: .neutral)
 OUDSCircularProgressIndicator(status: .accent)
 ```
 
+#### Linear Progress Indicator
+
+@TabNavigator {
+    @Tab("Orange") {
+        @Video(source: "component_progress_indicator_linear_Orange.video")
+    }
+    @Tab("Orange Compact") {
+        @Video(source: "component_progress_indicator_linear_OrangeCompact.video")
+    }
+    @Tab("Sosh") {
+        @Video(source: "component_progress_indicator_linear_Sosh.video")
+    }
+    @Tab("Wireframe") {
+        @Video(source: "component_progress_indicator_linear_Wireframe.video")
+    }
+}
+
+An ``OUDSLinearProgressIndicator`` is a horizontal progress indicator which can be used to display determinate value or indeterminate value with Material 3 animations. It also supports an optional stop indicator and a centered helper text below the bar.
+
+```swift
+// A horizontal bar filled at 75% in neutral color with a track and reveal animation
+OUDSLinearProgressIndicator(progress: 0.75, status: .neutral)
+
+// A horizontal bar without defined value and an accent color
+OUDSLinearProgressIndicator(status: .accent)
+
+// A horizontal bar with a helper text and a stop indicator
+OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: "Uploading…")
+
+// A horizontal bar displayed instantly at its target value, without any animation
+OUDSLinearProgressIndicator(progress: 0.75, animated: false)
+
+// An indeterminate horizontal bar without motion (static bar at 70%)
+OUDSLinearProgressIndicator(animated: false)
+```
+
 ### Tag
 
 @TabNavigator {

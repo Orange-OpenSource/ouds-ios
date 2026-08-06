@@ -26,7 +26,7 @@ Components:
 - **`ouds-ios-components-content-display`** — OUDSBulletList
 - **`ouds-ios-components-controls`** — Checkbox, Radio, Switch, Chips, PinCodeInput, PasswordInput, TextInput, TextArea
 - **`ouds-ios-components-dialogs`** — OUDSAlertMessage, OUDSInlineAlert
-- **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator
+- **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator, OUDSLinearProgressIndicator
 - **`ouds-ios-components-layouts`** — OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider
 - **`ouds-ios-components-navigations`** — OUDSLink, OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
 
