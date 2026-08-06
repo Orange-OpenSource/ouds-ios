@@ -140,8 +140,8 @@ struct CircularProgressCanvasView: View {
 ///
 /// The conformance to `Animatable` (via `animatableData`) allows SwiftUI to re-evaluate
 /// `path(in:)` at every frame during a `withAnimation` block, interpolating the animatable pair
-/// linearly between the old and the new values. Combined with a `withAnimation(.easeOut(duration:))`
-/// on the caller side, this produces a smooth arc reveal or update animation.
+/// linearly between the old and the new values. Combined with a `withAnimation(...)` on the
+/// caller side, this produces a smooth arc reveal or update animation.
 ///
 /// The stroke width is not animated (it is a constant during any given animation), but it is used
 /// to shrink the arc radius so that the stroked line stays inscribed within the frame — otherwise

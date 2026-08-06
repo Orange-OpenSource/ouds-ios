@@ -133,8 +133,6 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
 
-    // TODO: # 409 - Add illustrations for doc
-
     // MARK: - Public types
 
     /// The status of the progress indicator. It determines the color of the progress indicator.

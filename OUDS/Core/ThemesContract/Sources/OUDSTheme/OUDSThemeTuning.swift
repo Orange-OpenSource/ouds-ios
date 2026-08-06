@@ -50,7 +50,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
     ///    - hasRoundedTextInputs: If text-based inputs components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedAlertMessages: If alert messages components must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedProgressIndicators: If progress indicators components must have ounded corners or not (default set to *false*)
+    ///    - hasRoundedProgressIndicators: If progress indicators components must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false,
                 hasRoundedAlertMessages: Bool = false,
@@ -88,9 +88,10 @@ extension Tuning {
     /// There are no rounded corners.
     public static let OrangeFrance = Tuning.default
 
-    /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**,
-    /// **rounded corners for text / PIN code / password / text area inputs** ,
-    /// **rounded corners for alert messages** and **progress indicators**
+    /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**
+    /// and **progress indicators**, but
+    /// **rounded corners for text / PIN code / password / text area inputs**  and.
+    /// **rounded corners for alert messages**
     public static let OrangeBusiness = Tuning(hasRoundedButtons: false,
                                               hasRoundedTextInputs: true,
                                               hasRoundedAlertMessages: true,
@@ -98,7 +99,7 @@ extension Tuning {
 
     /// The theme tuning for *Max It* contains **rounded corners for buttons**,
     /// **rounded corners for text / PIN code / password / text area inputs**,
-    /// **rounded corners for alert messages**  and **progress indicators**.
+    /// **rounded corners for alert messages**  but not for **progress indicators**.
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
                                      hasRoundedAlertMessages: true,

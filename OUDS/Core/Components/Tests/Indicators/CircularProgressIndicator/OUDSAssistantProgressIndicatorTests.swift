@@ -16,7 +16,7 @@ import Foundation
 import Testing
 
 /// Tests on the public API and internal configuration of ``OUDSAssistantCircularProgressIndicator``,
-/// and on the AI color cycling helper of ``CircularProgressIndicatorAnimatorView``.
+/// and on the AI color cycling helper of ``CircularProgressIndicatorIndeterminateView``.
 struct OUDSAssistantProgressIndicatorTests {
 
     // MARK: - Assistant configuration defaults

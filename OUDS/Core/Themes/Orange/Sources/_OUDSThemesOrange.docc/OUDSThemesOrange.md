@@ -121,7 +121,7 @@ Tunable elements                    | Default values
 rounded corners buttons             | ❌ false  
 rounded corners text inputs         | ✅ true 
 rounded corners alert messages      | ✅ true 
-rounded corners progress indicators | ✅ true
+rounded corners progress indicators | ❌ false
 
 ### "Max it" tuning
 
@@ -138,7 +138,7 @@ Tunable elements                    | Default values
 rounded corners buttons             | ✅ true  
 rounded corners text inputs         | ✅ true  
 rounded corners alert messages      | ✅ true
-rounded corners progress indicators | ✅ true
+rounded corners progress indicators | ❌ false
 
 ## Typography
 

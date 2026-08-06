@@ -33,7 +33,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     /// - `standard`: color driven by the ``OUDSCircularProgressIndicator/Status`` mapping.
     /// - `assistant`: AI assistant appearance — the foreground color cycles through the four
     ///   `theme.colors.colorAi*` tokens once per sweep respiration cycle (see
-    ///   ``CircularProgressIndicatorAnimatorView``). Only meaningful in indeterminate mode.
+    ///   ``CircularProgressIndicatorIndeterminateView``). Only meaningful in indeterminate mode.
     enum Appearance: Equatable, Sendable {
         case standard
         case assistant
