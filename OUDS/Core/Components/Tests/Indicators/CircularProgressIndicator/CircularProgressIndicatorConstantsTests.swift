@@ -52,31 +52,31 @@ struct CircularProgressAnimatorConstantsTests {
 
     @Test
     func `global rotation period must be 6 seconds (M3 spec)`() {
-        #expect(CircularProgressIndicatorAnimatorView.globalRotationPeriod == 6.0)
+        #expect(CircularProgressIndicatorIndeterminateView.globalRotationPeriod == 6.0)
     }
 
     // MARK: - Additional rotation
 
     @Test
     func `additional rotation cycle must be 1_5 seconds (500ms animation + 1s hold, M3 spec)`() {
-        #expect(CircularProgressIndicatorAnimatorView.additionalRotationCycle == 1.5)
+        #expect(CircularProgressIndicatorIndeterminateView.additionalRotationCycle == 1.5)
     }
 
     @Test
     func `additional rotation animation duration must be 500 milliseconds (M3 spec)`() {
-        #expect(CircularProgressIndicatorAnimatorView.additionalRotationAnimDuration == 0.5)
+        #expect(CircularProgressIndicatorIndeterminateView.additionalRotationAnimDuration == 0.5)
     }
 
     @Test
     func `additional rotation target must be 90 degrees per cycle (M3 spec)`() {
-        #expect(CircularProgressIndicatorAnimatorView.additionalRotationTarget == 90.0)
+        #expect(CircularProgressIndicatorIndeterminateView.additionalRotationTarget == 90.0)
     }
 
     @Test @MainActor
     func `additional rotation hold duration must equal cycle minus animation duration`() {
         // Coherence check: hold + anim = full cycle
-        let hold = CircularProgressIndicatorAnimatorView.additionalRotationCycle
-            - CircularProgressIndicatorAnimatorView.additionalRotationAnimDuration
+        let hold = CircularProgressIndicatorIndeterminateView.additionalRotationCycle
+            - CircularProgressIndicatorIndeterminateView.additionalRotationAnimDuration
         #expect(hold == 1.0)
     }
 
@@ -84,47 +84,47 @@ struct CircularProgressAnimatorConstantsTests {
 
     @Test
     func `progress half cycle must be 1_5 seconds (M3 spec)`() {
-        #expect(CircularProgressIndicatorAnimatorView.progressHalfCycle == 1.5)
+        #expect(CircularProgressIndicatorIndeterminateView.progressHalfCycle == 1.5)
     }
 
     @Test
     func `progress minimum sweep must be 5 percent`() {
-        #expect(CircularProgressIndicatorAnimatorView.progressMin == 0.05)
+        #expect(CircularProgressIndicatorIndeterminateView.progressMin == 0.05)
     }
 
     @Test
     func `progress maximum sweep must be 75 percent (M3 spec)`() {
-        #expect(CircularProgressIndicatorAnimatorView.progressMax == 0.75)
+        #expect(CircularProgressIndicatorIndeterminateView.progressMax == 0.75)
     }
 
     @Test
     func `progress maximum sweep without track must be 90 percent`() {
-        #expect(CircularProgressIndicatorAnimatorView.progressMaxWithoutTrack == 0.90)
+        #expect(CircularProgressIndicatorIndeterminateView.progressMaxWithoutTrack == 0.90)
     }
 
     @Test
     func `progress maximum without track must be greater than or equal to progress maximum with track`() {
-        #expect(CircularProgressIndicatorAnimatorView.progressMaxWithoutTrack
-            >= CircularProgressIndicatorAnimatorView.progressMax)
+        #expect(CircularProgressIndicatorIndeterminateView.progressMaxWithoutTrack
+            >= CircularProgressIndicatorIndeterminateView.progressMax)
     }
 
     @Test
     func `progress minimum must be strictly less than progress maximum`() {
         // Coherence check: prevent silent regression that swaps or equals bounds
-        #expect(CircularProgressIndicatorAnimatorView.progressMin < CircularProgressIndicatorAnimatorView.progressMax)
+        #expect(CircularProgressIndicatorIndeterminateView.progressMin < CircularProgressIndicatorIndeterminateView.progressMax)
     }
 
     // MARK: - Static (accessibility / low power) sweep
 
     @Test
     func `static sweep used when animations are disabled must be 70 percent`() {
-        #expect(CircularProgressIndicatorAnimatorView.staticSweep == 0.7)
+        #expect(CircularProgressIndicatorIndeterminateView.staticSweep == 0.7)
     }
 
     @Test
     func `static sweep must be within the animated progress range`() {
         // Coherence: the static fallback should look consistent with what the animation produces
-        #expect(CircularProgressIndicatorAnimatorView.staticSweep >= CircularProgressIndicatorAnimatorView.progressMin)
-        #expect(CircularProgressIndicatorAnimatorView.staticSweep <= CircularProgressIndicatorAnimatorView.progressMax)
+        #expect(CircularProgressIndicatorIndeterminateView.staticSweep >= CircularProgressIndicatorIndeterminateView.progressMin)
+        #expect(CircularProgressIndicatorIndeterminateView.staticSweep <= CircularProgressIndicatorIndeterminateView.progressMax)
     }
 }

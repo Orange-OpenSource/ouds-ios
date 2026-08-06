@@ -23,6 +23,8 @@ import AppKit
  ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
  */
 
+// swiftlint:disable type_name
+
 /// Animates the foreground arc of an indeterminate ``OUDSCircularProgressIndicator``.
 ///
 /// The animation reproduces the **Android Material 3** indeterminate circular progress specification by combining
@@ -47,7 +49,7 @@ import AppKit
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled (via
 /// ``OUDSLowPowerModeObserver``), mirroring the behavior of the internal `LoaderIndicator` used
 /// by ``OUDSButton``.
-struct CircularProgressIndicatorAnimatorView: View {
+struct CircularProgressIndicatorIndeterminateView: View {
 
     // MARK: - Android Material 3 animation constants
 
@@ -262,3 +264,5 @@ struct CircularProgressIndicatorAnimatorView: View {
         #endif
     }
 }
+
+// swiftlint:enable type_name

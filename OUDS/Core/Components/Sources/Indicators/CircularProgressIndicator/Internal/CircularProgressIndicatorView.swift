@@ -44,7 +44,7 @@ struct CircularProgressIndicatorView: View {
                     strokeCap: strokeCap,
                     gapSize: configuration.gapSize)
             } else {
-                CircularProgressIndicatorAnimatorView(
+                CircularProgressIndicatorIndeterminateView(
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
@@ -128,23 +128,29 @@ struct CircularProgressIndicatorView: View {
 
 /// Applies accessibility traits and values on the progress indicator.
 ///
-/// - Determinate: exposes the percentage value (e.g. *"75 percent"*).
-/// - Indeterminate: marks the element as updating frequently so assistive technologies do not try to read a value.
+/// - Determinate (standard appearance): exposes the percentage value (e.g. *"75 percent"*) with the
+///   `.updatesFrequently` trait so assistive technologies read the changing progress.
+/// - Indeterminate (standard appearance): hidden from VoiceOver — there is no readable value to expose
+///   and keeping the element focusable would only pollute VoiceOver navigation.
+/// - Assistant appearance: always hidden from VoiceOver, regardless of the (always indeterminate) mode.
 private struct CircularProgressAccessibilityModifier: ViewModifier {
 
     let configuration: CircularProgressIndicatorConfiguration
 
     func body(content: Content) -> some View {
-        if let progress = configuration.progress {
+        if configuration.appearance == .assistant {
+            // AI assistant variant: always hidden from VoiceOver (no readable value).
+            content.accessibilityHidden(true)
+        } else if let progress = configuration.progress {
+            // Determinate: expose the percentage value.
             let percent = Int((progress * 100).rounded())
             content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits(.updatesFrequently)
                 .accessibilityValue(Text(verbatim: "\(percent)%"))
         } else {
-            content
-                .accessibilityElement(children: .ignore)
-                .accessibilityAddTraits(.updatesFrequently)
+            // Indeterminate standard: hidden from VoiceOver (no readable value).
+            content.accessibilityHidden(true)
         }
     }
 }

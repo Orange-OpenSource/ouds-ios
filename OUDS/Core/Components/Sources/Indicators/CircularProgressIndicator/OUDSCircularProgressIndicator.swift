@@ -92,9 +92,10 @@ import SwiftUI
 /// // TODO: #409 - Implement / update
 ///
 /// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage) so that
-///   VoiceOver reads e.g. *"75 percent"*.
-/// - In **indeterminate** mode, the view is marked with the `.updatesFrequently` trait so that assistive technologies
-///   know the value is changing.
+///   VoiceOver reads e.g. *"75 percent"*, and is marked with the `.updatesFrequently` trait so that assistive
+///   technologies know the value is changing.
+/// - In **indeterminate** mode, the view is hidden from VoiceOver (`.accessibilityHidden(true)`): there is no
+///   readable value to expose and keeping the element focusable would only pollute VoiceOver navigation.
 /// - Animations are disabled when `accessibilityReduceMotion` is `true` or when Low Power Mode is enabled.
 ///
 /// ## Colored surfaces

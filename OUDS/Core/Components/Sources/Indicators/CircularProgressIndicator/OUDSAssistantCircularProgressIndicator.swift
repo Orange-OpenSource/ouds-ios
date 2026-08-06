@@ -40,8 +40,8 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// - The view is marked with the `.updatesFrequently` trait so that assistive technologies know
-///   the value is changing.
+/// - The view is always hidden from VoiceOver (`.accessibilityHidden(true)`): there is no readable
+///   value to expose and keeping the element focusable would only pollute VoiceOver navigation.
 /// - Motion is disabled when `accessibilityReduceMotion` is `true` or when Low Power Mode is
 ///   enabled: the arc is then displayed statically using `colorAiPrimary` and the color cycling
 ///   is paused.

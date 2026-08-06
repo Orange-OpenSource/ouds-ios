@@ -123,38 +123,38 @@ struct OUDSAssistantProgressIndicatorTests {
 
     @Test
     func `colorIndex must be 0 at t = 0`() {
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 0.0, cycle: 3.0, count: 4) == 0)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 0.0, cycle: 3.0, count: 4) == 0)
     }
 
     @Test
     func `colorIndex must stay at 0 during the first cycle`() {
         for time in stride(from: 0.0, to: 3.0, by: 0.5) {
-            #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: time, cycle: 3.0, count: 4) == 0)
+            #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: time, cycle: 3.0, count: 4) == 0)
         }
     }
 
     @Test
     func `colorIndex must advance by one at every cycle boundary`() {
         // At t = 3s, 6s, 9s the index should be 1, 2, 3 (still within the 4-color cycle).
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 3.0, cycle: 3.0, count: 4) == 1)
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 6.0, cycle: 3.0, count: 4) == 2)
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 9.0, cycle: 3.0, count: 4) == 3)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 3.0, cycle: 3.0, count: 4) == 1)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 6.0, cycle: 3.0, count: 4) == 2)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 9.0, cycle: 3.0, count: 4) == 3)
     }
 
     @Test
     func `colorIndex must wrap back to 0 after count cycles`() {
         // With 4 colors and a 3s cycle, at t = 12s the index must wrap back to 0.
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 12.0, cycle: 3.0, count: 4) == 0)
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 15.0, cycle: 3.0, count: 4) == 1)
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 24.0, cycle: 3.0, count: 4) == 0)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 12.0, cycle: 3.0, count: 4) == 0)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 15.0, cycle: 3.0, count: 4) == 1)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 24.0, cycle: 3.0, count: 4) == 0)
     }
 
     @Test
     func `colorIndex must be 0 for degenerate inputs`() {
         // Guard clauses: cycle <= 0 or count <= 0 must return 0.
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 10.0, cycle: 0.0, count: 4) == 0)
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 10.0, cycle: 3.0, count: 0) == 0)
-        #expect(CircularProgressIndicatorAnimatorView.colorIndex(at: 10.0, cycle: -1.0, count: 4) == 0)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 10.0, cycle: 0.0, count: 4) == 0)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 10.0, cycle: 3.0, count: 0) == 0)
+        #expect(CircularProgressIndicatorIndeterminateView.colorIndex(at: 10.0, cycle: -1.0, count: 4) == 0)
     }
 
     // MARK: - Color cycle period constant
@@ -162,13 +162,13 @@ struct OUDSAssistantProgressIndicatorTests {
     @Test
     func `color cycle period must equal a full sweep respiration`() {
         // 2 * progressHalfCycle = 2 * 1.5s = 3s.
-        #expect(CircularProgressIndicatorAnimatorView.colorCyclePeriod == 2.0 * CircularProgressIndicatorAnimatorView.progressHalfCycle)
-        #expect(CircularProgressIndicatorAnimatorView.colorCyclePeriod == 3.0)
+        #expect(CircularProgressIndicatorIndeterminateView.colorCyclePeriod == 2.0 * CircularProgressIndicatorIndeterminateView.progressHalfCycle)
+        #expect(CircularProgressIndicatorIndeterminateView.colorCyclePeriod == 3.0)
     }
 
     @Test
     func `cross-fade duration must be strictly positive and shorter than the cycle`() {
-        #expect(CircularProgressIndicatorAnimatorView.crossFadeDuration > 0.0)
-        #expect(CircularProgressIndicatorAnimatorView.crossFadeDuration < CircularProgressIndicatorAnimatorView.colorCyclePeriod)
+        #expect(CircularProgressIndicatorIndeterminateView.crossFadeDuration > 0.0)
+        #expect(CircularProgressIndicatorIndeterminateView.crossFadeDuration < CircularProgressIndicatorIndeterminateView.colorCyclePeriod)
     }
 }
