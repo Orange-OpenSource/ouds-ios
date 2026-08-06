@@ -53,14 +53,25 @@ struct LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
     /// Creates a configuration. The `progress` value is clamped to `[0, 1]` when non-nil.
     ///
+    /// When `progress` is `nil` (indeterminate mode), the following invariants are enforced,
+    /// regardless of the values passed to this initializer:
+    /// - `stopIndicator` is forced to `false` — Material 3 does not expose a stop indicator in
+    ///   the indeterminate variant, and there is no meaningful position for it.
+    /// - `animated` is forced to `true` — the Material 3 animation is intrinsic to the
+    ///   indeterminate mode. Motion is disabled at render time by
+    ///   ``LinearProgressIndicatorIndeterminateView`` when `accessibilityReduceMotion` is on or
+    ///   when Low Power Mode is enabled.
+    ///
     /// - Parameters:
     ///    - progress: The current progress in the `[0, 1]` range, or `nil` for indeterminate.
     ///    - status: The color status of the indicator.
     ///    - track: Whether the track is displayed.
     ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track.
+    ///      Ignored in indeterminate mode.
     ///    - helperText: Optional text displayed below the bar.
     ///    - gapSize: The size of the gap between the indicator and the track.
-    ///    - animated: Whether the indicator animates. Defaults to `true`.
+    ///    - animated: Whether the indicator animates. Defaults to `true`. Ignored in
+    ///      indeterminate mode.
     init(progress: Double?,
          status: OUDSLinearProgressIndicator.Status,
          track: Bool,
@@ -71,15 +82,18 @@ struct LinearProgressIndicatorConfiguration: Equatable, Sendable {
     {
         if let progress {
             self.progress = min(max(progress, 0.0), 1.0)
+            self.stopIndicator = stopIndicator
+            self.animated = animated
         } else {
             self.progress = nil
+            // Enforce M3 invariants in indeterminate mode.
+            self.stopIndicator = false
+            self.animated = true
         }
         self.status = status
         self.track = track
-        self.stopIndicator = stopIndicator
         self.helperText = helperText
         self.gapSize = gapSize
-        self.animated = animated
     }
 
     // MARK: - Helpers

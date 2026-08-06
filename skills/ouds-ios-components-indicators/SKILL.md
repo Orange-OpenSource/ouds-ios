@@ -80,33 +80,40 @@ Notes:
 
 Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Gap sizes: `default` (4pt), `small` (1pt)
 
+The determinate and indeterminate initializers have **different** signatures — this is not a mistake. `stopIndicator` and `animated` are **determinate-only** parameters. The Material 3 indeterminate variant does not expose a stop indicator (no meaningful end position) and is always animated (motion is only disabled by Reduce Motion / Low Power Mode).
+
 ```swift
-// Determinate — progress is clamped to [0, 1]
-// By default the bar animates from 0 to `progress` on first display and on every change,
-// using the same Material 3 critically-damped spring as the circular indicator (~1.5s).
+// ── Determinate ──────────────────────────────────────────────────────────────
+
+// Progress is clamped to [0, 1]. By default the bar animates from 0 to `progress` on first display
+// and on every change, using the same Material 3 critically-damped spring as the circular indicator
+// (~1.5s).
 OUDSLinearProgressIndicator(progress: 0.75)
 OUDSLinearProgressIndicator(progress: 0.5, status: .accent, track: false)
 OUDSLinearProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
 
-// Determinate with a stop indicator (small square at the end of the track).
+// With a stop indicator (small square at the end of the track).
 // Required for accessibility when the track contrast is below 3:1 with its container.
 OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true)
 
-// Determinate with a centered helper text below the bar.
+// With a centered helper text below the bar.
 // The helper text is exposed as the accessibility label (VoiceOver reads e.g. "Uploading. 75 percent").
 OUDSLinearProgressIndicator(progress: 0.75, helperText: "Uploading…")
 
 // Determinate without the reveal animation: the bar is shown instantly at its target value.
 OUDSLinearProgressIndicator(progress: 0.75, animated: false)
 
-// Indeterminate — Material 3 two-bar animation (1.8s cycle)
+// ── Indeterminate ────────────────────────────────────────────────────────────
+
+// Material 3 two-line "caterpillar race" animation, 1750 ms cycle, EasingEmphasizedAccelerate.
+// Always animated (except Reduce Motion / Low Power Mode → static bar at 70%).
 OUDSLinearProgressIndicator()
 OUDSLinearProgressIndicator(status: .info, track: true, helperText: "Processing…")
+OUDSLinearProgressIndicator(status: .accent, gapSize: .small)
 
-// Indeterminate without motion: the bar falls back to a static 70% fill.
-OUDSLinearProgressIndicator(animated: false)
+// ── Custom width ─────────────────────────────────────────────────────────────
 
-// Custom width — the bar fills the available horizontal space by default
+// The bar fills the available horizontal space by default; constrain it via .frame if needed.
 OUDSLinearProgressIndicator(progress: 0.6)
     .frame(width: 240)
 ```
@@ -116,6 +123,8 @@ Notes:
 - The bar fills the horizontal space of its container (`.frame(maxWidth: .infinity)`). Constrain its width with `.frame(width:)` if needed.
 - Rounded stroke caps follow the theme tuning: `Tuning.hasRoundedProgressIndicators`. The gap is auto-compensated so the visible spacing between the foreground bar and the track stays constant regardless of the cap.
 - On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
-- Determinate animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on, when Low Power Mode is enabled, or when `animated: false` is passed — the bar is then shown instantly at its target value.
-- Indeterminate animation is disabled in the same conditions (Reduce Motion / Low Power Mode / `animated: false`) and falls back to a static bar at 70%.
-- Accessibility: determinate exposes the percentage as `accessibilityValue`; when `helperText` is provided, it is exposed as `accessibilityLabel`. Indeterminate without helper text is hidden from VoiceOver; with a helper text, only the label is exposed (no value).
+- **Determinate** animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on, when Low Power Mode is enabled, or when `animated: false` is passed — the bar is then shown instantly at its target value.
+- **Indeterminate** animation is intrinsic to the mode: there is no `animated` parameter on this initializer. Motion is disabled automatically when `accessibilityReduceMotion` is on or when Low Power Mode is enabled, and a static bar at 70% is displayed instead.
+- **Stop indicator** is only available on the determinate variant. It never reserves horizontal space in the track, so appearing/disappearing it never shifts the track — no glitch at the end of the reveal.
+- **Rendering**: the indeterminate variant draws five segments (three track segments + two colored lines), producing the two small transparent gaps around each colored line that are the visual signature of Material 3 indeterminate linear progress. The two lines chase each other in a "caterpillar race" (head grows first, tail follows).
+- **Accessibility**: determinate exposes the percentage as `accessibilityValue`; when `helperText` is provided, it is exposed as `accessibilityLabel`. Indeterminate without helper text is hidden from VoiceOver; with a helper text, only the label is exposed (no value).

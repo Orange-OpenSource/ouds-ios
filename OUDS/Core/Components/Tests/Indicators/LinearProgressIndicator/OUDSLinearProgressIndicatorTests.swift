@@ -45,7 +45,7 @@ struct OUDSLinearProgressIndicatorTests {
     @Test
     func `indeterminate configuration must have nil progress and defaults for other fields`() {
         // Mirrors the defaults applied by
-        // OUDSLinearProgressIndicator.init(status:track:stopIndicator:helperText:gapSize:animated:).
+        // OUDSLinearProgressIndicator.init(status:track:helperText:gapSize:).
         let configuration = LinearProgressIndicatorConfiguration(progress: nil,
                                                                  status: .neutral,
                                                                  track: true,
@@ -61,6 +61,35 @@ struct OUDSLinearProgressIndicatorTests {
         #expect(configuration.gapSize == .default)
         #expect(configuration.animated == true)
         #expect(configuration.isIndeterminate)
+    }
+
+    // MARK: - M3 invariants in indeterminate mode
+
+    @Test
+    func `indeterminate mode must force stopIndicator to false even if caller passes true`() {
+        // The internal configuration must sanitize invalid Material 3 combinations.
+        let configuration = LinearProgressIndicatorConfiguration(progress: nil,
+                                                                 status: .neutral,
+                                                                 track: true,
+                                                                 stopIndicator: true, // caller lies
+                                                                 helperText: nil,
+                                                                 gapSize: .default,
+                                                                 animated: true)
+        #expect(configuration.stopIndicator == false)
+    }
+
+    @Test
+    func `indeterminate mode must force animated to true even if caller passes false`() {
+        // The Material 3 animation is intrinsic to the indeterminate mode. Motion is only
+        // disabled at render time by accessibility Reduce Motion / Low Power Mode.
+        let configuration = LinearProgressIndicatorConfiguration(progress: nil,
+                                                                 status: .neutral,
+                                                                 track: true,
+                                                                 stopIndicator: false,
+                                                                 helperText: nil,
+                                                                 gapSize: .default,
+                                                                 animated: false) // caller lies
+        #expect(configuration.animated == true)
     }
 
     // MARK: - Progress clamping
@@ -112,7 +141,7 @@ struct OUDSLinearProgressIndicatorTests {
         #expect(configuration.isIndeterminate)
     }
 
-    // MARK: - Optional parameters propagation
+    // MARK: - Optional parameters propagation (determinate)
 
     @Test
     func `helperText must be preserved as-is in the configuration`() {
@@ -126,7 +155,7 @@ struct OUDSLinearProgressIndicatorTests {
     }
 
     @Test
-    func `stopIndicator flag must be preserved in the configuration`() {
+    func `stopIndicator flag must be preserved in determinate mode`() {
         let configuration = LinearProgressIndicatorConfiguration(progress: 0.5,
                                                                  status: .neutral,
                                                                  track: true,
@@ -137,7 +166,7 @@ struct OUDSLinearProgressIndicatorTests {
     }
 
     @Test
-    func `animated flag defaults to true when not provided`() {
+    func `animated flag defaults to true when not provided (determinate)`() {
         let configuration = LinearProgressIndicatorConfiguration(progress: 0.5,
                                                                  status: .neutral,
                                                                  track: true,
@@ -148,7 +177,7 @@ struct OUDSLinearProgressIndicatorTests {
     }
 
     @Test
-    func `animated flag can be disabled explicitly`() {
+    func `animated flag can be disabled explicitly in determinate mode`() {
         let configuration = LinearProgressIndicatorConfiguration(progress: 0.5,
                                                                  status: .neutral,
                                                                  track: true,

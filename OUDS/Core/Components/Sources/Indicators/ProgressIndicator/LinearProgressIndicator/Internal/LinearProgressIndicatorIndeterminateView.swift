@@ -20,17 +20,25 @@ import SwiftUI
 
 /// Animates the bar of an indeterminate ``OUDSLinearProgressIndicator``.
 ///
-/// The animation reproduces the **Android Material 3** indeterminate linear progress specification.
-/// Two bars follow one another across the track, each defined by two animations (head and tail)
-/// running on a shared 1.8 s cycle:
+/// The animation reproduces the **Android Material 3** indeterminate linear progress specification
+/// as implemented in AndroidX Compose Material 3 `ProgressIndicator.kt`. Two lines follow one
+/// another across the track, each defined by two independent animations (head and tail) sharing a
+/// **1750 ms** cycle:
 ///
-/// 1. **First bar** — head grows from `0` to `1` in `750 ms`, tail follows from `0` to `1` in
-///    `850 ms` after a `333 ms` delay.
-/// 2. **Second bar** — head grows from `0` to `1` in `567 ms` after a `1 s` delay, tail follows
-///    in `433 ms` after a `1.233 s` delay.
+/// | Animation             | Delay   | Duration | Easing                                       |
+/// | --------------------- | ------- | -------- | -------------------------------------------- |
+/// | First bar head        |    0 ms |  1000 ms | `EasingEmphasizedAccelerate` (0.3, 0, 0.8, 0.15) |
+/// | First bar tail        |  250 ms |  1000 ms | same                                         |
+/// | Second bar head       |  650 ms |   850 ms | same                                         |
+/// | Second bar tail       |  900 ms |   850 ms | same                                         |
 ///
-/// The easing used is Material 3's *FastOutSlowInEasing* (`cubic-bezier(0.4, 0.0, 0.2, 1)`),
-/// approximated here with a cubic-bezier evaluator.
+/// The Material 3 rendering is **not** just "two colored bars over a solid track": it draws five
+/// segments (three track segments and two colored lines), which naturally produces the two small
+/// transparent gaps around each colored line — the visual signature of the animation. See
+/// ``LinearProgressBarCanvasView`` for the segment layout.
+///
+/// The head-then-tail motion (head grows first, tail follows) makes each colored bar look like a
+/// caterpillar stretching then shrinking, and the two bars appear to race each other.
 ///
 /// The rendering is delegated to ``LinearProgressBarCanvasView`` and computed from the current
 /// wall-clock time provided by ``TimelineView(.animation)``, which:
@@ -40,52 +48,59 @@ import SwiftUI
 /// - is compatible with iOS 15+;
 /// - remains deterministic regardless of view recycling.
 ///
-/// Motion is disabled and a static bar (``staticSweep`` = 70%) is displayed when either
-/// ``EnvironmentValues/accessibilityReduceMotion`` is `true`, Low Power Mode is enabled (via
-/// ``OUDSLowPowerModeObserver``) or ``animated`` is `false`.
+/// Motion is disabled and a static bar filled at 70% is displayed when either
+/// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled (via
+/// ``OUDSLowPowerModeObserver``). The indeterminate variant has no `animated` flag: the animation
+/// is intrinsic to the mode and only accessibility / battery conditions can disable it.
 struct LinearProgressIndicatorIndeterminateView: View {
 
-    // MARK: - Android Material 3 animation constants
+    // MARK: - Android Material 3 animation constants (AndroidX ProgressIndicator.kt)
 
-    /// Total duration of one animation cycle, in seconds.
-    static let cyclePeriod: TimeInterval = 1.8
+    /// Total duration of one animation cycle, in seconds. Matches Compose Material 3
+    /// `LinearAnimationDuration = 1750`.
+    static let cycleDuration: TimeInterval = 1.750
 
-    /// Delay before the first bar's head starts moving, in seconds.
+    // MARK: First bar
+
+    /// Delay before the first bar's head starts moving, in seconds (M3 `FirstLineHeadDelay = 0`).
     static let firstLineHeadDelay: TimeInterval = 0.0
 
-    /// Duration of the first bar's head animation, in seconds.
-    static let firstLineHeadDuration: TimeInterval = 0.750
+    /// Duration of the first bar's head animation, in seconds (M3 `FirstLineHeadDuration = 1000`).
+    static let firstLineHeadDuration: TimeInterval = 1.000
 
-    /// Delay before the first bar's tail starts moving, in seconds.
-    static let firstLineTailDelay: TimeInterval = 0.333
+    /// Delay before the first bar's tail starts moving, in seconds (M3 `FirstLineTailDelay = 250`).
+    static let firstLineTailDelay: TimeInterval = 0.250
 
-    /// Duration of the first bar's tail animation, in seconds.
-    static let firstLineTailDuration: TimeInterval = 0.850
+    /// Duration of the first bar's tail animation, in seconds (M3 `FirstLineTailDuration = 1000`).
+    static let firstLineTailDuration: TimeInterval = 1.000
 
-    /// Delay before the second bar's head starts moving, in seconds.
-    static let secondLineHeadDelay: TimeInterval = 1.000
+    // MARK: Second bar
 
-    /// Duration of the second bar's head animation, in seconds.
-    static let secondLineHeadDuration: TimeInterval = 0.567
+    /// Delay before the second bar's head starts moving, in seconds (M3 `SecondLineHeadDelay = 650`).
+    static let secondLineHeadDelay: TimeInterval = 0.650
 
-    /// Delay before the second bar's tail starts moving, in seconds.
-    static let secondLineTailDelay: TimeInterval = 1.233
+    /// Duration of the second bar's head animation, in seconds (M3 `SecondLineHeadDuration = 850`).
+    static let secondLineHeadDuration: TimeInterval = 0.850
 
-    /// Duration of the second bar's tail animation, in seconds.
-    static let secondLineTailDuration: TimeInterval = 0.433
+    /// Delay before the second bar's tail starts moving, in seconds (M3 `SecondLineTailDelay = 900`).
+    static let secondLineTailDelay: TimeInterval = 0.900
 
-    /// Fill used when animations are disabled (accessibility / low power / animated = false).
+    /// Duration of the second bar's tail animation, in seconds (M3 `SecondLineTailDuration = 850`).
+    static let secondLineTailDuration: TimeInterval = 0.850
+
+    // MARK: Fallback
+
+    /// Fill used when animations are disabled (accessibility Reduce Motion / Low Power Mode).
+    /// A determinate-style bar is drawn at this progress value with the current status color.
     static let staticSweep: CGFloat = 0.7
 
     // MARK: - Properties
 
-    let animated: Bool
     let foregroundColor: Color
     let trackColor: Color
     let strokeCap: CGLineCap
     let gapSize: OUDSLinearProgressIndicator.GapSize
     let hasTrack: Bool
-    let hasStopIndicator: Bool
     let barHeight: CGFloat
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -94,29 +109,31 @@ struct LinearProgressIndicatorIndeterminateView: View {
     // MARK: - Body
 
     var body: some View {
-        if !animated || reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
+        if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
+            // Reduce Motion / Low Power Mode: static determinate-style bar at 70%.
             LinearProgressBarCanvasView(
+                content: .determinate(progress: Self.staticSweep),
                 foregroundColor: foregroundColor,
                 trackColor: trackColor,
                 strokeCap: strokeCap,
-                progress: Self.staticSweep,
-                indeterminateBars: [],
                 hasTrack: hasTrack,
-                hasStopIndicator: hasStopIndicator,
+                hasStopIndicator: false,
                 gapSize: gapSize,
                 barHeight: barHeight)
         } else {
             TimelineView(.animation) { context in
                 let time = context.date.timeIntervalSinceReferenceDate
-                let bars = bars(at: time)
+                let f = fractions(at: time)
                 LinearProgressBarCanvasView(
+                    content: .indeterminate(firstHead: f.firstHead,
+                                            firstTail: f.firstTail,
+                                            secondHead: f.secondHead,
+                                            secondTail: f.secondTail),
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
-                    progress: 0,
-                    indeterminateBars: bars,
                     hasTrack: hasTrack,
-                    hasStopIndicator: hasStopIndicator,
+                    hasStopIndicator: false,
                     gapSize: gapSize,
                     barHeight: barHeight)
             }
@@ -125,70 +142,92 @@ struct LinearProgressIndicatorIndeterminateView: View {
 
     // MARK: - Time-based animations
 
-    /// Computes the head/tail fractions of both bars at time `t`, in seconds.
-    ///
-    /// The value `t` is normalized into a phase in `[0, cyclePeriod)`, then each phase (head/tail
-    /// of each bar) is computed independently. A bar with `head <= tail` is not drawn.
-    func bars(at time: TimeInterval) -> [(head: CGFloat, tail: CGFloat)] {
-        let phase = time.truncatingRemainder(dividingBy: Self.cyclePeriod)
-
-        let firstHead = fraction(phase: phase,
-                                 delay: Self.firstLineHeadDelay,
-                                 duration: Self.firstLineHeadDuration)
-        let firstTail = fraction(phase: phase,
-                                 delay: Self.firstLineTailDelay,
-                                 duration: Self.firstLineTailDuration)
-        let secondHead = fraction(phase: phase,
-                                  delay: Self.secondLineHeadDelay,
-                                  duration: Self.secondLineHeadDuration)
-        let secondTail = fraction(phase: phase,
-                                  delay: Self.secondLineTailDelay,
-                                  duration: Self.secondLineTailDuration)
-
-        return [
-            (head: firstHead, tail: firstTail),
-            (head: secondHead, tail: secondTail),
-        ]
+    /// Head/tail fractions of the two Material 3 indeterminate lines. Each fraction is expected in
+    /// `[0, 1]`. A line is not drawn when its `head <= tail`.
+    struct Fractions: Equatable {
+        let firstHead: CGFloat
+        let firstTail: CGFloat
+        let secondHead: CGFloat
+        let secondTail: CGFloat
     }
 
-    /// Returns the eased fraction at `phase` for an animation starting at `delay` and lasting `duration`.
+    /// Head/tail fractions of both bars at time `t`, in seconds.
     ///
-    /// - Before the delay, the fraction is `0`.
-    /// - After `delay + duration`, the fraction is `1`.
-    /// - Between, the linear `t = (phase - delay) / duration` is passed through the Material 3
-    ///   *FastOutSlowInEasing* curve (cubic-bezier(0.4, 0.0, 0.2, 1)).
-    private func fraction(phase: TimeInterval, delay: TimeInterval, duration: TimeInterval) -> CGFloat {
-        guard duration > 0 else { return 0 }
-        let raw = (phase - delay) / duration
-        if raw <= 0 {
-            return 0
+    /// The value `t` is normalized into a phase in `[0, cycleDuration)`, then each animation
+    /// (head/tail of each bar) is computed via ``fraction(phase:delay:duration:)``.
+    func fractions(at time: TimeInterval) -> Fractions {
+        let phase = time.truncatingRemainder(dividingBy: Self.cycleDuration)
+
+        let firstHead = Self.fraction(phase: phase,
+                                      delay: Self.firstLineHeadDelay,
+                                      duration: Self.firstLineHeadDuration)
+        let firstTail = Self.fraction(phase: phase,
+                                      delay: Self.firstLineTailDelay,
+                                      duration: Self.firstLineTailDuration)
+        let secondHead = Self.fraction(phase: phase,
+                                       delay: Self.secondLineHeadDelay,
+                                       duration: Self.secondLineHeadDuration)
+        let secondTail = Self.fraction(phase: phase,
+                                       delay: Self.secondLineTailDelay,
+                                       duration: Self.secondLineTailDuration)
+
+        return Fractions(firstHead: firstHead,
+                         firstTail: firstTail,
+                         secondHead: secondHead,
+                         secondTail: secondTail)
+    }
+
+    /// Returns the eased fraction at `phase` for a Compose Material 3 `keyframes` animation of the
+    /// form:
+    ///
+    /// ```
+    /// 0f at delay using easing
+    /// 1f at delay + duration
+    /// ```
+    ///
+    /// looped through `infiniteRepeatable`. In practice:
+    /// - Before `delay`, the fraction is **`1.0`** (the value at the end of the previous cycle).
+    /// - Between `delay` and `delay + duration`, it interpolates from `0.0` to `1.0` with the
+    ///   `EasingEmphasizedAccelerate` cubic Bézier.
+    /// - After `delay + duration`, the fraction stays at `1.0` until the end of the cycle.
+    ///
+    /// This is what produces the "caterpillar" effect: the head starts moving before the tail, so
+    /// the visible segment (`head - tail`) grows, then shrinks as the tail catches up.
+    static func fraction(phase: TimeInterval, delay: TimeInterval, duration: TimeInterval) -> CGFloat {
+        guard duration > 0 else { return 1.0 }
+        if phase < delay {
+            return 1.0
+        } else if phase < delay + duration {
+            let t = (phase - delay) / duration
+            return CGFloat(easingEmphasizedAccelerate(t))
+        } else {
+            return 1.0
         }
-        if raw >= 1 {
-            return 1
-        }
-        return CGFloat(Self.fastOutSlowIn(raw))
     }
 
     // MARK: - Easing
 
-    /// Approximates Material 3's *FastOutSlowInEasing* (`cubic-bezier(0.4, 0.0, 0.2, 1)`).
-    /// Implemented as an iterative bisection on the parametric Bézier `x(t)` to find the parameter
-    /// matching the input `x`, then evaluated as `y(t)`.
+    /// Approximates Material 3's `EasingEmphasizedAccelerateCubicBezier` (`cubic-bezier(0.3, 0, 0.8, 0.15)`).
     ///
-    /// The number of bisections is fixed and small (10) to stay fast — the resulting precision is
-    /// well below one pixel, which is far more than enough for a progress animation.
-    static func fastOutSlowIn(_ x: Double) -> Double {
-        // Control points of the cubic Bezier (P0 = (0,0), P3 = (1,1)).
-        let x1 = 0.4
-        let x2 = 0.2
+    /// Implemented as an iterative bisection on the parametric Bézier `x(t)` to find the parameter
+    /// matching the input `x`, then evaluated as `y(t)`. The number of bisections is fixed and
+    /// small (16) to stay fast — the resulting precision is well below one pixel.
+    static func easingEmphasizedAccelerate(_ x: Double) -> Double {
+        // Control points of the cubic Bezier (P0 = (0, 0), P3 = (1, 1)).
+        let x1 = 0.3
+        let x2 = 0.8
         let y1 = 0.0
-        let y2 = 1.0
+        let y2 = 0.15
+
+        // Special cases at boundaries.
+        if x <= 0.0 { return 0.0 }
+        if x >= 1.0 { return 1.0 }
 
         // Solve for t such that bezierX(t) == x, using bisection.
         var lower = 0.0
         var upper = 1.0
         var t = x
-        for _ in 0 ..< 10 {
+        for _ in 0 ..< 16 {
             let currentX = bezier(t, x1, x2)
             if currentX < x {
                 lower = t

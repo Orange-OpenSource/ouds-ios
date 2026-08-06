@@ -26,9 +26,15 @@ import SwiftUI
 /// - an **update** animation whenever the target `progress` changes.
 ///
 /// Both animations use the **same critically-damped spring** as
-/// ``CircularProgressIndicatorDeterminateView``, matching Android Material 3's `ProgressAnimationSpec`
-/// (`SpringSpec(dampingRatio: NoBouncy, stiffness: VeryLow)`). The perceived duration is around
-/// 1.5 seconds and the bar remains visible during the whole animation.
+/// ``CircularProgressIndicatorDeterminateView``, matching Android Material 3's
+/// `ProgressAnimationSpec` (`SpringSpec(dampingRatio: NoBouncy, stiffness: VeryLow)`). The
+/// perceived duration is around 1.5 seconds and the bar remains visible during the whole
+/// animation.
+///
+/// Rendering is delegated to ``LinearProgressBarCanvasView`` in `.determinate` mode, which uses a
+/// single animatable `Shape` to draw both the foreground and the track from the same `progress`
+/// value — this is what fixes the "jump to the right" glitch that used to happen at the end of
+/// the reveal animation.
 ///
 /// Animations are disabled and the target value is applied instantly when either
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true`, Low Power Mode is enabled (via
@@ -71,11 +77,10 @@ struct LinearProgressIndicatorDeterminateView: View {
 
     var body: some View {
         LinearProgressBarCanvasView(
+            content: .determinate(progress: CGFloat(displayedProgress)),
             foregroundColor: foregroundColor,
             trackColor: trackColor,
             strokeCap: strokeCap,
-            progress: CGFloat(displayedProgress),
-            indeterminateBars: [],
             hasTrack: hasTrack,
             hasStopIndicator: hasStopIndicator,
             gapSize: gapSize,

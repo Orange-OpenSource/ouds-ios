@@ -36,6 +36,11 @@ struct LinearProgressBarCanvasConstantsTests {
     }
 
     @Test
+    func `stop indicator trailing space must be 6 points (M3 spec)`() {
+        #expect(LinearProgressBarCanvasView.stopIndicatorTrailingSpace == 6.0)
+    }
+
+    @Test
     func `small gap size must be strictly smaller than default gap size`() {
         #expect(LinearProgressBarCanvasView.smallGapSize < LinearProgressBarCanvasView.defaultGapSize)
     }
@@ -43,9 +48,10 @@ struct LinearProgressBarCanvasConstantsTests {
 
 // MARK: - Determinate animator constants
 
-/// Tests on the Material 3 spring animation constants defined in ``LinearProgressIndicatorDeterminateView``.
-/// They must be aligned with ``CircularProgressIndicatorDeterminateView`` so both progress indicators share
-/// the same visual feel.
+/// Tests on the Material 3 spring animation constants defined in
+/// ``LinearProgressIndicatorDeterminateView``. They must be aligned with
+/// ``CircularProgressIndicatorDeterminateView`` so both progress indicators share the same visual
+/// feel.
 struct LinearDeterminateAnimatorConstantsTests {
 
     @Test
@@ -76,72 +82,80 @@ struct LinearDeterminateAnimatorConstantsTests {
     }
 }
 
-// MARK: - Indeterminate animator constants
+// MARK: - Indeterminate animator constants (AndroidX Material 3 reference)
 
 /// Tests on the Material 3 indeterminate animation constants defined in
-/// ``LinearProgressIndicatorIndeterminateView``.
+/// ``LinearProgressIndicatorIndeterminateView``. Values are the ones actually shipped by AndroidX
+/// Compose Material 3 `ProgressIndicator.kt`.
 struct LinearIndeterminateAnimConstantsTests {
 
     // MARK: - Cycle
 
     @Test
-    func `cycle period must be 1_8 seconds (M3 spec)`() {
-        #expect(LinearProgressIndicatorIndeterminateView.cyclePeriod == 1.8)
+    func `cycle duration must be 1_750 seconds (M3 LinearAnimationDuration)`() {
+        #expect(LinearProgressIndicatorIndeterminateView.cycleDuration == 1.750)
     }
 
     // MARK: - First bar
 
     @Test
-    func `first bar head must start at 0 and last 750 ms (M3 spec)`() {
+    func `first bar head must start at 0 ms and last 1_000 ms (M3 spec)`() {
         #expect(LinearProgressIndicatorIndeterminateView.firstLineHeadDelay == 0.0)
-        #expect(LinearProgressIndicatorIndeterminateView.firstLineHeadDuration == 0.750)
+        #expect(LinearProgressIndicatorIndeterminateView.firstLineHeadDuration == 1.000)
     }
 
     @Test
-    func `first bar tail must start at 333 ms and last 850 ms (M3 spec)`() {
-        #expect(LinearProgressIndicatorIndeterminateView.firstLineTailDelay == 0.333)
-        #expect(LinearProgressIndicatorIndeterminateView.firstLineTailDuration == 0.850)
+    func `first bar tail must start at 250 ms and last 1_000 ms (M3 spec)`() {
+        #expect(LinearProgressIndicatorIndeterminateView.firstLineTailDelay == 0.250)
+        #expect(LinearProgressIndicatorIndeterminateView.firstLineTailDuration == 1.000)
     }
 
     // MARK: - Second bar
 
     @Test
-    func `second bar head must start at 1 s and last 567 ms (M3 spec)`() {
-        #expect(LinearProgressIndicatorIndeterminateView.secondLineHeadDelay == 1.000)
-        #expect(LinearProgressIndicatorIndeterminateView.secondLineHeadDuration == 0.567)
+    func `second bar head must start at 650 ms and last 850 ms (M3 spec)`() {
+        #expect(LinearProgressIndicatorIndeterminateView.secondLineHeadDelay == 0.650)
+        #expect(LinearProgressIndicatorIndeterminateView.secondLineHeadDuration == 0.850)
     }
 
     @Test
-    func `second bar tail must start at 1_233 s and last 433 ms (M3 spec)`() {
-        #expect(LinearProgressIndicatorIndeterminateView.secondLineTailDelay == 1.233)
-        #expect(LinearProgressIndicatorIndeterminateView.secondLineTailDuration == 0.433)
+    func `second bar tail must start at 900 ms and last 850 ms (M3 spec)`() {
+        #expect(LinearProgressIndicatorIndeterminateView.secondLineTailDelay == 0.900)
+        #expect(LinearProgressIndicatorIndeterminateView.secondLineTailDuration == 0.850)
     }
 
     // MARK: - Coherence
 
     @Test
-    func `first bar head must start before its tail (M3 spec)`() {
+    func `first bar head must start before its tail (caterpillar effect)`() {
         #expect(LinearProgressIndicatorIndeterminateView.firstLineHeadDelay
             < LinearProgressIndicatorIndeterminateView.firstLineTailDelay)
     }
 
     @Test
-    func `second bar head must start before its tail (M3 spec)`() {
+    func `second bar head must start before its tail (caterpillar effect)`() {
         #expect(LinearProgressIndicatorIndeterminateView.secondLineHeadDelay
             < LinearProgressIndicatorIndeterminateView.secondLineTailDelay)
     }
 
     @Test
-    func `first bar must complete before the second bar starts (M3 spec)`() {
-        // First bar tail ends at 333 + 850 = 1183 ms, second head starts at 1000 ms → overlap OK.
-        // The important coherence: second bar starts before the cycle ends.
-        let secondBarEnd = LinearProgressIndicatorIndeterminateView.secondLineTailDelay
+    func `all animations must complete within the cycle duration`() {
+        let firstHeadEnd = LinearProgressIndicatorIndeterminateView.firstLineHeadDelay
+            + LinearProgressIndicatorIndeterminateView.firstLineHeadDuration
+        let firstTailEnd = LinearProgressIndicatorIndeterminateView.firstLineTailDelay
+            + LinearProgressIndicatorIndeterminateView.firstLineTailDuration
+        let secondHeadEnd = LinearProgressIndicatorIndeterminateView.secondLineHeadDelay
+            + LinearProgressIndicatorIndeterminateView.secondLineHeadDuration
+        let secondTailEnd = LinearProgressIndicatorIndeterminateView.secondLineTailDelay
             + LinearProgressIndicatorIndeterminateView.secondLineTailDuration
-        #expect(secondBarEnd < LinearProgressIndicatorIndeterminateView.cyclePeriod
-            || abs(secondBarEnd - LinearProgressIndicatorIndeterminateView.cyclePeriod) < 0.05)
+
+        #expect(firstHeadEnd <= LinearProgressIndicatorIndeterminateView.cycleDuration)
+        #expect(firstTailEnd <= LinearProgressIndicatorIndeterminateView.cycleDuration)
+        #expect(secondHeadEnd <= LinearProgressIndicatorIndeterminateView.cycleDuration)
+        #expect(secondTailEnd <= LinearProgressIndicatorIndeterminateView.cycleDuration)
     }
 
-    // MARK: - Static (accessibility / low power / animated: false) sweep
+    // MARK: - Static (Reduce Motion / Low Power Mode) sweep
 
     @Test
     func `static sweep must be 70 percent`() {
@@ -159,28 +173,92 @@ struct LinearIndeterminateAnimConstantsTests {
         #expect(LinearProgressIndicatorIndeterminateView.staticSweep
             == CircularProgressIndicatorIndeterminateView.staticSweep)
     }
+}
 
-    // MARK: - Easing
+// MARK: - Easing (EasingEmphasizedAccelerate — M3 cubic-bezier(0.3, 0, 0.8, 0.15))
+
+/// Tests on the M3 `EasingEmphasizedAccelerate` cubic-bezier easing used by all four indeterminate
+/// linear animations.
+struct LinearIndeterminateEasingTests {
 
     @Test
-    func `fastOutSlowIn at 0 must equal 0 (with small tolerance)`() {
-        #expect(abs(LinearProgressIndicatorIndeterminateView.fastOutSlowIn(0.0)) < 1e-3)
+    func `easing at 0 must equal 0`() {
+        #expect(LinearProgressIndicatorIndeterminateView.easingEmphasizedAccelerate(0.0) == 0.0)
     }
 
     @Test
-    func `fastOutSlowIn at 1 must approximately equal 1 (bisection precision)`() {
-        // The Bezier parametric solver uses 10 bisection iterations, which yields sub-pixel precision.
-        #expect(abs(LinearProgressIndicatorIndeterminateView.fastOutSlowIn(1.0) - 1.0) < 1e-3)
+    func `easing at 1 must equal 1`() {
+        #expect(LinearProgressIndicatorIndeterminateView.easingEmphasizedAccelerate(1.0) == 1.0)
     }
 
     @Test
-    func `fastOutSlowIn must be monotonically increasing`() {
-        var previous = LinearProgressIndicatorIndeterminateView.fastOutSlowIn(0.0)
+    func `easing must be monotonically increasing`() {
+        var previous = LinearProgressIndicatorIndeterminateView.easingEmphasizedAccelerate(0.0)
         for step in 1 ... 20 {
             let x = Double(step) / 20.0
-            let value = LinearProgressIndicatorIndeterminateView.fastOutSlowIn(x)
-            #expect(value >= previous)
+            let value = LinearProgressIndicatorIndeterminateView.easingEmphasizedAccelerate(x)
+            #expect(value >= previous - 1e-6) // small numerical tolerance
             previous = value
         }
+    }
+
+    @Test
+    func `easing must accelerate (value at 0_5 is strictly less than 0_5)`() {
+        // EasingEmphasizedAccelerate is a decelerating output curve: slow at the beginning,
+        // fast at the end. The value at t = 0.5 stays well below the diagonal (0.5).
+        let mid = LinearProgressIndicatorIndeterminateView.easingEmphasizedAccelerate(0.5)
+        #expect(mid < 0.5)
+    }
+}
+
+// MARK: - Fraction helper (Compose M3 keyframes behavior)
+
+/// Tests on ``LinearProgressIndicatorIndeterminateView/fraction(phase:delay:duration:)``, which
+/// must reproduce the Compose `keyframes` behavior: value is `1.0` before `delay`, then eases
+/// from `0.0` to `1.0` between `delay` and `delay + duration`, then stays at `1.0`.
+struct LinearIndeterminateFractionTests {
+
+    private let delay: TimeInterval = 0.25
+    private let duration: TimeInterval = 1.0
+
+    @Test
+    func `fraction before delay must be 1_0 (previous cycle value)`() {
+        let value = LinearProgressIndicatorIndeterminateView.fraction(phase: 0.1,
+                                                                      delay: delay,
+                                                                      duration: duration)
+        #expect(value == 1.0)
+    }
+
+    @Test
+    func `fraction exactly at delay must start from eased 0_0`() {
+        let value = LinearProgressIndicatorIndeterminateView.fraction(phase: delay,
+                                                                      delay: delay,
+                                                                      duration: duration)
+        #expect(value == 0.0)
+    }
+
+    @Test
+    func `fraction after animation end must stay at 1_0`() {
+        let value = LinearProgressIndicatorIndeterminateView.fraction(phase: delay + duration + 0.1,
+                                                                      delay: delay,
+                                                                      duration: duration)
+        #expect(value == 1.0)
+    }
+
+    @Test
+    func `fraction in the middle of the animation must be strictly less than 1 (accelerating)`() {
+        let value = LinearProgressIndicatorIndeterminateView.fraction(phase: delay + duration / 2.0,
+                                                                      delay: delay,
+                                                                      duration: duration)
+        #expect(value > 0.0)
+        #expect(value < 1.0)
+    }
+
+    @Test
+    func `fraction guards against zero duration`() {
+        let value = LinearProgressIndicatorIndeterminateView.fraction(phase: 0.5,
+                                                                      delay: 0.0,
+                                                                      duration: 0.0)
+        #expect(value == 1.0)
     }
 }

@@ -63,13 +63,11 @@ struct LinearProgressIndicatorView: View {
                 barHeight: scaledBarHeight)
         } else {
             LinearProgressIndicatorIndeterminateView(
-                animated: configuration.animated,
                 foregroundColor: foregroundColor,
                 trackColor: trackColor,
                 strokeCap: strokeCap,
                 gapSize: configuration.gapSize,
                 hasTrack: configuration.track,
-                hasStopIndicator: configuration.stopIndicator,
                 barHeight: scaledBarHeight)
         }
     }

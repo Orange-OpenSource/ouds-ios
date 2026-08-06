@@ -62,12 +62,15 @@ import SwiftUI
 /// - `false`: the track is hidden. Recommended when the indicator is embedded inside another component
 ///   (button, tag, toast) or when a more minimal appearance is needed.
 ///
-/// ## Stop indicator
+/// ## Stop indicator (determinate only)
 ///
 /// - `false` (default): no stop indicator is drawn.
-/// - `true`: a small square is drawn at the end of the track to identify the end of the range easily.
-///   Required by accessibility criteria when the track has a contrast below 3:1 with its container or the
-///   surface behind the container.
+/// - `true`: a small square (or dot if the theme uses rounded caps) is drawn at the end of the track to
+///   identify the end of the range easily. Required by accessibility criteria when the track has a
+///   contrast below 3:1 with its container or the surface behind the container.
+///
+/// The stop indicator is only available on the determinate variant, matching the Material 3
+/// specification: the indeterminate variant has no meaningful end position for it.
 ///
 /// ## Helper text
 ///
@@ -76,15 +79,16 @@ import SwiftUI
 ///
 /// ## Animation
 ///
-/// When `animated` is `true` (default), the determinate indicator progressively fills from `0` to the target
-/// `progress` on first display and animates any subsequent change of `progress`, using the same Material 3
-/// critically-damped spring as ``OUDSCircularProgressIndicator``. The indeterminate indicator plays the
-/// Material 3 two-bar animation. When `animated` is `false`, both variants display a static bar without any
-/// motion: the determinate indicator shows its target value instantly, and the indeterminate indicator falls
-/// back to a bar filled at 70%.
+/// - **Determinate**: when `animated` is `true` (default), the indicator progressively fills from `0`
+///   to the target `progress` on first display and animates any subsequent change of `progress`, using
+///   the same Material 3 critically-damped spring as ``OUDSCircularProgressIndicator``. When `animated`
+///   is `false`, the indicator is displayed instantly at its target value with no animation.
+/// - **Indeterminate**: the Material 3 two-line animation (1750 ms cycle, `EasingEmphasizedAccelerate`)
+///   is intrinsic to the mode and cannot be disabled from the call site — there is no `animated`
+///   parameter on the indeterminate initializer.
 ///
-/// Animations are always disabled and the static rendering is used when either
-/// `accessibilityReduceMotion` is `true` or Low Power Mode is enabled, regardless of the `animated` flag.
+/// Animations are always disabled and a static bar filled at 70% is displayed when either
+/// `accessibilityReduceMotion` is `true` or Low Power Mode is enabled.
 ///
 /// ## Code samples
 ///
@@ -107,12 +111,10 @@ import SwiftUI
 ///     // Determinate displayed instantly at its target value, without any animation
 ///     OUDSLinearProgressIndicator(progress: 0.75, animated: false)
 ///
-///     // Indeterminate
+///     // Indeterminate (always animated — Material 3 two-line race)
 ///     OUDSLinearProgressIndicator()
 ///     OUDSLinearProgressIndicator(status: .info)
-///
-///     // Indeterminate without motion (static bar at 70%)
-///     OUDSLinearProgressIndicator(animated: false)
+///     OUDSLinearProgressIndicator(status: .accent, helperText: "Processing…")
 /// ```
 ///
 /// ## Accessibility considerations
@@ -246,30 +248,30 @@ public struct OUDSLinearProgressIndicator: View {
 
     /// Creates an **indeterminate** linear progress indicator.
     ///
+    /// The Material 3 two-line animation is intrinsic to this mode and is always played, except when
+    /// `accessibilityReduceMotion` is on or when Low Power Mode is enabled — in which case a static
+    /// bar filled at 70% is displayed automatically. There is intentionally no `animated` parameter
+    /// nor `stopIndicator` parameter on this initializer: Material 3 does not expose them for
+    /// indeterminate linear progress indicators.
+    ///
     /// - Parameters:
     ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
-    ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track. Defaults to
-    ///      `false`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
-    ///    - animated: When `true` (default), the indicator loops the Material 3 two-bar animation. When
-    ///      `false`, a static bar filled at 70% is displayed. Animations are always disabled when
-    ///      `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this flag.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
+    ///      ``GapSize/default``.
     public init(status: Status = .neutral,
                 track: Bool = true,
-                stopIndicator: Bool = false,
                 helperText: String? = nil,
-                gapSize: GapSize = .default,
-                animated: Bool = true)
+                gapSize: GapSize = .default)
     {
         configuration = LinearProgressIndicatorConfiguration(progress: nil,
                                                              status: status,
                                                              track: track,
-                                                             stopIndicator: stopIndicator,
+                                                             stopIndicator: false,
                                                              helperText: helperText,
                                                              gapSize: gapSize,
-                                                             animated: animated)
+                                                             animated: true)
     }
 
     // MARK: - Body
