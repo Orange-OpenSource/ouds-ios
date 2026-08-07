@@ -54,14 +54,14 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     ///    - status: The color status of the indicator.
     ///    - track: Whether the track is displayed.
     ///    - gapSize: The size of the gap between the indicator and the track.
-    ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
     ///    - size: The size of the component could be adjusted if used interanly by components.
+    ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
     init(progress: Double?,
          status: OUDSProgressIndicatorStatus,
          track: Bool,
          gapSize: OUDSProgressIndicatorGapSize,
-         animated: Bool = true,
-         size: CGFloat)
+         size: CGFloat,
+         animated: Bool = true)
     {
         if let progress {
             self.progress = min(max(progress, 0.0), 1.0)

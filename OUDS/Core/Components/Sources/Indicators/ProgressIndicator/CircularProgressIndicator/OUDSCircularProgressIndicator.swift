@@ -134,7 +134,7 @@ import SwiftUI
 public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
 
     /// The default component size (matches the Android reference implementation and Material 3 defaults).
-    static public let defaultSize: CGFloat = 48.0
+    public static let defaultSize: CGFloat = 48.0
 
     // MARK: - Properties
 
@@ -166,8 +166,8 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
                                                                status: status,
                                                                track: track,
                                                                gapSize: gapSize,
-                                                               animated: animated,
-                                                               size: size)
+                                                               size: size,
+                                                               animated: animated)
     }
 
     /// Creates an **indeterminate** circular progress indicator.
@@ -186,8 +186,8 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
                                                                status: status,
                                                                track: track,
                                                                gapSize: gapSize,
-                                                               animated: true,
-                                                               size: size)
+                                                               size: size,
+                                                               animated: true)
     }
 
     // MARK: - Body
