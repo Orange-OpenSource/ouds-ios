@@ -41,6 +41,7 @@ struct CircularProgressCanvasView: View {
     let sweep: CGFloat // Sweep of the foreground arc, in `[0, 1]` (fraction of the full circle).
     let rotation: Double // Global rotation applied to both arcs, in degrees.
     let gapSize: OUDSProgressIndicatorGapSize
+    let size: CGFloat
 
     // MARK: - Body
 
@@ -123,7 +124,7 @@ struct CircularProgressCanvasView: View {
         case .small:
             // 1pt at the default size, scales linearly with the effective diameter, plus optional
             // round-cap compensation.
-            return diameter / CircularProgressIndicatorView.defaultSize + capCompensation
+            return diameter / size + capCompensation
         }
     }
 

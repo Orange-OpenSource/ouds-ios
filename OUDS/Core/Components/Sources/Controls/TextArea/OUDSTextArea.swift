@@ -189,7 +189,7 @@ import SwiftUI
 ///
 /// ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
 ///
-/// - Version: 1.2.0 (Figma component design version)
+/// - Version: 1.2.1 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTextArea: View {
@@ -238,9 +238,11 @@ public struct OUDSTextArea: View {
         case richError(message: AttributedString)
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
-        /// text entered. A progress indicator appears to inform the user that an action is in progress.
+        /// text entered. A circular progress indicator appears to inform the user that an action is in progress.
         /// The field remains editable while loading.
-        case loading
+        ///  - Parameter progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+        ///  value to `nil` to display a circular indeterminate progress indicator.
+        case loading(progress: Double? = nil)
 
         /// The `readOnly` status lets the text visible but not editable
         case readOnly
@@ -251,8 +253,10 @@ public struct OUDSTextArea: View {
 
         public static func == (lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
-            case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
+            case (.enabled, .enabled), (.readOnly, .readOnly), (.disabled, .disabled):
                 true
+            case let (.loading(lhsProgress), .loading(rhsProgress)):
+                lhsProgress == rhsProgress
             case let (.error(lhsMessage), .error(rhsMessage)):
                 lhsMessage == rhsMessage
             case let (.richError(lhsMessage), .richError(rhsMessage)):

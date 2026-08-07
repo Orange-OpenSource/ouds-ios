@@ -21,6 +21,7 @@ import Foundation
 /// - `gapSize`: the size of the gap between the indicator and the track.
 /// - `animated`: whether the determinate indicator animates on display and on progress updates.
 ///   Ignored in indeterminate mode (the Android Material 3 animation is intrinsic to the mode).
+/// - `size`:  the size of the component could be adjusted if used interanly by components.
 struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
 
     // MARK: - Properties
@@ -41,6 +42,9 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     /// changes of `progress`. Ignored in indeterminate mode.
     let animated: Bool
 
+    /// Size of the component could be adjusted if used interanly by components.
+    let size: CGFloat
+
     // MARK: - Initializer
 
     /// Creates a configuration. The `progress` value is clamped to `[0, 1]` when non-nil.
@@ -51,11 +55,13 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     ///    - track: Whether the track is displayed.
     ///    - gapSize: The size of the gap between the indicator and the track.
     ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
+    ///    - size: The size of the component could be adjusted if used interanly by components.
     init(progress: Double?,
          status: OUDSProgressIndicatorStatus,
          track: Bool,
          gapSize: OUDSProgressIndicatorGapSize,
-         animated: Bool = true)
+         animated: Bool = true,
+         size: CGFloat)
     {
         if let progress {
             self.progress = min(max(progress, 0.0), 1.0)
@@ -66,6 +72,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
         self.track = track
         self.gapSize = gapSize
         self.animated = animated
+        self.size = size
     }
 
     // MARK: - Helpers

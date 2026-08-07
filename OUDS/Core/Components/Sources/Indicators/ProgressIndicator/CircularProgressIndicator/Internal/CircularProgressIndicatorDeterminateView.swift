@@ -68,13 +68,14 @@ struct CircularProgressIndicatorDeterminateView: View {
     let trackColor: Color
     let strokeCap: CGLineCap
     let gapSize: OUDSProgressIndicatorGapSize
-
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    let size: CGFloat
 
     /// Current displayed progress. Starts at `0` so that the first `onAppear` can animate towards
     /// the target value when ``animated`` is `true`.
     @State private var displayedProgress: Double = 0
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
 
     // MARK: - Body
 
@@ -85,7 +86,8 @@ struct CircularProgressIndicatorDeterminateView: View {
             strokeCap: strokeCap,
             sweep: CGFloat(displayedProgress),
             rotation: -90,
-            gapSize: gapSize)
+            gapSize: gapSize,
+            size: size)
             .onAppear {
                 apply(newValue: progress)
             }

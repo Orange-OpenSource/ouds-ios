@@ -17,11 +17,6 @@ import SwiftUI
 /// Internal view that draws an ``OUDSCircularProgressIndicator``.
 struct CircularProgressIndicatorView: View {
 
-    // MARK: - Constants
-
-    /// Default component size (matches the Android reference implementation and Material 3 defaults).
-    static let defaultSize: CGFloat = 48.0
-
     // MARK: - Properties
 
     let configuration: CircularProgressIndicatorConfiguration
@@ -29,7 +24,12 @@ struct CircularProgressIndicatorView: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
-    @ScaledMetric private var scaledDefaultSize: CGFloat = CircularProgressIndicatorView.defaultSize
+    @ScaledMetric private var scaledDefaultSize: CGFloat
+
+    init(configuration: CircularProgressIndicatorConfiguration) {
+        self.configuration = configuration
+        _scaledDefaultSize = ScaledMetric(wrappedValue: configuration.size)
+    }
 
     // MARK: - Body
 
@@ -42,14 +42,16 @@ struct CircularProgressIndicatorView: View {
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
-                    gapSize: configuration.gapSize)
+                    gapSize: configuration.gapSize,
+                    size: configuration.size)
             } else {
                 CircularProgressIndicatorIndeterminateView(
                     foregroundColor: foregroundColor,
                     trackColor: trackColor,
                     strokeCap: strokeCap,
                     gapSize: configuration.gapSize,
-                    hasTrack: configuration.track)
+                    hasTrack: configuration.track,
+                    size: scaledDefaultSize)
             }
         }
         .frame(width: scaledDefaultSize, height: scaledDefaultSize)
