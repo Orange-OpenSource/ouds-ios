@@ -36,7 +36,7 @@ struct TextInputCircularProgressIndicator: View {
     var body: some View {
         Group {
             if let progress {
-                OUDSCircularProgressIndicator(progress: progress, status: status, track: track, size: size)
+                OUDSCircularProgressIndicator(progress: progress, status: status, track: track, animated: false, size: size)
             } else {
                 OUDSCircularProgressIndicator(status: status, track: track, size: size)
             }
