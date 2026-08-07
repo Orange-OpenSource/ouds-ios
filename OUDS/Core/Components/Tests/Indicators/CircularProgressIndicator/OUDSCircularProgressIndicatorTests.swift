@@ -25,11 +25,13 @@ struct OUDSCircularProgressIndicatorTests {
         let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
                                                                    status: .neutral,
                                                                    track: true,
-                                                                   gapSize: .default)
+                                                                   gapSize: .default,
+                                                                   size: 44)
         #expect(configuration.progress == 0.5)
         #expect(configuration.status == .neutral)
         #expect(configuration.track == true)
         #expect(configuration.gapSize == .default)
+        #expect(configuration.size == 44)
         #expect(configuration.isIndeterminate == false)
     }
 
@@ -41,11 +43,14 @@ struct OUDSCircularProgressIndicatorTests {
         let configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                    status: .neutral,
                                                                    track: true,
-                                                                   gapSize: .default)
+                                                                   gapSize: .default,
+                                                                   size: 44)
         #expect(configuration.progress == nil)
         #expect(configuration.status == .neutral)
         #expect(configuration.track == true)
         #expect(configuration.gapSize == .default)
+        #expect(configuration.size == 44)
+
         #expect(configuration.isIndeterminate)
     }
 
@@ -56,7 +61,8 @@ struct OUDSCircularProgressIndicatorTests {
         let configuration = CircularProgressIndicatorConfiguration(progress: -0.5,
                                                                    status: .neutral,
                                                                    track: true,
-                                                                   gapSize: .default)
+                                                                   gapSize: .default,
+                                                                   size: 44)
         #expect(configuration.progress == 0.0)
     }
 
@@ -65,7 +71,8 @@ struct OUDSCircularProgressIndicatorTests {
         let configuration = CircularProgressIndicatorConfiguration(progress: 1.5,
                                                                    status: .neutral,
                                                                    track: true,
-                                                                   gapSize: .default)
+                                                                   gapSize: .default,
+                                                                   size: 44)
         #expect(configuration.progress == 1.0)
     }
 
@@ -75,7 +82,8 @@ struct OUDSCircularProgressIndicatorTests {
             let configuration = CircularProgressIndicatorConfiguration(progress: value,
                                                                        status: .neutral,
                                                                        track: true,
-                                                                       gapSize: .default)
+                                                                       gapSize: .default,
+                                                                       size: 44)
             #expect(configuration.progress == value)
         }
     }
@@ -85,7 +93,8 @@ struct OUDSCircularProgressIndicatorTests {
         let configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                    status: .neutral,
                                                                    track: true,
-                                                                   gapSize: .default)
+                                                                   gapSize: .default,
+                                                                   size: 44)
         #expect(configuration.progress == nil)
         #expect(configuration.isIndeterminate)
     }
