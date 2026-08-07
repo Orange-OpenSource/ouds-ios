@@ -144,56 +144,58 @@ public struct OUDSListItemVideo: View {
         // NOTE: #265 - Does the video must be disabled or muted if Voice Over enabled?
         // NOTE: #265 - What should we do when network communication is missing or is retrieved?
         // Today player is not displayed in that cases.
-        VideoPlayerView(player: player)
-            .opacity(opacity)
-            .frame(width: assetSize, height: assetSize)
-            .clipShape(RoundedRectangle(cornerRadius: radius))
-            .accessibilityHidden(true)
-            .onTapGesture {
-                if isEnabled {
-                    if tapToTogglePlay {
-                        if isPlaying {
-                            player.pause()
-                        } else {
-                            player.play()
-                        }
-                        isPlaying.toggle()
+        VStack {
+            VideoPlayerView(player: player)
+        }
+        .frame(width: assetSize * 16 / 9, height: assetSize)
+        .opacity(opacity)
+        .clipShape(RoundedRectangle(cornerRadius: radius))
+        .accessibilityHidden(true)
+        .onTapGesture {
+            if isEnabled {
+                if tapToTogglePlay {
+                    if isPlaying {
+                        player.pause()
+                    } else {
+                        player.play()
                     }
-                    if tapToToggleMute {
-                        isMuted.toggle()
-                        player.isMuted = isMuted
-                    }
+                    isPlaying.toggle()
+                }
+                if tapToToggleMute {
+                    isMuted.toggle()
+                    player.isMuted = isMuted
                 }
             }
-            .onAppear {
-                if isEnabled {
-                    player.isMuted = muted
-                    isMuted = muted
-                    if autoplay {
-                        startPlayback()
-                    } else {
-                        // Seek to zero to force first-frame decode and display thumbnail
-                        player.seek(to: .zero)
-                    }
+        }
+        .onAppear {
+            if isEnabled {
+                player.isMuted = muted
+                isMuted = muted
+                if autoplay {
+                    startPlayback()
                 } else {
+                    // Seek to zero to force first-frame decode and display thumbnail
                     player.seek(to: .zero)
                 }
+            } else {
+                player.seek(to: .zero)
             }
-            .onDisappear {
-                if isEnabled {
-                    player.pause()
-                    isPlaying = false
-                    removeLoopObserver()
-                }
+        }
+        .onDisappear {
+            if isEnabled {
+                player.pause()
+                isPlaying = false
+                removeLoopObserver()
             }
+        }
         #if os(visionOS)
-            .onChange(of: url) { _, newURL in
-                refreshPlayer(with: newURL)
-            }
+        .onChange(of: url) { _, newURL in
+            refreshPlayer(with: newURL)
+        }
         #else
-            .onChange(of: url) { newURL in
-                refreshPlayer(with: newURL)
-            }
+        .onChange(of: url) { newURL in
+            refreshPlayer(with: newURL)
+        }
         #endif
         #else // not os(iOS) && canImport(UIKit)
         EmptyView()
