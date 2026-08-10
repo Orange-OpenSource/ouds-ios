@@ -28,9 +28,23 @@ body:
       label: Checklist for Core Team
       description: Some points to check before any merge
       options:
-        - label: Tokens have been updated
-        - label: Documentations have been updated
+        - label: Tokens library have been updated if needed
+        - label: Technical Swift DocC documentation has been updated
+        - label: AI agents skills files have been updated
         - label: Unit tests have been updated
         - label: UI tests have been updated
+        - label: Accessibility has been considered with Voice Over navigation
+        - label: Accessibility has been considered with Full Keyboard Access navigation
+        - label: Accessibility has been considered with Switch Control navigation
+        - label: Accessibility has been considered with reduced animations
+        - label: Accessibility has been considered with Dynamic Types usages
+        - label: Ecodesign has been considered with low power mode
+        - label: Snapshots tests have been updated
         - label: Design System Toolbox has been updated
+        - label: Tested on iOS
+        - label: Tested on iPadOS
+        - label: Tested on tvOS
+        - label: Tested on macOS
+        - label: Tested on visionOS
+        - label: Tested on watchOS
         - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround
