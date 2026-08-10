@@ -14,98 +14,129 @@
 import Foundation
 
 /// Internal configuration used to draw an ``OUDSLinearProgressIndicator``.
-///
-/// - `progress`: when `nil`, the indicator is **indeterminate**. When set, the value is clamped to `[0, 1]`.
-/// - `status`: the color status of the indicator.
-/// - `track`: whether the track is displayed on the right of the progress bar.
-/// - `stopIndicator`: whether a small square is displayed at the end of the track to identify the end of the range.
-/// - `helperText`: optional text displayed below the bar (centered, `labelDefaultMedium`, `contentDefault`).
-/// - `gapSize`: the size of the gap between the foreground bar and the track.
-/// - `animated`: whether the indicator animates on display / on progress updates (determinate), or whether
-///   the indeterminate animation loops (indeterminate). When `false` a static fallback rendering is used.
-struct LinearProgressIndicatorConfiguration: Equatable, Sendable {
+enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
-    // MARK: - Properties
+    case determinate(Determinate)
+    case indeterminate(Indeterminate)
 
-    /// Clamped progress in `[0, 1]`; `nil` means the indicator is indeterminate.
-    let progress: Double?
+    // MARK: - Determinate
 
-    /// Color status of the indicator.
-    let status: OUDSLinearProgressIndicator.Status
+    /// Configuration parameters exclusive to the determinate variant.
+    struct Determinate: Equatable, Sendable {
 
-    /// Whether the track is displayed on the right of the foreground bar.
-    let track: Bool
+        /// Clamped progress in `[0, 1]`.
+        let progress: Double
 
-    /// Whether a stop indicator is displayed at the end of the track.
-    let stopIndicator: Bool
+        /// Color status of the indicator.
+        let status: ProgressIndicatorStatus
 
-    /// Optional additional text displayed below the bar.
-    let helperText: String?
+        /// Whether the track is displayed on the right of the foreground bar.
+        let track: Bool
 
-    /// Size of the gap between the foreground bar and the track.
-    let gapSize: OUDSLinearProgressIndicator.GapSize
+        /// Whether a stop indicator is displayed at the end of the track.
+        let stopIndicator: Bool
 
-    /// Whether the indicator animates. When `false`, the determinate value is displayed instantly and
-    /// the indeterminate mode falls back to a static bar (see ``LinearProgressIndicatorIndeterminateView/staticSweep``).
-    let animated: Bool
+        /// Optional additional text displayed below the bar.
+        let helperText: String?
 
-    // MARK: - Initializer
+        /// Size of the gap between the foreground bar and the track.
+        let gapSize: ProgressIndicatorGapSize
 
-    /// Creates a configuration. The `progress` value is clamped to `[0, 1]` when non-nil.
-    ///
-    /// When `progress` is `nil` (indeterminate mode), the following invariants are enforced,
-    /// regardless of the values passed to this initializer:
-    /// - `stopIndicator` is forced to `false` — Material 3 does not expose a stop indicator in
-    ///   the indeterminate variant, and there is no meaningful position for it.
-    /// - `animated` is forced to `true` — the Material 3 animation is intrinsic to the
-    ///   indeterminate mode. Motion is disabled at render time by
-    ///   ``LinearProgressIndicatorIndeterminateView`` when `accessibilityReduceMotion` is on or
-    ///   when Low Power Mode is enabled.
-    ///
-    /// - Parameters:
-    ///    - progress: The current progress in the `[0, 1]` range, or `nil` for indeterminate.
-    ///    - status: The color status of the indicator.
-    ///    - track: Whether the track is displayed.
-    ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track.
-    ///      Ignored in indeterminate mode.
-    ///    - helperText: Optional text displayed below the bar.
-    ///    - gapSize: The size of the gap between the indicator and the track.
-    ///    - animated: Whether the indicator animates. Defaults to `true`. Ignored in
-    ///      indeterminate mode.
-    init(progress: Double?,
-         status: OUDSLinearProgressIndicator.Status,
-         track: Bool,
-         stopIndicator: Bool,
-         helperText: String?,
-         gapSize: OUDSLinearProgressIndicator.GapSize,
-         animated: Bool = true)
-    {
-        if let progress {
+        /// Whether the reveal / update animation is played.
+        let animated: Bool
+
+        /// Creates a determinate configuration. The `progress` value is clamped to `[0, 1]`.
+        init(progress: Double,
+             status: ProgressIndicatorStatus,
+             track: Bool,
+             stopIndicator: Bool,
+             helperText: String?,
+             gapSize: ProgressIndicatorGapSize,
+             animated: Bool)
+        {
             self.progress = min(max(progress, 0.0), 1.0)
+            self.status = status
+            self.track = track
             self.stopIndicator = stopIndicator
+            self.helperText = helperText
+            self.gapSize = gapSize
             self.animated = animated
-        } else {
-            self.progress = nil
-            // Enforce M3 invariants in indeterminate mode.
-            self.stopIndicator = false
-            self.animated = true
         }
-        self.status = status
-        self.track = track
-        self.helperText = helperText
-        self.gapSize = gapSize
     }
 
-    // MARK: - Helpers
+    // MARK: - Indeterminate
+
+    /// Configuration parameters exclusive to the indeterminate variant.
+    struct Indeterminate: Equatable, Sendable {
+
+        /// Color status of the indicator.
+        let status: ProgressIndicatorStatus
+
+        /// Whether the track is displayed.
+        let track: Bool
+
+        /// Optional additional text displayed below the bar.
+        let helperText: String?
+
+        /// Size of the gap between the bars and the track.
+        let gapSize: ProgressIndicatorGapSize
+    }
+
+    // MARK: - Convenience accessors
 
     /// Convenience: `true` when the indicator is indeterminate.
     var isIndeterminate: Bool {
-        progress == nil
+        if case .indeterminate = self { return true }
+        return false
+    }
+
+    /// The color status of the indicator, regardless of the variant.
+    var status: ProgressIndicatorStatus {
+        switch self {
+        case let .determinate(configuration):
+            configuration.status
+        case let .indeterminate(configuration):
+            configuration.status
+        }
+    }
+
+    /// Whether the track is displayed, regardless of the variant.
+    var track: Bool {
+        switch self {
+        case let .determinate(configuration):
+            configuration.track
+        case let .indeterminate(configuration):
+            configuration.track
+        }
+    }
+
+    /// The optional helper text displayed below the bar, regardless of the variant.
+    var helperText: String? {
+        switch self {
+        case let .determinate(configuration):
+            configuration.helperText
+        case let .indeterminate(configuration):
+            configuration.helperText
+        }
+    }
+
+    /// The size of the gap between the foreground and the track, regardless of the variant.
+    var gapSize: ProgressIndicatorGapSize {
+        switch self {
+        case let .determinate(configuration):
+            configuration.gapSize
+        case let .indeterminate(configuration):
+            configuration.gapSize
+        }
+    }
+
+    /// The current progress if determinate, `nil` if indeterminate.
+    var progress: Double? {
+        switch self {
+        case let .determinate(configuration):
+            configuration.progress
+        case .indeterminate:
+            nil
+        }
     }
 }
-
-// MARK: - Status / GapSize conformance
-
-extension OUDSLinearProgressIndicator.Status: Equatable {}
-
-extension OUDSLinearProgressIndicator.GapSize: Equatable {}

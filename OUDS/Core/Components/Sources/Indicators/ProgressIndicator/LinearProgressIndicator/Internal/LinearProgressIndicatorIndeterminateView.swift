@@ -41,51 +41,45 @@ import SwiftUI
 /// caterpillar stretching then shrinking, and the two bars appear to race each other.
 ///
 /// The rendering is delegated to ``LinearProgressBarCanvasView`` and computed from the current
-/// wall-clock time provided by ``TimelineView(.animation)``, which:
-///
-/// - avoids any `@State`-driven invalidation that could propagate a layout invalidation up to the
-///   parent (a known cause of navigation-bar glitches);
-/// - is compatible with iOS 15+;
-/// - remains deterministic regardless of view recycling.
+/// wall-clock time provided by ``TimelineView(.animation)``.
 ///
 /// Motion is disabled and a static bar filled at 70% is displayed when either
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled (via
-/// ``OUDSLowPowerModeObserver``). The indeterminate variant has no `animated` flag: the animation
-/// is intrinsic to the mode and only accessibility / battery conditions can disable it.
+/// ``OUDSLowPowerModeObserver``).
 struct LinearProgressIndicatorIndeterminateView: View {
 
-    // MARK: - Android Material 3 animation constants (AndroidX ProgressIndicator.kt)
+    // MARK: - Android Material 3 animation constants
 
-    /// Total duration of one animation cycle, in seconds. Matches Compose Material 3
+    /// Total duration of one animation cycle, in seconds. Matches Android Compose Material 3
     /// `LinearAnimationDuration = 1750`.
     static let cycleDuration: TimeInterval = 1.750
 
     // MARK: First bar
 
-    /// Delay before the first bar's head starts moving, in seconds (M3 `FirstLineHeadDelay = 0`).
+    /// Delay before the first bar's head starts moving, in seconds (Android Material 3 `FirstLineHeadDelay = 0`).
     static let firstLineHeadDelay: TimeInterval = 0.0
 
-    /// Duration of the first bar's head animation, in seconds (M3 `FirstLineHeadDuration = 1000`).
+    /// Duration of the first bar's head animation, in seconds (Android Material 3 `FirstLineHeadDuration = 1000`).
     static let firstLineHeadDuration: TimeInterval = 1.000
 
-    /// Delay before the first bar's tail starts moving, in seconds (M3 `FirstLineTailDelay = 250`).
+    /// Delay before the first bar's tail starts moving, in seconds (Android Material 3 `FirstLineTailDelay = 250`).
     static let firstLineTailDelay: TimeInterval = 0.250
 
-    /// Duration of the first bar's tail animation, in seconds (M3 `FirstLineTailDuration = 1000`).
+    /// Duration of the first bar's tail animation, in seconds (Android Material 3 `FirstLineTailDuration = 1000`).
     static let firstLineTailDuration: TimeInterval = 1.000
 
     // MARK: Second bar
 
-    /// Delay before the second bar's head starts moving, in seconds (M3 `SecondLineHeadDelay = 650`).
+    /// Delay before the second bar's head starts moving, in seconds (Android Material 3 `SecondLineHeadDelay = 650`).
     static let secondLineHeadDelay: TimeInterval = 0.650
 
-    /// Duration of the second bar's head animation, in seconds (M3 `SecondLineHeadDuration = 850`).
+    /// Duration of the second bar's head animation, in seconds (Android Material 3 `SecondLineHeadDuration = 850`).
     static let secondLineHeadDuration: TimeInterval = 0.850
 
-    /// Delay before the second bar's tail starts moving, in seconds (M3 `SecondLineTailDelay = 900`).
+    /// Delay before the second bar's tail starts moving, in seconds (Android Material 3 `SecondLineTailDelay = 900`).
     static let secondLineTailDelay: TimeInterval = 0.900
 
-    /// Duration of the second bar's tail animation, in seconds (M3 `SecondLineTailDuration = 850`).
+    /// Duration of the second bar's tail animation, in seconds (Android Material 3 `SecondLineTailDuration = 850`).
     static let secondLineTailDuration: TimeInterval = 0.850
 
     // MARK: Fallback
@@ -99,7 +93,7 @@ struct LinearProgressIndicatorIndeterminateView: View {
     let foregroundColor: Color
     let trackColor: Color
     let strokeCap: CGLineCap
-    let gapSize: OUDSLinearProgressIndicator.GapSize
+    let gapSize: ProgressIndicatorGapSize
     let hasTrack: Bool
     let barHeight: CGFloat
 
@@ -142,7 +136,7 @@ struct LinearProgressIndicatorIndeterminateView: View {
 
     // MARK: - Time-based animations
 
-    /// Head/tail fractions of the two Material 3 indeterminate lines. Each fraction is expected in
+    /// Head/tail fractions of the two Android Material 3 indeterminate lines. Each fraction is expected in
     /// `[0, 1]`. A line is not drawn when its `head <= tail`.
     struct Fractions: Equatable {
         let firstHead: CGFloat
@@ -177,7 +171,7 @@ struct LinearProgressIndicatorIndeterminateView: View {
                          secondTail: secondTail)
     }
 
-    /// Returns the eased fraction at `phase` for a Compose Material 3 `keyframes` animation of the
+    /// Returns the eased fraction at `phase` for an Android Compose Material 3 `keyframes` animation of the
     /// form:
     ///
     /// ```
@@ -185,7 +179,7 @@ struct LinearProgressIndicatorIndeterminateView: View {
     /// 1f at delay + duration
     /// ```
     ///
-    /// looped through `infiniteRepeatable`. In practice:
+    /// Mooped through `infiniteRepeatable`. In practice:
     /// - Before `delay`, the fraction is **`1.0`** (the value at the end of the previous cycle).
     /// - Between `delay` and `delay + duration`, it interpolates from `0.0` to `1.0` with the
     ///   `EasingEmphasizedAccelerate` cubic Bézier.
@@ -207,7 +201,7 @@ struct LinearProgressIndicatorIndeterminateView: View {
 
     // MARK: - Easing
 
-    /// Approximates Material 3's `EasingEmphasizedAccelerateCubicBezier` (`cubic-bezier(0.3, 0, 0.8, 0.15)`).
+    /// Approximates Android Material 3's `EasingEmphasizedAccelerateCubicBezier` (`cubic-bezier(0.3, 0, 0.8, 0.15)`).
     ///
     /// Implemented as an iterative bisection on the parametric Bézier `x(t)` to find the parameter
     /// matching the input `x`, then evaluated as `y(t)`. The number of bisections is fixed and

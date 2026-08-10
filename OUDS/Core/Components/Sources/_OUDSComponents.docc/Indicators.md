@@ -131,7 +131,7 @@ OUDSCircularProgressIndicator(status: .accent)
     }
 }
 
-An ``OUDSLinearProgressIndicator`` is a horizontal progress indicator which can be used to display determinate value or indeterminate value with Material 3 animations. The determinate variant also supports an optional stop indicator and a centered helper text below the bar. The indeterminate variant plays the Material 3 two-line "caterpillar race" animation and is always animated (motion is disabled automatically by Reduce Motion / Low Power Mode).
+An ``OUDSLinearProgressIndicator`` is a horizontal progress indicator which can be used to display determinate value or indeterminate value animations.
 
 ```swift
 // A horizontal bar filled at 75% in neutral color with a track and reveal animation
@@ -140,11 +140,8 @@ OUDSLinearProgressIndicator(progress: 0.75, status: .neutral)
 // A horizontal bar without defined value and an accent color
 OUDSLinearProgressIndicator(status: .accent)
 
-// A horizontal bar with a helper text and a stop indicator (determinate only)
-OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: "Uploading…")
-
-// A horizontal bar displayed instantly at its target value, without any animation (determinate only)
-OUDSLinearProgressIndicator(progress: 0.75, animated: false)
+// A horizontal bar with a helper text, a stop indicator (determinate only) and no animations
+OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: "Uploading…", animated: false)
 
 // An indeterminate horizontal bar with a helper text
 OUDSLinearProgressIndicator(status: .info, helperText: "Processing…")

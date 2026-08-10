@@ -47,7 +47,7 @@ struct LinearProgressBarCanvasView: View {
 
     // MARK: - Constants
 
-    /// Default gap between the foreground bar and the track, in points (Material 3 spec).
+    /// Default gap between the foreground bar and the track, in points (Android Material 3 specification).
     static let defaultGapSize: CGFloat = 4.0
 
     /// Reduced gap between the foreground bar and the track, in points.
@@ -58,7 +58,7 @@ struct LinearProgressBarCanvasView: View {
     static let stopIndicatorSideRatio: CGFloat = 1.0
 
     /// Trailing space between the stop indicator and the right edge of the bar, in points.
-    /// Matches Compose Material 3 `StopIndicatorTrailingSpace = 6.dp`, but capped in
+    /// Matches Android Compose Material 3 `StopIndicatorTrailingSpace = 6.dp`, but capped in
     /// ``stopIndicatorOffset(barHeight:stopSize:)`` so it cannot exceed the vertical padding
     /// available for the stop indicator inside the bar height.
     static let stopIndicatorTrailingSpace: CGFloat = 6.0
@@ -98,7 +98,7 @@ struct LinearProgressBarCanvasView: View {
     let hasStopIndicator: Bool
 
     /// Requested gap size.
-    let gapSize: OUDSLinearProgressIndicator.GapSize
+    let gapSize: ProgressIndicatorGapSize
 
     /// Height of the bar, in points. Corresponds to `theme.progressIndicator.sizeLinearIndicatorHeight`
     /// scaled by Dynamic Type.
@@ -148,7 +148,7 @@ struct LinearProgressBarCanvasView: View {
 
     // MARK: - Indeterminate rendering
 
-    /// Head/tail fractions of the two Material 3 indeterminate lines, grouped together to keep
+    /// Head/tail fractions of the two Android Material 3 indeterminate lines, grouped together to keep
     /// the ``indeterminateCanvas(totalWidth:gapFraction:cornerRadius:fractions:)`` signature short.
     struct IndeterminateFractions {
         let firstHead: CGFloat
@@ -157,7 +157,7 @@ struct LinearProgressBarCanvasView: View {
         let secondTail: CGFloat
     }
 
-    /// Draws the five Material 3 indeterminate segments (three track segments + two colored
+    /// Draws the five Android Material 3 indeterminate segments (three track segments + two colored
     /// lines) via a SwiftUI `Canvas`, using the exact same layout as
     /// AndroidX Compose `LinearProgressIndicator`.
     @ViewBuilder
@@ -175,7 +175,7 @@ struct LinearProgressBarCanvasView: View {
         }
     }
 
-    /// Draws the five Material 3 indeterminate segments in the given `GraphicsContext`. Split from
+    /// Draws the five Android Material 3 indeterminate segments in the given `GraphicsContext`. Split from
     /// ``indeterminateCanvas(totalWidth:gapFraction:cornerRadius:fractions:)`` to keep view bodies
     /// short.
     private func drawIndeterminate(context: GraphicsContext,
@@ -328,22 +328,10 @@ struct LinearProgressBarCanvasView: View {
     }
 }
 
-// MARK: - Animatable determinate shape
+// MARK: - Linear Progress Bar Shape
 
-/// A single `Shape` that traces both the foreground bar and the track of a determinate linear
+/// A single `View` that traces both the foreground bar and the track of a determinate linear
 /// progress indicator in a single `path(in:)` call, using a single animatable value (`progress`).
-///
-/// SwiftUI interpolates `animatableData` frame by frame during a `withAnimation` block, so
-/// foreground and track always stay perfectly synchronized — there is no way for the track to
-/// shift on its own at the end of the animation, which fixes the "jump to the right" glitch that
-/// happens when the foreground and track are two independent views with their own implicit
-/// animations.
-///
-/// The `Shape` conformance renders via strokes / fills applied by the caller. In this project we
-/// use it through a wrapper view that fills the foreground path with the status color and the
-/// track path with the track color. To achieve two different colors in a single `path(in:)`
-/// invocation without exposing `GraphicsContext`, we use a lightweight private wrapper view that
-/// draws two Shapes with the same `animatableData` so SwiftUI interpolates them in lockstep.
 private struct LinearProgressBarShape: View {
 
     let progress: CGFloat
@@ -372,6 +360,8 @@ private struct LinearProgressBarShape: View {
     }
 }
 
+// MARK: - Linear Progress Bar Segment Shape
+
 /// A `Shape` that draws either the foreground segment (`[0, fraction]`) or the track segment
 /// (`[fraction + min(fraction, gap), 1]`) of the determinate linear progress indicator, depending
 /// on ``isTrack``.
@@ -382,7 +372,7 @@ private struct LinearProgressBarShape: View {
 /// animates in lockstep and never introduces a discontinuity — the horizontal offset of the
 /// track is computed from the exact same `fraction` at every frame.
 ///
-/// Mirrors the Compose Material 3 reference formula:
+/// Mirrors the Android Compose Material 3 reference formula:
 /// `trackStartFraction = progress + min(progress, gapSizeFraction)`.
 private struct LinearProgressBarSegmentShape: Shape {
 
@@ -403,7 +393,7 @@ private struct LinearProgressBarSegmentShape: Shape {
         let height = rect.height
 
         if isTrack {
-            // Compose M3: trackStart = progress + min(progress, gap).
+            // Android Compose M3: trackStart = progress + min(progress, gap).
             let trackStart = clampedFraction + min(clampedFraction, gapFraction)
             guard trackStart < 1.0, width > 0 else { return Path() }
             let x = trackStart * width
@@ -411,7 +401,7 @@ private struct LinearProgressBarSegmentShape: Shape {
             return Path(roundedRect: segmentRect,
                         cornerRadius: min(cornerRadius, height / 2))
         } else {
-            // Foreground: from 0 to progress (no gap shrinking on this side, matches Compose M3).
+            // Foreground: from 0 to progress (no gap shrinking on this side, matches Android Compose M3).
             let foregroundWidth = clampedFraction * width
             guard foregroundWidth > 0 else { return Path() }
             let segmentRect = CGRect(x: 0, y: 0, width: foregroundWidth, height: height)

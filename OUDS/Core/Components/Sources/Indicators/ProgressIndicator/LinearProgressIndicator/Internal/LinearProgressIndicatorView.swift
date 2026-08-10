@@ -38,7 +38,7 @@ struct LinearProgressIndicatorView: View {
             if let helperText = configuration.helperText, !helperText.isEmpty {
                 Text(helperText)
                     .labelDefaultMedium(theme)
-                    .foregroundColor(theme.colors.contentDefault.color(for: colorScheme))
+                    .foregroundColor(theme.colors.contentDefault)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
             }
@@ -50,9 +50,10 @@ struct LinearProgressIndicatorView: View {
 
     @ViewBuilder
     private var bar: some View {
-        if let progress = configuration.progress {
+        switch configuration {
+        case let .determinate(configuration):
             LinearProgressIndicatorDeterminateView(
-                progress: progress,
+                progress: configuration.progress,
                 animated: configuration.animated,
                 foregroundColor: foregroundColor,
                 trackColor: trackColor,
@@ -61,7 +62,8 @@ struct LinearProgressIndicatorView: View {
                 hasTrack: configuration.track,
                 hasStopIndicator: configuration.stopIndicator,
                 barHeight: scaledBarHeight)
-        } else {
+
+        case let .indeterminate(configuration):
             LinearProgressIndicatorIndeterminateView(
                 foregroundColor: foregroundColor,
                 trackColor: trackColor,
@@ -118,7 +120,7 @@ struct LinearProgressIndicatorView: View {
     }
 }
 
-// MARK: - Accessibility
+// MARK: - Linear Progress Accessibility Modifier
 
 /// Applies accessibility traits and values on the linear progress indicator.
 ///
@@ -142,8 +144,8 @@ private struct LinearProgressAccessibilityModifier: ViewModifier {
             let determinate = content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits([.updatesFrequently, .isStaticText])
-                .accessibilityLabel(Text(verbatim: label))
-                .accessibilityValue(Text(verbatim: "\(percent)%"))
+                .accessibilityLabel(label)
+                .accessibilityValue("\(percent)%")
 
             if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
                 determinate.accessibilityRespondsToUserInteraction(false)
@@ -155,7 +157,7 @@ private struct LinearProgressAccessibilityModifier: ViewModifier {
             let indeterminate = content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits(.isStaticText)
-                .accessibilityLabel(Text(verbatim: helperText))
+                .accessibilityLabel(helperText)
 
             if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
                 indeterminate.accessibilityRespondsToUserInteraction(false)

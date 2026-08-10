@@ -67,7 +67,7 @@ struct CircularProgressIndicatorDeterminateView: View {
     let foregroundColor: Color
     let trackColor: Color
     let strokeCap: CGLineCap
-    let gapSize: OUDSCircularProgressIndicator.GapSize
+    let gapSize: ProgressIndicatorGapSize
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
@@ -89,9 +89,15 @@ struct CircularProgressIndicatorDeterminateView: View {
             .onAppear {
                 apply(newValue: progress)
             }
+        #if os(watchOS) || os(visionOS)
+            .onChange(of: progress) { _, newValue in
+                apply(newValue: newValue)
+            }
+        #else
             .onChange(of: progress) { newValue in
                 apply(newValue: newValue)
             }
+        #endif
     }
 
     // MARK: - Helpers

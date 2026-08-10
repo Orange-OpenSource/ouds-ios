@@ -61,7 +61,7 @@ struct LinearProgressIndicatorDeterminateView: View {
     let foregroundColor: Color
     let trackColor: Color
     let strokeCap: CGLineCap
-    let gapSize: OUDSLinearProgressIndicator.GapSize
+    let gapSize: ProgressIndicatorGapSize
     let hasTrack: Bool
     let hasStopIndicator: Bool
     let barHeight: CGFloat
@@ -88,9 +88,15 @@ struct LinearProgressIndicatorDeterminateView: View {
             .onAppear {
                 apply(newValue: progress)
             }
+        #if os(watchOS) || os(visionOS)
+            .onChange(of: progress) { _, newValue in
+                apply(newValue: newValue)
+            }
+        #else
             .onChange(of: progress) { newValue in
                 apply(newValue: newValue)
             }
+        #endif
     }
 
     // MARK: - Helpers

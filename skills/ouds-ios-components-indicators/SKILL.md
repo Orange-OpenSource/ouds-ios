@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-components-indicators
-description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet), OUDSInputTag (removable), OUDSCircularProgressIndicator (determinate / indeterminate, statuses, gap size, track, animated reveal) and OUDSLinearProgressIndicator (determinate / indeterminate, statuses, gap size, track, stop indicator, helper text, animated reveal). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
+description: Usage and code examples for OUDS iOS Indicators components — OUDSBadgeStandard / OUDSBadgeCount / OUDSBadgeIcon (statuses, sizes, UInt8 count), OUDSTag (label, status, icon, bullet), OUDSInputTag (removable), OUDSCircularProgressIndicator (determinate / indeterminate, statuses, gap size, track, animated reveal) and OUDSLinearProgressIndicator (determinate / indeterminate, statuses, gap size, track, stop indicator, helper text). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
 license: MIT
 ---
 
@@ -105,7 +105,6 @@ OUDSLinearProgressIndicator(progress: 0.75, animated: false)
 
 // ── Indeterminate ────────────────────────────────────────────────────────────
 
-// Material 3 two-line "caterpillar race" animation, 1750 ms cycle, EasingEmphasizedAccelerate.
 // Always animated (except Reduce Motion / Low Power Mode → static bar at 70%).
 OUDSLinearProgressIndicator()
 OUDSLinearProgressIndicator(status: .info, track: true, helperText: "Processing…")
@@ -125,6 +124,5 @@ Notes:
 - On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
 - **Determinate** animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on, when Low Power Mode is enabled, or when `animated: false` is passed — the bar is then shown instantly at its target value.
 - **Indeterminate** animation is intrinsic to the mode: there is no `animated` parameter on this initializer. Motion is disabled automatically when `accessibilityReduceMotion` is on or when Low Power Mode is enabled, and a static bar at 70% is displayed instead.
-- **Stop indicator** is only available on the determinate variant. It never reserves horizontal space in the track, so appearing/disappearing it never shifts the track — no glitch at the end of the reveal.
-- **Rendering**: the indeterminate variant draws five segments (three track segments + two colored lines), producing the two small transparent gaps around each colored line that are the visual signature of Material 3 indeterminate linear progress. The two lines chase each other in a "caterpillar race" (head grows first, tail follows).
+- **Stop indicator** is only available on the determinate variant.
 - **Accessibility**: determinate exposes the percentage as `accessibilityValue`; when `helperText` is provided, it is exposed as `accessibilityLabel`. Indeterminate without helper text is hidden from VoiceOver; with a helper text, only the label is exposed (no value).

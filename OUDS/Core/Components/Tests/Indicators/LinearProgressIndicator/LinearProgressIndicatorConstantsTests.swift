@@ -138,7 +138,7 @@ struct LinearIndeterminateAnimConstantsTests {
             < LinearProgressIndicatorIndeterminateView.secondLineTailDelay)
     }
 
-    @Test
+    @Test @MainActor
     func `all animations must complete within the cycle duration`() {
         let firstHeadEnd = LinearProgressIndicatorIndeterminateView.firstLineHeadDelay
             + LinearProgressIndicatorIndeterminateView.firstLineHeadDuration
@@ -191,7 +191,7 @@ struct LinearIndeterminateEasingTests {
         #expect(LinearProgressIndicatorIndeterminateView.easingEmphasizedAccelerate(1.0) == 1.0)
     }
 
-    @Test
+    @Test @MainActor
     func `easing must be monotonically increasing`() {
         var previous = LinearProgressIndicatorIndeterminateView.easingEmphasizedAccelerate(0.0)
         for step in 1 ... 20 {
@@ -202,7 +202,7 @@ struct LinearIndeterminateEasingTests {
         }
     }
 
-    @Test
+    @Test @MainActor
     func `easing must accelerate (value at 0_5 is strictly less than 0_5)`() {
         // EasingEmphasizedAccelerate is a decelerating output curve: slow at the beginning,
         // fast at the end. The value at t = 0.5 stays well below the diagonal (0.5).
@@ -211,7 +211,7 @@ struct LinearIndeterminateEasingTests {
     }
 }
 
-// MARK: - Fraction helper (Compose M3 keyframes behavior)
+// MARK: - Fraction helper (Android ompose M3 keyframes behavior)
 
 /// Tests on ``LinearProgressIndicatorIndeterminateView/fraction(phase:delay:duration:)``, which
 /// must reproduce the Compose `keyframes` behavior: value is `1.0` before `delay`, then eases
@@ -221,7 +221,7 @@ struct LinearIndeterminateFractionTests {
     private let delay: TimeInterval = 0.25
     private let duration: TimeInterval = 1.0
 
-    @Test
+    @Test @MainActor
     func `fraction before delay must be 1_0 (previous cycle value)`() {
         let value = LinearProgressIndicatorIndeterminateView.fraction(phase: 0.1,
                                                                       delay: delay,
@@ -229,7 +229,7 @@ struct LinearIndeterminateFractionTests {
         #expect(value == 1.0)
     }
 
-    @Test
+    @Test @MainActor
     func `fraction exactly at delay must start from eased 0_0`() {
         let value = LinearProgressIndicatorIndeterminateView.fraction(phase: delay,
                                                                       delay: delay,
@@ -237,7 +237,7 @@ struct LinearIndeterminateFractionTests {
         #expect(value == 0.0)
     }
 
-    @Test
+    @Test @MainActor
     func `fraction after animation end must stay at 1_0`() {
         let value = LinearProgressIndicatorIndeterminateView.fraction(phase: delay + duration + 0.1,
                                                                       delay: delay,
@@ -245,7 +245,7 @@ struct LinearIndeterminateFractionTests {
         #expect(value == 1.0)
     }
 
-    @Test
+    @Test @MainActor
     func `fraction in the middle of the animation must be strictly less than 1 (accelerating)`() {
         let value = LinearProgressIndicatorIndeterminateView.fraction(phase: delay + duration / 2.0,
                                                                       delay: delay,
@@ -254,7 +254,7 @@ struct LinearIndeterminateFractionTests {
         #expect(value < 1.0)
     }
 
-    @Test
+    @Test @MainActor
     func `fraction guards against zero duration`() {
         let value = LinearProgressIndicatorIndeterminateView.fraction(phase: 0.5,
                                                                       delay: 0.0,

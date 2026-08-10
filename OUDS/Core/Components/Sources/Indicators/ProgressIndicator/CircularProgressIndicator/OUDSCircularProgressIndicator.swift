@@ -133,46 +133,6 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
 
-    // MARK: - Public types
-
-    /// The status of the progress indicator. It determines the color of the progress indicator.
-    ///
-    /// - Since: 3.0.0
-    @frozen
-    public enum Status: Sendable {
-
-        /// Default status used when progress has no specific semantic meaning.
-        case neutral
-
-        /// Used to highlight primary or brand-related actions.
-        case accent
-
-        /// Indicates successful progress or a process leading to a successful outcome.
-        case positive
-
-        /// Indicates informational or system-related processes.
-        case info
-
-        /// Indicates progress related to an operation that requires user attention or should be monitored.
-        case warning
-
-        /// Indicates progress related to an error, recovery, cancellation or failure.
-        case negative
-    }
-
-    /// The size of the gap between the progress indicator and the track.
-    ///
-    /// - Since: 3.0.0
-    @frozen
-    public enum GapSize: Sendable {
-
-        /// Standard gap size (about 14° of arc).
-        case `default`
-
-        /// Reduced gap size (about 1pt at the standard 48pt size).
-        case small
-    }
-
     // MARK: - Properties
 
     /// Embeds all configuration details for the circular progress indicator
@@ -184,17 +144,17 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///
     /// - Parameters:
     ///    - progress: The current progress in the `[0, 1]` range. Values outside of this range are coerced.
-    ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``ProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``ProgressIndicatorGapSize/default``.
     ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on first
     ///      display, and animates any subsequent change of `progress`. When `false`, the indicator is displayed
     ///      instantly at its target value with no animation. Animations are always disabled when
     ///      `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this flag.
     public init(progress: Double,
-                status: Status = .neutral,
+                status: ProgressIndicatorStatus = .neutral,
                 track: Bool = true,
-                gapSize: GapSize = .default,
+                gapSize: ProgressIndicatorGapSize = .default,
                 animated: Bool = true)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: progress,
@@ -207,12 +167,12 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     /// Creates an **indeterminate** circular progress indicator.
     ///
     /// - Parameters:
-    ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``ProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
-    public init(status: Status = .neutral,
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``ProgressIndicatorGapSize/default``.
+    public init(status: ProgressIndicatorStatus = .neutral,
                 track: Bool = true,
-                gapSize: GapSize = .default)
+                gapSize: ProgressIndicatorGapSize = .default)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                status: status,

@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509)
 - `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
-- `linear progress indicator` component with determinate / indeterminate variants, stop indicator, helper text and Material 3 animations
 - `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
 - `View modifier` to force keyboard closing on tap (Orange-OpenSource/ouds-ios#1530)
 - `View modifier` to apply theme to Liquid Glass SwiftUI `TabView` (Orange-OpenSource/ouds-ios#1459)

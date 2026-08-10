@@ -13,9 +13,9 @@
 
 import SwiftUI
 
-/// A horizontal indicator that shows the progress of a task using a bar.
+/// A linear indicator shows the progress of a task using a horizontal line.
 /// It can show a specific value (determinate) or just that something is in progress (indeterminate).
-/// Best used inside layouts to show progress with more horizontal space than a circular indicator.
+/// Best used inside layouts to show progress.
 ///
 /// ## Variants
 ///
@@ -51,8 +51,8 @@ import SwiftUI
 ///
 /// ## Gap size
 ///
-/// - **default**: standard gap between the bar and the track (`4pt`, Material 3 spec).
-/// - **small**: reduced gap for a more compact appearance (`1pt`).
+/// - **default**: standard gap between the bar and the track (base Android Material 3 specification).
+/// - **small**: reduced gap for a more compact appearance.
 ///
 /// ## Track
 ///
@@ -69,7 +69,7 @@ import SwiftUI
 ///   identify the end of the range easily. Required by accessibility criteria when the track has a
 ///   contrast below 3:1 with its container or the surface behind the container.
 ///
-/// The stop indicator is only available on the determinate variant, matching the Material 3
+/// The stop indicator is only available on the determinate variant, matching the Android Material 3
 /// specification: the indeterminate variant has no meaningful end position for it.
 ///
 /// ## Helper text
@@ -80,11 +80,9 @@ import SwiftUI
 /// ## Animation
 ///
 /// - **Determinate**: when `animated` is `true` (default), the indicator progressively fills from `0`
-///   to the target `progress` on first display and animates any subsequent change of `progress`, using
-///   the same Material 3 critically-damped spring as ``OUDSCircularProgressIndicator``. When `animated`
-///   is `false`, the indicator is displayed instantly at its target value with no animation.
-/// - **Indeterminate**: the Material 3 two-line animation (1750 ms cycle, `EasingEmphasizedAccelerate`)
-///   is intrinsic to the mode and cannot be disabled from the call site — there is no `animated`
+///   to the target `progress` on first display and animates any subsequent change of `progress`
+///   (based on Androdi Material 3 specifications). When `animated` iis `false`, the indicator is displayed instantly at its target value with no animation.
+/// - **Indeterminate**: the Android Material 3 two-line animation is intrinsic to the mode and cannot be disabled from the call site ; there is no `animated`
 ///   parameter on the indeterminate initializer.
 ///
 /// Animations are always disabled and a static bar filled at 70% is displayed when either
@@ -102,16 +100,14 @@ import SwiftUI
 ///                                 track: false,
 ///                                 helperText: "Uploading…")
 ///
-///     // Determinate with a warning status, a small gap and a stop indicator
+///     // Determinate with a warning status, a small gap, a stop indicator and no animation
 ///     OUDSLinearProgressIndicator(progress: 0.3,
 ///                                 status: .warning,
 ///                                 stopIndicator: true,
-///                                 gapSize: .small)
+///                                 gapSize: .small,
+///                                 animated: false)
 ///
-///     // Determinate displayed instantly at its target value, without any animation
-///     OUDSLinearProgressIndicator(progress: 0.75, animated: false)
-///
-///     // Indeterminate (always animated — Material 3 two-line race)
+///     // Indeterminate (always animated — Android Material 3 two-line race)
 ///     OUDSLinearProgressIndicator()
 ///     OUDSLinearProgressIndicator(status: .info)
 ///     OUDSLinearProgressIndicator(status: .accent, helperText: "Processing…")
@@ -120,14 +116,14 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage)
-///   so that VoiceOver reads e.g. *"75 percent"*, and is marked with the `.updatesFrequently` trait so that
+///   so that Voice Over reads e.g. *"75 percent"*, and is marked with the `.updatesFrequently` trait so that
 ///   assistive technologies know the value is changing. If a `helperText` is provided, it is exposed as the
-///   accessibility label (VoiceOver reads e.g. *"Uploading. 75 percent"*).
+///   accessibility label (Voice Over reads e.g. *"Uploading. 75 percent"*).
 /// - The indicator never captures **Full Keyboard Access** focus, as no interaction is possible on a
 ///   progress indicator. On iOS 17+ / macOS 14+ / visionOS 1+ / watchOS 10+ / tvOS 17+, this is enforced
 ///   via `accessibilityRespondsToUserInteraction(false)`; on earlier OS versions, the semantic
 ///   `.isStaticText` trait is used.
-/// - In **indeterminate** mode without helper text, the view is hidden from VoiceOver
+/// - In **indeterminate** mode without helper text, the view is hidden from Voice Over
 ///   (`.accessibilityHidden(true)`) — and therefore also excluded from Full Keyboard Access navigation:
 ///   there is no readable value to expose. When a `helperText` is provided, the helper text is exposed
 ///   as accessibility label so the user still understands the context.
@@ -163,49 +159,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSLinearProgressIndicator: View {
-
-    // MARK: - Public types
-
-    /// The status of the progress indicator. It determines the color of the bar.
-    ///
-    /// - Since: 3.0.0
-    @frozen
-    public enum Status: Sendable {
-        // TODO: #1509 - Mutualize / factorize with CircularProgressIndicator with a dedicated enum (e.g. Progress Indicator Status)
-
-        /// Default status used when progress has no specific semantic meaning.
-        case neutral
-
-        /// Used to highlight primary or brand-related actions.
-        case accent
-
-        /// Indicates successful progress or a process leading to a successful outcome.
-        case positive
-
-        /// Indicates informational or system-related processes.
-        case info
-
-        /// Indicates progress related to an operation that requires user attention or should be monitored.
-        case warning
-
-        /// Indicates progress related to an error, recovery, cancellation or failure.
-        case negative
-    }
-
-    /// The size of the gap between the progress bar and the track.
-    ///
-    /// - Since: 3.0.0
-    @frozen
-    public enum GapSize: Sendable {
-        // TODO: #1509 - Mutualize / factorize with CircularProgressIndicator with a dedicated enum (e.g. Progress Indicator Gap Size)
-
-        /// Standard gap size (4pt, Material 3 spec).
-        case `default`
-
-        /// Reduced gap size (1pt).
-        case small
-    }
+public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink to documentation when ready
 
     // MARK: - Properties
 
@@ -218,60 +172,55 @@ public struct OUDSLinearProgressIndicator: View {
     ///
     /// - Parameters:
     ///    - progress: The current progress in the `[0, 1]` range. Values outside of this range are coerced.
-    ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``ProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track. Defaults to
     ///      `false`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``ProgressIndicatorGapSize/default``.
     ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on
     ///      first display, and animates any subsequent change of `progress`. When `false`, the indicator
     ///      is displayed instantly at its target value with no animation. Animations are always disabled
     ///      when `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this
     ///      flag.
     public init(progress: Double,
-                status: Status = .neutral,
+                status: ProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
                 helperText: String? = nil,
-                gapSize: GapSize = .default,
+                gapSize: ProgressIndicatorGapSize = .default,
                 animated: Bool = true)
     {
-        configuration = LinearProgressIndicatorConfiguration(progress: progress,
-                                                             status: status,
-                                                             track: track,
-                                                             stopIndicator: stopIndicator,
-                                                             helperText: helperText,
-                                                             gapSize: gapSize,
-                                                             animated: animated)
+        configuration = .determinate(.init(progress: progress,
+                                           status: status,
+                                           track: track,
+                                           stopIndicator: stopIndicator,
+                                           helperText: helperText,
+                                           gapSize: gapSize,
+                                           animated: animated))
     }
 
     /// Creates an **indeterminate** linear progress indicator.
     ///
-    /// The Material 3 two-line animation is intrinsic to this mode and is always played, except when
+    /// The Android Material 3 two-line animation is intrinsic to this mode and is always played, except when
     /// `accessibilityReduceMotion` is on or when Low Power Mode is enabled — in which case a static
-    /// bar filled at 70% is displayed automatically. There is intentionally no `animated` parameter
-    /// nor `stopIndicator` parameter on this initializer: Material 3 does not expose them for
-    /// indeterminate linear progress indicators.
+    /// bar filled at 70% is displayed automatically.
     ///
     /// - Parameters:
-    ///    - status: The status of the indicator, driving its color. Defaults to ``Status/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``ProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
-    ///      ``GapSize/default``.
-    public init(status: Status = .neutral,
+    ///      ``ProgressIndicatorGapSize/default``.
+    public init(status: ProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
-                gapSize: GapSize = .default)
+                gapSize: ProgressIndicatorGapSize = .default)
     {
-        configuration = LinearProgressIndicatorConfiguration(progress: nil,
-                                                             status: status,
-                                                             track: track,
-                                                             stopIndicator: false,
-                                                             helperText: helperText,
-                                                             gapSize: gapSize,
-                                                             animated: true)
+        configuration = .indeterminate(.init(status: status,
+                                             track: track,
+                                             helperText: helperText,
+                                             gapSize: gapSize))
     }
 
     // MARK: - Body
