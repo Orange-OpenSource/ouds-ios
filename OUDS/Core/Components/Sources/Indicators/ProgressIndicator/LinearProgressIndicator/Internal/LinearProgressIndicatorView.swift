@@ -141,11 +141,12 @@ private struct LinearProgressAccessibilityModifier: ViewModifier {
         if let progress = configuration.progress {
             let percent = Int((progress * 100).rounded())
             let label = configuration.helperText ?? ""
+            let value = "\(percent)%"
             let determinate = content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits([.updatesFrequently, .isStaticText])
                 .accessibilityLabel(label)
-                .accessibilityValue("\(percent)%")
+                .accessibilityValue(value)
 
             if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
                 determinate.accessibilityRespondsToUserInteraction(false)
