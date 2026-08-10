@@ -81,8 +81,8 @@ import SwiftUI
 ///
 /// - **Determinate**: when `animated` is `true` (default), the indicator progressively fills from `0`
 ///   to the target `progress` on first display and animates any subsequent change of `progress`
-///   (based on Androdi Material 3 specifications). When `animated` iis `false`, the indicator is displayed instantly at its target value with no animation.
-/// - **Indeterminate**: the Android Material 3 two-line animation is intrinsic to the mode and cannot be disabled from the call site ; there is no `animated`
+///   (based on Android Material 3 specifications). When `animated` is `false`, the indicator is displayed instantly at its target value with no animation.
+/// - **Indeterminate**: the Android Material 3 two-line animation is intrinsic to the mode and cannot be disabled from the call site; there is no `animated`
 ///   parameter on the indeterminate initializer.
 ///
 /// Animations are always disabled and a static bar filled at 70% is displayed when either
