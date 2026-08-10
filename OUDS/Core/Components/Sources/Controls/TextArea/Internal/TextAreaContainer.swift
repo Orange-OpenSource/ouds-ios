@@ -57,6 +57,7 @@ struct TextAreaContainer: View {
                                   text: text,
                                   status: status,
                                   constrainedMaxHeight: constrainedMaxHeight)
+                    .frame(minHeight: theme.textArea.sizeMinHeightInput)
                     .focused($focused)
                     .allowsHitTesting(status != .readOnly && status != .disabled)
                     .onTapGesture {
@@ -64,7 +65,6 @@ struct TextAreaContainer: View {
                         focused = true
                     }
             }
-            .frame(minHeight: theme.textArea.sizeMinHeightInput)
             .accessibilityLabel(accessibilityLabel)
             .accessibilityValue(accessibilityValue)
             .accessibilityHint(accessibilityHint ?? "")
@@ -77,6 +77,7 @@ struct TextAreaContainer: View {
                                       isSmallLabel: isSmallLabel)
         }
         .padding(.top, paddingTop)
+        .padding(.bottom, paddingBottom)
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
         .padding(.trailing, theme.textInput.spacePaddingInlineTrailingAction)
         .modifier(TextAreaBackgroundModifier(status: status,
@@ -96,7 +97,14 @@ struct TextAreaContainer: View {
     // MARK: - Helpers
 
     private var paddingTop: CGFloat {
-        (isOutlined && text.wrappedValue.isEmpty) ? theme.textArea.spacePaddingBlockTopEmpty : theme.textArea.spacePaddingBlock
+        isSmallLabel ? theme.textArea.spacePaddingBlockTopEmpty : theme.textArea.spacePaddingBlock
+    }
+
+    private var paddingBottom: CGFloat {
+        (placeholder?.isEmpty == false
+                || (text.wrappedValue.isEmpty && interactionState == .focused)
+                || !text.wrappedValue.isEmpty)
+            ? theme.textArea.spacePaddingBlock : theme.spaces.fixedNone
     }
 
     private var interactionState: TextAreaInteractionState {
