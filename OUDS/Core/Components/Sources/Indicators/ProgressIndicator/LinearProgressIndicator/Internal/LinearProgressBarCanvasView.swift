@@ -100,8 +100,7 @@ struct LinearProgressBarCanvasView: View {
     /// Requested gap size.
     let gapSize: ProgressIndicatorGapSize
 
-    /// Height of the bar, in points. Corresponds to `theme.progressIndicator.sizeLinearIndicatorHeight`
-    /// scaled by Dynamic Type.
+    /// Height of the bar, in points.
     let barHeight: CGFloat
 
     // MARK: - Body
@@ -120,7 +119,6 @@ struct LinearProgressBarCanvasView: View {
                         progress: min(max(progress, 0.0), 1.0),
                         gapFraction: min(max(gapFraction, 0.0), 1.0),
                         cornerRadius: cornerRadius,
-                        barHeight: barHeight,
                         foregroundColor: foregroundColor,
                         trackColor: hasTrack ? trackColor : .clear)
                         .frame(width: totalWidth, height: barHeight)
@@ -135,8 +133,7 @@ struct LinearProgressBarCanvasView: View {
                                                            firstTail: firstTail,
                                                            secondHead: secondHead,
                                                            secondTail: secondTail)
-                    indeterminateCanvas(totalWidth: totalWidth,
-                                        gapFraction: gapFraction,
+                    indeterminateCanvas(gapFraction: gapFraction,
                                         cornerRadius: cornerRadius,
                                         fractions: fractions)
                         .frame(width: totalWidth, height: barHeight)
@@ -149,7 +146,7 @@ struct LinearProgressBarCanvasView: View {
     // MARK: - Indeterminate rendering
 
     /// Head/tail fractions of the two Android Material 3 indeterminate lines, grouped together to keep
-    /// the ``indeterminateCanvas(totalWidth:gapFraction:cornerRadius:fractions:)`` signature short.
+    /// the ``indeterminateCanvas(gapFraction:cornerRadius:fractions:)`` signature short.
     struct IndeterminateFractions {
         let firstHead: CGFloat
         let firstTail: CGFloat
@@ -161,8 +158,7 @@ struct LinearProgressBarCanvasView: View {
     /// lines) via a SwiftUI `Canvas`, using the exact same layout as
     /// AndroidX Compose `LinearProgressIndicator`.
     @ViewBuilder
-    private func indeterminateCanvas(totalWidth: CGFloat,
-                                     gapFraction: CGFloat,
+    private func indeterminateCanvas(gapFraction: CGFloat,
                                      cornerRadius: CGFloat,
                                      fractions: IndeterminateFractions) -> some View
     {
@@ -176,7 +172,7 @@ struct LinearProgressBarCanvasView: View {
     }
 
     /// Draws the five Android Material 3 indeterminate segments in the given `GraphicsContext`. Split from
-    /// ``indeterminateCanvas(totalWidth:gapFraction:cornerRadius:fractions:)`` to keep view bodies
+    /// ``indeterminateCanvas(gapFraction:cornerRadius:fractions:)`` to keep view bodies
     /// short.
     private func drawIndeterminate(context: GraphicsContext,
                                    size: CGSize,
@@ -337,7 +333,6 @@ private struct LinearProgressBarShape: View {
     let progress: CGFloat
     let gapFraction: CGFloat
     let cornerRadius: CGFloat
-    let barHeight: CGFloat
     let foregroundColor: Color
     let trackColor: Color
 
@@ -346,15 +341,13 @@ private struct LinearProgressBarShape: View {
             LinearProgressBarSegmentShape(fraction: progress,
                                           isTrack: false,
                                           gapFraction: gapFraction,
-                                          cornerRadius: cornerRadius,
-                                          barHeight: barHeight)
+                                          cornerRadius: cornerRadius)
                 .fill(foregroundColor)
 
             LinearProgressBarSegmentShape(fraction: progress,
                                           isTrack: true,
                                           gapFraction: gapFraction,
-                                          cornerRadius: cornerRadius,
-                                          barHeight: barHeight)
+                                          cornerRadius: cornerRadius)
                 .fill(trackColor)
         }
     }
@@ -380,7 +373,6 @@ private struct LinearProgressBarSegmentShape: Shape {
     let isTrack: Bool
     let gapFraction: CGFloat
     let cornerRadius: CGFloat
-    let barHeight: CGFloat
 
     var animatableData: CGFloat {
         get { fraction }

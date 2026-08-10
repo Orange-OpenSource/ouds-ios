@@ -211,7 +211,7 @@ struct LinearIndeterminateEasingTests {
     }
 }
 
-// MARK: - Fraction helper (Android ompose M3 keyframes behavior)
+// MARK: - Fraction helper (Android Compose M3 keyframes behavior)
 
 /// Tests on ``LinearProgressIndicatorIndeterminateView/fraction(phase:delay:duration:)``, which
 /// must reproduce the Compose `keyframes` behavior: value is `1.0` before `delay`, then eases
