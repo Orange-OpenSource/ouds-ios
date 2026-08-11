@@ -60,7 +60,7 @@ import SwiftUI
 ///  - `.image(asset:)`: A static image asset
 ///  - `.flag(asset:)`: A country flag image
 ///  - `.video(URL)`: A video thumbnail loaded from a URL
-/// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
 /// ## Trailing elements
 ///
@@ -84,7 +84,7 @@ import SwiftUI
 ///
 /// - ``SwiftUICore/View/oudsListItemSize(_:)`` — Sets the size of the item (`.standard` or `.small`).
 /// - ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
-/// - ``SwiftUICore/View/oudsListItemStyle(_:)`` — Applies a standard style with optional divider and background.
+/// - ``SwiftUICore/View/oudsListItemStyle(_:)`` — Applies a item style with optional divider and background.
 /// - ``SwiftUICore/View/oudsListCardStyle(_:)`` — Applies a card style on list items.
 /// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images, videos) should be displayed with rounded corners.
 ///
@@ -92,7 +92,7 @@ import SwiftUI
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
 ///         .oudsListItemSize(.small)
 ///         .oudsListItemContainerAlignment(.top)
-///         .oudsListItemStyle(.outlined)
+///         .oudsListCardStyle(.outlined)
 /// ```
 ///
 /// ## Accessibility considerations

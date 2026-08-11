@@ -42,175 +42,105 @@ import SwiftUI
     case center
 }
 
-// MARK: - OUDS List Item Containers Alignment
+// MARK: - OUDS List Item Content Style
 
 /// Defines the visual style of a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
 /// The style controls the border, divider, and background appearance of list items.
-/// Use the ``SwiftUICore/View/oudsListItemStyle(_:)``,
-/// ``SwiftUICore/View/oudsListItemStandardStyle(_:)`` or
+/// Use the ``SwiftUICore/View/oudsListItemContentStyle(_:)``,
+/// ``SwiftUICore/View/oudsListItemStyle(_:)`` or
 /// ``SwiftUICore/View/oudsListCardStyle(_:)`` view modifiers to apply the style on list items.
 ///
 /// ## Cases
 ///
-/// - **`.card(_:)`**: A card-like appearance with various sub-styles defined by
-///   ``OUDSListItemContentStyle/Card``. Cards can be outlined, have a background,
+/// - **`.card(_:)`**: A card-like appearance with various sub-styles (decoration) defined by
+///   ``OUDSListItemContentStyle/card``. Cards can be outlined, have a background,
 ///   or combine these effects only on interaction.
-/// - **`.standard(_:)`**: A standard list item appearance with an optional background and divider,
-///   defined by ``OUDSListItemContentStyle/Standard``.
+/// - **`.item(_:)`**: A standard list item appearance with an optional background and divider,
+///   defined by ``OUDSListItemContentStyle/item``.
 ///
 /// ## Known limitation
 ///
-/// The `OnInteractionOnly` variants (`.outlinedOnInteractionOnly`, `.backgroundOnInteractionOnly`)
-/// have exactly the same behavior as their non-interaction counterparts on ``OUDSStaticListItem``:
-/// - `.outlinedOnInteractionOnly` behaves like `.outlined` (border is always visible).
-/// - `.backgroundOnInteractionOnly(withDivider:)` behaves like `.background(withDivider:)`
-///   (background is always visible).
-///
-/// This will be addressed in a future release when interaction state management is fully integrated.
+/// The `onlyOnInteraction` flag of the `outlined` decoration of a card has no action on ``OUDSStaticListItem``, because
+/// the item does not propose interaction (e.g. pressed or hover state)
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     // Card style with an outlined border
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(.card(.outlined))
-///
 ///     // Card style with outline only on interaction
 ///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(.card(.outlinedOnInteractionOnly))
+///         .oudsListCardStyle(decoration: .outlined(onInteractionOnly: true))
 ///
-///     // Card style with background and divider
+///     // Card style with an outlined border on all states
 ///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(.card(.background(withDivider: true)))
+///         .oudsListCardStyle(decoration: .outlined(onInteractionOnly: false))
 ///
-///     // Card style with background only on interaction
+///     // Card style with divider, background
 ///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(.card(.backgroundOnInteractionOnly(withDivider: false)))
+///         .oudsListCardStyle(decoration: .standard(divider: true, background: true))
 ///
-///     // Standard style with background and divider
+///     // Card style divider and without background
 ///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(.standard(.background(withDivider: true)))
+///         .oudsListCardStyle(decoration: .standard(divider: true, background: false))
 ///
-///     // Standard style with background only on interaction (default)
+///     // Item style with background and divider
 ///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(.standard(.backgroundOnInteractionOnly(withDivider: true)))
+///         .oudsListItemStyle(divider: true, .background: true)
 ///
-///     // Using convenience modifiers
+///     // Item style with divider and without background
 ///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListCardStyle(.outlined)
+///         .oudsListItemStyle(divider: true, .background: false)
+///
+///     // Using global modifier
+///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///         .oudsListContentStyle(.card(.outlined))
 ///
 ///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStandardStyle(.background(withDivider: false))
+///         .oudsListContentStyle(.item(divider: true, background: false))
 /// ```
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSListItemContentStyle {
 
-    /// Defines the sub-styles available for the ``OUDSListItemContentStyle/card(_:)`` case.
-    ///
-    /// Card styles control how the card border, background, and divider behave,
-    /// including whether these visual effects are always visible or only appear during interaction
-    /// (e.g. press, hover).
-    ///
-    /// ## Cases
-    ///
-    /// - **`.outlined`**: A permanent border is drawn around the card.
-    /// - **`.outlinedOnInteractionOnly`**: A border is drawn around the card only when the user
-    ///   interacts with it (e.g. press or hover).
-    /// - **`.background(withDivider:)`**: A background fill is always applied to the card.
-    ///   An optional divider can be displayed at the bottom. Defaults to `true`.
-    /// - **`.backgroundOnInteractionOnly(withDivider:)`**: A background fill is applied only during
-    ///   interaction. An optional divider can be displayed at the bottom. Defaults to `true`.
-    ///
-    /// ## Known limitation
-    ///
-    /// The `OnInteractionOnly` variants have same behavior on ``OUDSStaticListItem``.:
-    /// - `.outlinedOnInteractionOnly` currently behaves like `.outlined` (border is always visible).
-    /// - `.backgroundOnInteractionOnly(withDivider:)` currently behaves like `.background(withDivider:).
-    ///   (background is always visible).
+    /// Defines the decoration (sub-styles) available for the ``OUDSListItemContentStyle/card(_:)`` case.
     ///
     /// - Since: 3.0.0
-    public enum Card {
-        /// A permanent border is drawn around the card.
-        case outlined
+    public enum CardDecoration {
 
-        /// A border is drawn around the card only when the user interacts with it.
+        /// The oulined decoration of a card. A permanent border is drawn around the card. This border can be drawn only
+        /// for interaction states (e.g. pressed or hover).
         ///
-        /// - Note: **Known limitation** — This currently behaves like ``outlined`` on ``OUDSStaticListItem``.
-        ///   The border is always visible regardless of interaction state.
-        ///   This will be addressed in a future release.
-        case outlinedOnInteractionOnly // TODO: #265 - Implement the evolution O_ô
+        /// - Parameter onlyOnInteraction: Used only for `OUDSNavigationListItem` to activate oulined style when
+        /// card is pressed or hovered. By default, `false` so outlined available on all states of the card.
+        case outlined(onlyOnInteraction: Bool = false)
 
-        /// A background fill is always applied to the card.
+        /// The standard card decoration with background and divider.
         ///
-        /// - Parameter withDivider: When `true`, a divider line is displayed at the bottom of the card.
-        ///   Defaults to `true`.
-        case background(withDivider: Bool = true)
-
-        /// A background fill is applied to the card only during interaction.
-        ///
-        /// - Note: **Known limitation** — This currently behaves like ``background(withDivider:)`` on ``OUDSStaticListItem``.
-        ///   The background is always visible regardless of interaction state.
-        ///   This will be addressed in a future release.
-        ///
-        /// - Parameter withDivider: When `true`, a divider line is displayed at the bottom of the card.
-        ///   Defaults to `true`.
-        case backgroundOnInteractionOnly(withDivider: Bool = true) // TODO: #265 - Implement the evolution O_ô
+        ///  - Parameters:
+        ///     - divider: Used to display a divider at bottom of the card.
+        ///     - background: Used to fill the background, `true` by default. If set to `false`, the background is filled only
+        ///     on interaction states (pressed on focussed)
+        case standard(divider: Bool = true, background: Bool = true)
     }
 
-    /// Defines the sub-styles available for the ``OUDSListItemContentStyle/standard(_:)`` case.
-    ///
-    /// Standard styles control how the background and divider behave for regular list items,
-    /// including whether these visual effects are always visible or only appear during interaction
+    /// The card style of the `OUDSNavigationListItem` and `OUDSStaticListItem`. It controls how the card border,
+    /// background, and divider behave, including whether these visual effects are always visible or only appear during interaction
     /// (e.g. press, hover).
     ///
-    /// ## Cases
-    ///
-    /// - **`.background(withDivider:)`**: A background fill is always applied to the item.
-    ///   An optional divider can be displayed at the bottom. Defaults to `true`.
-    /// - **`.backgroundOnInteractionOnly(withDivider:)`**: A background fill is applied only during
-    ///   interaction. An optional divider can be displayed at the bottom. Defaults to `true`.
-    ///
-    /// ## Known limitation
-    ///
-    /// `.backgroundOnInteractionOnly(withDivider:)` currently behaves like `.background(withDivider:)` on ``OUDSStaticListItem``.
-    /// The background is always visible regardless of interaction state.
-    /// This will be addressed in a future release.
-    ///
-    /// - Since: 3.0.0
-    public enum Standard { // TODO: #265 - Implement the evolution O_ô
-        /// A background fill is always applied to the item.
-        ///
-        /// - Parameter withDivider: When `true`, a divider line is displayed at the bottom of the item.
-        ///   Defaults to `true`.
-        case background(withDivider: Bool = true)
+    ///  - Parameters:
+    ///     - decoration: The decoration of the card item.
+    case card(_ decoration: CardDecoration = .standard(divider: true, background: true))
 
-        /// A background fill is applied to the item only during interaction.
-        ///
-        /// - Note: **Known limitation** — This currently behaves like ``background(withDivider:)`` on ``OUDSStaticListItem``.
-        ///   The background is always visible regardless of interaction state.
-        ///   This will be addressed in a future release.
-        ///
-        /// - Parameter withDivider: When `true`, a divider line is displayed at the bottom of the item.
-        ///   Defaults to `true`.
-        case backgroundOnInteractionOnly(withDivider: Bool = true) // TODO: #265 - Implement the evolution O_ô
-    }
-
-    /// A card-like appearance with a sub-style that controls border, background, and divider behavior.
+    /// The item style of the `OUDSNavigationListItem` and `OUDSStaticListItem`. It controls how
+    /// the background and divider behave for regular list items, including whether these visual effects are always visible or
+    /// only appear during interaction. (e.g. press, hover).
     ///
-    /// Use ``OUDSListItemContentStyle/Card`` to define the card's visual appearance.
-    ///
-    /// - Parameter style: The ``Card`` sub-style defining the card's visual appearance.
-    case card(_ style: Card)
-
-    /// A standard list item appearance with configurable background and divider.
-    ///
-    /// Use ``OUDSListItemContentStyle/Standard`` to define the standard item's visual appearance.
-    ///
-    /// - Parameter style: The ``Standard`` sub-style defining the item's visual appearance.
-    case standard(_ style: Standard)
+    ///  - Parameters:
+    ///     - divider: Used to display a divider at bottom of the item.
+    ///     - background: Used to fill the background, `true` by default. If set to `false`, the background is filled only
+    ///     on interaction states (e.g. press, hover).
+    case item(divider: Bool, background: Bool)
 }
 
 // MARK: - OUDS List Item Size
@@ -255,26 +185,8 @@ import SwiftUI
 
 extension View {
 
-    /// Applies a *standard* style on list items.
-    ///
-    /// This is a convenience modifier that applies an ``OUDSListItemContentStyle/standard(_:)`` style.
-    /// It is typically applied globally on a container (e.g. a `List`, `VStack`, or `ForEach`)
-    /// so that all enclosed list items share the same appearance.
-    ///
-    /// ```swift
-    ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
-    ///     }
-    ///     .oudsListItemStandardStyle(.background(withDivider: true))
-    /// ```
-    ///
-    /// - Parameter style: The ``OUDSListItemContentStyle/Standard`` sub-style to apply on items.
-    ///   Defaults to `.backgroundOnInteractionOnly(withDivider: true)`.
-    ///
-    /// - Returns: A view with the standard style applied to its list items, default set to `.backgroundOnInteractionOnly(withDivider: true))`
-    public func oudsListItemStandardStyle(_ style: OUDSListItemContentStyle.Standard = .backgroundOnInteractionOnly(withDivider: true)) -> some View {
-        environment(\.oudsListItemContentStyle, .standard(style))
+    public func oudsListContentStyle(_ style: OUDSListItemContentStyle) -> some View {
+        environment(\.oudsListItemContentStyle, style)
     }
 
     /// Applies a *card* style on list items.
@@ -291,47 +203,36 @@ extension View {
     ///     .oudsListCardStyle(.outlined)
     /// ```
     ///
-    /// - Parameter style: The ``OUDSListItemContentStyle/Card`` sub-style to apply on items.
-    ///   Defaults to `.background(withDivider: true)`.
+    /// - Parameter decoration: The ``OUDSListItemContentStyle/Card`` sub-style to apply on items.
+    ///   Defaults to `.standard(divider: true, background: true)`.
     ///
-    /// - Returns: A view with the card style applied to its list items, default set to `.background(withDivider: true)`
-    public func oudsListCardStyle(_ style: OUDSListItemContentStyle.Card = .background(withDivider: true)) -> some View {
-        environment(\.oudsListItemContentStyle, .card(style))
+    /// - Returns: A view with the card style applied to its list items, default set to `.card(divider: true, background: true)`
+    public func oudsListCardStyle(_ decoration: OUDSListItemContentStyle.CardDecoration = .standard(divider: true, background: true)) -> some View {
+        environment(\.oudsListItemContentStyle, .card(decoration))
     }
 
-    /// Applies a content style on list items.
+    /// Applies a *standard* style on list items.
     ///
-    /// This is the general-purpose modifier that can apply any ``OUDSListItemContentStyle``
-    /// (either `.standard` or `.card`) on list items.
+    /// This is a convenience modifier that applies an ``OUDSListItemContentStyle/item(_:)`` style.
     /// It is typically applied globally on a container (e.g. a `List`, `VStack`, or `ForEach`)
-    /// so that all enclosed list items share the same visual style.
-    ///
-    /// For convenience, you can also use the dedicated modifiers:
-    /// - ``SwiftUICore/View/oudsListItemStandardStyle(_:)`` for standard styles
-    /// - ``SwiftUICore/View/oudsListCardStyle(_:)`` for card styles
+    /// so that all enclosed list items share the same appearance.
     ///
     /// ```swift
-    ///     // Standard style with background on interaction only and divider
     ///     VStack {
-    ///         OUDSNavigationListItem(data: OUDSListItemData(label: "Item 1"))
-    ///         OUDSNavigationListItem(data: OUDSListItemData(label: "Item 2"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
     ///     }
-    ///     .oudsListItemStyle(.standard(.backgroundOnInteractionOnly(withDivider: true)))
-    ///
-    ///     // Card style with outlined border
-    ///     VStack {
-    ///         OUDSNavigationListItem(data: OUDSListItemData(label: "Item 1"))
-    ///         OUDSNavigationListItem(data: OUDSListItemData(label: "Item 2"))
-    ///     }
-    ///     .oudsListItemStyle(.card(.outlined))
+    ///     .oudsListItemStyle(divider: true, background: true)
     /// ```
     ///
-    /// - Parameter style: The ``OUDSListItemContentStyle`` to apply on items.
-    ///   Defaults to `.standard(.background(withDivider: true))`.
+    /// - Parameters:
+    ///   - divider: Used to display a divider at bottom of the card.
+    ///   - background: Used to fill the background, `true` by default. If set to `false`, the background is filled only
+    ///     on interaction states (pressed on focussed)
     ///
-    /// - Returns: A view with the specified content style applied to its list items, default set to `.standard(.background(withDivider: true))`
-    public func oudsListItemStyle(_ style: OUDSListItemContentStyle = .standard(.background(withDivider: true))) -> some View {
-        environment(\.oudsListItemContentStyle, style)
+    /// - Returns: A view with the item style applied to its list items, default set to `.item(divider: true, background: false)`
+    public func oudsListItemStyle(divider: Bool = true, background: Bool = false) -> some View {
+        environment(\.oudsListItemContentStyle, .item(divider: divider, background: background))
     }
 
     /// Defines whether media elements (images and videos) in list items should be displayed
@@ -417,11 +318,10 @@ extension EnvironmentValues {
 
     /// The current content style of list items.
     ///
-    /// Defaults to `.standard(.backgroundOnInteractionOnly(withDivider: true))`.
-    /// Set via ``SwiftUICore/View/oudsListItemStyle(_:)``,
-    /// ``SwiftUICore/View/oudsListItemStandardStyle(_:)`` or
+    /// Defaults to `.item(divider: true, background: false)`.
+    /// Set via ``SwiftUICore/View/oudsListItemStyle(_:)`` or
     /// ``SwiftUICore/View/oudsListCardStyle(_:)``.
-    @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .standard(.backgroundOnInteractionOnly(withDivider: true))
+    @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .item(divider: true, background: false)
 
     /// Whether media elements (images and videos) in list items should be displayed
     /// with rounded corners.

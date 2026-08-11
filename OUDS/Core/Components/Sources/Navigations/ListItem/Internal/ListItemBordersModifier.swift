@@ -33,19 +33,13 @@ struct ListItemBordersModifier: ViewModifier {
         switch style {
         case let .card(cardStyle):
             switch cardStyle {
-            case .outlined:
-                outlined(content: content, onInteractionOnly: false)
-            case .outlinedOnInteractionOnly:
-                outlined(content: content, onInteractionOnly: true)
-            case let .background(divider), let .backgroundOnInteractionOnly(divider):
+            case let .outlined(onInteractionOnly):
+                outlined(content: content, onInteractionOnly: onInteractionOnly)
+            case let .standard(divider, _):
                 self.divider(content: content, with: divider)
             }
-
-        case let .standard(standardStyle):
-            switch standardStyle {
-            case let .background(divider), let .backgroundOnInteractionOnly(divider):
-                self.divider(content: content, with: divider)
-            }
+        case let .item(divider, _):
+            self.divider(content: content, with: divider)
         }
     }
 
@@ -55,7 +49,7 @@ struct ListItemBordersModifier: ViewModifier {
         switch style {
         case .card:
             theme.tuning.hasRoundedListItems
-        case .standard:
+        case .item:
             false
         }
     }

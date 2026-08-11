@@ -671,18 +671,16 @@ Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`
 // Vertical alignment of leading/trailing/text containers: .center (default) or .top
 .oudsListItemContainerAlignment(.top)
 
-// General-purpose style modifier — .card or .standard
-.oudsListItemStyle(.card(.outlined))                                        // visible border around each item
-.oudsListItemStyle(.card(.background(withDivider: true)))                   // card with background and divider
-.oudsListItemStyle(.standard(.background(withDivider: true)))               // background always visible
-.oudsListItemStyle(.standard(.backgroundOnInteractionOnly(withDivider: true))) // default
+// Content style modifier — .card or .item
+.oudsListCardStyle(decoration: .outlined))                                   // visible border around each item
+.oudsListCardStyle(decoration: .standard(divider: true, background: true))   // card with background and divider
+.oudsListItemStyle(divider: true, background: true))                         // item with background always visible
+.oudsListItemStyle(divider: true, background: false))                        // default: item with divider and withot background
 
-// Convenience: card style only — defaults to .background(withDivider: true)
-.oudsListCardStyle(.outlined)
-.oudsListCardStyle(.background(withDivider: false))
-
-// Convenience: standard style only — defaults to .backgroundOnInteractionOnly(withDivider: true)
-.oudsListItemStandardStyle(.background(withDivider: true))
+// General-purpose modifier: 
+.oudsListContentStyle(.card(.outlined))
+.oudsListContentStyle(.card(.standard(divider: false, background: true))
+.oudsListContentStyle(.item(divider: true, background: true))
 
 // Rounded corners on image/video media elements (default: false)
 .oudsListItemRoundedMedia(true)
@@ -708,8 +706,8 @@ VStack {
 4. **`.small` size** — hides `overline`, `extraLabel`, and trailing `labelAndExtraLabel`'s extra label; forces avatar/icon/badge to their smallest variant.
 5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
 6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
-7. **`oudsListCardStyle(_:)`** — shorthand for `.card` style; parameter is `OUDSListItemContentStyle.Card` (default: `.background(withDivider: true)`). **`oudsListItemStandardStyle(_:)`** — shorthand for `.standard` style (default: `.backgroundOnInteractionOnly(withDivider: true)`).
-8. **Modifier defaults vs environment defaults** — when no `oudsListItemStyle` / `oudsListItemStandardStyle` / `oudsListCardStyle` modifier is applied, the environment default is `.standard(.backgroundOnInteractionOnly(withDivider: true))`. Calling `oudsListItemStyle()` with no argument uses `.standard(.background(withDivider: true))`. Prefer explicit values to avoid confusion.
+7. **`oudsListCardStyle(_:)`** — shorthand for `.card` style; parameter is `OUDSListContentStyle.card` (default: `.standard(divider: true, background: true)`). **`oudsListItemStyle(_:)`** — shorthand for `.item` style (default: `(divider: true, backgroud: false)`).
+8. **Modifier defaults vs environment defaults** — when no `oudsListContentStyle` / `oudsListItemStyle` / `oudsListCardStyle` modifier is applied, the environment default is `.item(divider: true, background: false)`. Calling `oudsListContentStyle()` with no argument uses `.item(divider: true, background: false))`. Prefer explicit values to avoid confusion.
 
 #### Accessibility — VoiceOver
 

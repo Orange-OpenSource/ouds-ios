@@ -31,20 +31,13 @@ struct ListItemBackgroundModifier: ViewModifier {
         switch style {
         case let .card(cardStyle):
             switch cardStyle {
-            case .outlined, .outlinedOnInteractionOnly:
+            case .outlined:
                 content
-            case .backgroundOnInteractionOnly:
-                background(content: content, withInteractionOnly: true)
-            case .background:
-                background(content: content, withInteractionOnly: false)
+            case let .standard(_, background):
+                self.background(content: content, withInteractionOnly: background == false)
             }
-        case let .standard(standardStyle):
-            switch standardStyle {
-            case .backgroundOnInteractionOnly:
-                background(content: content, withInteractionOnly: true)
-            case .background:
-                background(content: content, withInteractionOnly: false)
-            }
+        case let .item(_, background):
+            self.background(content: content, withInteractionOnly: background == false)
         }
     }
 

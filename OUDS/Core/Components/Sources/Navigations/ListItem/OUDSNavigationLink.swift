@@ -61,12 +61,12 @@ public struct OUDSNavigationLink<Destination: View>: View {
     ///    - title: The label for the ``OUDSNavigationListItem``
     ///    - hasBoldLabel: Flag to rise if title must be bold or not, default set to *false*
     ///    - indicatorType: The type of link to apply, default set to `.next`
-    ///    - style: The type of style to apply, default set to `.standard(divider: false, background: false)`
+    ///    - style: The type of style to apply, default set to `.item(divider: false, background: false)`
     ///    - destination: A closure providing the view to display when the user taps the item.
     public init(title: String,
                 hasBoldLabel: Bool = false,
                 indicatorType: OUDSNavigationListItemIndicatorType = .next,
-                style: OUDSListItemContentStyle = .standard(.backgroundOnInteractionOnly(withDivider: true)),
+                style: OUDSListItemContentStyle = .item(divider: true, background: false),
                 destination: @escaping () -> Destination)
     {
         self.title = title
@@ -86,14 +86,14 @@ public struct OUDSNavigationLink<Destination: View>: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - hasBoldLabel: Flag to rise if title must be bold or not, default set to *false*
     ///    - indicatorType: The type of link to apply, default set to `.next`
-    ///    - style: The type of style to apply, default set to `.standard(divider: false, background: false)`
+    ///    - style: The type of style to apply, default set to `.item(divider: true, background: false)`
     ///    - destination: A closure providing the view to display when the user taps the item.
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 hasBoldLabel: Bool = false,
                 indicatorType: OUDSNavigationListItemIndicatorType = .next,
-                style: OUDSListItemContentStyle = .standard(.backgroundOnInteractionOnly(withDivider: true)),
+                style: OUDSListItemContentStyle = .item(divider: true, background: false),
                 destination: @escaping () -> Destination)
     {
         self.init(title: key.resolved(tableName: tableName, bundle: bundle),
@@ -109,7 +109,7 @@ public struct OUDSNavigationLink<Destination: View>: View {
         OUDSNavigationListItem(data: .init(label: title, hasBoldLabel: hasBoldLabel), indicatorType: indicatorType) {
             isActive = true
         }
-        .oudsListItemStyle(style)
+        .oudsListContentStyle(style)
         .background {
             NavigationLink(destination: destination().navigationTitle(title), isActive: $isActive) {
                 EmptyView()
