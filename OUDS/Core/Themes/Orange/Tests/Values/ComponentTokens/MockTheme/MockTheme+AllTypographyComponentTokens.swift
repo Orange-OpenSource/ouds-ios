@@ -24,7 +24,6 @@ final class MockThemeTypographyComponentTokenProvider: OrangeThemeTypographyComp
 
     // MARK: - Mocks and setup
 
-    static let mockThemeTypographyBool: Bool = false
     static let mockThemeTypographySpace: SpaceSemanticToken = 1_312
 
     override init(spaces: AllSpaceSemanticTokensProvider?) {
@@ -33,7 +32,6 @@ final class MockThemeTypographyComponentTokenProvider: OrangeThemeTypographyComp
 
     // MARK: - Typography component tokens
 
-    override var headingLargeMarker: Bool { Self.mockThemeTypographyBool }
     override var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { Self.mockThemeTypographySpace }
     override var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { Self.mockThemeTypographySpace }
 }

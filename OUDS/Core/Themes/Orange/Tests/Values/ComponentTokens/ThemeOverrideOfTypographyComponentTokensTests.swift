@@ -27,11 +27,6 @@ struct ThemeOverrideOfTypographyComponentTokensTests {
         inheritedTheme = MockTheme()
     }
 
-    @Test func inheritedThemeCanOverrideTypographyComponentTokenHeadingLargeMarker() throws {
-        #expect(inheritedTheme.typography.headingLargeMarker != abstractTheme.typography.headingLargeMarker)
-        #expect(inheritedTheme.typography.headingLargeMarker == MockThemeTypographyComponentTokenProvider.mockThemeTypographyBool)
-    }
-
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverrideTypographyComponentTokenSpacePaddingBlockTopHeadingLargeMarker() throws {

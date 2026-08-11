@@ -39,6 +39,24 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A body typography component in light and dark modes with Orange theme](component_typography_body_Orange)
+///
+/// ### Orange Compact
+///
+/// ![A body typography component in light and dark modes with Orange Compact theme](component_typography_body_OrangeCompact)
+///
+/// ### Sosh
+///
+/// ![A body typography component in light and dark modes with Sosh theme](component_typography_body_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A body typography component in light and dark modes with Wireframe theme](component_typography_body_Wireframe)
+///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)

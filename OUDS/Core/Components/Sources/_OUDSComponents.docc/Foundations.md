@@ -5,17 +5,32 @@
     @PageImage(purpose: card, source: "ic_folder_categories")
 }
 
-The **Foundations** family gathers primitive building blocks of the design system. Today it exposes the *Typography* components.
+Some components can be used for **typography**.
 
 ## Overview
 
+The **Foundations** family gathers primitive building blocks of the design system. Today it exposes the *Typography* components.
+
 ### Typography
 
-// TODO: #1580 - Add illustrations
+@TabNavigator {
+    @Tab("Orange") {
+        ![An heading typography component in light and dark modes with Orange theme](component_typography_heading_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![An heading typography component in light and dark modes with Orange Compact theme](component_typography_heading_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![An heading typography component in light and dark modes with Sosh theme](component_typography_heading_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
+    }
+}
 
 Typography components render text using the semantic font tokens exposed by the current theme. 
 They are the recommended way to display text inside your app since they automatically apply the right font elements.
-There are 5 types: ``OUDSDisplay``, ``OUDSHeading``, ``OUDSBody``, ``OUDSLabel`` and ``OUDSCode``
+There are 5 types: ``OUDSDisplay``, ``OUDSHeading``, ``OUDSBody``, ``OUDSLabel`` and ``OUDSCode``.
 
 ```swift
 // Display

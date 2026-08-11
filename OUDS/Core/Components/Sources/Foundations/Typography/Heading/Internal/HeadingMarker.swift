@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-/// Internal decorative marker displayed above a large ``OUDSHeading`` when the current theme supports it.
+/// Internal decorative marker displayed below a large ``OUDSHeading`` when the current theme supports it.
 struct HeadingMarker: View {
 
     // MARK: Properties

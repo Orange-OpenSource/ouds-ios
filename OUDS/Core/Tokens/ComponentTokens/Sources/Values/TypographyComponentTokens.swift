@@ -26,7 +26,6 @@ import OUDSTokensSemantic
 /// - Since: 3.0.0
 public protocol TypographyComponentTokens {
 
-    var headingLargeMarker: Bool { get }
     var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { get }
     var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { get }
 }

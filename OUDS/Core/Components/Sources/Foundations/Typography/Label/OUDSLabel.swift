@@ -40,12 +40,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A label typography component in light and dark modes with Orange theme](component_typography_label_Orange)
+///
+/// ### Orange Compact
+///
+/// ![A label typography component in light and dark modes with Orange Compact theme](component_typography_label_OrangeCompact)
+///
+/// ### Sosh
+///
+/// ![A label typography component in light and dark modes with Sosh theme](component_typography_label_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A label typography component in light and dark modes with Wireframe theme](component_typography_label_Wireframe)
+///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLabel: View { // TODO: #1580 - Add reference to documentation when available
-
-    // TODO: #1580 - Add illustrations
 
     // MARK: Properties
 

@@ -16,7 +16,7 @@ import SwiftUI
 
 /// Text component used to structure the hierarchy of a screen.
 /// Four sizes are available; the largest (`.large`) can optionally display a **marker**, i.e. a small brand-coloured
-/// rectangle rendered on top of the text (when the current theme declares it supports one).
+/// rectangle rendered below the text (when the current theme declares it supports one).
 ///
 /// ## Sizes
 ///
@@ -28,7 +28,7 @@ import SwiftUI
 /// ## Marker
 ///
 /// Some themes (like *Orange*, *Orange Compact* and *Wireframe*) declare that a *large* heading is decorated with a small
-/// coloured rectangle above the text, i.e. the **marker**. Other themes (like *Sosh*) do not use a marker at all but something else.
+/// coloured rectangle below the text, i.e. the **marker**. Other themes (like *Sosh*) do not use a marker at all but something else.
 ///
 /// ## Coloring a substring
 ///
@@ -70,12 +70,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![An heading typography component in light and dark modes with Orange theme](component_typography_heading_Orange)
+///
+/// ### Orange Compact
+///
+/// ![An heading typography component in light and dark modes with Orange Compact theme](component_typography_heading_OrangeCompact)
+///
+/// ### Sosh
+///
+/// ![An heading typography component in light and dark modes with Sosh theme](component_typography_heading_Sosh)
+///
+/// ### Wireframe
+///
+/// ![An heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
+///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSHeading: View {
-
-    // TODO: #1580 - Add illustrations
 
     // MARK: - Properties
 
@@ -117,14 +133,13 @@ public struct OUDSHeading: View {
     /// - Parameters:
     ///    - text: The text of the heading.
     ///    - size: The heading size, default set to `.large`.
-    ///    - hasMarker: Whether to draw the brand marker above the text. Only honored when `size == .large`
+    ///    - hasMarker: Whether to draw the brand marker below the text. Only honored when `size == .large`
     ///     **and** the current theme supports it. Default set to `false`.
     public init(text: String, size: Size = .large, hasMarker: Bool = false) {
         self.text = text
         coloredText = nil
         self.size = size
         self.hasMarker = hasMarker
-        logMisuseWarningsIfNeeded()
     }
 
     /// Creates a heading with a localized `LocalizedStringKey`, looking up the key in the given bundle.
@@ -141,7 +156,7 @@ public struct OUDSHeading: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default.
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - size: The heading size, default set to `.large`.
-    ///    - hasMarker: Whether to draw the brand marker above the text. Only honored when `size == .large`
+    ///    - hasMarker: Whether to draw the brand marker below the text. Only honored when `size == .large`
     ///     **and** the current theme supports it. Default set to `false`.
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -171,7 +186,6 @@ public struct OUDSHeading: View {
         self.coloredText = coloredText
         size = .large
         hasMarker = false
-        logMisuseWarningsIfNeeded()
     }
 
     // swiftlint:disable function_default_parameter_at_end
@@ -203,11 +217,17 @@ public struct OUDSHeading: View {
     // MARK: Body
 
     public var body: some View {
+        logMisuseWarningsIfNeeded()
+        return content
+    }
+
+    @ViewBuilder
+    private var content: some View {
         if mustDisplayMarker {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                HeadingMarker()
                 styledText
                     .foregroundColor(theme.colors.contentDefault)
+                HeadingMarker()
             }
             .accessibilityElement(children: .combine)
             .accessibilityAddTraits(.isHeader)
@@ -222,14 +242,14 @@ public struct OUDSHeading: View {
 
     /// Whether the marker should actually be drawn, taking into account size and theme support.
     private var mustDisplayMarker: Bool {
-        hasMarker && size == .large && theme.typography.headingLargeMarker
+        hasMarker && size == .large && theme.hasTypographyHeadingLargeMarker
     }
 
     /// Emits warnings when the parameters are used outside their supported combinations.
     private func logMisuseWarningsIfNeeded() {
         if hasMarker, size != .large {
             OL.warning("The 'hasMarker' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
-        } else if hasMarker, size == .large, !theme.typography.headingLargeMarker {
+        } else if hasMarker, size == .large, !theme.hasTypographyHeadingLargeMarker {
             OL.warning("The current theme does not support a large heading marker. The 'hasMarker' parameter is ignored.")
         }
         if coloredText != nil, size != .large {

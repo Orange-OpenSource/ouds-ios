@@ -21,8 +21,6 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension WireframeThemeTypographyComponentTokensProvider: TypographyComponentTokens {
-    /// Has for value token true
-    @objc public final var headingLargeMarker: Bool { true }
     /// Has for value token spaces.paddingBlockNone (= 0)
     @objc public final var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlockNone }
     /// Has for value token spaces.paddingBlock3xsmall (= 4)
