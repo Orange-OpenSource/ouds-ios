@@ -26,7 +26,8 @@ Components:
 - **`ouds-ios-components-content-display`** — OUDSBulletList
 - **`ouds-ios-components-controls`** — Checkbox, Radio, Switch, Chips, PinCodeInput, PasswordInput, TextInput, TextArea
 - **`ouds-ios-components-dialogs`** — OUDSAlertMessage, OUDSInlineAlert
-- **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator, OUDSLinearProgressIndicator
+- **`ouds-ios-components-foundations`** — Typography (OUDSDisplay, OUDSHeading, OUDSBody, OUDSLabel, OUDSCode)
+- **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator
 - **`ouds-ios-components-layouts`** — OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider
 - **`ouds-ios-components-navigations`** — OUDSLink, OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
 
@@ -47,7 +48,7 @@ Guides:
 ## Critical rules
 
 - Always load the **`ouds-ios-guide-vocabulary`** skill before discussing tokens or themes.
-- Always load the **`ouds-ios-framework-usage`** skill first before writing or reviewing any code that uses OUDS. Then also load the matching **`ouds-ios-components-<family>`** skill (`actions`, `content-display`, `controls`, `dialogs`, `indicators`, `layouts`, `navigations`) for the specific component family you are working with.
+- Always load the **`ouds-ios-framework-usage`** skill first before writing or reviewing any code that uses OUDS. Then also load the matching **`ouds-ios-components-<family>`** skill (`actions`, `content-display`, `controls`, `dialogs`, `foundations`, `indicators`, `layouts`, `navigations`) for the specific component family you are working with.
 - Always load the **`ouds-ios-guide-figma-to-swift`** skill when asked to find or map a Figma token name to its Swift equivalent.
 - Always load the **`ouds-ios-guide-migration`** skill when the user wants to migrate OUDS code or when deprecated OUDS API usages are detected.
 - Always load the **`ouds-ios-guide-create-theme`** skill when the user wants to create a custom OUDS theme or brand theme.
