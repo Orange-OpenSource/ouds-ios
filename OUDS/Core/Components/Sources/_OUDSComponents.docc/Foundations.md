@@ -15,16 +15,16 @@ The **Foundations** family gathers primitive building blocks of the design syste
 
 @TabNavigator {
     @Tab("Orange") {
-        ![An heading typography component in light and dark modes with Orange theme](component_typography_heading_Orange)
+        ![A heading typography component in light and dark modes with Orange theme](component_typography_heading_Orange)
     }
     @Tab("Orange Compact") {
-        ![An heading typography component in light and dark modes with Orange Compact theme](component_typography_heading_OrangeCompact)
+        ![A heading typography component in light and dark modes with Orange Compact theme](component_typography_heading_OrangeCompact)
     }
     @Tab("Sosh") {
-        ![An heading typography component in light and dark modes with Sosh theme](component_typography_heading_Sosh)
+        ![A heading typography component in light and dark modes with Sosh theme](component_typography_heading_Sosh)
     }
     @Tab("Wireframe") {
-        ![An heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
+        ![A heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
     }
 }
 

@@ -37,7 +37,7 @@ import SwiftUI
 /// meaningful for `size == .large`; on other sizes a warning is logged and the text is rendered plain.
 ///
 /// > Warning: Not all themes provide a valid `theme.colors.contentBrandSecondary` (e.g. *Orange* and *Orange Compact* where
-/// > the token is marked as forbidden). When the token is forbidden the coloring is skipped .
+/// > the token is marked as forbidden). When the token is forbidden the coloring is skipped.
 ///
 /// ## Code samples
 ///
@@ -74,19 +74,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![An heading typography component in light and dark modes with Orange theme](component_typography_heading_Orange)
+/// ![A heading typography component in light and dark modes with Orange theme](component_typography_heading_Orange)
 ///
 /// ### Orange Compact
 ///
-/// ![An heading typography component in light and dark modes with Orange Compact theme](component_typography_heading_OrangeCompact)
+/// ![A heading typography component in light and dark modes with Orange Compact theme](component_typography_heading_OrangeCompact)
 ///
 /// ### Sosh
 ///
-/// ![An heading typography component in light and dark modes with Sosh theme](component_typography_heading_Sosh)
+/// ![A heading typography component in light and dark modes with Sosh theme](component_typography_heading_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![An heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
+/// ![A heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
@@ -217,8 +217,8 @@ public struct OUDSHeading: View {
     // MARK: Body
 
     public var body: some View {
-        logMisuseWarningsIfNeeded()
-        return content
+        content
+            .onAppear(perform: logMisuseWarningsIfNeeded)
     }
 
     @ViewBuilder

@@ -191,7 +191,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
     ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
-    ///    - hasTypographyHeadingLargeMarker: If big heading typography has large markers or not (default set to `false`).
+    ///    - hasTypographyHeadingLargeMarker: If big heading typography has large markers or not (default set to `true`).
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
