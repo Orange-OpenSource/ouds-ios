@@ -79,12 +79,14 @@ Some tuning object exists.
 
 ```swift
 // Define your theme tuning
-let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true, hasRoundedListItems: true)
+let tuning = Tuning(hasRoundedButtons: true, 
+                    hasRoundedTextInputs: true, 
+                    hasRoundedAlertMessages: true, 
+                    hasRoundedProgressIndicators: true,
+                    hasRoundedListItems: true)
 
 // Apply it to your theme
 let theme = OrangeCompactTheme(tuning: tuning)
-// Or in one line
-let theme = OrangeCompactTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true, hasRoundedListItems: true))
 
 // Or apply predefined tunings
 let orangeFranceTheme = OrangeCompactTheme(tuning: Tuning.OrangeFrance)
@@ -100,7 +102,7 @@ rounded corners buttons             | ❌ false
 rounded corners text inputs         | ❌ false
 rounded corners alert messages      | ❌ false
 rounded corners progress indicators | ❌ false
-rounded corners list items          | ✅ true
+rounded corners list items          | ❌ false
 
 ## Typography
 

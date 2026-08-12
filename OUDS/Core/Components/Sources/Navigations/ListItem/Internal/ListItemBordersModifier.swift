@@ -26,6 +26,7 @@ struct ListItemBordersModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -89,15 +90,13 @@ struct ListItemBordersModifier: ViewModifier {
     @ViewBuilder
     private func divider(content: Content, with divider: Bool) -> some View {
         if divider {
-            if roundedCorners {
-                content.shadow(theme.elevations.raised)
-            } else {
-                // Divider must be inside
-                ZStack(alignment: .bottom) {
-                    content
-                    Divider().horizontal(force: theme.colors.borderMuted)
-                }
+            ZStack(alignment: .bottomLeading) {
+                content
+                Divider()
+                    .horizontal()
+                    .overlay(theme.colors.borderMuted.color(for: colorScheme))
             }
+            .clipShape(RoundedRectangle(cornerRadius: radius))
         } else {
             content.clipShape(RoundedRectangle(cornerRadius: radius))
         }

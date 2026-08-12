@@ -58,12 +58,14 @@ import OUDSTokensSemantic
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true, hasRoundedListItems: true)
+///     let tuning = Tuning(hasRoundedButtons: true,
+///                         hasRoundedTextInputs: true,
+///                         hasRoundedAlertMessages: true,
+///                         hasRoundedProgressIndicators: true,
+///                         hasRoundedListItems: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeTheme(tuning: tuning)
-///     // Or in one line
-///     let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true, hasRoundedListItems: true))
 ///
 ///     // Or apply predefined tunings
 ///     let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
