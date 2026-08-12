@@ -47,17 +47,17 @@ import SwiftUI
 /// Defines the visual style of a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
 /// The style controls the border, divider, and background appearance of list items.
-/// Use the ``SwiftUICore/View/oudsListItemContentStyle(_:)``,
-/// ``SwiftUICore/View/oudsListItemStyle(_:)`` or
+/// Use the ``SwiftUICore/View/oudsListContentStyle(_:)``,
+/// ``SwiftUICore/View/oudsListItemStyle(divider:background:)`` or
 /// ``SwiftUICore/View/oudsListCardStyle(_:)`` view modifiers to apply the style on list items.
 ///
 /// ## Cases
 ///
 /// - **`.card(_:)`**: A card-like appearance with various sub-styles (decoration) defined by
-///   ``OUDSListItemContentStyle/card``. Cards can be outlined, have a background,
+///   ``OUDSListItemContentStyle/card(_:)``. Cards can be outlined, have a background,
 ///   or combine these effects only on interaction.
 /// - **`.item(_:)`**: A standard list item appearance with an optional background and divider,
-///   defined by ``OUDSListItemContentStyle/item``.
+///   defined by ``OUDSListItemContentStyle/item(divider:background:)``.
 ///
 /// ## Known limitation
 ///
@@ -138,9 +138,9 @@ import SwiftUI
     ///
     ///  - Parameters:
     ///     - divider: Used to display a divider at bottom of the item.
-    ///     - background: Used to fill the background, `true` by default. If set to `false`, the background is filled only
+    ///     - background: Used to fill the background, `false` by default. If set to `false`, means the background is filled only
     ///     on interaction states (e.g. press, hover).
-    case item(divider: Bool, background: Bool)
+    case item(divider: Bool = true, background: Bool = false)
 }
 
 // MARK: - OUDS List Item Size
@@ -185,6 +185,29 @@ import SwiftUI
 
 extension View {
 
+    /// Defines the visual style of a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+    ///
+    /// The style controls the border, divider, and background appearance of list items.
+    ///
+    /// ```swift
+    ///     // Set outlined card style
+    ///     VStack {
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    ///     }
+    ///     .oudsListContentStyle(.card(.outlined())
+    ///
+    ///     // Set item style with background and divider
+    ///     VStack {
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    ///     }
+    ///     .oudsListContentStyle(.item(divider: true, background: true))
+    /// ```
+    ///
+    /// - Parameter style: The ``OUDSListItemContentStyle``  style to apply on items.
+    ///
+    /// - Returns: A view with the style applied to its list items.
     public func oudsListContentStyle(_ style: OUDSListItemContentStyle) -> some View {
         environment(\.oudsListItemContentStyle, style)
     }
@@ -200,20 +223,20 @@ extension View {
     ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
     ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
     ///     }
-    ///     .oudsListCardStyle(.outlined)
+    ///     .oudsListCardStyle(.outlined())
     /// ```
     ///
-    /// - Parameter decoration: The ``OUDSListItemContentStyle/Card`` sub-style to apply on items.
+    /// - Parameter decoration: The ``OUDSListItemContentStyle/card(_:)`` decoration (sub-style) to apply on items.
     ///   Defaults to `.standard(divider: true, background: true)`.
     ///
-    /// - Returns: A view with the card style applied to its list items, default set to `.card(divider: true, background: true)`
+    /// - Returns: A view with the card style applied to its list items, default set to `.standard(divider: true, background: true)`
     public func oudsListCardStyle(_ decoration: OUDSListItemContentStyle.CardDecoration = .standard(divider: true, background: true)) -> some View {
         environment(\.oudsListItemContentStyle, .card(decoration))
     }
 
-    /// Applies a *standard* style on list items.
+    /// Applies a *item* style on list items.
     ///
-    /// This is a convenience modifier that applies an ``OUDSListItemContentStyle/item(_:)`` style.
+    /// This is a convenience modifier that applies an ``OUDSListItemContentStyle/item(divider:background:)`` style.
     /// It is typically applied globally on a container (e.g. a `List`, `VStack`, or `ForEach`)
     /// so that all enclosed list items share the same appearance.
     ///
@@ -319,7 +342,7 @@ extension EnvironmentValues {
     /// The current content style of list items.
     ///
     /// Defaults to `.item(divider: true, background: false)`.
-    /// Set via ``SwiftUICore/View/oudsListItemStyle(_:)`` or
+    /// Set via ``SwiftUICore/View/oudsListItemStyle(divider:background:)`` or
     /// ``SwiftUICore/View/oudsListCardStyle(_:)``.
     @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .item(divider: true, background: false)
 
