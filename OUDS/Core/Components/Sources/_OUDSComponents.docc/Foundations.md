@@ -53,13 +53,3 @@ OUDSLabel(text: "Label", size: .xLarge, weight: .moderate)
 // Code
 OUDSCode(text: "let x = 42")
 ```
-
-## Topics
-
-### Components
-
-- ``OUDSDisplay``
-- ``OUDSHeading``
-- ``OUDSBody``
-- ``OUDSLabel``
-- ``OUDSCode``

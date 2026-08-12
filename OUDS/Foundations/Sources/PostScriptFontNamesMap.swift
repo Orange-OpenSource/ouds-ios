@@ -157,6 +157,14 @@ nonisolated(unsafe) private var internalApplePostScriptFontNames: PostScriptFont
         PSFNMK("SF Pro", Font.Weight.heavy): "SFPro-Heavy",
         PSFNMK("SF Pro", Font.Weight.black): "SFPro-Black",
 
+        PSFNMK("SF Mono", Font.Weight.light): "SFMono-Light",
+        PSFNMK("SF Mono", Font.Weight.regular): "SFMono-Regular",
+        PSFNMK("SF Mono", nil /* courant */ ): "SFMono-Regular",
+        PSFNMK("SF Mono", Font.Weight.medium): "SFMono-Medium",
+        PSFNMK("SF Mono", Font.Weight.semibold): "SFMono-Semibold",
+        PSFNMK("SF Mono", Font.Weight.bold): "SFMono-Bold",
+        PSFNMK("SF Mono", Font.Weight.heavy): "SFMono-Heavy",
+
         // "Roboto" defined in FontRawTokens but does not exist at all in font books
 
         PSFNMK("Menlo", Font.Weight.regular): "Menlo-Regular",
