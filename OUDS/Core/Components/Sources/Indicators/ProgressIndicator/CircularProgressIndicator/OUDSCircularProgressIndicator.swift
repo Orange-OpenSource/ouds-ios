@@ -154,7 +154,7 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///      display, and animates any subsequent change of `progress`. When `false`, the indicator is displayed
     ///      instantly at its target value with no animation. Animations are always disabled when
     ///      `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this flag.
-    ///    - size: The size of the component could be adjusted if used internaly by components.
+    ///    - size: The size of the component could be adjusted if used internally by components.
     public init(progress: Double,
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
@@ -176,7 +176,7 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
-    ///    - size: The size of the component could be adjusted if used interanly by components.
+    ///    - size: The size of the component could be adjusted if used internally by components.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 gapSize: OUDSProgressIndicatorGapSize = .default,

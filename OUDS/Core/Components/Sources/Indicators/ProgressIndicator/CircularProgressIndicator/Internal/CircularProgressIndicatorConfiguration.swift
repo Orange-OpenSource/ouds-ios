@@ -42,7 +42,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     /// changes of `progress`. Ignored in indeterminate mode.
     let animated: Bool
 
-    /// Size of the component could be adjusted if used internaly by components.
+    /// Size of the component could be adjusted if used internally by components.
     let size: CGFloat
 
     // MARK: - Initializer
@@ -54,7 +54,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     ///    - status: The color status of the indicator.
     ///    - track: Whether the track is displayed.
     ///    - gapSize: The size of the gap between the indicator and the track.
-    ///    - size: The size of the component could be adjusted if used internaly by components.
+    ///    - size: The size of the component could be adjusted if used internally by components.
     ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
     init(progress: Double?,
          status: OUDSProgressIndicatorStatus,
