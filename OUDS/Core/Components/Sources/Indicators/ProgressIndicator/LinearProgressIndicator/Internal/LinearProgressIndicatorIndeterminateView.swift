@@ -93,7 +93,7 @@ struct LinearProgressIndicatorIndeterminateView: View {
     let foregroundColor: Color
     let trackColor: Color
     let strokeCap: CGLineCap
-    let gapSize: ProgressIndicatorGapSize
+    let gapSize: OUDSProgressIndicatorGapSize
     let hasTrack: Bool
     let barHeight: CGFloat
 

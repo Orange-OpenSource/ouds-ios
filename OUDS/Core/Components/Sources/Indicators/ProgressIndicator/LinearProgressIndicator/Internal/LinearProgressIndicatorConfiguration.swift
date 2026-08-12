@@ -28,7 +28,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let progress: Double
 
         /// Color status of the indicator.
-        let status: ProgressIndicatorStatus
+        let status: OUDSProgressIndicatorStatus
 
         /// Whether the track is displayed on the right of the foreground bar.
         let track: Bool
@@ -40,18 +40,18 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let helperText: String?
 
         /// Size of the gap between the foreground bar and the track.
-        let gapSize: ProgressIndicatorGapSize
+        let gapSize: OUDSProgressIndicatorGapSize
 
         /// Whether the reveal / update animation is played.
         let animated: Bool
 
         /// Creates a determinate configuration. The `progress` value is clamped to `[0, 1]`.
         init(progress: Double,
-             status: ProgressIndicatorStatus,
+             status: OUDSProgressIndicatorStatus,
              track: Bool,
              stopIndicator: Bool,
              helperText: String?,
-             gapSize: ProgressIndicatorGapSize,
+             gapSize: OUDSProgressIndicatorGapSize,
              animated: Bool)
         {
             self.progress = min(max(progress, 0.0), 1.0)
@@ -70,7 +70,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
     struct Indeterminate: Equatable, Sendable {
 
         /// Color status of the indicator.
-        let status: ProgressIndicatorStatus
+        let status: OUDSProgressIndicatorStatus
 
         /// Whether the track is displayed.
         let track: Bool
@@ -79,7 +79,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let helperText: String?
 
         /// Size of the gap between the bars and the track.
-        let gapSize: ProgressIndicatorGapSize
+        let gapSize: OUDSProgressIndicatorGapSize
     }
 
     // MARK: - Convenience accessors
@@ -91,7 +91,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
     }
 
     /// The color status of the indicator, regardless of the variant.
-    var status: ProgressIndicatorStatus {
+    var status: OUDSProgressIndicatorStatus {
         switch self {
         case let .determinate(configuration):
             configuration.status
@@ -121,7 +121,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
     }
 
     /// The size of the gap between the foreground and the track, regardless of the variant.
-    var gapSize: ProgressIndicatorGapSize {
+    var gapSize: OUDSProgressIndicatorGapSize {
         switch self {
         case let .determinate(configuration):
             configuration.gapSize

@@ -172,23 +172,23 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///
     /// - Parameters:
     ///    - progress: The current progress in the `[0, 1]` range. Values outside of this range are coerced.
-    ///    - status: The status of the indicator, driving its color. Defaults to ``ProgressIndicatorStatus/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track. Defaults to
     ///      `false`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``ProgressIndicatorGapSize/default``.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
     ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on
     ///      first display, and animates any subsequent change of `progress`. When `false`, the indicator
     ///      is displayed instantly at its target value with no animation. Animations are always disabled
     ///      when `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this
     ///      flag.
     public init(progress: Double,
-                status: ProgressIndicatorStatus = .neutral,
+                status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
                 helperText: String? = nil,
-                gapSize: ProgressIndicatorGapSize = .default,
+                gapSize: OUDSProgressIndicatorGapSize = .default,
                 animated: Bool = true)
     {
         configuration = .determinate(.init(progress: progress,
@@ -207,15 +207,15 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     /// bar filled at 70% is displayed automatically.
     ///
     /// - Parameters:
-    ///    - status: The status of the indicator, driving its color. Defaults to ``ProgressIndicatorStatus/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
-    ///      ``ProgressIndicatorGapSize/default``.
-    public init(status: ProgressIndicatorStatus = .neutral,
+    ///      ``OUDSProgressIndicatorGapSize/default``.
+    public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
-                gapSize: ProgressIndicatorGapSize = .default)
+                gapSize: OUDSProgressIndicatorGapSize = .default)
     {
         configuration = .indeterminate(.init(status: status,
                                              track: track,

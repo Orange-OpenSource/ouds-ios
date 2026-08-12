@@ -98,7 +98,7 @@ struct LinearProgressBarCanvasView: View {
     let hasStopIndicator: Bool
 
     /// Requested gap size.
-    let gapSize: ProgressIndicatorGapSize
+    let gapSize: OUDSProgressIndicatorGapSize
 
     /// Height of the bar, in points.
     let barHeight: CGFloat

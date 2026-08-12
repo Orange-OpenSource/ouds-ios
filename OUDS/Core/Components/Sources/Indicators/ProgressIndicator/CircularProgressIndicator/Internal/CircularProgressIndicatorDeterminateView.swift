@@ -67,7 +67,7 @@ struct CircularProgressIndicatorDeterminateView: View {
     let foregroundColor: Color
     let trackColor: Color
     let strokeCap: CGLineCap
-    let gapSize: ProgressIndicatorGapSize
+    let gapSize: OUDSProgressIndicatorGapSize
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver

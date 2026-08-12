@@ -18,7 +18,7 @@ import SwiftUI
 /// The status of the progress indicator. It determines the color of the bar.
 ///
 /// - Since: 3.0.0
-@frozen public enum ProgressIndicatorStatus: Sendable {
+@frozen public enum OUDSProgressIndicatorStatus: Sendable {
 
     /// Default status used when progress has no specific semantic meaning.
     case neutral
@@ -40,10 +40,11 @@ import SwiftUI
 }
 
 // MARK: - Progress Indicator Gap Size
+
 /// The size of the gap between the progress bar and the track.
 ///
 /// - Since: 3.0.0
-@frozen public enum ProgressIndicatorGapSize: Sendable {
+@frozen public enum OUDSProgressIndicatorGapSize: Sendable {
 
     /// Standard gap size
     case `default`

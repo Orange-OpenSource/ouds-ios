@@ -29,13 +29,13 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     let progress: Double?
 
     /// Color status of the indicator.
-    let status: ProgressIndicatorStatus
+    let status: OUDSProgressIndicatorStatus
 
     /// Whether the track is displayed under the indicator arc.
     let track: Bool
 
     /// Size of the gap between the indicator and the track.
-    let gapSize: ProgressIndicatorGapSize
+    let gapSize: OUDSProgressIndicatorGapSize
 
     /// Whether the determinate indicator animates on first display (reveal from `0`) and on subsequent
     /// changes of `progress`. Ignored in indeterminate mode.
@@ -52,9 +52,9 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     ///    - gapSize: The size of the gap between the indicator and the track.
     ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
     init(progress: Double?,
-         status: ProgressIndicatorStatus,
+         status: OUDSProgressIndicatorStatus,
          track: Bool,
-         gapSize: ProgressIndicatorGapSize,
+         gapSize: OUDSProgressIndicatorGapSize,
          animated: Bool = true)
     {
         if let progress {
