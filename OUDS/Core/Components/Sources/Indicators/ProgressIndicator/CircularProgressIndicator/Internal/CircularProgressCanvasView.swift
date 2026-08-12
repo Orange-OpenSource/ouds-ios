@@ -40,7 +40,7 @@ struct CircularProgressCanvasView: View {
     let strokeCap: CGLineCap
     let sweep: CGFloat // Sweep of the foreground arc, in `[0, 1]` (fraction of the full circle).
     let rotation: Double // Global rotation applied to both arcs, in degrees.
-    let gapSize: OUDSCircularProgressIndicator.GapSize
+    let gapSize: OUDSProgressIndicatorGapSize
 
     // MARK: - Body
 

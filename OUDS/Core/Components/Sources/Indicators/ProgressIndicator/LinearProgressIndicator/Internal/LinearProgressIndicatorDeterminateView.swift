@@ -19,35 +19,29 @@ import SwiftUI
  ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
  */
 
-/// Internal view rendering the **determinate** variant of ``OUDSCircularProgressIndicator``.
+/// Internal view rendering the **determinate** variant of ``OUDSLinearProgressIndicator``.
 ///
 /// Handles two SwiftUI animations driven by the ``animated`` flag:
 /// - a **reveal** animation on first display (from `0` to the target `progress`);
 /// - an **update** animation whenever the target `progress` changes.
 ///
-/// Both animations use the **same critically-damped spring**, matching Android Material 3's
-/// `ProgressAnimationSpec` (`SpringSpec(dampingRatio: NoBouncy, stiffness: VeryLow)` on
-/// Android / Compose). The perceived duration is around 1.5 seconds and the fill remains
-/// visible during the whole animation — even without a track — which is the main visual
-/// difference vs. a short `.easeOut` curve.
+/// Both animations use the **same critically-damped spring** as
+/// ``CircularProgressIndicatorDeterminateView``, matching Android Material 3's
+/// `ProgressAnimationSpec` (`SpringSpec(dampingRatio: NoBouncy, stiffness: VeryLow)`). The
+/// perceived duration is around 1.5 seconds and the bar remains visible during the whole
+/// animation.
+///
+/// Rendering is delegated to ``LinearProgressBarCanvasView`` in `.determinate` mode, which uses a
+/// single animatable `Shape` to draw both the foreground and the track from the same `progress`
+/// value — this is what fixes the "jump to the right" glitch that used to happen at the end of
+/// the reveal animation.
 ///
 /// Animations are disabled and the target value is applied instantly when either
-/// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled
-/// (via ``OUDSLowPowerModeObserver``), mirroring the behavior of the indeterminate animator.
-struct CircularProgressIndicatorDeterminateView: View {
+/// ``EnvironmentValues/accessibilityReduceMotion`` is `true`, Low Power Mode is enabled (via
+/// ``OUDSLowPowerModeObserver``) or ``animated`` is `false`.
+struct LinearProgressIndicatorDeterminateView: View {
 
     // MARK: - Android Material 3 spring animation constants
-
-    /*
-     These values reproduce Android Material 3's `ProgressAnimationSpec`:
-
-       SpringSpec(dampingRatio: DampingRatioNoBouncy, stiffness: StiffnessVeryLow)
-
-        - Compose `StiffnessVeryLow` = 50f
-        - `DampingRatioNoBouncy` = 1.0 (critical damping, no bounce)
-        - Critical damping formula: damping = 2 * sqrt(mass * stiffness) with mass = 1
-        => 2 * sqrt(50) ≈ 14.1421356
-     */
 
     /// Mass of the spring used to animate the determinate progress.
     static let springMass: Double = 1.0
@@ -68,6 +62,9 @@ struct CircularProgressIndicatorDeterminateView: View {
     let trackColor: Color
     let strokeCap: CGLineCap
     let gapSize: OUDSProgressIndicatorGapSize
+    let hasTrack: Bool
+    let hasStopIndicator: Bool
+    let barHeight: CGFloat
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
@@ -79,13 +76,15 @@ struct CircularProgressIndicatorDeterminateView: View {
     // MARK: - Body
 
     var body: some View {
-        CircularProgressCanvasView(
+        LinearProgressBarCanvasView(
+            content: .determinate(progress: CGFloat(displayedProgress)),
             foregroundColor: foregroundColor,
             trackColor: trackColor,
             strokeCap: strokeCap,
-            sweep: CGFloat(displayedProgress),
-            rotation: -90,
-            gapSize: gapSize)
+            hasTrack: hasTrack,
+            hasStopIndicator: hasStopIndicator,
+            gapSize: gapSize,
+            barHeight: barHeight)
             .onAppear {
                 apply(newValue: progress)
             }
@@ -104,9 +103,6 @@ struct CircularProgressIndicatorDeterminateView: View {
 
     /// Updates ``displayedProgress`` either instantly or with the Material 3 spring animation,
     /// depending on the ``animated`` flag and the accessibility / low-power context.
-    ///
-    /// The same spring is used for the reveal animation (first display) and for update animations
-    /// (subsequent changes of `progress`), matching Material 3's behavior.
     private func apply(newValue: Double) {
         let shouldAnimate = animated && !reduceMotion && !lowPowerModeObserver.isLowPowerModeEnabled
         guard shouldAnimate else {

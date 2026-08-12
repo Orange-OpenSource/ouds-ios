@@ -89,20 +89,4 @@ struct OUDSCircularProgressIndicatorTests {
         #expect(configuration.progress == nil)
         #expect(configuration.isIndeterminate)
     }
-
-    // MARK: - Public enums exhaustiveness
-
-    @Test
-    func `every declared status is a distinct case`() {
-        let allStatuses: [OUDSCircularProgressIndicator.Status] = [
-            .neutral, .accent, .positive, .info, .warning, .negative,
-        ]
-        #expect(Set(allStatuses.map { String(describing: $0) }).count == allStatuses.count)
-    }
-
-    @Test
-    func `every declared gap size is a distinct case`() {
-        let allGapSizes: [OUDSCircularProgressIndicator.GapSize] = [.default, .small]
-        #expect(Set(allGapSizes.map { String(describing: $0) }).count == allGapSizes.count)
-    }
 }

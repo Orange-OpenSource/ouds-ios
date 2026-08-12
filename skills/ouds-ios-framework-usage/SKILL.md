@@ -172,7 +172,7 @@ Load the matching skill for the component family you need. Each family skill mir
 | Content Display | `ouds-ios-components-content-display` | OUDSBulletList |
 | Controls | `ouds-ios-components-controls` | OUDSCheckbox, OUDSRadio, OUDSSwitch, OUDSSuggestionChip / OUDSFilterChip / OUDSChipPicker, OUDSPinCodeInput, OUDSPasswordInput, OUDSTextInput, OUDSTextArea |
 | Dialogs | `ouds-ios-components-dialogs` | OUDSAlertMessage, OUDSInlineAlert |
-| Indicators | `ouds-ios-components-indicators` | OUDSBadge*, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator |
+| Indicators | `ouds-ios-components-indicators` | OUDSBadge*, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator, OUDSLinearProgressIndicator |
 | Layouts | `ouds-ios-components-layouts` | OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider |
 | Navigations | `ouds-ios-components-navigations` | OUDSLink, OUDSTabBar, OUDSToolBarItem / `toolBarTop` / `toolBarBottom` |
 
