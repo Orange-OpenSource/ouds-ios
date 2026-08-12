@@ -110,14 +110,13 @@ struct LinearProgressBarCanvasView: View {
             let totalWidth = proxy.size.width
             let cornerRadius = (strokeCap == .round) ? barHeight / 2.0 : 0.0
             let gap = effectiveGap(barHeight: barHeight)
-            let gapFraction = totalWidth > 0 ? gap / totalWidth : 0.0
 
             ZStack(alignment: .leading) {
                 switch content {
                 case let .determinate(progress):
                     LinearProgressBarShape(
                         progress: min(max(progress, 0.0), 1.0),
-                        gapFraction: min(max(gapFraction, 0.0), 1.0),
+                        gap: gap,
                         cornerRadius: cornerRadius,
                         foregroundColor: foregroundColor,
                         trackColor: hasTrack ? trackColor : .clear)
@@ -133,6 +132,7 @@ struct LinearProgressBarCanvasView: View {
                                                            firstTail: firstTail,
                                                            secondHead: secondHead,
                                                            secondTail: secondTail)
+                    let gapFraction = totalWidth > 0 ? gap / totalWidth : 0.0
                     indeterminateCanvas(gapFraction: gapFraction,
                                         cornerRadius: cornerRadius,
                                         fractions: fractions)
@@ -331,7 +331,7 @@ struct LinearProgressBarCanvasView: View {
 private struct LinearProgressBarShape: View {
 
     let progress: CGFloat
-    let gapFraction: CGFloat
+    let gap: CGFloat
     let cornerRadius: CGFloat
     let foregroundColor: Color
     let trackColor: Color
@@ -340,38 +340,40 @@ private struct LinearProgressBarShape: View {
         ZStack(alignment: .leading) {
             LinearProgressBarSegmentShape(fraction: progress,
                                           isTrack: false,
-                                          gapFraction: gapFraction,
+                                          gap: gap,
                                           cornerRadius: cornerRadius)
                 .fill(foregroundColor)
 
             LinearProgressBarSegmentShape(fraction: progress,
                                           isTrack: true,
-                                          gapFraction: gapFraction,
+                                          gap: gap,
                                           cornerRadius: cornerRadius)
                 .fill(trackColor)
-        }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
 // MARK: - Linear Progress Bar Segment Shape
 
-/// A `Shape` that draws either the foreground segment (`[0, fraction]`) or the track segment
-/// (`[fraction + min(fraction, gap), 1]`) of the determinate linear progress indicator, depending
-/// on ``isTrack``.
+/// A `Shape` that draws either the foreground segment or the track segment of the determinate
+/// linear progress indicator, depending on ``isTrack``.
+///
+/// **Layout contract:** `progress` marks the boundary between foreground and track.
+/// - Foreground covers `[0, progress × width − min(progress × width, gap)]`: the gap (in absolute
+///   points) is subtracted directly from the foreground width, so the visible bar + gap together
+///   equal exactly `progress × width` — with no floating-point error from a fraction round-trip.
+/// - Track covers `[progress × width, totalWidth]`: it always starts at `progress × width`,
+///   regardless of the gap size.
 ///
 /// The conformance to `Animatable` (via `animatableData` = `fraction`) is what makes SwiftUI
 /// re-invoke `path(in:)` at every frame during a `withAnimation` block, keeping the two segments
-/// synchronized. The gap between them is derived from `fraction` inside `path(in:)`, so it also
-/// animates in lockstep and never introduces a discontinuity — the horizontal offset of the
-/// track is computed from the exact same `fraction` at every frame.
-///
-/// Mirrors the Android Compose Material 3 reference formula:
-/// `trackStartFraction = progress + min(progress, gapSizeFraction)`.
+/// perfectly synchronized — the gap is derived from the same `fraction` at every frame, so it
+/// never introduces a discontinuity during animation.
 private struct LinearProgressBarSegmentShape: Shape {
 
     var fraction: CGFloat
     let isTrack: Bool
-    let gapFraction: CGFloat
+    let gap: CGFloat
     let cornerRadius: CGFloat
 
     var animatableData: CGFloat {
@@ -385,16 +387,20 @@ private struct LinearProgressBarSegmentShape: Shape {
         let height = rect.height
 
         if isTrack {
-            // Android Compose M3: trackStart = progress + min(progress, gap).
-            let trackStart = clampedFraction + min(clampedFraction, gapFraction)
-            guard trackStart < 1.0, width > 0 else { return Path() }
-            let x = trackStart * width
+            // Track starts exactly at `progress × width`: the gap is absorbed by the foreground,
+            // so the boundary between foreground and track is always at `progress × width`.
+            let x = clampedFraction * width
+            guard x < width, width > 0 else { return Path() }
             let segmentRect = CGRect(x: x, y: 0, width: max(0, width - x), height: height)
             return Path(roundedRect: segmentRect,
                         cornerRadius: min(cornerRadius, height / 2))
         } else {
-            // Foreground: from 0 to progress (no gap shrinking on this side, matches Android Compose M3).
-            let foregroundWidth = clampedFraction * width
+            // Foreground: width in points = progress × totalWidth − gap (absolute points).
+            // Using absolute points instead of a pre-computed fraction avoids the
+            // division/multiplication round-trip that causes a ~1.5pt pixel-snapping error on ×3
+            // screens.
+            let progressWidth = clampedFraction * width
+            let foregroundWidth = max(0, progressWidth - min(progressWidth, gap))
             guard foregroundWidth > 0 else { return Path() }
             let segmentRect = CGRect(x: 0, y: 0, width: foregroundWidth, height: height)
             return Path(roundedRect: segmentRect,
