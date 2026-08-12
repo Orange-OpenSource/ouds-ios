@@ -17,6 +17,12 @@ import Testing
 /// Tests on the public API and internal configuration of ``OUDSCircularProgressIndicator``.
 struct OUDSCircularProgressIndicatorTests {
 
+    // MARK: - View constants
+
+    @Test func `default size constant must be 48 points`() {
+        #expect(OUDSCircularProgressIndicator.defaultSize == 48.0)
+    }
+
     // MARK: - Determinate configuration defaults
 
     @Test

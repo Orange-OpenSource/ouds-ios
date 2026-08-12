@@ -21,10 +21,13 @@ struct CircularProgressIndicatorView: View {
 
     let configuration: CircularProgressIndicatorConfiguration
 
+    @ScaledMetric private var scaledDefaultSize: CGFloat
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
-    @ScaledMetric private var scaledDefaultSize: CGFloat
+
+    // MARK: - Initialize
 
     init(configuration: CircularProgressIndicatorConfiguration) {
         self.configuration = configuration
