@@ -23,8 +23,8 @@ import SwiftUI
 ///
 /// The item typically contains a label, and optionally a description, an overline, an extra label,
 /// and a helper text — all provided through ``OUDSListItemData``.
-/// It can also include an optional leading element (such as an icon, image, avatar, flag, or video)
-/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag, or video).
+/// It can also include an optional leading element (such as an icon, image, avatar, or flag)
+/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar or flag)
 ///
 /// For non-interactive, display-only list items, see ``OUDSStaticListItem``.
 ///
@@ -81,7 +81,6 @@ import SwiftUI
 ///  - `.icon(OUDSListItemIcon)`: A status or custom icon (neutral, info, warning, negative, positive)
 ///  - `.image(OUDSListItemImage)`: A static image asset
 ///  - `.flag(OUDSListItemFlag)`: A country flag image
-///  - `.video(URL)`: A video thumbnail loaded from a URL
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
 /// ## Trailing elements
@@ -97,7 +96,6 @@ import SwiftUI
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset
 /// - `.flag(OUDSListItemFlag)`: A country flag image
-/// - `.video(URL)`: A video thumbnail loaded from a URL
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
 /// ## View modifiers
@@ -108,7 +106,7 @@ import SwiftUI
 /// - ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
 /// - ``SwiftUICore/View/oudsListItemStyle(divider:background:)`` — Applies a item style with optional divider and background.
 /// - ``SwiftUICore/View/oudsListCardStyle(_:)`` — Applies a card style on list items.
-/// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images, videos) should be displayed with rounded corners.
+/// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images) should be displayed with rounded corners.
 ///
 /// ```swift
 ///     OUDSNavigationListItem(
@@ -187,10 +185,10 @@ public struct OUDSNavigationListItem<Slot: View>: View {
     ///   - indicatorType: The type of navigation indicator to display. Defaults to `.next`.
     ///     See ``OUDSNavigationListItemIndicatorType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
     ///     **Note:** Ignored when `indicatorType` is `.previous`.
     ///   - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
     ///   - action: An optional closure triggered when the item is tapped.
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
@@ -224,10 +222,10 @@ public struct OUDSNavigationListItem<Slot: View>: View {
     ///   - indicatorType: The type of navigation indicator to display. Defaults to `.next`.
     ///     See ``OUDSNavigationListItemIndicatorType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
     ///     **Note:** Ignored when `indicatorType` is `.previous`.
     ///   - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
     ///   - action: An optional closure triggered when the item is tapped.
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the

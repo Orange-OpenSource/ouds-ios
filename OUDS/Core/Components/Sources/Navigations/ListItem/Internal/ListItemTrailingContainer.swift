@@ -52,10 +52,6 @@ struct ListItemTrailingContainer: View {
             case let .avatar(avatar):
                 avatar
                     .accessibilityHidden(true)
-            #if os(iOS)
-            case let .video(video):
-                video
-            #endif
             }
         }
         .disabled(interactionState == .disabled)

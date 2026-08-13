@@ -606,7 +606,6 @@ leading: .icon(OUDSListItemIcon(status: .info, description: "Information", size:
 leading: .image(OUDSListItemImage(asset: Image("photo"), description: "User photo")) // meaningful image
 leading: .image(OUDSListItemImage(asset: Image(decorative: "il_placeholder")))       // decorative image (no description)
 leading: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))            // country flag (always hidden from VoiceOver)
-leading: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // video (iOS only, hidden from VoiceOver)
 leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))        // circular avatar (always hidden from VoiceOver)
 ```
 
@@ -623,9 +622,8 @@ trailing: .tag(OUDSTag(label: "New"))
 trailing: .icon(OUDSListItemIcon(status: .warning, description: "Warning", size: .medium))
 trailing: .image(OUDSListItemImage(asset: Image("photo"), description: "Preview")) // meaningful image
 trailing: .image(OUDSListItemImage(asset: Image(decorative: "il_placeholder")))    // decorative image (no description)
-trailing: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))          // always hidden from VoiceOver
-trailing: .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!)) // iOS only, hidden from VoiceOver
-trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))            // always hidden from VoiceOver
+trailing: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))                      // always hidden from VoiceOver
+trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))        // always hidden from VoiceOver
 ```
 
 #### `OUDSListItemAvatar` — circular avatar
@@ -682,7 +680,7 @@ Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`
 .oudsListContentStyle(.card(.standard(divider: false, background: true))
 .oudsListContentStyle(.item(divider: true, background: true))
 
-// Rounded corners on image/video media elements (default: false)
+// Rounded corners on image media elements (default: false)
 .oudsListItemRoundedMedia(true)
 ```
 

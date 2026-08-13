@@ -27,7 +27,6 @@ import SwiftUI
 /// - `icon(_:)`: A status or custom icon (see ``OUDSListItemIcon``).
 /// - `image(_:)`: A static image asset (see ``OUDSListItemImage``).
 /// - `flag(_:)`: A country flag image (see ``OUDSListItemFlag``).
-/// - `video(_:)`: A video loaded from a URL **(iOS only)** (see `OUDSListItemVideo`).
 /// - `avatar(_:)`:  An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
 ///
 /// ## Code samples
@@ -84,13 +83,6 @@ import SwiftUI
 ///         trailing: .flag(.init(asset: Image("il_flag_fr"), size: .medium))
 ///     )
 ///
-///     // Trailing with a video thumbnail
-///     let video = OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!, size: .medium)
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Watch"),
-///         trailing: .video(video)
-///     )
-///
 ///     // Trailing with an avatar
 ///     let avatar = OUDSListItemAvatar(type: .initials("AB"), size: .medium)
 ///     OUDSStaticListItem(
@@ -101,7 +93,7 @@ import SwiftUI
 ///
 /// ## Media appearance
 ///
-/// Images and videos can be displayed with rounded corners using the
+/// Images can be displayed with rounded corners using the
 /// ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` view modifier.
 ///
 /// ## Small size behavior
@@ -191,20 +183,6 @@ import SwiftUI
 
     /// A country flag image.
     case flag(OUDSListItemFlag)
-
-    /// A video loaded from the given URL.
-    ///
-    /// The video is displayed as-is. Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``
-    /// to apply rounded corners.
-    ///
-    /// ```swift
-    ///     .video(.init(url: <your_video_url>))
-    /// ```
-    @available(macOS, unavailable)
-    @available(tvOS, unavailable)
-    @available(watchOS, unavailable)
-    @available(visionOS, unavailable)
-    case video(OUDSListItemVideo)
 
     /// An avatar with icon, initials, or image.
     ///

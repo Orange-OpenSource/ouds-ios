@@ -17,8 +17,8 @@ import SwiftUI
 ///
 /// ``OUDSStaticListItem`` typically contains a label, and optionally a description, an overline, an extra label,
 /// and a helper text — all provided through ``OUDSListItemData``.
-/// It can also include an optional leading element (such as an icon, image, avatar, flag, or video)
-/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag, or video).
+/// It can also include an optional leading element (such as an icon, image, avatar or flag)
+/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar or flag).
 ///
 /// Use this component when the list item should only display information without triggering any navigation or action.
 /// For navigable list items, see ``OUDSNavigationListItem``.
@@ -59,7 +59,6 @@ import SwiftUI
 ///  - `.icon(OUDSListItemIcon)`: A status or custom icon (neutral, info, warning, negative, positive)
 ///  - `.image(asset:)`: A static image asset
 ///  - `.flag(asset:)`: A country flag image
-///  - `.video(URL)`: A video thumbnail loaded from a URL
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
 /// ## Trailing elements
@@ -75,7 +74,6 @@ import SwiftUI
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset
 /// - `.flag(OUDSListItemFlag)`: A country flag image
-/// - `.video(URL)`: A video thumbnail loaded from a URL
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
 /// ## View modifiers
@@ -86,7 +84,7 @@ import SwiftUI
 /// - ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
 /// - ``SwiftUICore/View/oudsListItemStyle(divider:background:)`` — Applies a item style with optional divider and background.
 /// - ``SwiftUICore/View/oudsListCardStyle(_:)`` — Applies a card style on list items.
-/// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images, videos) should be displayed with rounded corners.
+/// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images) should be displayed with rounded corners.
 ///
 /// ```swift
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
@@ -152,9 +150,9 @@ public struct OUDSStaticListItem<Slot: View>: View {
     ///    - data: The textual data of the item, including label, description, overline, extra label, and helper text.
     ///    - slot: An element displayed under texts (at the bottom of the text container).
     ///    - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
     ///    - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
@@ -179,9 +177,9 @@ public struct OUDSStaticListItem<Slot: View>: View {
     /// - Parameters:
     ///    - data: The textual data of the item, including label, description, overline, extra label, and helper text.
     ///    - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
     ///    - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.

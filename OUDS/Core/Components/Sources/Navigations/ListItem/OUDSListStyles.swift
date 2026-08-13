@@ -258,12 +258,11 @@ extension View {
         environment(\.oudsListItemContentStyle, .item(divider: divider, background: background))
     }
 
-    /// Defines whether media elements (images and videos) in list items should be displayed
+    /// Defines whether media elements (images) in list items should be displayed
     /// with rounded corners.
     ///
     /// This modifier applies to both leading and trailing media elements
-    /// (``OUDSListItemLeading/image(_:)``, `OUDSListItemLeading/video(_:)`,
-    /// ``OUDSListItemTrailing/image(_:)``, `OUDSListItemTrailing/video(_:)`).
+    /// (``OUDSListItemLeading/image(_:)``, ``OUDSListItemTrailing/image(_:)``).
     ///
     /// ```swift
     ///     OUDSStaticListItem(
@@ -346,8 +345,7 @@ extension EnvironmentValues {
     /// ``SwiftUICore/View/oudsListCardStyle(_:)``.
     @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .item(divider: true, background: false)
 
-    /// Whether media elements (images and videos) in list items should be displayed
-    /// with rounded corners.
+    /// Whether media elements (images) in list items should be displayed with rounded corners.
     ///
     /// Defaults to `false` (square corners).
     /// Set via ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``.
