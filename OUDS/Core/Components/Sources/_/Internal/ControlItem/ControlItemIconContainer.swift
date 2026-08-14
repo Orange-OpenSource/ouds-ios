@@ -53,14 +53,11 @@ struct ControlItemIconContainer: View {
                 .frame(width: theme.listItem.sizeErrorIcon, height: theme.listItem.sizeErrorIcon)
                 .padding(.horizontal, theme.listItem.spacePaddingInlineErrorIcon)
         } else {
-            if let asset = layoutData.icon?.asset {
-                asset
-                    .resizable()
-                    .renderingMode(layoutData.icon?.renderingMode ?? .template)
+            if let icon = layoutData.icon {
+                icon
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
                     .frame(width: theme.listItem.sizeAssetSmall, height: theme.listItem.sizeAssetSmall)
-                    .toFlip(layoutData.icon?.flipped ?? false)
             }
         }
     }
