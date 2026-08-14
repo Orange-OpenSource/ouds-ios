@@ -45,7 +45,7 @@ struct ListItemTextContainer<Slot: View>: View {
 
                 if let overline = data.overline,
                    !overline.isEmpty,
-                   itemSize == .standard
+                   itemSize == .default
                 {
                     Text(overline)
                         .labelModerateSmall(theme)
@@ -71,7 +71,7 @@ struct ListItemTextContainer<Slot: View>: View {
 
                 if let extraLabel = data.extraLabel,
                    !extraLabel.isEmpty,
-                   itemSize == .standard
+                   itemSize == .default
                 {
                     Text(extraLabel)
                         .labelStrongMedium(theme)
@@ -103,7 +103,7 @@ struct ListItemTextContainer<Slot: View>: View {
     private var topPadding: CGFloat {
         if alignment == .top {
             switch itemSize {
-            case .standard:
+            case .default:
                 theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerDefault
             case .small:
                 theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerSmall
@@ -123,7 +123,7 @@ struct ListItemTextContainer<Slot: View>: View {
 
     private var minHeight: CGFloat {
         let rawSize = switch itemSize {
-        case .standard:
+        case .default:
             theme.listItem.sizeAssetMedium
         case .small:
             theme.listItem.sizeAssetSmall

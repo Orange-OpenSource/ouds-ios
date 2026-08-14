@@ -47,7 +47,7 @@ struct ListItemTrailingTexts: View {
                     .labelDefaultLarge(theme)
                     .foregroundColor(labelColor)
 
-                if itemSize == .standard {
+                if itemSize == .default {
                     Text(extraLabel)
                         .labelStrongMedium(theme)
                         .foregroundColor(isEnabled ? theme.colors.contentDefault : theme.colors.contentDisabled)
@@ -79,7 +79,7 @@ struct ListItemTrailingTexts: View {
             theme.spaces.fixedNone
         case .top:
             switch itemSize {
-            case .standard:
+            case .default:
                 theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerDefault
             case .small:
                 theme.listItem.spacePaddingBlockTopAlignmentTopTextContainerSmall

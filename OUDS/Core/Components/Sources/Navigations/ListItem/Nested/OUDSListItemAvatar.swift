@@ -224,7 +224,7 @@ public struct OUDSListItemAvatar: View {
 
     private var frameSize: SizeSemanticToken {
         let rawSize = switch itemSize {
-        case .standard:
+        case .default:
             switch size {
             case .medium:
                 theme.listItem.sizeAssetMedium
@@ -244,7 +244,7 @@ public struct OUDSListItemAvatar: View {
         switch itemSize {
         case .small:
             12
-        case .standard:
+        case .default:
             switch size {
             case .medium:
                 16
@@ -272,7 +272,7 @@ public struct OUDSListItemAvatar: View {
         switch itemSize {
         case .small:
             MultipleFontCompositeSemanticToken(smallFont)
-        case .standard:
+        case .default:
             switch size {
             case .medium:
                 MultipleFontCompositeSemanticToken(smallFont)
@@ -324,7 +324,7 @@ public struct OUDSListItemAvatar: View {
 
     private var badgeSize: OUDSBadgeStandard.Size {
         switch itemSize {
-        case .standard:
+        case .default:
             switch size {
             case .medium:
                 .extraSmall

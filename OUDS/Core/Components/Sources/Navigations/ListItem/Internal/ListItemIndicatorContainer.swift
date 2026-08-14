@@ -81,7 +81,7 @@ struct ListItemIndicatorContainer: View {
 
     private var minHeight: CGFloat {
         switch itemSize {
-        case .standard:
+        case .default:
             theme.listItem.sizeAssetMedium
         case .small:
             theme.listItem.sizeAssetSmall

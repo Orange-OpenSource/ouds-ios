@@ -168,9 +168,9 @@ import SwiftUI
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSListItemSize {
-    /// The standard (i.e. default) size of the list item.
+    /// The default (i.e. standard) size of the list item.
     /// All text fields and elements are displayed at their normal size.
-    case standard
+    case `default`
 
     /// The small (compact) size of the list item.
     ///
@@ -355,5 +355,5 @@ extension EnvironmentValues {
     ///
     /// Defaults to ``OUDSListItemSize/standard``.
     /// Set via ``SwiftUICore/View/oudsListItemSize(_:)``.
-    @Entry var oudsListItemSize: OUDSListItemSize = .standard
+    @Entry var oudsListItemSize: OUDSListItemSize = .default
 }

@@ -118,7 +118,7 @@ struct ListItemContent<Slot: View>: View {
                 theme.listItem.spacePaddingBlockSmall
             }
 
-        case .standard:
+        case .default:
             switch containersAlignment {
             case .top:
                 theme.listItem.spacePaddingBlockTopAlignmentTopCounterweightDefault
@@ -132,7 +132,7 @@ struct ListItemContent<Slot: View>: View {
         switch itemSize {
         case .small:
             theme.listItem.spacePaddingBlockSmall
-        case .standard:
+        case .default:
             theme.listItem.spacePaddingBlockDefault
         }
     }
@@ -141,7 +141,7 @@ struct ListItemContent<Slot: View>: View {
         switch itemSize {
         case .small:
             theme.listItem.sizeMinHeightSmall
-        case .standard:
+        case .default:
             theme.listItem.sizeMinHeightDefault
         }
     }

@@ -62,7 +62,7 @@ struct ListItemTrailingContainer: View {
 
     private var minHeight: CGFloat {
         let rawSize = switch itemSize {
-        case .standard:
+        case .default:
             theme.listItem.sizeAssetMedium
         case .small:
             theme.listItem.sizeAssetSmall

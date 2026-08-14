@@ -238,7 +238,7 @@ public struct OUDSListItemIcon: View {
 
     private var assetSize: SizeSemanticToken {
         let rawSize = switch itemSize {
-        case .standard:
+        case .default:
             switch size {
             case .medium:
                 theme.listItem.sizeAssetMedium

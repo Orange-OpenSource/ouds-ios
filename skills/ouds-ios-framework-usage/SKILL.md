@@ -663,7 +663,7 @@ OUDSListItemIcon(status: .info, description: "Information", size: .large)   // .
 Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`, `List`, `ForEach`) to style all enclosed list items.
 
 ```swift
-// Size: .standard (default) or .small (hides overline, extraLabel, trailing extra label)
+// Size: .default (standard) or .small (hides overline, extraLabel, trailing extra label)
 .oudsListItemSize(.small)
 
 // Vertical alignment of leading/trailing/text containers: .center (default) or .top

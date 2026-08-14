@@ -269,14 +269,14 @@ public struct OUDSNavigationListItem<Slot: View>: View {
 ///
 /// - Since: 3.0.0
 @frozen public enum OUDSNavigationListItemIndicatorType {
-    /// When item is tapped, the next page is opened in navigation.
-    /// A forward chevron is displayed at the trailing edge.
-    case next
-
     /// When item is tapped, the previous page is presented in navigation.
     /// A backward chevron is displayed at the leading edge.
     /// **Note:** When using `.previous`, the leading element is automatically hidden.
     case previous
+
+    /// When item is tapped, the next page is opened in navigation.
+    /// A forward chevron is displayed at the trailing edge.
+    case next
 
     /// When item is tapped, the action is performed outside the application
     /// (e.g. open a URL in a browser, open a file in an external viewer).
