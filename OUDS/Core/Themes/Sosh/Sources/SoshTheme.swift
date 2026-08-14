@@ -165,7 +165,8 @@ extension Tuning {
     /// and **rounded corners for alert messages**.
     public static let Sosh = Tuning(hasRoundedButtons: false,
                                     hasRoundedTextInputs: false,
-                                    hasRoundedAlertMessages: true)
+                                    hasRoundedAlertMessages: true,
+                                    hasRoundedListItems: false)
 }
 
 // swiftlint:enable function_body_length

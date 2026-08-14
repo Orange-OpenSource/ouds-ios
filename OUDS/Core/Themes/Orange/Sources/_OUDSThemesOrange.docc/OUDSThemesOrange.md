@@ -76,12 +76,12 @@ Some tuning object exists.
     // Define your theme tuning
     let tuning = Tuning(hasRoundedButtons: true, 
                         hasRoundedTextInputs: true,
-                        hasRoundedAlertMessages: true)
+                        hasRoundedAlertMessages: true,
+                        hasRoundedProgressIndicators: true,
+                        hasRoundedListItems: true)
 
     // Apply it to your theme
     let theme = OrangeTheme(tuning: tuning)
-    // Or in one line
-    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true))
 
     // Or apply predefined tunings
     let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
@@ -99,11 +99,13 @@ let theme = OrangeTheme(tuning: Tuning.OrangeFrance)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ❌ false  
-rounded corners text inputs    | ❌ false  
-rounded corners alert messages | ❌ false
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ❌ false  
+rounded corners text inputs         | ❌ false  
+rounded corners alert messages      | ❌ false
+rounded corners progress indicators | ❌ false
+rounded corners list items          | ❌ false
 
 ### "Orange Business" tuning
 
@@ -115,11 +117,13 @@ let theme = OrangeTheme(tuning: Tuning.OrangeBusiness)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ❌ false  
-rounded corners text inputs    | ✅ true 
-rounded corners alert messages | ✅ true 
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ❌ false  
+rounded corners text inputs         | ✅ true 
+rounded corners alert messages      | ✅ true 
+rounded corners progress indicators | ❌ false
+rounded corners list items          | ✅ true 
 
 ### "Max it" tuning
 
@@ -131,11 +135,13 @@ let theme = OrangeTheme(tuning: Tuning.MaxIt)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ✅ true  
-rounded corners text inputs    | ✅ true  
-rounded corners alert messages | ✅ true
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ✅ true  
+rounded corners text inputs         | ✅ true  
+rounded corners alert messages      | ✅ true
+rounded corners progress indicators | ❌ false
+rounded corners list items          | ✅ true
 
 ## Typography
 

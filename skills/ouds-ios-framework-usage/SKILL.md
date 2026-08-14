@@ -453,7 +453,7 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 OUDSAlertMessage(label: "Label")
 OUDSAlertMessage(label: "Label", status: .warning, description: "Details") { /* dismiss */ }
 OUDSAlertMessage(label: "Label",
-                 status: .neutral(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
+                 status: .neutral(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
                  bulletList: ["A", "B"],
                  link: .init(text: "More", position: .bottom) {},
                  onClose: {})
@@ -469,7 +469,7 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 ```swift
 OUDSInlineAlert(label: "Label")
 OUDSInlineAlert(label: "Label", status: .warning)
-OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
+OUDSInlineAlert(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
 ```
 
 ---
@@ -482,7 +482,7 @@ Count parameter must be of type `UInt8`.
 ```swift
 OUDSBadgeStandard(accessibilityLabel: "Some label", status: .neutral, size: .medium)
 OUDSBadgeCount(3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
-OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
+OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image("ic"), accessibilityLabel: "Label"), size: .medium))
 ```
 
 ---
@@ -532,16 +532,258 @@ OUDSVerticalDivider(color: .brandPrimary)
 
 ```swift
 OUDSLink(text: "Text", size: .default) {}
-OUDSLink(text: "Text", indicator: .back, size: .default) {}
+OUDSLink(text: "Text", indicator: .previous, size: .default) {}
 OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic")), size: .default) {}
 OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
+// Full-width indicator: label in one edge, indicator in the other edge, entire width is tappable
+OUDSLink(text: "Text", indicator: .next, isFullWidth: true, size: .default) {}
+OUDSLink(text: "Text", indicator: .previous, isFullWidth: true, size: .default) {}
+OUDSLink(text: "Text", indicator: .external, isFullWidth: true, size: .default) {}
 ```
+
+> `isFullWidth` is only available on `indicator` layouts (`.previous` / `.next` / `.external`). When `true`, the link stretches to fill all available horizontal width — the label anchors to the leading/trailing edge and the indicator to the trailing/leading edge. The entire width between them is tappable. Defaults to `false` (intrinsic sizing).
+
+---
+
+### Navigations — List Items
+
+> Availability: iOS 15+, macOS 13+, visionOS 1+, watchOS 11+, tvOS 16+. Since: 3.0.0.
+
+Two components share the same data model and slot/leading/trailing API:
+- **`OUDSStaticListItem`** — non-interactive, display-only row.
+- **`OUDSNavigationListItem`** — tappable row with a navigation indicator (chevron or external-link icon).
+
+#### `OUDSListItemData` — textual content model
+
+Three public initializers are available: text label, custom view label, and localized text label.
+
+```swift
+// 1) Text label — all text fields are optional except label.
+// overline and extraLabel are hidden in .small size.
+OUDSListItemData(label: "Label")
+OUDSListItemData(
+    label: "Label",
+    hasBoldLabel: true,         // renders label in bold
+    description: "Description", // secondary text below label
+    overline: "Overline",       // small text above label (hidden in .small size)
+    extraLabel: "Extra Label",  // additional text below description (hidden in .small size)
+    helperText: "Helper text"   // supporting text rendered below the row, outside the HStack
+)
+
+// 2) Custom view label — `accessibilityLabel:` is REQUIRED for VoiceOver.
+// It replaces the label in the combined vocalization of the text container.
+OUDSListItemData(
+    label: HStack {
+        Image(systemName: "star.fill")
+        Text("Favorite")
+    },
+    accessibilityLabel: "Favorite",     // vocalized by VoiceOver
+    description: "Custom label example"
+)
+
+// 3) Localized text label — looks up the key in the given bundle.
+OUDSListItemData(
+    key: "list_item.label",
+    bundle: .module,
+    hasBoldLabel: true,
+    description: "Description"
+)
+```
+
+#### `OUDSStaticListItem` — non-interactive
+
+```swift
+// Minimal
+OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+
+// With leading icon and trailing badge
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Label", description: "Description"),
+    leading: .icon(OUDSListItemIcon(status: .info, description: "Information", size: .medium)),
+    trailing: .badge(.count(.init(3, accessibilityLabel: "3 new", status: .negative, size: .medium)))
+)
+
+// With a custom slot view (rendered between text block and helperText)
+OUDSStaticListItem(data: OUDSListItemData(label: "Label"), slot: myCustomView)
+```
+
+#### `OUDSNavigationListItem` — tappable with indicator
+
+```swift
+// Default indicator: .next (forward chevron at trailing edge)
+OUDSNavigationListItem(data: OUDSListItemData(label: "Next screen")) {
+    // navigate forward
+}
+
+// .external: external-link icon at trailing edge (use for URLs, out-of-app content)
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Open website"),
+    indicatorType: .external
+) { openURL(url) }
+
+// .previous: backward chevron at leading edge — leading: parameter is silently ignored
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Go back"),
+    indicatorType: .previous
+) { dismiss() }
+
+// Full example with leading avatar, trailing muted text, custom slot
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    slot: mySlotView,
+    indicatorType: .next,
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    trailing: .text(.labelMuted("Details"))
+) { navigateToProfile() }
+```
+
+#### `OUDSNavigationListItemIndicatorType`
+
+| Case | Indicator position | Use for | Leading element |
+|------|--------------------|---------|----|
+| `.next` (default) | Trailing chevron | In-app forward navigation | Visible |
+| `.previous` | Leading chevron | In-app back navigation | **Always hidden** |
+| `.external` | Trailing external-link icon | Out-of-app / URL content | Visible |
+
+> RTL support: `.next` and `.previous` icons are automatically swapped when `layoutDirection == .rightToLeft`.
+
+#### Leading slot — `OUDSListItemLeading`
+
+```swift
+leading: .icon(OUDSListItemIcon(status: .info, description: "Information", size: .medium))  // status/custom icon
+leading: .image(OUDSListItemImage(asset: Image("photo"), description: "User photo")) // meaningful image
+leading: .image(OUDSListItemImage(asset: Image(decorative: "il_placeholder")))       // decorative image (no description)
+leading: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))            // country flag (always hidden from VoiceOver)
+leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))        // circular avatar (always hidden from VoiceOver)
+```
+
+#### Trailing slot — `OUDSListItemTrailing`
+
+```swift
+trailing: .text(.label("Info"))
+trailing: .text(.labelMuted("Secondary"))              // muted/secondary color
+trailing: .text(.labelStrong("Strong"))                // bold/emphasized
+trailing: .text(.labelAndExtraLabel("Label", "Extra")) // stacked; extra hidden in .small
+trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
+trailing: .badge(.standard(.init(accessibilityLabel: "Alert", status: .negative, size: .small)))
+trailing: .tag(OUDSTag(label: "New"))
+trailing: .icon(OUDSListItemIcon(status: .warning, description: "Warning", size: .medium))
+trailing: .image(OUDSListItemImage(asset: Image("photo"), description: "Preview")) // meaningful image
+trailing: .image(OUDSListItemImage(asset: Image(decorative: "il_placeholder")))    // decorative image (no description)
+trailing: .flag(OUDSListItemFlag(asset: Image("il_flag_fr")))                      // always hidden from VoiceOver
+trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))        // always hidden from VoiceOver
+```
+
+#### `OUDSListItemAvatar` — circular avatar
+
+```swift
+OUDSListItemAvatar(type: .icon, size: .medium)                   // predefined person/people icon
+OUDSListItemAvatar(type: .image(Image("avatar")), size: .large)  // custom image
+OUDSListItemAvatar(type: .initials("AB"), size: .medium)         // up to 2-char initials
+OUDSListItemAvatar(type: .icon, size: .large,
+                   badgeType: .standard(.negative, accessibilityLabel: "New"))
+OUDSListItemAvatar(type: .initials("JD"), size: .large,
+                   badgeType: .icon(.positive, accessibilityLabel: "Online"))
+```
+
+> Badge size recommendations: `.medium` avatar → `.extraSmall` badge · `.large` → `.small` badge · `.extraLarge` → `.medium` badge.
+> In `.small` list item size, the avatar size parameter is ignored — smallest variant is always used.
+
+#### `OUDSListItemIcon` — status icon
+
+```swift
+OUDSListItemIcon(status: .neutral(asset: Image("ic_heart")), description: "Favorite")           // custom image, default color
+OUDSListItemIcon(status: .neutral(asset: Image("ic_bell"), badge: true), description: "Notifications") // with negative dot badge
+OUDSListItemIcon(status: .positive, description: "Success")    // predefined checkmark, positive (green)
+OUDSListItemIcon(status: .info,     description: "Information")// predefined info icon, informational (blue)
+OUDSListItemIcon(status: .warning,  description: "Warning")    // predefined warning icon, warning color, two-layer rendering
+OUDSListItemIcon(status: .negative, description: "Error")      // predefined alert icon, negative (red)
+OUDSListItemIcon(status: .info, description: "Information", size: .large)   // .medium (default) | .large
+
+// `description` is used as the icon's VoiceOver accessibility label.
+// Pass an empty string ("") to make the icon fully decorative (hidden from VoiceOver).
+```
+
+> In `.small` list item size, the icon size parameter is ignored — smallest variant is always used.
+
+#### View modifiers — styling and layout
+
+Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`, `List`, `ForEach`) to style all enclosed list items.
+
+```swift
+// Size: .default (standard) or .small (hides overline, extraLabel, trailing extra label)
+.oudsListItemSize(.small)
+
+// Vertical alignment of leading/trailing/text containers: .center (default) or .top
+.oudsListItemContainerAlignment(.top)
+
+// Content style modifier — .card or .item
+.oudsListCardStyle(decoration: .outlined))                                   // visible border around each item
+.oudsListCardStyle(decoration: .standard(divider: true, background: true))   // card with background and divider
+.oudsListItemStyle(divider: true, background: true))                         // item with background always visible
+.oudsListItemStyle(divider: true, background: false))                        // default: item with divider and withot background
+
+// General-purpose modifier: 
+.oudsListContentStyle(.card(.outlined))
+.oudsListContentStyle(.card(.standard(divider: false, background: true))
+.oudsListContentStyle(.item(divider: true, background: true))
+
+// Rounded corners on image media elements (default: false)
+.oudsListItemRoundedMedia(true)
+```
+
+```swift
+// Apply modifiers to a container — affects all child list items
+VStack {
+    OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
+    OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    OUDSNavigationListItem(data: OUDSListItemData(label: "Item 3")) {}
+}
+.oudsListItemSize(.small)
+.oudsListItemContainerAlignment(.top)
+.oudsListCardStyle()
+```
+
+#### Key behavioral rules
+
+1. **`OUDSStaticListItem`** has no tap interaction — `isEnabled` only affects visual opacity.
+2. **`OUDSNavigationListItem`** manages `.enabled`, `.hover`, `.pressed`, `.disabled` states automatically.
+3. **`.previous` indicator** — the `leading:` parameter is **silently hidden**; do not pass a leading element expecting it to appear.
+4. **`.small` size** — hides `overline`, `extraLabel`, and trailing `labelAndExtraLabel`'s extra label; forces avatar/icon/badge to their smallest variant.
+5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
+6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
+7. **`oudsListCardStyle(_:)`** — shorthand for `.card` style; parameter is `OUDSListContentStyle.card` (default: `.standard(divider: true, background: true)`). **`oudsListItemStyle(_:)`** — shorthand for `.item` style (default: `(divider: true, backgroud: false)`).
+8. **Modifier defaults vs environment defaults** — when no `oudsListContentStyle` / `oudsListItemStyle` / `oudsListCardStyle` modifier is applied, the environment default is `.item(divider: true, background: false)`. Calling `oudsListContentStyle()` with no argument uses `.item(divider: true, background: false))`. Prefer explicit values to avoid confusion.
+
+#### Accessibility — VoiceOver
+
+Leading/trailing elements are vocalized (or hidden) as follows:
+
+| Element | Behavior |
+|---|---|
+| `OUDSListItemIcon` | Exposed as a distinct accessibility element. `description` non-empty → vocalized; empty → hidden (decorative). |
+| `OUDSListItemImage` | Exposed as a distinct accessibility element. `description` non-nil and non-empty → vocalized; nil or empty → hidden (decorative). |
+| `OUDSListItemFlag` | **Always hidden** from VoiceOver. Duplicate the country info in `OUDSListItemData.label` / `description`. |
+| `OUDSListItemAvatar` | **Always hidden** from VoiceOver. Duplicate the user info in `OUDSListItemData.label` / `description`. Badge attached to the avatar carries its own `accessibilityLabel`. |
+| `OUDSListItemVideo` | **Always hidden** from VoiceOver. |
+| Trailing `.text`, `.badge`, `.tag` | Vocalized via their own accessibility labels. |
+
+Text container behavior:
+- The **text group** (overline, label, extraLabel, description) is combined into a single VoiceOver element with a `", "`-joined label.
+- `OUDSListItemData` custom view label (`init(label: some View, accessibilityLabel:)`) — `accessibilityLabel:` is **required**; it is used in the combined vocalization instead of the view content.
+
+Component-level behavior:
+- **`OUDSStaticListItem`** — VoiceOver focuses each visible non-hidden element (leading icon/image, combined text, trailing element) separately.
+- **`OUDSNavigationListItem`** — uses `accessibilityElement(children: .contain)` so leading/text/trailing remain distinct accessibility elements. The row is exposed with the `.isLink` trait (not `.isButton`). VoiceOver focuses each visible element sequentially: leading (if labelled), combined text, trailing (if labelled).
+
+Rule of thumb: pass a meaningful `description` on `OUDSListItemIcon` and `OUDSListItemImage` whenever the element carries information not already present in `OUDSListItemData.label` / `description`; pass an empty string / `nil` to mark it purely decorative.
 
 ---
 
 ### Navigations — Tab Bar
 
 > Never combine with `OUDSToolBarBottom` on the same screen.
+> For iOS 18+ and `Tab`-based API, prefer `OUDSTabView` or `OUDSLiquidGlassTabView` instead.
 
 ```swift
 // iOS 15–25
@@ -559,6 +801,72 @@ OUDSTabBar {
 ```
 
 > Tab bar images: 26×26 pt. `OUDSTabBar(selected:count:content:)` (plain `Int`) is deprecated — use `selectedTab: Binding<Int>`.
+
+---
+
+### Navigations — Tab View / Liquid Glass Tab View
+
+> `OUDSTabView` requires iOS 18+ / macOS 15+ / visionOS 2+. For iOS 15–17, use `OUDSTabBar` instead.
+> `OUDSLiquidGlassTabView` requires iOS 26+ / macOS 26+ / visionOS 26+.
+> Never combine with `OUDSToolBarBottom` on the same screen.
+> Both apply the same OUDS appearance (colors, typography, divider, selected-tab indicator) as `OUDSTabBar`.
+
+Two components are provided because `Tab(role: .search)` and `Tab("…", image:) { }` without an explicit
+`value:` both have `TabValue == Never` in the SwiftUI type system, which is incompatible with
+`@TabContentBuilder<Int>` (required to expose a `Binding<Int>`).
+SwiftUI's own promotion from `Never` to `Int?` is only available through internal initialisers.
+
+**`OUDSTabView`** — iOS 18+, `Binding<Int>`, requires `value:` on every `Tab`
+
+```swift
+// iOS 18 and iOS 26 with Liquid Glass disabled:
+// binding + count required for the selected-tab indicator
+// Every Tab must carry an explicit value: Int
+@State private var selectedTab = 0
+
+OUDSTabView(selectedTab: $selectedTab, count: 4) {
+    Tab("first_tab_label", image: "first-tab-image", value: 0) { FirstView() }
+    Tab("second_tab_label", image: "second-tab-image", value: 1) { SecondView() }
+    Tab("third_tab_label", image: "third-tab-image", value: 2) { ThirdView() }
+    Tab(value: 3, role: .search) { SearchView() }
+}
+
+// iOS 26+ with Liquid Glass enabled: binding without count (no custom indicator)
+// Tab without value: is still not allowed — use OUDSLiquidGlassTabView instead
+@State private var selectedTab = 0
+if #available(iOS 26, *) {
+    OUDSTabView(selectedTab: $selectedTab) {
+        Tab("first_tab_label", image: "first-tab-image", value: 0) { FirstView() }
+        Tab("second_tab_label", image: "second-tab-image", value: 1) { SecondView() }
+        Tab("third_tab_label", image: "third-tab-image", value: 2) { ThirdView() }
+    }
+}
+```
+
+> Each `Tab` **must** carry `value: Int`. `Tab("…", image:) { }` without `value:` has `TabValue == Never`
+> and will not compile inside `OUDSTabView`. Tab bar images: 26×26 pt.
+
+**`OUDSLiquidGlassTabView`** — iOS 26+ only, no `value:` required, `Tab(role: .search)` supported, no selection binding
+
+```swift
+OUDSLiquidGlassTabView {
+    Tab("Tokens", image: "design-token") { TokensPage() }
+    Tab("Components", image: "component-atom") { ComponentsPage() }
+    Tab("About", image: "info-fill") { AboutPage() }
+    Tab(role: .search) { SearchPage() }
+}
+```
+
+| | `OUDSTabBar` | `OUDSTabView` | `OUDSLiquidGlassTabView` |
+|---|---|---|---|
+| iOS min | 15 | 18 | 26 |
+| macOS min | 13 | 15 | 26 |
+| visionOS min | 1 | 2 | 26 |
+| Tab API | `.tabItem { Label }.tag(n)` | `Tab(…, value: Int) { }` | `Tab("…", image:) { }` |
+| `Tab(role: .search)` | No | Yes (with `value:`) | Yes |
+| `selectedTab` binding | `Binding<Int>` | `Binding<Int>` | None |
+| Selected-tab indicator | Yes (portrait iPhone, iOS < 26) | Yes (same logic) | No (iOS 26+ only) |
+| Legacy divider | Yes | Yes | Yes (if Liquid Glass is disabled) |
 
 ---
 
@@ -646,9 +954,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 
 > Badge rendering: iOS ≤ 25 → `OUDSBadge`; iOS 26+ top → native system badge; iOS 26+ bottom → `OUDSBadge` forced.
 
----
-
-## Registering custom fonts
+## 8. Registering custom fonts
 
 To use a custom font family with OUDS, two steps are required after adding the TTF files to your project:
 
