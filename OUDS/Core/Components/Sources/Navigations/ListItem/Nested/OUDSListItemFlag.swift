@@ -20,35 +20,22 @@ import SwiftUI
 ///
 /// ``OUDSListItemFlag`` displays a country flag (i.e. image)
 ///
-/// ## Sizes
-///
-/// The ``Size`` enum defines the available sizes:
-/// - **`.medium`**: The default size, suited for standard list items.
-/// - **`.large`**: A larger variant for increased visual prominence.
-/// - **`.extraLarge`**: The largest variant, typically used for profile-like displays.
-///
-/// **Note:** When the image is embedded in a list item with small size
-/// (via `SwiftUI/View/oudsListItemSize(_:)`), the icon is always rendered at its smallest size.
-///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Country flag with medium size (default)
 ///     OUDSListItemFlag(asset: "il_flag_fr")
 ///
-///     // Country flag with large size
-///     OUDSListItemFlag(asset: "il_flag_fr", size: .large)
-///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Information"),
-///         leading: .flag(.init(asset: "il_flag_fr", size: .large))
+///         leading: .flag(.init(asset: "il_flag_fr")
 ///     )
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .flag(.init(asset: "il_flag_fr", size: .large))
+///         trailing: .flag(.init(asset: "il_flag_fr"))
 ///     )
 /// ```
 ///
@@ -56,28 +43,9 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemFlag: View {
 
-    // MARK: Size
-
-    /// Defines the available sizes (i.e. height) for the image of the country flag.
-    /// When the image is embedded in a list item with `.small` size, this parameter is ignored
-    /// and a smallest size is always used.
-    ///
-    /// - Since: 3.0.0
-    @frozen public enum Size {
-        /// The medium size, used as the default in standard list items.
-        case medium
-
-        /// The large size, providing increased visual prominence.
-        case large
-
-        /// The extra-large size, typically used for profile-like displays.
-        case extraLarge
-    }
-
     // MARK: Properties
 
     private let asset: Image
-    private let size: Size
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -95,12 +63,8 @@ public struct OUDSListItemFlag: View {
     ///
     /// - Parameters:
     ///   - asset: The asset contains the image
-    ///   - size: The size of the icon. Defaults to `.medium`.
-    ///     **Note:** Ignored when the icon is embedded in a list item with small size
-    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
-    public init(asset: Image, size: Size = .medium) {
+    public init(asset: Image) {
         self.asset = asset
-        self.size = size
     }
 
     // MARK: Body
@@ -129,14 +93,7 @@ public struct OUDSListItemFlag: View {
         let rawSize = if itemSize == .small {
             theme.listItem.sizeAssetSmall
         } else {
-            switch size {
-            case .medium:
-                theme.listItem.sizeAssetMedium
-            case .large:
-                theme.listItem.sizeAssetLarge
-            case .extraLarge:
-                theme.listItem.sizeAssetXlarge
-            }
+            theme.listItem.sizeAssetMedium
         }
 
         return rawSize * dynamicTypeSize.percentageRate / 100
