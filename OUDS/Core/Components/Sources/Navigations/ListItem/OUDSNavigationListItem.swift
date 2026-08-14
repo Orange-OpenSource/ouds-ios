@@ -86,10 +86,10 @@ import SwiftUI
 /// ## Trailing elements
 ///
 /// The trailing position (after the texts) accepts one optional element via ``OUDSListItemTrailing``, like:
-/// - `.text(.label(Text))`: A default-styled label
-/// - `.text(.labelMuted(Text))`: A muted (secondary) label
-/// - `.text(.labelStrong(Text))`: An emphasized (bold) label
-/// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
+/// - `.text(.label(String))`: A default-styled label
+/// - `.text(.labelMuted(String))`: A muted (secondary) label
+/// - `.text(.labelStrong(String))`: An emphasized (bold) label
+/// - `.text(.labelAndExtraLabel(String, String))`: A label with an additional extra label below
 /// - `.badge(.count(OUDSBadgeCount)`: A badge with count
 /// - `.badge(.standard(OUDSBadgeStandard)`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
