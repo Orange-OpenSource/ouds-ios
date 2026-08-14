@@ -20,10 +20,10 @@ You can get more details about them in the categories below:
 - <doc:ContentDisplay>
 - <doc:Controls>
 - <doc:Dialogs>
+- <doc:Foundations>
 - <doc:Indicators>
 - <doc:Layouts>
 - <doc:Navigations>
-
 
 ## Customize components
 

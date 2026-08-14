@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `typography` components (Orange-OpenSource/ouds-ios#1580)
 - `list item` component (Orange-OpenSource/ouds-ios#265)
+- `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509)
 - `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509)
 - `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
 - `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)

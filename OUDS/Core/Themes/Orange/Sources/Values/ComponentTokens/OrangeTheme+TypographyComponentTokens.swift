@@ -21,8 +21,6 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeThemeTypographyComponentTokensProvider: TypographyComponentTokens {
-    /// Has for value token true
-    @objc open var headingLargeMarker: Bool { true }
     /// Has for value token spaces.paddingBlock4xsmall (= 2)
     @objc open var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { spaces.paddingBlock4xsmall }
     /// Has for value token spaces.paddingBlock3xsmall (= 4)

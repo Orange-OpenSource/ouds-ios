@@ -126,8 +126,10 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
     /// - Parameters:
     ///    - fontFamily: The font family to apply, by default `OrangeBrandFontRawTokens.familyBrandDefault`
     ///    - tuning: The `Tuning` to apply to the theme, by default `Tuning.default`
+    ///    - hasTypographyHeadingLargeMarker: If big heading typography has large markers or not (default set to `true`).
     public init(fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
-                tuning: Tuning = Tuning.default)
+                tuning: Tuning = Tuning.default,
+                hasTypographyHeadingLargeMarker: Bool = true)
     {
         let borders = OrangeCompactThemeBorderSemanticTokensProvider()
         let colors = OrangeCompactThemeColorSemanticTokensProvider()
@@ -208,7 +210,8 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    resourcesBundle: Bundle.OrangeCompactTheme,
                    name: Self.name,
                    fontFamily: fontFamily,
-                   tuning: tuning)
+                   tuning: tuning,
+                   hasTypographyHeadingLargeMarker: hasTypographyHeadingLargeMarker)
     }
 
     deinit {}
