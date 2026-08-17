@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Helpers to apply OUDS styles for rich text (Orange-OpenSource/ouds-ios#1682)
 - `typography` components (Orange-OpenSource/ouds-ios#1580)
 - `list item` component (Orange-OpenSource/ouds-ios#265)
 - `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509)
