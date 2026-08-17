@@ -25,8 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- themes tunings values (Orange-OpenSource/ouds-ios#1669)
 - `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
+- themes tunings values (Orange-OpenSource/ouds-ios#1669)
 - `button` component to version 3.3.0 (Orange-OpenSource/ouds-ios#1583)
 - **BREAKING**: `link` component to v2.4.0 (Orange-OpenSource/ouds-ios#1640)
 - `suggestion chip` and `filter chip` components to v1.5.0 (Orange-OpenSource/ouds-ios#1588)
