@@ -89,7 +89,9 @@ struct NavigationStackRefresher: ViewModifier {
         let appearance = UINavigationBarAppearance()
 
         // Foreground color (ie.titles)
-        let foregroundColor = newTheme.colors.contentDefault.color(for: newColorScheme).uiColor
+        let foregroundColor = UIColor { traitCollection in
+            (traitCollection.userInterfaceStyle == .dark ? newTheme.colors.contentDefault.color(for: .dark) : newTheme.colors.contentDefault.color(for: .light)).uiColor
+        }
 
         // Titles fonts
         var titleFont: UIFont?, largeTitleFont: UIFont?, subTitleFont: UIFont?, largeSubtitleFont: UIFont?
