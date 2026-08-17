@@ -238,3 +238,37 @@ registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("W
 ```
 
 The full map is readable at any time via `kApplePostScriptFontNames`. Unregistered combinations fall back to the family name without spaces.
+
+## Use rich text with AttributedString
+
+You may need to add *rich text* to some components which support `AttributedString` type parameters.
+For example you may want to display a text with clickable hyperlinks inside, and a style for the hyperlink.
+
+```swift
+var urlConfigurations: [AtributedStringUrlConfiguration] = []
+urlConfigurations.append(.init(text: "privacy policy", // Words to wrap
+                               urlToOpen: privacyUrl, // Url to open
+                               color: theme.colors.contentBrandPrimary.color(for: colorScheme),
+                               font: themeBodyBoldFont))
+let richTextHelperMessage = AttributedString.from(text: "You must read our privacy policy before authentication", // Text to display
+                                                  foregroundColor: theme.colors.contentDefault.color(for: colorScheme),
+                                                  font: themeBodyFont,
+                                                  configurations: urlConfigurations)
+                                                  
+OUDSPasswordInput("Enter your password", password: $password, helperText: richTextHelperMessage)
+```
+
+If you handle Markdown data, you can define your own styles for the hyperlinks:
+
+```swift
+var urlConfigurations: [AtributedStringUrlConfiguration] = []
+urlConfigurations.append(.init(color: yheme.colors.contentBrandPrimary.color(for: colorScheme),
+                                font: themeBodyBoldFont))
+    
+let richTextMarkdown = AttributedString.from(markdown: someMarkdown,
+                                             foregroundColor: theme.colors.contentDefault.color(for: colorScheme),
+                                             font: themeBodyFont,
+                                             configurations: urlConfigurations)
+                                             
+Text(richTextMarkdown)
+```

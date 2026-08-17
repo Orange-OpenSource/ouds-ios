@@ -175,7 +175,69 @@ registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("W
 
 ---
 
-## 8. Component skills
+## 8. Styled AttributedString from Markdown
+
+OUDS provides utilities to create styled `AttributedString` from Markdown, with custom styling for links based on their text or URL.
+
+### Basic usage
+
+```swift
+import OUDSComponents
+import SwiftUI
+
+let markdown = "Read our [terms of service](https://example.com/terms) and [privacy policy](https://example.com/privacy)"
+
+let textColor = theme.colors.contentDefault.color(for: colorScheme)
+let textFont = theme.fonts.bodyDefaultMedium
+
+let urlColor = theme.colors.contentBrandPrimary.color(for: colorScheme)
+let urlFont = theme.fonts.bodyStrongMedium
+
+let configurations: [AtributedStringUrlConfiguration] = [
+    AtributedStringUrlConfiguration(
+        text: "terms of service",
+        color: urlColor,
+        font: urlFont
+    ),
+    AtributedStringUrlConfiguration(
+        text: "privacy policy",
+        urlToOpen: URL(string: "https://example.com/privacy")!,
+        color: urlColor,
+        font: urlFont
+    ),
+    AtributedStringUrlConfiguration(
+        color: urlColor,
+        font: urlFont
+    )
+]
+
+let attributedString = AttributedString.from(
+    markdown: markdown,
+    foregroundColor: textColor,
+    font: textFont,
+    configurations: configurations
+)
+```
+
+### Configuration options
+
+| Initializer | Use case |
+|---|---|
+| `AtributedStringUrlConfiguration(text:urlToOpen:color:font:)` | Match by text **and** URL, set custom URL |
+| `AtributedStringUrlConfiguration(text:color:font:)` | Match by text only (URL from markdown) |
+| `AtributedStringUrlConfiguration(urlToOpen:color:font:)` | Match by URL only |
+| `AtributedStringUrlConfiguration(color:font:)` | Default fallback for any unmatched link |
+
+### Matching priority
+
+1. First tries to match by URL (`urlToOpen.absoluteString == run.link?.absoluteString`)
+2. Then tries to match by text (`text == linkText`)
+3. Falls back to default configuration (no `text` and no `urlToOpen`)
+4. If no match, applies base style from `foregroundColor` and `font`
+
+---
+
+## 10. Component skills
 
 Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
 
