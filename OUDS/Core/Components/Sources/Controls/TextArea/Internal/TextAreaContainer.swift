@@ -89,7 +89,7 @@ struct TextAreaContainer: View {
                                          isOverLimit: isOverLimit,
                                          isOutlined: isOutlined))
         #if !os(watchOS) && !os(tvOS)
-            .onHover { hover = $0 }
+        .onHover { hover = $0 }
         #endif
         // swiftlint:enable accessibility_trait_for_button
     }
@@ -97,14 +97,11 @@ struct TextAreaContainer: View {
     // MARK: - Helpers
 
     private var paddingTop: CGFloat {
-        isSmallLabel ? theme.textArea.spacePaddingBlockTopEmpty : theme.textArea.spacePaddingBlock
+        isSmallLabel ? theme.textArea.spacePaddingBlock : theme.textArea.spacePaddingBlockTopEmpty
     }
 
     private var paddingBottom: CGFloat {
-        (placeholder?.isEmpty == false
-            || (text.wrappedValue.isEmpty && interactionState == .focused)
-            || !text.wrappedValue.isEmpty)
-            ? theme.textArea.spacePaddingBlock : theme.spaces.fixedNone
+        isSmallLabel ? theme.textArea.spacePaddingBlock : theme.spaces.fixedNone
     }
 
     private var interactionState: TextAreaInteractionState {
