@@ -51,9 +51,9 @@ struct OUDSThemeTuningTests {
     func orangeBusinessThemeTuning() {
         #expect(Tuning.OrangeBusiness.hasRoundedButtons == false)
         #expect(Tuning.OrangeBusiness.hasRoundedTextInputs == true)
-        #expect(Tuning.OrangeBusiness.hasRoundedAlertMessages == true)
+        #expect(Tuning.OrangeBusiness.hasRoundedAlertMessages == false)
         #expect(Tuning.OrangeBusiness.hasRoundedProgressIndicators == false)
-        #expect(Tuning.OrangeBusiness.hasRoundedListItems == true)
+        #expect(Tuning.OrangeBusiness.hasRoundedListItems == false)
     }
 
     // MARK: - Max It
@@ -63,7 +63,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.MaxIt.hasRoundedButtons == true)
         #expect(Tuning.MaxIt.hasRoundedTextInputs == true)
         #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
-        #expect(Tuning.MaxIt.hasRoundedProgressIndicators == false)
+        #expect(Tuning.MaxIt.hasRoundedProgressIndicators == true)
         #expect(Tuning.MaxIt.hasRoundedListItems == true)
     }
 }

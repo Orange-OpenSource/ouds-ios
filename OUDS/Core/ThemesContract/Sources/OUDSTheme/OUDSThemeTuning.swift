@@ -94,24 +94,22 @@ extension Tuning {
     /// There are no rounded corners.
     public static let OrangeFrance = Tuning.default
 
-    /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**
-    /// and **progress indicators**, but
-    /// **rounded corners for text / PIN code / password / text area inputs**,
-    /// **rounded corners for alert messages** and
-    /// **rounded corners list items**.
+    /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**,
+    /// a,d **alert messages**, **progress indicatprs** and **list items**.
+    /// But **text inputs** are not rounded.
     public static let OrangeBusiness = Tuning(hasRoundedButtons: false,
                                               hasRoundedTextInputs: true,
-                                              hasRoundedAlertMessages: true,
+                                              hasRoundedAlertMessages: false,
                                               hasRoundedProgressIndicators: false,
-                                              hasRoundedListItems: true)
+                                              hasRoundedListItems: false)
 
     /// The theme tuning for *Max It* contains **rounded corners for buttons**,
     /// **rounded corners for text / PIN code / password / text area inputs**,
     /// **rounded corners for alert messages**,
-    /// **rounded corners list items** but not for **progress indicators**.
+    /// **rounded corners list items** and **progress indicators**.
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
                                      hasRoundedAlertMessages: true,
-                                     hasRoundedProgressIndicators: false,
+                                     hasRoundedProgressIndicators: true,
                                      hasRoundedListItems: true)
 }

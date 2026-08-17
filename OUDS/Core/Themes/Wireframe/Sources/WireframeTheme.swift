@@ -159,16 +159,17 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
     }
 }
 
-// MARK: - Predefine tunings
+// MARK: - Predefined tunings
 
 extension Tuning {
 
-    /// The theme tuning for *Wireframe* contains **square corners for buttons**,
-    /// **square corners for text / PIN code / password / text area inputs**
-    /// and **rounded corners for alert messages**.
+    /// The theme tuning for *Sosh* contains **square corners for buttons**,
+    /// **square corners for text / PIN code / password / text area inputs** and **list items**;
+    /// and **rounded corners for alert messages** and **progress indicators**.
     public static let Wireframe = Tuning(hasRoundedButtons: false,
                                          hasRoundedTextInputs: false,
                                          hasRoundedAlertMessages: true,
+                                         hasRoundedProgressIndicators: true,
                                          hasRoundedListItems: false)
 }
 
