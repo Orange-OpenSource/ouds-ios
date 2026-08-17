@@ -31,8 +31,8 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 text: "privacy policy",
                 urlToOpen: URL(string: "https://example.com/privacy")!,
                 color: urlColor,
@@ -59,8 +59,8 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 urlToOpen: URL(string: "https://example.com")!,
                 color: urlColor,
                 font: urlFont),
@@ -87,8 +87,8 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.gray
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 text: "terms of service",
                 color: urlColor,
                 font: urlFont),
@@ -116,8 +116,8 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 text: "here",
                 color: urlColor,
                 font: urlFont),
@@ -150,13 +150,13 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 text: "privacy",
                 urlToOpen: URL(string: "https://example.com/privacy")!,
                 color: Color.green,
                 font: Font.system(size: 14)),
-            AtributedStringUrlConfiguration(
+            AttributedStringUrlConfiguration(
                 color: defaultColor,
                 font: defaultFont),
         ]
@@ -180,8 +180,8 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.blue
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 text: "different text",
                 color: Color.red,
                 font: Font.system(size: 14)),
@@ -206,13 +206,13 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 text: "A",
                 urlToOpen: URL(string: "https://a.com")!,
                 color: Color.red,
                 font: Font.system(size: 14)),
-            AtributedStringUrlConfiguration(
+            AttributedStringUrlConfiguration(
                 text: "B",
                 urlToOpen: URL(string: "https://b.com")!,
                 color: Color.blue,
@@ -249,8 +249,8 @@ struct AttributedStringExtensionsTests {
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AtributedStringUrlConfiguration] = [
-            AtributedStringUrlConfiguration(
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
                 text: "privacy policy",
                 urlToOpen: URL(string: "https://example.com/privacy")!,
                 color: urlColor,

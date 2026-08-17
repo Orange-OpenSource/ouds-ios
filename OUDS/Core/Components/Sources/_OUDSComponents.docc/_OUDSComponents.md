@@ -244,8 +244,19 @@ The full map is readable at any time via `kApplePostScriptFontNames`. Unregister
 You may need to add *rich text* to some components which support `AttributedString` type parameters.
 For example you may want to display a text with clickable hyperlinks inside, and a style for the hyperlink.
 
+Font tokens like `theme.fonts.bodyDefaultMedium` are `MultipleFontCompositeSemanticToken` values, not SwiftUI `Font`.
+Convert them to a `Font` with `Font.makeFont(family:from:isCompact:)` before passing them to `AttributedString.from(...)`:
+
 ```swift
-var urlConfigurations: [AtributedStringUrlConfiguration] = []
+let themeBodyFont = Font(Font.makeFont(family: theme.fontFamily,
+                                        from: theme.fonts.bodyDefaultMedium,
+                                        isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+let themeBodyBoldFont = Font(Font.makeFont(family: theme.fontFamily,
+                                            from: theme.fonts.bodyStrongMedium,
+                                            isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+var urlConfigurations: [AttributedStringUrlConfiguration] = []
 urlConfigurations.append(.init(text: "privacy policy", // Words to wrap
                                urlToOpen: privacyUrl, // Url to open
                                color: theme.colors.contentBrandPrimary.color(for: colorScheme),
@@ -261,8 +272,8 @@ OUDSPasswordInput("Enter your password", password: $password, helperText: richTe
 If you handle Markdown data, you can define your own styles for the hyperlinks:
 
 ```swift
-var urlConfigurations: [AtributedStringUrlConfiguration] = []
-urlConfigurations.append(.init(color: yheme.colors.contentBrandPrimary.color(for: colorScheme),
+var urlConfigurations: [AttributedStringUrlConfiguration] = []
+urlConfigurations.append(.init(color: theme.colors.contentBrandPrimary.color(for: colorScheme),
                                 font: themeBodyBoldFont))
     
 let richTextMarkdown = AttributedString.from(markdown: someMarkdown,
