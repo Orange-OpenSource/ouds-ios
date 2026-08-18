@@ -238,3 +238,63 @@ registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("W
 ```
 
 The full map is readable at any time via `kApplePostScriptFontNames`. Unregistered combinations fall back to the family name without spaces.
+
+## Use rich text with AttributedString
+
+> Do not use `AttributedString`  for *rich text* mode in OUDS componants if they contain hyperlinks.
+> Hyperlinks may be not accessible for Voice Over, Full Keyboard Access and Switch Control.
+> Prefer use other components like `Text` from SwiftUI.
+
+You may need to add *rich text* to some components which support `AttributedString` type parameters.
+For example you may want to display a text with clickable hyperlinks inside, and a style for the hyperlink.
+
+Font tokens like `theme.fonts.bodyDefaultMedium` are `MultipleFontCompositeSemanticToken` values, not SwiftUI `Font`.
+Convert them to a `Font` with `Font.makeFont(family:from:isCompact:)` before passing them to `AttributedString.from(...)`:
+
+```swift
+let themeBodyFont = Font(Font.makeFont(family: theme.fontFamily,
+                                        from: theme.fonts.bodyDefaultMedium,
+                                        isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+let themeBodyBoldFont = Font(Font.makeFont(family: theme.fontFamily,
+                                            from: theme.fonts.bodyStrongMedium,
+                                            isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+var urlConfigurations: [AttributedStringUrlConfiguration] = []
+urlConfigurations.append(.init(text: "privacy policy", // Words to wrap
+                               urlToOpen: privacyUrl, // Url to open
+                               color: theme.colors.contentBrandPrimary.color(for: colorScheme),
+                               font: themeBodyBoldFont))
+let richTextHelperMessage = AttributedString.from(text: "You must read our privacy policy before authentication", // Text to display
+                                                  foregroundColor: theme.colors.contentDefault.color(for: colorScheme),
+                                                  font: themeBodyFont,
+                                                  urlConfigurations: urlConfigurations)
+                                                  
+OUDSPasswordInput("Enter your password", password: $password, helperText: richTextHelperMessage)
+```
+
+If you handle Markdown data, you can define your own styles for the hyperlinks:
+
+```swift
+var urlConfigurations: [AttributedStringUrlConfiguration] = []
+urlConfigurations.append(.init(color: theme.colors.contentBrandPrimary.color(for: colorScheme),
+                                font: themeBodyBoldFont))
+    
+let richTextMarkdown = AttributedString.from(markdown: someMarkdown,
+                                             foregroundColor: theme.colors.contentDefault.color(for: colorScheme),
+                                             font: themeBodyFont,
+                                             urlConfigurations: urlConfigurations)
+                                             
+Text(richTextMarkdown)
+```
+
+If you just need to apply a color (no hyperlinks, no custom font) to a plain text or a Markdown source,
+use the simpler overloads:
+
+```swift
+let simpleText = AttributedString.from(text: "Some plain text",
+                                       foregroundColor: theme.colors.contentDefault.color(for: colorScheme))
+
+let simpleMarkdown = AttributedString.from(markdown: someMarkdown,
+                                           foregroundColor: theme.colors.contentDefault.color(for: colorScheme))
+```

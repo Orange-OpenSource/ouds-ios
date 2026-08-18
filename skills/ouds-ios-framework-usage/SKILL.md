@@ -175,7 +175,115 @@ registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("W
 
 ---
 
-## 8. Component skills
+## 8. Styled AttributedString with hyperlinks
+
+OUDS provides utilities to create styled `AttributedString` from plain text or Markdown, with custom styling for links based on their text or URL.
+
+Font tokens (e.g. `theme.fonts.bodyDefaultMedium`) are `MultipleFontCompositeSemanticToken` values, not SwiftUI `Font`.
+Convert them with `Font.makeFont(family:from:isCompact:)` before using them in `AttributedStringUrlConfiguration` or `AttributedString.from(...)`.
+
+### Basic usage — Markdown
+
+```swift
+import OUDSComponents
+import SwiftUI
+
+let markdown = "Read our [terms of service](https://example.com/terms) and [privacy policy](https://example.com/privacy)"
+
+let textColor = theme.colors.contentDefault.color(for: colorScheme)
+let textFont = Font(Font.makeFont(family: theme.fontFamily,
+                                   from: theme.fonts.bodyDefaultMedium,
+                                   isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+let urlColor = theme.colors.contentBrandPrimary.color(for: colorScheme)
+let urlFont = Font(Font.makeFont(family: theme.fontFamily,
+                                  from: theme.fonts.bodyStrongMedium,
+                                  isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+let configurations: [AttributedStringUrlConfiguration] = [
+    AttributedStringUrlConfiguration(
+        text: "terms of service",
+        color: urlColor,
+        font: urlFont
+    ),
+    AttributedStringUrlConfiguration(
+        text: "privacy policy",
+        urlToOpen: URL(string: "https://example.com/privacy")!,
+        color: urlColor,
+        font: urlFont
+    ),
+    AttributedStringUrlConfiguration(
+        color: urlColor,
+        font: urlFont
+    )
+]
+
+let attributedString = AttributedString.from(
+    markdown: markdown,
+    foregroundColor: textColor,
+    font: textFont,
+    urlConfigurations: configurations
+)
+```
+
+### Basic usage — plain text
+
+Use `AttributedString.from(text:foregroundColor:font:urlConfigurations:)` when the text and the words to turn into hyperlinks are known upfront
+(no Markdown syntax). Each configuration **must** provide both `text` and `urlToOpen`, otherwise it is ignored:
+
+```swift
+let attributedString = AttributedString.from(
+    text: "You must read the terms of service before continuing",
+    foregroundColor: textColor,
+    font: textFont,
+    urlConfigurations: [
+        AttributedStringUrlConfiguration(
+            text: "terms of service",
+            urlToOpen: URL(string: "https://example.com/terms")!,
+            color: urlColor,
+            font: urlFont
+        )
+    ]
+)
+```
+
+A `LocalizedStringKey`-based overload is also available: `AttributedString.from(_:tableName:bundle:foregroundColor:font:urlConfigurations:)`.
+`AttributedStringUrlConfiguration` also has a `LocalizedStringKey`-based initializer: `AttributedStringUrlConfiguration(_:tableName:bundle:urlToOpen:color:font:)`.
+
+### Foreground color only (no hyperlinks)
+
+If you only need to apply a color to a whole text or Markdown source (no custom font, no hyperlink styling), use the simpler overloads:
+
+```swift
+let coloredText = AttributedString.from(text: "Some plain text", foregroundColor: textColor)
+let coloredKey = AttributedString.from("some.localized.key", foregroundColor: textColor)
+let coloredMarkdown = AttributedString.from(markdown: someMarkdown, foregroundColor: textColor)
+```
+
+Each of these also has a `ColorSemanticToken`-based overload, e.g. `AttributedString.from(text:foregroundColor: ColorSemanticToken)`.
+
+### Configuration options
+
+| Initializer | Use case |
+|---|---|
+| `AttributedStringUrlConfiguration(text:urlToOpen:color:font:)` | Match by text **and** URL, set custom URL. Required form for `AttributedString.from(text:...)` |
+| `AttributedStringUrlConfiguration(text:color:font:)` | Match by text only (URL taken from Markdown). Only usable with `AttributedString.from(markdown:...)` |
+| `AttributedStringUrlConfiguration(urlToOpen:color:font:)` | Match by URL only. Only usable with `AttributedString.from(markdown:...)` |
+| `AttributedStringUrlConfiguration(color:font:)` | Default fallback for any unmatched link. Only usable with `AttributedString.from(markdown:...)` |
+
+### Matching priority (Markdown only)
+
+For each hyperlink found in the Markdown source, the **first** configuration in the `urlConfigurations` array that matches (by URL **or** by text) is applied:
+
+1. Configurations are scanned in array order; the first one whose `urlToOpen` matches the link's URL, or whose `text` matches the link's text, wins.
+2. If no configuration matches, the default configuration (the one with no `text` and no `urlToOpen`) is applied, if any.
+3. If neither matches, a warning is logged and the base `foregroundColor` / `font` style is kept.
+
+`AttributedString.from(text:...)` does not use this fallback logic: only configurations with both `text` and `urlToOpen` set are applied, matched by exact text.
+
+---
+
+## 9. Component skills
 
 Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
 
