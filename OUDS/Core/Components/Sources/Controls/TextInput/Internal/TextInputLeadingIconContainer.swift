@@ -15,7 +15,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct LeadingIconContainer: View {
+struct TextInputLeadingIconContainer: View {
 
     // MARK: - Properties
 

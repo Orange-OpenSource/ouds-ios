@@ -262,6 +262,8 @@ public struct OUDSTextInput: View {
         ///   - actionHint: A string that describes the purpose of the button's `action`
         ///   - action: The action to perform when the user triggers the button
         public init(image: OUDSImage, actionHint: String, action: @escaping () -> Void) {
+            precondition(image.asset != nil, "OUDSTextInput.TrailingAction.icon must be created with an asset Image")
+
             if actionHint.isEmpty {
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
@@ -291,8 +293,11 @@ public struct OUDSTextInput: View {
         case richError(message: AttributedString)
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
-        /// text entered. A progress indicator appears to inform the user that an action is in progress.
-        case loading
+        /// text entered. A circular progress indicator appears to inform the user that an action is in progress.
+        /// The field remains editable while loading.
+        ///  - Parameter progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+        ///  value to `nil` to display a circular indeterminate progress indicator.
+        case loading(progress: Double? = nil)
 
         /// The`readOnly`, lets the text visible but not editable
         case readOnly
@@ -303,8 +308,10 @@ public struct OUDSTextInput: View {
 
         public static func == (lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
-            case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
+            case (.enabled, .enabled), (.readOnly, .readOnly), (.disabled, .disabled):
                 true
+            case let (.loading(lhsProgress), .loading(rhsProgress)):
+                lhsProgress == rhsProgress
             case let (.error(lhsMessage), .error(rhsMessage)):
                 lhsMessage == rhsMessage
             case let (.richError(lhsMessage), .richError(rhsMessage)):

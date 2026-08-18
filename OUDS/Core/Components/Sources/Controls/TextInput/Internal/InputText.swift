@@ -54,10 +54,19 @@ struct InputText: View {
         .multilineTextAlignment(.leading)
         .foregroundColor(inputTextColor)
         .tint(cursorColor.color(for: colorScheme))
-        .disabled(status == .disabled || status == .readOnly || status == .loading)
+        .disabled(disabled)
     }
 
-    // MARK: - Helper
+    // MARK: - Helpers
+
+    private var disabled: Bool {
+        switch status {
+        case .disabled, .readOnly, .loading:
+            true
+        default:
+            false
+        }
+    }
 
     private var labelColor: MultipleColorSemanticToken {
         switch status {
@@ -106,7 +115,7 @@ private struct SecureTextFieldModifier: ViewModifier {
                 .textContentType(.password)
                 .autocorrectionDisabled(true)
             #if !os(macOS)
-                .textInputAutocapitalization(.never)
+            .textInputAutocapitalization(.never)
             #endif
         } else {
             content

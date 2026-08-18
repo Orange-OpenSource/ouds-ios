@@ -15,7 +15,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct LabelContainer: View {
+struct TextInputLabelContainer: View {
 
     // MARK: Properties
 
