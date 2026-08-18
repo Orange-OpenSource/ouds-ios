@@ -85,8 +85,6 @@ struct TextInputContainer: View {
             TextInputTrailingContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
         }
         .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
-        // TODO: A verifier, avec un leading le token devrait être
-        // ouds/💠_control/text-input/space/padding-inline/start
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
         .padding(.trailing, trailingPadding)
         .frame(minHeight: theme.textInput.sizeMinHeight, alignment: .leading)
