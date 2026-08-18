@@ -63,14 +63,7 @@ struct TextAreaBackgroundModifier: ViewModifier {
         case .error, .richError:
             theme.colors.surfaceStatusNegativeMuted
         case .loading:
-            switch interactionState {
-            case .idle:
-                theme.colors.actionSupportEnabled
-            case .focused:
-                theme.colors.actionSupportPressed
-            case .hover:
-                theme.colors.actionSupportHover
-            }
+            theme.colors.actionSupportLoading
         case .readOnly:
             MultipleColorSemanticToken?.none
         case .disabled:

@@ -278,6 +278,23 @@ OUDSLink(text: "Back", indicator: .previous, size: .default) { }
 
 **Reason for Change**: Improved semantic clarity — `.previous` better describes the navigation direction relative to the current page.
 
+### Text area loading case has now optional value
+
+Because the `OUDSTextArea` component now uses `OUDSCircularProgressIndicator`, a `progress` value can be assigned to the indicator.
+This new `progress` parameter even if *optional* can break pattern matching.
+
+**Impact**: Low
+
+**Before (v2.3.0)**:
+```swift
+OUDSTextArea.Status.loading()
+```
+
+**After (v3.0.0)**:
+```swift
+OUDSTextArea.Status.loading(someProgresValue)
+```
+
 ### Compatibility
 
 - **Backward Compatibility**: No

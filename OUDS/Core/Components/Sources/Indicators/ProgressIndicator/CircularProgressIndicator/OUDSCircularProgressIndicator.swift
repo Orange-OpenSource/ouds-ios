@@ -133,6 +133,9 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
 
+    /// The default component size (matches the Android reference implementation and Material 3 defaults).
+    public static let defaultSize: CGFloat = 48.0
+
     // MARK: - Properties
 
     /// Embeds all configuration details for the circular progress indicator
@@ -151,16 +154,19 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///      display, and animates any subsequent change of `progress`. When `false`, the indicator is displayed
     ///      instantly at its target value with no animation. Animations are always disabled when
     ///      `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this flag.
+    ///    - size: The size of the component could be adjusted if used internally by components.
     public init(progress: Double,
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 gapSize: OUDSProgressIndicatorGapSize = .default,
-                animated: Bool = true)
+                animated: Bool = true,
+                size: CGFloat = Self.defaultSize)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: progress,
                                                                status: status,
                                                                track: track,
                                                                gapSize: gapSize,
+                                                               size: size,
                                                                animated: animated)
     }
 
@@ -170,14 +176,17 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
+    ///    - size: The size of the component could be adjusted if used internally by components.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
-                gapSize: OUDSProgressIndicatorGapSize = .default)
+                gapSize: OUDSProgressIndicatorGapSize = .default,
+                size: CGFloat = Self.defaultSize)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                status: status,
                                                                track: track,
                                                                gapSize: gapSize,
+                                                               size: size,
                                                                animated: true)
     }
 

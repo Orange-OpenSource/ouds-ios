@@ -21,7 +21,7 @@ import SwiftUI
 /// never changes when switching between statuses — preventing height reflow.
 ///
 /// - `.error` or `isOverLimit` → red alert icon (`ic_alert_important_fill`)
-/// - `.loading` → loading spinner via `OUDSButton(style: .loading)`, accessibility hidden
+/// - `.loading` → `OUDSCircularProgressIndicator`, accessibility hidden
 /// - all other statuses → invisible placeholder of the same size
 struct TextAreaTrailingContainer: View {
 
@@ -53,14 +53,13 @@ struct TextAreaTrailingContainer: View {
                 errorIcon
             } else if isOverLimit {
                 errorIcon
-            } else if case .loading = status {
-                OUDSButton(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: ""), // Image won't never be displayed
-                           appearance: .minimal,
-                           style: .loading,
-                           action: {})
-                    .accessibilityHidden(true)
+            } else if case let .loading(progress) = status {
+                TextInputCircularProgressIndicator(progress: progress)
+                    .padding(.horizontal, theme.button.spaceInsetIconOnlyDefault)
+                    .padding(.vertical, verticalPadding)
             }
         }
+        .frame(minWidth: theme.button.sizeMinWidthDefault)
     }
 
     // MARK: - Helpers

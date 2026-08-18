@@ -86,6 +86,7 @@ struct CircularProgressIndicatorIndeterminateView: View {
     let strokeCap: CGLineCap
     let gapSize: OUDSProgressIndicatorGapSize
     let hasTrack: Bool
+    let size: CGFloat
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
@@ -100,7 +101,8 @@ struct CircularProgressIndicatorIndeterminateView: View {
                 strokeCap: strokeCap,
                 sweep: Self.staticSweep,
                 rotation: -90,
-                gapSize: gapSize)
+                gapSize: gapSize,
+                size: size)
         } else {
             TimelineView(.animation) { context in
                 let time = context.date.timeIntervalSinceReferenceDate
@@ -110,7 +112,8 @@ struct CircularProgressIndicatorIndeterminateView: View {
                     strokeCap: strokeCap,
                     sweep: sweep(at: time),
                     rotation: totalRotation(at: time),
-                    gapSize: gapSize)
+                    gapSize: gapSize,
+                    size: size)
             }
         }
     }

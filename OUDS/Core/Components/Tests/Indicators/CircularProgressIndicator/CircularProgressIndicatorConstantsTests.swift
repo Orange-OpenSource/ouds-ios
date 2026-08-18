@@ -15,17 +15,6 @@ import Foundation
 @testable import OUDSComponents
 import Testing
 
-// MARK: - View constants
-
-/// Tests on the constants defined in ``CircularProgressIndicatorView``.
-struct CircularProgressViewConstantsTests {
-
-    @Test
-    func `default size constant must be 48 points`() {
-        #expect(CircularProgressIndicatorView.defaultSize == 48.0)
-    }
-}
-
 // MARK: - Canvas constants
 
 /// Tests on the constants defined in ``CircularProgressCanvas``.
