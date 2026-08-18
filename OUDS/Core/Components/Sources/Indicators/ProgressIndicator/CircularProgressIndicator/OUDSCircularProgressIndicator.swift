@@ -175,7 +175,7 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     /// - Parameters:
     ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``GapSize/default``.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
     ///    - size: The size of the component could be adjusted if used internally by components.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
