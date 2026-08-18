@@ -33,8 +33,10 @@ struct HeadingMarker: View {
     // MARK: Body
 
     var body: some View {
-        Rectangle()
-            .fill(theme.colors.contentBrandPrimary)
+        Image(decorative: "ic_typography_heading_marker", bundle: theme.resourcesBundle)
+            .renderingMode(.template)
+            .resizable()
+            .foregroundStyle(theme.colors.contentBrandPrimary)
             .frame(width: Self.markerWidth, height: Self.markerHeight)
             .padding(.top, theme.typography.spacePaddingBlockTopHeadingLargeMarker)
             .padding(.bottom, theme.typography.spacePaddingBlockBottomHeadingLargeMarker)

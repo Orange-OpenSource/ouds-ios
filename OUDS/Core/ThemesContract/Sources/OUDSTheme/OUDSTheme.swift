@@ -238,7 +238,6 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
-    ///    - hasTypographyHeadingLargeMarker: If big heading typography has large markers or not (default set to `false`).
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
@@ -282,7 +281,6 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 tuning: Tuning = Tuning.default,
                 hasTypographyHeadingLargeMarker: Bool = false)
     {
-
         // Save semantic tokens providers
         self.borders = borders
         self.colors = colors

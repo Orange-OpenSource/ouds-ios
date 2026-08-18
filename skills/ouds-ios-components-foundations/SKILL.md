@@ -39,7 +39,7 @@ OUDSCode(text: "let x = 42")
 OUDSCode(LocalizedStringKey("code_sample"), bundle: .module)
 ```
 
-`OUDSHeading` can have *marker*. `hasMarker: true` draws a small brand-coloured rectangle below the text — only when:
+`OUDSHeading` can have *marker*. `hasMarker: true` draws a small brand-coloured marker below the text — only when:
 - `size == .large`, AND
 - the current theme supports it (`theme.hasTypographyHeadingLargeMarker == true`, e.g. Orange, Orange Compact, Wireframe).
 
