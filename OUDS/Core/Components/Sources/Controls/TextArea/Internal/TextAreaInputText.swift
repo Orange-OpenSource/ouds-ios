@@ -46,15 +46,16 @@ struct TextAreaInputText: View {
             }
 
             // Native TextEditor.
-            // - .padding cancels UITextView's 8pt top/bottom inset and 5pt leading lineFragmentPadding.
+            // - .padding cancels UITextView's 8pt top/bottom inset and 5pt leading/trailing lineFragmentPadding.
             // - min/maxHeight come directly from the text area size tokens — no Dynamic Type scaling
             //   arithmetic needed, keeping the frame stable across style and status changes.
             rawTextEditor
                 .labelModerateLarge(theme)
                 .foregroundColor(inputTextColor)
                 .tint(cursorColor.color(for: colorScheme))
-                .background(Color.clear)
-                .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
+                .clipped()
+                .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: -5))
+                .clipped()
                 .frame(minHeight: theme.textArea.sizeMinHeightInput)
                 .frame(maxHeight: constrainedMaxHeight ? theme.textArea.sizeMinHeightInput : theme.textArea.sizeMaxHeightInput)
                 .accessibilityAddTraits(additionalTraits)
