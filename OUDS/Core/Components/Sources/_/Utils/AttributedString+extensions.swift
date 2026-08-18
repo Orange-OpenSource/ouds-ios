@@ -95,13 +95,39 @@ import SwiftUI
 ///                                  configurations: urlConfigurations)
 /// ```
 ///
+/// ## Accessibility considerations
+///
+/// Do not use `AttributedString`  for *rich text* mode in OUDS componants if they contain hyperlinks.
+/// Hyperlinks may be not accessible for Voice Over, Full Keyboard Access and Switch Control.
+/// Prefer use other components like `Text` from SwiftUI.
+///
 /// - Since: 3.0.0
 public struct AttributedStringUrlConfiguration {
 
     let text: String?
     let urlToOpen: URL?
-    let color: Color
+    let color: Color?
     let font: Font
+
+    /// Defines for the given text at that `LocalizedStringKey` the style to apply.
+    /// Will associate to the text a `URL` to open on tap.
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` pointing to the text to define as hyperlink
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - urlToOpen: The link to open on tap on the text
+    ///    - token: The color to apply to the text as URL, as OUDS token
+    ///    - font: The font to apply to the text as URL
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                urlToOpen: URL,
+                color token: ColorSemanticToken,
+                font: Font)
+    {
+        self.init(key, tableName: tableName, bundle: bundle, urlToOpen: urlToOpen, color: Color(hexadecimalCode: token), font: font)
+    }
 
     /// Defines for the given text at that `LocalizedStringKey` the style to apply.
     /// Will associate to the text a `URL` to open on tap.
@@ -117,7 +143,7 @@ public struct AttributedStringUrlConfiguration {
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 urlToOpen: URL,
-                color: Color,
+                color: Color?,
                 font: Font)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
@@ -143,9 +169,34 @@ public struct AttributedStringUrlConfiguration {
     /// - Parameters:
     ///    - text: The text to display as hyperlink, default set to `nil`
     ///    - urlToOpen: The link to open on tap on the text, default set to `nil`
+    ///    - token: The color to apply to the text as URL, as OUDS token
+    ///    - font: The font to apply to the text as URL
+    public init(text: String? = nil, urlToOpen: URL? = nil, color token: ColorSemanticToken, font: Font) {
+        self.init(text: text, urlToOpen: urlToOpen, color: Color(hexadecimalCode: token), font: font)
+    }
+
+    /// Defines for the given  `text` the style to apply.
+    /// Will associate to the text a `URL` to open on tap, if defined.
+    ///
+    /// ```swift
+    ///     // Default configuration for any hyperlink not managed
+    ///     AttributedStringUrlConfiguration(color: someColor, font: someFont)
+    ///
+    ///     // Configuration for a hyperlink with a text
+    ///     // More for Markdown cases
+    ///     AttributedStringUrlConfiguration(text: "Privacy policy", color: someColor, font: someFont)
+    ///
+    ///     // Configuration to add on a text and hyperlink to open on tap
+    ///     // More for programmatic case
+    ///     AttributedStringUrlConfiguration(text: "Privacy policy", urlToOpen: someRemoteOrLocalUrl, color: someColor, font: someFont)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - text: The text to display as hyperlink, default set to `nil`
+    ///    - urlToOpen: The link to open on tap on the text, default set to `nil`
     ///    - color: The color to apply to the text as URL
     ///    - font: The font to apply to the text as URL
-    public init(text: String? = nil, urlToOpen: URL? = nil, color: Color, font: Font) {
+    public init(text: String? = nil, urlToOpen: URL? = nil, color: Color?, font: Font) {
         self.text = text
         self.urlToOpen = urlToOpen
         self.color = color
@@ -153,7 +204,7 @@ public struct AttributedStringUrlConfiguration {
     }
 }
 
-// MARK: - Attributed String extension
+// MARK: - Attributed String extension (from:)
 
 extension AttributedString {
 
@@ -162,7 +213,91 @@ extension AttributedString {
         self = (try? AttributedString(markdown: string)) ?? AttributedString(fallback)
     }
 
-    // MARK: Utilities (from text)
+    // MARK: Utilities (from text, only foreground colors)
+
+    /// Creates a new `AttributedString` object from a text defined in localizables, and applies
+    /// the given `token` as foreground color.
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` pointing to the text to display which contains texts for URL
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - token: The color to apply to the  text as OUDS token
+    public static func from(_ key: LocalizedStringKey,
+                            tableName: String? = nil,
+                            bundle: Bundle = .main,
+                            foregroundColor token: ColorSemanticToken) -> AttributedString
+    {
+        from(key, tableName: tableName, bundle: bundle, foregroundColor: Color(hexadecimalCode: token))
+    }
+
+    /// Creates a new `AttributedString` object from a text defined in localizables, and applies
+    /// the given `foregroundColor`.
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` pointing to the text to display which contains texts for URL
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - foregroundColor: The color to apply to the whole text
+    public static func from(_ key: LocalizedStringKey,
+                            tableName: String? = nil,
+                            bundle: Bundle = .main,
+                            foregroundColor: Color?) -> AttributedString
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        return from(text: resolvedText, foregroundColor: foregroundColor)
+    }
+
+    /// Creates a new `AttributedString` object from a text  and applies
+    /// the given `token` as foreground color.
+    ///
+    /// - Parameters:
+    ///    - text: The text which contains some text shards to find and turn into hyperlinks
+    ///    - token: The color to apply to the text, as OUDS token
+    public static func from(text: String,
+                            foregroundColor token: ColorSemanticToken) -> AttributedString
+    {
+        from(text: text, foregroundColor: Color(hexadecimalCode: token))
+    }
+
+    /// Creates a new `AttributedString` object from a text  and applies
+    /// the given `foregroundColor`.
+    ///
+    /// - Parameters:
+    ///    - text: The text which contains some text shards to find and turn into hyperlinks
+    ///    - foregroundColor: The color to apply to the whole text except the URL
+    public static func from(text: String,
+                            foregroundColor: Color?) -> AttributedString
+    {
+        var result = AttributedString(text)
+        var base = AttributeContainer()
+        base.foregroundColor = foregroundColor
+        result.mergeAttributes(base)
+        return result
+    }
+
+    // MARK: Utilities (from text, foreground colors and URL configurations)
+
+    /// Creates a new `AttributedString` object from a text defined in localizables, containing text shards which must be turned into hyperlinks.
+    /// Applies to the main text the given `token` as foreground color and `font`, and define styles for the available URL
+    /// as defined in `configurations`.
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` pointing to the text to display which contains texts for URL
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    ///    - font: The font to apply to the whole text except the URL
+    ///    - urlConfigurations: The styles to apply to the URLs
+    public static func from(_ key: LocalizedStringKey,
+                            tableName: String? = nil,
+                            bundle: Bundle = .main,
+                            foregroundColor token: ColorSemanticToken,
+                            font: Font,
+                            urlConfigurations: [AttributedStringUrlConfiguration]) -> AttributedString
+    {
+        from(key, tableName: tableName, bundle: bundle, foregroundColor: Color(hexadecimalCode: token), font: font, urlConfigurations: urlConfigurations)
+    }
 
     /// Creates a new `AttributedString` object from a text defined in localizables, containing text shards which must be turned into hyperlinks.
     /// Applies to the main text the given `foregroundColor` and `font`, and define styles for the available URL
@@ -174,16 +309,33 @@ extension AttributedString {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - foregroundColor: The color to apply to the whole text except the URL
     ///    - font: The font to apply to the whole text except the URL
-    ///    - configurations: The styles to apply to the URLs
+    ///    - urlConfigurations: The styles to apply to the URLs
     public static func from(_ key: LocalizedStringKey,
                             tableName: String? = nil,
                             bundle: Bundle = .main,
-                            foregroundColor: Color,
+                            foregroundColor: Color?,
                             font: Font,
-                            configurations: [AttributedStringUrlConfiguration]) -> AttributedString
+                            urlConfigurations: [AttributedStringUrlConfiguration]) -> AttributedString
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        return from(text: resolvedText, foregroundColor: foregroundColor, font: font, configurations: configurations)
+        return from(text: resolvedText, foregroundColor: foregroundColor, font: font, urlConfigurations: urlConfigurations)
+    }
+
+    /// Creates a new `AttributedString` object from a text defined in localizables, containing text shards which must be turned into hyperlinks.
+    /// Applies to the main text the given `token`  foreground color and `font`, and define styles for the available URL
+    /// as defined in `configurations`.
+    ///
+    /// - Parameters:
+    ///    - text: The text which contains some text shards to find and turn into hyperlinks
+    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    ///    - font: The font to apply to the whole text except the URL
+    ///    - urlConfigurations: The styles to apply to the URLs
+    public static func from(text: String,
+                            foregroundColor token: ColorSemanticToken,
+                            font: Font,
+                            urlConfigurations: [AttributedStringUrlConfiguration]) -> AttributedString
+    {
+        from(text: text, foregroundColor: Color(hexadecimalCode: token), font: font, urlConfigurations: urlConfigurations)
     }
 
     /// Creates a new `AttributedString` object from a text defined in localizables, containing text shards which must be turned into hyperlinks.
@@ -194,11 +346,11 @@ extension AttributedString {
     ///    - text: The text which contains some text shards to find and turn into hyperlinks
     ///    - foregroundColor: The color to apply to the whole text except the URL
     ///    - font: The font to apply to the whole text except the URL
-    ///    - configurations: The styles to apply to the URLs
+    ///    - urlConfigurations: The styles to apply to the URLs
     public static func from(text: String,
-                            foregroundColor: Color,
+                            foregroundColor: Color?,
                             font: Font,
-                            configurations: [AttributedStringUrlConfiguration]) -> AttributedString
+                            urlConfigurations: [AttributedStringUrlConfiguration]) -> AttributedString
     {
         // Base object
         var result = AttributedString(text)
@@ -210,7 +362,7 @@ extension AttributedString {
         result.mergeAttributes(base)
 
         // Add URL configurations
-        for configuration in configurations {
+        for configuration in urlConfigurations {
             if let text = configuration.text, let url = configuration.urlToOpen, let range = result.range(of: text) {
                 var linkAttrs = AttributeContainer()
                 linkAttrs.link = url
@@ -226,6 +378,49 @@ extension AttributedString {
 
     // MARK: Utilities (from Markdown)
 
+    /// Creates a new `AttributedString` object from a source in Markdown formatand applies to the text the given `token` as foreground color.
+    ///
+    /// - Parameters:
+    ///    - source: The Markdown text containing URL
+    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    public static func from(markdown source: String,
+                            foregroundColor token: ColorSemanticToken) -> AttributedString
+    {
+        from(markdown: source, foregroundColor: Color(hexadecimalCode: token))
+    }
+
+    /// Creates a new `AttributedString` object from a source in Markdown formatand applies to the text the given `foregroundColor`.
+    ///
+    /// - Parameters:
+    ///    - source: The Markdown text containing URL
+    ///    - foregroundColor: The color to apply to the whole text except the URL
+    public static func from(markdown source: String,
+                            foregroundColor: Color?) -> AttributedString
+    {
+        var result = AttributedString(markdown: source, or: "")
+        var base = AttributeContainer()
+        base.foregroundColor = foregroundColor
+        result.mergeAttributes(base)
+        return result
+    }
+
+    /// Creates a new `AttributedString` object from a source in Markdown format containing URL.
+    /// Applies to the main text the given `token` as foregrond color and `font`, and define styles for the available URL
+    /// as defined in `configurations`.
+    ///
+    /// - Parameters:
+    ///    - source: The Markdown text containing URL
+    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    ///    - font: The font to apply to the whole text except the URL
+    ///    - urlConfigurations: The styles to apply to the URLs
+    public static func from(markdown source: String,
+                            foregroundColor token: ColorSemanticToken,
+                            font: Font,
+                            urlConfigurations: [AttributedStringUrlConfiguration]) -> AttributedString
+    {
+        from(markdown: source, foregroundColor: Color(hexadecimalCode: token), font: font, urlConfigurations: urlConfigurations)
+    }
+
     /// Creates a new `AttributedString` object from a source in Markdown format containing URL.
     /// Applies to the main text the given `foregroundColor` and `font`, and define styles for the available URL
     /// as defined in `configurations`.
@@ -234,11 +429,11 @@ extension AttributedString {
     ///    - source: The Markdown text containing URL
     ///    - foregroundColor: The color to apply to the whole text except the URL
     ///    - font: The font to apply to the whole text except the URL
-    ///    - configurations: The styles to apply to the URLs
+    ///    - urlConfigurations: The styles to apply to the URLs
     public static func from(markdown source: String,
-                            foregroundColor: Color,
+                            foregroundColor: Color?,
                             font: Font,
-                            configurations: [AttributedStringUrlConfiguration]) -> AttributedString
+                            urlConfigurations: [AttributedStringUrlConfiguration]) -> AttributedString
     {
 
         // Base object
@@ -251,11 +446,11 @@ extension AttributedString {
         result.mergeAttributes(base)
 
         // Default configuration for URL, if defined
-        let defaultConfiguration = configurations.first(where: { $0.text == nil && $0.urlToOpen == nil })
+        let defaultConfiguration = urlConfigurations.first(where: { $0.text == nil && $0.urlToOpen == nil })
 
         // Add URL configurations
         for run in result.runs where run.link != nil {
-            if let configuration = configurations.first(where: {
+            if let configuration = urlConfigurations.first(where: {
                 ($0.urlToOpen?.absoluteString == run.link?.absoluteString) ||
                     ($0.text == String(result[run.range].characters))
             }) {

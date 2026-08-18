@@ -13,6 +13,7 @@
 
 import Foundation
 import OUDSComponents
+import OUDSTokensSemantic
 import SwiftUI
 import Testing
 
@@ -43,7 +44,7 @@ struct AttributedStringExtensionsTests {
             markdown: markdown,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         for run in result.runs where run.link != nil {
             #expect(run.foregroundColor == urlColor)
@@ -70,7 +71,7 @@ struct AttributedStringExtensionsTests {
             markdown: markdown,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         for run in result.runs where run.link?.absoluteString == "https://example.com" {
             #expect(run.foregroundColor == urlColor)
@@ -98,7 +99,7 @@ struct AttributedStringExtensionsTests {
             markdown: markdown,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         for run in result.runs where run.link != nil {
             let linkText = String(result[run.range].characters)
@@ -127,7 +128,7 @@ struct AttributedStringExtensionsTests {
             markdown: markdown,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         var matchedCount = 0
         for run in result.runs where run.link != nil {
@@ -165,7 +166,7 @@ struct AttributedStringExtensionsTests {
             markdown: markdown,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         for run in result.runs where run.link?.absoluteString == "https://unknown.com" {
             #expect(run.foregroundColor == defaultColor)
@@ -191,7 +192,7 @@ struct AttributedStringExtensionsTests {
             markdown: markdown,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         for run in result.runs where run.link != nil {
             #expect(run.foregroundColor == textColor)
@@ -223,7 +224,7 @@ struct AttributedStringExtensionsTests {
             markdown: markdown,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         for run in result.runs where run.link != nil {
             let linkText = String(result[run.range].characters)
@@ -261,12 +262,49 @@ struct AttributedStringExtensionsTests {
             text: text,
             foregroundColor: textColor,
             font: textFont,
-            configurations: configurations)
+            urlConfigurations: configurations)
 
         if let range = result.range(of: "privacy policy") {
             #expect(result[range].foregroundColor == urlColor)
             #expect(result[range].font == urlFont)
             #expect(result[range].link == URL(string: "https://example.com/privacy"))
+        }
+    }
+
+    @Test func `from text with configuration text not found in string does not crash`() {
+        let text = "Simple text without matching shard"
+        let configurations: [AttributedStringUrlConfiguration] = [
+            AttributedStringUrlConfiguration(
+                text: "not present",
+                urlToOpen: URL(string: "https://example.com")!,
+                color: .red,
+                font: .system(size: 14)),
+        ]
+
+        let result = AttributedString.from(
+            text: text,
+            foregroundColor: .black,
+            font: .system(size: 12),
+            urlConfigurations: configurations)
+
+        #expect(String(result.characters) == text)
+        for run in result.runs {
+            #expect(run.link == nil)
+        }
+    }
+
+    @Test func `from text with nil foreground color applies no explicit color`() {
+        let text = "Some plain text"
+
+        let result = AttributedString.from(
+            text: text,
+            foregroundColor: nil,
+            font: .system(size: 12),
+            urlConfigurations: [])
+
+        for run in result.runs {
+            #expect(run.foregroundColor == nil)
+            #expect(run.font == Font.system(size: 12))
         }
     }
 }

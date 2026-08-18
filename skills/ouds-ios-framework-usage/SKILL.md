@@ -222,13 +222,13 @@ let attributedString = AttributedString.from(
     markdown: markdown,
     foregroundColor: textColor,
     font: textFont,
-    configurations: configurations
+    urlConfigurations: configurations
 )
 ```
 
 ### Basic usage — plain text
 
-Use `AttributedString.from(text:foregroundColor:font:configurations:)` when the text and the words to turn into hyperlinks are known upfront
+Use `AttributedString.from(text:foregroundColor:font:urlConfigurations:)` when the text and the words to turn into hyperlinks are known upfront
 (no Markdown syntax). Each configuration **must** provide both `text` and `urlToOpen`, otherwise it is ignored:
 
 ```swift
@@ -236,7 +236,7 @@ let attributedString = AttributedString.from(
     text: "You must read the terms of service before continuing",
     foregroundColor: textColor,
     font: textFont,
-    configurations: [
+    urlConfigurations: [
         AttributedStringUrlConfiguration(
             text: "terms of service",
             urlToOpen: URL(string: "https://example.com/terms")!,
@@ -247,7 +247,20 @@ let attributedString = AttributedString.from(
 )
 ```
 
-A `LocalizedStringKey`-based overload is also available: `AttributedString.from(_:tableName:bundle:foregroundColor:font:configurations:)`.
+A `LocalizedStringKey`-based overload is also available: `AttributedString.from(_:tableName:bundle:foregroundColor:font:urlConfigurations:)`.
+`AttributedStringUrlConfiguration` also has a `LocalizedStringKey`-based initializer: `AttributedStringUrlConfiguration(_:tableName:bundle:urlToOpen:color:font:)`.
+
+### Foreground color only (no hyperlinks)
+
+If you only need to apply a color to a whole text or Markdown source (no custom font, no hyperlink styling), use the simpler overloads:
+
+```swift
+let coloredText = AttributedString.from(text: "Some plain text", foregroundColor: textColor)
+let coloredKey = AttributedString.from("some.localized.key", foregroundColor: textColor)
+let coloredMarkdown = AttributedString.from(markdown: someMarkdown, foregroundColor: textColor)
+```
+
+Each of these also has a `ColorSemanticToken`-based overload, e.g. `AttributedString.from(text:foregroundColor: ColorSemanticToken)`.
 
 ### Configuration options
 
@@ -260,7 +273,7 @@ A `LocalizedStringKey`-based overload is also available: `AttributedString.from(
 
 ### Matching priority (Markdown only)
 
-For each hyperlink found in the Markdown source, the **first** configuration in the `configurations` array that matches (by URL **or** by text) is applied:
+For each hyperlink found in the Markdown source, the **first** configuration in the `urlConfigurations` array that matches (by URL **or** by text) is applied:
 
 1. Configurations are scanned in array order; the first one whose `urlToOpen` matches the link's URL, or whose `text` matches the link's text, wins.
 2. If no configuration matches, the default configuration (the one with no `text` and no `urlToOpen`) is applied, if any.

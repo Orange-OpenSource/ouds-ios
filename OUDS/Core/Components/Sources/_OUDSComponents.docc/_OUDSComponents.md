@@ -241,6 +241,10 @@ The full map is readable at any time via `kApplePostScriptFontNames`. Unregister
 
 ## Use rich text with AttributedString
 
+> Do not use `AttributedString`  for *rich text* mode in OUDS componants if they contain hyperlinks.
+> Hyperlinks may be not accessible for Voice Over, Full Keyboard Access and Switch Control.
+> Prefer use other components like `Text` from SwiftUI.
+
 You may need to add *rich text* to some components which support `AttributedString` type parameters.
 For example you may want to display a text with clickable hyperlinks inside, and a style for the hyperlink.
 
@@ -264,7 +268,7 @@ urlConfigurations.append(.init(text: "privacy policy", // Words to wrap
 let richTextHelperMessage = AttributedString.from(text: "You must read our privacy policy before authentication", // Text to display
                                                   foregroundColor: theme.colors.contentDefault.color(for: colorScheme),
                                                   font: themeBodyFont,
-                                                  configurations: urlConfigurations)
+                                                  urlConfigurations: urlConfigurations)
                                                   
 OUDSPasswordInput("Enter your password", password: $password, helperText: richTextHelperMessage)
 ```
@@ -279,7 +283,18 @@ urlConfigurations.append(.init(color: theme.colors.contentBrandPrimary.color(for
 let richTextMarkdown = AttributedString.from(markdown: someMarkdown,
                                              foregroundColor: theme.colors.contentDefault.color(for: colorScheme),
                                              font: themeBodyFont,
-                                             configurations: urlConfigurations)
+                                             urlConfigurations: urlConfigurations)
                                              
 Text(richTextMarkdown)
+```
+
+If you just need to apply a color (no hyperlinks, no custom font) to a plain text or a Markdown source,
+use the simpler overloads:
+
+```swift
+let simpleText = AttributedString.from(text: "Some plain text",
+                                       foregroundColor: theme.colors.contentDefault.color(for: colorScheme))
+
+let simpleMarkdown = AttributedString.from(markdown: someMarkdown,
+                                           foregroundColor: theme.colors.contentDefault.color(for: colorScheme))
 ```
