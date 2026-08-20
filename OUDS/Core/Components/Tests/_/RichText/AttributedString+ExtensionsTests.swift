@@ -19,23 +19,21 @@ import Testing
 
 // MARK: - AttributedString Extensions Tests
 
-// swiftlint:disable force_unwrapping
-
 struct AttributedStringExtensionsTests {
 
     // MARK: - from(markdown:) - Configuration by URL
 
-    @Test func `from markdown with URL configuration applies color and font`() {
+    @Test func `from markdown with URL configuration applies color and font`() throws {
         let markdown = "Check our [privacy policy](https://example.com/privacy)"
         let urlColor = Color.red
         let urlFont = Font.system(size: 14, weight: .bold)
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "privacy policy",
-                urlToOpen: URL(string: "https://example.com/privacy")!,
+                urlToOpen: #require(URL(string: "https://example.com/privacy")),
                 color: urlColor,
                 font: urlFont),
         ]
@@ -53,16 +51,16 @@ struct AttributedStringExtensionsTests {
         }
     }
 
-    @Test func `from markdown with URL configuration matches by URL string`() {
+    @Test func `from markdown with URL configuration matches by URL string`() throws {
         let markdown = "Visit [our site](https://example.com) for more info"
         let urlColor = Color.blue
         let urlFont = Font.system(size: 14)
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
-                urlToOpen: URL(string: "https://example.com")!,
+                urlToOpen: #require(URL(string: "https://example.com")),
                 color: urlColor,
                 font: urlFont),
         ]
@@ -144,17 +142,17 @@ struct AttributedStringExtensionsTests {
 
     // MARK: - from(markdown:) - Default Configuration
 
-    @Test func `from markdown with default configuration applies to unmatched URLs`() {
+    @Test func `from markdown with default configuration applies to unmatched URLs`() throws {
         let markdown = "Check [unknown link](https://unknown.com) and [privacy](https://example.com/privacy)"
         let defaultColor = Color.orange
         let defaultFont = Font.system(size: 16, weight: .light)
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "privacy",
-                urlToOpen: URL(string: "https://example.com/privacy")!,
+                urlToOpen: #require(URL(string: "https://example.com/privacy")),
                 color: Color.green,
                 font: Font.system(size: 14)),
             AttributedStringUrlConfiguration(
@@ -202,20 +200,20 @@ struct AttributedStringExtensionsTests {
 
     // MARK: - from(markdown:) - Edge Cases
 
-    @Test func `from markdown with multiple links applies correct styles`() {
+    @Test func `from markdown with multiple links applies correct styles`() throws {
         let markdown = "Link [A](https://a.com) and [B](https://b.com) and [C](https://c.com)"
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "A",
-                urlToOpen: URL(string: "https://a.com")!,
+                urlToOpen: #require(URL(string: "https://a.com")),
                 color: Color.red,
                 font: Font.system(size: 14)),
             AttributedStringUrlConfiguration(
                 text: "B",
-                urlToOpen: URL(string: "https://b.com")!,
+                urlToOpen: #require(URL(string: "https://b.com")),
                 color: Color.blue,
                 font: Font.system(size: 16)),
         ]
@@ -243,17 +241,17 @@ struct AttributedStringExtensionsTests {
 
     // MARK: - from(text:) - Basic Tests
 
-    @Test func `from text with URL configuration applies link style`() {
+    @Test func `from text with URL configuration applies link style`() throws {
         let text = "Check the privacy policy and terms of use"
         let urlColor = Color.red
         let urlFont = Font.system(size: 14, weight: .bold)
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "privacy policy",
-                urlToOpen: URL(string: "https://example.com/privacy")!,
+                urlToOpen: #require(URL(string: "https://example.com/privacy")),
                 color: urlColor,
                 font: urlFont),
         ]
@@ -271,12 +269,12 @@ struct AttributedStringExtensionsTests {
         }
     }
 
-    @Test func `from text with configuration text not found in string does not crash`() {
+    @Test func `from text with configuration text not found in string does not crash`() throws {
         let text = "Simple text without matching shard"
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "not present",
-                urlToOpen: URL(string: "https://example.com")!,
+                urlToOpen: #require(URL(string: "https://example.com")),
                 color: .red,
                 font: .system(size: 14)),
         ]
@@ -308,5 +306,3 @@ struct AttributedStringExtensionsTests {
         }
     }
 }
-
-// swiftlint:enable force_unwrapping
