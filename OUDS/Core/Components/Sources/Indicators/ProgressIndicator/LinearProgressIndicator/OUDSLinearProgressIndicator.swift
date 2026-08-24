@@ -187,7 +187,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
-                helperText: String? = nil,
+                helperText: OUDSDeterminateProgressIndicatorHelperTest? = nil,
                 gapSize: OUDSProgressIndicatorGapSize = .default,
                 animated: Bool = true)
     {
