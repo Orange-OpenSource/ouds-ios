@@ -52,3 +52,32 @@ import SwiftUI
     /// Reduced gap size
     case small
 }
+
+// MARK: - Determinate Progress Indicator Helper Text
+
+/// The helper text can be added in **determinate** indicator
+///
+/// - Since: 3.0.0
+@frozen public enum OUDSDeterminateProgressIndicatorHelperTest: Equatable {
+
+    /// The helper text with a decription without any information of progress
+    case description(String)
+
+    /// The helper text with progress information (percentage value and `%`charcter with optional space before)
+    ///  displayed at the `PercentPosition`.
+    case percent(spaceBefore: Bool, position: PercentPosition = .center)
+
+    /// Description the position of the perentage.
+    /// For the `start` position if a description is provided it is placed at the trailing of the compent.
+    /// For the `end` position if a description is provided it is placed at the leading of the compent.
+    @frozen public enum PercentPosition: Equatable {
+        /// The percentage is displayed under the progress line indicator at center
+        case center
+
+        /// The percentage is displayed under the progress line at leading and description at trailing.
+        case start(descrption: String? = nil)
+
+        /// The percentage is displayed under the progress line at trailing and description at leading.
+        case end(descrption: String? = nil)
+    }
+}
