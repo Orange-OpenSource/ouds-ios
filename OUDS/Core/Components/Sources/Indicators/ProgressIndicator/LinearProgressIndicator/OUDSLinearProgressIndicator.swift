@@ -230,13 +230,13 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
-    ///    - helperTextAlignment: The alignment of the helper text. Defaults to `.center`.
+    ///    - helperTextAlignment: The alignment of the helper text. Defaults to `.center`. Ignored if `helperText` is `nil`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
     ///      ``OUDSProgressIndicatorGapSize/default``.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
-                helperTextAlignment: OUDSIndeterminateHelperTextAlignment = .center,
+                helperTextAlignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center,
                 gapSize: OUDSProgressIndicatorGapSize = .default)
     {
         configuration = .indeterminate(.init(status: status,
