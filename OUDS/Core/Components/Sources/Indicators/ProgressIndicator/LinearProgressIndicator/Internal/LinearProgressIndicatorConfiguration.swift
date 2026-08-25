@@ -37,7 +37,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let stopIndicator: Bool
 
         /// Optional additional text displayed below the bar.
-        let helperText: OUDSDeterminateProgressIndicatorHelperTest?
+        let helperText: OUDSDeterminateProgressIndicatorHelperText?
 
         /// Size of the gap between the foreground bar and the track.
         let gapSize: OUDSProgressIndicatorGapSize
@@ -50,7 +50,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
              status: OUDSProgressIndicatorStatus,
              track: Bool,
              stopIndicator: Bool,
-             helperText: OUDSDeterminateProgressIndicatorHelperTest?,
+             helperText: OUDSDeterminateProgressIndicatorHelperText?,
              gapSize: OUDSProgressIndicatorGapSize,
              animated: Bool)
         {
@@ -77,6 +77,9 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
         /// Optional additional text displayed below the bar.
         let helperText: String?
+
+        /// The alignment of the helper text.
+        let helperTextAlignment: OUDSIndeterminateHelperTextAlignment
 
         /// Size of the gap between the bars and the track.
         let gapSize: OUDSProgressIndicatorGapSize

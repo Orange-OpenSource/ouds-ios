@@ -74,8 +74,18 @@ import SwiftUI
 ///
 /// ## Helper text
 ///
-/// An optional string displayed centered below the bar. It can provide context about the process or show
+/// An optional string displayed below the bar. It can provide context about the process or show
 /// the current progress value (e.g. `"Uploading..."`).
+///
+/// In **determinate** mode, the helper text supports three alignment options:
+/// - **center**: the text is centered under the bar (default)
+/// - **start**: the percentage is displayed at the leading edge, with optional description at the trailing edge
+/// - **end**: the percentage is displayed at the trailing edge, with optional description at the leading edge
+///
+/// In **indeterminate** mode, the helper text also supports three alignment options:
+/// - **center**: the text is centered under the bar (default)
+/// - **start**: the text is aligned to the leading edge
+/// - **end**: the text is aligned to the trailing edge
 ///
 /// ## Animation
 ///
@@ -111,6 +121,16 @@ import SwiftUI
 ///     OUDSLinearProgressIndicator()
 ///     OUDSLinearProgressIndicator(status: .info)
 ///     OUDSLinearProgressIndicator(status: .accent, helperText: "Processing…")
+///
+///     // Indeterminate with helper text aligned to the start
+///     OUDSLinearProgressIndicator(status: .info,
+///                                 helperText: "Loading data…",
+///                                 helperTextAlignment: .start)
+///
+///     // Indeterminate with helper text aligned to the end
+///     OUDSLinearProgressIndicator(status: .info,
+///                                 helperText: "Loading data…",
+///                                 helperTextAlignment: .end)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -187,7 +207,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
-                helperText: OUDSDeterminateProgressIndicatorHelperTest? = nil,
+                helperText: OUDSDeterminateProgressIndicatorHelperText? = nil,
                 gapSize: OUDSProgressIndicatorGapSize = .default,
                 animated: Bool = true)
     {
@@ -210,16 +230,19 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
+    ///    - helperTextAlignment: The alignment of the helper text. Defaults to `.center`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
     ///      ``OUDSProgressIndicatorGapSize/default``.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
+                helperTextAlignment: OUDSIndeterminateHelperTextAlignment = .center,
                 gapSize: OUDSProgressIndicatorGapSize = .default)
     {
         configuration = .indeterminate(.init(status: status,
                                              track: track,
                                              helperText: helperText,
+                                             helperTextAlignment: helperTextAlignment,
                                              gapSize: gapSize))
     }
 

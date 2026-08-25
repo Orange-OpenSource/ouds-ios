@@ -46,9 +46,9 @@ struct LinearProgressIndicatorView: View {
     var helperText: some View {
         switch configuration {
         case let .determinate(determinate):
-            DeterminateProgressIndicatorHelperText(configuration: determinate)
+            DeterminateHelperTextView(configuration: determinate)
         case let .indeterminate(indeterminate):
-            HelperTextView(description: indeterminate.helperText)
+            IndeterminateHelperTextView(configuration: indeterminate)
         }
     }
 
@@ -218,7 +218,45 @@ struct HelperTextView: View {
     }
 }
 
-struct DeterminateProgressIndicatorHelperText: View {
+struct IndeterminateHelperTextView: View {
+
+    let configuration: LinearProgressIndicatorConfiguration.Indeterminate
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        if let description = configuration.helperText, !description.isEmpty {
+            Text(description)
+                .labelDefaultMedium(theme)
+                .foregroundColor(theme.colors.contentDefault)
+                .multilineTextAlignment(multilineTextAlignment)
+                .frame(maxWidth: .infinity, alignment: frameAlignment)
+        }
+    }
+
+    private var frameAlignment: Alignment {
+        switch configuration.helperTextAlignment {
+        case .center:
+            .center
+        case .start:
+            .leading
+        case .end:
+            .trailing
+        }
+    }
+
+    private var multilineTextAlignment: TextAlignment {
+        switch configuration.helperTextAlignment {
+        case .center:
+            .center
+        case .start:
+            .leading
+        case .end:
+            .trailing
+        }
+    }
+}
+
+struct DeterminateHelperTextView: View {
 
     let configuration: LinearProgressIndicatorConfiguration.Determinate
     @Environment(\.theme) private var theme
