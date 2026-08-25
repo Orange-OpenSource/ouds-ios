@@ -46,7 +46,7 @@ struct LinearProgressIndicatorView: View {
     var helperText: some View {
         switch configuration {
         case let .determinate(determinate):
-            DeterminateHelperTextView(configuration: determinate)
+            DeterminateProgressIndicatorHelperText(configuration: determinate)
         case let .indeterminate(indeterminate):
             IndeterminateHelperTextView(configuration: indeterminate)
         }
@@ -148,7 +148,7 @@ private struct LinearProgressAccessibilityModifier: ViewModifier {
             let determinate = content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits([.updatesFrequently, .isStaticText])
-                .accessibilityLabel(configuration.a11yLabel ?? "")
+                .accessibilityLabel(a11yLabel ?? "")
                 .accessibilityValue("\(percent)%")
 
             if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
@@ -156,7 +156,7 @@ private struct LinearProgressAccessibilityModifier: ViewModifier {
             } else {
                 determinate
             }
-        } else if let a11yLabel = configuration.a11yLabel, !a11yLabel.isEmpty {
+        } else if let a11yLabel, !a11yLabel.isEmpty {
             // Indeterminate with helper text: expose the label but no value.
             let indeterminate = content
                 .accessibilityElement(children: .ignore)
@@ -173,23 +173,18 @@ private struct LinearProgressAccessibilityModifier: ViewModifier {
             content.accessibilityHidden(true)
         }
     }
-}
 
-extension LinearProgressIndicatorConfiguration {
-    var a11yLabel: String? {
-        switch self {
+    // MARK: - Accessibility Helper
+
+    private var a11yLabel: String? {
+        switch configuration {
         case let .determinate(configuration):
             switch configuration.helperText {
-            case let .description(description):
+            case let .description(description, _):
                 description
 
-            case let .percent(_, alignment):
-                switch alignment {
-                case .center:
-                    nil
-                case let .start(description), let .end(description):
-                    description
-                }
+            case let .percent(_, description, alignment):
+                description
 
             case .none:
                 nil
@@ -198,116 +193,5 @@ extension LinearProgressIndicatorConfiguration {
         case let .indeterminate(configuration):
             configuration.helperText
         }
-    }
-}
-
-struct HelperTextView: View {
-
-    let description: String?
-
-    @Environment(\.theme) private var theme
-
-    var body: some View {
-        if let description, !description.isEmpty {
-            Text(description)
-                .labelDefaultMedium(theme)
-                .foregroundColor(theme.colors.contentDefault)
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity)
-        }
-    }
-}
-
-struct IndeterminateHelperTextView: View {
-
-    let configuration: LinearProgressIndicatorConfiguration.Indeterminate
-    @Environment(\.theme) private var theme
-
-    var body: some View {
-        if let description = configuration.helperText, !description.isEmpty {
-            Text(description)
-                .labelDefaultMedium(theme)
-                .foregroundColor(theme.colors.contentDefault)
-                .multilineTextAlignment(multilineTextAlignment)
-                .frame(maxWidth: .infinity, alignment: frameAlignment)
-        }
-    }
-
-    private var frameAlignment: Alignment {
-        switch configuration.helperTextAlignment {
-        case .center:
-            .center
-        case .start:
-            .leading
-        case .end:
-            .trailing
-        }
-    }
-
-    private var multilineTextAlignment: TextAlignment {
-        switch configuration.helperTextAlignment {
-        case .center:
-            .center
-        case .start:
-            .leading
-        case .end:
-            .trailing
-        }
-    }
-}
-
-struct DeterminateHelperTextView: View {
-
-    let configuration: LinearProgressIndicatorConfiguration.Determinate
-    @Environment(\.theme) private var theme
-
-    var body: some View {
-        switch configuration.helperText {
-        case let .description(description):
-            HelperTextView(description: description)
-        case let .percent(spaceBefore: spaceBefore, alignment: alignment):
-            let percent = percent(spaceBefore: spaceBefore)
-            switch alignment {
-            case .center:
-                oneText(percent)
-            case let .start(description):
-                twoTexts(start: percent, end: description)
-            case let .end(description):
-                twoTexts(start: description, end: percent)
-            }
-        case .none:
-            EmptyView()
-        }
-    }
-
-    func percent(spaceBefore: Bool) -> String {
-        let value = Int((configuration.progress * 100).rounded())
-        let extraSpace = spaceBefore ? " " : ""
-        return "\(value)\(extraSpace)%"
-    }
-
-    func oneText(_ text: String) -> some View {
-        Text(text)
-            .labelDefaultMedium(theme)
-            .foregroundColor(theme.colors.contentDefault)
-            .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity, alignment: .center)
-    }
-
-    func twoTexts(start: String?, end: String?) -> some View {
-        HStack(alignment: .top) {
-            Text(start ?? "")
-                .labelDefaultMedium(theme)
-                .foregroundColor(theme.colors.contentDefault)
-                .multilineTextAlignment(.leading)
-
-            Spacer()
-
-            Text(end ?? "")
-                .labelDefaultMedium(theme)
-                .foregroundColor(theme.colors.contentDefault)
-                .multilineTextAlignment(.trailing)
-        }
-        .frame(maxWidth: .infinity)
     }
 }

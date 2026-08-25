@@ -79,7 +79,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let helperText: String?
 
         /// The alignment of the helper text.
-        let helperTextAlignment: OUDSIndeterminateHelperTextAlignment
+        let helperTextAlignment: OUDSLinearProgressIndicatorHelperTextAlignment
 
         /// Size of the gap between the bars and the track.
         let gapSize: OUDSProgressIndicatorGapSize
