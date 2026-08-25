@@ -183,8 +183,8 @@ extension LinearProgressIndicatorConfiguration {
             case let .description(description):
                 description
 
-            case let .percent(_, position):
-                switch position {
+            case let .percent(_, alignment):
+                switch alignment {
                 case .center:
                     nil
                 case let .start(description), let .end(description):
@@ -227,15 +227,15 @@ struct DeterminateProgressIndicatorHelperText: View {
         switch configuration.helperText {
         case let .description(description):
             HelperTextView(description: description)
-        case let .percent(spaceBefore: spaceBefore, position: position):
+        case let .percent(spaceBefore: spaceBefore, alignment: alignment):
             let percent = percent(spaceBefore: spaceBefore)
-            switch position {
+            switch alignment {
             case .center:
                 oneText(percent)
-            case let .start(descrption):
-                twoTexts(start: percent, end: descrption)
-            case let .end(descrption):
-                twoTexts(start: descrption, end: percent)
+            case let .start(description):
+                twoTexts(start: percent, end: description)
+            case let .end(description):
+                twoTexts(start: description, end: percent)
             }
         case .none:
             EmptyView()
@@ -244,7 +244,7 @@ struct DeterminateProgressIndicatorHelperText: View {
 
     func percent(spaceBefore: Bool) -> String {
         let value = Int((configuration.progress * 100).rounded())
-        let extraSpace = spaceBefore ? " " : ""
+        let extraSpace = spaceBefore ? " " : ""
         return "\(value)\(extraSpace)%"
     }
 
