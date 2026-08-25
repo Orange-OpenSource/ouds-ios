@@ -58,7 +58,7 @@ import SwiftUI
 /// The helper text can be added in **determinate** indicator
 ///
 /// - Since: 3.0.0
-@frozen public enum OUDSDeterminateProgressIndicatorHelperTest: Equatable {
+@frozen public enum OUDSDeterminateProgressIndicatorHelperText: Equatable {
 
     /// The helper text with a decription without any information of progress
     case description(String)
@@ -80,4 +80,20 @@ import SwiftUI
         /// The percentage is displayed under the progress line at trailing and description at leading.
         case end(description: String? = nil)
     }
+}
+
+// MARK: - Indeterminate Progress Indicator Helper Text alignment
+
+/// The alignment of the helper text for the **indeterminate** indicator.
+///
+/// - Since: 3.0.0
+@frozen public enum OUDSIndeterminateHelperTextAlignment: Equatable {
+    /// The helper text is centered under the progress bar.
+    case center
+
+    /// The helper text is aligned to the leading edge.
+    case start
+
+    /// The helper text is aligned to the trailing edge.
+    case end
 }
