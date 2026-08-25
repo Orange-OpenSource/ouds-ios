@@ -63,21 +63,21 @@ import SwiftUI
     /// The helper text with a decription without any information of progress
     case description(String)
 
-    /// The helper text with progress information (percentage value and `%`charcter with optional space before)
-    ///  displayed at the `PercentPosition`.
-    case percent(spaceBefore: Bool, position: PercentPosition = .center)
+    /// Displays the progress information (percentage value and `%`charcter with optional space before)
+    /// in the helper text according to the `PercentAlignment`.
+    case percent(spaceBefore: Bool, alignment: PercentAlignment = .center)
 
-    /// Description the position of the perentage.
-    /// For the `start` position if a description is provided it is placed at the trailing of the compent.
-    /// For the `end` position if a description is provided it is placed at the leading of the compent.
-    @frozen public enum PercentPosition: Equatable {
+    /// The percentage alignment.
+    /// For the `start` alignment, if a description is provided it is placed at the trailing of the component.
+    /// For the `end` alignment, if a description is provided it is placed at the leading of the component.
+    @frozen public enum PercentAlignment: Equatable {
         /// The percentage is displayed under the progress line indicator at center
         case center
 
         /// The percentage is displayed under the progress line at leading and description at trailing.
-        case start(descrption: String? = nil)
+        case start(description: String? = nil)
 
         /// The percentage is displayed under the progress line at trailing and description at leading.
-        case end(descrption: String? = nil)
+        case end(description: String? = nil)
     }
 }
