@@ -88,5 +88,5 @@ import SwiftUI
     ///   - spaceBefore: When `true`, adds a non-breaking space before the `%` character (e.g., "75 %"). When `false`, no space (e.g., "75%"). Defaults to `false`.
     ///   - description: Optional description text displayed alongside the percentage. Ignored when `alignment` is `.center`.
     ///   - alignment: The horizontal alignment of the helper text. Defaults to `.center`.
-    case percent(spaceBefore: Bool, description: String? = nil, alignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center)
+    case percent(spaceBefore: Bool = false, description: String? = nil, alignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center)
 }

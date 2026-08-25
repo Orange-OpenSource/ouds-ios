@@ -96,10 +96,15 @@ OUDSLinearProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
 // Required for accessibility when the track contrast is below 3:1 with its container.
 OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true)
 
-// With a centered helper text below the bar.
-// The helper text is exposed as the accessibility label (VoiceOver reads e.g. "Uploading. 75 percent").
-OUDSLinearProgressIndicator(progress: 0.75, helperText: "Uploading…")
+// With a centered helper text below the bar. 
+// The helper text without progress information (percent) is displayed according to alignment.
+// it is also exposed as the accessibility label (VoiceOver reads e.g. "Uploading. 75 percent") even if 
+// percent is not displayed.
+OUDSLinearProgressIndicator(progress: 0.75, helperText: .description("Uploading…", alignment: .start))
 
+// The helper text is displayed with a progress information (percent) according to alignment
+OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent(description: "Uploading…", alignement: .start))
+  
 // Determinate without the reveal animation: the bar is shown instantly at its target value.
 OUDSLinearProgressIndicator(progress: 0.75, animated: false)
 

@@ -140,11 +140,14 @@ OUDSLinearProgressIndicator(progress: 0.75, status: .neutral)
 // A horizontal bar without defined value and an accent color
 OUDSLinearProgressIndicator(status: .accent)
 
-// A horizontal bar with a helper text, a stop indicator (determinate only) and no animations
-OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: "Uploading…", animated: false)
+// A horizontal bar with a helper text center aligned, a stop indicator (determinate only) and no animations
+OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: .description("Uploading…"), animated: false)
 
-// An indeterminate horizontal bar with a helper text
-OUDSLinearProgressIndicator(status: .info, helperText: "Processing…")
+// A horizontal bar with a helper text with progress information start aligned
+OUDSLinearProgressIndicator(progress: 0.5, helperText: .percent(description: "Uploading…", algnment: .start))
+
+// An indeterminate horizontal bar with a helper text start aligned 
+OUDSLinearProgressIndicator(status: .info, helperText: "Processing…", helperTextAlignment: .start)
 ```
 
 ### Tag
