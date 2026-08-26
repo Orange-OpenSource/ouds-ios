@@ -91,11 +91,11 @@ struct LinearProgressIndicatorDeterminateView: View {
         #if os(watchOS) || os(visionOS)
             .onChange(of: progress) { _, newValue in
                 apply(newValue: newValue)
-            }
+        }
         #else
-            .onChange(of: progress) { newValue in
-                apply(newValue: newValue)
-            }
+        .onChange(of: progress) { newValue in
+            apply(newValue: newValue)
+        }
         #endif
     }
 

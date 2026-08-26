@@ -157,7 +157,6 @@ struct LinearProgressBarCanvasView: View {
     /// Draws the five Android Material 3 indeterminate segments (three track segments + two colored
     /// lines) via a SwiftUI `Canvas`, using the exact same layout as
     /// AndroidX Compose `LinearProgressIndicator`.
-    @ViewBuilder
     private func indeterminateCanvas(gapFraction: CGFloat,
                                      cornerRadius: CGFloat,
                                      fractions: IndeterminateFractions) -> some View

@@ -81,6 +81,7 @@ private struct TwoElementsHelperTextView: View {
     let end: String?
 
     @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: Body
 
@@ -98,7 +99,7 @@ private struct TwoElementsHelperTextView: View {
                 .foregroundColor(theme.colors.contentDefault)
                 .multilineTextAlignment(.trailing)
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular))
     }
 }
 
@@ -112,6 +113,7 @@ struct OneElementHelperTextView: View {
     let alignment: OUDSLinearProgressIndicatorHelperTextAlignment
 
     @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: Body
 
@@ -121,7 +123,8 @@ struct OneElementHelperTextView: View {
                 .labelDefaultMedium(theme)
                 .foregroundColor(theme.colors.contentDefault)
                 .multilineTextAlignment(multilineTextAlignment)
-                .frame(maxWidth: .infinity, alignment: frameAlignment)
+                .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular),
+                       alignment: frameAlignment)
         }
     }
 
