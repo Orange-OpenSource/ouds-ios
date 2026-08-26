@@ -85,12 +85,12 @@ struct LinearProgressIndicatorDeterminateView: View {
             hasStopIndicator: hasStopIndicator,
             gapSize: gapSize,
             barHeight: barHeight)
-            .onAppear {
-                apply(newValue: progress)
-            }
+        .onAppear {
+            apply(newValue: progress)
+        }
         #if os(watchOS) || os(visionOS)
-            .onChange(of: progress) { _, newValue in
-                apply(newValue: newValue)
+        .onChange(of: progress) { _, newValue in
+            apply(newValue: newValue)
         }
         #else
         .onChange(of: progress) { newValue in
