@@ -72,7 +72,7 @@ import SwiftUI
 /// An optional text displayed below the circular indicator to provide context or additional information.
 /// The helper text is always centered under the indicator.
 ///
-/// In **determinate** mode, use ``OUDSCircularProgressIndicator.HelperTextType`` which offers two variants:
+/// In **determinate** mode, use ``OUDSCircularProgressIndicator/HelperTextType`` which offers two variants:
 ///
 /// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
 ///

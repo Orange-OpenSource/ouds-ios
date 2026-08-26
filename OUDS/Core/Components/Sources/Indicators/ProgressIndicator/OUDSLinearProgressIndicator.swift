@@ -76,7 +76,7 @@ import SwiftUI
 ///
 /// An optional text displayed below the progress bar to provide context or additional information.
 ///
-/// In **determinate** mode, use ``OUDSLinearProgressIndicator.HelperTextType`` which offers two variants:
+/// In **determinate** mode, use ``OUDSLinearProgressIndicator/HelperTextType`` which offers two variants:
 ///
 /// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
 ///   The `alignment` parameter controls horizontal alignment (`.center`, `.start`, or `.end`).
