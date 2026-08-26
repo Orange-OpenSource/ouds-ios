@@ -100,7 +100,7 @@ import SwiftUI
 ///
 ///     // Determinate with percentage and description
 ///     OUDSCircularProgressIndicator(progress: 0.75,
-///                                   helperText: .percent(description: "of 100 MB", spaceBefore: true))
+///                                   helperText: .percent("of 100 MB", spaceBefore: true))
 ///
 ///     // Indeterminate
 ///     OUDSCircularProgressIndicator()
