@@ -110,7 +110,7 @@ struct OneElementHelperTextView: View {
     // MARK: Properties
 
     let description: String?
-    let alignment: OUDSLinearProgressIndicatorHelperTextAlignment
+    let alignment: OUDSLinearProgressIndicator.HelperTextAlignment
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
