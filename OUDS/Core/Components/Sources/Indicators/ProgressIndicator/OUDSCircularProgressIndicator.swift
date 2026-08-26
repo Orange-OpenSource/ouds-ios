@@ -151,7 +151,7 @@ import SwiftUI
 ///
 /// ![A circular progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_circular_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.1.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference

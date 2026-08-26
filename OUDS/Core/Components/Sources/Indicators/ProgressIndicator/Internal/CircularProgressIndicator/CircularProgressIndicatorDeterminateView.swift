@@ -80,7 +80,6 @@ struct CircularProgressIndicatorDeterminateView: View {
     // MARK: - Body
 
     var body: some View {
-        closure_end_indentation
         CircularProgressCanvasView(
             foregroundColor: foregroundColor,
             trackColor: trackColor,
