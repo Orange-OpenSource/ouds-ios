@@ -89,6 +89,7 @@ struct LinearProgressIndicatorDeterminateView: View {
             apply(newValue: progress)
         }
         #if os(watchOS) || os(visionOS)
+        // swiftlint:disable closure_end_indentation
         .onChange(of: progress) { _, newValue in
             apply(newValue: newValue)
         }
@@ -96,6 +97,7 @@ struct LinearProgressIndicatorDeterminateView: View {
         .onChange(of: progress) { newValue in
             apply(newValue: newValue)
         }
+        // swiftlint:enable closure_end_indentation
         #endif
     }
 
