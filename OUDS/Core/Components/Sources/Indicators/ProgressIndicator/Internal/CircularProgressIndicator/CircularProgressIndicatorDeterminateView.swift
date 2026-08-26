@@ -80,6 +80,7 @@ struct CircularProgressIndicatorDeterminateView: View {
     // MARK: - Body
 
     var body: some View {
+        closure_end_indentation
         CircularProgressCanvasView(
             foregroundColor: foregroundColor,
             trackColor: trackColor,
@@ -92,6 +93,7 @@ struct CircularProgressIndicatorDeterminateView: View {
             apply(newValue: progress)
         }
         #if os(watchOS) || os(visionOS)
+        // swiftlint:disable closure_end_indentation
         .onChange(of: progress) { _, newValue in
             apply(newValue: newValue)
         }
@@ -99,7 +101,9 @@ struct CircularProgressIndicatorDeterminateView: View {
         .onChange(of: progress) { newValue in
             apply(newValue: newValue)
         }
+        // swiftlint:enable closure_end_indentation
         #endif
+
     }
 
     // MARK: - Helpers
