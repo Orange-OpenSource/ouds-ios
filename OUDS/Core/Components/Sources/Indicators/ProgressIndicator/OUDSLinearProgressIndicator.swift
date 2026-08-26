@@ -228,6 +228,22 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     /// Embeds all configuration details for the linear progress indicator.
     private let configuration: LinearProgressIndicatorConfiguration
 
+    // MARK: - Helper Text Alignment
+
+    /// The alignment of the helper text for the linear progress indicator.
+    ///
+    /// - Since: 3.0.0
+    @frozen public enum HelperTextAlignment: Equatable, Sendable {
+        /// The helper text is centered under the progress bar.
+        case center
+
+        /// The helper text is aligned to the leading edge.
+        case start
+
+        /// The helper text is aligned to the trailing edge.
+        case end
+    }
+
     // MARK: - Determinate Progress Indicator Helper Text
 
     /// The helper text can be added in **determinate** indicator
@@ -240,7 +256,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
         /// - Parameters:
         ///   - description: Text displayed
         ///   - alignment: Controls the horizontal alignment of the description text. Defaults to `.center`.
-        case description(_ description: String, alignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center)
+        case description(_ description: String, alignment: HelperTextAlignment = .center)
 
         /// Displays the progress information (percentage value and `%` character with optional space before)
         /// in the helper text according to the alignment.
@@ -249,7 +265,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
         ///   - spaceBefore: When `true`, adds a non-breaking space before the `%` character (e.g., "75 %"). When `false`, no space (e.g., "75%"). Defaults to `false`.
         ///   - description: Optional description text displayed alongside the percentage. Ignored when `alignment` is `.center`.
         ///   - alignment: The horizontal alignment of the helper text. Defaults to `.center`.
-        case percent(spaceBefore: Bool = false, description: String? = nil, alignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center)
+        case percent(spaceBefore: Bool = false, description: String? = nil, alignment: HelperTextAlignment = .center)
     }
 
     // MARK: - Initializers
@@ -302,7 +318,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
-                helperTextAlignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center,
+                helperTextAlignment: HelperTextAlignment = .center,
                 gapSize: OUDSProgressIndicatorGapSize = .default)
     {
         configuration = .indeterminate(.init(status: status,

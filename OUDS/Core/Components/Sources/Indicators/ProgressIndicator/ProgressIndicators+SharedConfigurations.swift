@@ -52,19 +52,3 @@ import SwiftUI
     /// Reduced gap size
     case small
 }
-
-// MARK: - Linear Progress Indicator Helper Text Alignment
-
-/// The alignment of the helper text for the linear progress indicator.
-///
-/// - Since: 3.0.0
-@frozen public enum OUDSLinearProgressIndicatorHelperTextAlignment: Equatable, Sendable {
-    /// The helper text is centered under the progress bar.
-    case center
-
-    /// The helper text is aligned to the leading edge.
-    case start
-
-    /// The helper text is aligned to the trailing edge.
-    case end
-}
