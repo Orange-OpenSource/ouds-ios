@@ -22,6 +22,7 @@ import Foundation
 /// - `animated`: whether the determinate indicator animates on display and on progress updates.
 ///   Ignored in indeterminate mode (the Android Material 3 animation is intrinsic to the mode).
 /// - `size`:  the size of the component could be adjusted if used interanly by components.
+/// - `helperText`: optional helper text displayed below the indicator (always centered).
 struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
 
     // MARK: - Properties
@@ -45,6 +46,9 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     /// Size of the component could be adjusted if used internally by components.
     let size: CGFloat
 
+    /// Optional helper text displayed below the indicator (always centered).
+    let helperTextType: OUDSCircularProgressIndicator.HelperTextType?
+
     // MARK: - Initializer
 
     /// Creates a configuration. The `progress` value is clamped to `[0, 1]` when non-nil.
@@ -56,12 +60,14 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     ///    - gapSize: The size of the gap between the indicator and the track.
     ///    - size: The size of the component could be adjusted if used internally by components.
     ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
+    ///    - helperText: Optional helper text. Defaults to `nil`.
     init(progress: Double?,
          status: OUDSProgressIndicatorStatus,
          track: Bool,
          gapSize: OUDSProgressIndicatorGapSize,
          size: CGFloat,
-         animated: Bool = true)
+         animated: Bool = true,
+         helperText: OUDSCircularProgressIndicator.HelperTextType? = nil)
     {
         if let progress {
             self.progress = min(max(progress, 0.0), 1.0)
@@ -73,6 +79,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
         self.gapSize = gapSize
         self.animated = animated
         self.size = size
+        helperTextType = helperText
     }
 
     // MARK: - Helpers
@@ -80,5 +87,17 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     /// Convenience: `true` when the indicator is indeterminate.
     var isIndeterminate: Bool {
         progress == nil
+    }
+
+    /// The accessibility label based on the helper text
+    var accessibilityLabel: String? {
+        switch helperTextType {
+        case let .description(description):
+            description
+        case let .percent(description, _):
+            description
+        case nil:
+            nil
+        }
     }
 }

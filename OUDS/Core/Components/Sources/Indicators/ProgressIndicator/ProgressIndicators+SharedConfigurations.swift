@@ -68,25 +68,3 @@ import SwiftUI
     /// The helper text is aligned to the trailing edge.
     case end
 }
-
-// MARK: - Determinate Progress Indicator Helper Text
-
-/// The helper text can be added in **determinate** indicator
-///
-/// - Since: 3.0.0
-@frozen public enum OUDSDeterminateProgressIndicatorHelperText: Equatable {
-
-    /// The helper text with a description without any information of progress.
-    ///
-    /// - Parameter alignment: Controls the horizontal alignment of the description text. Defaults to `.center`.
-    case description(String, alignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center)
-
-    /// Displays the progress information (percentage value and `%` character with optional space before)
-    /// in the helper text according to the alignment.
-    ///
-    /// - Parameters:
-    ///   - spaceBefore: When `true`, adds a non-breaking space before the `%` character (e.g., "75 %"). When `false`, no space (e.g., "75%"). Defaults to `false`.
-    ///   - description: Optional description text displayed alongside the percentage. Ignored when `alignment` is `.center`.
-    ///   - alignment: The horizontal alignment of the helper text. Defaults to `.center`.
-    case percent(spaceBefore: Bool = false, description: String? = nil, alignment: OUDSLinearProgressIndicatorHelperTextAlignment = .center)
-}
