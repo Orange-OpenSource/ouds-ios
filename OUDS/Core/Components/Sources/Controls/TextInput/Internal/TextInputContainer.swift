@@ -91,7 +91,7 @@ struct TextInputContainer: View {
         .modifier(TextInputBackgroundModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .modifier(TextInputBorderModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         #if !os(watchOS) && !os(tvOS)
-        .onHover { hover = $0 }
+            .onHover { hover = $0 }
         #endif
         // swiftlint:enable accessibility_trait_for_button
     }
