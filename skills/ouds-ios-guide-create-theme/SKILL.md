@@ -176,9 +176,9 @@ class YourThemeFontProvider: OrangeThemeFontSemanticTokensProvider {
 ### 2.4 Theme class skeleton
 
 ```swift
-import OUDSThemesOrange
+import OUDSThemesContract
 
-class YourTheme: OrangeTheme {
+class YourTheme: OUDSTheme {
 
     static let name = "YourBrand"
 
@@ -197,7 +197,7 @@ class YourTheme: OrangeTheme {
             // Leave unspecified parameters as nil → Orange defaults are used.
             name:    Self.name,
             tuning:  Tuning.default,  // see §5 for tuning options
-            hasTypographyHeadingLargeMarker: true  // see §5.1
+            hasTypographyHeadingLargeMarker: true  // see §5.1, OUDSTheme subclass required for this parameter
         )
     }
 }
@@ -459,14 +459,14 @@ Additional boolean flags control specific UI behaviors:
 
 | Flag | Description |
 |------|-------------|
-| `hasTypographyHeadingLargeMarker` | If `true`, displays a decorative marker below `OUDSHeading` when `size == .large` and `hasMarker: true`. Set to `true` for Orange-style brand markers (default: `false`). |
+| `hasTypographyHeadingLargeMarker` | If `true`, displays a decorative marker below `OUDSHeading` when `size == .large` and `hasMarker: true`. Force to `true` for Orange-style brand markers and Wireframe brand. Subclass `OUDSTheme` to have the parameter in init (default: `false`). |
 
 ```swift
 // Enable heading marker (e.g., for Orange-style themes):
-let theme = OrangeTheme(hasTypographyHeadingLargeMarker: true)
+let theme = OUDSTheme(hasTypographyHeadingLargeMarker: true)
 
 // Disable it (default behavior):
-let theme = OrangeTheme(hasTypographyHeadingLargeMarker: false)
+let theme = OUDSTheme(hasTypographyHeadingLargeMarker: false)
 ```
 
 For a from-scratch theme (Strategy B), declare a custom predefined tuning in an extension:
