@@ -310,7 +310,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    typography: typography,
-                   resourcesBundle: Bundle.OrangeTheme,
+                   resourcesBundle: resourcesBundle,
                    name: name,
                    fontFamily: fontFamily,
                    tuning: tuning,
