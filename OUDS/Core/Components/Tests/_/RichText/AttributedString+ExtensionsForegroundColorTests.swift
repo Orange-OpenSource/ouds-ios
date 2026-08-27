@@ -19,8 +19,6 @@ import Testing
 
 // MARK: - AttributedString Extensions Tests (foreground color only, tokens, and LocalizedStringKey overloads)
 
-// swiftlint:disable force_unwrapping
-
 struct AttributedStringColorExtensionsTests {
 
     // MARK: - from(text:) - Foreground color only
@@ -85,17 +83,17 @@ struct AttributedStringColorExtensionsTests {
 
     // MARK: - from(_:) - LocalizedStringKey, foreground color, font and URL configurations
 
-    @Test func `from localized key with font and URL configurations applies link style`() {
+    @Test func `from localized key with font and URL configurations applies link style`() throws {
         let key: LocalizedStringKey = "Check the privacy policy"
         let urlColor = Color.red
         let urlFont = Font.system(size: 14, weight: .bold)
         let textColor = Color.black
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "privacy policy",
-                urlToOpen: URL(string: "https://example.com/privacy")!,
+                urlToOpen: #require(URL(string: "https://example.com/privacy")),
                 color: urlColor,
                 font: urlFont),
         ]
@@ -113,17 +111,17 @@ struct AttributedStringColorExtensionsTests {
         }
     }
 
-    @Test func `from localized key with foreground color token, font and URL configurations applies link style`() {
+    @Test func `from localized key with foreground color token, font and URL configurations applies link style`() throws {
         let key: LocalizedStringKey = "Check the privacy policy"
         let token: ColorSemanticToken = "#000000FF"
         let urlColor = Color.red
         let urlFont = Font.system(size: 14, weight: .bold)
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "privacy policy",
-                urlToOpen: URL(string: "https://example.com/privacy")!,
+                urlToOpen: #require(URL(string: "https://example.com/privacy")),
                 color: urlColor,
                 font: urlFont),
         ]
@@ -142,17 +140,17 @@ struct AttributedStringColorExtensionsTests {
 
     // MARK: - from(text:) - Foreground color token, font and URL configurations
 
-    @Test func `from text with foreground color token, font and URL configurations applies link style`() {
+    @Test func `from text with foreground color token, font and URL configurations applies link style`() throws {
         let text = "Check the privacy policy"
         let token: ColorSemanticToken = "#123456FF"
         let urlColor = Color.purple
         let urlFont = Font.system(size: 14)
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "privacy policy",
-                urlToOpen: URL(string: "https://example.com/privacy")!,
+                urlToOpen: #require(URL(string: "https://example.com/privacy")),
                 color: urlColor,
                 font: urlFont),
         ]
@@ -196,17 +194,17 @@ struct AttributedStringColorExtensionsTests {
 
     // MARK: - from(markdown:) - Foreground color token, font and URL configurations
 
-    @Test func `from markdown with foreground color token, font and URL configurations applies link style`() {
+    @Test func `from markdown with foreground color token, font and URL configurations applies link style`() throws {
         let markdown = "Check our [privacy policy](https://example.com/privacy)"
         let token: ColorSemanticToken = "#654321FF"
         let urlColor = Color.red
         let urlFont = Font.system(size: 14, weight: .bold)
         let textFont = Font.system(size: 12)
 
-        let configurations: [AttributedStringUrlConfiguration] = [
+        let configurations: [AttributedStringUrlConfiguration] = try [
             AttributedStringUrlConfiguration(
                 text: "privacy policy",
-                urlToOpen: URL(string: "https://example.com/privacy")!,
+                urlToOpen: #require(URL(string: "https://example.com/privacy")),
                 color: urlColor,
                 font: urlFont),
         ]
@@ -226,9 +224,9 @@ struct AttributedStringColorExtensionsTests {
 
     // MARK: - AttributedStringUrlConfiguration - LocalizedStringKey initializer
 
-    @Test func `configuration from localized key resolves text and stores url`() {
+    @Test func `configuration from localized key resolves text and stores url`() throws {
         let key: LocalizedStringKey = "privacy policy"
-        let url = URL(string: "https://example.com/privacy")!
+        let url = try #require(URL(string: "https://example.com/privacy"))
         let color = Color.red
         let font = Font.system(size: 14)
 
@@ -248,5 +246,3 @@ struct AttributedStringColorExtensionsTests {
         }
     }
 }
-
-// swiftlint:enable force_unwrapping

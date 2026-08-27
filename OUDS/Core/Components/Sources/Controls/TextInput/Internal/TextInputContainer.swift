@@ -42,25 +42,25 @@ struct TextInputContainer: View {
         HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
             HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
                 // Leading icon container
-                LeadingIconContainer(leadingIcon: leadingIcon, status: status)
+                TextInputLeadingIconContainer(leadingIcon: leadingIcon, status: status)
 
                 // ZStack here to add the label above the textField when
                 // the text is empty, the placeholder is empty and not focused
                 // Otherwise the label is placed at the top
                 ZStack {
                     if labelPosition == .middle {
-                        LabelContainer(label: label,
-                                       status: status,
-                                       interactionState: interactionState,
-                                       position: .middle)
+                        TextInputLabelContainer(label: label,
+                                                status: status,
+                                                interactionState: interactionState,
+                                                position: .middle)
                     }
 
                     VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
                         if labelPosition == .top {
-                            LabelContainer(label: label,
-                                           status: status,
-                                           interactionState: interactionState,
-                                           position: .top)
+                            TextInputLabelContainer(label: label,
+                                                    status: status,
+                                                    interactionState: interactionState,
+                                                    position: .top)
                         }
 
                         InputContainer(text: text,
@@ -81,8 +81,8 @@ struct TextInputContainer: View {
                 }
             }
 
-            // Trailing action container
-            TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
+            // Trailing container
+            TextInputTrailingContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
         }
         .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
@@ -98,7 +98,7 @@ struct TextInputContainer: View {
 
     // MARK: - Helpers
 
-    private var labelPosition: LabelContainer.Position {
+    private var labelPosition: TextInputLabelContainer.Position {
         if !text.wrappedValue.isEmpty || placeholder?.isEmpty == false || focused {
             .top
         } else {

@@ -68,8 +68,8 @@ public enum OUDSVersions {
     public static let componentFilterChipExpandVersion = "1.5.0"
     /// Version of the Figma specifications for the component suggestion chip (1.5.0)
     public static let componentSuggestionChipVersion = "1.5.0"
-    /// Version of the Figma specifications for the component password input (1.3.0)
-    public static let componentPasswordInputVersion = "1.3.0"
+    /// Version of the Figma specifications for the component password input (1.3.1)
+    public static let componentPasswordInputVersion = "1.3.1"
     /// Version of the Figma specifications for the component phone number input (1.3.0)
     public static let componentPhoneNumberInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component pin code input (1.3.0)
@@ -92,8 +92,8 @@ public enum OUDSVersions {
     public static let componentSwitchVersion = "1.5.0"
     /// Version of the Figma specifications for the component text area (1.2.1)
     public static let componentTextAreaVersion = "1.2.1"
-    /// Version of the Figma specifications for the component text input (1.4.0)
-    public static let componentTextInputVersion = "1.4.0"
+    /// Version of the Figma specifications for the component text input (1.4.1)
+    public static let componentTextInputVersion = "1.4.1"
 
     // MARK: - Components versions - Dialog
 

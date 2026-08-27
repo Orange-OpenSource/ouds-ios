@@ -15,7 +15,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct TrailingActionContainer: View {
+struct TextInputTrailingContainer: View {
 
     // MARK: - Properties
 
@@ -48,8 +48,10 @@ struct TrailingActionContainer: View {
                     trailingButton(for: trailingAction)
                 }
             }
-        case .loading:
-            trailingButton(for: .init(image: OUDSImage(asset: Image(decorative: "ic_heart")), actionHint: "", action: {}))
+        case let .loading(progress):
+            TextInputCircularProgressIndicator(progress: progress)
+                .padding(.all, theme.button.spaceInsetProgressIndicatorOnlyDefault)
+                .padding(.all, theme.button.spaceInsetIconOnlyDefault)
                 .accessibilityHidden(true)
         }
     }
@@ -78,7 +80,7 @@ struct TrailingActionContainer: View {
 
         return OUDSButton(image: imageWithA11y,
                           appearance: .minimal,
-                          style: status == .loading ? .loading : .default,
+                          style: .default,
                           action: trailingAction.action)
     }
 }
