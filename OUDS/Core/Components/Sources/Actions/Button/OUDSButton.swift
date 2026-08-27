@@ -53,8 +53,11 @@ import SwiftUI
 ///     // Or simpler
 ///     OUDSButton(text: "Delete", appearance: .negative) { /* the action to process */ }
 ///
-///     // A small loading button
-///     OUDSButton(text: "Delete", style: .loading, size: .small) { /* the action to process */ }
+///     // A small loading button with indeterminate progress
+///     OUDSButton(text: "Delete", style: .loading(), size: .small) { /* the action to process */ }
+///
+///     // A small loading button with a progress (i.e. percent of progress)
+///     OUDSButton(text: "Delete", style: .loading(progress: 0.75), size: .small) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance
 ///     OUDSButton(text: "Validate", image: OUDSImage(asset: Image("ic_heart")), appearance: .strong) { /* the action to process */ }
@@ -88,7 +91,8 @@ import SwiftUI
 /// Two style are available:
 ///
 /// - **default (by default)**: used in the normal usage of button. The aspect of the button changes for  states *disabled*, *pressed*, *hovered* or normal (i.e. *enabled*)
-/// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
+/// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data. A circular progress
+/// indicataor is displayed to follow the determinate/indeterminate process.
 ///
 /// ## Rounded layout
 ///
@@ -179,12 +183,16 @@ public struct OUDSButton: View {
     /// Defines the style of the button, e.g. loading or not
     ///
     /// - Since: 0.10.0
-    @frozen public enum Style {
+    @frozen public enum Style: Equatable {
         /// The default style, the button could be in prossed, hover, disabled or enabled internal state
         case `default`
 
-        /// The loading style means a loading action is in progress, sometimes just after user tapped on button
-        case loading
+        /// The `loading` style means a loading action is in progress, sometimes just after user tapped on button
+        /// A circular progress indicator appears to inform the user that an action is in progress.
+        ///
+        ///  - Parameter progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+        ///  value to `nil` to display a circular indeterminate progress indicator.
+        case loading(progress: Double? = nil)
     }
 
     /// Defines the size of the button,
@@ -392,7 +400,7 @@ public struct OUDSButton: View {
             }
         }
         .buttonStyle(StyleForButton(appearance: appearance, style: style, size: size, isHover: isHover, isFullWidth: isFullWidth))
-        .disabled(style == .loading)
+        .disabled(style != Self.Style.default)
         .accessibilityLabel(accessibilityLabel)
         #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in
@@ -407,9 +415,10 @@ public struct OUDSButton: View {
     /// or the text according to the button type. For iconOnly the `accessibilityLabel` is used,
     /// else the button text is used.
     private var accessibilityLabel: String {
-        if style == .loading {
+        switch style {
+        case .loading:
             "core_common_loading_a11y".localized()
-        } else {
+        case .default:
             switch type {
             case let .text(text):
                 text
