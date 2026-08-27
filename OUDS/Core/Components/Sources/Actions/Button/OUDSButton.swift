@@ -416,8 +416,12 @@ public struct OUDSButton: View {
     /// else the button text is used.
     private var accessibilityLabel: String {
         switch style {
-        case .loading:
-            "core_common_loading_a11y".localized()
+        case let .loading(progress):
+            if let progress {
+                "\("core_common_loading_a11y".localized()), \(Int(progress * 100))%"
+            } else {
+                "core_common_loading_a11y".localized()
+            }
         case .default:
             switch type {
             case let .text(text):
