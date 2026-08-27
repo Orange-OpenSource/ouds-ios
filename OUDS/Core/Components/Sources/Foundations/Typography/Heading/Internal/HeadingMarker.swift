@@ -19,6 +19,7 @@ struct HeadingMarker: View {
     // MARK: Properties
 
     @Environment(\.theme) private var theme
+    @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: - Constants
     // Values coming from the Figma design of the marker (Foundation / Typography — .Marker / Heading large).
@@ -33,8 +34,11 @@ struct HeadingMarker: View {
     // MARK: Body
 
     var body: some View {
-        Rectangle()
-            .fill(theme.colors.contentBrandPrimary)
+        Image(decorative: "ic_typography_heading_marker", bundle: theme.resourcesBundle)
+            .renderingMode(.template)
+            .resizable()
+            .toFlip(layoutDirection == .rightToLeft)
+            .foregroundStyle(theme.colors.contentBrandPrimary)
             .frame(width: Self.markerWidth, height: Self.markerHeight)
             .padding(.top, theme.typography.spacePaddingBlockTopHeadingLargeMarker)
             .padding(.bottom, theme.typography.spacePaddingBlockBottomHeadingLargeMarker)

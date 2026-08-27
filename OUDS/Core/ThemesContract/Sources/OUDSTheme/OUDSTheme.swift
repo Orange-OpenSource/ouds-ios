@@ -282,7 +282,6 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 tuning: Tuning = Tuning.default,
                 hasTypographyHeadingLargeMarker: Bool = false)
     {
-
         // Save semantic tokens providers
         self.borders = borders
         self.colors = colors

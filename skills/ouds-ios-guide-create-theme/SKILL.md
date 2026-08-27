@@ -176,9 +176,9 @@ class YourThemeFontProvider: OrangeThemeFontSemanticTokensProvider {
 ### 2.4 Theme class skeleton
 
 ```swift
-import OUDSThemesOrange
+import OUDSThemesContract
 
-class YourTheme: OrangeTheme {
+class YourTheme: OUDSTheme {
 
     static let name = "YourBrand"
 
@@ -196,7 +196,8 @@ class YourTheme: OrangeTheme {
             fonts:   fonts,
             // Leave unspecified parameters as nil → Orange defaults are used.
             name:    Self.name,
-            tuning:  Tuning.default  // see §5 for tuning options
+            tuning:  Tuning.default,  // see §5 for tuning options
+            hasTypographyHeadingLargeMarker: true  // see §5.1, OUDSTheme subclass required for this parameter
         )
     }
 }
@@ -251,6 +252,12 @@ Respect dependency order — some providers take others as constructor arguments
 | `dimensions` | `AllDimensionSemanticTokensProvider` | |
 | `sizes` | `AllSizeSemanticTokensProvider` | depends on `dimensions` |
 | `spaces` | `AllSpaceSemanticTokensProvider` | depends on `dimensions` |
+
+**Theme flags (Strategy B):**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `hasTypographyHeadingLargeMarker` | `Bool` | If `true`, displays a decorative marker below `OUDSHeading` when `size == .large` and `hasMarker: true`. Default: `false`. |
 
 **Component providers (all mandatory):**
 
@@ -371,7 +378,8 @@ public final class YourTheme: OUDSTheme, @unchecked Sendable {
             resourcesBundle: Bundle.YourTheme,  // see §6 for custom fonts
             name:          Self.name,
             fontFamily:    "YourFontFamilyName", // nil = system font
-            tuning:        Tuning.default)
+            tuning:        Tuning.default,
+            hasTypographyHeadingLargeMarker: true)  // see §5.1
 
         registerFonts()  // only if using custom fonts — see §6
     }
@@ -424,7 +432,7 @@ class YourTheme: OrangeTheme {
 
 ---
 
-## 5. Tuning
+## 5. Tuning & Flags
 
 Tuning controls brand-level UI decisions for corner rounding. Only `OrangeTheme` (and its subclasses) support tuning.
 
@@ -443,6 +451,22 @@ OrangeTheme(tuning: Tuning.default)        // all false
 OrangeTheme(tuning: Tuning.OrangeFrance)   // same as default
 OrangeTheme(tuning: Tuning.OrangeBusiness) // rounded inputs + alerts
 OrangeTheme(tuning: Tuning.MaxIt)          // everything rounded
+```
+
+### 5.1 Theme flags
+
+Additional boolean flags control specific UI behaviors:
+
+| Flag | Description |
+|------|-------------|
+| `hasTypographyHeadingLargeMarker` | If `true`, displays a decorative marker below `OUDSHeading` when `size == .large` and `hasMarker: true`. Force to `true` for Orange-style brand markers and Wireframe brand. Subclass `OUDSTheme` to have the parameter in init (default: `false`). |
+
+```swift
+// Enable heading marker (e.g., for Orange-style themes):
+let theme = OUDSTheme(hasTypographyHeadingLargeMarker: true)
+
+// Disable it (default behavior):
+let theme = OUDSTheme(hasTypographyHeadingLargeMarker: false)
 ```
 
 For a from-scratch theme (Strategy B), declare a custom predefined tuning in an extension:
