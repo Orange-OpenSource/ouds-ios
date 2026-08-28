@@ -283,7 +283,77 @@ For each hyperlink found in the Markdown source, the **first** configuration in 
 
 ---
 
-## 9. Component skills
+## 10. AsyncImage — cached image loading
+
+``OUDSAsyncImage`` is a cached version of ``SwiftUI/AsyncImage``. It loads images from URLs and caches them in memory (100MB) and on disk (500MB).
+
+```swift
+import OUDSSwiftUI
+
+// Basic usage
+OUDSAsyncImage(url: URL(string: "https://example.com/photo.png"))
+
+// With content transformation and placeholder
+OUDSAsyncImage(url: url) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+// With phases for full control
+OUDSAsyncImage(url: url) { phase in
+    switch phase {
+    case .empty: ProgressView()
+    case .success(let image): image.resizable()
+    case .failure: Image(systemName: "photo")
+    }
+}
+
+// Cache management
+OUDSAsyncImageCache.shared.clearCache()           // memory + disk
+OUDSAsyncImageCache.shared.clearMemoryCache()
+OUDSAsyncImageCache.shared.clearDiskCache()
+```
+
+The cache uses ``OUDSAsyncImageCache/Settings`` internally (100MB memory, 500MB disk).
+
+---
+
+## 11. Layout and localization helpers
+
+### RTL/LTR image flipping
+
+If your app supports right-to-left (RTL) layouts, use ``OUDSImage`` to flip icons automatically:
+
+```swift
+@Environment(\.layoutDirection) private var layoutDirection
+
+OUDSCheckboxItem(
+    "Label",
+    isOn: $isOn,
+    image: OUDSImage(
+        asset: Image(systemName: "figure.handball"),
+        flipped: layoutDirection == .rightToLeft
+    ),
+    isReversed: layoutDirection == .rightToLeft
+)
+```
+
+### Detecting Arabic locale
+
+Use ``OUDSUtils/isArabicLanguageInUse()`` to detect if Arabic is in use and switch font family:
+
+```swift
+func localizedHelveticaFont() -> String {
+    return (OUDSUtils.isArabicLanguageInUse() ? "Helvetica Neue Arabic" : "Helvetica Neue")
+}
+
+let theme = OrangeTheme(fontFamily: localizedHelveticaFont())
+```
+
+---
+
+## 12. Component skills
 
 Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
 

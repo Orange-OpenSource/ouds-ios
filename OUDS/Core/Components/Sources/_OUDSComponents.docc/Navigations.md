@@ -88,12 +88,42 @@ OUDSStaticListItem(data: OUDSListItemData(
 ))
 
 // List item with a leading icon and a trailing badge
-let icon = OUDSListItemIcon(type: .info, size: .medium)
+let icon = OUDSListItemIcon(status: .info, description: "", size: .medium)
 
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Notifications"),
     leading: .icon(icon),
     trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
+)
+
+// List item with a leading image (static asset)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Product"),
+    leading: .image(OUDSListItemImage(asset: Image("product_thumb"), size: .medium))
+)
+
+// List item with a leading async image (from URL)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Remote Product"),
+    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
+)
+
+// List item with async image and custom placeholder
+let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com/image.png")) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Loading Product"),
+    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
+)
+
+// List item with a trailing image
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Status"),
+    trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
 )
 ```
 
@@ -149,6 +179,28 @@ OUDSNavigationListItem(
     trailing: .text(.labelMuted("Details"))
 ) {
     // Navigate to profile
+}
+
+// With a leading async image loaded from URL
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Product", description: "View product details"),
+    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/product.png")), description: "Product thumbnail", size: .medium))
+) {
+    // Navigate to product
+}
+
+// With async image and custom placeholder
+let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com/product.png")) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Loading Product", description: "View product details"),
+    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product thumbnail", size: .medium))
+) {
+    // Navigate to product
 }
 ```
 

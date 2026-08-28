@@ -299,9 +299,30 @@ OUDSListItemAvatar(
 ### Associated Types — Image & Flag
 
 ```swift
-// Image
+// Image (static)
 OUDSListItemImage(asset: Image("photo"), size: .medium)
 OUDSListItemImage(asset: Image("photo"), size: .large)
+
+// Image (async from URL)
+OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/photo.png")), description: "Photo", size: .medium)
+
+// Image (async from URL with OUDSAsyncImage — cached)
+OUDSListItemImage(
+    asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/photo.png")),
+    description: "Photo",
+    size: .medium
+)
+
+// Image (async with custom content/placeholder)
+OUDSListItemImage(
+    asyncImage: AsyncImage(url: URL(string: "https://example.com/photo.png")) { image in
+        image.resizable()
+    } placeholder: {
+        ProgressView()
+    },
+    description: "Photo",
+    size: .medium
+)
 
 // Flag
 OUDSListItemFlag(asset: Image("flag_fr"), size: .medium)
