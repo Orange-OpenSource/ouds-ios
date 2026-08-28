@@ -25,9 +25,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `progress indicator` components to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
 - `password input` component to version 1.3.1 (Orange-OpenSource/ouds-ios#1526)
 - `text input` component to version 1.4.1 (Orange-OpenSource/ouds-ios#1524)
-- `linear progress indicator` component to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
 - **BREAKING**: `.percent` helper text of `linear progress indicator` and `circular progress indicator` components now formats the value and its `%` symbol through the localized wording key `core_progressIndicator_percent_value` instead of exposing a `spaceBefore: Bool` parameter, so the typographic rules (symbol, spacing, position) follow the current language (Orange-OpenSource/ouds-ios#1509, Orange-OpenSource/ouds-ios#409)
 - `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
 - themes tunings values (Orange-OpenSource/ouds-ios#1669)
