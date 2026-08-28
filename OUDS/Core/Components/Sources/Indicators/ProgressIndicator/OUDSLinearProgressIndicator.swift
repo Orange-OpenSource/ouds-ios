@@ -81,7 +81,10 @@ import SwiftUI
 /// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
 ///   The `alignment` parameter controls horizontal alignment (`.center`, `.start`, or `.end`).
 ///
-/// - **`.percent(spaceBefore:description:alignment:)`**: Displays the progress percentage with an optional description.
+/// - **`.percent(description:alignment:)`**: Displays the progress percentage with an optional description.
+///   The percentage value and its `%` symbol are assembled through the localized wording key
+///   `core_progressIndicator_percent_value`, so the symbol, its spacing and its position follow the
+///   typographic rules of the current language (e.g. `"75%"` in English, `"75 %"` in French, `"٪75"` in Arabic).
 ///   - When `alignment` is `.center` (default), only the percentage is shown, centered.
 ///   - When `alignment` is `.start`, the percentage is at the leading edge and the description (if provided) at the trailing edge.
 ///   - When `alignment` is `.end`, the description (if provided) is at the leading edge and the percentage at the trailing edge.
@@ -121,11 +124,11 @@ import SwiftUI
 ///     OUDSLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading...", alignment: .end))
 ///
 ///     // Percentage centered (default)
-///     OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent(spaceBefore: true))
+///     OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent())
 ///
 ///     // Percentage with description at start (percentage leading, description trailing)
 ///     OUDSLinearProgressIndicator(progress: 0.75,
-///                                 helperText: .percent(spaceBefore: true, description: "of 100 MB", alignment: .start))
+///                                 helperText: .percent(description: "of 100 MB", alignment: .start))
 ///
 ///     // Indeterminate
 ///     OUDSLinearProgressIndicator(status: .info)
@@ -220,14 +223,19 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
         ///   - alignment: Controls the horizontal alignment of the description text. Defaults to `.center`.
         case description(_ description: String, alignment: HelperTextAlignment = .center)
 
-        /// Displays the progress information (percentage value and `%` character with optional space before)
-        /// in the helper text according to the alignment.
+        /// Displays the progress information (percentage value with its `%` character) in the helper text
+        /// according to the alignment.
+        ///
+        /// The value and its percent symbol are assembled using the localized wording key
+        /// `core_progressIndicator_percent_value`, so the exact rendering (symbol, spacing, position) follows
+        /// the typographic rules of the current language instead of being hardcoded (e.g. `"75%"` in English,
+        /// `"75 %"` in French with a space before the symbol, `"٪75"` in Arabic with the Arabic percent sign
+        /// before the value).
         ///
         /// - Parameters:
-        ///   - spaceBefore: When `true`, adds a non-breaking space before the `%` character (e.g., "75 %"). When `false`, no space (e.g., "75%"). Defaults to `false`.
         ///   - description: Optional description text displayed alongside the percentage. Ignored when `alignment` is `.center`.
         ///   - alignment: The horizontal alignment of the helper text. Defaults to `.center`.
-        case percent(spaceBefore: Bool = false, description: String? = nil, alignment: HelperTextAlignment = .center)
+        case percent(description: String? = nil, alignment: HelperTextAlignment = .center)
     }
 
     // MARK: - Initializers
@@ -240,7 +248,9 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track. Defaults to
     ///      `false`.
-    ///    - helperText: Optional additional text displayed below the bar. Defaults to `.percent` with space before `%` and alignment `.center`
+    ///    - helperText: Optional additional text displayed below the bar. Defaults to `.percent` with alignment `.center`. The
+    ///      percentage rendering (symbol, spacing, position) follows the localized wording key
+    ///      `core_progressIndicator_percent_value`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
     ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on
     ///      first display, and animates any subsequent change of `progress`. When `false`, the indicator
@@ -251,7 +261,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
-                helperText: Self.HelperTextType? = .percent(spaceBefore: true, alignment: .center),
+                helperText: Self.HelperTextType? = .percent(alignment: .center),
                 gapSize: OUDSProgressIndicatorGapSize = .default,
                 animated: Bool = true)
     {

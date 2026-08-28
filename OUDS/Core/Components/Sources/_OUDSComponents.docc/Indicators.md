@@ -144,7 +144,9 @@ OUDSLinearProgressIndicator(status: .accent)
 OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: .description("Uploading…"), animated: false)
 
 // A horizontal bar with a helper text with progress information start aligned
-OUDSLinearProgressIndicator(progress: 0.5, helperText: .percent(description: "Uploading…", algnment: .start))
+// The percentage rendering (symbol, spacing, position) follows the localized wording key
+// `core_progressIndicator_percent_value` (e.g. "75%" in English, "75 %" in French, "٪75" in Arabic).
+OUDSLinearProgressIndicator(progress: 0.5, helperText: .percent(description: "Uploading…", alignment: .start))
 
 // An indeterminate horizontal bar with a helper text start aligned 
 OUDSLinearProgressIndicator(status: .info, helperText: "Processing…", helperTextAlignment: .start)

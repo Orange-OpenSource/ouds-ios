@@ -119,8 +119,8 @@ private struct HelperTextView: View {
             switch helperTextType {
             case let .description(description):
                 OneElementHelperTextView(description: description, alignment: .center)
-            case let .percent(description, spaceBefore):
-                if let percent = percent(spaceBefore: spaceBefore) {
+            case let .percent(description):
+                if let percent = percent() {
                     if let description {
                         OneElementHelperTextView(description: "\(percent) \(description)", alignment: .center)
                     } else {
@@ -135,11 +135,10 @@ private struct HelperTextView: View {
 
     // MARK: Helper
 
-    private func percent(spaceBefore: Bool) -> String? {
+    private func percent() -> String? {
         if let progress = configuration.progress {
             let value = Int((progress * 100).rounded())
-            let extraSpace = spaceBefore ? " " : ""
-            return "\(value)\(extraSpace)%"
+            return "core_progressIndicator_percent_value".localized(with: value)
         } else {
             return nil
         }

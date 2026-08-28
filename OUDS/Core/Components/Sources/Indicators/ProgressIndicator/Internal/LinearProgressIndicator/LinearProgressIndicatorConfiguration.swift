@@ -89,7 +89,9 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
     /// Convenience: `true` when the indicator is indeterminate.
     var isIndeterminate: Bool {
-        if case .indeterminate = self { return true }
+        if case .indeterminate = self {
+            return true
+        }
         return false
     }
 
@@ -140,7 +142,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
             case let .description(description, _):
                 description
 
-            case let .percent(_, description, _):
+            case let .percent(description, _):
                 description
 
             case .none:

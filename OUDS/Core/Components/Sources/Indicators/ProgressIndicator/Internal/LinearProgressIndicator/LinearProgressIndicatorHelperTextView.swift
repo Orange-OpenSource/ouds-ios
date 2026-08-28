@@ -46,8 +46,8 @@ struct DeterminateProgressIndicatorHelperText: View {
         case let .description(description, alignment):
             OneElementHelperTextView(description: description, alignment: alignment)
 
-        case let .percent(spaceBefore, description, alignment):
-            let percent = percent(spaceBefore: spaceBefore)
+        case let .percent(description, alignment):
+            let percent = percent()
             switch alignment {
             case .center:
                 OneElementHelperTextView(description: percent, alignment: alignment)
@@ -64,9 +64,8 @@ struct DeterminateProgressIndicatorHelperText: View {
 
     // MARK: Helper
 
-    private func percent(spaceBefore: Bool) -> String {
+    private func percent() -> String {
         let value = Int((configuration.progress * 100).rounded())
-        let extraSpace = spaceBefore ? " " : ""
-        return "\(value)\(extraSpace)%"
+        return "core_progressIndicator_percent_value".localized(with: value)
     }
 }

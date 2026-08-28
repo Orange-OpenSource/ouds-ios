@@ -39,12 +39,13 @@ struct ProgressIndicatorAccessibilityModifier: ViewModifier {
     func body(content: Content) -> some View {
         if let progress {
             let percent = Int((progress * 100).rounded())
+            let percentValue = "core_progressIndicator_percent_value".localized(with: percent)
 
             let determinate = content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits([.updatesFrequently, .isStaticText])
                 .accessibilityLabel(accessibilityLabel ?? "")
-                .accessibilityValue("\(percent)%")
+                .accessibilityValue(percentValue)
 
             if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
                 determinate.accessibilityRespondsToUserInteraction(false)

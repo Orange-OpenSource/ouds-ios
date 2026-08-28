@@ -94,7 +94,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
         switch helperTextType {
         case let .description(description):
             description
-        case let .percent(description, _):
+        case let .percent(description):
             description
         case nil:
             nil

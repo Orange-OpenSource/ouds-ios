@@ -102,8 +102,12 @@ OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true)
 // percent is not displayed.
 OUDSLinearProgressIndicator(progress: 0.75, helperText: .description("Uploading…", alignment: .start))
 
-// The helper text is displayed with a progress information (percent) according to alignment
-OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent(description: "Uploading…", alignement: .start))
+// The helper text is displayed with a progress information (percent) according to alignment.
+// The value and its "%" symbol are assembled through the localized wording key
+// `core_progressIndicator_percent_value`, so the rendering follows the typographic rules of the
+// current language (e.g. "75%" in English, "75 %" in French, "٪75" in Arabic) — there is no
+// `spaceBefore` boolean to set manually.
+OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent(description: "Uploading…", alignment: .start))
   
 // Determinate without the reveal animation: the bar is shown instantly at its target value.
 OUDSLinearProgressIndicator(progress: 0.75, animated: false)
@@ -131,3 +135,4 @@ Notes:
 - **Indeterminate** animation is intrinsic to the mode: there is no `animated` parameter on this initializer. Motion is disabled automatically when `accessibilityReduceMotion` is on or when Low Power Mode is enabled, and a static bar at 70% is displayed instead.
 - **Stop indicator** is only available on the determinate variant.
 - **Accessibility**: determinate exposes the percentage as `accessibilityValue`; when `helperText` is provided, it is exposed as `accessibilityLabel`. Indeterminate without helper text is hidden from VoiceOver; with a helper text, only the label is exposed (no value).
+- **Percent wording**: the `.percent` helper text (and the accessibility value) is built from the localized wording key `core_progressIndicator_percent_value` (`%lld` placeholder for the value). Add/override translations per language instead of a `spaceBefore` flag.

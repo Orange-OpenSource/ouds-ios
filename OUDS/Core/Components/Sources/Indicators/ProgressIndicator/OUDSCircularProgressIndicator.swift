@@ -76,7 +76,10 @@ import SwiftUI
 ///
 /// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
 ///
-/// - **`.percent(description:spaceBefore:)`**: Displays the progress percentage with an optional description.
+/// - **`.percent(_:)`**: Displays the progress percentage with an optional description. The percentage
+///   value and its `%` symbol are assembled through the localized wording key
+///   `core_progressIndicator_percent_value`, so the symbol, its spacing and its position follow the
+///   typographic rules of the current language (e.g. `"75%"` in English, `"75 %"` in French, `"٪75"` in Arabic).
 ///
 /// In **indeterminate** mode, the `helperText` parameter is a simple `String?`.
 ///
@@ -100,7 +103,7 @@ import SwiftUI
 ///
 ///     // Determinate with percentage and description
 ///     OUDSCircularProgressIndicator(progress: 0.75,
-///                                   helperText: .percent("of 100 MB", spaceBefore: true))
+///                                   helperText: .percent("of 100 MB"))
 ///
 ///     // Indeterminate
 ///     OUDSCircularProgressIndicator()
@@ -176,12 +179,16 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
         /// - Parameter description: The text to display
         case description(_ description: String)
 
-        /// Displays the progress information (percentage value and `%` character with optional space before) in the helper text.
+        /// Displays the progress information (percentage value with its `%` character) in the helper text.
         ///
-        /// - Parameters:
-        ///   - description: Optional description text displayed alongside the percentage.
-        ///   - spaceBefore: When `true`, adds a non-breaking space before the `%` character (e.g., "75 %"). When `false`, no space (e.g., "75%"). Defaults to `false`.
-        case percent(_ description: String? = nil, spaceBefore: Bool = false)
+        /// The value and its percent symbol are assembled using the localized wording key
+        /// `core_progressIndicator_percent_value`, so the exact rendering (symbol, spacing, position) follows
+        /// the typographic rules of the current language instead of being hardcoded (e.g. `"75%"` in English,
+        /// `"75 %"` in French with a space before the symbol, `"٪75"` in Arabic with the Arabic percent sign
+        /// before the value).
+        ///
+        /// - Parameter description: Optional description text displayed alongside the percentage.
+        case percent(_ description: String? = nil)
     }
 
     // MARK: - Initializers

@@ -160,7 +160,7 @@ struct OUDSCircularProgressIndicatorTests {
                                                                    track: true,
                                                                    gapSize: .default,
                                                                    size: 44,
-                                                                   helperText: .percent("of 100 MB", spaceBefore: true))
+                                                                   helperText: .percent("of 100 MB"))
         #expect(configuration.accessibilityLabel == "of 100 MB")
     }
 

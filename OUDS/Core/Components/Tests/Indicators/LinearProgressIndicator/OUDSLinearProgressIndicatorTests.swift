@@ -78,7 +78,7 @@ struct OUDSLinearProgressIndicatorTests {
                   status: .neutral,
                   track: true,
                   stopIndicator: false,
-                  helperText: .percent(spaceBefore: true, description: "of 100 MB", alignment: .start),
+                  helperText: .percent(description: "of 100 MB", alignment: .start),
                   gapSize: .default,
                   animated: true))
         #expect(configuration.accessibilityLabel == "of 100 MB")
@@ -91,7 +91,7 @@ struct OUDSLinearProgressIndicatorTests {
                   status: .neutral,
                   track: true,
                   stopIndicator: false,
-                  helperText: .percent(spaceBefore: true),
+                  helperText: .percent(),
                   gapSize: .default,
                   animated: true))
         #expect(configuration.accessibilityLabel == nil)
