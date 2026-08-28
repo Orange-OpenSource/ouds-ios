@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Two elements in helper text
+// MARK: - Two Elements Helper Text View
 
 struct TwoElementsHelperTextView: View {
 
@@ -46,7 +46,7 @@ struct TwoElementsHelperTextView: View {
     }
 }
 
-// MARK: - One element in helper text
+// MARK: - One Element Helper Text View
 
 struct OneElementHelperTextView: View {
 
@@ -71,7 +71,7 @@ struct OneElementHelperTextView: View {
         }
     }
 
-    // MARK: Alignment helpers
+    // MARK: Helpers
 
     private var frameAlignment: Alignment {
         switch alignment {

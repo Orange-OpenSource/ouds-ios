@@ -14,10 +14,12 @@
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Circular Progress Indicator View
+
 /// Internal view that draws an ``OUDSCircularProgressIndicator``.
 struct CircularProgressIndicatorView: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let configuration: CircularProgressIndicatorConfiguration
 
@@ -27,14 +29,14 @@ struct CircularProgressIndicatorView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
 
-    // MARK: - Initialize
+    // MARK: Initializer
 
     init(configuration: CircularProgressIndicatorConfiguration) {
         self.configuration = configuration
         _scaledDefaultSize = ScaledMetric(wrappedValue: configuration.size)
     }
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .center, spacing: CGFloat(theme.progressIndicator.spacePaddingBlock)) {
@@ -105,6 +107,8 @@ struct CircularProgressIndicatorView: View {
         return (effectiveRadius > 0) ? .round : .butt
     }
 }
+
+// MARK: - Helper Text View
 
 private struct HelperTextView: View {
 
