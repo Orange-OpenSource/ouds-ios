@@ -16,11 +16,11 @@ import SwiftUI
 /// ``OUDSAsyncImage`` is an async image component with built-in caching support.
 /// It loads images from URLs and caches them in memory and on disk for optimal performance.
 ///
-/// This component mirrors the API of ``SwiftUI/AsyncImage`` but adds caching functionality.
+/// This component mirrors the API of `AsyncImage` but adds caching functionality.
 ///
 /// ## Features
 ///
-/// - **Automatic caching**: Images are cached in memory (``NSCache``) and on disk
+/// - **Automatic caching**: Images are cached in memory (`NSCache`) and on disk
 /// - **Same API as SwiftUI.AsyncImage**: Use it as a drop-in replacement
 /// - **Flexible content customization**: Transform the loaded image with custom views
 ///

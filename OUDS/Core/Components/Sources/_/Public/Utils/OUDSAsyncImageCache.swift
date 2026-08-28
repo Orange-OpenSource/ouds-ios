@@ -102,7 +102,7 @@ public final class OUDSAsyncImageCache: @unchecked Sendable {
 
     /// Loads the content of the resource at `URL`, caches the result and returns it.
     ///
-    /// - Parameter urk: The resource to query and cache
+    /// - Parameter url: The resource to query and cache
     /// - Returns Data?: The content of the URL or `nil` if HTTP error occurs.
     public func loadData(from url: URL) async -> Data? {
         if let cached = data(for: url) {
