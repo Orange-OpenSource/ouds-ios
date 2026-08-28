@@ -110,7 +110,7 @@ import SwiftUI
 ///
 /// - Core OUDS version: 1.10.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange Compact version: 2.5.0
+/// - Brand Orange Compact version: 2.6.0
 ///
 /// - Since: 0.17.0
 public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
