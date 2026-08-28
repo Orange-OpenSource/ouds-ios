@@ -53,3 +53,51 @@ OUDSLabel(text: "Label", size: .xLarge, weight: .moderate)
 // Code
 OUDSCode(text: "let x = 42")
 ```
+
+### AsyncImage
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An async image component in light and dark modes with Orange theme](component_asyncimage_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![An async image component in light and dark modes with Orange Compact theme](component_asyncimage_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![An async image component in light and dark modes with Sosh theme](component_asyncimage_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An async image component in light and dark modes with Wireframe theme](component_asyncimage_Wireframe)
+    }
+}
+
+``OUDSAsyncImage`` is a cached version of ``SwiftUI/AsyncImage``. It loads images from URLs and caches them in memory (100MB) and on disk (500MB).
+
+```swift
+// Basic usage
+OUDSAsyncImage(url: URL(string: "https://example.com/photo.png"))
+
+// With scale
+OUDSAsyncImage(url: url, scale: 2.0)
+
+// With content transformation and placeholder
+OUDSAsyncImage(url: url) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+// With phases for full control
+OUDSAsyncImage(url: url) { phase in
+    switch phase {
+    case .empty: ProgressView()
+    case .success(let image): image.resizable()
+    case .failure: Image(systemName: "photo")
+    }
+}
+
+// Cache management
+OUDSAsyncImageCache.shared.clearCache()           // memory + disk
+OUDSAsyncImageCache.shared.clearMemoryCache()
+OUDSAsyncImageCache.shared.clearDiskCache()
+```
