@@ -162,7 +162,7 @@ public final class OUDSAsyncImageCache: @unchecked Sendable {
         return data
     }
 
-    /// Saves on  disk for the given `URL` the `Data`
+    /// Saves on disk for the given `URL` the `Data`
     ///
     /// - Parameters:
     ///    - data: The `Data` to cache on disk

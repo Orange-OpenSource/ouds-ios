@@ -293,9 +293,6 @@ import OUDSSwiftUI
 // Basic usage
 OUDSAsyncImage(url: URL(string: "https://example.com/photo.png"))
 
-// With scale
-OUDSAsyncImage(url: url, scale: 2.0)
-
 // With content transformation and placeholder
 OUDSAsyncImage(url: url) { image in
     image.resizable()

@@ -142,7 +142,7 @@ public struct OUDSAsyncImage<Content>: View where Content: View {
 /// Represents the loading phase of an async image.
 ///
 /// - Since: 3.0.0
-public enum ImageLoadPhase {
+@frozen public enum ImageLoadPhase {
 
     /// The image is currently loading.
     case empty
