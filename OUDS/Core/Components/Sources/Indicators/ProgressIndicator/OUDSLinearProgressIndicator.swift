@@ -74,8 +74,26 @@ import SwiftUI
 ///
 /// ## Helper text
 ///
-/// An optional string displayed centered below the bar. It can provide context about the process or show
-/// the current progress value (e.g. `"Uploading..."`).
+/// An optional text displayed below the progress bar to provide context or additional information.
+///
+/// In **determinate** mode, use ``OUDSLinearProgressIndicator/HelperTextType`` which offers two variants:
+///
+/// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
+///   The `alignment` parameter controls horizontal alignment (`.center`, `.start`, or `.end`).
+///
+/// - **`.percent(description:alignment:)`**: Displays the progress percentage with an optional description.
+///   The percentage value and its `%` symbol are assembled through the localized wording key
+///   `core_progressIndicator_percent_value`, so the symbol, its spacing and its position follow the
+///   typographic rules of the current language (e.g. `"75%"` in English, `"75 %"` in French, `"٪75"` in Arabic).
+///   - When `alignment` is `.center` (default), only the percentage is shown, centered.
+///   - When `alignment` is `.start`, the percentage is at the leading edge and the description (if provided) at the trailing edge.
+///   - When `alignment` is `.end`, the description (if provided) is at the leading edge and the percentage at the trailing edge.
+///
+/// In **indeterminate** mode, the `helperText` parameter is a simple `String?` with a separate `helperTextAlignment` parameter:
+///
+/// - **`.center`** (default): The text is centered under the progress bar.
+/// - **`.start`**: The text is aligned to the leading edge.
+/// - **`.end`**: The text is aligned to the trailing edge.
 ///
 /// ## Animation
 ///
@@ -90,6 +108,8 @@ import SwiftUI
 ///
 /// ## Code samples
 ///
+/// ### Determinate — Basic usage
+///
 /// ```swift
 ///     // Determinate — default (neutral, with track, default gap, reveal animation)
 ///     OUDSLinearProgressIndicator(progress: 0.75)
@@ -98,19 +118,26 @@ import SwiftUI
 ///     OUDSLinearProgressIndicator(progress: 0.5,
 ///                                 status: .accent,
 ///                                 track: false,
-///                                 helperText: "Uploading…")
+///                                 helperText: .description("Uploading…"))
 ///
-///     // Determinate with a warning status, a small gap, a stop indicator and no animation
-///     OUDSLinearProgressIndicator(progress: 0.3,
-///                                 status: .warning,
-///                                 stopIndicator: true,
-///                                 gapSize: .small,
-///                                 animated: false)
+///     // Description aligned to the end
+///     OUDSLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading...", alignment: .end))
 ///
-///     // Indeterminate (always animated — Android Material 3 two-line race)
-///     OUDSLinearProgressIndicator()
+///     // Percentage centered (default)
+///     OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent())
+///
+///     // Percentage with description at start (percentage leading, description trailing)
+///     OUDSLinearProgressIndicator(progress: 0.75,
+///                                 helperText: .percent(description: "of 100 MB", alignment: .start))
+///
+///     // Indeterminate
 ///     OUDSLinearProgressIndicator(status: .info)
 ///     OUDSLinearProgressIndicator(status: .accent, helperText: "Processing…")
+///
+///     // Helper text aligned to the end
+///     OUDSLinearProgressIndicator(status: .info,
+///                                 helperText: "Loading data…",
+///                                 helperTextAlignment: .end)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -156,7 +183,7 @@ import SwiftUI
 ///
 /// ![A linear progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_linear_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.2.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink to documentation when ready
@@ -165,6 +192,51 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
 
     /// Embeds all configuration details for the linear progress indicator.
     private let configuration: LinearProgressIndicatorConfiguration
+
+    // MARK: - Helper Text Alignment
+
+    /// The alignment of the helper text for the linear progress indicator.
+    ///
+    /// - Since: 3.0.0
+    @frozen public enum HelperTextAlignment: Equatable, Sendable {
+        /// The helper text is centered under the progress bar.
+        case center
+
+        /// The helper text is aligned to the leading edge.
+        case start
+
+        /// The helper text is aligned to the trailing edge.
+        case end
+    }
+
+    // MARK: - Determinate Progress Indicator Helper Text
+
+    /// The helper text can be added in **determinate** indicator
+    ///
+    /// - Since: 3.0.0
+    @frozen public enum HelperTextType: Equatable {
+
+        /// The helper text with a description without any information of progress.
+        ///
+        /// - Parameters:
+        ///   - description: The text to display
+        ///   - alignment: Controls the horizontal alignment of the description text. Defaults to `.center`.
+        case description(_ description: String, alignment: HelperTextAlignment = .center)
+
+        /// Displays the progress information (percentage value with its `%` character) in the helper text
+        /// according to the alignment.
+        ///
+        /// The value and its percent symbol are assembled using the localized wording key
+        /// `core_progressIndicator_percent_value`, so the exact rendering (symbol, spacing, position) follows
+        /// the typographic rules of the current language instead of being hardcoded (e.g. `"75%"` in English,
+        /// `"75 %"` in French with a space before the symbol, `"٪75"` in Arabic with the Arabic percent sign
+        /// before the value).
+        ///
+        /// - Parameters:
+        ///   - description: Optional description text displayed alongside the percentage. Ignored when `alignment` is `.center`.
+        ///   - alignment: The horizontal alignment of the helper text. Defaults to `.center`.
+        case percent(description: String? = nil, alignment: HelperTextAlignment = .center)
+    }
 
     // MARK: - Initializers
 
@@ -176,7 +248,9 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track. Defaults to
     ///      `false`.
-    ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
+    ///    - helperText: Optional additional text displayed below the bar. Defaults to `.percent` with alignment `.center`. The
+    ///      percentage rendering (symbol, spacing, position) follows the localized wording key
+    ///      `core_progressIndicator_percent_value`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
     ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on
     ///      first display, and animates any subsequent change of `progress`. When `false`, the indicator
@@ -187,7 +261,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
-                helperText: String? = nil,
+                helperText: Self.HelperTextType? = .percent(alignment: .center),
                 gapSize: OUDSProgressIndicatorGapSize = .default,
                 animated: Bool = true)
     {
@@ -210,16 +284,19 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
+    ///    - helperTextAlignment: The alignment of the helper text. Defaults to `.center`. Ignored if `helperText` is `nil`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
     ///      ``OUDSProgressIndicatorGapSize/default``.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
+                helperTextAlignment: HelperTextAlignment = .center,
                 gapSize: OUDSProgressIndicatorGapSize = .default)
     {
         configuration = .indeterminate(.init(status: status,
                                              track: track,
                                              helperText: helperText,
+                                             helperTextAlignment: helperTextAlignment,
                                              gapSize: gapSize))
     }
 

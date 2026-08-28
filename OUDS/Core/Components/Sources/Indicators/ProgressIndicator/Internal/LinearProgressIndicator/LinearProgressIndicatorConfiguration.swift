@@ -37,7 +37,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let stopIndicator: Bool
 
         /// Optional additional text displayed below the bar.
-        let helperText: String?
+        let helperText: OUDSLinearProgressIndicator.HelperTextType?
 
         /// Size of the gap between the foreground bar and the track.
         let gapSize: OUDSProgressIndicatorGapSize
@@ -50,7 +50,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
              status: OUDSProgressIndicatorStatus,
              track: Bool,
              stopIndicator: Bool,
-             helperText: String?,
+             helperText: OUDSLinearProgressIndicator.HelperTextType?,
              gapSize: OUDSProgressIndicatorGapSize,
              animated: Bool)
         {
@@ -78,6 +78,9 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         /// Optional additional text displayed below the bar.
         let helperText: String?
 
+        /// The alignment of the helper text.
+        let helperTextAlignment: OUDSLinearProgressIndicator.HelperTextAlignment
+
         /// Size of the gap between the bars and the track.
         let gapSize: OUDSProgressIndicatorGapSize
     }
@@ -86,7 +89,9 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
     /// Convenience: `true` when the indicator is indeterminate.
     var isIndeterminate: Bool {
-        if case .indeterminate = self { return true }
+        if case .indeterminate = self {
+            return true
+        }
         return false
     }
 
@@ -110,16 +115,6 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         }
     }
 
-    /// The optional helper text displayed below the bar, regardless of the variant.
-    var helperText: String? {
-        switch self {
-        case let .determinate(configuration):
-            configuration.helperText
-        case let .indeterminate(configuration):
-            configuration.helperText
-        }
-    }
-
     /// The size of the gap between the foreground and the track, regardless of the variant.
     var gapSize: OUDSProgressIndicatorGapSize {
         switch self {
@@ -137,6 +132,25 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
             configuration.progress
         case .indeterminate:
             nil
+        }
+    }
+
+    var accessibilityLabel: String? {
+        switch self {
+        case let .determinate(configuration):
+            switch configuration.helperText {
+            case let .description(description, _):
+                description
+
+            case let .percent(description, _):
+                description
+
+            case .none:
+                nil
+            }
+
+        case let .indeterminate(configuration):
+            configuration.helperText
         }
     }
 }

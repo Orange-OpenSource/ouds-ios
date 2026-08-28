@@ -67,6 +67,22 @@ import SwiftUI
 ///
 /// The indeterminate mode is not affected by this flag: its Android Material 3 animation is intrinsic to the mode.
 ///
+/// ## Helper text
+///
+/// An optional text displayed below the circular indicator to provide context or additional information.
+/// The helper text is always centered under the indicator.
+///
+/// In **determinate** mode, use ``OUDSCircularProgressIndicator/HelperTextType`` which offers two variants:
+///
+/// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
+///
+/// - **`.percent(_:)`**: Displays the progress percentage with an optional description. The percentage
+///   value and its `%` symbol are assembled through the localized wording key
+///   `core_progressIndicator_percent_value`, so the symbol, its spacing and its position follow the
+///   typographic rules of the current language (e.g. `"75%"` in English, `"75 %"` in French, `"٪75"` in Arabic).
+///
+/// In **indeterminate** mode, the `helperText` parameter is a simple `String?`.
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -82,9 +98,19 @@ import SwiftUI
 ///     // Determinate displayed instantly at its target value, without any animation
 ///     OUDSCircularProgressIndicator(progress: 0.75, animated: false)
 ///
+///     // Determinate with helper text
+///     OUDSCircularProgressIndicator(progress: 0.75, helperText: .description("Uploading..."))
+///
+///     // Determinate with percentage and description
+///     OUDSCircularProgressIndicator(progress: 0.75,
+///                                   helperText: .percent("of 100 MB"))
+///
 ///     // Indeterminate
 ///     OUDSCircularProgressIndicator()
 ///     OUDSCircularProgressIndicator(status: .info)
+///
+///     // Indeterminate with helper text
+///     OUDSCircularProgressIndicator(status: .info, helperText: "Processing...")
 /// ```
 ///
 /// ## Accessibility considerations
@@ -128,7 +154,7 @@ import SwiftUI
 ///
 /// ![A circular progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_circular_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.2.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
@@ -140,6 +166,30 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
 
     /// Embeds all configuration details for the circular progress indicator
     private let configuration: CircularProgressIndicatorConfiguration
+
+    // MARK: - Determinate Progress Indicator Helper Text
+
+    /// The helper text can be added in **determinate** indicator
+    ///
+    /// - Since: 3.0.0
+    @frozen public enum HelperTextType: Equatable {
+
+        /// The helper text with a description without any information of progress.
+        ///
+        /// - Parameter description: The text to display
+        case description(_ description: String)
+
+        /// Displays the progress information (percentage value with its `%` character) in the helper text.
+        ///
+        /// The value and its percent symbol are assembled using the localized wording key
+        /// `core_progressIndicator_percent_value`, so the exact rendering (symbol, spacing, position) follows
+        /// the typographic rules of the current language instead of being hardcoded (e.g. `"75%"` in English,
+        /// `"75 %"` in French with a space before the symbol, `"٪75"` in Arabic with the Arabic percent sign
+        /// before the value).
+        ///
+        /// - Parameter description: Optional description text displayed alongside the percentage.
+        case percent(_ description: String? = nil)
+    }
 
     // MARK: - Initializers
 
@@ -155,19 +205,22 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///      instantly at its target value with no animation. Animations are always disabled when
     ///      `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this flag.
     ///    - size: The size of the component could be adjusted if used internally by components.
+    ///    - helperText: Optional helper text displayed below the indicator. Defaults to `nil`.
     public init(progress: Double,
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 gapSize: OUDSProgressIndicatorGapSize = .default,
                 animated: Bool = true,
-                size: CGFloat = Self.defaultSize)
+                size: CGFloat = Self.defaultSize,
+                helperText: Self.HelperTextType? = nil)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: progress,
                                                                status: status,
                                                                track: track,
                                                                gapSize: gapSize,
                                                                size: size,
-                                                               animated: animated)
+                                                               animated: animated,
+                                                               helperText: helperText)
     }
 
     /// Creates an **indeterminate** circular progress indicator.
@@ -177,17 +230,20 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
     ///    - size: The size of the component could be adjusted if used internally by components.
+    ///    - helperText: Optional helper text displayed below the indicator. Defaults to `nil`.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 gapSize: OUDSProgressIndicatorGapSize = .default,
-                size: CGFloat = Self.defaultSize)
+                size: CGFloat = Self.defaultSize,
+                helperText: String? = nil)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                status: status,
                                                                track: track,
                                                                gapSize: gapSize,
                                                                size: size,
-                                                               animated: true)
+                                                               animated: true,
+                                                               helperText: .description(helperText ?? ""))
     }
 
     // MARK: - Body
