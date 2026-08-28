@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import SwiftUI
 import OUDSTokensSemantic
+import SwiftUI
 
 // MARK: - Two elements in helper text
 

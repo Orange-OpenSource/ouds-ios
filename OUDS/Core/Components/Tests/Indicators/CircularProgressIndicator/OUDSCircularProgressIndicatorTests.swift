@@ -104,4 +104,74 @@ struct OUDSCircularProgressIndicatorTests {
         #expect(configuration.progress == nil)
         #expect(configuration.isIndeterminate)
     }
+
+    // MARK: - Animated flag
+
+    @Test
+    func `animated flag must default to true`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44)
+        #expect(configuration.animated)
+    }
+
+    @Test
+    func `animated flag must be preserved when set to false`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   animated: false)
+        #expect(configuration.animated == false)
+    }
+
+    // MARK: - Helper text (accessibility label)
+
+    @Test
+    func `helper text must default to nil`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44)
+        #expect(configuration.helperTextType == nil)
+        #expect(configuration.accessibilityLabel == nil)
+    }
+
+    @Test
+    func `description helper text must be exposed as the accessibility label`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   helperText: .description("Uploading"))
+        #expect(configuration.helperTextType == .description("Uploading"))
+        #expect(configuration.accessibilityLabel == "Uploading")
+    }
+
+    @Test
+    func `percent helper text description must be exposed as the accessibility label`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   helperText: .percent("of 100 MB", spaceBefore: true))
+        #expect(configuration.accessibilityLabel == "of 100 MB")
+    }
+
+    @Test
+    func `percent helper text without description must expose a nil accessibility label`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   helperText: .percent())
+        #expect(configuration.accessibilityLabel == nil)
+    }
 }

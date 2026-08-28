@@ -26,14 +26,14 @@ struct OUDSLinearProgressIndicatorTests {
             status: .accent,
             track: false,
             stopIndicator: true,
-            helperText: "Uploading",
+            helperText: .description("Uploading", alignment: .end),
             gapSize: .small,
             animated: false)
         #expect(determinate.progress == 0.5)
         #expect(determinate.status == .accent)
         #expect(determinate.track == false)
         #expect(determinate.stopIndicator == true)
-        #expect(determinate.helperText == "Uploading")
+        #expect(determinate.helperText == .description("Uploading", alignment: .end))
         #expect(determinate.gapSize == .small)
         #expect(determinate.animated == false)
     }
@@ -52,8 +52,62 @@ struct OUDSLinearProgressIndicatorTests {
         #expect(configuration.progress == 0.5)
         #expect(configuration.status == .neutral)
         #expect(configuration.track == true)
-        #expect(configuration.helperText == nil)
+        #expect(configuration.accessibilityLabel == nil)
         #expect(configuration.gapSize == .default)
+    }
+
+    // MARK: - Determinate helper text (accessibility label)
+
+    @Test
+    func `determinate description helper text must be exposed as the accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: .description("Uploading"),
+                  gapSize: .default,
+                  animated: true))
+        #expect(configuration.accessibilityLabel == "Uploading")
+    }
+
+    @Test
+    func `determinate percent helper text description must be exposed as the accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: .percent(spaceBefore: true, description: "of 100 MB", alignment: .start),
+                  gapSize: .default,
+                  animated: true))
+        #expect(configuration.accessibilityLabel == "of 100 MB")
+    }
+
+    @Test
+    func `determinate percent helper text without description must expose a nil accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: .percent(spaceBefore: true),
+                  gapSize: .default,
+                  animated: true))
+        #expect(configuration.accessibilityLabel == nil)
+    }
+
+    @Test
+    func `determinate nil helper text must expose a nil accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: nil,
+                  gapSize: .default,
+                  animated: true))
+        #expect(configuration.accessibilityLabel == nil)
     }
 
     // MARK: - Progress clamping
@@ -107,18 +161,34 @@ struct OUDSLinearProgressIndicatorTests {
             status: .info,
             track: false,
             helperText: "Processing",
+            helperTextAlignment: .end,
             gapSize: .small)
         #expect(indeterminate.status == .info)
         #expect(indeterminate.track == false)
         #expect(indeterminate.helperText == "Processing")
+        #expect(indeterminate.helperTextAlignment == .end)
         #expect(indeterminate.gapSize == .small)
     }
 
     @Test
     func `indeterminate case of the enum must expose isIndeterminate true and progress nil`() {
         let configuration = LinearProgressIndicatorConfiguration.indeterminate(
-            .init(status: .neutral, track: true, helperText: nil, gapSize: .default))
+            .init(status: .neutral, track: true, helperText: nil, helperTextAlignment: .center, gapSize: .default))
         #expect(configuration.isIndeterminate)
         #expect(configuration.progress == nil)
+    }
+
+    @Test
+    func `indeterminate helper text must be exposed as the accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.indeterminate(
+            .init(status: .neutral, track: true, helperText: "Loading", helperTextAlignment: .center, gapSize: .default))
+        #expect(configuration.accessibilityLabel == "Loading")
+    }
+
+    @Test
+    func `indeterminate nil helper text must expose a nil accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.indeterminate(
+            .init(status: .neutral, track: true, helperText: nil, helperTextAlignment: .center, gapSize: .default))
+        #expect(configuration.accessibilityLabel == nil)
     }
 }

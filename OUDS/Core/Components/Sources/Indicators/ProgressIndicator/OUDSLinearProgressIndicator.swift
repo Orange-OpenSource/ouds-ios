@@ -108,71 +108,33 @@ import SwiftUI
 /// ### Determinate — Basic usage
 ///
 /// ```swift
-/// // Determinate — default (neutral, with track, default gap, reveal animation)
-/// OUDSLinearProgressIndicator(progress: 0.75)
+///     // Determinate — default (neutral, with track, default gap, reveal animation)
+///     OUDSLinearProgressIndicator(progress: 0.75)
 ///
-/// // Determinate with an accent status, no track and a helper text
-/// OUDSLinearProgressIndicator(progress: 0.5,
-///                             status: .accent,
-///                             track: false,
-///                             helperText: .description("Uploading…"))
+///     // Determinate with an accent status, no track and a helper text
+///     OUDSLinearProgressIndicator(progress: 0.5,
+///                                 status: .accent,
+///                                 track: false,
+///                                 helperText: .description("Uploading…"))
 ///
-/// // Determinate with a warning status, a small gap, a stop indicator and no animation
-/// OUDSLinearProgressIndicator(progress: 0.3,
-///                             status: .warning,
-///                             stopIndicator: true,
-///                             gapSize: .small,
-///                             animated: false)
-/// ```
+///     // Description aligned to the end
+///     OUDSLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading...", alignment: .end))
 ///
-/// ### Determinate — Helper text with alignment
+///     // Percentage centered (default)
+///     OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent(spaceBefore: true))
 ///
-/// ```swift
-/// // Description centered (default)
-/// OUDSLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading..."))
+///     // Percentage with description at start (percentage leading, description trailing)
+///     OUDSLinearProgressIndicator(progress: 0.75,
+///                                 helperText: .percent(spaceBefore: true, description: "of 100 MB", alignment: .start))
 ///
-/// // Description aligned to the start
-/// OUDSLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading...", alignment: .start))
+///     // Indeterminate
+///     OUDSLinearProgressIndicator(status: .info)
+///     OUDSLinearProgressIndicator(status: .accent, helperText: "Processing…")
 ///
-/// // Description aligned to the end
-/// OUDSLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading...", alignment: .end))
-///
-/// // Percentage centered (default)
-/// OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent(spaceBefore: true))
-///
-/// // Percentage with description at start (percentage leading, description trailing)
-/// OUDSLinearProgressIndicator(progress: 0.75,
-///                             helperText: .percent(spaceBefore: true, description: "of 100 MB", alignment: .start))
-///
-/// // Percentage with description at end (description leading, percentage trailing)
-/// OUDSLinearProgressIndicator(progress: 0.75,
-///                             helperText: .percent(spaceBefore: true, description: "75 MB remaining", alignment: .end))
-/// ```
-///
-/// ### Indeterminate — Basic usage
-///
-/// ```swift
-/// // Indeterminate (always animated — Android Material 3 two-line race)
-/// OUDSLinearProgressIndicator()
-/// OUDSLinearProgressIndicator(status: .info)
-/// OUDSLinearProgressIndicator(status: .accent, helperText: "Processing…")
-/// ```
-///
-/// ### Indeterminate — Helper text with alignment
-///
-/// ```swift
-/// // Helper text centered (default)
-/// OUDSLinearProgressIndicator(status: .info, helperText: "Loading data…")
-///
-/// // Helper text aligned to the start
-/// OUDSLinearProgressIndicator(status: .info,
-///                             helperText: "Loading data…",
-///                             helperTextAlignment: .start)
-///
-/// // Helper text aligned to the end
-/// OUDSLinearProgressIndicator(status: .info,
-///                             helperText: "Loading data…",
-///                             helperTextAlignment: .end)
+///     // Helper text aligned to the end
+///     OUDSLinearProgressIndicator(status: .info,
+///                                 helperText: "Loading data…",
+///                                 helperTextAlignment: .end)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -254,7 +216,7 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
         /// The helper text with a description without any information of progress.
         ///
         /// - Parameters:
-        ///   - description: Text displayed
+        ///   - description: The text to display
         ///   - alignment: Controls the horizontal alignment of the description text. Defaults to `.center`.
         case description(_ description: String, alignment: HelperTextAlignment = .center)
 

@@ -173,7 +173,7 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
 
         /// The helper text with a description without any information of progress.
         ///
-        /// - Parameter description: Text displayed
+        /// - Parameter description: The text to display
         case description(_ description: String)
 
         /// Displays the progress information (percentage value and `%` character with optional space before) in the helper text.
