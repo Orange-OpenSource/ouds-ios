@@ -14,38 +14,29 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-// Internal view that draws the helperText for **determinate** and **indeterminate**
-// variant of ``OUDSLinearProgressIndicator``,
+// MARK: - Indeterminate Helper Text View
 
+/// Internal view that draws the helper text for **determinate** and **indeterminate**
+/// variants of ``OUDSLinearProgressIndicator``,
 struct IndeterminateHelperTextView: View {
 
-    // MARK: Properties
-
     let configuration: LinearProgressIndicatorConfiguration.Indeterminate
-    @Environment(\.theme) private var theme
-
-    // MARK: Body
 
     var body: some View {
         OneElementHelperTextView(description: configuration.helperText, alignment: configuration.helperTextAlignment)
     }
 }
 
+// MARK: - Determinate Progress Indicator Helper Text
+
 struct DeterminateProgressIndicatorHelperText: View {
 
-    // MARK: Properties
-
     let configuration: LinearProgressIndicatorConfiguration.Determinate
-    @Environment(\.theme) private var theme
-
-    // MARK: Body
 
     var body: some View {
         switch configuration.helperText {
-
         case let .description(description, alignment):
             OneElementHelperTextView(description: description, alignment: alignment)
-
         case let .percent(description, alignment):
             let percent = percent()
             switch alignment {
@@ -56,13 +47,10 @@ struct DeterminateProgressIndicatorHelperText: View {
             case .end:
                 TwoElementsHelperTextView(start: description, end: percent)
             }
-
         default:
             EmptyView()
         }
     }
-
-    // MARK: Helper
 
     private func percent() -> String {
         let value = Int((configuration.progress * 100).rounded())
