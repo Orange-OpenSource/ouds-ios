@@ -25,9 +25,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `button` to use circular progress indicator as loader (Orange-OpenSource/ouds-ios#1695)
 - `password input` component to version 1.3.1 (Orange-OpenSource/ouds-ios#1526)
 - `text input` component to version 1.4.1 (Orange-OpenSource/ouds-ios#1524)
-- `button` to use circular progress indicator as loader (Orange-OpenSource/ouds-ios#1695)
 - `linear progress indicator` component to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
 - `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
 - themes tunings values (Orange-OpenSource/ouds-ios#1669)
