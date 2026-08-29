@@ -231,7 +231,17 @@ You cannot derivate the *Orange Compact* theme.
 
 #### Badge
 
-![A badge component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_OrangeCompact.png)
+@TabNavigator {
+    @Tab("Badge standard") {
+        ![A badge standard component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_OrangeCompact.png)
+    }
+    @Tab("Badge count") {
+        ![A badge count component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeCount_OrangeCompact.png)
+    }
+    @Tab("Badge icon") {
+        ![A badge icon component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeIcon_OrangeCompact.png)
+    }
+}
 
 #### Tags
 
@@ -269,12 +279,76 @@ You cannot derivate the *Orange Compact* theme.
 
 @TabNavigator {
     @Tab("With Liquid Glass") {
-        ![A tab component in light mode with Orange Compact theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_OrangeCompact_light.png)        
+        ![A tab component in light mode with Orange Compact theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_OrangeCompact_light.png)
     }
     @Tab("Without Liquid Glass") {
         ![A tab component in light mode with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_OrangeCompact_light.png)
     }
 }
+
+#### List item
+
+@TabNavigator {
+    @Tab("Static") {
+        ![A static list item component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_static_list_item_OrangeCompact.png)
+    }
+    @Tab("Navigation") {
+        ![A navigation list item component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_navigation_list_item_OrangeCompact.png)
+    }
+}
+
+#### Tool bar
+
+![A tool bar component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_OrangeCompact_light.png)
+
+### Dialogs
+
+#### Alert message
+
+![An alert message component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_OrangeCompact.png)
+
+#### Inline alert
+
+![An inline alert component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_OrangeCompact.png)
+
+### Controls
+
+#### Pin code input
+
+![A pin code input component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_OrangeCompact.png)
+
+#### Password input
+
+![A password input component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_OrangeCompact.png)
+
+#### Text area
+
+![A text area component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_OrangeCompact.png)
+
+### Indicators
+
+#### Progress indicator
+
+@TabNavigator {
+    @Tab("Circular") {
+        ![A circular progress indicator component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_OrangeCompact.png)
+    }
+    @Tab("Linear") {
+        ![A linear progress indicator component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_OrangeCompact.png)
+    }
+}
+
+### Layouts
+
+#### Colored surface
+
+![A colored surface component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_OrangeCompact.png)
+
+### Foundations
+
+#### Typography
+
+![A typography component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_OrangeCompact.png)
 
 ## Topics
 

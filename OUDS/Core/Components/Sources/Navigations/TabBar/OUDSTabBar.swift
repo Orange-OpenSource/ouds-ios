@@ -139,8 +139,8 @@ import SwiftUI
 ///
 /// ## Alternative components
 ///
-/// If you want to use SwiftUI `Tab` View with or without rules, use instead ``OUDSTabView``.
-/// If you target apps with Liquid Glass enabled and need `Tab` or rules, use instead ``OUDSLiquidGlassTabView``.
+/// If you want to use SwiftUI `Tab` View with or without rules, use instead `OUDSTabView`.
+/// If you target apps with Liquid Glass enabled and need `Tab` or rules, use instead `OUDSLiquidGlassTabView`.
 ///
 /// ## Design documentation
 ///

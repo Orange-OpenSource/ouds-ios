@@ -102,7 +102,7 @@ OUDSCheckboxItem("We live in a fabled world",
     }
 }
 
-Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to let the users to select one or more items within several.
+Checkboxes can be embeded in a checkbox picker (`OUDSCheckboxPicker`) so as to let the users to select one or more items within several.
 
 ```swift
 // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
@@ -236,7 +236,7 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
     }
 }
 
-Radio items can be embeded in a radio picker so as to let the users to select only one item within several (``OUDSRadioPicker``).
+Radio items can be embeded in a radio picker so as to let the users to select only one item within several (`OUDSRadioPicker`).
 
 ```swift
 // Define the elements to display in radio buttons using OUDSRadioPickerData.
@@ -439,7 +439,7 @@ OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .origin
     }
 }
 
-The library proposes a chip picker (``OUDSChipPicker``) to make easily filtering with two kinds of selection:
+The library proposes a chip picker (`OUDSChipPicker`) to make easily filtering with two kinds of selection:
 - **single or none**: to select or unselect one option only
 - **single**: to select at least one option
 - **multiple**: to select several options
@@ -511,7 +511,7 @@ OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someData
     }
 }
 
-The library provides an ``OUDSPasswordInput`` based on a ``OUDSTextInput`` to let user provides password in a secure text field.
+The library provides an `OUDSPasswordInput` based on a `OUDSTextInput` to let user provides password in a secure text field.
 
 ```swift
 // The password to display and edit
@@ -544,7 +544,7 @@ OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
     }
 }
 
-The library provides an ``OUDSPinCodeInput`` to let user provides PIN code or OTP code with only digits.
+The library provides an `OUDSPinCodeInput` to let user provides PIN code or OTP code with only digits.
 
 ```swift
 // The value with the code
@@ -633,7 +633,7 @@ OUDSTextArea(label: "Comments",
     }
 }
 
-The library provides useful components for forms like ``OUDSTextInput`` to let user write text data and be helped if needed.
+The library provides useful components for forms like `OUDSTextInput` to let user write text data and be helped if needed.
 Such components can have or not a leading icon or a trailing action with or without placeholders.
 
 ```swift

@@ -461,7 +461,17 @@ struct YourApp: App {
 
 #### Badge
 
-![A badge component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
+@TabNavigator {
+    @Tab("Badge standard") {
+        ![A badge standard component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
+    }
+    @Tab("Badge count") {
+        ![A badge count component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeCount_Orange.png)
+    }
+    @Tab("Badge icon") {
+        ![A badge icon component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeIcon_Orange.png)
+    }
+}
 
 #### Tags
 
@@ -499,12 +509,76 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("With Liquid Glass") {
-        ![A tab component in light mode with Orange theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Orange_light.png)        
+        ![A tab component in light mode with Orange theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Orange_light.png)
     }
     @Tab("Without Liquid Glass") {
         ![A tab component in light mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Orange_light.png)
     }
 }
+
+#### List item
+
+@TabNavigator {
+    @Tab("Static") {
+        ![A static list item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_static_list_item_Orange.png)
+    }
+    @Tab("Navigation") {
+        ![A navigation list item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_navigation_list_item_Orange.png)
+    }
+}
+
+#### Tool bar
+
+![A tool bar component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_Orange_light.png)
+
+### Dialogs
+
+#### Alert message
+
+![An alert message component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Orange.png)
+
+#### Inline alert
+
+![An inline alert component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_Orange.png)
+
+### Controls
+
+#### Pin code input
+
+![A pin code input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_Orange.png)
+
+#### Password input
+
+![A password input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_Orange.png)
+
+#### Text area
+
+![A text area component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_Orange.png)
+
+### Indicators
+
+#### Progress indicator
+
+@TabNavigator {
+    @Tab("Circular") {
+        ![A circular progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_Orange.png)
+    }
+    @Tab("Linear") {
+        ![A linear progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_Orange.png)
+    }
+}
+
+### Layouts
+
+#### Colored surface
+
+![A colored surface component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_Orange.png)
+
+### Foundations
+
+#### Typography
+
+![A typography component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_Orange.png)
 
 ## Topics
 

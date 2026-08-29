@@ -276,11 +276,11 @@ OUDSTabBar(selectedTab: $selectedTab, count: 3) {
 
 ### Tab views
 
-The ``OUDSTabView`` and ``OUDSLiquidGlassTabView`` use the native SwiftUI `Tab` API with OUDS styles.
+The `OUDSTabView` and `OUDSLiquidGlassTabView` use the native SwiftUI `Tab` API with OUDS styles.
 They are complementary to ``OUDSTabBar``:
 
-- ``OUDSTabView`` — iOS 18+ / macOS 15+ / visionOS 2+, exposes a `Binding<Int>` for programmatic selection, requires an explicit `value: Int` on every `Tab`.
-- ``OUDSLiquidGlassTabView`` — iOS 26+ / macOS 26+ / visionOS 26+ only, accepts `Tab` without `value:` and `Tab(role: .search)`, selection is managed natively.
+- `OUDSTabView` — iOS 18+ / macOS 15+ / visionOS 2+, exposes a `Binding<Int>` for programmatic selection, requires an explicit `value: Int` on every `Tab`.
+- `OUDSLiquidGlassTabView` — iOS 26+ / macOS 26+ / visionOS 26+ only, accepts `Tab` without `value:` and `Tab(role: .search)`, selection is managed natively.
 
 ```swift
 // OUDSTabView — iOS 18+

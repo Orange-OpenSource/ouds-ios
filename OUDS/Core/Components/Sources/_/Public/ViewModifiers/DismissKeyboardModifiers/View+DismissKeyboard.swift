@@ -18,8 +18,8 @@ extension View {
     /// Dismisses the software keyboard when the user taps anywhere
     /// outside a text input field.
     ///
-    /// Apply this modifier on the parent view containing an ``OUDSTextInput``
-    /// or ``OUDSTextArea`` for example.
+    /// Apply this modifier on the parent view containing an `OUDSTextInput`
+    /// or `OUDSTextArea` for example.
     ///
     /// ```swift
     /// VStack {
