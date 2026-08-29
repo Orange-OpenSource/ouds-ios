@@ -10,3 +10,21 @@
 // Authors: See CONTRIBUTORS.txt
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
+
+import OUDSComponents
+import SwiftUI
+import Testing
+
+/// Tests the `OUDSListItemTrailing` cases.
+struct OUDSListItemTrailingTests {
+
+    // MARK: - .custom builds a .customView case
+
+    @Test func customFactoryBuildsCustomViewCase() {
+        let trailing = OUDSListItemTrailing.custom { Text("Gauge") }
+        guard case .customView = trailing else {
+            Issue.record("Expected .customView case")
+            return
+        }
+    }
+}

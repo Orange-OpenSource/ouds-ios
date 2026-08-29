@@ -17,8 +17,8 @@ import SwiftUI
 ///
 /// ``OUDSStaticListItem`` typically contains a label, and optionally a description, an overline, an extra label,
 /// and a helper text — all provided through ``OUDSListItemData``.
-/// It can also include an optional leading element (such as an icon, image, avatar or flag)
-/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar or flag).
+/// It can also include an optional leading element (such as an icon, image, avatar, flag or custom view)
+/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag or custom view).
 ///
 /// Use this component when the list item should only display information without triggering any navigation or action.
 /// For navigable list items, see ``OUDSNavigationListItem``.
@@ -51,6 +51,14 @@ import SwiftUI
 ///         leading: .avatar(.init(type: .icon, size: .medium)),
 ///         trailing: .text(.label(Info"))
 ///     )
+///
+///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
+///     OUDSStaticListItem(
+///         data: OUDSListItemData(label: "SMS credit"),
+///         trailing: .custom {
+///             OUDSCircularProgressIndicator(progress: 0.75)
+///         }
+///     )
 /// ```
 ///
 /// ## Leading elements
@@ -60,6 +68,7 @@ import SwiftUI
 ///  - `.image(asset:)`: A static image asset
 ///  - `.flag(asset:)`: A country flag image
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///  - `.custom { ... }`: Any custom SwiftUI view
 ///
 /// ## Trailing elements
 ///
@@ -75,6 +84,7 @@ import SwiftUI
 /// - `.image(OUDSListItemImage)`:  A static image asset
 /// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+/// - `.custom { ... }`: Any custom SwiftUI view
 ///
 /// ## View modifiers
 ///
@@ -150,9 +160,9 @@ public struct OUDSStaticListItem<Slot: View>: View {
     ///    - data: The textual data of the item, including label, description, overline, extra label, and helper text.
     ///    - slot: An element displayed under texts (at the bottom of the text container).
     ///    - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
     ///    - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
@@ -177,9 +187,9 @@ public struct OUDSStaticListItem<Slot: View>: View {
     /// - Parameters:
     ///    - data: The textual data of the item, including label, description, overline, extra label, and helper text.
     ///    - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
     ///    - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.

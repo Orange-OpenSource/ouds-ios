@@ -27,7 +27,8 @@ import SwiftUI
 /// -  `icon`: A status or custom icon (see ``OUDSListItemIcon``).
 /// - `image`: A static image asset (see ``OUDSListItemImage``).
 /// - `flag`: A country flag image (see ``OUDSListItemFlag``).
-/// - `avatar`:  An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
+/// - `avatar`: An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
+/// - `custom`: Any custom SwiftUI view, e.g. any bespoke view.
 ///
 /// ## Code samples
 ///
@@ -58,6 +59,14 @@ import SwiftUI
 ///         data: OUDSListItemData(label: "Profile"),
 ///         leading: .avatar(avatar)
 ///     )
+///
+///     // Leading with a custom view, e.g. a gauge showing a remaining SMS credit
+///     OUDSStaticListItem(
+///         data: OUDSListItemData(label: "SMS credit"),
+///         leading: .custom {
+///             OUDSCircularProgressIndicator(progress: 0.75)
+///         }
+///     )
 /// ```
 ///
 /// ## Media appearance
@@ -67,7 +76,7 @@ import SwiftUI
 /// ## Small size behavior
 ///
 /// When the list item is displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), leading elements such as avatars and icons
-/// are rendered in their smallest available size.
+/// are rendered in their smallest available size. A `.custom` view is not resized automatically and must handle its own layout.
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -104,4 +113,28 @@ import SwiftUI
     /// and sizes (`.medium`, `.large`, `.extraLarge`).
     /// An optional ``OUDSBadgeStandard`` can be attached to the avatar.
     case avatar(OUDSListItemAvatar)
+
+    /// A custom SwiftUI view displayed at the leading position.
+    ///
+    /// Use this case to display any bespoke content that is not covered by the other options.
+    ///
+    /// The custom view is responsible for its own accessibility: unlike `.flag` and `.avatar`,
+    /// it is **not** automatically hidden from assistive technologies.
+    case customView(AnyView)
+
+    /// Creates a ``customView(_:)`` leading element from a `@ViewBuilder` closure.
+    ///
+    /// ```swift
+    ///     OUDSStaticListItem(
+    ///         data: OUDSListItemData(label: "SMS credit"),
+    ///         leading: .custom {
+    ///             OUDSCircularProgressIndicator(progress: 0.75)
+    ///         }
+    ///     )
+    /// ```
+    ///
+    /// - Parameter content: A view builder returning the custom view to display.
+    public static func custom(@ViewBuilder _ content: () -> some View) -> Self {
+        .customView(AnyView(content()))
+    }
 }

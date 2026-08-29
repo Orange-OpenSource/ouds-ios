@@ -23,8 +23,8 @@ import SwiftUI
 ///
 /// The item typically contains a label, and optionally a description, an overline, an extra label,
 /// and a helper text — all provided through ``OUDSListItemData``.
-/// It can also include an optional leading element (such as an icon, image, avatar, or flag)
-/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar or flag)
+/// It can also include an optional leading element (such as an icon, image, avatar, flag or custom view)
+/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag or custom view)
 ///
 /// For non-interactive, display-only list items, see ``OUDSStaticListItem``.
 ///
@@ -73,6 +73,16 @@ import SwiftUI
 ///     ) {
 ///         // Navigate to profile
 ///     }
+///
+///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
+///     OUDSNavigationListItem(
+///         data: OUDSListItemData(label: "SMS credit"),
+///         trailing: .custom {
+///             OUDSCircularProgressIndicator(progress: 0.75)
+///         }
+///     ) {
+///         // Navigate to SMS credit details
+///     }
 /// ```
 ///
 /// ## Leading elements
@@ -82,6 +92,7 @@ import SwiftUI
 ///  - `.image(OUDSListItemImage)`: A static image asset
 ///  - `.flag(OUDSListItemFlag)`: A country flag image
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///  - `.custom { ... }`: Any custom SwiftUI view (e.g. a gauge)
 ///
 /// ## Trailing elements
 ///
@@ -97,6 +108,7 @@ import SwiftUI
 /// - `.image(OUDSListItemImage)`:  A static image asset
 /// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+/// - `.custom { ... }`: Any custom SwiftUI view
 ///
 /// ## View modifiers
 ///
@@ -185,10 +197,10 @@ public struct OUDSNavigationListItem<Slot: View>: View {
     ///   - indicatorType: The type of navigation indicator to display. Defaults to `.next`.
     ///     See ``OUDSNavigationListItemIndicatorType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
     ///     **Note:** Ignored when `indicatorType` is `.previous`.
     ///   - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
     ///   - action: An optional closure triggered when the item is tapped.
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
@@ -222,10 +234,10 @@ public struct OUDSNavigationListItem<Slot: View>: View {
     ///   - indicatorType: The type of navigation indicator to display. Defaults to `.next`.
     ///     See ``OUDSNavigationListItemIndicatorType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
     ///     **Note:** Ignored when `indicatorType` is `.previous`.
     ///   - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
     ///   - action: An optional closure triggered when the item is tapped.
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
