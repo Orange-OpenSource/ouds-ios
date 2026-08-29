@@ -43,11 +43,11 @@ struct ListItemTextContainer<Slot: View>: View {
         VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
             VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
 
-                if let overline = data.overline,
-                   !overline.isEmpty,
+                if let overlineContent = data.overlineContent,
+                   !overlineContent.isEmpty,
                    itemSize == .default
                 {
-                    Text(overline)
+                    textView(for: overlineContent)
                         .labelModerateSmall(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
@@ -151,8 +151,8 @@ struct ListItemTextContainer<Slot: View>: View {
     private var accessibilityLabel: String {
         var parts: [String] = []
 
-        if itemSize != .small, let overline = data.overline {
-            parts.append(overline)
+        if itemSize != .small, let overlineContent = data.overlineContent, !overlineContent.isEmpty {
+            parts.append(overlineContent.rawValue)
         }
 
         // data.label returns the text for .text labels,

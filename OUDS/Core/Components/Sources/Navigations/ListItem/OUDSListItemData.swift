@@ -31,6 +31,10 @@ import SwiftUI
 /// - **description**: A secondary text displayed below the label, providing additional context.
 /// - **overline**: A small text displayed above the label, often used for categories or metadata.
 ///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
+/// - **richTextOverline**: Same purpose as `overline`, but as a styled `AttributedString` the user
+///   fully controls (font, color, etc.). Mutually exclusive with `overline`: use the dedicated
+///   initializers taking `richTextOverline` instead of `overline` to provide it.
+///   **Ignored when the list item size is `.small`.**
 /// - **extraLabel**: An additional text displayed below the description.
 ///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
 /// - **helperText**: A supporting text displayed below the list item row, outside the main content area,
@@ -75,6 +79,14 @@ import SwiftUI
 ///         overline: "Overline",
 ///         extraLabel: "Extra Label",
 ///         helperText: "Helper text providing guidance"
+///     )
+///
+///     // Overline as a user-styled rich text (AttributedString)
+///     let data = OUDSListItemData(
+///         label: "Label",
+///         richTextOverline: .from(text: "Overline",
+///                                  foregroundColor: theme.colors.contentBrandPrimary.color(for: colorScheme),
+///                                  font: someFont)
 ///     )
 ///
 ///     // Usage with a static list item
@@ -177,7 +189,25 @@ public struct OUDSListItemData {
 
     /// An optional small text displayed above the label, often used for categories or metadata.
     /// **Ignored when the list item size is `.small`.**
+    ///
+    /// Mutually exclusive with ``richTextOverline``: use one of the dedicated initializers
+    /// taking a `richTextOverline: AttributedString` parameter to provide a styled overline instead.
     public let overline: String?
+
+    /// An optional small text displayed above the label, as a user-styled `AttributedString`
+    /// (font, color, etc. fully controlled by the caller).
+    /// **Ignored when the list item size is `.small`.**
+    ///
+    /// Mutually exclusive with ``overline``: only settable through the dedicated initializers
+    /// taking a `richTextOverline: AttributedString` parameter.
+    ///
+    /// ```swift
+    ///     OUDSListItemData(
+    ///         label: "Label",
+    ///         richTextOverline: .from(text: "Overline", foregroundColor: someColor, font: someFont)
+    ///     )
+    /// ```
+    public let richTextOverline: AttributedString?
 
     /// An optional additional text displayed below the description.
     /// **Ignored when the list item size is `.small`.**
@@ -210,6 +240,34 @@ public struct OUDSListItemData {
         labelContent = .text(label, isBold: hasBoldLabel)
         self.description = description
         self.overline = overline
+        richTextOverline = nil
+        self.extraLabel = extraLabel
+        self.helperText = helperText
+    }
+
+    /// Creates a new list item data model with a text label and a styled `AttributedString` overline.
+    ///
+    /// - Parameters:
+    ///   - label: The primary text of the list item.
+    ///   - richTextOverline: A user-styled text displayed above the label.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - hasBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
+    ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
+    ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
+    public init(
+        label: String,
+        richTextOverline: AttributedString,
+        hasBoldLabel: Bool = false,
+        description: String? = nil,
+        extraLabel: String? = nil,
+        helperText: String? = nil)
+    {
+        labelContent = .text(label, isBold: hasBoldLabel)
+        self.description = description
+        overline = nil
+        self.richTextOverline = richTextOverline
         self.extraLabel = extraLabel
         self.helperText = helperText
     }
@@ -256,6 +314,35 @@ public struct OUDSListItemData {
         labelContent = .custom(AnyView(label), accessibilityLabel: accessibilityLabel)
         self.description = description
         self.overline = overline
+        richTextOverline = nil
+        self.extraLabel = extraLabel
+        self.helperText = helperText
+    }
+
+    /// Creates a new list item data model with a custom view as label and a styled `AttributedString` overline.
+    ///
+    /// - Parameters:
+    ///   - label: A custom SwiftUI view to use as the primary label of the list item.
+    ///   - accessibilityLabel: A text used for Voice Over vocalization of the custom label.
+    ///     This value is used to build the combined accessibility label of the list item text container.
+    ///   - richTextOverline: A user-styled text displayed above the label.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
+    ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
+    public init(
+        label: some View,
+        accessibilityLabel: String,
+        richTextOverline: AttributedString,
+        description: String? = nil,
+        extraLabel: String? = nil,
+        helperText: String? = nil)
+    {
+        labelContent = .custom(AnyView(label), accessibilityLabel: accessibilityLabel)
+        self.description = description
+        overline = nil
+        self.richTextOverline = richTextOverline
         self.extraLabel = extraLabel
         self.helperText = helperText
     }
@@ -290,5 +377,52 @@ public struct OUDSListItemData {
             overline: overline,
             extraLabel: extraLabel,
             helperText: helperText)
+    }
+
+    /// Creates a new list item data model with a localized text label and a styled `AttributedString` overline.
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - richTextOverline: A user-styled text displayed above the label.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - hasBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
+    ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
+    ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
+    public init(
+        key: LocalizedStringKey,
+        richTextOverline: AttributedString,
+        tableName: String? = nil,
+        bundle: Bundle = .main,
+        hasBoldLabel: Bool = false,
+        description: String? = nil,
+        extraLabel: String? = nil,
+        helperText: String? = nil)
+    {
+        self.init(
+            label: key.resolved(tableName: tableName, bundle: bundle),
+            richTextOverline: richTextOverline,
+            hasBoldLabel: hasBoldLabel,
+            description: description,
+            extraLabel: extraLabel,
+            helperText: helperText)
+    }
+
+    // MARK: - Overline Content
+
+    /// The overline resolved as a ``TextualContent``, either `.raw` (from `overline`) or
+    /// `.attributed` (from `richTextOverline`), `richTextOverline` taking precedence if both
+    /// were somehow set. Returns `nil` if none is defined.
+    var overlineContent: TextualContent? {
+        if let richTextOverline {
+            return .attributed(richTextOverline)
+        }
+        if let overline {
+            return .raw(overline)
+        }
+        return nil
     }
 }
