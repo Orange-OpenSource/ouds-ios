@@ -35,23 +35,29 @@ struct ListItemContent: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            HStack(alignment: verticalAlignment, spacing: theme.listItem.spaceColumnGap) {
-                if indicatorType == .previous {
-                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                HStack(alignment: verticalAlignment, spacing: theme.listItem.spaceColumnGap) {
+                    if indicatorType == .previous {
+                        ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+                    }
+
+                    if let leading {
+                        leadingContainer(leading)
+                    }
+
+                    textContainer()
+
+                    if let trailing {
+                        trailingContainer(trailing)
+                    }
+
+                    if indicatorType == .next || indicatorType == .external {
+                        ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+                    }
                 }
 
-                if let leading {
-                    leadingContainer(leading)
-                }
-
-                textContainer()
-
-                if let trailing {
-                    trailingContainer(trailing)
-                }
-
-                if indicatorType == .next || indicatorType == .external {
-                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+                if let bottomSlot = data.bottomSlot {
+                    bottomSlot.view
                 }
             }
             .padding(.top, topPadding)
@@ -60,12 +66,6 @@ struct ListItemContent: View {
             .frame(minHeight: minHeight, alignment: textFrameAlignment)
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
-
-            if let bottomSlot = data.bottomSlot {
-                bottomSlot.view
-                    .padding(.horizontal, theme.listItem.spacePaddingInline)
-                    .padding(.bottom, theme.listItem.spacePaddingBlockSlotTextContainer)
-            }
 
             if let helperText = data.helperText {
                 ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)

@@ -22,7 +22,7 @@ import SwiftUI
 /// to communicate the type of navigation to the user.
 ///
 /// The item typically contains a label, and optionally a description, an overline, an extra label,
-/// a slot, a bottomSlot, and a helper text — all provided through ``OUDSListItemData``.
+/// a text slot, a bottom slot, and a helper text — all provided through ``OUDSListItemData``.
 /// It can also include an optional leading element (such as an icon, image, avatar, flag or custom view)
 /// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag or custom view)
 ///
@@ -88,7 +88,7 @@ import SwiftUI
 ///     OUDSNavigationListItem(
 ///         data: OUDSListItemData(
 ///             label: "Settings",
-///             slot: { Text("Configure options") },
+///             textSlot: { Text("Configure options") },
 ///             helperText: "Helper text"
 ///         )
 ///     ) {

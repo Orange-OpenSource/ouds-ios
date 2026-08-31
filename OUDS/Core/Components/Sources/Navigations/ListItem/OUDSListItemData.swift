@@ -13,38 +13,12 @@
 
 import SwiftUI
 
-// swiftlint:disable file_length
-
-/// Represents the textual content displayed within a list item component such as
+/// Represents the main content displayed within a list item component such as
 /// ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
 /// ``OUDSListItemData`` groups all the text-based information that a list item can display:
 /// a mandatory label (either a `String` or a custom `View`), and optional description, overline,
-/// extra label, and helper text.
-///
-/// ## Properties
-///
-/// - **labelContent** *(required)*: The primary content of the list item, stored as an ``OUDSListItemData/Label``.
-///   Can be a plain text `String` or a custom `View`. Always visible regardless of the item size.
-/// - **label**: A computed property returning the string value of the label for backward compatibility.
-///   Returns the text for string labels, or the accessibility label for custom view labels.
-/// - **hasBoldLabel**: A computed property returning `true` when the label is a bold text.
-///   Always returns `false` for custom view labels.
-/// - **description**: A secondary text displayed below the label, providing additional context.
-/// - **overline**: A small text displayed above the label, often used for categories or metadata.
-///   Can be provided either as a plain `String` or as a user-styled `AttributedString` (same `overline`
-///   parameter name at init, disambiguated by type). Internally stored as either `overline` (`String?`)
-///   or `attributedOverline` (`AttributedString?`), and resolved into a single `TextualContent` through
-///   the internal `overlineContent` property.
-///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
-/// - **extraLabel**: An additional text displayed below the description.
-///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
-/// - **helperText**: A supporting text displayed below the list item row, outside the main content area,
-///   typically used for guidance or additional information.
-/// - **slot**: An optional custom view displayed under the texts (overline, label, extra label, description)
-///   but before the helper text. Useful for inserting additional content between the main text and helper.
-/// - **bottomSlot**: An optional custom view displayed under the main content (including `slot`) and before
-///   the helper text. Positioned below the main row content.
+/// extra label, and helper text, and slots.
 ///
 /// ## Code samples
 ///
@@ -107,14 +81,14 @@ import SwiftUI
 ///     // With slot (displayed under texts, before helper text)
 ///     let dataWithSlot = OUDSListItemData(
 ///         label: "Label",
-///         slot: { Text("Additional content") },
+///         textSlot: { Text("Additional content") },
 ///         helperText: "Helper text"
 ///     )
 ///
-///     // With slot and bottomSlot (bottomSlot displayed under slot, before helper text)
+///     // With text slot and bottom slot (bottom slot displayed under text slot, before helper text)
 ///     let dataWithBothSlots = OUDSListItemData(
 ///         label: "Label",
-///         slot: { Text("Slot content") },
+///         textSlot: { Text("Slot content") },
 ///         bottomSlot: { Text("Bottom content") },
 ///         helperText: "Helper text"
 ///     )
@@ -126,8 +100,7 @@ import SwiftUI
 /// - The `hasBoldLabel` property is not applicable; all styling is controlled by the provided view.
 /// - You must provide an `accessibilityLabel` parameter so that Voice Over can vocalize the label.
 ///   This `accessibilityLabel` is used in the combined accessibility label of the list item text container.
-/// - The custom view is rendered inside the same `HStack` as a text label would be,
-///   with the same frame constraints (max width, min height).
+/// - You msut also check the accessibility of your custom views (navigation with switch control and full keybaord access, dynamic types, contrat ratios)
 ///
 /// ## Small size behavior
 ///
@@ -152,11 +125,6 @@ public struct OUDSListItemData {
     // MARK: - Slot
 
     /// Represents a custom view slot within a list item.
-    ///
-    /// Slots allow inserting arbitrary SwiftUI content at specific positions:
-    /// - ``slot``: Displayed under the texts (overline, label, extra label, description)
-    ///   but before the helper text.
-    /// - ``bottomSlot``: Displayed under the main content (including `slot`) and before the helper text.
     ///
     /// - Since: 3.0.0
     public struct Slot: Equatable {
@@ -226,10 +194,10 @@ public struct OUDSListItemData {
 
     /// The primary content of the list item. Can be a plain text or a custom view.
     /// See ``OUDSListItemData/Label`` for available options.
-    public let labelContent: Label
+    let labelContent: Label
 
     /// An optional secondary text displayed below the label.
-    public let description: String?
+    let description: String?
 
     /// An optional small text displayed above the label, often used for categories or metadata.
     /// **Ignored when the list item size is `.small`.**
@@ -237,7 +205,7 @@ public struct OUDSListItemData {
     /// Set when the `overline: String?` initializer parameter is used. Mutually exclusive with
     /// ``attributedOverline``: use the dedicated initializers taking an `overline: AttributedString`
     /// parameter to provide a styled overline instead (same parameter name, disambiguated by type).
-    public let overline: String?
+    let overline: String?
 
     /// An optional small text displayed above the label, as a user-styled `AttributedString`
     /// (font, color, etc. fully controlled by the caller).
@@ -253,26 +221,26 @@ public struct OUDSListItemData {
     ///         overline: .from(text: "Overline", foregroundColor: someColor, font: someFont)
     ///     )
     /// ```
-    public let attributedOverline: AttributedString?
+    let attributedOverline: AttributedString?
 
     /// An optional additional text displayed below the description.
     /// **Ignored when the list item size is `.small`.**
-    public let extraLabel: String?
+    let extraLabel: String?
 
     /// An optional supporting text displayed below the list item row, outside the main content area.
-    public let helperText: String?
+    let helperText: String?
 
     /// An optional custom view displayed under the texts (overline, label, extra label, description)
     /// but before the helper text.
     ///
     /// Use this slot to insert additional content between the main text content and the helper text.
-    public let slot: Slot?
+    let textSlot: Slot?
 
     /// An optional custom view displayed under the main content (including `slot`) and before the helper text.
     ///
     /// This slot is positioned below the main row content and above the helper text.
     /// It is useful for displaying additional information that should be visually separated from the main texts.
-    public let bottomSlot: Slot?
+    let bottomSlot: Slot?
 
     // MARK: - Initializers
 
@@ -287,7 +255,7 @@ public struct OUDSListItemData {
     ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    ///   - slot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
+    ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     public init(
         label: String,
@@ -296,7 +264,7 @@ public struct OUDSListItemData {
         overline: String? = nil,
         extraLabel: String? = nil,
         helperText: String? = nil,
-        slot: Slot? = nil,
+        textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
         labelContent = .text(label, isBold: hasBoldLabel)
@@ -305,7 +273,7 @@ public struct OUDSListItemData {
         attributedOverline = nil
         self.extraLabel = extraLabel
         self.helperText = helperText
-        self.slot = slot
+        self.textSlot = textSlot
         self.bottomSlot = bottomSlot
     }
 
@@ -320,7 +288,7 @@ public struct OUDSListItemData {
     ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    ///   - slot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
+    ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     public init(
         label: String,
@@ -329,7 +297,7 @@ public struct OUDSListItemData {
         description: String? = nil,
         extraLabel: String? = nil,
         helperText: String? = nil,
-        slot: Slot? = nil,
+        textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
         labelContent = .text(label, isBold: hasBoldLabel)
@@ -338,7 +306,7 @@ public struct OUDSListItemData {
         attributedOverline = overline
         self.extraLabel = extraLabel
         self.helperText = helperText
-        self.slot = slot
+        self.textSlot = textSlot
         self.bottomSlot = bottomSlot
     }
 
@@ -373,7 +341,7 @@ public struct OUDSListItemData {
     ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    ///   - slot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
+    ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     public init(
         label: some View,
@@ -382,7 +350,7 @@ public struct OUDSListItemData {
         overline: String? = nil,
         extraLabel: String? = nil,
         helperText: String? = nil,
-        slot: Slot? = nil,
+        textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
         labelContent = .custom(AnyView(label), accessibilityLabel: accessibilityLabel)
@@ -391,7 +359,7 @@ public struct OUDSListItemData {
         attributedOverline = nil
         self.extraLabel = extraLabel
         self.helperText = helperText
-        self.slot = slot
+        self.textSlot = textSlot
         self.bottomSlot = bottomSlot
     }
 
@@ -407,7 +375,7 @@ public struct OUDSListItemData {
     ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    ///   - slot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
+    ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     public init(
         label: some View,
@@ -416,7 +384,7 @@ public struct OUDSListItemData {
         description: String? = nil,
         extraLabel: String? = nil,
         helperText: String? = nil,
-        slot: Slot? = nil,
+        textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
         labelContent = .custom(AnyView(label), accessibilityLabel: accessibilityLabel)
@@ -425,7 +393,7 @@ public struct OUDSListItemData {
         attributedOverline = overline
         self.extraLabel = extraLabel
         self.helperText = helperText
-        self.slot = slot
+        self.textSlot = textSlot
         self.bottomSlot = bottomSlot
     }
 
@@ -442,7 +410,7 @@ public struct OUDSListItemData {
     ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    ///   - slot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
+    ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     public init(
         key: LocalizedStringKey,
@@ -453,7 +421,7 @@ public struct OUDSListItemData {
         overline: String? = nil,
         extraLabel: String? = nil,
         helperText: String? = nil,
-        slot: Slot? = nil,
+        textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
         self.init(
@@ -463,7 +431,7 @@ public struct OUDSListItemData {
             overline: overline,
             extraLabel: extraLabel,
             helperText: helperText,
-            slot: slot,
+            textSlot: textSlot,
             bottomSlot: bottomSlot)
     }
 
@@ -480,7 +448,7 @@ public struct OUDSListItemData {
     ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    ///   - slot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
+    ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     public init(
         key: LocalizedStringKey,
@@ -491,7 +459,7 @@ public struct OUDSListItemData {
         description: String? = nil,
         extraLabel: String? = nil,
         helperText: String? = nil,
-        slot: Slot? = nil,
+        textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
         self.init(
@@ -501,7 +469,7 @@ public struct OUDSListItemData {
             description: description,
             extraLabel: extraLabel,
             helperText: helperText,
-            slot: slot,
+            textSlot: textSlot,
             bottomSlot: bottomSlot)
     }
 

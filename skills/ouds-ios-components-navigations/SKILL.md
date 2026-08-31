@@ -203,7 +203,7 @@ OUDSStaticListItem(
 
 // With slot (view under texts, before helper text)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "With slot", slot: { Text("Additional content") })
+    data: OUDSListItemData(label: "With slot", textSlot: { Text("Additional content") })
 )
 
 // With bottomSlot (view under main content, before helper text)
@@ -215,7 +215,7 @@ OUDSStaticListItem(
 OUDSStaticListItem(
     data: OUDSListItemData(
         label: "Label",
-        slot: { Text("Slot content") },
+        textSlot: { Text("Slot content") },
         bottomSlot: { Text("Bottom content") },
         helperText: "Helper text"
     )
@@ -261,7 +261,7 @@ OUDSNavigationListItem(
 
 // With slot (view under texts, before helper text)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Settings", slot: { Text("Configure options") })
+    data: OUDSListItemData(label: "Settings", textSlot: { Text("Configure options") })
 ) {
     // navigate
 }
@@ -277,7 +277,7 @@ OUDSNavigationListItem(
 OUDSNavigationListItem(
     data: OUDSListItemData(
         label: "Settings",
-        slot: { Text("Slot content") },
+        textSlot: { Text("Slot content") },
         bottomSlot: { Text("Bottom content") },
         helperText: "Helper text"
     )

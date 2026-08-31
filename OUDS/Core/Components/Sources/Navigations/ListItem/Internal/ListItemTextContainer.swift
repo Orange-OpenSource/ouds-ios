@@ -62,7 +62,7 @@ struct ListItemTextContainer: View {
                         }
                     case let .custom(customView, _):
                         customView
-                            .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer) // TODO: #265 - Not sure for these tokens
+                            .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)
                     }
                 }
                 .multilineTextAlignment(.leading)
@@ -88,7 +88,7 @@ struct ListItemTextContainer: View {
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilityLabel)
 
-            if let slot = data.slot {
+            if let slot = data.textSlot {
                 slot.view
                     .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)
             }
@@ -154,8 +154,6 @@ struct ListItemTextContainer: View {
             parts.append(overlineContent.rawValue)
         }
 
-        // data.label returns the text for .text labels,
-        // or the accessibilityLabel for .custom labels.
         let labelString = data.labelContent.stringValue
         if !labelString.isEmpty {
             parts.append(labelString)
