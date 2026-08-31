@@ -41,7 +41,7 @@ struct ListItemLeadingContainer: View {
             case let .avatar(avatar):
                 avatar
                     .accessibilityHidden(true)
-            case let .customView(view):
+            case let .slot(view):
                 view
             }
         }

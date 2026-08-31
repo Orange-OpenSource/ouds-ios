@@ -207,21 +207,21 @@ import SwiftUI
     ///
     /// The custom view is responsible for its own accessibility: unlike `.flag` and `.avatar`,
     /// it is **not** automatically hidden from assistive technologies.
-    case customView(AnyView)
+    case slot(AnyView)
 
-    /// Creates a ``customView(_:)`` trailing element from a `@ViewBuilder` closure.
+    /// Creates a ``slot(_:)`` trailing element from a `@ViewBuilder` closure.
     ///
     /// ```swift
     ///     OUDSStaticListItem(
     ///         data: OUDSListItemData(label: "SMS credit"),
-    ///         trailing: .custom {
+    ///         trailing: .slot {
     ///             OUDSCircularProgressIndicator(progress: 0.75)
     ///         }
     ///     )
     /// ```
     ///
     /// - Parameter content: A view builder returning the custom view to display.
-    public static func custom(@ViewBuilder _ content: () -> some View) -> Self {
-        .customView(AnyView(content()))
+    public static func slot(@ViewBuilder _ content: () -> some View) -> Self {
+        .slot(AnyView(content()))
     }
 }

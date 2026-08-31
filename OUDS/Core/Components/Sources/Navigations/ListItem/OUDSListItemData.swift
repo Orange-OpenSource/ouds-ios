@@ -81,15 +81,15 @@ import SwiftUI
 ///     // With slot (displayed under texts, before helper text)
 ///     let dataWithSlot = OUDSListItemData(
 ///         label: "Label",
-///         textSlot: { Text("Additional content") },
+///         textSlot: OUDSListItemData.Slot { Text("Additional content") },
 ///         helperText: "Helper text"
 ///     )
 ///
 ///     // With text slot and bottom slot (bottom slot displayed under text slot, before helper text)
 ///     let dataWithBothSlots = OUDSListItemData(
 ///         label: "Label",
-///         textSlot: { Text("Slot content") },
-///         bottomSlot: { Text("Bottom content") },
+///         textSlot: OUDSListItemData.Slot { Text("Slot content") },
+///         bottomSlot: OUDSListItemData.Slot { Text("Bottom content") },
 ///         helperText: "Helper text"
 ///     )
 /// ```
@@ -125,6 +125,11 @@ public struct OUDSListItemData {
     // MARK: - Slot
 
     /// Represents a custom view slot within a list item.
+    ///
+    /// ```swift
+    ///     // Call to give to any property for slots
+    ///     OUDSListItemData.Slot { Text("Some text") }
+    /// ```
     ///
     /// - Since: 3.0.0
     public struct Slot: Equatable {

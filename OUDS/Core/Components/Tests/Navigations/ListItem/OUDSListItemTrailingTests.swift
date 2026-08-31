@@ -18,12 +18,12 @@ import Testing
 /// Tests the `OUDSListItemTrailing` cases.
 struct OUDSListItemTrailingTests {
 
-    // MARK: - .custom builds a .customView case
+    // MARK: - .custom builds a .slot case
 
-    @Test func customFactoryBuildsCustomViewCase() {
-        let trailing = OUDSListItemTrailing.custom { Text("Gauge") }
-        guard case .customView = trailing else {
-            Issue.record("Expected .customView case")
+    @Test func customFactoryBuildsSlotCase() {
+        let trailing = OUDSListItemTrailing.slot { Text("Gauge") }
+        guard case .slot = trailing else {
+            Issue.record("Expected .slot case")
             return
         }
     }
