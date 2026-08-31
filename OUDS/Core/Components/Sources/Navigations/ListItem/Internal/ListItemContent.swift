@@ -17,12 +17,11 @@ import SwiftUI
 
 /// The content for the ``OUDSStaticListItem`` and the ``OUDSNavigationListItem`` component described by the ``OUDSListItemData``.
 /// The layout (divider, background, size) are updated according to the interaction state ``OUDSButtonInteractionState``.
-struct ListItemContent<Slot: View>: View {
+struct ListItemContent: View {
 
     // MARK: Properties
 
     let data: OUDSListItemData
-    let slot: Slot
     let indicatorType: OUDSNavigationListItemIndicatorType?
     let leading: OUDSListItemLeading?
     let trailing: OUDSListItemTrailing?
@@ -62,6 +61,12 @@ struct ListItemContent<Slot: View>: View {
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
 
+            if let bottomSlot = data.bottomSlot {
+                bottomSlot.view
+                    .padding(.horizontal, theme.listItem.spacePaddingInline)
+                    .padding(.bottom, theme.listItem.spacePaddingBlockSlotTextContainer)
+            }
+
             if let helperText = data.helperText {
                 ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)
             }
@@ -81,7 +86,7 @@ struct ListItemContent<Slot: View>: View {
     }
 
     private func textContainer() -> some View {
-        ListItemTextContainer(data: data, slot: slot, interactionState: interactionState)
+        ListItemTextContainer(data: data, interactionState: interactionState)
     }
 
     private func trailingContainer(_ trailing: OUDSListItemTrailing) -> some View {

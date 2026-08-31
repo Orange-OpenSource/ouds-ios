@@ -201,10 +201,24 @@ OUDSStaticListItem(
     leading: .flag(OUDSListItemFlag(asset: Image("flag_fr"), size: .medium))
 )
 
-// With slot (view under texts)
+// With slot (view under texts, before helper text)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "With slot"),
-    slot: Text("Additional content")
+    data: OUDSListItemData(label: "With slot", slot: { Text("Additional content") })
+)
+
+// With bottomSlot (view under main content, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "With bottom slot", bottomSlot: { Text("Bottom content") })
+)
+
+// With both slot and bottomSlot
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "Label",
+        slot: { Text("Slot content") },
+        bottomSlot: { Text("Bottom content") },
+        helperText: "Helper text"
+    )
 )
 
 // With a custom view in leading/trailing (e.g. a gauge for a remaining SMS credit)
@@ -245,10 +259,28 @@ OUDSNavigationListItem(
     // navigate
 }
 
-// With slot
+// With slot (view under texts, before helper text)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Settings"),
-    slot: Text("Configure options")
+    data: OUDSListItemData(label: "Settings", slot: { Text("Configure options") })
+) {
+    // navigate
+}
+
+// With bottomSlot (view under main content, before helper text)
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Profile", bottomSlot: { Text("Additional info") })
+) {
+    // navigate
+}
+
+// With both slot and bottomSlot
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Settings",
+        slot: { Text("Slot content") },
+        bottomSlot: { Text("Bottom content") },
+        helperText: "Helper text"
+    )
 ) {
     // navigate
 }

@@ -16,7 +16,7 @@ import SwiftUI
 /// A list item component used to display a row of static (non-interactive, non-navigable) content within a list.
 ///
 /// ``OUDSStaticListItem`` typically contains a label, and optionally a description, an overline, an extra label,
-/// and a helper text — all provided through ``OUDSListItemData``.
+/// a slot, a bottomSlot, and a helper text — all provided through ``OUDSListItemData``.
 /// It can also include an optional leading element (such as an icon, image, avatar, flag or custom view)
 /// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag or custom view).
 ///
@@ -49,7 +49,7 @@ import SwiftUI
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label", description: "Description"),
 ///         leading: .avatar(.init(type: .icon, size: .medium)),
-///         trailing: .text(.label(Info"))
+///         trailing: .text(.label("Info"))
 ///     )
 ///
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
@@ -58,6 +58,24 @@ import SwiftUI
 ///         trailing: .custom {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
+///     )
+///
+///     // List item with slot (displayed under texts, before helper text)
+///     OUDSStaticListItem(
+///         data: OUDSListItemData(
+///             label: "Label",
+///             slot: { Text("Additional content") },
+///             helperText: "Helper text"
+///         )
+///     )
+///
+///     // List item with bottomSlot (displayed under main content, before helper text)
+///     OUDSStaticListItem(
+///         data: OUDSListItemData(
+///             label: "Label",
+///             bottomSlot: { Text("Bottom content") },
+///             helperText: "Helper text"
+///         )
 ///     )
 /// ```
 ///
@@ -135,12 +153,11 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSStaticListItem<Slot: View>: View {
+public struct OUDSStaticListItem: View {
 
     // MARK: - Properties
 
     private let data: OUDSListItemData
-    private let slot: Slot
     private let leading: OUDSListItemLeading?
     private let trailing: OUDSListItemTrailing?
 
@@ -149,16 +166,9 @@ public struct OUDSStaticListItem<Slot: View>: View {
     // MARK: - Initializers
 
     /// Creates a list item to display static data, without interaction or navigation.
-    /// A slot (`View`) area is reserved under texts and before helper text.
-    ///
-    /// ```swift
-    ///     let data = OUDSListItemData(label: "Label", description: "Description")
-    ///     OUDSStaticListItem(data: data, slot: someView())
-    /// ```
     ///
     /// - Parameters:
-    ///    - data: The textual data of the item, including label, description, overline, extra label, and helper text.
-    ///    - slot: An element displayed under texts (at the bottom of the text container).
+    ///    - data: The textual data of the item, including label, description, overline, extra label, slot, bottomSlot, and helper text.
     ///    - leading: An optional element displayed at the leading position (before the texts).
     ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
     ///    - trailing: An optional element displayed at the trailing position (after the texts).
@@ -167,38 +177,10 @@ public struct OUDSStaticListItem<Slot: View>: View {
     /// - Note: Leading, trailing, and text containers can be aligned using the
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
     public init(data: OUDSListItemData,
-                slot: Slot,
                 leading: OUDSListItemLeading? = nil,
                 trailing: OUDSListItemTrailing? = nil)
     {
         self.data = data
-        self.leading = leading
-        self.trailing = trailing
-        self.slot = slot
-    }
-
-    /// Creates a list item to display static data, without interaction or navigation.
-    ///
-    /// ```swift
-    ///     let data = OUDSListItemData(label: "Label", description: "Description")
-    ///     OUDSStaticListItem(data: data)
-    /// ```
-    ///
-    /// - Parameters:
-    ///    - data: The textual data of the item, including label, description, overline, extra label, and helper text.
-    ///    - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
-    ///    - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
-    ///
-    /// - Note: Leading, trailing, and text containers can be aligned using the
-    ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
-    public init(data: OUDSListItemData,
-                leading: OUDSListItemLeading? = nil,
-                trailing: OUDSListItemTrailing? = nil) where Slot == EmptyView
-    {
-        self.data = data
-        slot = EmptyView()
         self.leading = leading
         self.trailing = trailing
     }
@@ -207,7 +189,6 @@ public struct OUDSStaticListItem<Slot: View>: View {
 
     public var body: some View {
         ListItemContent(data: data,
-                        slot: slot,
                         indicatorType: nil,
                         leading: leading,
                         trailing: trailing,

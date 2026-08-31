@@ -24,12 +24,11 @@ import SwiftUI
 /// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
 ///   as-is inside the label area. The provided `accessibilityLabel` is used in the combined
 ///   Voice Over vocalization.
-struct ListItemTextContainer<Slot: View>: View {
+struct ListItemTextContainer: View {
 
     // MARK: Properties
 
     let data: OUDSListItemData
-    let slot: Slot
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
@@ -89,9 +88,9 @@ struct ListItemTextContainer<Slot: View>: View {
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilityLabel)
 
-            if !(slot is EmptyView) {
-                slot
-                    .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer) // TODO: #265 - Not sure for these tokens
+            if let slot = data.slot {
+                slot.view
+                    .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)
             }
         }
         .padding(.top, topPadding)

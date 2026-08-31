@@ -125,6 +125,34 @@ OUDSStaticListItem(
     data: OUDSListItemData(label: "Status"),
     trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
 )
+
+// List item with slot (displayed under texts, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "With slot",
+        slot: { Text("Additional content") },
+        helperText: "Helper text"
+    )
+)
+
+// List item with bottomSlot (displayed under main content, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "With bottom slot",
+        bottomSlot: { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+)
+
+// List item with both slot and bottomSlot
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "Label",
+        slot: { Text("Slot content") },
+        bottomSlot: { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+)
 ```
 
 #### Navigable list item
@@ -201,6 +229,40 @@ OUDSNavigationListItem(
     leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product thumbnail", size: .medium))
 ) {
     // Navigate to product
+}
+
+// List item with slot (displayed under texts, before helper text)
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Settings",
+        slot: { Text("Configure options") },
+        helperText: "Helper text"
+    )
+) {
+    // Navigate to settings
+}
+
+// List item with bottomSlot (displayed under main content, before helper text)
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Profile",
+        bottomSlot: { Text("Additional info") },
+        helperText: "Helper text"
+    )
+) {
+    // Navigate to profile
+}
+
+// List item with both slot and bottomSlot
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Settings",
+        slot: { Text("Slot content") },
+        bottomSlot: { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+) {
+    // Navigate to settings
 }
 ```
 
