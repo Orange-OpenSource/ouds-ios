@@ -137,9 +137,12 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 
 | Type | Purpose |
 |------|---------|
-| `OUDSListItemData` | Textual data: label, description, overline, extraLabel, helperText |
-| `OUDSListItemLeading` | Leading element: icon, image, flag, avatar |
-| `OUDSListItemTrailing` | Trailing element: text, badge, tag, icon, image, flag, avatar |
+| `OUDSListItemData` | Textual data: label, description, overline, extraLabel, helperText, textSlot, bottomSlot |
+| `OUDSListItemLeading` | Leading element: icon, image, flag, avatar, custom view |
+| `OUDSListItemTrailing` | Trailing element: text, badge, tag, icon, image, flag, avatar, custom view |
+
+> `.custom { ... }` accepts any `@ViewBuilder` content (e.g. `OUDSCircularProgressIndicator`, custom control). Unlike `.flag`/`.avatar`,
+> it is **not** auto-hidden from accessibility — the custom view must carry its own accessibility label/value.
 
 **Shared view modifiers:**
 
@@ -198,10 +201,32 @@ OUDSStaticListItem(
     leading: .flag(OUDSListItemFlag(asset: Image("flag_fr"), size: .medium))
 )
 
-// With slot (view under texts)
+// With slot (view under texts, before helper text)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "With slot"),
-    slot: Text("Additional content")
+    data: OUDSListItemData(label: "With slot", textSlot: .init { Text("Additional content") })
+)
+
+// With bottomSlot (view under main content, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "With bottom slot", bottomSlot: .init { Text("Bottom content") })
+)
+
+// With both slot and bottomSlot
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "Label",
+        textSlot: { Text("Slot content") },
+        bottomSlot: { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+)
+
+// With a custom view in leading/trailing (e.g. a gauge for a remaining SMS credit)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "SMS credit"),
+    trailing: .custom {
+        OUDSCircularProgressIndicator(progress: 0.75)
+    }
 )
 ```
 
@@ -234,12 +259,40 @@ OUDSNavigationListItem(
     // navigate
 }
 
-// With slot
+// With slot (view under texts, before helper text)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Settings"),
-    slot: Text("Configure options")
+    data: OUDSListItemData(label: "Settings", textSlot: .init { Text("Configure options") })
 ) {
     // navigate
+}
+
+// With bottomSlot (view under main content, before helper text)
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Profile", bottomSlot: .init { Text("Additional info") })
+) {
+    // navigate
+}
+
+// With both slot and bottomSlot
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Settings",
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+) {
+    // navigate
+}
+
+// With a custom view in leading/trailing (e.g. a gauge for a remaining SMS credit)
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "SMS credit"),
+    trailing: .custom {
+        OUDSCircularProgressIndicator(progress: 0.75)
+    }
+) {
+    // navigate to SMS credit details
 }
 
 // With external link + badge

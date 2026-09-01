@@ -17,12 +17,11 @@ import SwiftUI
 
 /// The content for the ``OUDSStaticListItem`` and the ``OUDSNavigationListItem`` component described by the ``OUDSListItemData``.
 /// The layout (divider, background, size) are updated according to the interaction state ``OUDSButtonInteractionState``.
-struct ListItemContent<Slot: View>: View {
+struct ListItemContent: View {
 
     // MARK: Properties
 
     let data: OUDSListItemData
-    let slot: Slot
     let indicatorType: OUDSNavigationListItemIndicatorType?
     let leading: OUDSListItemLeading?
     let trailing: OUDSListItemTrailing?
@@ -36,23 +35,29 @@ struct ListItemContent<Slot: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            HStack(alignment: verticalAlignment, spacing: theme.listItem.spaceColumnGap) {
-                if indicatorType == .previous {
-                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                HStack(alignment: verticalAlignment, spacing: theme.listItem.spaceColumnGap) {
+                    if indicatorType == .previous {
+                        ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+                    }
+
+                    if let leading, shouldDisplay(leading: leading) {
+                        leadingContainer(leading)
+                    }
+
+                    textContainer()
+
+                    if let trailing, shouldDisplay(trailing: trailing) {
+                        trailingContainer(trailing)
+                    }
+
+                    if indicatorType == .next || indicatorType == .external {
+                        ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+                    }
                 }
 
-                if let leading {
-                    leadingContainer(leading)
-                }
-
-                textContainer()
-
-                if let trailing {
-                    trailingContainer(trailing)
-                }
-
-                if indicatorType == .next || indicatorType == .external {
-                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
+                if let bottomSlot = data.bottomSlot, itemSize != .small {
+                    bottomSlot.view
                 }
             }
             .padding(.top, topPadding)
@@ -81,11 +86,27 @@ struct ListItemContent<Slot: View>: View {
     }
 
     private func textContainer() -> some View {
-        ListItemTextContainer(data: data, slot: slot, interactionState: interactionState)
+        ListItemTextContainer(data: data, interactionState: interactionState)
     }
 
     private func trailingContainer(_ trailing: OUDSListItemTrailing) -> some View {
         ListItemTrailingContainer(trailing: trailing, interactionState: interactionState)
+    }
+
+    // MARK: Display helpers
+
+    private func shouldDisplay(leading: OUDSListItemLeading) -> Bool {
+        if case .slot = leading, itemSize == .small {
+            return false
+        }
+        return true
+    }
+
+    private func shouldDisplay(trailing: OUDSListItemTrailing) -> Bool {
+        if case .slot = trailing, itemSize == .small {
+            return false
+        }
+        return true
     }
 
     // MARK: Computed properties

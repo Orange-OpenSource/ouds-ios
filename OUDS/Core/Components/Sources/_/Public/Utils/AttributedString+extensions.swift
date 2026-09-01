@@ -18,6 +18,7 @@ import SwiftUI
 
 // MARK: - Attributed String Url Configuration
 
+// swiftlint:disable file_length
 // swiftlint:disable function_default_parameter_at_end
 
 /// Defines the configuration to apply for an URL available in a text so as to forge a styled `AttributedString` in the end.
@@ -276,6 +277,86 @@ extension AttributedString {
         return result
     }
 
+    // MARK: Utilities (from text, foreground colors and font, no URL)
+
+    /// Creates a new `AttributedString` object from a text defined in localizables, and applies
+    /// the given `token` as foreground color and the given `font`.
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` pointing to the text to display
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - token: The color to apply to the whole text, as OUDS token
+    ///    - font: The font to apply to the whole text
+    public static func from(_ key: LocalizedStringKey,
+                            tableName: String? = nil,
+                            bundle: Bundle = .main,
+                            foregroundColor token: ColorSemanticToken,
+                            font: Font) -> AttributedString
+    {
+        from(key, tableName: tableName, bundle: bundle, foregroundColor: Color(hexadecimalCode: token), font: font)
+    }
+
+    /// Creates a new `AttributedString` object from a text defined in localizables, and applies
+    /// the given `foregroundColor` and `font`.
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` pointing to the text to display
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - foregroundColor: The color to apply to the whole text
+    ///    - font: The font to apply to the whole text
+    public static func from(_ key: LocalizedStringKey,
+                            tableName: String? = nil,
+                            bundle: Bundle = .main,
+                            foregroundColor: Color?,
+                            font: Font) -> AttributedString
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        return from(text: resolvedText, foregroundColor: foregroundColor, font: font)
+    }
+
+    /// Creates a new `AttributedString` object from a text, and applies
+    /// the given `token` as foreground color and the given `font`.
+    ///
+    /// ```swift
+    ///     AttributedString.from(text: "Overline", foregroundColor: theme.colors.contentBrandPrimary, font: someFont)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - text: The text to style
+    ///    - token: The color to apply to the whole text, as OUDS token
+    ///    - font: The font to apply to the whole text
+    public static func from(text: String,
+                            foregroundColor token: ColorSemanticToken,
+                            font: Font) -> AttributedString
+    {
+        from(text: text, foregroundColor: Color(hexadecimalCode: token), font: font)
+    }
+
+    /// Creates a new `AttributedString` object from a text, and applies
+    /// the given `foregroundColor` and `font`.
+    ///
+    /// ```swift
+    ///     AttributedString.from(text: "Overline", foregroundColor: someColor, font: someFont)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - text: The text to style
+    ///    - foregroundColor: The color to apply to the whole text
+    ///    - font: The font to apply to the whole text
+    public static func from(text: String,
+                            foregroundColor: Color?,
+                            font: Font) -> AttributedString
+    {
+        var result = AttributedString(text)
+        var base = AttributeContainer()
+        base.foregroundColor = foregroundColor
+        base.font = font
+        result.mergeAttributes(base)
+        return result
+    }
+
     // MARK: Utilities (from text, foreground colors and URL configurations)
 
     /// Creates a new `AttributedString` object from a text defined in localizables, containing text shards which must be turned into hyperlinks.
@@ -470,3 +551,4 @@ extension AttributedString {
 }
 
 // swiftlint:enable function_default_parameter_at_end
+// swiftlint:enable file_length

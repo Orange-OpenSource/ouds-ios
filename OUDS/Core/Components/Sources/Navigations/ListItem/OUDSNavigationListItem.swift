@@ -22,9 +22,9 @@ import SwiftUI
 /// to communicate the type of navigation to the user.
 ///
 /// The item typically contains a label, and optionally a description, an overline, an extra label,
-/// and a helper text — all provided through ``OUDSListItemData``.
-/// It can also include an optional leading element (such as an icon, image, avatar, or flag)
-/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar or flag)
+/// a text slot, a bottom slot, and a helper text — all provided through ``OUDSListItemData``.
+/// It can also include an optional leading element (such as an icon, image, avatar, flag or custom view)
+/// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag or custom view)
 ///
 /// For non-interactive, display-only list items, see ``OUDSStaticListItem``.
 ///
@@ -73,6 +73,38 @@ import SwiftUI
 ///     ) {
 ///         // Navigate to profile
 ///     }
+///
+///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
+///     OUDSNavigationListItem(
+///         data: OUDSListItemData(label: "SMS credit"),
+///         trailing: .custom {
+///             OUDSCircularProgressIndicator(progress: 0.75)
+///         }
+///     ) {
+///         // Navigate to SMS credit details
+///     }
+///
+///     // List item with slot (displayed under texts, before helper text)
+///     OUDSNavigationListItem(
+///         data: OUDSListItemData(
+///             label: "Settings",
+///             textSlot: { Text("Configure options") },
+///             helperText: "Helper text"
+///         )
+///     ) {
+///         // Navigate to settings
+///     }
+///
+///     // List item with bottomSlot (displayed under main content, before helper text)
+///     OUDSNavigationListItem(
+///         data: OUDSListItemData(
+///             label: "Profile",
+///             bottomSlot: { Text("Additional info") },
+///             helperText: "Helper text"
+///         )
+///     ) {
+///         // Navigate to profile
+///     }
 /// ```
 ///
 /// ## Leading elements
@@ -82,6 +114,7 @@ import SwiftUI
 ///  - `.image(OUDSListItemImage)`: A static image asset
 ///  - `.flag(OUDSListItemFlag)`: A country flag image
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///  - `.custom { ... }`: Any custom SwiftUI view (e.g. a gauge)
 ///
 /// ## Trailing elements
 ///
@@ -97,6 +130,7 @@ import SwiftUI
 /// - `.image(OUDSListItemImage)`:  A static image asset
 /// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+/// - `.custom { ... }`: Any custom SwiftUI view
 ///
 /// ## View modifiers
 ///
@@ -154,12 +188,11 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSNavigationListItem<Slot: View>: View {
+public struct OUDSNavigationListItem: View {
 
     // MARK: Properties
 
     private let data: OUDSListItemData
-    private let slot: Slot
     private let indicatorType: OUDSNavigationListItemIndicatorType
     private let action: (() -> Void)?
     private let leading: OUDSListItemLeading?
@@ -167,77 +200,28 @@ public struct OUDSNavigationListItem<Slot: View>: View {
 
     // MARK: Initializers
 
-    /// Creates a navigable list item with textual data, an indicator type, and an optional action with additional slot.
-    /// A slot (`View`) area is reserved under texts and before helper text.
-    ///
-    /// ```swift
-    ///     let data = OUDSListItemData(label: "Label", description: "Description")
-    ///     OUDSNavigationListItem(data: data,
-    ///                            slot: someView(),
-    ///                            indicatorType: .external) {
-    ///         openURL(url)
-    ///     }
-    /// ```
+    /// Creates a navigable list item with textual data, an indicator type, and an optional action.
     ///
     /// - Parameters:
-    ///   - data: The textual data of the item, including label, description, overline, extra label, and helper text.
-    ///   - slot: An optional element displayed under texts (at the bottom of the text container).
+    ///   - data: The textual data of the item, including label, description, overline, extra label, slot, bottomSlot, and helper text.
     ///   - indicatorType: The type of navigation indicator to display. Defaults to `.next`.
     ///     See ``OUDSNavigationListItemIndicatorType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
+    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
     ///     **Note:** Ignored when `indicatorType` is `.previous`.
     ///   - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
     ///   - action: An optional closure triggered when the item is tapped.
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
     public init(data: OUDSListItemData,
-                slot: Slot,
                 indicatorType: OUDSNavigationListItemIndicatorType = .next,
                 leading: OUDSListItemLeading? = nil,
                 trailing: OUDSListItemTrailing? = nil,
                 action: (() -> Void)? = nil)
     {
         self.data = data
-        self.slot = slot
-        self.indicatorType = indicatorType
-        self.leading = leading
-        self.trailing = trailing
-        self.action = action
-    }
-
-    /// Creates a navigable list item with textual data, an indicator type, and an optional action but with no slot.
-    ///
-    /// ```swift
-    ///     let data = OUDSListItemData(label: "Label", description: "Description")
-    ///     OUDSNavigationListItem(data: data, indicatorType: .external) {
-    ///         openURL(url)
-    ///     }
-    /// ```
-    ///
-    /// - Parameters:
-    ///   - data: The textual data of the item, including label, description, overline, extra label, and helper text.
-    ///   - indicatorType: The type of navigation indicator to display. Defaults to `.next`.
-    ///     See ``OUDSNavigationListItemIndicatorType`` for available options (previous, next and external).
-    ///   - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar).
-    ///     **Note:** Ignored when `indicatorType` is `.previous`.
-    ///   - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar).
-    ///   - action: An optional closure triggered when the item is tapped.
-    ///
-    /// - Note: Leading, trailing, and text containers can be aligned using the
-    ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
-    public init(data: OUDSListItemData,
-                indicatorType: OUDSNavigationListItemIndicatorType = .next,
-                leading: OUDSListItemLeading? = nil,
-                trailing: OUDSListItemTrailing? = nil,
-                action: (() -> Void)? = nil) where Slot == EmptyView
-    {
-        self.data = data
-        slot = EmptyView()
         self.indicatorType = indicatorType
         self.leading = leading
         self.trailing = trailing
@@ -251,7 +235,6 @@ public struct OUDSNavigationListItem<Slot: View>: View {
             action?()
         } content: { interactionState in
             ListItemContent(data: data,
-                            slot: slot,
                             indicatorType: indicatorType,
                             leading: leading,
                             trailing: trailing,
