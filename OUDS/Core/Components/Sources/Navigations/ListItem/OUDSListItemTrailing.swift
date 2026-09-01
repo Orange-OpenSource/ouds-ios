@@ -110,7 +110,7 @@ import SwiftUI
 /// When the list item is displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``):
 /// - Trailing elements such as avatars and icons are rendered in their smallest available size.
 /// - The extra label in ``TextType/labelAndExtraLabel(_:_:)`` is **ignored**.
-/// - A `.custom` view is not resized automatically and must handle its own layout.
+/// - The `.slot` element is not resized automatically and is **not displayed**.
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -207,6 +207,9 @@ import SwiftUI
     ///
     /// The custom view is responsible for its own accessibility: unlike `.flag` and `.avatar`,
     /// it is **not** automatically hidden from assistive technologies.
+    ///
+    /// **Note:** Not displayed when the list item is in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``),
+    /// since its layout cannot be adapted automatically to the reduced space.
     case slot(AnyView)
 
     /// Creates a ``slot(_:)`` trailing element from a `@ViewBuilder` closure.

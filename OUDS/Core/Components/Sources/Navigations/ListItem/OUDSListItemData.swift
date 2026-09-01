@@ -108,8 +108,10 @@ import SwiftUI
 /// the `overline` and `extraLabel` properties are **automatically hidden** to ensure a compact layout.
 /// Only the `label`, `description`, and `helperText` remain visible.
 ///
+/// The `bottomSlot` is also **automatically hidden**, but the `textSlot` remains displayed.
+///
 /// ```swift
-///     // overline and extraLabel will not be displayed
+///     // overline, extraLabel and bottomSlot will not be displayed
 ///     OUDSStaticListItem(data: OUDSListItemData(
 ///         label: "Label",
 ///         overline: "Hidden in small",
@@ -245,6 +247,8 @@ public struct OUDSListItemData {
     ///
     /// This slot is positioned below the main row content and above the helper text.
     /// It is useful for displaying additional information that should be visually separated from the main texts.
+    ///
+    /// **Note:** Not displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``).
     let bottomSlot: Slot?
 
     // MARK: - Initializers

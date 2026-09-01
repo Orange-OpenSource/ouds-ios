@@ -41,13 +41,13 @@ struct ListItemContent: View {
                         ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                     }
 
-                    if let leading {
+                    if let leading, shouldDisplay(leading: leading) {
                         leadingContainer(leading)
                     }
 
                     textContainer()
 
-                    if let trailing {
+                    if let trailing, shouldDisplay(trailing: trailing) {
                         trailingContainer(trailing)
                     }
 
@@ -56,7 +56,7 @@ struct ListItemContent: View {
                     }
                 }
 
-                if let bottomSlot = data.bottomSlot {
+                if let bottomSlot = data.bottomSlot, itemSize != .small {
                     bottomSlot.view
                 }
             }
@@ -91,6 +91,22 @@ struct ListItemContent: View {
 
     private func trailingContainer(_ trailing: OUDSListItemTrailing) -> some View {
         ListItemTrailingContainer(trailing: trailing, interactionState: interactionState)
+    }
+
+    // MARK: Display helpers
+
+    private func shouldDisplay(leading: OUDSListItemLeading) -> Bool {
+        if case .slot = leading, itemSize == .small {
+            return false
+        }
+        return true
+    }
+
+    private func shouldDisplay(trailing: OUDSListItemTrailing) -> Bool {
+        if case .slot = trailing, itemSize == .small {
+            return false
+        }
+        return true
     }
 
     // MARK: Computed properties
