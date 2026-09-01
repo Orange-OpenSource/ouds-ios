@@ -130,7 +130,7 @@ OUDSStaticListItem(
 OUDSStaticListItem(
     data: OUDSListItemData(
         label: "With slot",
-        textSlot: { Text("Additional content") },
+        textSlot: .init { Text("Additional content") },
         helperText: "Helper text"
     )
 )
@@ -139,7 +139,7 @@ OUDSStaticListItem(
 OUDSStaticListItem(
     data: OUDSListItemData(
         label: "With bottom slot",
-        bottomSlot: { Text("Bottom content") },
+        bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
 )
@@ -148,8 +148,8 @@ OUDSStaticListItem(
 OUDSStaticListItem(
     data: OUDSListItemData(
         label: "Label",
-        textSlot: { Text("Slot content") },
-        bottomSlot: { Text("Bottom content") },
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
 )
@@ -235,7 +235,7 @@ OUDSNavigationListItem(
 OUDSNavigationListItem(
     data: OUDSListItemData(
         label: "Settings",
-        textSlot: { Text("Configure options") },
+        textSlot: .init { Text("Configure options") },
         helperText: "Helper text"
     )
 ) {
@@ -246,7 +246,7 @@ OUDSNavigationListItem(
 OUDSNavigationListItem(
     data: OUDSListItemData(
         label: "Profile",
-        bottomSlot: { Text("Additional info") },
+        bottomSlot: .init { Text("Additional info") },
         helperText: "Helper text"
     )
 ) {

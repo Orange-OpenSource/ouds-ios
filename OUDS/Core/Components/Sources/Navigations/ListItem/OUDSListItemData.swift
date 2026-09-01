@@ -100,7 +100,7 @@ import SwiftUI
 /// - The `hasBoldLabel` property is not applicable; all styling is controlled by the provided view.
 /// - You must provide an `accessibilityLabel` parameter so that Voice Over can vocalize the label.
 ///   This `accessibilityLabel` is used in the combined accessibility label of the list item text container.
-/// - You msut also check the accessibility of your custom views (navigation with switch control and full keybaord access, dynamic types, contrat ratios)
+/// - You must also check the accessibility of your custom views (navigation with switch control and full keyboard access, dynamic types, contrast ratios)
 ///
 /// ## Small size behavior
 ///
@@ -134,15 +134,12 @@ public struct OUDSListItemData {
     /// ```
     ///
     /// - Since: 3.0.0
-    public struct Slot: Equatable {
+    public struct Slot {
         let view: AnyView
 
+        /// Defines as `AnyView`  the result of `content` to be added in the `list item`  component
         public init(@ViewBuilder content: () -> some View) {
             view = AnyView(content())
-        }
-
-        public static func == (lhs: Slot, rhs: Slot) -> Bool {
-            false
         }
     }
 

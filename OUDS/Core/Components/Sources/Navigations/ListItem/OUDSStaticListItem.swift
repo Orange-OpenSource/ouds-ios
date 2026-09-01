@@ -64,7 +64,7 @@ import SwiftUI
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(
 ///             label: "Label",
-///             slot: { Text("Additional content") },
+///             textSlot: { Text("Additional content") },
 ///             helperText: "Helper text"
 ///         )
 ///     )

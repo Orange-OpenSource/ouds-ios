@@ -137,7 +137,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 
 | Type | Purpose |
 |------|---------|
-| `OUDSListItemData` | Textual data: label, description, overline, extraLabel, helperText |
+| `OUDSListItemData` | Textual data: label, description, overline, extraLabel, helperText, textSlot, bottomSlot |
 | `OUDSListItemLeading` | Leading element: icon, image, flag, avatar, custom view |
 | `OUDSListItemTrailing` | Trailing element: text, badge, tag, icon, image, flag, avatar, custom view |
 
@@ -203,12 +203,12 @@ OUDSStaticListItem(
 
 // With slot (view under texts, before helper text)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "With slot", textSlot: { Text("Additional content") })
+    data: OUDSListItemData(label: "With slot", textSlot: .init { Text("Additional content") })
 )
 
 // With bottomSlot (view under main content, before helper text)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "With bottom slot", bottomSlot: { Text("Bottom content") })
+    data: OUDSListItemData(label: "With bottom slot", bottomSlot: .init { Text("Bottom content") })
 )
 
 // With both slot and bottomSlot
@@ -261,14 +261,14 @@ OUDSNavigationListItem(
 
 // With slot (view under texts, before helper text)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Settings", textSlot: { Text("Configure options") })
+    data: OUDSListItemData(label: "Settings", textSlot: .init { Text("Configure options") })
 ) {
     // navigate
 }
 
 // With bottomSlot (view under main content, before helper text)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Profile", bottomSlot: { Text("Additional info") })
+    data: OUDSListItemData(label: "Profile", bottomSlot: .init { Text("Additional info") })
 ) {
     // navigate
 }
@@ -277,8 +277,8 @@ OUDSNavigationListItem(
 OUDSNavigationListItem(
     data: OUDSListItemData(
         label: "Settings",
-        textSlot: { Text("Slot content") },
-        bottomSlot: { Text("Bottom content") },
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
 ) {

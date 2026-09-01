@@ -28,7 +28,7 @@ import SwiftUI
 /// - `image`: A static image asset (see ``OUDSListItemImage``).
 /// - `flag`: A country flag image (see ``OUDSListItemFlag``).
 /// - `avatar`: An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
-/// - `custom`: Any custom SwiftUI view, e.g. any bespoke view.
+/// - `slot`: Any custom SwiftUI view, e.g. any bespoke view.
 ///
 /// ## Code samples
 ///
@@ -63,7 +63,7 @@ import SwiftUI
 ///     // Leading with a custom view, e.g. a gauge showing a remaining SMS credit
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "SMS credit"),
-///         leading: .custom {
+///         leading: .slot {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
 ///     )

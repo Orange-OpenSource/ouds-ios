@@ -28,7 +28,7 @@ import SwiftUI
 /// - `image(_:)`: A static image asset (see ``OUDSListItemImage``).
 /// - `flag(_:)`: A country flag image (see ``OUDSListItemFlag``).
 /// - `avatar(_:)`:  An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
-/// - `custom(_:)`: Any custom SwiftUI view, e.g. any bespoke view.
+/// - `slot(_:)`: Any custom SwiftUI view, e.g. any bespoke view.
 ///
 /// ## Code samples
 ///
