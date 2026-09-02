@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import SwiftUI
 
 /// ``OUDSAnimatedImage`` is a SwiftUI view able to play animated **GIF** and **WebP** images.
@@ -33,6 +34,10 @@ import SwiftUI
 /// frame when:
 /// - "Reduce Motion" accessibility setting is enabled, or
 /// - Low Power Mode is enabled.
+///
+/// > Note: Low Power Mode detection relies on ``OUDSLowPowerModeObserver``, injected as an environment
+/// > object by ``OUDSThemeableView``. Make sure ``OUDSAnimatedImage`` is used inside a view hierarchy
+/// > rooted by ``OUDSThemeableView`` for this behavior to work.
 ///
 /// ## Code samples
 ///
@@ -187,6 +192,7 @@ private struct DecodedAnimatedImageView: View {
     @State private var content: AnimatedImageContent?
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
 
     var body: some View {
         Group {
@@ -211,7 +217,7 @@ private struct DecodedAnimatedImageView: View {
     /// The animation must be paused (first frame only) when the user asked for reduced motion,
     /// or when the device is in Low Power Mode, to save battery.
     private var shouldAnimate: Bool {
-        !reduceMotion && !ProcessInfo.processInfo.isLowPowerModeEnabled
+        !reduceMotion && !lowPowerModeObserver.isLowPowerModeEnabled
     }
 
     @ViewBuilder
