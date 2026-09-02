@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "port-usb-key.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

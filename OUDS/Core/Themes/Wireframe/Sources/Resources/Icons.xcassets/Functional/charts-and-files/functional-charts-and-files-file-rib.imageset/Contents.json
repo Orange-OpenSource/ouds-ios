@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "file-rib.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

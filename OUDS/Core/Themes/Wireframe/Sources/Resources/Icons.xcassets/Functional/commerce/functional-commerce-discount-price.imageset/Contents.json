@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "discount-price.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

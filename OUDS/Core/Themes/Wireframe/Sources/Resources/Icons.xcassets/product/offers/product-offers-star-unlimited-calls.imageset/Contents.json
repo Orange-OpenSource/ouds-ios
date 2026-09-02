@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "star-unlimited-calls.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

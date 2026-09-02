@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "message-group-question.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

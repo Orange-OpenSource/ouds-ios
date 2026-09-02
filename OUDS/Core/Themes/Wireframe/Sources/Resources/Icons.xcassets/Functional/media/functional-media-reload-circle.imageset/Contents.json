@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "reload-circle.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

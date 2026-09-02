@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wifi-off.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

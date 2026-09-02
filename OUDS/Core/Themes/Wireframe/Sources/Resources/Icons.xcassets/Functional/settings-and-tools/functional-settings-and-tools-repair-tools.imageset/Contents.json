@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "repair-tools.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

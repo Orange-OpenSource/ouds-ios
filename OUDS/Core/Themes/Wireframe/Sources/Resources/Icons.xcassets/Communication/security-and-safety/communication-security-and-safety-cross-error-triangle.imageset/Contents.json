@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cross-error-triangle.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

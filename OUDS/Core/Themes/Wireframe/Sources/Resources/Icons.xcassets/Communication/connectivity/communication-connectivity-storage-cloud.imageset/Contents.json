@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "storage-cloud.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

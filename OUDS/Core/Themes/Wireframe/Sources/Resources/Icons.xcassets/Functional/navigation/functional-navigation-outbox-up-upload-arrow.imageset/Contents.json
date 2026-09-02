@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "outbox-up-upload-arrow.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

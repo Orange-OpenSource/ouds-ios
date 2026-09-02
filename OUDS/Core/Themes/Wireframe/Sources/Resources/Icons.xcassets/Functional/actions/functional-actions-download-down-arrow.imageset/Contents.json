@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "download-down-arrow.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

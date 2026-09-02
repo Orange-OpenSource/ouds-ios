@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "video-on-demand.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

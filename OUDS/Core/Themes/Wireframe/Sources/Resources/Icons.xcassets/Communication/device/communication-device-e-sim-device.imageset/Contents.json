@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "e-sim-device.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

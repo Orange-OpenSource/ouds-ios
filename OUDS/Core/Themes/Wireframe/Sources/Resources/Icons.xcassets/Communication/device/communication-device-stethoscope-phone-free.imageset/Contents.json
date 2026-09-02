@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "stethoscope-phone-free.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

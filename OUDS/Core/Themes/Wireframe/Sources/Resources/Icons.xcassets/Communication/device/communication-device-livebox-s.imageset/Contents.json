@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "livebox-s.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "day-and-night.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

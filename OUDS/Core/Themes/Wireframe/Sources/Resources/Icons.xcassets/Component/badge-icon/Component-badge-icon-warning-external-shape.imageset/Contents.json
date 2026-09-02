@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "warning-external-shape.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

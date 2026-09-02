@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "connected-wearables.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tower-network.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

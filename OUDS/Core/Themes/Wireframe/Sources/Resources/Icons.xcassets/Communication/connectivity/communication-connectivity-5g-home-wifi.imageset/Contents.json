@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "5g-home-wifi.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
