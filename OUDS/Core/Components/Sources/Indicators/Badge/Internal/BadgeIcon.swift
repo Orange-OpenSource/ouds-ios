@@ -32,11 +32,11 @@ struct BadgeIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSImage(assetName: "Component-badge-icon-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
-                        OUDSImage(assetName: "Component-badge-icon-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        OUDSImage(name: "Component-badge-icon-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        OUDSImage(name: "Component-badge-icon-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
                     }
                 } else {
-                    OUDSImage(assetName: "Component-badge-icon-warning-external-shape", color: theme.colors.actionDisabled)
+                    OUDSImage(name: "Component-badge-icon-warning-external-shape", color: theme.colors.actionDisabled)
                 }
             default:
                 image

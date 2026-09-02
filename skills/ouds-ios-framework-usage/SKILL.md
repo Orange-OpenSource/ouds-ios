@@ -143,12 +143,12 @@ Exception: `Image(decorative: "name")` suppresses the linter rule automatically 
 
 ### Displaying an icon from OUDS's own icon library by name
 
-`OUDSImage(assetName:)` loads an icon directly from the active theme's icon library (resolved via
+`OUDSImage(name:)` loads an icon directly from the active theme's icon library (resolved via
 `theme.resourcesBundle` through the `theme` environment value), instead of an asset bundled in your
 own app:
 
 ```swift
-OUDSImage(assetName: "patate", accessibilityLabel: "Patate")
+OUDSImage(name: "patate", accessibilityLabel: "Patate")
 ```
 
 ⚠️ Icon names from OUDS's own library are **not guaranteed to be stable across OUDS versions** (they

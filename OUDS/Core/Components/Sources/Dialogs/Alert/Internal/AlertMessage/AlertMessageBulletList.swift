@@ -31,7 +31,7 @@ struct AlertMessageBulletListItem: View {
     var body: some View {
         HStack(alignment: .top, spacing: theme.bulletList.spaceColumnGapBodyMedium) {
             HStack(alignment: .center) {
-                OUDSImage(assetName: "Component-bullet-list-bullet-level-0", color: foregroundColor)
+                OUDSImage(name: "Component-bullet-list-bullet-level-0", color: foregroundColor)
                     .frame(width: iconSize, height: iconSize)
             }
             .frame(width: width, alignment: .trailing)

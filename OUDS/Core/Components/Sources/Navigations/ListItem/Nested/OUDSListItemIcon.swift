@@ -163,8 +163,8 @@ public struct OUDSListItemIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSImage(assetName: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                        OUDSImage(assetName: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        OUDSImage(name: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        OUDSImage(name: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
                     }
                 } else {
                     asset.foregroundColor(theme.colors.actionDisabled)
