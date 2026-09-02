@@ -42,3 +42,6 @@
 
 # Produced by .gitlab-ci.yml
 /.cache/
+
+# Produced by scripts/import-icons.sh
+/scripts/.icon-import-logs/
