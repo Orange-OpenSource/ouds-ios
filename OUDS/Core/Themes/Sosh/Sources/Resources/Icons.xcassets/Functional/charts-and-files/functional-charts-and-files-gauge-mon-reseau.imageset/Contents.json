@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "gauge-mon-reseau.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

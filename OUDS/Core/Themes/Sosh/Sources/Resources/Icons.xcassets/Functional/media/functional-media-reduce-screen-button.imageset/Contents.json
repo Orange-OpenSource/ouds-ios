@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "reduce-screen-button.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

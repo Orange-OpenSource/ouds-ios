@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "device-foldable-phone.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

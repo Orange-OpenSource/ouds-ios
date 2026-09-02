@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tv-set-top-box.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

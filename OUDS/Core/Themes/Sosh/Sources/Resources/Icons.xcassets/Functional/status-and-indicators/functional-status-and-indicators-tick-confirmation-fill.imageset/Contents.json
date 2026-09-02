@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tick-confirmation-fill.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

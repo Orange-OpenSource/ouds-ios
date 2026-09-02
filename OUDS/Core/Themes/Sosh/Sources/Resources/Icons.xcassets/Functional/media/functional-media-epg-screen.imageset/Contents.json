@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "epg-screen.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

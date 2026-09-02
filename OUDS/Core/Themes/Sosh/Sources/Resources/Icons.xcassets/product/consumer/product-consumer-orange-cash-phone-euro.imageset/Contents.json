@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-cash-phone-euro.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "djingo-speaker-mini.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

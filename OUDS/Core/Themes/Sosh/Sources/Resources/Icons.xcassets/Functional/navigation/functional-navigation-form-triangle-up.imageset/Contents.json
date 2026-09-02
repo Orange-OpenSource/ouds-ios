@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "form-triangle-up.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

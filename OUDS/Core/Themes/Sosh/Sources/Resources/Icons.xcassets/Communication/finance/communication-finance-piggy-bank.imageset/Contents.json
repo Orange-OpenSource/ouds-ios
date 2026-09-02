@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "piggy-bank.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

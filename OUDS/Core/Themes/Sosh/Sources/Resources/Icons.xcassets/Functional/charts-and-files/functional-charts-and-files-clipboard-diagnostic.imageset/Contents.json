@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "clipboard-diagnostic.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

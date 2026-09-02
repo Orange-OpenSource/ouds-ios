@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tips-and-tricks.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

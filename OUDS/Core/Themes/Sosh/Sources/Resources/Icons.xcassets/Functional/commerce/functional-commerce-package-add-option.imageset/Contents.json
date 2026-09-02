@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "package-add-option.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-radio.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

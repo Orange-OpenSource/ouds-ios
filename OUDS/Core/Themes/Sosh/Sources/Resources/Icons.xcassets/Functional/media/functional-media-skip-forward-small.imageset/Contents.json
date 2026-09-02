@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "skip-forward-small.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
