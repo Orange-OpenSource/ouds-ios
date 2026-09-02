@@ -48,6 +48,10 @@ import SwiftUI
 ///     // Async image from URL
 ///     OUDSListItemImage(asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image")
 ///
+///     // Animated image (GIF or WebP) from URL
+///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
+///                       description: "An animated image")
+///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Information"),
@@ -173,17 +177,52 @@ public struct OUDSListItemImage: View {
         self.description = description
     }
 
+    /// Creates an image element for use in a list item at the leading or trailing position with an animated
+    /// image (GIF or WebP).
+    ///
+    /// ```swift
+    ///     // Animated image from a remote URL
+    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
+    ///                       description: "An animated image")
+    ///
+    ///     // Animated image from a local file bundled with the app (not an .xcassets entry)
+    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(named: "loading_spinner", withExtension: "gif"),
+    ///                       description: "An animated image")
+    ///
+    ///     // Animated image from local data (e.g. already downloaded and cached by the caller)
+    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(data: myWebPData),
+    ///                       description: "An animated image",
+    ///                       size: .large)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - animatedImage: The animated image to play (created with ``OUDSAnimatedImage``)
+    ///   - description: The description of the image for accessibility
+    ///   - size: The size of the icon. Defaults to `.medium`.
+    ///     **Note:** Ignored when the icon is embedded in a list item with small size
+    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///   - ratio: Ratio of the image. By default a `square` image.
+    ///   - contentMode: A flag indicating whether this view should fit or fill the parent context. Default set to `.fit`.
+    public init(animatedImage: OUDSAnimatedImage, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
+        imageType = .animated(AnyView(animatedImage))
+        self.size = size
+        self.ratio = ratio
+        self.contentMode = contentMode
+        self.description = description
+    }
+
     // MARK: Image Type
 
     /// Defines the type of image displayed in the list item.
-    ///
-    /// - Since: 3.0.0
-    @frozen public enum ImageType {
+    enum ImageType {
         /// A static image asset.
         case asset(Image)
 
         /// An async image loaded from a URL.
         case asyncImage(AnyView)
+
+        /// An animated image (GIF or WebP).
+        case animated(AnyView)
     }
 
     // MARK: Body
@@ -207,6 +246,9 @@ public struct OUDSListItemImage: View {
                 .resizable()
                 .aspectRatio(contentMode: contentMode)
         case let .asyncImage(anyView):
+            anyView
+                .aspectRatio(contentMode: contentMode)
+        case let .animated(anyView):
             anyView
                 .aspectRatio(contentMode: contentMode)
         }
