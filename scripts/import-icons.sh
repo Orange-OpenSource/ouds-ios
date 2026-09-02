@@ -22,11 +22,13 @@
 # Component/, functional/, product/, with nested subfolders).
 #
 # For each theme found in the ZIP, this script:
-#   1. Wipes all existing group folders in the theme's Icons.xcassets (keeps the root Contents.json)
-#   2. Recreates the exact same folder hierarchy as in the ZIP under Icons.xcassets
+#   1. Wipes the theme's Icons.xcassets/Icons/ folder (creates it if missing). This folder is
+#      dedicated to icons imported from the designer ZIP; any other folder in Icons.xcassets
+#      (e.g. legacy "Components/", "_/") is left untouched and never modified by this script.
+#   2. Recreates the exact same folder hierarchy as in the ZIP under Icons.xcassets/Icons/
 #   3. Creates one .imageset per .svg file, named after its full relative path (flattened with '-')
 #      to guarantee uniqueness across the whole asset catalog namespace, e.g.:
-#        Component/accordion/expanded-true.svg -> Component/accordion/Component-accordion-expanded-true.imageset
+#        Component/accordion/expanded-true.svg -> Icons/Component/accordion/Component-accordion-expanded-true.imageset
 #   4. Compares the previous and new set of icons (by name and by SVG content) and logs added,
 #      removed and modified icons, both as a console summary and as detailed report files under
 #      scripts/.icon-import-logs/<theme>-<timestamp>/.
@@ -192,6 +194,7 @@ report_diff() {
 import_theme() {
     local theme_name="$1"
     local dest_xcassets="$2"
+    local icons_group_dir="$dest_xcassets/Icons"
 
     local src_dir
     src_dir="$(find "$TMP_DIR" -type d -iname "$theme_name" | head -1)"
@@ -209,22 +212,20 @@ import_theme() {
     echo ""
     echo "=== Importing theme '$theme_name' ==="
     echo "Source:      $src_dir"
-    echo "Destination: $dest_xcassets"
+    echo "Destination: $icons_group_dir"
 
     # 0. Snapshot the current state (name -> svg hash) before wiping anything
     local before_snapshot after_snapshot
     before_snapshot="$TMP_DIR/${theme_name}-before.tsv"
     after_snapshot="$TMP_DIR/${theme_name}-after.tsv"
-    snapshot_state "$dest_xcassets" "$before_snapshot"
+    snapshot_state "$icons_group_dir" "$before_snapshot"
 
-    # 1. Wipe existing group folders (keep the root Contents.json)
-    find "$dest_xcassets" -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} +
+    # 1. Wipe the Icons/ group only (never touch other folders of Icons.xcassets, e.g. legacy "Components/", "_/")
+    rm -rf "$icons_group_dir"
+    mkdir -p "$icons_group_dir"
+    write_group_contents_json "$icons_group_dir"
 
-    if [ ! -f "$dest_xcassets/Contents.json" ]; then
-        write_group_contents_json "$dest_xcassets"
-    fi
-
-    # 2. Copy every svg found, rebuilding the same hierarchy
+    # 2. Copy every svg found, rebuilding the same hierarchy under Icons/
     local count=0
     local skipped=0
 
@@ -240,9 +241,9 @@ import_theme() {
         flat="${flat//\//-}"
 
         if [ "$reldir" = "." ]; then
-            target_group_dir="$dest_xcassets"
+            target_group_dir="$icons_group_dir"
         else
-            target_group_dir="$dest_xcassets/$reldir"
+            target_group_dir="$icons_group_dir/$reldir"
         fi
 
         mkdir -p "$target_group_dir"
@@ -266,17 +267,17 @@ import_theme() {
         fi
     done < <(find "$src_dir" -type f ! -iname "*.svg" -print0)
 
-    # 4. Ensure every intermediate group folder has a Contents.json
+    # 4. Ensure every intermediate group folder under Icons/ has a Contents.json
     while IFS= read -r -d '' dir; do
         if [ ! -f "$dir/Contents.json" ]; then
             write_group_contents_json "$dir"
         fi
-    done < <(find "$dest_xcassets" -type d ! -iname "*.imageset" -print0)
+    done < <(find "$icons_group_dir" -type d ! -iname "*.imageset" -print0)
 
     echo "Imported $count icon(s) for theme '$theme_name' (ignored $skipped non-svg file(s))."
 
     # 5. Snapshot the new state and report the diff against the previous state
-    snapshot_state "$dest_xcassets" "$after_snapshot"
+    snapshot_state "$icons_group_dir" "$after_snapshot"
     report_diff "$theme_name" "$before_snapshot" "$after_snapshot"
 }
 
