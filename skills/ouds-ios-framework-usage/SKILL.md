@@ -141,6 +141,22 @@ The `// swiftlint:disable:next accessibility_label_for_image` comment must appea
 
 Exception: `Image(decorative: "name")` suppresses the linter rule automatically and needs no comment.
 
+### Displaying an icon from OUDS's own icon library by name
+
+`OUDSImage(assetName:)` loads an icon directly from the active theme's icon library (resolved via
+`theme.resourcesBundle` through the `theme` environment value), instead of an asset bundled in your
+own app:
+
+```swift
+OUDSImage(assetName: "patate", accessibilityLabel: "Patate")
+```
+
+⚠️ Icon names from OUDS's own library are **not guaranteed to be stable across OUDS versions** (they
+are generated from the design team's icon source files) and **can differ from one theme to another**.
+Because the name is a plain `String`, a missing/renamed icon is **not caught at compile time** — it
+silently stops being displayed. Prefer `OUDSImage(asset:)` with your own bundled asset for icons your
+app depends on for critical UI.
+
 ---
 
 ## 7. Registering custom fonts

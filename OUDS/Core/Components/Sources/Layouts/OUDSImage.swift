@@ -29,6 +29,9 @@ import SwiftUI
 ///
 ///     // Display an image but without tints and in original mode
 ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
+///
+///     // Display an icon from the active theme's own icon library, by name
+///     OUDSImage(assetName: "patate", accessibilityLabel: "Patate")
 /// ```
 ///
 /// - Since: 1.3.0
@@ -106,21 +109,39 @@ public struct OUDSImage: View {
         self.renderingMode = renderingMode
     }
 
-    /// Create the icon from its name.
-    /// Internal usage to load asset from theme.
+    /// Create the icon from its name, loaded from the active theme's own icon library.
+    ///
+    /// ```swift
+    ///     OUDSImage(assetName: "communication-assistance-avatar-training-session", accessibilityLabel: "Assistance")
+    /// ```
+    ///
+    /// - Warning: The available icon names are **not guaranteed to be stable across OUDS versions**.
+    ///   They are generated from the design team's icon source files, and an icon can be renamed,
+    ///   moved or removed between two releases without notice. Because the name is resolved as a
+    ///   plain `String`, such a change will **not** be caught at compile time: the icon will simply
+    ///   stop being displayed.
+    ///
+    /// - Warning: The set of available icons can also differ from one theme to another. An icon
+    ///   name that exists for a given theme may not exist for another one.
     ///
     /// - Parameters:
-    ///    - assetName: The name of the asset to load as icon
+    ///    - assetName: The name of the icon to load from the active theme's icon library
     ///    - flipped: If asset must be flipped, default set to `false`
     ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
     ///    - color: The color to apply to the icon, default set to `nil`
-    init(assetName: String, flipped: Bool = false, accessibilityLabel: String? = nil, color: MultipleColorSemanticToken? = nil) {
+    ///    - renderingMode: By default set to `.template`, allows to apply colors on given `asset` or not
+    public init(assetName: String,
+                flipped: Bool = false,
+                accessibilityLabel: String? = nil,
+                color: MultipleColorSemanticToken? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template)
+    {
         self.assetName = assetName
         asset = nil
         self.flipped = flipped
         self.accessibilityLabel = accessibilityLabel
         self.color = color
-        renderingMode = .template
+        self.renderingMode = renderingMode
     }
 
     // MARK: Body
