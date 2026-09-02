@@ -25,9 +25,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ## OUDS / Core / Themes / Orange
 
 ./OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/Resources/_/ic_theme_orange.png
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Typography/ic_typography_heading_marker.imageset/ic_typography_heading_marker.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/Typography/ic_typography_heading_marker.imageset/ic_typography_heading_marker.svg
 
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Icons/
 
@@ -39,8 +38,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/Resources/_/ic_theme_sosh.png
 
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
 
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Icons/
 
@@ -54,9 +52,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./OUDS/Core/Themes/Wireframe/Sources/_OUDSThemesWireframe.docc/Resources/_/ic_theme_wireframe.png
 
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Typography/ic_typography_heading_marker.imageset/ic_typography_heading_marker.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/Typography/ic_typography_heading_marker.imageset/ic_typography_heading_marker.svg
 
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Icons/
 

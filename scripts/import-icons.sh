@@ -24,7 +24,7 @@
 # For each theme found in the ZIP, this script:
 #   1. Wipes the theme's Icons.xcassets/Icons/ folder (creates it if missing). This folder is
 #      dedicated to icons imported from the designer ZIP; any other folder in Icons.xcassets
-#      (e.g. legacy "Components/", "_/") is left untouched and never modified by this script.
+#      (e.g. legacy "_/") is left untouched and never modified by this script.
 #   2. Recreates the exact same folder hierarchy as in the ZIP under Icons.xcassets/Icons/
 #   3. Creates one .imageset per .svg file, named after its full relative path (flattened with '-')
 #      to guarantee uniqueness across the whole asset catalog namespace, e.g.:
@@ -41,21 +41,34 @@
 
 set -euo pipefail
 
-# MARK: - Arguments
+SECONDS=0
+
+# Exit codes
+# ----------
+
+EXIT_OK=0
+EXIT_BAD_PARAMETERS=1
+EXIT_NOT_ZIP_FILE=2
+EXIT_CANNOT_COMPARE=3
+EXIT_EMPTY_SOURCE=4
+
+# Arguments
+# ---------
 
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <path-to-icons.zip>"
-    exit 1
+    exit $EXIT_BAD_PARAMETERS
 fi
 
 ZIP_PATH="$1"
 
 if [ ! -f "$ZIP_PATH" ]; then
     echo "error: file not found: $ZIP_PATH"
-    exit 1
+    exit $EXIT_NOT_ZIP_FILE
 fi
 
-# MARK: - Setup
+# Configuration, logs and errors
+# ------------------------------
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
@@ -74,13 +87,11 @@ elif command -v sha256sum >/dev/null 2>&1; then
     sha256_of() { sha256sum "$1" | awk '{print $1}'; }
 else
     echo "error: neither 'shasum' nor 'sha256sum' is available on this system."
-    exit 1
+    exit $EXIT_CANNOT_COMPARE
 fi
 
-echo "Unzipping '$ZIP_PATH'..."
-unzip -q "$ZIP_PATH" -d "$TMP_DIR"
-
-# MARK: - Helpers
+# Functions
+# ---------
 
 # Writes a minimal group Contents.json (used for the root and every intermediate folder)
 write_group_contents_json() {
@@ -197,7 +208,7 @@ import_theme() {
     local icons_group_dir="$dest_xcassets/Icons"
 
     local src_dir
-    src_dir="$(find "$TMP_DIR" -type d -iname "$theme_name" | head -1)"
+    src_dir="$(find "$TMP_DIR" -type d -iname "$theme_name" -not -path "*/__MACOSX/*" | head -1)"
 
     if [ -z "$src_dir" ]; then
         echo "warning: no '$theme_name' folder found in the zip, skipping."
@@ -207,6 +218,15 @@ import_theme() {
     if [ ! -d "$dest_xcassets" ]; then
         echo "warning: destination not found: $dest_xcassets, skipping."
         return
+    fi
+
+    # Safety guard: never wipe the destination if the source has no svg to replace it with
+    # (e.g. wrong folder matched, empty/corrupted zip entry, __MACOSX decoy, etc.)
+    local src_svg_count
+    src_svg_count=$(find "$src_dir" -type f -iname "*.svg" | wc -l | tr -d ' ')
+    if [ "$src_svg_count" -eq 0 ]; then
+        echo "error: source folder '$src_dir' contains no .svg file, aborting for theme '$theme_name' (destination left untouched)."
+        exit $EXIT_EMPTY_SOURCE
     fi
 
     echo ""
@@ -281,7 +301,11 @@ import_theme() {
     report_diff "$theme_name" "$before_snapshot" "$after_snapshot"
 }
 
-# MARK: - Run
+# Service
+# --------
+
+echo "Unzipping '$ZIP_PATH'..."
+unzip -q "$ZIP_PATH" -d "$TMP_DIR"
 
 import_theme "orange" "$THEMES_ROOT/Orange/Sources/Resources/Icons.xcassets"
 import_theme "sosh" "$THEMES_ROOT/Sosh/Sources/Resources/Icons.xcassets"
@@ -289,3 +313,6 @@ import_theme "wireframe" "$THEMES_ROOT/Wireframe/Sources/Resources/Icons.xcasset
 
 echo ""
 echo "Done. Note: OrangeCompact reuses Orange's Icons.xcassets and was not processed."
+
+ELAPSED=$SECONDS
+printf "Elapsed time: %dm%02ds\n" $((ELAPSED / 60)) $((ELAPSED % 60))
