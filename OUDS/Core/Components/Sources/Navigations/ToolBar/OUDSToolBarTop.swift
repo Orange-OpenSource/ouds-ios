@@ -205,7 +205,7 @@ extension View {
     ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
-    ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed
+    ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed for iOS < 26.
     ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.

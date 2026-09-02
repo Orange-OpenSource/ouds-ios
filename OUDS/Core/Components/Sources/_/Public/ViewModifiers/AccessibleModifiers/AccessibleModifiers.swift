@@ -15,6 +15,7 @@
 import SwiftUI
 #if canImport(UIKit)
 import UIKit
+import OUDSFoundations
 #endif
 
 // MARK: - Accessible Navigation Title Modifier
@@ -22,27 +23,89 @@ import UIKit
 /// `ViewModifier` which defines a navigation title for the calling `View` and also uses `UIAccessibility` to notify for screen changed.
 struct AccessibleNavigationTitleModifier: ViewModifier {
 
+    // MARK: Properties
+
     /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
     let subtitle: String?
+    let hasLargeTitle: Bool
 
-    #if canImport(UIKit)
+#if canImport(UIKit)
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
     let deadline: DispatchTime
-    #endif
+#endif
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
 
     func body(content: Content) -> some View {
+        #if os(macOS) || os(watchOS)
         content
             .navigationTitle(LocalizedStringKey(title))
             .oudsNavigationSubtitle(subtitle)
-            .onAppear {
-                #if canImport(UIKit) && !os(watchOS)
-                DispatchQueue.main.asyncAfter(deadline: deadline) {
-                    UIAccessibility.post(notification: .screenChanged, argument: title)
+        #else
+        Group {
+            if let subtitle {
+                if #available(iOS 26.0, *) {
+                    content
+                        .navigationTitle(LocalizedStringKey(title))
+                        .oudsNavigationSubtitle(subtitle)
+                } else {
+                    if let fonts, !hasLargeTitle {
+                        content
+                            .toolbar {
+                                ToolbarItem(placement: .principal) {
+                                    VStack(alignment: .center, spacing: 0) {
+                                        Text(title.localized())
+                                            .font(fonts.0)
+                                            .foregroundColor(theme.colors.contentDefault)
+
+                                        Text(subtitle.localized())
+                                            .font(fonts.1)
+                                            .foregroundColor(theme.colors.contentDefault)
+                                    }
+                                }
+                            }
+                    } else {
+                        content.navigationTitle(LocalizedStringKey(title))
+                    }
                 }
-                #endif
+            } else {
+                content.navigationTitle(LocalizedStringKey(title))
             }
+        }
+        .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
+        .onAppear {
+#if canImport(UIKit) && !os(watchOS)
+            DispatchQueue.main.asyncAfter(deadline: deadline) {
+                UIAccessibility.post(notification: .screenChanged, argument: title)
+            }
+#endif
+        }
+        #endif
     }
+
+    // MARK: Font helpers
+    #if !os(macOS)
+    private var fonts: (title: Font, subtitle: Font)? {
+        guard let fontFamily = theme.fontFamily else {
+            return nil
+        }
+
+        let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.medium)]
+
+        guard let uiTitleFont = UIFont(name: titleFontName, size: 17) else {
+            return nil
+        }
+
+        guard let uiSubtitleFont = UIFont(name: titleFontName, size: 12) else {
+            return nil
+        }
+
+        return (Font(uiTitleFont), Font(uiSubtitleFont))
+    }
+    #endif
 }
 
 extension View {

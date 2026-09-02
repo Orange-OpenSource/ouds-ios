@@ -27,8 +27,7 @@ private enum AccessibilityDelay: Double {
 
 extension View {
 
-    /// Adds a modifier to the current `View` so as to define a navigation title using the current `title`
-    /// and also send a notification for accessibility layers for a change of screen when appeared.
+    /// Adds a modifier to the current `View` so as to define a navigation title and subtitle (under this title) using the current `title` and optional `subtitle`. It also send a notification for accessibility layers for a change of screen when appeared.
     ///
     /// ```swift
     ///      SomeView().oudsNavigationTitle("your title key")
@@ -36,16 +35,19 @@ extension View {
     ///
     /// - Parameters
     ///     - title: The navigation title
-    ///     - subtitle: An optional subtitle for iOS > 26 only
+    ///     - subtitle: An optional subtitle displayed under the title. For iOS >= 26 native api is used.
+    ///     For previous version of iOS, a `ToolbarItem` with a placement  `.principal` is used to display `title` and `subtitle`. If `hasLargeTitle`is `true`, the subtitle is ignored.
+    ///     - hasLargeTitle: Flag to activate the large title. Default is `false`.
     ///
     /// - Returns View: The view with a new modifier
-    public func oudsNavigationTitle(_ title: String, subtitle: String? = nil) -> some View {
+    public func oudsNavigationTitle(_ title: String, subtitle: String? = nil, hasLargeTitle: Bool = false) -> some View {
         #if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
                                                    subtitle: subtitle,
+                                                   hasLargeTitle: hasLargeTitle,
                                                    deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
         #else
-        modifier(AccessibleNavigationTitleModifier(title: title, subtitle: subtitle))
+        modifier(AccessibleNavigationTitleModifier(title: title, subtitle: subtitle, hasLargeTitle: hasLargeTitle))
         #endif
     }
 

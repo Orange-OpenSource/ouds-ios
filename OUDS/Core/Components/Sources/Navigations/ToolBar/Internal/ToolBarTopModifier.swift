@@ -14,6 +14,7 @@
 #if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSThemesContract
+import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - ToolBar Top Modifier
@@ -34,7 +35,7 @@ struct ToolBarTopModifier: ViewModifier {
     ///
     /// - Parameters:
     ///   - title: The toobar title. Prefer a non-empty string.
-    ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed.
+    ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed for ios < 26.
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side
     ///   - trailingItems: The items displayed on the trailing side
@@ -63,10 +64,7 @@ struct ToolBarTopModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsNavigationTitle(title, subtitle: subtitle)
-        #if os(iOS) || os(visionOS)
-            .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
-        #endif
+            .oudsNavigationTitle(title, subtitle: subtitle, hasLargeTitle: hasLargeTitle)
             .toolbar {
                 ToolbarItemGroup(placement: leadingPlacement) {
                     itemsView(leadingItems)
