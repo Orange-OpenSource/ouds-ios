@@ -32,11 +32,11 @@ struct BadgeIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSImage(assetName: "ic_badge_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
-                        OUDSImage(assetName: "ic_badge_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        OUDSImage(assetName: "Component-badge-icon-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        OUDSImage(assetName: "Component-badge-icon-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
                     }
                 } else {
-                    OUDSImage(assetName: "ic_badge_warning_external_shape", color: theme.colors.actionDisabled)
+                    OUDSImage(assetName: "Component-badge-icon-warning-external-shape", color: theme.colors.actionDisabled)
                 }
             default:
                 image
@@ -71,13 +71,13 @@ struct BadgeIcon: View {
         case let .neutral(image), let .accent(image):
             image
         case .warning:
-            OUDSImage(asset: Image(decorative: "ic_badge_warning_external_shape", bundle: theme.resourcesBundle))
+            OUDSImage(asset: Image(decorative: "Component-badge-icon-warning-external-shape", bundle: theme.resourcesBundle))
         case .positive:
-            OUDSImage(asset: Image(decorative: "ic_badge_tick_confirmation_fill", bundle: theme.resourcesBundle))
+            OUDSImage(asset: Image(decorative: "Component-badge-icon-tick-confirmation-fill", bundle: theme.resourcesBundle))
         case .negative:
-            OUDSImage(asset: Image(decorative: "ic_badge_error_fill", bundle: theme.resourcesBundle))
+            OUDSImage(asset: Image(decorative: "Component-badge-icon-error-fill", bundle: theme.resourcesBundle))
         case .info:
-            OUDSImage(asset: Image(decorative: "ic_badge_info_fill", bundle: theme.resourcesBundle))
+            OUDSImage(asset: Image(decorative: "Component-badge-icon-info-fill", bundle: theme.resourcesBundle))
         }
     }
 }

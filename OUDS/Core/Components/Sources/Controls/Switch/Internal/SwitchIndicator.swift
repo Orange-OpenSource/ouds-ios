@@ -132,7 +132,7 @@ private struct Cursor: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Image(decorative: "ic_switch_selected", bundle: theme.resourcesBundle)
+            Image(decorative: "Component-switch-selected-switch", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()

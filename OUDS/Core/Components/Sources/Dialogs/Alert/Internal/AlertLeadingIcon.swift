@@ -44,15 +44,15 @@ struct AlertLeadingIcon: View {
             case let .neutral(icon):
                 icon?.update(with: theme.colors.contentDefault)
             case .negative:
-                OUDSImage(assetName: "ic_alert_important_fill", color: theme.colors.contentStatusNegative)
+                OUDSImage(assetName: "Component-alert-important-fill", color: theme.colors.contentStatusNegative)
             case .positive:
-                OUDSImage(assetName: "ic_alert_tick_confirmation_fill", color: theme.colors.contentStatusPositive)
+                OUDSImage(assetName: "Component-alert-tick-confirmation-fill", color: theme.colors.contentStatusPositive)
             case .info:
-                OUDSImage(assetName: "ic_alert_info_fill", color: theme.colors.contentStatusInfo)
+                OUDSImage(assetName: "Component-alert-info-fill", color: theme.colors.contentStatusInfo)
             case .warning:
                 ZStack {
-                    OUDSImage(assetName: "ic_alert_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                    OUDSImage(assetName: "ic_alert_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                    OUDSImage(assetName: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                    OUDSImage(assetName: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
                 }
             }
         }

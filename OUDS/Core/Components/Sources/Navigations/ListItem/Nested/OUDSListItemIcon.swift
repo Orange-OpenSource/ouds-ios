@@ -163,8 +163,8 @@ public struct OUDSListItemIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSImage(assetName: "ic_alert_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                        OUDSImage(assetName: "ic_alert_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        OUDSImage(assetName: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        OUDSImage(assetName: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
                     }
                 } else {
                     asset.foregroundColor(theme.colors.actionDisabled)
@@ -203,13 +203,13 @@ public struct OUDSListItemIcon: View {
             case .neutral:
                 ""
             case .positive:
-                "ic_alert_tick_confirmation_fill"
+                "Component-alert-tick-confirmation-fill"
             case .info:
-                "ic_alert_info_fill"
+                "Component-alert-info-fill"
             case .warning:
-                "ic_alert_warning_external_shape"
+                "Component-alert-warning-external-shape"
             case .negative:
-                "ic_alert_important_fill"
+                "Component-alert-important-fill"
             }
 
         return Image(decorative: assetName, bundle: theme.resourcesBundle)

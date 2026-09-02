@@ -36,7 +36,7 @@ struct TextInputTrailingContainer: View {
             }
         case .error, .richError:
             HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapTrailingErrorAction) {
-                Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
+                Image(decorative: "Component-alert-important-fill", bundle: theme.resourcesBundle)
                     .resizable()
                     .renderingMode(.template)
                     .aspectRatio(contentMode: .fill)

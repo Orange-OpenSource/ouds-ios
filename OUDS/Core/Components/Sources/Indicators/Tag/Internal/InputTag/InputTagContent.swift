@@ -25,7 +25,7 @@ struct InputTagContent: View {
         HStack(alignment: .center, spacing: theme.tag.spaceColumnGapDefault) {
             Text(label)
                 .labelModerateMedium(theme)
-            OUDSScaledIcon(image: OUDSImage(asset: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle),
+            OUDSScaledIcon(image: OUDSImage(asset: Image(decorative: "Component-tag-close", bundle: theme.resourcesBundle),
                                             renderingMode: .template),
                            size: theme.tag.sizeAssetDefault)
                 .aspectRatio(contentMode: .fit)

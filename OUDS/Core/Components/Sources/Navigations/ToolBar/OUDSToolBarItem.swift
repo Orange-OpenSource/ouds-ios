@@ -153,9 +153,9 @@ public struct OUDSToolBarItem: View, Identifiable {
         var iconName: String {
             switch self {
             case .back:
-                "ic_link_previous"
+                "Component-link-previous"
             case .close:
-                "ic_button_expurge"
+                "Component-button-expurge"
             }
         }
     }

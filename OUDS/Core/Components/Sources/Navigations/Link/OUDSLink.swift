@@ -315,11 +315,11 @@ public struct OUDSLink: View {
     private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
         switch navigationIndicator {
         case .previous:
-            "ic_link_previous"
+            "Component-link-previous"
         case .next:
-            "ic_link_next"
+            "Component-link-next"
         case .external:
-            "ic_link_external"
+            "Component-link-external-link"
         }
     }
 }
