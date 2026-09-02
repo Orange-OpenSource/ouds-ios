@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "payment-card-one-face.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

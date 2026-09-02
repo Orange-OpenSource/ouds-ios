@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cloud-connectivity.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

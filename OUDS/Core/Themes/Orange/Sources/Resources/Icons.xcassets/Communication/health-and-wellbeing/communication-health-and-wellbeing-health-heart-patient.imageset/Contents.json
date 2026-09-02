@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "health-heart-patient.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

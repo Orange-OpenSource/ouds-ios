@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bed-childrens.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

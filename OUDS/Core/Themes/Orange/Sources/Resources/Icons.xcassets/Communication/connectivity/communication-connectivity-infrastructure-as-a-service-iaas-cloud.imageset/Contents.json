@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "infrastructure-as-a-service-iaas-cloud.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

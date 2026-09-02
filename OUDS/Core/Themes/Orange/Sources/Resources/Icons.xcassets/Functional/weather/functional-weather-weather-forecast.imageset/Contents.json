@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "weather-forecast.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

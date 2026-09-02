@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "men-symbol.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

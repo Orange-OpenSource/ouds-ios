@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "increase-text-size.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

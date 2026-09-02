@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "add-caller-button.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

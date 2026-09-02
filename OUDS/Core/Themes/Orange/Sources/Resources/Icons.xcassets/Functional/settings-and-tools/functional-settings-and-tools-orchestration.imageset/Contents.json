@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orchestration.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

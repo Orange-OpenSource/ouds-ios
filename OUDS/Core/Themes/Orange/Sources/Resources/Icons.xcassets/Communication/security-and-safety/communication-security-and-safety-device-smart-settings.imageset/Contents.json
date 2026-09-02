@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "device-smart-settings.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

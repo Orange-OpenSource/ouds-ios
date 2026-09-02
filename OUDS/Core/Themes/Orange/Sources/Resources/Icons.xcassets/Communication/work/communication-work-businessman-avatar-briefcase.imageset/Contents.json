@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "businessman-avatar-briefcase.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

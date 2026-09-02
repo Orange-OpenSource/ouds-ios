@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-foundation-hand-heart.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

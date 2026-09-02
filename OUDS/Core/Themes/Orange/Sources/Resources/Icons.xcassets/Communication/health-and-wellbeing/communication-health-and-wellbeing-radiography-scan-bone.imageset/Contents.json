@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "radiography-scan-bone.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

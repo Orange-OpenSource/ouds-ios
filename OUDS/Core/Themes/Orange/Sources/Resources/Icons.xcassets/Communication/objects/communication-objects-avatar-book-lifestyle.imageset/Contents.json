@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "avatar-book-lifestyle.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

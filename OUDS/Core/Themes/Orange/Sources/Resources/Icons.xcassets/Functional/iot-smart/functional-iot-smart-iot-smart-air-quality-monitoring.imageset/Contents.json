@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "iot-smart-air-quality-monitoring.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

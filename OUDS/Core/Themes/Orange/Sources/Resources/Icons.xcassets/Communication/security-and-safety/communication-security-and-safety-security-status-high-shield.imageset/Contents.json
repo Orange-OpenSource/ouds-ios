@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "security-status-high-shield.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

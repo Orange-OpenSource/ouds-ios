@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "show-front-back-camera.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

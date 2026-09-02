@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "augmented-experience.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

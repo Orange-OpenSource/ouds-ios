@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wedding-ring.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

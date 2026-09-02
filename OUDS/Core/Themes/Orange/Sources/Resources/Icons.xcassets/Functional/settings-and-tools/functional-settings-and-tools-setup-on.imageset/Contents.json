@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "setup-on.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

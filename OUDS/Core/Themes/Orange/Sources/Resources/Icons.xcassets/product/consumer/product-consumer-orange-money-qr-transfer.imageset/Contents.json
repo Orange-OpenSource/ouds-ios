@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-money-qr-transfer.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

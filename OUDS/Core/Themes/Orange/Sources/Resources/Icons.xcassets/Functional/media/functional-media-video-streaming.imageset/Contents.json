@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "video-streaming.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

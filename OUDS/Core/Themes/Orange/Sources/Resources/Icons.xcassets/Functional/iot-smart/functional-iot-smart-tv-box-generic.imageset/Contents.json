@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tv-box-generic.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

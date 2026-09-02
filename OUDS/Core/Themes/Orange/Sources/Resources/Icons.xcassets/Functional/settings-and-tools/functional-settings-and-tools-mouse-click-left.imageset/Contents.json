@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mouse-click-left.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

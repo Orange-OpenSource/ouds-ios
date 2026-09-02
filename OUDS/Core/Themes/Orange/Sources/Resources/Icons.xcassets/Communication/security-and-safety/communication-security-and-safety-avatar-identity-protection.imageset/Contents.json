@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "avatar-identity-protection.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

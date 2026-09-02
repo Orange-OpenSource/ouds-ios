@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "world-exchange-internet.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "data-services.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

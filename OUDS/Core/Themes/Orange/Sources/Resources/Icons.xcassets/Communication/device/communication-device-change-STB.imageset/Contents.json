@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "change-STB.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

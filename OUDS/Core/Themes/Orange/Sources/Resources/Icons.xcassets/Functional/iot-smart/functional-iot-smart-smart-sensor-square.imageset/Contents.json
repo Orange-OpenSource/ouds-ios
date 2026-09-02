@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "smart-sensor-square.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

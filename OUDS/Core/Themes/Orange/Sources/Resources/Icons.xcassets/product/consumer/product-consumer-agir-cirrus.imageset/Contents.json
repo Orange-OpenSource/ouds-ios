@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "agir-cirrus.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

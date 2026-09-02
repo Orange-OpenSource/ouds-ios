@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "latest-news-star.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

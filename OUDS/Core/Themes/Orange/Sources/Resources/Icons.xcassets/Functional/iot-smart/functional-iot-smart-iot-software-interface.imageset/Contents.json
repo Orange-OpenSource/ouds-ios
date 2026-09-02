@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "iot-software-interface.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

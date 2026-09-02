@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "desktop-app-puzzle.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

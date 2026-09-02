@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "horoscopes.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

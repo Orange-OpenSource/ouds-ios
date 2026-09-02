@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "graph-curve.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

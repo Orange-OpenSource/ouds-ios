@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "health-heart-check-tick.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

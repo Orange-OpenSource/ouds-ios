@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "iot-smart-city.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

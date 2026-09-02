@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "remote-control-crop.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

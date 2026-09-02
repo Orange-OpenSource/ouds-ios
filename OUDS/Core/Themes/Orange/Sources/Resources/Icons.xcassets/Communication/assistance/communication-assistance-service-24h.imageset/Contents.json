@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "service-24h.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "small-network-factory.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

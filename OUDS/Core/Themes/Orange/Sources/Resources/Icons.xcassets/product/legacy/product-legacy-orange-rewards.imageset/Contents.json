@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-rewards.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

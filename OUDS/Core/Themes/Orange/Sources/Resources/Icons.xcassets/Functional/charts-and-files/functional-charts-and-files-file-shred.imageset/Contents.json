@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "file-shred.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

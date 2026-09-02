@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-heroes-medal.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

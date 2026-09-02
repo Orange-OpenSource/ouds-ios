@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "on-board-unit-vehicle.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

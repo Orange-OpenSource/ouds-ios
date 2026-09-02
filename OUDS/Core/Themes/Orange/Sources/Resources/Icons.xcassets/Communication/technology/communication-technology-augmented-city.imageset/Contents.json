@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "augmented-city.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

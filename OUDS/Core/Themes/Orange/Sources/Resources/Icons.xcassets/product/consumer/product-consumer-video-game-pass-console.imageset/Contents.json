@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "video-game-pass-console.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

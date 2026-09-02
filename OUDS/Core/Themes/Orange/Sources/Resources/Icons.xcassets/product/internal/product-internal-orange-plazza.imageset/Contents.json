@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-plazza.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

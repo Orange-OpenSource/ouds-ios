@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "colour-call.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

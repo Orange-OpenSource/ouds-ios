@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "immersive-now-panorama.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

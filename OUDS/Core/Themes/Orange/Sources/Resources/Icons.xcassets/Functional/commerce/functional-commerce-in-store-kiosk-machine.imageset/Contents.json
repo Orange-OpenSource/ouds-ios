@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "in-store-kiosk-machine.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

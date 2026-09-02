@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "hello-world-2022-village.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

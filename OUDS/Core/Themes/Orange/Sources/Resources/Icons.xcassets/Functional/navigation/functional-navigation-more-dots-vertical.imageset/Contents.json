@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "more-dots-vertical.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

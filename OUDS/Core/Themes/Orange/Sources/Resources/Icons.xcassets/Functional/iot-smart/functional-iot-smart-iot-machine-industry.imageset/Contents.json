@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "iot-machine-industry.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

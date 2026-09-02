@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "car-side.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

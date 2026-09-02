@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "circular-process-info.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "virtual-network-edge.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

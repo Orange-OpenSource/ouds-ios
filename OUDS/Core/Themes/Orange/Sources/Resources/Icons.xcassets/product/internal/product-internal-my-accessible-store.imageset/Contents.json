@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "my-accessible-store.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

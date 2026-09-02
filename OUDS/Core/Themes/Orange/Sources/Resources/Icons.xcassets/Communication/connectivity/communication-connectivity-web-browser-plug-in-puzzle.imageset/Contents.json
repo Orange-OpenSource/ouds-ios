@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "web-browser-plug-in-puzzle.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

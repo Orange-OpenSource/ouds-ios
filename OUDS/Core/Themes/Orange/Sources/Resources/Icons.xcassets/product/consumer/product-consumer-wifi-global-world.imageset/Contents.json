@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wifi-global-world.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "street-light.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

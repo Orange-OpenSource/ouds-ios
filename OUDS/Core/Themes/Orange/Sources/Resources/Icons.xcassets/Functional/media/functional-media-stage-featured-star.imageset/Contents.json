@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "stage-featured-star.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

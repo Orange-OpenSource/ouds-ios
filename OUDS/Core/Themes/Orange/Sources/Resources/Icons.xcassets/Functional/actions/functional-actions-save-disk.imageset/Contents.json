@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "save-disk.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

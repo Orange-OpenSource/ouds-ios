@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "screen-glass-phone-protection.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "pets-and-agriculture.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

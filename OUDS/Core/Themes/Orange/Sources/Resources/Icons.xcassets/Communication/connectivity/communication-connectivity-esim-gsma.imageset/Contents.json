@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "esim-gsma.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "music-genre-guitar.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

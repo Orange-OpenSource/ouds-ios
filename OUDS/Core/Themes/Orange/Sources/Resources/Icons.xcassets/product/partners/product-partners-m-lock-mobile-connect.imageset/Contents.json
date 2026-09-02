@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "m-lock-mobile-connect.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

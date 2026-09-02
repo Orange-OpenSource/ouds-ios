@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-photo.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ui-light-mode.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "side-panel-show-chevron.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

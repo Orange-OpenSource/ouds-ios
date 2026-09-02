@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "apartment-building.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

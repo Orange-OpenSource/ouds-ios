@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "sensor-with-camera.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

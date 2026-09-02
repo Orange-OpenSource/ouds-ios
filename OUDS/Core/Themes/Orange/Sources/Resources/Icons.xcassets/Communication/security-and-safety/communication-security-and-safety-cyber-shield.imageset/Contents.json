@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cyber-shield.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

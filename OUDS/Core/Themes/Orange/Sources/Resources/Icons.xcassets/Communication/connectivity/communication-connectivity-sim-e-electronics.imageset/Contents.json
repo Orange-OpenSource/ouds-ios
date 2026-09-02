@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "sim-e-electronics.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

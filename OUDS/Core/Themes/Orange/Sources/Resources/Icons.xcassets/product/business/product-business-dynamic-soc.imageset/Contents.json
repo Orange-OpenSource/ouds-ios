@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "dynamic-soc.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

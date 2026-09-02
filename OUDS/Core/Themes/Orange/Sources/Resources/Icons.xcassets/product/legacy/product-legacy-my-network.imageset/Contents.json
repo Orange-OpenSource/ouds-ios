@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "my-network.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

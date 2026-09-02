@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "track-your-order-truck.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "file-invoice-dollar.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

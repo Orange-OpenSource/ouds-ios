@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orange-business-everywhere-pin.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

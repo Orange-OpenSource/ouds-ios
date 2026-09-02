@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mirroring-smartphone-tablet.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "sparkles-colored.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

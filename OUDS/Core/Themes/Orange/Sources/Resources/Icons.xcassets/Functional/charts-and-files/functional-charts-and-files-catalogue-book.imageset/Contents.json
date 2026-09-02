@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "catalogue-book.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

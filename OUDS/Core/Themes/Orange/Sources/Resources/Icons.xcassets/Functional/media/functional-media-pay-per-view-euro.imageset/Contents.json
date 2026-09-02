@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "pay-per-view-euro.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "olive-branch.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

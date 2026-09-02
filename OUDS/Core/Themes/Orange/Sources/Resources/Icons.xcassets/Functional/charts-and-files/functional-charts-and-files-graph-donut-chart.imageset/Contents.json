@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "graph-donut-chart.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

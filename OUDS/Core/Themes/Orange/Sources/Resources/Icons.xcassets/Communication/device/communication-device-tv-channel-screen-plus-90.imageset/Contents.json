@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tv-channel-screen-plus-90.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

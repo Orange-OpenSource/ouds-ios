@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "currency-yen.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

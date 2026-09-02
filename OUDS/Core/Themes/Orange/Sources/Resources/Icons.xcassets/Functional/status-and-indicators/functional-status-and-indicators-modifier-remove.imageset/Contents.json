@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "modifier-remove.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

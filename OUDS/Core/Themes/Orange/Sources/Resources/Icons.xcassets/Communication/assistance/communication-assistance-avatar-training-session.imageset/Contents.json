@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "avatar-training-session.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
