@@ -15,6 +15,7 @@ import OUDSFoundations
 import SwiftUI
 #if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
+import OUDSFoundations
 #endif
 
 // MARK: - Accessible Navigation Title Modifier
@@ -29,10 +30,14 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     let subtitle: String?
     let hasLargeTitle: Bool
 
-    #if canImport(UIKit)
+#if canImport(UIKit)
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
     let deadline: DispatchTime
-    #endif
+#endif
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
 
     @Environment(\.theme) private var theme
     @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
