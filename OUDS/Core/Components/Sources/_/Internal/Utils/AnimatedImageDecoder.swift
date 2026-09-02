@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Foundation
 import ImageIO
-import UniformTypeIdentifiers
 
 // MARK: - Animated Image Frame
 

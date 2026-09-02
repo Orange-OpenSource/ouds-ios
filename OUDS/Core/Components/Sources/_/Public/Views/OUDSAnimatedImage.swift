@@ -14,9 +14,9 @@
 import OUDSFoundations
 import SwiftUI
 
-/// ``OUDSAnimatedImage`` is a SwiftUI view able to play animated **GIF** and **WebP** images.
+/// `OUDSAnimatedImage` is a SwiftUI view able to play animated **GIF** and **WebP** images.
 ///
-/// Remote animated images are downloaded and cached (memory + disk) using ``OUDSAsyncImageCache``.
+/// Remote animated images are downloaded and cached (memory + disk) using `OUDSAsyncImageCache`.
 ///
 /// ## Providing a local GIF or WebP file
 ///
@@ -35,9 +35,9 @@ import SwiftUI
 /// - "Reduce Motion" accessibility setting is enabled, or
 /// - Low Power Mode is enabled.
 ///
-/// > Note: Low Power Mode detection relies on ``OUDSLowPowerModeObserver``, injected as an environment
-/// > object by ``OUDSThemeableView``. Make sure ``OUDSAnimatedImage`` is used inside a view hierarchy
-/// > rooted by ``OUDSThemeableView`` for this behavior to work.
+/// > Note: Low Power Mode detection relies on `OUDSLowPowerModeObserver`, injected as an environment
+/// > object by `OUDSThemeableView`. Make sure `OUDSAnimatedImage` is used inside a view hierarchy
+/// > rooted by `OUDSThemeableView` for this behavior to work.
 ///
 /// ## Code samples
 ///
@@ -210,7 +210,9 @@ private struct DecodedAnimatedImageView: View {
             }
         }
         .task(id: data) {
-            content = AnimatedImageDecoder.decode(data: data)
+            content = await Task.detached(priority: .userInitiated) {
+                AnimatedImageDecoder.decode(data: data)
+            }.value
         }
     }
 
