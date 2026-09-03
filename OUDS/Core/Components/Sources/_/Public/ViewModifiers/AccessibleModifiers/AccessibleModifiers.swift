@@ -36,6 +36,8 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 #endif
 
     @Environment(\.theme) private var theme
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
@@ -47,7 +49,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         #else
         Group {
             if let subtitle {
-                if #available(iOS 26.0, *) {
+                if #available(iOS 26.0, *), !(forceOUDSLegacyLayout || isLiquidGlassDisabled) {
                     content
                         .navigationTitle(LocalizedStringKey(title))
                         .oudsNavigationSubtitle(subtitle)
@@ -63,7 +65,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
                                         Text(subtitle.localized())
                                             .font(fonts.1)
-                                            .foregroundColor(theme.colors.contentDefault)
+                                            .foregroundColor(theme.colors.contentMuted)
                                     }
                                 }
                             }
