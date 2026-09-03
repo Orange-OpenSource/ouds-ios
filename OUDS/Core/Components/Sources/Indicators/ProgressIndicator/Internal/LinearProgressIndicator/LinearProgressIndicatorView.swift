@@ -37,7 +37,9 @@ struct LinearProgressIndicatorView: View {
 
             helperText
         }
-        .modifier(ProgressIndicatorAccessibilityModifier(progress: configuration.progress, accessibilityLabel: configuration.accessibilityLabel))
+        .modifier(ProgressIndicatorAccessibilityModifier(progress: configuration.progress,
+                                                         accessibilityLabel: configuration.accessibilityLabel,
+                                                         status: configuration.status))
     }
 
     // MARK: - Sub-views
