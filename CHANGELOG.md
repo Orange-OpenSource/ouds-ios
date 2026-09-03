@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)
 - Helpers to apply OUDS styles for rich text (Orange-OpenSource/ouds-ios#1682)
