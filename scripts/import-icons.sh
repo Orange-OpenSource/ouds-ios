@@ -14,7 +14,11 @@
 #
 # import-icons.sh
 #
-# Imports icons from a designer-provided ZIP archive into the OUDS iOS themes' Icons.xcassets.
+# Synchronizes the content of the icons already present in the OUDS iOS themes' Icons.xcassets/Icons/
+# folder against a designer-provided ZIP archive. This script does NOT import the whole icon library:
+# it only refreshes icons that are already used by the project (i.e. already have an .imageset under
+# Icons.xcassets/Icons/). It never adds a new icon and never deletes an existing one, to keep the
+# asset catalog limited to what is actually used in the code (memory footprint).
 #
 # The ZIP is expected to contain (at any depth) one root folder per theme:
 #   orange/, sosh/, wireframe/
@@ -22,16 +26,19 @@
 # Component/, functional/, product/, with nested subfolders).
 #
 # For each theme found in the ZIP, this script:
-#   1. Wipes the theme's Icons.xcassets/Icons/ folder (creates it if missing). This folder is
-#      dedicated to icons imported from the designer ZIP; any other folder in Icons.xcassets
-#      (e.g. legacy "_/") is left untouched and never modified by this script.
-#   2. Recreates the exact same folder hierarchy as in the ZIP under Icons.xcassets/Icons/
-#   3. Creates one .imageset per .svg file, named after its full relative path (flattened with '-')
-#      to guarantee uniqueness across the whole asset catalog namespace, e.g.:
-#        Component/accordion/expanded-true.svg -> Icons/Component/accordion/Component-accordion-expanded-true.imageset
-#   4. Compares the previous and new set of icons (by name and by SVG content) and logs added,
-#      removed and modified icons, both as a console summary and as detailed report files under
-#      scripts/.icon-import-logs/<theme>-<timestamp>/.
+#   1. Builds a lookup table "flattened-name -> svg path" from every .svg found in the ZIP for that
+#      theme, using the same flattening rule as the icon names already in the project, e.g.:
+#        Component/alert/important-fill.svg -> Component-alert-important-fill
+#   2. For every .imageset already present under Icons.xcassets/Icons/ (i.e. every icon currently
+#      used by the project — adding a new icon to the project is a manual step, done once by a
+#      developer when they start using it):
+#        - if a matching entry exists in the ZIP and its content differs -> the project's svg is
+#          replaced with the ZIP's version, and this is logged ("updated").
+#        - if a matching entry exists in the ZIP and its content is identical -> nothing happens.
+#        - if no matching entry exists in the ZIP anymore -> the project's icon is left UNTOUCHED,
+#          and this is logged ("missing in zip") so it can be followed up with the design team.
+#   3. Never touches any other folder of Icons.xcassets (e.g. legacy "Components/", "_/"), and never
+#      adds or removes any .imageset anywhere.
 #
 # Note: "OrangeCompact" theme is NOT processed: it has no Icons.xcassets of its own and reuses Orange's.
 #
@@ -93,19 +100,6 @@ fi
 # Functions
 # ---------
 
-# Writes a minimal group Contents.json (used for the root and every intermediate folder)
-write_group_contents_json() {
-    local dir="$1"
-    cat > "$dir/Contents.json" <<'EOF'
-{
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
-  }
-}
-EOF
-}
-
 # Writes the Contents.json of an .imageset, referencing the given svg filename
 write_imageset_contents_json() {
     local imageset_dir="$1"
@@ -126,83 +120,8 @@ write_imageset_contents_json() {
 EOF
 }
 
-# Snapshots the current state of an Icons.xcassets folder as "<imageset-name><TAB><sha256-of-svg>",
-# one line per imageset, sorted by name. Used to compute added/removed/modified icons.
-snapshot_state() {
-    local xcassets_dir="$1"
-    local out_file="$2"
-
-    : > "$out_file"
-
-    if [ ! -d "$xcassets_dir" ]; then
-        return
-    fi
-
-    while IFS= read -r -d '' imageset_dir; do
-        local name svg_file hash
-        name="$(basename "$imageset_dir" .imageset)"
-        svg_file="$(find "$imageset_dir" -maxdepth 1 -iname "*.svg" | head -1)"
-        if [ -n "$svg_file" ]; then
-            hash="$(sha256_of "$svg_file")"
-        else
-            hash="no-svg"
-        fi
-        printf '%s\t%s\n' "$name" "$hash" >> "$out_file"
-    done < <(find "$xcassets_dir" -type d -iname "*.imageset" -print0)
-
-    sort -o "$out_file" "$out_file"
-}
-
-# Compares two snapshot files ($1 = before, $2 = after) and logs a summary + detailed report files
-# under $LOGS_ROOT/<theme>-<timestamp>/.
-report_diff() {
-    local theme_name="$1"
-    local before_file="$2"
-    local after_file="$3"
-
-    local report_dir="$LOGS_ROOT/${theme_name}-${RUN_TIMESTAMP}"
-    mkdir -p "$report_dir"
-
-    local added_file="$report_dir/added.txt"
-    local removed_file="$report_dir/removed.txt"
-    local modified_file="$report_dir/modified.txt"
-
-    # Added: names present in "after" but not in "before"
-    join -t "$(printf '\t')" -v 2 -1 1 -2 1 \
-        <(cut -f1 "$before_file") \
-        "$after_file" \
-        | cut -f1 > "$added_file"
-
-    # Removed: names present in "before" but not in "after"
-    join -t "$(printf '\t')" -v 1 -1 1 -2 1 \
-        "$before_file" \
-        <(cut -f1 "$after_file") \
-        | cut -f1 > "$removed_file"
-
-    # Modified: names present in both, with a different hash
-    join -t "$(printf '\t')" -1 1 -2 1 "$before_file" "$after_file" \
-        | awk -F '\t' '$2 != $3 { print $1 }' > "$modified_file"
-
-    local added_count removed_count modified_count total_before total_after unchanged_count
-    added_count=$(wc -l < "$added_file" | tr -d ' ')
-    removed_count=$(wc -l < "$removed_file" | tr -d ' ')
-    modified_count=$(wc -l < "$modified_file" | tr -d ' ')
-    total_before=$(wc -l < "$before_file" | tr -d ' ')
-    total_after=$(wc -l < "$after_file" | tr -d ' ')
-    unchanged_count=$((total_after - added_count - modified_count))
-
-    echo ""
-    echo "--- Icon diff for theme '$theme_name' ---"
-    echo "Before: $total_before icon(s), After: $total_after icon(s)"
-    echo "Added:    $added_count"
-    echo "Removed:  $removed_count"
-    echo "Modified: $modified_count"
-    echo "Unchanged: $unchanged_count"
-    echo "Detailed report: $report_dir"
-}
-
-# Imports one theme: $1 = lowercase theme folder name expected in the zip, $2 = destination Icons.xcassets path
-import_theme() {
+# Syncs one theme: $1 = lowercase theme folder name expected in the zip, $2 = destination Icons.xcassets path
+sync_theme() {
     local theme_name="$1"
     local dest_xcassets="$2"
     local icons_group_dir="$dest_xcassets/Icons"
@@ -215,13 +134,13 @@ import_theme() {
         return
     fi
 
-    if [ ! -d "$dest_xcassets" ]; then
-        echo "warning: destination not found: $dest_xcassets, skipping."
+    if [ ! -d "$icons_group_dir" ]; then
+        echo "warning: destination not found: $icons_group_dir, skipping."
         return
     fi
 
-    # Safety guard: never wipe the destination if the source has no svg to replace it with
-    # (e.g. wrong folder matched, empty/corrupted zip entry, __MACOSX decoy, etc.)
+    # Safety guard: refuse to sync from an empty/corrupted source (wrong folder matched, __MACOSX
+    # decoy, etc.) rather than silently doing nothing or, worse, comparing against garbage.
     local src_svg_count
     src_svg_count=$(find "$src_dir" -type f -iname "*.svg" | wc -l | tr -d ' ')
     if [ "$src_svg_count" -eq 0 ]; then
@@ -230,75 +149,79 @@ import_theme() {
     fi
 
     echo ""
-    echo "=== Importing theme '$theme_name' ==="
+    echo "=== Syncing theme '$theme_name' ==="
     echo "Source:      $src_dir"
     echo "Destination: $icons_group_dir"
 
-    # 0. Snapshot the current state (name -> svg hash) before wiping anything
-    local before_snapshot after_snapshot
-    before_snapshot="$TMP_DIR/${theme_name}-before.tsv"
-    after_snapshot="$TMP_DIR/${theme_name}-after.tsv"
-    snapshot_state "$icons_group_dir" "$before_snapshot"
-
-    # 1. Wipe the Icons/ group only (never touch other folders of Icons.xcassets, e.g. legacy "Components/", "_/")
-    rm -rf "$icons_group_dir"
-    mkdir -p "$icons_group_dir"
-    write_group_contents_json "$icons_group_dir"
-
-    # 2. Copy every svg found, rebuilding the same hierarchy under Icons/
-    local count=0
-    local skipped=0
+    # 1. Build a lookup table "flattened-name<TAB>svg-path" from every svg found in the zip
+    local zip_map
+    zip_map="$TMP_DIR/${theme_name}-zip-map.tsv"
+    : > "$zip_map"
 
     while IFS= read -r -d '' svg; do
-        local rel reldir base flat target_group_dir imageset_dir
-
+        local rel flat
         rel="${svg#"$src_dir"/}"
-        reldir="$(dirname "$rel")"
-        base="$(basename "$rel" .svg)"
-
-        # Flatten the full relative path (without extension) to build a globally unique imageset name
         flat="${rel%.svg}"
         flat="${flat//\//-}"
-
-        if [ "$reldir" = "." ]; then
-            target_group_dir="$icons_group_dir"
-        else
-            target_group_dir="$icons_group_dir/$reldir"
-        fi
-
-        mkdir -p "$target_group_dir"
-
-        imageset_dir="$target_group_dir/$flat.imageset"
-        mkdir -p "$imageset_dir"
-
-        cp "$svg" "$imageset_dir/$base.svg"
-        write_imageset_contents_json "$imageset_dir" "$base.svg"
-
-        count=$((count + 1))
+        printf '%s\t%s\n' "$flat" "$svg" >> "$zip_map"
     done < <(find "$src_dir" -type f -iname "*.svg" -print0)
 
-    # 3. Warn about any non-svg, non-hidden file found in the source (e.g. leftover .DS_Store are ignored silently)
-    while IFS= read -r -d '' other; do
-        local name
-        name="$(basename "$other")"
-        if [ "$name" != ".DS_Store" ]; then
-            echo "warning: ignored non-svg file: ${other#"$src_dir"/}"
-            skipped=$((skipped + 1))
+    # 2. Prepare the report
+    local report_dir="$LOGS_ROOT/${theme_name}-${RUN_TIMESTAMP}"
+    mkdir -p "$report_dir"
+    local updated_file="$report_dir/updated.txt"
+    local missing_file="$report_dir/missing_in_zip.txt"
+    : > "$updated_file"
+    : > "$missing_file"
+
+    local updated_count=0
+    local unchanged_count=0
+    local missing_count=0
+
+    # 3. For every icon already used by the project (i.e. already an .imageset under Icons/),
+    #    sync its content from the zip if a match is found and differs. Never add, never remove.
+    while IFS= read -r -d '' imageset_dir; do
+        local name current_svg zip_line zip_svg zip_hash current_hash
+
+        name="$(basename "$imageset_dir" .imageset)"
+        zip_line="$(awk -F '\t' -v key="$name" '$1 == key { print; exit }' "$zip_map")"
+
+        if [ -z "$zip_line" ]; then
+            missing_count=$((missing_count + 1))
+            echo "$name" >> "$missing_file"
+            continue
         fi
-    done < <(find "$src_dir" -type f ! -iname "*.svg" -print0)
 
-    # 4. Ensure every intermediate group folder under Icons/ has a Contents.json
-    while IFS= read -r -d '' dir; do
-        if [ ! -f "$dir/Contents.json" ]; then
-            write_group_contents_json "$dir"
+        zip_svg="${zip_line#*$'\t'}"
+        zip_hash="$(sha256_of "$zip_svg")"
+
+        current_svg="$(find "$imageset_dir" -maxdepth 1 -iname "*.svg" | head -1)"
+        if [ -n "$current_svg" ]; then
+            current_hash="$(sha256_of "$current_svg")"
+        else
+            current_hash=""
         fi
-    done < <(find "$icons_group_dir" -type d ! -iname "*.imageset" -print0)
 
-    echo "Imported $count icon(s) for theme '$theme_name' (ignored $skipped non-svg file(s))."
+        if [ "$current_hash" = "$zip_hash" ]; then
+            unchanged_count=$((unchanged_count + 1))
+            continue
+        fi
 
-    # 5. Snapshot the new state and report the diff against the previous state
-    snapshot_state "$icons_group_dir" "$after_snapshot"
-    report_diff "$theme_name" "$before_snapshot" "$after_snapshot"
+        # Content differs (or no svg yet): replace the svg(s) in place and refresh Contents.json
+        find "$imageset_dir" -maxdepth 1 -iname "*.svg" -delete
+        local zip_basename
+        zip_basename="$(basename "$zip_svg")"
+        cp "$zip_svg" "$imageset_dir/$zip_basename"
+        write_imageset_contents_json "$imageset_dir" "$zip_basename"
+
+        updated_count=$((updated_count + 1))
+        echo "$name" >> "$updated_file"
+    done < <(find "$icons_group_dir" -type d -iname "*.imageset" -print0)
+
+    echo "Updated:        $updated_count"
+    echo "Unchanged:      $unchanged_count"
+    echo "Missing in zip: $missing_count (kept as-is in the project — check with the design team)"
+    echo "Detailed report: $report_dir"
 }
 
 # Service
@@ -307,9 +230,9 @@ import_theme() {
 echo "Unzipping '$ZIP_PATH'..."
 unzip -q "$ZIP_PATH" -d "$TMP_DIR"
 
-import_theme "orange" "$THEMES_ROOT/Orange/Sources/Resources/Icons.xcassets"
-import_theme "sosh" "$THEMES_ROOT/Sosh/Sources/Resources/Icons.xcassets"
-import_theme "wireframe" "$THEMES_ROOT/Wireframe/Sources/Resources/Icons.xcassets"
+sync_theme "orange" "$THEMES_ROOT/Orange/Sources/Resources/Icons.xcassets"
+sync_theme "sosh" "$THEMES_ROOT/Sosh/Sources/Resources/Icons.xcassets"
+sync_theme "wireframe" "$THEMES_ROOT/Wireframe/Sources/Resources/Icons.xcassets"
 
 echo ""
 echo "Done. Note: OrangeCompact reuses Orange's Icons.xcassets and was not processed."

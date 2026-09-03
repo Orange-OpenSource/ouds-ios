@@ -29,9 +29,6 @@ import SwiftUI
 ///
 ///     // Display an image but without tints and in original mode
 ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
-///
-///     // Display an icon from the active theme's own icon library, by name
-///     OUDSImage(name: "patate", accessibilityLabel: "Patate")
 /// ```
 ///
 /// - Since: 1.3.0
@@ -109,32 +106,20 @@ public struct OUDSImage: View {
         self.renderingMode = renderingMode
     }
 
-    /// Create the icon from its name, loaded from the active theme's own icon library.
-    ///
-    /// ```swift
-    ///     OUDSImage(name: "communication-assistance-avatar-training-session", accessibilityLabel: "Assistance")
-    /// ```
-    ///
-    /// - Warning: The available icon names are **not guaranteed to be stable across OUDS versions**.
-    ///   They are generated from the design team's icon source files, and an icon can be renamed,
-    ///   moved or removed between two releases without notice. Because the name is resolved as a
-    ///   plain `String`, such a change will **not** be caught at compile time: the icon will simply
-    ///   stop being displayed.
-    ///
-    /// - Warning: The set of available icons can also differ from one theme to another. An icon
-    ///   name that exists for a given theme may not exist for another one.
+    /// Create the icon from its name.
+    /// Internal usage to load asset from theme.
     ///
     /// - Parameters:
-    ///    - name: The name of the icon to load from the active theme's icon library
+    ///    - name: The name of the asset to load as icon
     ///    - flipped: If asset must be flipped, default set to `false`
     ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
     ///    - color: The color to apply to the icon, default set to `nil`
     ///    - renderingMode: By default set to `.template`, allows to apply colors on given `asset` or not
-    public init(name: String,
-                flipped: Bool = false,
-                accessibilityLabel: String? = nil,
-                color: MultipleColorSemanticToken? = nil,
-                renderingMode: Image.TemplateRenderingMode = .template)
+    init(name: String,
+         flipped: Bool = false,
+         accessibilityLabel: String? = nil,
+         color: MultipleColorSemanticToken? = nil,
+         renderingMode: Image.TemplateRenderingMode = .template)
     {
         self.name = name
         asset = nil
