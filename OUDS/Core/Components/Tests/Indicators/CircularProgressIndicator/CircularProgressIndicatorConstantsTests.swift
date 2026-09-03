@@ -33,74 +33,56 @@ struct CircularProgressCanvasConstantsTests {
 
 // MARK: - Animator constants
 
-/// Tests on the Material 3 animation constants defined in ``CircularProgressIndicatorAnimator``.
-/// See the Material 3 progress indicator specification for the reference values.
+/// Tests on the Material indeterminate animation constants defined in
+/// ``CircularProgressIndicatorIndeterminateView``. Values are the ones actually shipped by
+/// Material Web, Material Components Android and Flutter's `CircularProgressIndicator` (they
+/// share the very same motion values).
 struct CircularProgressAnimatorConstantsTests {
 
-    // MARK: - Global rotation
+    // MARK: - Tooth (head / tail cycle)
 
     @Test
-    func `global rotation period must be 6 seconds (M3 spec)`() {
-        #expect(CircularProgressIndicatorIndeterminateView.globalRotationPeriod == 6.0)
+    func `tooth duration must be 1_333 seconds (Material spec)`() {
+        #expect(CircularProgressIndicatorIndeterminateView.toothDuration == 1.333)
     }
 
-    // MARK: - Additional rotation
+    // MARK: - Base rotation
 
     @Test
-    func `additional rotation cycle must be 1_5 seconds (500ms animation + 1s hold, M3 spec)`() {
-        #expect(CircularProgressIndicatorIndeterminateView.additionalRotationCycle == 1.5)
+    func `rotation duration must be 2_222 seconds (Material spec)`() {
+        #expect(CircularProgressIndicatorIndeterminateView.rotationDuration == 2.222)
     }
+
+    // MARK: - Sweep
 
     @Test
-    func `additional rotation animation duration must be 500 milliseconds (M3 spec)`() {
-        #expect(CircularProgressIndicatorIndeterminateView.additionalRotationAnimDuration == 0.5)
-    }
-
-    @Test
-    func `additional rotation target must be 90 degrees per cycle (M3 spec)`() {
-        #expect(CircularProgressIndicatorIndeterminateView.additionalRotationTarget == 90.0)
-    }
-
-    @Test @MainActor
-    func `additional rotation hold duration must equal cycle minus animation duration`() {
-        // Coherence check: hold + anim = full cycle
-        let hold = CircularProgressIndicatorIndeterminateView.additionalRotationCycle
-            - CircularProgressIndicatorIndeterminateView.additionalRotationAnimDuration
-        #expect(hold == 1.0)
-    }
-
-    // MARK: - Progress sweep
-
-    @Test
-    func `progress half cycle must be 1_5 seconds (M3 spec)`() {
-        #expect(CircularProgressIndicatorIndeterminateView.progressHalfCycle == 1.5)
+    func `maximum sweep must be 270 degrees (3 over 2 pi, Material spec)`() {
+        #expect(CircularProgressIndicatorIndeterminateView.maxSweepDegrees == 270.0)
     }
 
     @Test
-    func `progress minimum sweep must be 5 percent`() {
-        #expect(CircularProgressIndicatorIndeterminateView.progressMin == 0.05)
+    func `minimum sweep must be strictly positive so the arc never fully disappears`() {
+        #expect(CircularProgressIndicatorIndeterminateView.minSweepDegrees > 0.0)
     }
 
     @Test
-    func `progress maximum sweep must be 75 percent (M3 spec)`() {
-        #expect(CircularProgressIndicatorIndeterminateView.progressMax == 0.75)
+    func `minimum sweep must be strictly less than maximum sweep`() {
+        #expect(CircularProgressIndicatorIndeterminateView.minSweepDegrees
+            < CircularProgressIndicatorIndeterminateView.maxSweepDegrees)
+    }
+
+    // MARK: - Kick
+
+    @Test
+    func `kick must be 90 degrees per tooth (Material spec)`() {
+        #expect(CircularProgressIndicatorIndeterminateView.kickDegrees == 90.0)
     }
 
     @Test
-    func `progress maximum sweep without track must be 90 percent`() {
-        #expect(CircularProgressIndicatorIndeterminateView.progressMaxWithoutTrack == 0.90)
-    }
-
-    @Test
-    func `progress maximum without track must be greater than or equal to progress maximum with track`() {
-        #expect(CircularProgressIndicatorIndeterminateView.progressMaxWithoutTrack
-            >= CircularProgressIndicatorIndeterminateView.progressMax)
-    }
-
-    @Test
-    func `progress minimum must be strictly less than progress maximum`() {
-        // Coherence check: prevent silent regression that swaps or equals bounds
-        #expect(CircularProgressIndicatorIndeterminateView.progressMin < CircularProgressIndicatorIndeterminateView.progressMax)
+    func `kick plus maximum sweep must total a full turn (invisible reset jump)`() {
+        // The -360° jump produced when the tooth resets must be a full turn to stay invisible.
+        #expect(CircularProgressIndicatorIndeterminateView.kickDegrees
+            + CircularProgressIndicatorIndeterminateView.maxSweepDegrees == 360.0)
     }
 
     // MARK: - Static (accessibility / low power) sweep
@@ -111,9 +93,8 @@ struct CircularProgressAnimatorConstantsTests {
     }
 
     @Test
-    func `static sweep must be within the animated progress range`() {
-        // Coherence: the static fallback should look consistent with what the animation produces
-        #expect(CircularProgressIndicatorIndeterminateView.staticSweep >= CircularProgressIndicatorIndeterminateView.progressMin)
-        #expect(CircularProgressIndicatorIndeterminateView.staticSweep <= CircularProgressIndicatorIndeterminateView.progressMax)
+    func `static sweep must be within [0, 1]`() {
+        #expect(CircularProgressIndicatorIndeterminateView.staticSweep >= 0.0)
+        #expect(CircularProgressIndicatorIndeterminateView.staticSweep <= 1.0)
     }
 }

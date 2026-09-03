@@ -38,7 +38,11 @@ import SwiftUI
 ///   5. Track after line 2: `[0, secondTail − gap]` if `secondTail > gap`.
 ///
 ///   Since two of these segments are colored and the gaps are simply not drawn (transparent
-///   container background), the effect is a caterpillar-like race between two lines.
+///   container background), the effect is a caterpillar-like race between two lines. Each `gap`
+///   above is not a fixed value: it is ramped down smoothly to `0` as the adjacent fraction
+///   approaches an edge of the track (see
+///   ``effectiveTrackGapFraction(currentValue:gapFraction:)``), so the visible spacing never jumps
+///   abruptly when a line's head or tail crosses `0` or `1`.
 ///
 /// The optional stop indicator is drawn as a **overlay** on the right edge in determinate mode
 /// only — it does not reserve any space in the track, so appearing / disappearing it never
@@ -52,6 +56,12 @@ struct LinearProgressBarCanvasView: View {
 
     /// Reduced gap between the foreground bar and the track, in points.
     static let smallGapSize: CGFloat = 1.0
+
+    /// Progress value threshold below which the track gap is ramped down proportionally, in
+    /// `[0, 1]`. Matches the Material reference implementations' `TrackGapRampDownThreshold =
+    /// 0.01`. Without this ramp, the gap would jump abruptly from `0` to its nominal size as soon
+    /// as the adjacent segment's fraction crosses `0`, producing a visible discontinuity.
+    static let trackGapRampDownThreshold: CGFloat = 0.01
 
     /// Side of the stop indicator, in points, relative to the bar height. Material 3 uses a stop
     /// indicator whose size equals the track height, so it scales naturally with Dynamic Type.
@@ -191,6 +201,12 @@ struct LinearProgressBarCanvasView: View {
     }
 
     /// Draws the three track segments of the indeterminate rendering (segments 1, 3 and 5).
+    ///
+    /// The gap adjacent to each line's fraction is computed via
+    /// ``effectiveTrackGapFraction(currentValue:gapFraction:)`` instead of being added or omitted
+    /// through a binary condition: this ramps the gap smoothly from `0` to its nominal size as the
+    /// adjacent fraction grows from `0` to `1%`, avoiding the abrupt jump that would otherwise
+    /// occur exactly when a line's head or tail crosses an edge of the track.
     private func drawIndeterminateTracks(context: GraphicsContext,
                                          size: CGSize,
                                          gapFraction: CGFloat,
@@ -205,7 +221,9 @@ struct LinearProgressBarCanvasView: View {
 
         // 1. Track before line 1.
         if firstHead < 1 - gapFraction {
-            let start = firstHead > 0 ? firstHead + gapFraction : 0
+            let start = firstHead > 0
+                ? firstHead + Self.effectiveTrackGapFraction(currentValue: firstHead, gapFraction: gapFraction)
+                : 0
             fillSegment(context: context,
                         size: size,
                         startFraction: start,
@@ -215,8 +233,12 @@ struct LinearProgressBarCanvasView: View {
         }
         // 3. Track between line 1 and line 2.
         if firstTail > gapFraction {
-            let start = secondHead > 0 ? secondHead + gapFraction : 0
-            let end = firstTail < 1 ? firstTail - gapFraction : 1
+            let start = secondHead > 0
+                ? secondHead + Self.effectiveTrackGapFraction(currentValue: secondHead, gapFraction: gapFraction)
+                : 0
+            let end = firstTail < 1
+                ? firstTail - Self.effectiveTrackGapFraction(currentValue: 1 - firstTail, gapFraction: gapFraction)
+                : 1
             if end > start {
                 fillSegment(context: context,
                             size: size,
@@ -228,7 +250,9 @@ struct LinearProgressBarCanvasView: View {
         }
         // 5. Track after line 2.
         if secondTail > gapFraction {
-            let end = secondTail < 1 ? secondTail - gapFraction : 1
+            let end = secondTail < 1
+                ? secondTail - Self.effectiveTrackGapFraction(currentValue: 1 - secondTail, gapFraction: gapFraction)
+                : 1
             if end > 0 {
                 fillSegment(context: context,
                             size: size,
@@ -312,6 +336,16 @@ struct LinearProgressBarCanvasView: View {
     }
 
     // MARK: - Gap helpers
+
+    /// Computes a track gap fraction that is scaled proportionally to a given adjacent value.
+    ///
+    /// This is used for a smooth transition of the track gap's size, preventing it from appearing
+    /// or disappearing abruptly. The returned value increases linearly from `0` to the full
+    /// `gapFraction` as `currentValue` increases from `0` to ``trackGapRampDownThreshold``.
+    /// Mirrors the Material reference implementations' `getEffectiveTrackGapFraction`.
+    static func effectiveTrackGapFraction(currentValue: CGFloat, gapFraction: CGFloat) -> CGFloat {
+        gapFraction * min(max(currentValue, 0.0), trackGapRampDownThreshold) / trackGapRampDownThreshold
+    }
 
     /// Effective gap between the foreground bar and the track, in points. When ``strokeCap`` is
     /// `.round`, the round caps eat up the visible spacing, so we compensate by adding
