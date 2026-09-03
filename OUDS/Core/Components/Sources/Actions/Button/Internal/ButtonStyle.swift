@@ -78,11 +78,11 @@ struct StyleForButton: ButtonStyle {
                        alignment: .center)
                 .contentShape(Rectangle())
                 .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
-        case .loading:
+        case let .loading(progress):
             configuration.label
                 .frame(maxWidth: maxWidth)
                 .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
-                .modifier(ButtonLoadingContentModifier(appearance: appearance, size: size))
+                .modifier(ButtonLoadingContentModifier(appearance: appearance, size: size, progress: progress))
         }
     }
 

@@ -28,6 +28,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
 
     let appearance: OUDSButton.Appearance
     let size: OUDSButton.Size
+    let progress: Double?
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -39,12 +40,30 @@ struct ButtonLoadingContentModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay {
-                LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
+                Group {
+                    if let progress {
+                        CircularProgressIndicatorDeterminateView(progress: progress,
+                                                                 animated: true,
+                                                                 foregroundColor: colorToken.color(for: colorScheme),
+                                                                 trackColor: .clear,
+                                                                 strokeCap: .square,
+                                                                 gapSize: .default,
+                                                                 size: sizeProgressIndicator)
+                        
+                    } else {
+                        CircularProgressIndicatorIndeterminateView(foregroundColor: colorToken.color(for: colorScheme),
+                                                                   trackColor: .clear,
+                                                                   strokeCap: .square,
+                                                                   gapSize: .default,
+                                                                   hasTrack: false,
+                                                                   size: sizeProgressIndicator)
+                    }
+                }
+                .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
             }
     }
 
-    // MARK: Private helpers
+    // MARK: Private helper
 
     private var colorToken: MultipleColorSemanticToken {
         switch appearance {
