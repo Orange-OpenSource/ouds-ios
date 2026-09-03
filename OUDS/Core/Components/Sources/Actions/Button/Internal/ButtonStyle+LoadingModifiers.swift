@@ -49,7 +49,6 @@ struct ButtonLoadingContentModifier: ViewModifier {
                                                                  strokeCap: .square,
                                                                  gapSize: .default,
                                                                  size: sizeProgressIndicator)
-                        
                     } else {
                         CircularProgressIndicatorIndeterminateView(foregroundColor: colorToken.color(for: colorScheme),
                                                                    trackColor: .clear,
