@@ -128,7 +128,7 @@ import SwiftUI
 /// ![A top toolbar component in light mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_light)
 /// ![A top toolbar component in dark mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_dark)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.1.0 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, visionOS 1, *)
 public struct OUDSToolBarTop: ViewModifier {
