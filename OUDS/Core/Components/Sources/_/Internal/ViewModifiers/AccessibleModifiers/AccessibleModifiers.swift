@@ -35,7 +35,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     #endif
 
     @Environment(\.theme) private var theme
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body

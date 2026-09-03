@@ -43,7 +43,14 @@ import SwiftUI
 ///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape", size: .large)
 ///
 ///     // Adjust with square ratio
-///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape", ration: .square)
+///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape", ratio: .square)
+///
+///     // Async image from URL
+///     OUDSListItemImage(asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image")
+///
+///     // Animated image (GIF or WebP) from URL
+///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
+///                       description: "An animated image")
 ///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
@@ -91,7 +98,21 @@ public struct OUDSListItemImage: View {
         case widescreen
     }
 
-    // MARK: Initializer
+    // MARK: Properties
+
+    let imageType: ImageType
+    let size: Size
+    let ratio: Ratio
+    let contentMode: ContentMode
+    let description: String?
+
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
+
+    // MARK: Initializers
 
     /// Creates an icon element for use in a list item at the leading or trailing position.
     ///
@@ -112,39 +133,125 @@ public struct OUDSListItemImage: View {
     ///   - ratio: Ratio of the image. By default a `square` image.
     ///   - contentMode:A flag indicating whether this view should fit or fill the parent context. Default set to `.fit`.
     public init(asset: Image, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
-        self.asset = asset
+        imageType = .asset(asset)
         self.size = size
         self.ratio = ratio
         self.contentMode = contentMode
         self.description = description
     }
 
-    // MARK: Properties
+    /// Creates an icon element for use in a list item at the leading or trailing position with an async image.
+    ///
+    /// ```swift
+    ///     // Async image from URL
+    ///     OUDSListItemImage(asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image")
+    ///
+    ///     // Async image with large size
+    ///     OUDSListItemImage(asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image", size: .large)
+    ///
+    ///     // Async image with custom content and placeholder
+    ///     OUDSListItemImage(
+    ///         asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")) { image in
+    ///             image.resizable()
+    ///         } placeholder: {
+    ///             ProgressView()
+    ///         },
+    ///         description: "A remote image",
+    ///         size: .medium
+    ///     )
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - asyncImage: The async image to load (created with ``OUDSAsyncImage``)
+    ///   - description: The description of the image for accessibility
+    ///   - size: The size of the icon. Defaults to `.medium`.
+    ///     **Note:** Ignored when the icon is embedded in a list item with small size
+    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///   - ratio: Ratio of the image. By default a `square` image.
+    ///   - contentMode: A flag indicating whether this view should fit or fill the parent context. Default set to `.fit`.
+    public init(asyncImage: OUDSAsyncImage<some View>, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
+        imageType = .asyncImage(AnyView(asyncImage))
+        self.size = size
+        self.ratio = ratio
+        self.contentMode = contentMode
+        self.description = description
+    }
 
-    let asset: Image
-    let size: Size
-    let ratio: Ratio
-    let contentMode: ContentMode
-    let description: String?
+    /// Creates an image element for use in a list item at the leading or trailing position with an animated
+    /// image (GIF or WebP).
+    ///
+    /// ```swift
+    ///     // Animated image from a remote URL
+    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
+    ///                       description: "An animated image")
+    ///
+    ///     // Animated image from a local file bundled with the app (not an .xcassets entry)
+    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(named: "loading_spinner", withExtension: "gif"),
+    ///                       description: "An animated image")
+    ///
+    ///     // Animated image from local data (e.g. already downloaded and cached by the caller)
+    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(data: myWebPData),
+    ///                       description: "An animated image",
+    ///                       size: .large)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - animatedImage: The animated image to play (created with ``OUDSAnimatedImage``)
+    ///   - description: The description of the image for accessibility
+    ///   - size: The size of the icon. Defaults to `.medium`.
+    ///     **Note:** Ignored when the icon is embedded in a list item with small size
+    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///   - ratio: Ratio of the image. By default a `square` image.
+    ///   - contentMode: A flag indicating whether this view should fit or fill the parent context. Default set to `.fit`.
+    public init(animatedImage: OUDSAnimatedImage, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
+        imageType = .animated(AnyView(animatedImage))
+        self.size = size
+        self.ratio = ratio
+        self.contentMode = contentMode
+        self.description = description
+    }
 
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
+    // MARK: Image Type
+
+    /// Defines the type of image displayed in the list item.
+    enum ImageType {
+        /// A static image asset.
+        case asset(Image)
+
+        /// An async image loaded from a URL.
+        case asyncImage(AnyView)
+
+        /// An animated image (GIF or WebP).
+        case animated(AnyView)
+    }
 
     // MARK: Body
 
+    @ViewBuilder
     public var body: some View {
-        asset
-            .resizable()
-            .aspectRatio(contentMode: contentMode)
+        resizableImage
             .opacity(opacity)
             .frame(width: assetSize * ratioValue, height: assetSize, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(description ?? "")
             .accessibilityHidden(isDecorative)
+    }
+
+    @ViewBuilder
+    private var resizableImage: some View {
+        switch imageType {
+        case let .asset(image):
+            image
+                .resizable()
+                .aspectRatio(contentMode: contentMode)
+        case let .asyncImage(anyView):
+            anyView
+                .aspectRatio(contentMode: contentMode)
+        case let .animated(anyView):
+            anyView
+                .aspectRatio(contentMode: contentMode)
+        }
     }
 
     // MARK: Helpers

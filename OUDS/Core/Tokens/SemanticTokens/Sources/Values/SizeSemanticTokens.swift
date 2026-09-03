@@ -149,6 +149,9 @@ public protocol SizeSemanticTokens {
     var minInteractiveArea: SizeSemanticToken { get }
 
     var minInteractiveAreaDefault: SizeSemanticToken { get }
+
+    var maxWidthBoxedTextMobile: SizeSemanticToken { get }
+    var maxWidthBoxedTextTablet: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

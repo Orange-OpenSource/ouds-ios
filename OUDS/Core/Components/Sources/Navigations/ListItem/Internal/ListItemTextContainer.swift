@@ -24,46 +24,51 @@ import SwiftUI
 /// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
 ///   as-is inside the label area. The provided `accessibilityLabel` is used in the combined
 ///   Voice Over vocalization.
-struct ListItemTextContainer<Slot: View>: View {
+struct ListItemTextContainer: View {
 
     // MARK: Properties
 
     let data: OUDSListItemData
-    let slot: Slot
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.oudsListItemContainersAlignment) private var alignment
 
     // MARK: Body
 
+    // swiftlint:disable closure_body_length
     var body: some View {
         VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
             VStack(alignment: .leading, spacing: theme.listItem.spaceRowGap) {
 
-                if let overline = data.overline,
-                   !overline.isEmpty,
+                if let overlineContent = data.overlineContent,
+                   !overlineContent.isEmpty,
                    itemSize == .default
                 {
-                    Text(overline)
+                    textView(for: overlineContent)
                         .labelModerateSmall(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                 }
 
                 HStack {
                     switch data.labelContent {
                     case let .text(labelText, isBold):
-                        if isBold {
-                            Text(labelText).labelStrongLarge(theme)
-                        } else {
-                            Text(labelText).labelDefaultLarge(theme)
+                        Group {
+                            if isBold {
+                                Text(labelText).labelStrongLarge(theme)
+                            } else {
+                                Text(labelText).labelDefaultLarge(theme)
+                            }
                         }
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                     case let .custom(customView, _):
                         customView
-                            .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer) // TODO: #265 - Not sure for these tokens
+                            .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)
                     }
                 }
                 .multilineTextAlignment(.leading)
@@ -77,6 +82,7 @@ struct ListItemTextContainer<Slot: View>: View {
                         .labelStrongMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(labelsColor)
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                 }
 
                 if let description = data.description, !description.isEmpty {
@@ -84,19 +90,22 @@ struct ListItemTextContainer<Slot: View>: View {
                         .labelDefaultMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                 }
             }
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilityLabel)
 
-            if !(slot is EmptyView) {
-                slot
-                    .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer) // TODO: #265 - Not sure for these tokens
+            if let slot = data.textSlot {
+                slot.view
+                    .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)
             }
         }
         .padding(.top, topPadding)
         .frame(maxWidth: .infinity, minHeight: minHeight, alignment: verticalAlignment)
     }
+
+    // swiftlint:enable closure_body_length
 
     // MARK: Helpers
 
@@ -119,6 +128,15 @@ struct ListItemTextContainer<Slot: View>: View {
 
     private var descriptionOverlineColor: MultipleColorSemanticToken {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentMuted
+    }
+
+    private var maxWidth: CGFloat {
+        switch itemSize {
+        case .small:
+            theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular)
+        case .default:
+            theme.sizes.maxWidthBoxedText.dimension(for: horizontalSizeClass ?? .regular)
+        }
     }
 
     private var minHeight: CGFloat {
@@ -151,12 +169,10 @@ struct ListItemTextContainer<Slot: View>: View {
     private var accessibilityLabel: String {
         var parts: [String] = []
 
-        if itemSize != .small, let overline = data.overline {
-            parts.append(overline)
+        if itemSize != .small, let overlineContent = data.overlineContent, !overlineContent.isEmpty {
+            parts.append(overlineContent.rawValue)
         }
 
-        // data.label returns the text for .text labels,
-        // or the accessibilityLabel for .custom labels.
         let labelString = data.labelContent.stringValue
         if !labelString.isEmpty {
             parts.append(labelString)

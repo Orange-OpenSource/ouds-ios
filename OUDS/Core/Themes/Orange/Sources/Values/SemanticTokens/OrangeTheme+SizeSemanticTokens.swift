@@ -215,4 +215,8 @@ extension OrangeThemeSizeSemanticTokensProvider: SizeSemanticTokens {
     @objc open var maxWidthLabelSmallTablet: SizeSemanticToken { DimensionRawTokens._6000 }
     /// Has for value token DimensionRawTokens._600 (= 48)
     @objc open var minInteractiveAreaDefault: SizeSemanticToken { DimensionRawTokens._600 }
+    /// Has for value token DimensionRawTokens._7000 (= 720)
+    @objc open var maxWidthBoxedTextMobile: SizeSemanticToken { DimensionRawTokens._7000 }
+    /// Has for value token DimensionRawTokens._8000 (= 800)
+    @objc open var maxWidthBoxedTextTablet: SizeSemanticToken { DimensionRawTokens._8000 }
 }
