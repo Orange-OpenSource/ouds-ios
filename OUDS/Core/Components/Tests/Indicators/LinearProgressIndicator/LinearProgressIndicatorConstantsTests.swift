@@ -262,11 +262,12 @@ struct LinearIndeterminateEasingTests {
     }
 }
 
-// MARK: - Fraction helper (Android Compose M3 keyframes behavior)
+// MARK: - Fraction helper (Material keyframes behavior)
 
 /// Tests on ``LinearProgressIndicatorIndeterminateView/fraction(phase:delay:duration:controlPoints:)``,
-/// which must reproduce the Material `keyframes` behavior: value is `1.0` before `delay`, then
-/// eases from `0.0` to `1.0` between `delay` and `delay + duration`, then stays at `1.0`.
+/// which must reproduce Flutter's `Interval.transform` clamping behavior: value is `0.0` before
+/// `delay` (the animation has not started yet), then eases from `0.0` to `1.0` between `delay` and
+/// `delay + duration`, then stays at `1.0`.
 struct LinearIndeterminateFractionTests {
 
     private let delay: TimeInterval = 0.25
@@ -275,12 +276,12 @@ struct LinearIndeterminateFractionTests {
     private let controlPoints = ProgressIndicatorCubicBezierEasing.ControlPoints(x1: 0.2, y1: 0.0, x2: 0.8, y2: 1.0)
 
     @Test @MainActor
-    func `fraction before delay must be 1_0 (previous cycle value)`() {
+    func `fraction before delay must be 0_0 (animation not started yet)`() {
         let value = LinearProgressIndicatorIndeterminateView.fraction(phase: 0.1,
                                                                       delay: delay,
                                                                       duration: duration,
                                                                       controlPoints: controlPoints)
-        #expect(value == 1.0)
+        #expect(value == 0.0)
     }
 
     @Test @MainActor
@@ -318,5 +319,120 @@ struct LinearIndeterminateFractionTests {
                                                                       duration: 0.0,
                                                                       controlPoints: controlPoints)
         #expect(value == 1.0)
+    }
+
+    @Test @MainActor
+    func `fraction must never jump discontinuously around the delay boundary (no sudden caterpillar)`() {
+        // Regression test for the "caterpillar appears suddenly" bug: sampling finely around
+        // `delay`, consecutive values must never differ by more than what the eased curve itself
+        // can produce in one small step.
+        let step: TimeInterval = 0.001
+        var previous = LinearProgressIndicatorIndeterminateView.fraction(phase: delay - 0.05,
+                                                                         delay: delay,
+                                                                         duration: duration,
+                                                                         controlPoints: controlPoints)
+        var phase = delay - 0.05 + step
+        while phase <= delay + 0.05 {
+            let value = LinearProgressIndicatorIndeterminateView.fraction(phase: phase,
+                                                                          delay: delay,
+                                                                          duration: duration,
+                                                                          controlPoints: controlPoints)
+            #expect(abs(value - previous) < 0.05)
+            previous = value
+            phase += step
+        }
+    }
+}
+
+// MARK: - Full-cycle segment length continuity (end-to-end regression for the reported glitch)
+
+/// Regression tests reproducing the exact reported bug: "the caterpillar arrives suddenly, a
+/// second one arrives and leaves abruptly". These tests simulate a full ``cycleDuration`` at a
+/// fine time step and check that the visible length of each colored line
+/// (`max(0, head - tail)`) never jumps abruptly, and instead grows from `0`, peaks, and shrinks
+/// back to `0` continuously — matching the reference Flutter/Material behavior of a caterpillar
+/// that departs, stretches, comes back together and exits, before the next one starts.
+struct LinearIndeterminateCycleContinuityTests {
+
+    private static let firstBarControlPoints = (
+        head: ProgressIndicatorCubicBezierEasing.ControlPoints(x1: 0.2, y1: 0.0, x2: 0.8, y2: 1.0),
+        tail: ProgressIndicatorCubicBezierEasing.ControlPoints(x1: 0.4, y1: 0.0, x2: 1.0, y2: 1.0))
+    private static let secondBarControlPoints = (
+        head: ProgressIndicatorCubicBezierEasing.ControlPoints(x1: 0.0, y1: 0.0, x2: 0.65, y2: 1.0),
+        tail: ProgressIndicatorCubicBezierEasing.ControlPoints(x1: 0.10, y1: 0.0, x2: 0.45, y2: 1.0))
+
+    private static func firstBarLength(at phase: TimeInterval) -> CGFloat {
+        let head = LinearProgressIndicatorIndeterminateView.fraction(
+            phase: phase,
+            delay: LinearProgressIndicatorIndeterminateView.firstLineHeadDelay,
+            duration: LinearProgressIndicatorIndeterminateView.firstLineHeadDuration,
+            controlPoints: firstBarControlPoints.head)
+        let tail = LinearProgressIndicatorIndeterminateView.fraction(
+            phase: phase,
+            delay: LinearProgressIndicatorIndeterminateView.firstLineTailDelay,
+            duration: LinearProgressIndicatorIndeterminateView.firstLineTailDuration,
+            controlPoints: firstBarControlPoints.tail)
+        return max(0, head - tail)
+    }
+
+    private static func secondBarLength(at phase: TimeInterval) -> CGFloat {
+        let head = LinearProgressIndicatorIndeterminateView.fraction(
+            phase: phase,
+            delay: LinearProgressIndicatorIndeterminateView.secondLineHeadDelay,
+            duration: LinearProgressIndicatorIndeterminateView.secondLineHeadDuration,
+            controlPoints: secondBarControlPoints.head)
+        let tail = LinearProgressIndicatorIndeterminateView.fraction(
+            phase: phase,
+            delay: LinearProgressIndicatorIndeterminateView.secondLineTailDelay,
+            duration: LinearProgressIndicatorIndeterminateView.secondLineTailDuration,
+            controlPoints: secondBarControlPoints.tail)
+        return max(0, head - tail)
+    }
+
+    @Test @MainActor
+    func `first bar length must start at zero and grow smoothly right from the start of the cycle`() {
+        // Regression: with the fixed `fraction`, the bar is no longer invisible until `firstLineTailDelay`
+        // then popping into existence — it must already be visibly growing well before that delay.
+        let lengthAtStart = Self.firstBarLength(at: 0.0)
+        let lengthBeforeTailDelay = Self.firstBarLength(
+            at: LinearProgressIndicatorIndeterminateView.firstLineTailDelay - 0.05)
+        #expect(lengthAtStart == 0.0)
+        #expect(lengthBeforeTailDelay > 0.0)
+    }
+
+    @Test @MainActor
+    func `first bar length must never jump by more than a small bounded step across the full cycle`() {
+        let step: TimeInterval = 0.002
+        var previous = Self.firstBarLength(at: 0.0)
+        var phase: TimeInterval = step
+        while phase <= LinearProgressIndicatorIndeterminateView.cycleDuration {
+            let value = Self.firstBarLength(at: phase)
+            #expect(abs(value - previous) < 0.05)
+            previous = value
+            phase += step
+        }
+    }
+
+    @Test @MainActor
+    func `second bar length must never jump by more than a small bounded step across the full cycle`() {
+        let step: TimeInterval = 0.002
+        var previous = Self.secondBarLength(at: 0.0)
+        var phase: TimeInterval = step
+        while phase <= LinearProgressIndicatorIndeterminateView.cycleDuration {
+            let value = Self.secondBarLength(at: phase)
+            #expect(abs(value - previous) < 0.05)
+            previous = value
+            phase += step
+        }
+    }
+
+    @Test @MainActor
+    func `first bar must fully exit before fading back in on the next cycle`() {
+        // The first bar's tail finishes at firstLineTailDelay + firstLineTailDuration: from that
+        // point until the cycle wraps, the bar must be fully gone (length 0).
+        let tailEnd = LinearProgressIndicatorIndeterminateView.firstLineTailDelay
+            + LinearProgressIndicatorIndeterminateView.firstLineTailDuration
+        #expect(Self.firstBarLength(at: tailEnd) == 0.0)
+        #expect(Self.firstBarLength(at: tailEnd + 0.1) == 0.0)
     }
 }

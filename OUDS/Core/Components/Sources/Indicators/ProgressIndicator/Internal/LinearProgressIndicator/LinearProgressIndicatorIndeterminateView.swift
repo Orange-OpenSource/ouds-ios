@@ -191,27 +191,33 @@ struct LinearProgressIndicatorIndeterminateView: View {
     /// 1f at delay + duration
     /// ```
     ///
-    /// Looped through `infiniteRepeatable`. In practice:
-    /// - Before `delay`, the fraction is **`1.0`** (the value at the end of the previous cycle).
+    /// Looped through `infiniteRepeatable`. Mirrors Flutter's `Interval.transform`, which clamps
+    /// the normalized time to `[0, 1]` before evaluating the curve. In practice:
+    /// - Before `delay`, the fraction is **`0.0`** (the animation has not started yet).
     /// - Between `delay` and `delay + duration`, it interpolates from `0.0` to `1.0` with the
     ///   given cubic Bézier easing.
     /// - After `delay + duration`, the fraction stays at `1.0` until the end of the cycle.
     ///
     /// This is what produces the "caterpillar" effect: the head starts moving before the tail, so
-    /// the visible segment (`head - tail`) grows, then shrinks as the tail catches up.
+    /// the visible segment (`head - tail`) grows continuously from `0`, then shrinks continuously
+    /// back to `0` as the tail catches up — with no discontinuity at any point. Returning `1.0`
+    /// before `delay` (as if holding the previous cycle's value) would freeze the segment at
+    /// length `0` for the whole delay, then make it jump abruptly to its already-grown length as
+    /// soon as `delay` is reached — exactly the "the caterpillar suddenly appears" glitch this
+    /// fixes.
     static func fraction(phase: TimeInterval,
                          delay: TimeInterval,
                          duration: TimeInterval,
                          controlPoints: ProgressIndicatorCubicBezierEasing.ControlPoints) -> CGFloat
     {
         guard duration > 0 else { return 1.0 }
-        if phase < delay {
+        let t = min(max((phase - delay) / duration, 0.0), 1.0)
+        if t <= 0.0 {
+            return 0.0
+        } else if t >= 1.0 {
             return 1.0
-        } else if phase < delay + duration {
-            let t = (phase - delay) / duration
-            return CGFloat(ProgressIndicatorCubicBezierEasing.value(t, controlPoints))
         } else {
-            return 1.0
+            return CGFloat(ProgressIndicatorCubicBezierEasing.value(t, controlPoints))
         }
     }
 }
