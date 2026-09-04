@@ -11,13 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-// Conditional import and use of UIKit for documentation generation (see #628 #626)
-
-#if canImport(UIKit)
 import OUDSFoundations
-#endif
 import SwiftUI
-#if canImport(UIKit)
+#if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
 #endif
 
@@ -33,10 +29,10 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     let subtitle: String?
     let hasLargeTitle: Bool
 
-#if canImport(UIKit)
+    #if canImport(UIKit)
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
     let deadline: DispatchTime
-#endif
+    #endif
 
     @Environment(\.theme) private var theme
     @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
@@ -45,7 +41,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        #if os(macOS) || os(watchOS)
+        #if os(macOS) || os(watchOS) || os(tvOS)
         content
             .navigationTitle(LocalizedStringKey(title))
             .oudsNavigationSubtitle(subtitle)
@@ -82,17 +78,17 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         }
         .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
         .onAppear {
-#if canImport(UIKit) && !os(watchOS)
+            #if canImport(UIKit) && !os(watchOS)
             DispatchQueue.main.asyncAfter(deadline: deadline) {
                 UIAccessibility.post(notification: .screenChanged, argument: title)
             }
-#endif
+            #endif
         }
         #endif
     }
 
     // MARK: Font helpers
-    #if !os(macOS)
+
     private var fonts: (title: Font, subtitle: Font)? {
         guard let fontFamily = theme.fontFamily else {
             return nil
@@ -100,31 +96,15 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
         let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.medium)]
 
-        guard let uiTitleFont = UIFont(name: titleFontName, size: 17) else {
+        guard let nativeTitleFont = NativeFont(name: titleFontName, size: 17) else {
             return nil
         }
 
-        guard let uiSubtitleFont = UIFont(name: titleFontName, size: 12) else {
+        guard let nativeSubtitleFont = NativeFont(name: titleFontName, size: 12) else {
             return nil
         }
 
-        return (Font(uiTitleFont), Font(uiSubtitleFont))
-    }
-    #endif
-}
-
-extension View {
-    @ViewBuilder
-    func oudsNavigationSubtitle(_ subtitle: String? = nil) -> some View {
-        #if os(iOS) || os(macOS)
-        if #available(iOS 26.0, *), let subtitle {
-            navigationSubtitle(Text(LocalizedStringKey(subtitle)))
-        } else {
-            self
-        }
-        #else
-        self
-        #endif
+        return (Font(nativeTitleFont), Font(nativeSubtitleFont))
     }
 }
 
@@ -191,5 +171,23 @@ struct RestrictedRequestAccessibleFocusModifier: ViewModifier {
                 requestFocus = target
             }
         }
+    }
+}
+
+// MARK: - Extension of View
+
+extension View {
+
+    @ViewBuilder
+    func oudsNavigationSubtitle(_ subtitle: String? = nil) -> some View {
+        #if os(iOS) || os(macOS)
+        if #available(iOS 26.0, *), let subtitle {
+            navigationSubtitle(Text(LocalizedStringKey(subtitle)))
+        } else {
+            self
+        }
+        #else
+        self
+        #endif
     }
 }
