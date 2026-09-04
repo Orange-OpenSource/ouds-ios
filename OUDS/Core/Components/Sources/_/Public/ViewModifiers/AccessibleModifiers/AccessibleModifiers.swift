@@ -14,8 +14,8 @@
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import SwiftUI
 #if canImport(UIKit)
-import UIKit
 import OUDSFoundations
+import UIKit
 #endif
 
 // MARK: - Accessible Navigation Title Modifier
