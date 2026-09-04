@@ -138,10 +138,28 @@ import SwiftUI
 ///     OUDSLinearProgressIndicator(status: .info,
 ///                                 helperText: "Loading data…",
 ///                                 helperTextAlignment: .end)
+///
+///     // Determinate with accessibility name and state for VoiceOver
+///     OUDSLinearProgressIndicator(progress: 0.75,
+///                                 accessibility: .init(name: "download bar", state: "downloading"))
+///
+///     // Determinate with accessibility and helper text
+///     OUDSLinearProgressIndicator(progress: 0.5,
+///                                 accessibility: .init(name: "progress bar", state: "step 1 of 4"),
+///                                 helperText: .description("Loading..."))
+///
+///     // Indeterminate with accessibility
+///     OUDSLinearProgressIndicator(status: .info,
+///                                 accessibility: .init(name: "loading", state: "processing"))
 /// ```
 ///
 /// ## Accessibility considerations
 ///
+/// - Use the `accessibility` parameter to provide a custom name and state for VoiceOver:
+///   - `accessibility.name`: The name of the component (e.g., "progress bar", "download bar")
+///   - `accessibility.state`: The state of the component (e.g., "downloading", "step 1 of 4")
+/// - VoiceOver reads: **[name]. [state]. [helperText] [value]**. Example: *"download bar. downloading. 75 percent"*
+/// - If `accessibility` is not provided, the behavior is unchanged: only the helper text (if provided) is used as label.
 /// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage)
 ///   so that Voice Over reads e.g. *"75 percent"*, and is marked with the `.updatesFrequently` trait so that
 ///   assistive technologies know the value is changing. If a `helperText` is provided, it is exposed as the
@@ -257,13 +275,15 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///      is displayed instantly at its target value with no animation. Animations are always disabled
     ///      when `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this
     ///      flag.
+    ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
     public init(progress: Double,
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
                 helperText: Self.HelperTextType? = .percent(alignment: .center),
                 gapSize: OUDSProgressIndicatorGapSize = .default,
-                animated: Bool = true)
+                animated: Bool = true,
+                accessibility: OUDSAccessibilityConfiguration? = nil)
     {
         configuration = .determinate(.init(progress: progress,
                                            status: status,
@@ -271,7 +291,9 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
                                            stopIndicator: stopIndicator,
                                            helperText: helperText,
                                            gapSize: gapSize,
-                                           animated: animated))
+                                           animated: animated,
+                                           accessibilityName: accessibility?.name,
+                                           accessibilityState: accessibility?.state))
     }
 
     /// Creates an **indeterminate** linear progress indicator.
@@ -287,17 +309,21 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///    - helperTextAlignment: The alignment of the helper text. Defaults to `.center`. Ignored if `helperText` is `nil`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
     ///      ``OUDSProgressIndicatorGapSize/default``.
+    ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
                 helperTextAlignment: HelperTextAlignment = .center,
-                gapSize: OUDSProgressIndicatorGapSize = .default)
+                gapSize: OUDSProgressIndicatorGapSize = .default,
+                accessibility: OUDSAccessibilityConfiguration? = nil)
     {
         configuration = .indeterminate(.init(status: status,
                                              track: track,
                                              helperText: helperText,
                                              helperTextAlignment: helperTextAlignment,
-                                             gapSize: gapSize))
+                                             gapSize: gapSize,
+                                             accessibilityName: accessibility?.name,
+                                             accessibilityState: accessibility?.state))
     }
 
     // MARK: - Body

@@ -175,7 +175,7 @@ public struct OUDSTag: View {
     /// The status of an `OUDSTag` determines the leading element, the background
     /// and the content colors of the tag according to the category.
     /// - Since: 0.18.0
-    public struct Status {
+    @frozen public struct Status {
 
         let leading: Self.Leading
         let category: Self.Category

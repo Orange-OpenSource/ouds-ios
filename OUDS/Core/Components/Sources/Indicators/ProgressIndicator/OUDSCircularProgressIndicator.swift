@@ -105,6 +105,15 @@ import SwiftUI
 ///     OUDSCircularProgressIndicator(progress: 0.75,
 ///                                   helperText: .percent("of 100 MB"))
 ///
+///     // Determinate with accessibility name and state for VoiceOver
+///     OUDSCircularProgressIndicator(progress: 0.75,
+///                                   accessibility: .init(name: "download bar", state: "downloading"))
+///
+///     // Determinate with accessibility and helper text
+///     OUDSCircularProgressIndicator(progress: 0.5,
+///                                   accessibility: .init(name: "progress bar", state: "step 1 of 4"),
+///                                   helperText: .description("Loading..."))
+///
 ///     // Indeterminate
 ///     OUDSCircularProgressIndicator()
 ///     OUDSCircularProgressIndicator(status: .info)
@@ -115,6 +124,11 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
+/// - Use the `accessibility` parameter to provide a custom name and state for VoiceOver:
+///   - `accessibility.name`: The name of the component (e.g., "progress bar", "download bar")
+///   - `accessibility.state`: The state of the component (e.g., "downloading", "step 1 of 4")
+/// - VoiceOver reads: **[name]. [state]. [helperText] [value]**. Example: *"download bar. downloading. 75 percent"*
+/// - If `accessibility` is not provided, the behavior is unchanged: only the helper text (if provided) is used as label.
 /// - In **determinate** mode, the view exposes the current progress as an accessibility value (percentage) so that
 ///   VoiceOver reads e.g. *"75 percent"*, and is marked with the `.updatesFrequently` trait so that assistive
 ///   technologies know the value is changing.
@@ -206,13 +220,15 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///      `accessibilityReduceMotion` is on or when Low Power Mode is enabled, regardless of this flag.
     ///    - size: The size of the component could be adjusted if used internally by components.
     ///    - helperText: Optional helper text displayed below the indicator. Defaults to `nil`.
+    ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
     public init(progress: Double,
                 status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 gapSize: OUDSProgressIndicatorGapSize = .default,
                 animated: Bool = true,
                 size: CGFloat = Self.defaultSize,
-                helperText: Self.HelperTextType? = nil)
+                helperText: Self.HelperTextType? = nil,
+                accessibility: OUDSAccessibilityConfiguration? = nil)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: progress,
                                                                status: status,
@@ -220,7 +236,9 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
                                                                gapSize: gapSize,
                                                                size: size,
                                                                animated: animated,
-                                                               helperText: helperText)
+                                                               helperText: helperText,
+                                                               accessibilityName: accessibility?.name,
+                                                               accessibilityState: accessibility?.state)
     }
 
     /// Creates an **indeterminate** circular progress indicator.
@@ -231,11 +249,13 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
     ///    - size: The size of the component could be adjusted if used internally by components.
     ///    - helperText: Optional helper text displayed below the indicator. Defaults to `nil`.
+    ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
     public init(status: OUDSProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 gapSize: OUDSProgressIndicatorGapSize = .default,
                 size: CGFloat = Self.defaultSize,
-                helperText: String? = nil)
+                helperText: String? = nil,
+                accessibility: OUDSAccessibilityConfiguration? = nil)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                status: status,
@@ -243,7 +263,9 @@ public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update docum
                                                                gapSize: gapSize,
                                                                size: size,
                                                                animated: true,
-                                                               helperText: .description(helperText ?? ""))
+                                                               helperText: .description(helperText ?? ""),
+                                                               accessibilityName: accessibility?.name,
+                                                               accessibilityState: accessibility?.state)
     }
 
     // MARK: - Body

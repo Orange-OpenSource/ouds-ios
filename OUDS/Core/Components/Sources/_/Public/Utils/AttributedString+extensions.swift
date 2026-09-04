@@ -103,7 +103,7 @@ import SwiftUI
 /// Prefer use other components like `Text` from SwiftUI.
 ///
 /// - Since: 3.0.0
-public struct AttributedStringUrlConfiguration {
+@frozen public struct AttributedStringUrlConfiguration {
 
     let text: String?
     let urlToOpen: URL?

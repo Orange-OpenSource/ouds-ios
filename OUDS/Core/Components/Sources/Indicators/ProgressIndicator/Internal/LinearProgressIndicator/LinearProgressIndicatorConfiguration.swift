@@ -45,6 +45,12 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         /// Whether the reveal / update animation is played.
         let animated: Bool
 
+        /// Accessibility name for VoiceOver (e.g., "progress bar", "download bar").
+        let accessibilityName: String?
+
+        /// Accessibility state for VoiceOver (e.g., "downloading", "step 1 of 4").
+        let accessibilityState: String?
+
         /// Creates a determinate configuration. The `progress` value is clamped to `[0, 1]`.
         init(progress: Double,
              status: OUDSProgressIndicatorStatus,
@@ -52,7 +58,9 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
              stopIndicator: Bool,
              helperText: OUDSLinearProgressIndicator.HelperTextType?,
              gapSize: OUDSProgressIndicatorGapSize,
-             animated: Bool)
+             animated: Bool,
+             accessibilityName: String? = nil,
+             accessibilityState: String? = nil)
         {
             self.progress = min(max(progress, 0.0), 1.0)
             self.status = status
@@ -61,6 +69,8 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
             self.helperText = helperText
             self.gapSize = gapSize
             self.animated = animated
+            self.accessibilityName = accessibilityName
+            self.accessibilityState = accessibilityState
         }
     }
 
@@ -83,6 +93,29 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
         /// Size of the gap between the bars and the track.
         let gapSize: OUDSProgressIndicatorGapSize
+
+        /// Accessibility name for VoiceOver (e.g., "progress bar", "download bar").
+        let accessibilityName: String?
+
+        /// Accessibility state for VoiceOver (e.g., "downloading", "step 1 of 4").
+        let accessibilityState: String?
+
+        init(status: OUDSProgressIndicatorStatus,
+             track: Bool,
+             helperText: String?,
+             helperTextAlignment: OUDSLinearProgressIndicator.HelperTextAlignment,
+             gapSize: OUDSProgressIndicatorGapSize,
+             accessibilityName: String? = nil,
+             accessibilityState: String? = nil)
+        {
+            self.status = status
+            self.track = track
+            self.helperText = helperText
+            self.helperTextAlignment = helperTextAlignment
+            self.gapSize = gapSize
+            self.accessibilityName = accessibilityName
+            self.accessibilityState = accessibilityState
+        }
     }
 
     // MARK: - Convenience accessors
@@ -138,19 +171,47 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
     var accessibilityLabel: String? {
         switch self {
         case let .determinate(configuration):
-            switch configuration.helperText {
-            case let .description(description, _):
-                description
+            var parts: [String] = []
 
-            case let .percent(description, _):
-                description
-
-            case .none:
-                nil
+            if let name = configuration.accessibilityName, !name.isEmpty {
+                parts.append(name)
             }
 
+            if let state = configuration.accessibilityState, !state.isEmpty {
+                parts.append(state)
+            }
+
+            switch configuration.helperText {
+            case let .description(description, _):
+                if !description.isEmpty {
+                    parts.append(description)
+                }
+            case let .percent(description, _):
+                if let description, !description.isEmpty {
+                    parts.append(description)
+                }
+            case .none:
+                break
+            }
+
+            return parts.isEmpty ? nil : parts.joined(separator: ". ")
+
         case let .indeterminate(configuration):
-            configuration.helperText
+            var parts: [String] = []
+
+            if let name = configuration.accessibilityName, !name.isEmpty {
+                parts.append(name)
+            }
+
+            if let state = configuration.accessibilityState, !state.isEmpty {
+                parts.append(state)
+            }
+
+            if let helperText = configuration.helperText, !helperText.isEmpty {
+                parts.append(helperText)
+            }
+
+            return parts.isEmpty ? nil : parts.joined(separator: ". ")
         }
     }
 }

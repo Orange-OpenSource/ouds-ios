@@ -113,7 +113,7 @@ public struct OUDSAlertMessage: View {
 
     // swiftlint:disable nesting
     /// Used to describe the link display in the `OUDSAlertMessage`
-    public struct Link {
+    @frozen public struct Link {
 
         /// The position of an `OUDSAlertMessage.Link`in the alert message.
         @frozen public enum Position {

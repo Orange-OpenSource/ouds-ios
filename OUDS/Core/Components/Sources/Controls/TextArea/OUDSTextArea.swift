@@ -321,7 +321,7 @@ public struct OUDSTextArea: View {
 
     /// Used to describe the helper link below the text area.
     /// - Since: 1.4.0
-    public struct Helperlink {
+    @frozen public struct Helperlink {
         let text: String
         let action: () -> Void
 

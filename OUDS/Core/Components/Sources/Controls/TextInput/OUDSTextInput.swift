@@ -240,7 +240,7 @@ public struct OUDSTextInput: View {
     ///
     /// For iOS 17+ it is possible to define a sensory feeback for the button.
     /// - Since: 0.20.0
-    public struct TrailingAction {
+    @frozen public struct TrailingAction {
 
         let icon: OUDSImage
         let actionHint: String
@@ -326,7 +326,7 @@ public struct OUDSTextInput: View {
 
     /// Used to describe the helper link above the helper text.
     /// - Since: 0.20.0
-    public struct Helperlink {
+    @frozen public struct Helperlink {
         let text: String
         let action: () -> Void
 

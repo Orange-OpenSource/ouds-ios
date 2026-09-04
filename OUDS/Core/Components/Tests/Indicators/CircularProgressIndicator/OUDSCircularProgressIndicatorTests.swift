@@ -174,4 +174,88 @@ struct OUDSCircularProgressIndicatorTests {
                                                                    helperText: .percent())
         #expect(configuration.accessibilityLabel == nil)
     }
+
+    // MARK: - Accessibility configuration
+
+    @Test
+    func `accessibility name alone must be exposed as accessibility label`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   accessibilityName: "download bar")
+        #expect(configuration.accessibilityLabel == "download bar")
+    }
+
+    @Test
+    func `accessibility state alone must be exposed as accessibility label`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   accessibilityState: "downloading")
+        #expect(configuration.accessibilityLabel == "downloading")
+    }
+
+    @Test
+    func `accessibility name and state must be combined with dot separator`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   accessibilityName: "download bar",
+                                                                   accessibilityState: "downloading")
+        #expect(configuration.accessibilityLabel == "download bar. downloading")
+    }
+
+    @Test
+    func `accessibility name and helper text must be combined with dot separator`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   helperText: .description("Uploading"),
+                                                                   accessibilityName: "download bar")
+        #expect(configuration.accessibilityLabel == "download bar. Uploading")
+    }
+
+    @Test
+    func `accessibility name state and helper text must be combined with dot separator`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   helperText: .description("Uploading"),
+                                                                   accessibilityName: "download bar",
+                                                                   accessibilityState: "downloading")
+        #expect(configuration.accessibilityLabel == "download bar. downloading. Uploading")
+    }
+
+    @Test
+    func `empty accessibility name must not be included in label`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   accessibilityName: "",
+                                                                   accessibilityState: "downloading")
+        #expect(configuration.accessibilityLabel == "downloading")
+    }
+
+    @Test
+    func `nil accessibility must not affect label`() {
+        let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
+                                                                   status: .neutral,
+                                                                   track: true,
+                                                                   gapSize: .default,
+                                                                   size: 44,
+                                                                   helperText: .description("Uploading"))
+        #expect(configuration.accessibilityLabel == "Uploading")
+    }
 }

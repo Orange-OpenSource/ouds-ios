@@ -134,7 +134,7 @@ public struct OUDSListItemData {
     /// ```
     ///
     /// - Since: 3.0.0
-    public struct Slot {
+    @frozen public struct Slot {
         let view: AnyView
 
         /// Defines as `AnyView`  the result of `content` to be added in the `list item`  component

@@ -52,3 +52,30 @@ import SwiftUI
     /// Reduced gap size
     case small
 }
+
+// MARK: - Progress Indicator Accessibility Configuration
+
+/// Configuration for VoiceOver accessibility on progress indicators.
+///
+/// Allows customizing the name and state of the progress indicator for better
+/// vocalization.
+///
+/// - Since: 3.0.0
+@frozen public struct OUDSAccessibilityConfiguration: Equatable, Sendable {
+
+    /// The name of the component (e.g., "progress bar", "download bar").
+    public let name: String?
+
+    /// The state of the component (e.g., "downloading", "step 1 of 4").
+    public let state: String?
+
+    /// Creates a new accessibility configuration.
+    ///
+    /// - Parameters:
+    ///   - name: The name of the component.
+    ///   - state: The state of the component.
+    public init(name: String? = nil, state: String? = nil) {
+        self.name = name
+        self.state = state
+    }
+}

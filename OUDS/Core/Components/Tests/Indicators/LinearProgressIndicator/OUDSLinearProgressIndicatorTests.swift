@@ -14,6 +14,8 @@
 @testable import OUDSComponents
 import Testing
 
+// swiftlint:disable type_body_length
+
 /// Tests on the public API and internal configuration of ``OUDSLinearProgressIndicator``.
 struct OUDSLinearProgressIndicatorTests {
 
@@ -191,4 +193,159 @@ struct OUDSLinearProgressIndicatorTests {
             .init(status: .neutral, track: true, helperText: nil, helperTextAlignment: .center, gapSize: .default))
         #expect(configuration.accessibilityLabel == nil)
     }
+
+    // MARK: - Accessibility configuration (determinate)
+
+    @Test
+    func `determinate accessibility name alone must be exposed as accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: nil,
+                  gapSize: .default,
+                  animated: true,
+                  accessibilityName: "download bar"))
+        #expect(configuration.accessibilityLabel == "download bar")
+    }
+
+    @Test
+    func `determinate accessibility state alone must be exposed as accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: nil,
+                  gapSize: .default,
+                  animated: true,
+                  accessibilityState: "downloading"))
+        #expect(configuration.accessibilityLabel == "downloading")
+    }
+
+    @Test
+    func `determinate accessibility name and state must be combined with dot separator`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: nil,
+                  gapSize: .default,
+                  animated: true,
+                  accessibilityName: "download bar",
+                  accessibilityState: "downloading"))
+        #expect(configuration.accessibilityLabel == "download bar. downloading")
+    }
+
+    @Test
+    func `determinate accessibility name and helper text must be combined with dot separator`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: .description("Uploading"),
+                  gapSize: .default,
+                  animated: true,
+                  accessibilityName: "download bar"))
+        #expect(configuration.accessibilityLabel == "download bar. Uploading")
+    }
+
+    @Test
+    func `determinate accessibility name state and helper text must be combined with dot separator`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: .description("Uploading"),
+                  gapSize: .default,
+                  animated: true,
+                  accessibilityName: "download bar",
+                  accessibilityState: "downloading"))
+        #expect(configuration.accessibilityLabel == "download bar. downloading. Uploading")
+    }
+
+    @Test
+    func `determinate empty accessibility name must not be included in label`() {
+        let configuration = LinearProgressIndicatorConfiguration.determinate(
+            .init(progress: 0.5,
+                  status: .neutral,
+                  track: true,
+                  stopIndicator: false,
+                  helperText: nil,
+                  gapSize: .default,
+                  animated: true,
+                  accessibilityName: "",
+                  accessibilityState: "downloading"))
+        #expect(configuration.accessibilityLabel == "downloading")
+    }
+
+    // MARK: - Accessibility configuration (indeterminate)
+
+    @Test
+    func `indeterminate accessibility name alone must be exposed as accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.indeterminate(
+            .init(status: .neutral,
+                  track: true,
+                  helperText: nil,
+                  helperTextAlignment: .center,
+                  gapSize: .default,
+                  accessibilityName: "loading"))
+        #expect(configuration.accessibilityLabel == "loading")
+    }
+
+    @Test
+    func `indeterminate accessibility state alone must be exposed as accessibility label`() {
+        let configuration = LinearProgressIndicatorConfiguration.indeterminate(
+            .init(status: .neutral,
+                  track: true,
+                  helperText: nil,
+                  helperTextAlignment: .center,
+                  gapSize: .default,
+                  accessibilityState: "processing"))
+        #expect(configuration.accessibilityLabel == "processing")
+    }
+
+    @Test
+    func `indeterminate accessibility name and state must be combined with dot separator`() {
+        let configuration = LinearProgressIndicatorConfiguration.indeterminate(
+            .init(status: .neutral,
+                  track: true,
+                  helperText: nil,
+                  helperTextAlignment: .center,
+                  gapSize: .default,
+                  accessibilityName: "loading",
+                  accessibilityState: "processing"))
+        #expect(configuration.accessibilityLabel == "loading. processing")
+    }
+
+    @Test
+    func `indeterminate accessibility name and helper text must be combined with dot separator`() {
+        let configuration = LinearProgressIndicatorConfiguration.indeterminate(
+            .init(status: .neutral,
+                  track: true,
+                  helperText: "Please wait",
+                  helperTextAlignment: .center,
+                  gapSize: .default,
+                  accessibilityName: "loading"))
+        #expect(configuration.accessibilityLabel == "loading. Please wait")
+    }
+
+    @Test
+    func `indeterminate accessibility name state and helper text must be combined with dot separator`() {
+        let configuration = LinearProgressIndicatorConfiguration.indeterminate(
+            .init(status: .neutral,
+                  track: true,
+                  helperText: "Please wait",
+                  helperTextAlignment: .center,
+                  gapSize: .default,
+                  accessibilityName: "loading",
+                  accessibilityState: "processing"))
+        #expect(configuration.accessibilityLabel == "loading. processing. Please wait")
+    }
 }
+
+// swiftlint:enable type_body_length

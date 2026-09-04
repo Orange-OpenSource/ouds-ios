@@ -49,6 +49,12 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     /// Optional helper text displayed below the indicator (always centered).
     let helperTextType: OUDSCircularProgressIndicator.HelperTextType?
 
+    /// Accessibility name for VoiceOver (e.g., "progress bar", "download bar").
+    let accessibilityName: String?
+
+    /// Accessibility state for VoiceOver (e.g., "downloading", "step 1 of 4").
+    let accessibilityState: String?
+
     // MARK: - Initializer
 
     /// Creates a configuration. The `progress` value is clamped to `[0, 1]` when non-nil.
@@ -61,13 +67,17 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     ///    - size: The size of the component could be adjusted if used internally by components.
     ///    - animated: Whether the determinate indicator animates. Defaults to `true`. Ignored in indeterminate mode.
     ///    - helperText: Optional helper text. Defaults to `nil`.
+    ///    - accessibilityName: Optional accessibility name for VoiceOver. Defaults to `nil`.
+    ///    - accessibilityState: Optional accessibility state for VoiceOver. Defaults to `nil`.
     init(progress: Double?,
          status: OUDSProgressIndicatorStatus,
          track: Bool,
          gapSize: OUDSProgressIndicatorGapSize,
          size: CGFloat,
          animated: Bool = true,
-         helperText: OUDSCircularProgressIndicator.HelperTextType? = nil)
+         helperText: OUDSCircularProgressIndicator.HelperTextType? = nil,
+         accessibilityName: String? = nil,
+         accessibilityState: String? = nil)
     {
         if let progress {
             self.progress = min(max(progress, 0.0), 1.0)
@@ -80,6 +90,8 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
         self.animated = animated
         self.size = size
         helperTextType = helperText
+        self.accessibilityName = accessibilityName
+        self.accessibilityState = accessibilityState
     }
 
     // MARK: - Helpers
@@ -89,15 +101,32 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
         progress == nil
     }
 
-    /// The accessibility label based on the helper text
+    /// The accessibility label based on accessibility name, state and helper text.
+    /// VoiceOver reads: [name]. [state]. [helperText]
     var accessibilityLabel: String? {
+        var parts: [String] = []
+
+        if let name = accessibilityName, !name.isEmpty {
+            parts.append(name)
+        }
+
+        if let state = accessibilityState, !state.isEmpty {
+            parts.append(state)
+        }
+
         switch helperTextType {
         case let .description(description):
-            description
+            if !description.isEmpty {
+                parts.append(description)
+            }
         case let .percent(description):
-            description
+            if let description, !description.isEmpty {
+                parts.append(description)
+            }
         case nil:
-            nil
+            break
         }
+
+        return parts.isEmpty ? nil : parts.joined(separator: ". ")
     }
 }
