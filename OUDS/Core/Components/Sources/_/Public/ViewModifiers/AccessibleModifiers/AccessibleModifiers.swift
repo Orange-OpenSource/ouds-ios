@@ -12,9 +12,12 @@
 //
 
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
-import SwiftUI
+
 #if canImport(UIKit)
 import OUDSFoundations
+#endif
+import SwiftUI
+#if canImport(UIKit)
 import UIKit
 #endif
 
