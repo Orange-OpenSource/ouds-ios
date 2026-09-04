@@ -60,6 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
 - Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
 - Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)
 - Use of asset for typography heading marker (Orange-OpenSource/ouds-ios#1689)

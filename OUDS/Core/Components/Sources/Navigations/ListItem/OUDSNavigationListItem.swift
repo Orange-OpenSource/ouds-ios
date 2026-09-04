@@ -242,7 +242,7 @@ public struct OUDSNavigationListItem: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityRemoveTraits([.isButton])
-        .accessibilityAddTraits([.isLink])
+        .accessibilityAddTraits(indicatorType == .external ? [.isLink] : [.isButton])
     }
 }
 
