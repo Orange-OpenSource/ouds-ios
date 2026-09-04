@@ -91,7 +91,7 @@ import SwiftUI
 /// Two style are available:
 ///
 /// - **default (by default)**: used in the normal usage of button. The aspect of the button changes for  states *disabled*, *pressed*, *hovered* or normal (i.e. *enabled*)
-/// - **loading**: used after button was clicked( and probably data are requested before navigate to a next screen or get updated data, etc.).
+/// - **loading**: used after button was clicked (and probably data are requested before navigate to a next screen or get updated data, etc.).
 ///
 /// ## Rounded layout
 ///
@@ -417,18 +417,21 @@ public struct OUDSButton: View {
         switch style {
         case let .loading(progress):
             if let progress {
-                "\("core_common_loading_a11y".localized()), \(Int(progress * 100))%"
+                let clamped = min(max(progress, 0.0), 1.0)
+                let percent = Int((clamped * 100).rounded())
+                let percentValue = "core_progressIndicator_percent_value".localized(with: percent)
+                return "\("core_common_loading_a11y".localized()), \(percentValue)"
             } else {
-                "core_common_loading_a11y".localized()
+                return "core_common_loading_a11y".localized()
             }
         case .default:
             switch type {
             case let .text(text):
-                text
+                return text
             case let .textAndIcon(text, _):
-                text
+                return text
             case let .icon(image):
-                image.accessibilityLabel ?? ""
+                return image.accessibilityLabel ?? ""
             }
         }
     }

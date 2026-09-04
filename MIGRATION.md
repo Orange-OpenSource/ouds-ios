@@ -297,7 +297,7 @@ OUDSTextArea.Status.loading(someProgresValue)
 
 ### Button for loading style
 
-The `OUDSButton.Style` enum case for loading take an optional progress (nil for indeterminate process, double for a percentage of progress).
+The `OUDSButton.Style` enum case for loading takes an optional progress (nil for indeterminate progress, Double for a percentage of progress).
 
 **Impact**: High
 

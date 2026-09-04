@@ -43,7 +43,7 @@ Two sizes are available: *default* and *small*.
     // The same button (text only) with loading style (indeterminate process)
     OUDSButton(text: "Delete", style: .loading(), size: .small) {}
     
-    // The same button (text only) with loading style (process at 75 %)
+    // The same button (text only) with loading style (progress at 75 %)
     OUDSButton(text: "Delete", style: .loading(progress: 0.75), size: .small) {}
 ```
 
