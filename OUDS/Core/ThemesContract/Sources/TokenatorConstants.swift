@@ -131,8 +131,8 @@ public enum OUDSVersions {
     public static let componentTabBarVersion = "1.0.0"
     /// Version of the Figma specifications for the toolbar bottom components (1.0.0)
     public static let componentToolBarBottomVersion = "1.0.0"
-    /// Version of the Figma specifications for the toolbar top components (1.0.0)
-    public static let componentToolBarTopVersion = "1.0.0"
+    /// Version of the Figma specifications for the toolbar top components (1.1.0)
+    public static let componentToolBarTopVersion = "1.1.0"
 
     // MARK: - Components versions - Tag
 

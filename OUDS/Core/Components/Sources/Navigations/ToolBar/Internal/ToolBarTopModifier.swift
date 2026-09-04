@@ -34,7 +34,7 @@ struct ToolBarTopModifier: ViewModifier {
     ///
     /// - Parameters:
     ///   - title: The toobar title. Prefer a non-empty string.
-    ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed.
+    ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed for iOS lower than 26.
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side
     ///   - trailingItems: The items displayed on the trailing side
@@ -46,10 +46,10 @@ struct ToolBarTopModifier: ViewModifier {
          @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
-            OL.warning("The title of OUDSToolBarTopModifier is empty, prefer a non-empty title")
+            OL.warning("The title of ToolBarTopModifier is empty, prefer a non-empty title")
         }
         if let subtitle, subtitle.isEmpty {
-            OL.warning("The subtitle of OUDSToolBarTopModifier is empty, prefer nil instead")
+            OL.warning("The subtitle of ToolBarTopModifier is empty, prefer nil instead")
         }
 
         self.title = title
@@ -63,10 +63,7 @@ struct ToolBarTopModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsNavigationTitle(title, subtitle: subtitle)
-        #if os(iOS) || os(visionOS)
-            .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
-        #endif
+            .oudsNavigationTitle(title, subtitle: subtitle, hasLargeTitle: hasLargeTitle)
             .toolbar {
                 ToolbarItemGroup(placement: leadingPlacement) {
                     itemsView(leadingItems)
