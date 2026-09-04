@@ -28,12 +28,42 @@ import SwiftUI
 ///
 /// - **Indeterminate with helper text**: the helper text is exposed as `accessibilityLabel` so the
 ///   user still understands the context, but no value is exposed (no measurable progress).
+///
+/// - **Status prefix**: When the status is `.warning` or `.negative`, a prefix ("Warning," or "Error,")
+///   is prepended to the accessibility label to vocalize the status.
 struct ProgressIndicatorAccessibilityModifier: ViewModifier {
 
     // MARK: Properties
 
     let progress: Double?
     let accessibilityLabel: String?
+    let status: OUDSProgressIndicatorStatus?
+
+    // MARK: - Helpers
+
+    private var statusPrefix: String? {
+        guard let status else { return nil }
+        return switch status {
+        case .warning:
+            "core_shared_warning_a11y".localized() + ","
+        case .negative:
+            "core_shared_negative_a11y".localized() + ","
+        default:
+            nil
+        }
+    }
+
+    private var computedAccessibilityLabel: String {
+        let prefix = statusPrefix ?? ""
+        let label = accessibilityLabel ?? ""
+        if prefix.isEmpty {
+            return label
+        } else if label.isEmpty {
+            return prefix
+        } else {
+            return "\(prefix) \(label)"
+        }
+    }
 
     // MARK: Body
 
@@ -45,7 +75,7 @@ struct ProgressIndicatorAccessibilityModifier: ViewModifier {
             let determinate = content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits([.updatesFrequently, .isStaticText])
-                .accessibilityLabel(accessibilityLabel ?? "")
+                .accessibilityLabel(computedAccessibilityLabel)
                 .accessibilityValue(percentValue)
 
             if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
@@ -58,7 +88,7 @@ struct ProgressIndicatorAccessibilityModifier: ViewModifier {
             let indeterminate = content
                 .accessibilityElement(children: .ignore)
                 .accessibilityAddTraits(.isStaticText)
-                .accessibilityLabel(accessibilityLabel)
+                .accessibilityLabel(computedAccessibilityLabel)
 
             if #available(iOS 17, macOS 14, visionOS 1, watchOS 10, tvOS 17, *) {
                 indeterminate.accessibilityRespondsToUserInteraction(false)

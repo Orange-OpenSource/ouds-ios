@@ -4,30 +4,6 @@
     "" : {
       "shouldTranslate" : false
     },
-    "core_progressIndicator_percent_value" : {
-      "comment" : "Component - Progress Indicator - Formats a progress percentage value (e.g. 75) with its percent symbol. Keep the '%lld' placeholder for the value; adapt the symbol and its position/spacing to the language typographic rules.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "٪%lld"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld%%"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld %%"
-          }
-        }
-      }
-    },
     "core_alertMessage_close_a11y" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
@@ -72,54 +48,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Information"
-          }
-        }
-      }
-    },
-    "core_alertMessage_negative_a11y" : {
-      "comment" : "Component - Alerts",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "خطأ"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erreur"
-          }
-        }
-      }
-    },
-    "core_alertMessage_warning_a11y" : {
-      "comment" : "Component - Alerts",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تحذير"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Warning"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avertissement"
           }
         }
       }
@@ -1090,6 +1018,30 @@
         }
       }
     },
+    "core_progressIndicator_percent_value" : {
+      "comment" : "Component - Progress Indicator - Formats a progress percentage value (e.g. 75) with its percent symbol. Keep the '%lld' placeholder for the value; adapt the symbol and its position/spacing to the language typographic rules.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "٪%lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld %%"
+          }
+        }
+      }
+    },
     "core_radio_hint_selected_a11y" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -1158,6 +1110,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bouton radio"
+          }
+        }
+      }
+    },
+    "core_shared_negative_a11y" : {
+      "comment" : "Shared (progress indicators, alert messages)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        }
+      }
+    },
+    "core_shared_warning_a11y" : {
+      "comment" : "Shared (progress indicators, alert messages)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحذير"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warning"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertissement"
           }
         }
       }

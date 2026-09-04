@@ -55,9 +55,9 @@ struct InlineAlertLabel: View {
     private var accessibilityLabel: String {
         let labelPrefix = switch status {
         case .warning:
-            "core_alertMessage_warning_a11y".localized() + ","
+            "core_shared_warning_a11y".localized() + ","
         case .negative:
-            "core_alertMessage_negative_a11y".localized() + ","
+            "core_ashared_negative_a11y".localized() + ","
         case .info:
             "core_alertMessage_info_a11y".localized() + ","
         default:
