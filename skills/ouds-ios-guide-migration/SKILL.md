@@ -23,7 +23,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
-| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier` |
+| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()` |
 
 ---
 
@@ -276,6 +276,30 @@ theme.button.spacePaddingBlockDefault
 ```
 
 **Required action**: for each row, global find-and-replace `theme.button.<oldName>` → `theme.button.<newName>`.
+
+---
+
+### OUDSButton style — `.loading` → `.loading()`
+
+The `OUDSButton.Style` enum case for loading now takes an optional `progress` parameter (nil for indeterminate, double for determinate percentage).
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `style: .loading` | `style: .loading()` (indeterminate) |
+| — | `style: .loading(progress: 0.75)` (determinate, 75%) |
+
+```swift
+// Before (v2.3)
+OUDSButton(text: "Delete", style: .loading, size: .small) { }
+
+// After (v3.0) — indeterminate
+OUDSButton(text: "Delete", style: .loading(), size: .small) { }
+
+// After (v3.0) — determinate with 75% progress
+OUDSButton(text: "Delete", style: .loading(progress: 0.75), size: .small) { }
+```
+
+**Required action**: replace `style: .loading` with `style: .loading()` (or `.loading(progress: value)` for determinate).
 
 ---
 

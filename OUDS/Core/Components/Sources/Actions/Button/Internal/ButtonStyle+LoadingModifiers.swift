@@ -46,15 +46,14 @@ struct ButtonLoadingContentModifier: ViewModifier {
                                                                  animated: true,
                                                                  foregroundColor: colorToken.color(for: colorScheme),
                                                                  trackColor: .clear,
-                                                                 strokeCap: .square,
+                                                                 strokeCap: strokeCap,
                                                                  gapSize: .default,
                                                                  size: sizeProgressIndicator)
                     } else {
                         CircularProgressIndicatorIndeterminateView(foregroundColor: colorToken.color(for: colorScheme),
                                                                    trackColor: .clear,
-                                                                   strokeCap: .square,
+                                                                   strokeCap: strokeCap,
                                                                    gapSize: .default,
-                                                                   hasTrack: false,
                                                                    size: sizeProgressIndicator)
                     }
                 }
@@ -62,7 +61,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
             }
     }
 
-    // MARK: Private helper
+    // MARK: Private helpers
 
     private var colorToken: MultipleColorSemanticToken {
         switch appearance {
@@ -88,6 +87,13 @@ struct ButtonLoadingContentModifier: ViewModifier {
         case .small:
             theme.button.sizeProgressIndicatorSmall
         }
+    }
+
+    private var strokeCap: CGLineCap {
+        let effectiveRadius = theme.tuning.hasRoundedProgressIndicators
+            ? theme.progressIndicator.borderRadiusRounded
+            : theme.progressIndicator.borderRadiusDefault
+        return (effectiveRadius > 0) ? .round : .butt
     }
 }
 

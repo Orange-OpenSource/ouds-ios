@@ -91,8 +91,7 @@ import SwiftUI
 /// Two style are available:
 ///
 /// - **default (by default)**: used in the normal usage of button. The aspect of the button changes for  states *disabled*, *pressed*, *hovered* or normal (i.e. *enabled*)
-/// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data. A circular
-/// progress indicator is displayed to follow the determinate/indeterminate process.
+/// - **loading**: used after button was clicked( and probably data are requested before navigate to a next screen or get updated data, etc.).
 ///
 /// ## Rounded layout
 ///

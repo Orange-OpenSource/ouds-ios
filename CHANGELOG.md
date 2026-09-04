@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- `button` to use circular progress indicator as loader (Orange-OpenSource/ouds-ios#1695)
+- Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
 - Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)
 - Update icons to v2.3.0 (Orange-OpenSource/ouds-ios#1432)
 - `progress indicator` components to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)

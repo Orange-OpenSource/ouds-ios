@@ -28,8 +28,7 @@ Some components can be used for **actions**.
 
 The ``OUDSButton`` proposes layout with text only, icon only or text and icon. 
 Four hierarchies are proposed for all layouts: *default*, *strong*, *minimal* and *negative*.
-Two style are available: *default* and *loading* with a circular progress indicator to follow the
-determinate/indeterminate process. 
+Two style are available: *default* and *loading*.
 If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
 A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 Two sizes are available: *default* and *small*.
@@ -41,10 +40,10 @@ Two sizes are available: *default* and *small*.
     // Text only with negative appearance
     OUDSButton(text: "Delete", appearance: .negative, size: .small) {}
     
-    // The same button (Text only) with loading style (indeterminate process)
+    // The same button (text only) with loading style (indeterminate process)
     OUDSButton(text: "Delete", style: .loading(), size: .small) {}
     
-    // The same button (Text only) with loading style (process at 75 %)
+    // The same button (text only) with loading style (process at 75 %)
     OUDSButton(text: "Delete", style: .loading(progress: 0.75), size: .small) {}
 ```
 
