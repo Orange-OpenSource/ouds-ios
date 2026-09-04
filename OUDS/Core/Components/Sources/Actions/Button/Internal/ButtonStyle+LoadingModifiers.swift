@@ -28,6 +28,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
 
     let appearance: OUDSButton.Appearance
     let size: OUDSButton.Size
+    let progress: Double?
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -39,8 +40,24 @@ struct ButtonLoadingContentModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay {
-                LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
+                Group {
+                    if let progress {
+                        CircularProgressIndicatorDeterminateView(progress: progress,
+                                                                 animated: true,
+                                                                 foregroundColor: colorToken.color(for: colorScheme),
+                                                                 trackColor: .clear,
+                                                                 strokeCap: strokeCap,
+                                                                 gapSize: .default,
+                                                                 size: sizeProgressIndicator)
+                    } else {
+                        CircularProgressIndicatorIndeterminateView(foregroundColor: colorToken.color(for: colorScheme),
+                                                                   trackColor: .clear,
+                                                                   strokeCap: strokeCap,
+                                                                   gapSize: .default,
+                                                                   size: sizeProgressIndicator)
+                    }
+                }
+                .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
             }
     }
 
@@ -70,6 +87,13 @@ struct ButtonLoadingContentModifier: ViewModifier {
         case .small:
             theme.button.sizeProgressIndicatorSmall
         }
+    }
+
+    private var strokeCap: CGLineCap {
+        let effectiveRadius = theme.tuning.hasRoundedProgressIndicators
+            ? theme.progressIndicator.borderRadiusRounded
+            : theme.progressIndicator.borderRadiusDefault
+        return (effectiveRadius > 0) ? .round : .butt
     }
 }
 

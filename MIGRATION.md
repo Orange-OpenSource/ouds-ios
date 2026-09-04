@@ -295,6 +295,31 @@ OUDSTextArea.Status.loading()
 OUDSTextArea.Status.loading(someProgresValue)
 ```
 
+### Button for loading style
+
+The `OUDSButton.Style` enum case for loading takes an optional progress (nil for indeterminate progress, Double for a percentage of progress).
+
+**Impact**: High
+
+**Before (v2.3.0)**:
+```swift
+OUDSButton(text: "Back", style: .loading, size: .default) { }
+```
+
+**After (v3.0.0)**:
+```swift
+// Indeterminate progress
+OUDSButton(text: "Back", style: .loading(), size: .default) { }
+
+// Determinate progress with percent
+OUDSButton(text: "Back", style: .loading(progress: 0.75), size: .default) { }
+```
+
+**Required Action**:
+- Replace any use of `style: .loading` with `style: .loading()` in `OUDSButton` calls
+
+**Reason for Change**: Use the circular progress indicator in determinate or indeterminate variant. 
+
 ### Compatibility
 
 - **Backward Compatibility**: No
