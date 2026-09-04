@@ -377,11 +377,11 @@ public struct OUDSPasswordInput: View {
 
     private var leadingIcon: OUDSImage? {
         // TODO: #997 - Should we add an accessibility label?
-        lockIcon ? OUDSImage(asset: Image(decorative: "ic_communication_security_and_safety_lock", bundle: theme.resourcesBundle)) : nil
+        lockIcon ? OUDSImage(asset: Image(decorative: "communication-security-and-safety-lock-closed", bundle: theme.resourcesBundle)) : nil
     }
 
     private var trailingAction: OUDSTextInput.TrailingAction {
-        let iconName = isHiddenPassword ? "ic_communication_accessibility_vision" : "ic_functional_settings_and_tools_hide"
+        let iconName = isHiddenPassword ? "communication-accessibility-accessibility-vision" : "functional-settings-and-tools-accessibility-hide"
         let actionHint = isHiddenPassword ? "core_passwordInput_showPassword_a11y" : "core_passwordInput_hidePassword_a11y"
 
         return .init(image: OUDSImage(asset: Image(decorative: iconName, bundle: theme.resourcesBundle)),

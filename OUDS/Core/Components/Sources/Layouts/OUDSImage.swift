@@ -37,15 +37,15 @@ public struct OUDSImage: View {
     // MARK: Properties
 
     public let asset: Image?
-    public let assetName: String?
+    public let name: String?
     public let flipped: Bool
     public let accessibilityLabel: String?
     public let color: MultipleColorSemanticToken?
     public let renderingMode: Image.TemplateRenderingMode
 
     public var image: Image? {
-        if let assetName {
-            return Image(decorative: assetName, bundle: theme.resourcesBundle)
+        if let name {
+            return Image(decorative: name, bundle: theme.resourcesBundle)
         }
 
         return asset
@@ -99,7 +99,7 @@ public struct OUDSImage: View {
                 renderingMode: Image.TemplateRenderingMode = .template)
     {
         self.asset = asset
-        assetName = nil
+        name = nil
         self.flipped = flipped
         self.accessibilityLabel = accessibilityLabel
         color = nil
@@ -110,17 +110,23 @@ public struct OUDSImage: View {
     /// Internal usage to load asset from theme.
     ///
     /// - Parameters:
-    ///    - assetName: The name of the asset to load as icon
+    ///    - name: The name of the asset to load as icon
     ///    - flipped: If asset must be flipped, default set to `false`
     ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
     ///    - color: The color to apply to the icon, default set to `nil`
-    init(assetName: String, flipped: Bool = false, accessibilityLabel: String? = nil, color: MultipleColorSemanticToken? = nil) {
-        self.assetName = assetName
+    ///    - renderingMode: By default set to `.template`, allows to apply colors on given `asset` or not
+    init(name: String,
+         flipped: Bool = false,
+         accessibilityLabel: String? = nil,
+         color: MultipleColorSemanticToken? = nil,
+         renderingMode: Image.TemplateRenderingMode = .template)
+    {
+        self.name = name
         asset = nil
         self.flipped = flipped
         self.accessibilityLabel = accessibilityLabel
         self.color = color
-        renderingMode = .template
+        self.renderingMode = renderingMode
     }
 
     // MARK: Body
@@ -136,7 +142,6 @@ public struct OUDSImage: View {
 
     // MARK: Helpers
 
-    // NOTE: Seen as unused by Periphery 3.4.0  (warning: Unused function 'update(with:)')
     private func update(with color: MultipleColorSemanticToken) -> some View {
         foregroundColor(color)
     }

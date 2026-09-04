@@ -53,11 +53,11 @@ struct ListItemIndicatorContainer: View {
     private var assetName: String? {
         switch type {
         case .next:
-            layoutDirection == .rightToLeft ? "ic_control_item_previous" : "ic_control_item_next"
+            layoutDirection == .rightToLeft ? "Component-list-item-previous" : "Component-list-item-next"
         case .previous:
-            layoutDirection == .rightToLeft ? "ic_control_item_next" : "ic_control_item_previous"
+            layoutDirection == .rightToLeft ? "Component-list-item-next" : "Component-list-item-previous"
         case .external:
-            "ic_functional_action_external_link"
+            "functional-actions-external-link"
         case .none:
             nil
         }

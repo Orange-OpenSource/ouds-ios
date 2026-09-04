@@ -183,7 +183,7 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            OUDSScaledIcon(image: OUDSImage(asset: Image(decorative: "ic_chip_tick", bundle: theme.resourcesBundle), renderingMode: .template),
+            OUDSScaledIcon(image: OUDSImage(asset: Image(decorative: "Component-chip-tick", bundle: theme.resourcesBundle), renderingMode: .template),
                            size: theme.chip.sizeIcon)
                 .accessibilityHidden(true)
                 .foregroundColor(appliedColor)

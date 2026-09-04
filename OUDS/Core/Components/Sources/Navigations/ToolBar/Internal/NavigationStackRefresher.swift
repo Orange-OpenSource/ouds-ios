@@ -126,7 +126,7 @@ struct NavigationStackRefresher: ViewModifier {
 
         // Back indicator
 
-        let backImage = UIImage(named: "ic_link_previous", in: newTheme.resourcesBundle, with: .none)
+        let backImage = UIImage(named: "Component-link-previous", in: newTheme.resourcesBundle, with: .none)
         appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
 
         let backButtonAppearance = appearance.backButtonAppearance

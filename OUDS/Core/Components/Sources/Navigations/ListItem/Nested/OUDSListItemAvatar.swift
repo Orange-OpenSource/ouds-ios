@@ -204,7 +204,7 @@ public struct OUDSListItemAvatar: View {
                         .dynamicTypeSize(.medium)
                         .foregroundStyle(foregroundColor)
                 case .icon:
-                    let icon = OUDSImage(asset: Image(decorative: "ic_communication_people_avatar", bundle: theme.resourcesBundle),
+                    let icon = OUDSImage(asset: Image(decorative: "communication-people-avatar", bundle: theme.resourcesBundle),
                                          renderingMode: .template)
                     OUDSScaledIcon(image: icon, size: avatarSize)
                         .foregroundStyle(foregroundColor)
