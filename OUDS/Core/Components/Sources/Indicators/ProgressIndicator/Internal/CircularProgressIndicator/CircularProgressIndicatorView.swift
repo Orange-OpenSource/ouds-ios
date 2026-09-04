@@ -56,7 +56,6 @@ struct CircularProgressIndicatorView: View {
                         trackColor: trackColor,
                         strokeCap: strokeCap,
                         gapSize: configuration.gapSize,
-                        hasTrack: configuration.track,
                         size: scaledDefaultSize)
                 }
             }
