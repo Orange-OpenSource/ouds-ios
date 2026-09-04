@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
 - Tokens and tokens providers dedicated to `list item` component
 - `list item` component (Orange-OpenSource/ouds-ios#265)
 
