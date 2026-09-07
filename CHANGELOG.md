@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Swift Package `SwiftLintPlugins` from v0.65.0 to v0.65.1
 - GitHub Actions `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
 - GitHub Actions `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
 - GitHub Actions `github/codeql-action/upload-sarif` from v4.37.0 to v4.38.0 for `scorecard` workflow
