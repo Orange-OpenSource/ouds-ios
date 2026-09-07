@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Ruby Gem `fastlane` from v2.237.0 to v2.239.0
 - `Ruby` version from v4.0.5 to v4.0.6 for `build-and-test` workflow
 - Swift Package `SwiftFormat` from v0.62.1 to v0.63.0
 - Swift Package `SwiftLintPlugins` from v0.65.0 to v0.65.1
