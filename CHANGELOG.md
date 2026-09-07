@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- GitHub Action `ruby/setup-ruby` from v1.316.0 to v1.321.0 for `build-and-test` GitHub Actions workflow
 - Core `grid` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - Core `effect` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - Core `dimension` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
