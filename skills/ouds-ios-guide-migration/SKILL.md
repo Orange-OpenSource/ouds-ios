@@ -23,7 +23,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
-| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()` |
+| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
 
 ---
 
@@ -42,7 +42,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 ```bash
 # Breaking changes (v3.0.0)
 grep -rn \
-  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|indicator: \.back\b\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier" \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|indicator: \.back\b\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier\|hasLoader:" \
   --include="*.swift" .
 
 # Active deprecations (v2.x)
@@ -322,6 +322,33 @@ theme.tag.spaceInsetProgressIndicatorSmall
 
 ---
 
+### OUDSTag — `hasLoader` removed, `progress` added
+
+The `hasLoader: Bool` parameter has been removed from `OUDSTag(label:...)` and `OUDSTag(_ key:...)`.
+Loading tags must now be built exclusively with the dedicated `loadingLabel:` / `loadingKey:` initializers,
+which gained a new optional `progress: Double?` parameter (nil for indeterminate, double for determinate percentage).
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `OUDSTag(label: "...", hasLoader: true)` | `OUDSTag(loadingLabel: "...")` (indeterminate) |
+| — | `OUDSTag(loadingLabel: "...", progress: 0.75)` (determinate, 75%) |
+| `OUDSTag(label: "...", hasLoader: false)` | `OUDSTag(label: "...")` (just drop the parameter) |
+
+```swift
+// Before (v2.3)
+OUDSTag(label: "Processing...", hasLoader: true)
+
+// After (v3.0) — indeterminate
+OUDSTag(loadingLabel: "Processing...")
+
+// After (v3.0) — determinate with 75% progress
+OUDSTag(loadingLabel: "Processing...", progress: 0.75)
+```
+
+**Required action**: replace any `OUDSTag(label:hasLoader: true, ...)` / `OUDSTag(_ key:hasLoader: true, ...)` with `OUDSTag(loadingLabel:...)` / `OUDSTag(loadingKey:...)`, optionally passing `progress:`. If `hasLoader: false` was passed, just remove the parameter.
+
+---
+
 ### Link component tokens — mixed rename
 
 > Note the asymmetry: one token gains `Default`, the other loses it.
@@ -535,7 +562,7 @@ swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|founda
 
 # v3.0 breaking changes — must return nothing
 grep -rn \
-  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|indicator: \.back\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:\|OrangeThemeControlItemComponentTokensProvider\|OrangeCompactThemeControlItemComponentTokensProvider\|SoshThemeControlItemComponentTokensProvider\|WireframeThemeControlItemComponentTokensProvider\|AllControlItemComponentTokensProvider\|ControlItemComponentTokens\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier" \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|indicator: \.back\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:\|OrangeThemeControlItemComponentTokensProvider\|OrangeCompactThemeControlItemComponentTokensProvider\|SoshThemeControlItemComponentTokensProvider\|WireframeThemeControlItemComponentTokensProvider\|AllControlItemComponentTokensProvider\|ControlItemComponentTokens\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier\|hasLoader:" \
   --include="*.swift" .
 
 # v2.x deprecated symbols — must return nothing

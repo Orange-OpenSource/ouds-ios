@@ -194,8 +194,11 @@ OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_brand"
 // Text with neutral status with bullet
 OUDSTag(label: "Label", status: .neutral(bullet: true))
             
-// Tag with loader with rounded shape in small size
-OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
+// Tag with indeterminate circular progress indicator, with rounded shape in small size
+OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
+
+// Tag with determinate circular progress indicator, with rounded shape in default size
+OUDSTag(loadingLabel: "Processing...", progress: 0.75)
 ```
 
 ### Input Tag

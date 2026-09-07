@@ -115,8 +115,11 @@ import SwiftUI
 ///     // Text with neutral status with bullet
 ///     OUDSTag(label: "Label", status: .neutral(bullet: true))
 ///
-///     // Tag with loader with rounded shape in small size
-///     OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
+///     // Tag with indeterminate circular progress indicator, with rounded shape in small size
+///     OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
+///
+///     // Tag with determinate circular progress indicator, with rounded shape in default size
+///     OUDSTag(loadingLabel: "Processing...", progress: 0.75)
 /// ```
 ///
 /// ## Design documentation
@@ -161,12 +164,12 @@ public struct OUDSTag: View {
         case status(label: String, status: Status)
 
         /// Tag with label in loading state
-        case loader(label: String)
+        case loader(label: String, progress: Double? = nil)
 
         /// Label of the tag
         var label: String {
             switch self {
-            case let .status(label, _), let .loader(label):
+            case let .status(label, _), let .loader(label, _):
                 label
             }
         }
@@ -358,19 +361,16 @@ public struct OUDSTag: View {
     ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag. Default set to *emphasized*
     ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
     ///    - size: The size of the tag. Default set to *default*.
-    ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not.
-    ///    It will replace the `icon` if provided. Default set to *false*.
     public init(label: String,
                 status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
-                size: Size = .default,
-                hasLoader: Bool = false)
+                size: Size = .default)
     {
         self.appearance = appearance
         self.shape = shape
         self.size = size
-        type = hasLoader ? .loader(label: label) : .status(label: label, status: status)
+        type = .status(label: label, status: status)
     }
 
     /// Creates a tag with a localized label, looking up the key in the given bundle.
@@ -387,40 +387,42 @@ public struct OUDSTag: View {
     ///    - appearance: The importance of the tag, default set to *emphasized*
     ///    - shape: The shape of the tag, default set to *rounded*
     ///    - size: The size of the tag, default set to *default*
-    ///    - hasLoader: If an optional loader is displayed, default set to *false*
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
-                size: Size = .default,
-                hasLoader: Bool = false)
+                size: Size = .default)
     {
         let resolvedLabel = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size, hasLoader: hasLoader)
+        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size)
     }
 
-    /// Creates a tag in the loading state.
+    /// Creates a tag in the loading state indicates that the system is processing or retrieving data.
+    /// A circular progress indicator appears to inform the user that an action is in progress.
     ///
     /// The use the `View/disabled(_:)` method has no effect on this state.
     ///
     /// ```swift
-    ///     OUDSTag(loadingLabel: "Processing")
+    ///     OUDSTag(loadingLabel: "Processing...", progress: 0.75)
     /// ```
     ///
     /// - Parameters:
-    ///    - loadingLabel: The label displayed in the tag
-    ///    - shape: The shape of the tag, i.e. the corners style
-    ///    - size: The size of the tag
+    ///    - loadingLabel: The label displayed in the tag`
+    ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+    ///  value to `nil` to display a circular indeterminate progress indicator.
+    ///    - shape: The shape of the tag, i.e. the corners style, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*.
     public init(loadingLabel: String,
+                progress: Double? = nil,
                 shape: Shape = .rounded,
                 size: Size = .default)
     {
         appearance = .emphasized
         self.shape = shape
         self.size = size
-        type = .loader(label: loadingLabel)
+        type = .loader(label: loadingLabel, progress: progress)
         // "loadingLabel" instead of "label" to avoid doubts for users with init(label:status:appearance=shape:size:hasLoader) with default values
     }
 
@@ -434,16 +436,19 @@ public struct OUDSTag: View {
     ///    - loadingKey: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - shape: The shape of the tag, i.e. the corners style
-    ///    - size: The size of the tag
+    ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+    ///  value to `nil` to display a circular indeterminate progress indicator.
+    ///    - shape: The shape of the tag, i.e. the corners style, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*.
     public init(loadingKey: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
+                progress: Double? = nil,
                 shape: Shape = .rounded,
                 size: Size = .default)
     {
         let resolvedLabel = loadingKey.resolved(tableName: tableName, bundle: bundle)
-        self.init(loadingLabel: resolvedLabel, shape: shape, size: size)
+        self.init(loadingLabel: resolvedLabel, progress: progress, shape: shape, size: size)
     }
 
     // MARK: Body

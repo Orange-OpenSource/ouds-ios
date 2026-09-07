@@ -86,6 +86,37 @@ theme.tag.spaceInsetProgressIndicatorSmall
 
 **Reason for Change**: Renaming of tokens in Figma specification
 
+### Tag loading API change — `hasLoader` removed, `progress` added
+
+The `hasLoader: Bool` parameter of `OUDSTag(label:...)` and `OUDSTag(_ key:...)` has been removed.
+Loading tags must now be built exclusively with the dedicated `loadingLabel` / `loadingKey` initializers,
+which also gained a new optional `progress: Double?` parameter (nil for indeterminate progress, a value
+between 0.0 and 1.0 for determinate progress), mirroring the `OUDSButton.Style.loading(progress:)` change.
+
+**Impact**: High
+
+**Before (v2.3.0)**:
+```swift
+OUDSTag(label: "Processing...", hasLoader: true)
+OUDSTag(loadingLabel: "Processing...")
+```
+
+**After (v3.0.0)**:
+```swift
+// Indeterminate progress
+OUDSTag(loadingLabel: "Processing...")
+
+// Determinate progress with percent
+OUDSTag(loadingLabel: "Processing...", progress: 0.75)
+```
+
+**Required Action**:
+- Replace any use of `OUDSTag(label:hasLoader: true, ...)` or `OUDSTag(_ key:hasLoader: true, ...)` with `OUDSTag(loadingLabel:...)` or `OUDSTag(loadingKey:...)`
+- The `hasLoader` parameter no longer exists on `OUDSTag(label:...)` / `OUDSTag(_ key:...)`; simply remove it if it was `false`
+- Optionally pass a `progress` value to `OUDSTag(loadingLabel:...)` / `OUDSTag(loadingKey:...)` for a determinate progress indicator
+
+**Reason for Change**: Use the circular progress indicator in determinate or indeterminate variant, and avoid an ambiguous API mixing status and loading tags in a single initializer
+
 ### Renamed component tokens of link
 
 The tokens of sizes and spaces for `link` component have been renamed.

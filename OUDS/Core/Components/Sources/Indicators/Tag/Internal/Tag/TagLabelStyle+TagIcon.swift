@@ -26,8 +26,8 @@ struct TagIcon: View {
         switch type {
         case let .status(_, status):
             TagAsset(appearance: appearance, size: size, status: status)
-        case .loader:
-            TagLoader(size: size)
+        case let .loader(_, progress):
+            TagLoader(size: size, progress: progress)
         }
     }
 }
@@ -36,14 +36,38 @@ struct TagIcon: View {
 
 struct TagLoader: View {
 
+    // MARK: Properties
+
     let size: OUDSTag.Size
+    let progress: Double?
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    // MARK: Body
+
     var body: some View {
-        LoaderIndicator(color: theme.colors.contentDefault.color(for: colorScheme))
-            .padding(.all, padding)
+        Group {
+            if let progress {
+                OUDSCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: true, size: progressIndicatorSize)
+            } else {
+                OUDSCircularProgressIndicator(status: .neutral, track: false, size: progressIndicatorSize)
+            }
+        }
+        .padding(.all, padding)
+    }
+
+    // MARK: Private helpers
+
+    private var progressIndicatorSize: CGFloat {
+        let assetSize = switch size {
+        case .default:
+            theme.tag.sizeAssetDefault
+        case .small:
+            theme.tag.sizeAssetSmall
+        }
+
+        return assetSize - padding
     }
 
     private var padding: CGFloat {
