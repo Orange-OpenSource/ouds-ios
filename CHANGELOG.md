@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Loading state of `Tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
+- Loading state of `tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
 - Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
 - Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)
 - Update icons to v2.3.0 (Orange-OpenSource/ouds-ios#1432)
@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `text input` component to version 1.4.1 (Orange-OpenSource/ouds-ios#1524)
 - **BREAKING**: `.percent` helper text of `linear progress indicator` and `circular progress indicator` components now formats the value and its `%` symbol through the localized wording key `core_progressIndicator_percent_value` instead of exposing a `spaceBefore: Bool` parameter, so the typographic rules (symbol, spacing, position) follow the current language (Orange-OpenSource/ouds-ios#1509, Orange-OpenSource/ouds-ios#409)
 - `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
-- themes tunings values (Orange-OpenSource/ouds-ios#1669)
+- Themes tunings values (Orange-OpenSource/ouds-ios#1669)
 - `button` component to version 3.3.0 (Orange-OpenSource/ouds-ios#1583)
 - **BREAKING**: `link` component to v2.4.0 (Orange-OpenSource/ouds-ios#1640)
 - `suggestion chip` and `filter chip` components to v1.5.0 (Orange-OpenSource/ouds-ios#1588)

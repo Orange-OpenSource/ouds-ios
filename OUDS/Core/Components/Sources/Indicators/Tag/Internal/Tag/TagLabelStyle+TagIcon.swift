@@ -49,7 +49,7 @@ struct TagLoader: View {
     var body: some View {
         Group {
             if let progress {
-                OUDSCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: false, size: self.progressIndicatorSize)
+                OUDSCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: true, size: progressIndicatorSize)
             } else {
                 OUDSCircularProgressIndicator(status: .neutral, track: false, size: progressIndicatorSize)
             }

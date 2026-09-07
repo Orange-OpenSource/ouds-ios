@@ -115,10 +115,10 @@ import SwiftUI
 ///     // Text with neutral status with bullet
 ///     OUDSTag(label: "Label", status: .neutral(bullet: true))
 ///
-///     // Tag with indeterminate circular porgress indicator, with rounded shape in small size
+///     // Tag with indeterminate circular progress indicator, with rounded shape in small size
 ///     OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
 ///
-///     // Tag with determinate circular porgress indicator, with rounded shape in small size
+///     // Tag with determinate circular progress indicator, with rounded shape in default size
 ///     OUDSTag(loadingLabel: "Processing...", progress: 0.75)
 /// ```
 ///
@@ -383,7 +383,7 @@ public struct OUDSTag: View {
     ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - status: The status of the tag, default set to *neutral*
+    ///    - status: The status of the tag, default set to *neutral
     ///    - appearance: The importance of the tag, default set to *emphasized*
     ///    - shape: The shape of the tag, default set to *rounded*
     ///    - size: The size of the tag, default set to *default*
@@ -412,8 +412,8 @@ public struct OUDSTag: View {
     ///    - loadingLabel: The label displayed in the tag`
     ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
     ///  value to `nil` to display a circular indeterminate progress indicator.
-    ///    - shape: The shape of the tag, i.e. the corners style
-    ///    - size: The size of the tag
+    ///    - shape: The shape of the tag, i.e. the corners style, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*.
     public init(loadingLabel: String,
                 progress: Double? = nil,
                 shape: Shape = .rounded,
@@ -436,8 +436,10 @@ public struct OUDSTag: View {
     ///    - loadingKey: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - shape: The shape of the tag, i.e. the corners style
-    ///    - size: The size of the tag
+    ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+    ///  value to `nil` to display a circular indeterminate progress indicator.
+    ///    - shape: The shape of the tag, i.e. the corners style, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*.
     public init(loadingKey: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,

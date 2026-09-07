@@ -194,10 +194,10 @@ OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_brand"
 // Text with neutral status with bullet
 OUDSTag(label: "Label", status: .neutral(bullet: true))
             
-// Tag with indeterminate circular porgress indicator, with rounded shape in small size
+// Tag with indeterminate circular progress indicator, with rounded shape in small size
 OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
 
-// Tag with determinate circular porgress indicator, with rounded shape in small size
+// Tag with determinate circular progress indicator, with rounded shape in default size
 OUDSTag(loadingLabel: "Processing...", progress: 0.75)
 ```
 
