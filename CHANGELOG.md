@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Loading state of `Tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
 - Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
 - Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)
 - Update icons to v2.3.0 (Orange-OpenSource/ouds-ios#1432)
