@@ -59,7 +59,7 @@ struct CircularProgressIndicatorView: View {
                         size: scaledDefaultSize)
                 }
             }
-            .frame(width: scaledDefaultSize, height: scaledDefaultSize)
+            .frame(maxWidth: scaledDefaultSize, maxHeight: scaledDefaultSize)
 
             HelperTextView(configuration: configuration)
         }
