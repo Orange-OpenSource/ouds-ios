@@ -68,6 +68,9 @@ NavigationStack {
     ContentView()
         .toolBarTop("Title",
             leadingItems: { OUDSToolBarItem(navigation: .back()) },
+            principalItems: {
+                OUDSToolBarItem(icon: Image("ic_search"), accessibilityLabel: "Search") {}
+            },
             trailingItems: {
                 OUDSToolBarItem(icon: Image("ic_settings"), accessibilityLabel: "Settings") {}
             })
@@ -116,7 +119,11 @@ if #available(iOS 26, *) {
 OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 
 // Conditional (result-builder syntax)
-.toolBarTop("Title", trailingItems: {
+.toolBarTop("Title", principalItems: {
+    if showSearch {
+        OUDSToolBarItem(icon: Image("ic_search"), accessibilityLabel: "Search") { showSearch = false }
+    }
+}, trailingItems: {
     if isEditing {
         OUDSToolBarItem(label: "Done") { isEditing = false }
     } else {

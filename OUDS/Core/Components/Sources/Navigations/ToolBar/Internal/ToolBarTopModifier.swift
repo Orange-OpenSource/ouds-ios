@@ -26,23 +26,26 @@ struct ToolBarTopModifier: ViewModifier {
     let hasLargeTitle: Bool
     let subtitle: String?
     @OUDSToolBarItemsBuilder let leadingItems: [OUDSToolBarItem]
+    @OUDSToolBarItemsBuilder let principalItems: [OUDSToolBarItem]
     @OUDSToolBarItemsBuilder let trailingItems: [OUDSToolBarItem]
 
     // MARK: - Initializer
 
-    /// Creates a top toobar with a title, optional subtitle (iOS 26+ only), and leading / trailing items.
+    /// Creates a top toobar with a title, optional subtitle (iOS 26+ only), and leading / principal / trailing items.
     ///
     /// - Parameters:
     ///   - title: The toobar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed for iOS lower than 26.
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side
+    ///   - principalItems: The items displayed in the principal (center) position
     ///   - trailingItems: The items displayed on the trailing side
     ///   - content: The content view wrapped by the toolbar.
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,
          @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem],
+         @OUDSToolBarItemsBuilder principalItems: @escaping () -> [OUDSToolBarItem],
          @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
@@ -56,6 +59,7 @@ struct ToolBarTopModifier: ViewModifier {
         self.hasLargeTitle = hasLargeTitle
         self.subtitle = subtitle
         self.leadingItems = leadingItems()
+        self.principalItems = principalItems()
         self.trailingItems = trailingItems()
     }
 
@@ -67,6 +71,9 @@ struct ToolBarTopModifier: ViewModifier {
             .toolbar {
                 ToolbarItemGroup(placement: leadingPlacement) {
                     itemsView(leadingItems)
+                }
+                ToolbarItemGroup(placement: principalPlacement) {
+                    itemsView(principalItems)
                 }
                 ToolbarItemGroup(placement: trailingPlacement) {
                     itemsView(trailingItems)
@@ -86,6 +93,14 @@ struct ToolBarTopModifier: ViewModifier {
     private var leadingPlacement: ToolbarItemPlacement {
         #if os(iOS) || os(visionOS)
         return .topBarLeading
+        #else
+        return .automatic
+        #endif
+    }
+
+    private var principalPlacement: ToolbarItemPlacement {
+        #if os(iOS) || os(visionOS)
+        return .principal
         #else
         return .automatic
         #endif

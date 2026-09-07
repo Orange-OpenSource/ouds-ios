@@ -20,10 +20,8 @@ import SwiftUI
 
 /// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
-/// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
-/// It can contains leading and trailing actions.
-///
-/// `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`  View helper applies a SwiftUI toolbar configuration.
+/// It typically displays the page title, and may include navigation actions such as "Back" or "Close" as well as supplementary actions.
+/// It can contains leading, principal (center), and trailing actions.
 ///
 /// ## Appearances
 ///
@@ -71,11 +69,20 @@ import SwiftUI
 ///             leadingItems: {
 ///                 OUDSToolBarItem(navigation: .back())
 ///             },
+///             principalItems: {
+///                 OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ }
+///             },
 ///             trailingItems: {
 ///                 OUDSToolBarItem(label: "Label") { /* Action to process */ }
 ///                 OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
 ///             }
 ///         )
+/// ```
+///
+/// A `View` helper can also be used to apply a SwiftUI toolbar configuration.
+///
+/// ```swift
+///     toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItems:trailingItems:)
 /// ```
 ///
 /// ## Design documentation
@@ -144,6 +151,8 @@ public struct OUDSToolBarTop: ViewModifier {
     private let subtitle: String?
     /// The items to display in leading position
     @OUDSToolBarItemsBuilder private let leadingItems: () -> [OUDSToolBarItem]
+    /// The items to display in principal (center) position
+    @OUDSToolBarItemsBuilder private let principalItems: () -> [OUDSToolBarItem]
     /// The items to display in trailing position
     @OUDSToolBarItemsBuilder private let trailingItems: () -> [OUDSToolBarItem]
 
@@ -151,12 +160,14 @@ public struct OUDSToolBarTop: ViewModifier {
 
     /// `ViewModifier` to define an OUDS top toolbar.
     ///
-    ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)` on view placed
+    ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItems:trailingItems:)` on view placed
     ///  inside `NavigationView` or`NavigationStack`.
     ///
     /// ```swift
     ///     OUDSToolBarTop(title: "Home") {
     ///         OUDSToolBarItem(navigation: .back { })
+    ///     } principalItems: {
+    ///         OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { }
     ///     } trailingItems: {
     ///         OUDSToolBarItem(label: "Done") { }
     ///     }
@@ -167,17 +178,20 @@ public struct OUDSToolBarTop: ViewModifier {
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed
     ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
+    ///   - principalItems: The items displayed in the principal (center) position, *empty* by default.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
     public init(title: String,
                 hasLargeTitle: Bool = false,
                 subtitle: String? = nil,
                 leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
+                principalItems: @escaping () -> [OUDSToolBarItem] = { [] },
                 trailingItems: @escaping () -> [OUDSToolBarItem] = { [] })
     {
         self.title = title
         self.hasLargeTitle = hasLargeTitle
         self.subtitle = subtitle
         self.leadingItems = leadingItems
+        self.principalItems = principalItems
         self.trailingItems = trailingItems
     }
 
@@ -188,6 +202,7 @@ public struct OUDSToolBarTop: ViewModifier {
                            hasLargeTitle: hasLargeTitle,
                            subtitle: subtitle,
                            leadingItems: leadingItems,
+                           principalItems: principalItems,
                            trailingItems: trailingItems)
     }
 }
@@ -196,7 +211,7 @@ public struct OUDSToolBarTop: ViewModifier {
 
 extension View {
 
-    /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading and trailing items.
+    /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading, principal and trailing items.
     ///
     /// The view which contains this *top toolbar* must be placed inside a `NavigationView` or `NavigationStack`,
     /// otherwise th top toolbar won't appear..
@@ -208,18 +223,21 @@ extension View {
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed for iOS < 26.
     ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
+    ///   - principalItems: The items displayed in the principal (center) position, *empty* by default.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
     @available(iOS 15, visionOS 1, *)
     public func toolBarTop(_ title: String,
                            hasLargeTitle: Bool = false,
                            subtitle: String? = nil,
                            @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
+                           @OUDSToolBarItemsBuilder principalItems: @escaping () -> [OUDSToolBarItem] = { [] },
                            @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
     {
         modifier(ToolBarTopModifier(title: title,
                                     hasLargeTitle: hasLargeTitle,
                                     subtitle: subtitle,
                                     leadingItems: leadingItems,
+                                    principalItems: principalItems,
                                     trailingItems: trailingItems))
     }
 }
