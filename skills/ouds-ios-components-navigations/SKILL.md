@@ -52,6 +52,9 @@ OUDSTabBar {
 - Call `.oudsNavigationBarAppearance()` once on the root `NavigationStack`.
 - On iOS ≤ 18: add `.accentColor(theme.colors.contentDefault)` on root view for the back chevron.
 - `subtitle` rendered on iOS 26+ only; ignored when `hasLargeTitle: true`.
+- `principalItem` (at most one item, center position): when set, `subtitle` is **never** displayed (whatever `hasLargeTitle` is —
+  `.principal` only replaces the inline bar title, not `.navigationSubtitle()` on iOS 26+); `title` is displayed only if
+  `hasLargeTitle: true` (shown below the bar, large mode — never inside the bar next to `principalItem`).
 
 **Setup (bottom toolbar):**
 - Never combine with `OUDSTabBar` on the same screen.
@@ -73,6 +76,15 @@ NavigationStack {
                 OUDSToolBarItem(icon: Image("ic_settings"), accessibilityLabel: "Settings") {}
             })
 }
+
+// Top — principalItem + hasLargeTitle: title shown below the bar (large mode), subtitle never shown
+ContentView()
+    .toolBarTop("Title", hasLargeTitle: true, subtitle: "Never shown",
+        principalItem: OUDSToolBarItem(icon: Image("ic_search"), accessibilityLabel: "Search") {})
+
+// Top — principalItem without hasLargeTitle: neither title nor subtitle shown
+ContentView()
+    .toolBarTop("Title", principalItem: OUDSToolBarItem(icon: Image("ic_search"), accessibilityLabel: "Search") {})
 
 // Top — large title + subtitle (subtitle iOS 26+ only)
 ContentView().toolBarTop("Title", hasLargeTitle: true, subtitle: "Sub")

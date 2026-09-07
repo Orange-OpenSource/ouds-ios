@@ -415,6 +415,11 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
     }
 }
 
+> **Principal item**: at most one item can be placed in the principal (center) position with `principalItem:`. When a `principalItem`
+> is set, the subtitle is **never** displayed (whatever `hasLargeTitle` is), because SwiftUI's `.principal` placement only replaces
+> the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would otherwise keep floating with no visible title next
+> to it. The title itself is displayed only if `hasLargeTitle` is `true`, in which case it appears below the bar (large title mode).
+
 ```swift
 // Apply once on the root NavigationStack to style the system navigation bar
 NavigationStack {
@@ -431,6 +436,17 @@ NavigationStack {
                     })
 }
 .oudsNavigationBarAppearance() // required — apply on the NavigationStack, not on the child view
+
+// Principal item + hasLargeTitle: title is displayed below the bar (large mode), subtitle is never displayed
+SomeView()
+    .toolBarTop("Title",
+                hasLargeTitle: true,
+                subtitle: "This subtitle will never be shown because a principalItem is set",
+                principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
+
+// Principal item without hasLargeTitle: neither title nor subtitle are displayed
+SomeView()
+    .toolBarTop("Title", principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
 
 // Close button — .close takes NO closure, dismiss is handled automatically
 SomeView()

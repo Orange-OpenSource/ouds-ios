@@ -36,9 +36,10 @@ struct ToolBarTopModifier: ViewModifier {
     /// - Parameters:
     ///   - title: The toobar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed for iOS lower than 26.
-    ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
+    ///   - subtitle: Optional subtitle displayed below the title, *nil* by default. **Ignored if `principalItem` is not *nil*.**
     ///   - leadingItems: The items displayed on the leading side
-    ///   - principalItem: The item displayed in the principal (center) position (only one item supported)
+    ///   - principalItem: The item displayed in the principal (center) position (only one item supported).
+    ///     If set, the title is not displayed unless `hasLargeTitle` is `true`, and the subtitle is never displayed.
     ///   - trailingItems: The items displayed on the trailing side
     ///   - content: The content view wrapped by the toolbar.
     init(title: String,
@@ -65,22 +66,52 @@ struct ToolBarTopModifier: ViewModifier {
 
     // MARK: - Body
 
+    @ViewBuilder
     func body(content: Content) -> some View {
-        content
-            .oudsNavigationTitle(title, subtitle: subtitle, hasLargeTitle: hasLargeTitle)
-            .toolbar {
+        if let principalItem, !hasLargeTitle {
+            // Principal item without large title: no title, no subtitle, just the toolbar with the principal item.
+            content.toolbar {
                 ToolbarItemGroup(placement: leadingPlacement) {
                     itemsView(leadingItems)
                 }
                 ToolbarItem(placement: principalPlacement) {
-                    principalItem.map { item in
-                        item.environment(\.toolbarItemLocation, .toolbarTop)
-                    }
+                    principalItem.environment(\.toolbarItemLocation, .toolbarTop)
                 }
                 ToolbarItemGroup(placement: trailingPlacement) {
                     itemsView(trailingItems)
                 }
             }
+        } else if let principalItem {
+            // Principal item and large title: title is displayed (large mode), subtitle is never displayed.
+            // Note: SwiftUI's `.principal` placement only replaces the inline compact bar title, not the large title
+            // nor `.navigationSubtitle()` (iOS 26+), which would otherwise keep rendering next to/under the principal
+            // item with no visible title next to it. So the subtitle must never be forwarded here.
+            content
+                .oudsNavigationTitle(title, subtitle: nil, hasLargeTitle: hasLargeTitle)
+                .toolbar {
+                    ToolbarItemGroup(placement: leadingPlacement) {
+                        itemsView(leadingItems)
+                    }
+                    ToolbarItem(placement: principalPlacement) {
+                        principalItem.environment(\.toolbarItemLocation, .toolbarTop)
+                    }
+                    ToolbarItemGroup(placement: trailingPlacement) {
+                        itemsView(trailingItems)
+                    }
+                }
+        } else {
+            // No principal item: standard behavior, title and subtitle displayed as configured.
+            content
+                .oudsNavigationTitle(title, subtitle: subtitle, hasLargeTitle: hasLargeTitle)
+                .toolbar {
+                    ToolbarItemGroup(placement: leadingPlacement) {
+                        itemsView(leadingItems)
+                    }
+                    ToolbarItemGroup(placement: trailingPlacement) {
+                        itemsView(trailingItems)
+                    }
+                }
+        }
     }
 
     // MARK: - Helpers

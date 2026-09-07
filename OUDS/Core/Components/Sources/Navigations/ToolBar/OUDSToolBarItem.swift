@@ -163,7 +163,8 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Stored properties
 
-    private let content: Content
+    let content: Content
+
     public let id = UUID()
 
     // MARK: - Initializers

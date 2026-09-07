@@ -23,6 +23,11 @@ import SwiftUI
 /// It typically displays the page title, and may include navigation actions such as "Back" or "Close" as well as supplementary actions.
 /// It can contains leading, principal (center, single item only), and trailing actions.
 ///
+/// **Warning**: If an item is placed in principal position, the subtitle is never displayed (whatever `hasLargeTitle` is), because
+/// SwiftUI's `.principal` placement only replaces the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would
+/// otherwise keep rendering next to the item with no visible title next to it. The title itself is displayed only if `hasLargeTitle`
+/// is `true` (in that case it appears below the bar, in large title mode, not inside it).
+///
 /// ## Appearances
 ///
 /// With Liquid Glass / iOS 26+ the OS will change the rendering of the toolbar items depending to the context:
@@ -172,9 +177,10 @@ public struct OUDSToolBarTop: ViewModifier {
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed
-    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
+    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default. **Never displayed if `principalItem` is not *nil*.**
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - principalItem: The item displayed in the principal (center) position, *nil* by default. Only one item is supported.
+    ///     If set, the *title* is displayed only if `hasLargeTitle` is `true`, and the *subtitle* is never displayed.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
     public init(title: String,
                 hasLargeTitle: Bool = false,
@@ -214,12 +220,18 @@ extension View {
     ///
     /// There must be only one *top toolbar*.
     ///
+    /// **Warning**: If an item is placed in principal position, the subtitle is never displayed (whatever `hasLargeTitle` is), because
+    /// SwiftUI's `.principal` placement only replaces the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would
+    /// otherwise keep rendering next to the item with no visible title next to it. The title itself is displayed only if `hasLargeTitle`
+    /// is `true` (in that case it appears below the bar, in large title mode, not inside it).
+    ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed for iOS < 26.
-    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
+    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default. **Never displayed if `principalItem` is not *nil*.**
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - principalItem: The item displayed in the principal (center) position, *nil* by default. Only one item is supported.
+    ///     If set, the *title* is displayed only if `hasLargeTitle` is `true`, and the *subtitle* is never displayed.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
     @available(iOS 15, visionOS 1, *)
     public func toolBarTop(_ title: String,
