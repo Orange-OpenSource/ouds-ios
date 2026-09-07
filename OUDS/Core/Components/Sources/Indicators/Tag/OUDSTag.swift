@@ -383,7 +383,7 @@ public struct OUDSTag: View {
     ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - status: The status of the tag, default set to *neutral
+    ///    - status: The status of the tag, default set to *neutral*
     ///    - appearance: The importance of the tag, default set to *emphasized*
     ///    - shape: The shape of the tag, default set to *rounded*
     ///    - size: The size of the tag, default set to *default*
