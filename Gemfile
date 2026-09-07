@@ -31,7 +31,7 @@ gem 'json', '2.20.0'
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.237.0'
+gem 'fastlane', '2.239.0'
 
 # Magic
 
