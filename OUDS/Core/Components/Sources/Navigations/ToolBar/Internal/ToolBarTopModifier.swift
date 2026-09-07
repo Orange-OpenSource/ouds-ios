@@ -26,7 +26,7 @@ struct ToolBarTopModifier: ViewModifier {
     let hasLargeTitle: Bool
     let subtitle: String?
     @OUDSToolBarItemsBuilder let leadingItems: [OUDSToolBarItem]
-    @OUDSToolBarItemsBuilder let principalItems: [OUDSToolBarItem]
+    let principalItem: OUDSToolBarItem?
     @OUDSToolBarItemsBuilder let trailingItems: [OUDSToolBarItem]
 
     // MARK: - Initializer
@@ -38,14 +38,14 @@ struct ToolBarTopModifier: ViewModifier {
     ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed for iOS lower than 26.
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side
-    ///   - principalItems: The items displayed in the principal (center) position
+    ///   - principalItem: The item displayed in the principal (center) position (only one item supported)
     ///   - trailingItems: The items displayed on the trailing side
     ///   - content: The content view wrapped by the toolbar.
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,
          @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem],
-         @OUDSToolBarItemsBuilder principalItems: @escaping () -> [OUDSToolBarItem],
+         principalItem: OUDSToolBarItem? = nil,
          @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
@@ -59,7 +59,7 @@ struct ToolBarTopModifier: ViewModifier {
         self.hasLargeTitle = hasLargeTitle
         self.subtitle = subtitle
         self.leadingItems = leadingItems()
-        self.principalItems = principalItems()
+        self.principalItem = principalItem
         self.trailingItems = trailingItems()
     }
 
@@ -72,8 +72,10 @@ struct ToolBarTopModifier: ViewModifier {
                 ToolbarItemGroup(placement: leadingPlacement) {
                     itemsView(leadingItems)
                 }
-                ToolbarItemGroup(placement: principalPlacement) {
-                    itemsView(principalItems)
+                ToolbarItem(placement: principalPlacement) {
+                    principalItem.map { item in
+                        item.environment(\.toolbarItemLocation, .toolbarTop)
+                    }
                 }
                 ToolbarItemGroup(placement: trailingPlacement) {
                     itemsView(trailingItems)

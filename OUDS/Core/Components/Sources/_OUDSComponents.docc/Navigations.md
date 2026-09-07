@@ -424,9 +424,7 @@ NavigationStack {
                         // Back button — system dismiss is automatic, no closure needed
                         OUDSToolBarItem(navigation: .back())
                     },
-                    principalItems: {
-                        OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ }
-                    },
+                    principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
                     trailingItems: {
                         OUDSToolBarItem(label: "Label") { /* Action to process */ }
                         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
