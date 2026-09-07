@@ -199,7 +199,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: .icon(asset: icon, accessibilityLabel: accessibilityLabel, action: action), style: .default)
     }
 
-    /// Creates a toobar item with action type.
+    /// Creates a toolbar item with action type.
     ///
     /// ```swift
     ///     // A toolbar item with an "Edit" label and an associated action
@@ -214,7 +214,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: type, style: .default)
     }
 
-    /// Creates a toobar item with action type and a style
+    /// Creates a toolbar item with action type and a style
     ///
     /// ```swift
     ///     OUDSToolBarItem(action: .label("Edit") { }, style: .tinted)
@@ -228,7 +228,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: type, style: style)
     }
 
-    /// Creates a toobar item with icon dedicated to navigation.
+    /// Creates a toolbar item with icon dedicated to navigation.
     ///
     /// ```swift
     ///     OUDSToolBarItem(navigation: .back { /* Action */ })
@@ -239,7 +239,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .navigation(type: type)
     }
 
-    /// Creates a toobar item with a custom view.
+    /// Creates a toolbar item with a custom view.
     ///
     /// Use this initializer to provide any SwiftUI view, such as a `Menu`, custom button, or complex layout.
     ///

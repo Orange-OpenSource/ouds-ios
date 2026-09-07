@@ -31,10 +31,10 @@ struct ToolBarTopModifier: ViewModifier {
 
     // MARK: - Initializer
 
-    /// Creates a top toobar with a title, optional subtitle (iOS 26+ only), and leading / principal / trailing items.
+    /// Creates a top toolbar with a title, optional subtitle (iOS 26+ only), and leading / principal / trailing items.
     ///
     /// - Parameters:
-    ///   - title: The toobar title. Prefer a non-empty string.
+    ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed for iOS lower than 26.
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default. **Ignored if `principalItem` is not *nil*.**
     ///   - leadingItems: The items displayed on the leading side

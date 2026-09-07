@@ -21,7 +21,7 @@ import SwiftUI
 /// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
 /// It typically displays the page title, and may include navigation actions such as "Back" or "Close" as well as supplementary actions.
-/// It can contains leading, principal (center, single item only), and trailing actions.
+/// It can contain leading, principal (center, single item only), and trailing actions.
 ///
 /// **Warning**: If an item is placed in principal position, the subtitle is never displayed (whatever `hasLargeTitle` is), because
 /// SwiftUI's `.principal` placement only replaces the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would
@@ -169,7 +169,9 @@ public struct OUDSToolBarTop: ViewModifier {
     /// ```swift
     ///     OUDSToolBarTop(title: "Home") {
     ///         OUDSToolBarItem(navigation: .back { })
-    ///     } principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { } trailingItems: {
+    ///     },
+    ///     principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { },
+    ///     trailingItems: {
     ///         OUDSToolBarItem(label: "Done") { }
     ///     }
     /// ```
