@@ -59,8 +59,7 @@ import SwiftUI
 ///
 /// Motion is disabled and a static arc is displayed when either
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled (via
-/// ``OUDSLowPowerModeObserver``), mirroring the behavior of the internal `LoaderIndicator` used
-/// by ``OUDSButton``.
+/// ``OUDSLowPowerModeObserver``).
 struct CircularProgressIndicatorIndeterminateView: View {
 
     // MARK: - Material animation constants
