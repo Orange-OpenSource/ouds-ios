@@ -361,19 +361,16 @@ public struct OUDSTag: View {
     ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag. Default set to *emphasized*
     ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
     ///    - size: The size of the tag. Default set to *default*.
-    ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not.
-    ///    It will replace the `icon` if provided. Default set to *false*.
     public init(label: String,
                 status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
-                size: Size = .default,
-                hasLoader: Bool = false)
+                size: Size = .default)
     {
         self.appearance = appearance
         self.shape = shape
         self.size = size
-        type = hasLoader ? .loader(label: label) : .status(label: label, status: status)
+        type = .status(label: label, status: status)
     }
 
     /// Creates a tag with a localized label, looking up the key in the given bundle.
@@ -390,18 +387,16 @@ public struct OUDSTag: View {
     ///    - appearance: The importance of the tag, default set to *emphasized*
     ///    - shape: The shape of the tag, default set to *rounded*
     ///    - size: The size of the tag, default set to *default*
-    ///    - hasLoader: If an optional loader is displayed, default set to *false*
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
-                size: Size = .default,
-                hasLoader: Bool = false)
+                size: Size = .default)
     {
         let resolvedLabel = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size, hasLoader: hasLoader)
+        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size)
     }
 
     /// Creates a tag in the loading state indicates that the system is processing or retrieving data.
@@ -427,7 +422,7 @@ public struct OUDSTag: View {
         appearance = .emphasized
         self.shape = shape
         self.size = size
-        type = .loader(label: loadingLabel)
+        type = .loader(label: loadingLabel, progress: progress)
         // "loadingLabel" instead of "label" to avoid doubts for users with init(label:status:appearance=shape:size:hasLoader) with default values
     }
 
