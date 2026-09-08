@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for alert components like `OUDSAlert`
+/// Declares all component tokens for alert components.
 /// Used for tokens providers like `OrangeThemeAlertComponentTokensProvider` etc.
 ///
 /// - Since:1.2.0

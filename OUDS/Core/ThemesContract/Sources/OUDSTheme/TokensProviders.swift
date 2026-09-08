@@ -79,6 +79,9 @@ public protocol AllAccordionComponentTokensProvider: TokensProvider, AccordionCo
 /// Something which provides all component tokens of alert
 public protocol AllAlertComponentTokensProvider: TokensProvider, AlertComponentTokens {}
 
+/// Something which provides all component tokens of alert messages
+public protocol AllAlertMessageComponentTokensProvider: TokensProvider, AlertMessageComponentTokens {}
+
 /// Something which provides all component tokens of bars
 public protocol AllBarComponentTokensProvider: TokensProvider, BarComponentTokens {}
 
