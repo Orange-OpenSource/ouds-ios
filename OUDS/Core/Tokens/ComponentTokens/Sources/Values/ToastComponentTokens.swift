@@ -32,16 +32,9 @@ public protocol ToastComponentTokens {
 
     // MARK: - Sizes
 
-    var sizeWidthMobile: SizeSemanticToken { get }
-    var sizeWidthTablet: SizeSemanticToken { get }
     var sizeAssetLarge: SizeSemanticToken { get }
     var sizeAssetMedium: SizeSemanticToken { get }
     var sizeAssetSmall: SizeSemanticToken { get }
-
-    var sizeMaxWidthMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTablet: SizeSemanticToken { get }
-    var sizeMinWidthMobile: SizeSemanticToken { get }
-    var sizeMinWidthTablet: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

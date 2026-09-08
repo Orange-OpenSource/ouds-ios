@@ -14,6 +14,8 @@
 import OUDSFoundations
 import OUDSThemesContract
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of alert** for *alert* objects like `OUDSAlertMessage`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllAlertMessageComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -114,3 +116,5 @@ open class OrangeThemeAlertMessageComponentTokensProvider: AllAlertMessageCompon
     // the implementation of AlertMessageComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+AlertMessageComponentTokens.swift
     // This declaration of OrangeThemeAlertMessageComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

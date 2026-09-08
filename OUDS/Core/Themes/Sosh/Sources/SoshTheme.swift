@@ -106,6 +106,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = SoshThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = SoshThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let toast = SoshThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
         let typography = SoshThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
@@ -143,6 +144,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: Bundle.SoshTheme,
                    name: Self.name,

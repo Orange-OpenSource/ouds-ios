@@ -225,8 +225,8 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentInlineAlertVersion, regexp: Self.oudsVersionsFormat)
     }
 
-    @Test func componentModalDialogVersionMustBeConform() throws {
-        TestsUtils.assertMatches(OUDSVersions.componentModalDialogVersion, regexp: Self.oudsVersionsFormat)
+    @Test func componentInlineToastMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentToastVersion, regexp: Self.oudsVersionsFormat)
     }
 
     // MARK: - Tests - Component versions - Foundations
@@ -237,8 +237,12 @@ struct OUDSVersionsTests {
 
     // MARK: - Tests - Component versions - Indicator
 
-    @Test func componentProgressIndicatorVersionMustBeConform() throws {
-        TestsUtils.assertMatches(OUDSVersions.componentProgressIndicatorVersion, regexp: Self.oudsVersionsFormat)
+    @Test func componentCircularProgressIndicatorVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentCircularProgressIndicatorVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentLinearProgressIndicatorVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentLinearProgressIndicatorVersion, regexp: Self.oudsVersionsFormat)
     }
 
     @Test func componentStatusIconVersionMustBeConform() throws {

@@ -187,6 +187,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - toast: All component tokens for toast
     ///    - typography: All component tokens for typography
     ///    - resourcesBundle: The `Bundle` of the module containing assets to load like images
     ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
@@ -229,6 +230,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                 inputTag: AllInputTagComponentTokensProvider? = nil,
                 textArea: AllTextAreaComponentTokensProvider? = nil,
                 textInput: AllTextInputComponentTokensProvider? = nil,
+                toast: AllToastComponentTokensProvider? = nil,
                 typography: AllTypographyComponentTokensProvider? = nil,
                 resourcesBundle: Bundle = Bundle.OrangeTheme,
                 name: String = OrangeTheme.name,
@@ -274,6 +276,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = (inputTag ?? OrangeThemeInputTagComponentTokensProvider(borders: borders, colors: colors))
         let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
         let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
+        let toast = (toast ?? OrangeThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes))
         let typography = (typography ?? OrangeThemeTypographyComponentTokensProvider(spaces: spaces))
 
         super.init(borders: borders,
@@ -313,6 +316,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: resourcesBundle,
                    name: name,

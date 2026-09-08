@@ -148,6 +148,9 @@ public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComp
 /// Something which provides all component tokens of text input
 public protocol AllTextInputComponentTokensProvider: TokensProvider, TextInputComponentTokens {}
 
+/// Something which provides all component tokens of toast
+public protocol AllToastComponentTokensProvider: TokensProvider, ToastComponentTokens {}
+
 /// Something which provides all component tokens of typography
 public protocol AllTypographyComponentTokensProvider: TokensProvider, TypographyComponentTokens {}
 

@@ -61,7 +61,8 @@ final class OrangeCompactThemeAlertMessageComponentTokensProvider: AllAlertMessa
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implementation of AlertMessageMessageComponentTokens is not here but in Core/Themes/OrangeCompact/Values/ComponentTokens/OrangeCompactTheme+AlertMessageComponentTokens.swift
+    // the implementation of AlertMessageMessageComponentTokens is not here
+    // but in Core/Themes/OrangeCompact/Values/ComponentTokens/OrangeCompactTheme+AlertMessageComponentTokens.swift
     // This declaration of OrangeCompactThemeAlertMessageComponentTokensProvider is here also to allow to write documentation.
 }
 

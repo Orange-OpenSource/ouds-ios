@@ -102,6 +102,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = WireframeThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = WireframeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = WireframeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let toast = WireframeThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
         let typography = WireframeThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
@@ -139,6 +140,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: Bundle.WireframeTheme,
                    name: Self.name,

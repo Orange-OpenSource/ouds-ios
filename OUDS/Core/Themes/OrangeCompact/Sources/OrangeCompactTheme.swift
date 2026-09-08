@@ -167,6 +167,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = OrangeCompactThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeCompactThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = OrangeCompactThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let toast = OrangeCompactThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
         let typography = OrangeCompactThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
@@ -206,6 +207,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: Bundle.OrangeCompactTheme,
                    name: Self.name,

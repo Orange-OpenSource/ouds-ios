@@ -170,6 +170,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to bullet list components like `OUDSTextInput`
     public let textInput: AllTextInputComponentTokensProvider
 
+    /// All components tokens related to toast components like `OUDSToast`
+    public let toast: AllToastComponentTokensProvider
+
     /// All components tokens related to typography components
     public let typography: AllTypographyComponentTokensProvider
 
@@ -237,6 +240,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - toast: All component tokens for toast
     ///    - typography: All component tokens for typography
     ///    - name: The name of the theme, can be used for debugging for example
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
@@ -280,6 +284,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 inputTag: AllInputTagComponentTokensProvider,
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
+                toast: AllToastComponentTokensProvider,
                 typography: AllTypographyComponentTokensProvider,
                 resourcesBundle: Bundle,
                 name: String,
@@ -327,6 +332,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.inputTag = inputTag
         self.textArea = textArea
         self.textInput = textInput
+        self.toast = toast
         self.typography = typography
 
         // Load other configuration elements
