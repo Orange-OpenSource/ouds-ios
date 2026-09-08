@@ -18,33 +18,33 @@ public enum OUDSVersions {
 
     // MARK: - Themes versions
 
-    /// Version of the Core tokens library (1.10.0)
-    public static let themeCoreVersion = "1.10.0"
+    /// Version of the Core tokens library (1.11.0)
+    public static let themeCoreVersion = "1.11.0"
 
     /// Version of the Orange core tokens library (1.2.0)
     public static let themeOrangeCoreVersion = "1.2.0"
-    /// Version of the Orange brand tokens library (2.6.0)
-    public static let themeOrangeBrandVersion = "2.6.0"
+    /// Version of the Orange brand tokens library (2.7.0)
+    public static let themeOrangeBrandVersion = "2.7.0"
 
     /// Version of the Sosh core tokens library (1.4.0)
     public static let themeSoshCoreVersion = "1.4.0"
-    /// Version of the Sosh brand tokens library (2.6.0)
-    public static let themeSoshBrandVersion = "2.6.0"
+    /// Version of the Sosh brand tokens library (2.7.0)
+    public static let themeSoshBrandVersion = "2.7.0"
 
-    /// Version of the Orange Compact brand tokens library (2.6.0)
-    public static let themeOrangeCompactBrandVersion = "2.6.0"
+    /// Version of the Orange Compact brand tokens library (2.7.0)
+    public static let themeOrangeCompactBrandVersion = "2.7.0"
 
     /// Version of the Wireframe core tokens library (1.4.0)
     public static let themeWireframeCoreVersion = "1.4.0"
-    /// Version of the Wireframe brand tokens library (2.6.0)
-    public static let themeWireframeBrandVersion = "2.6.0"
+    /// Version of the Wireframe brand tokens library (2.7.0)
+    public static let themeWireframeBrandVersion = "2.7.0"
 
     // MARK: - Components versions - Actions
 
-    /// Version of the Figma specifications for the component button (3.3.0)
-    public static let componentButtonVersion = "3.3.0"
-    /// Version of the Figma specifications for the component interactive icon (1.0.0)
-    public static let componentInteractiveIcon = "1.0.0"
+    /// Version of the Figma specifications for the component button (3.4.0)
+    public static let componentButtonVersion = "3.4.0"
+    /// Version of the Figma specifications for the component interactive icon (1.1.0)
+    public static let componentInteractiveIcon = "1.1.0"
 
     // MARK: - Components versions - AI assistant
 
@@ -57,6 +57,12 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component bullet list (1.1.0)
     public static let componentBulletListVersion = "1.1.0"
+    /// Version of the Figma specifications for the component accordion (list item) (1.0.0)
+    public static let componentAccordionListItem = "1.0.0"
+    /// Version of the Figma specifications for the component accordion (card item) (1.0.0)
+    public static let componentAccordionCardItem = "1.0.0"
+    /// Version of the Figma specifications for the component accordion (FAQ) (1.0.0)
+    public static let componentAccordionFaq = "1.0.0"
 
     // MARK: - Components versions - Control
 
@@ -70,20 +76,20 @@ public enum OUDSVersions {
     public static let componentSuggestionChipVersion = "1.5.0"
     /// Version of the Figma specifications for the component password input (1.3.1)
     public static let componentPasswordInputVersion = "1.3.1"
-    /// Version of the Figma specifications for the component phone number input (1.3.0)
-    public static let componentPhoneNumberInputVersion = "1.3.0"
+    /// Version of the Figma specifications for the component phone number input (1.3.1)
+    public static let componentPhoneNumberInputVersion = "1.3.1"
     /// Version of the Figma specifications for the component pin code input (1.3.0)
     public static let componentPinCodeInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component quantity input (1.3.1)
     public static let componentQuantityInputVersion = "1.3.1"
-    /// Version of the Figma specifications for the component quantity input (1.0.0)
-    public static let componentStaticListItemVersion = "1.0.0"
-    /// Version of the Figma specifications for the component quantity input (1.0.0)
-    public static let componentStaticCardItemVersion = "1.0.0"
-    /// Version of the Figma specifications for the component quantity input (1.0.0)
-    public static let componentNavigationListItemVersion = "1.0.0"
-    /// Version of the Figma specifications for the component quantity input (1.0.0)
-    public static let componentNavigationCardItemVersion = "1.0.0"
+    /// Version of the Figma specifications for the component quantity input (1.2.0)
+    public static let componentStaticListItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component quantity input (1.2.0)
+    public static let componentStaticCardItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component quantity input (1.2.0)
+    public static let componentNavigationListItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component quantity input (1.2.0)
+    public static let componentNavigationCardItemVersion = "1.2.0"
     /// Version of the Figma specifications for the component radio button (1.4.0)
     public static let componentRadioButtonVersion = "1.4.0"
     /// Version of the Figma specifications for the component select input (1.3.1)
@@ -97,22 +103,26 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Dialog
 
-    /// Version of the Figma specifications for the component alert (alert message) (1.1.1)
-    public static let componentAlertMessageVersion = "1.1.1"
+    /// Version of the Figma specifications for the component alert (alert message) (1.2.0)
+    public static let componentAlertMessageVersion = "1.2.0"
     /// Version of the Figma specifications for the component alert (inline alert) (1.0.0)
     public static let componentInlineAlertVersion = "1.0.0"
-    /// Version of the Figma specifications for the component dialog (modal dialog) (0.0.0)
-    public static let componentModalDialogVersion = "0.0.0"
+    /// Version of the Figma specifications for the component alert (alert bannet) (1.0.0)
+    public static let componentAlertBannerVersion = "1.0.0"
+    /// Version of the Figma specifications for the component toast (1.0.0)
+    public static let componentToastVersion = "1.0.0"
 
     // MARK: - Components versions - Foundations
 
-    /// Version of the Figma specifications for the component typgography) (1.0.0)
-    public static let componentTypographyVersion = "1.0.0"
+    /// Version of the Figma specifications for the component typgography) (1.1.0)
+    public static let componentTypographyVersion = "1.1.0"
 
     // MARK: - Components versions - Indicator
 
-    /// Version of the Figma specifications for the component progress indicator (1.2.0)
-    public static let componentProgressIndicatorVersion = "1.2.0"
+    /// Version of the Figma specifications for the component circular progress indicator (1.2.0)
+    public static let componentCircularProgressIndicatorVersion = "1.2.0"
+    /// Version of the Figma specifications for the component linear progress indicator (1.1.0)
+    public static let componentLinearProgressIndicatorVersion = "1.1.0"
     /// Version of the Figma specifications for the component status icon(1.0.0)
     public static let componentStatusIconVersion = "1.0.0"
 
@@ -123,8 +133,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Navigation
 
-    /// Version of the Figma specifications for the component link (2.4.0)
-    public static let componentLinkVersion = "2.4.0"
+    /// Version of the Figma specifications for the component link (2.3.0)
+    public static let componentLinkVersion = "2.3.0"
     /// Version of the Figma specifications for the component expand link (2.4.0)
     public static let componentExpandLinkVersion = "2.4.0"
     /// Version of the Figma specifications for the tab bar components (1.0.0)
@@ -148,6 +158,8 @@ public enum OUDSVersions {
     public static let componentTagVersion = "1.5.0"
     /// Version of the Figma specifications for the component input tag (1.2.0)
     public static let componentInputTagVersion = "1.2.0"
+    /// Version of the Figma specifications for the component categorical tag (1.0.0)
+    public static let componentCategoricalTagVersion = "1.0.0"
 
     // MARK: - Components versions - Visual assets
 
