@@ -94,6 +94,9 @@ public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletList
 /// Something which provides all component tokens of button
 public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens, ButtonMonoComponentTokens {}
 
+/// Something which provides all component tokens for categorical tag
+public protocol AllCategoricalTagComponentTokensProvider: TokensProvider, CategoricalTagComponentTokens {}
+
 /// Something which provides all component tokens of checkboxes
 public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens {}
 

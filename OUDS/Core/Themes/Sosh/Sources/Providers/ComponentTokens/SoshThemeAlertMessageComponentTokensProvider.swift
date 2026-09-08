@@ -14,19 +14,18 @@
 import OUDSFoundations
 import OUDSThemesContract
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of alert** for *alert* objects like `OUDSAlertMessage`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllAlertComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users.
-/// It implements also the protocol `AlertComponentTokens` so as to expose the component tokens for *alert* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllAlertMessageComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
+/// It implements also the protocol `AlertMessageComponentTokens` so as to expose the component tokens for *alertMessage* through any `OUDSTheme`.
 /// *Alert* components tokens are defined with semantic tokens of borders (`AllBorderSemanticTokensProviders`),
-/// spaces (from `AllSpaceSemanticTokensProvider`) and sizes (from `AllSizeSemanticTokensProvider`).
+/// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
-/// - Since: 1.2.0
-final class SoshThemeAlertComponentTokensProvider: AllAlertComponentTokensProvider {
-
-    /// Provider of sizes semantic tokens to use for alert sizes
-    let sizes: AllSizeSemanticTokensProvider
+/// - Since: 3.0.0
+final class SoshThemeAlertMessageComponentTokensProvider: AllAlertMessageComponentTokensProvider {
 
     /// Provider of borders semantic tokens to use for alert borders
     let borders: AllBorderSemanticTokensProvider
@@ -40,20 +39,17 @@ final class SoshThemeAlertComponentTokensProvider: AllAlertComponentTokensProvid
 
     /// Defines a provider of component tokens dedicated to `OUDSAlertMessage`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens, if nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens, if nil, default one will be used ( ``SoshThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    init(sizes: AllSizeSemanticTokensProvider? = nil,
-         borders: AllBorderSemanticTokensProvider? = nil,
+    init(borders: AllBorderSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of SoshThemeAlertComponentTokensProvider")
-        self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
+        OL.debug("Init of SoshThemeAlertMessageComponentTokensProvider")
         self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "SoshThemeAlertComponentTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "SoshThemeAlertMessageComponentTokensProvider")
         #endif
     }
 
@@ -65,6 +61,8 @@ final class SoshThemeAlertComponentTokensProvider: AllAlertComponentTokensProvid
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implementation of AlertComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+AlertComponentTokens.swift
-    // This declaration of SoshThemeAlertComponentTokensProvider is here also to allow to write documentation.
+    // the implementation of AlertMessageMessageComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+AlertMessageComponentTokens.swift
+    // This declaration of SoshThemeAlertMessageComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

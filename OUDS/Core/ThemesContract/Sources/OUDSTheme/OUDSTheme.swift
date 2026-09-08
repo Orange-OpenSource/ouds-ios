@@ -103,6 +103,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to alert component like `OUDSAlertMessage` and `OUDSInlineAlert`
     public let alert: AllAlertComponentTokensProvider
 
+    /// All components tokens related only to `OUDSAlertMessage`
+    public let alertMessage: AllAlertMessageComponentTokensProvider
+
     /// All components tokens related to bar components
     public let bar: AllBarComponentTokensProvider
 
@@ -212,6 +215,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - spaces: All semantic tokens of spaces
     ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
+    ///    - alertMessage: All component tokens for alert message
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
@@ -254,6 +258,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 spaces: AllSpaceSemanticTokensProvider,
                 accordion: AllAccordionComponentTokensProvider,
                 alert: AllAlertComponentTokensProvider,
+                alertMessage: AllAlertMessageComponentTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
                 bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
@@ -300,6 +305,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         // Save component tokens providers
         self.accordion = accordion
         self.alert = alert
+        self.alertMessage = alertMessage
         self.badge = badge
         self.bar = bar
         self.button = button

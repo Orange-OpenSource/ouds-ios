@@ -84,6 +84,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = SoshThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = SoshThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
+        let alertMessage = SoshThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces)
         let badge = SoshThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
@@ -120,6 +121,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,

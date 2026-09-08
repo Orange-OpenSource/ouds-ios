@@ -80,6 +80,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = WireframeThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = WireframeThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
+        let alertMessage = WireframeThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces)
         let badge = WireframeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
@@ -116,6 +117,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,

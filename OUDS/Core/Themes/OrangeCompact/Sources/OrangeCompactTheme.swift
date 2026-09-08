@@ -145,6 +145,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = OrangeCompactThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = OrangeCompactThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
+        let alertMessage = OrangeCompactThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces)
         let badge = OrangeCompactThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = OrangeCompactThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = OrangeCompactThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
@@ -183,6 +184,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,

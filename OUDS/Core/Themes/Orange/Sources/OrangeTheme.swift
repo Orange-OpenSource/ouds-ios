@@ -165,6 +165,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - spaces: All semantic tokens of spaces
     ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
+    ///    - alertMessage: All component tokens for alert message
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
@@ -206,6 +207,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                 spaces: AllSpaceSemanticTokensProvider? = nil,
                 accordion: AllAccordionComponentTokensProvider? = nil,
                 alert: AllAlertComponentTokensProvider? = nil,
+                alertMessage: AllAlertMessageComponentTokensProvider? = nil,
                 badge: AllBadgeComponentTokensProvider? = nil,
                 bar: AllBarComponentTokensProvider? = nil,
                 bulletList: AllBulletListComponentTokensProvider? = nil,
@@ -250,6 +252,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = (accordion ?? OrangeThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces))
         let alert = (alert ?? OrangeThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
+        let alertMessage = (alertMessage ?? OrangeThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces))
         let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
@@ -288,6 +291,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,
