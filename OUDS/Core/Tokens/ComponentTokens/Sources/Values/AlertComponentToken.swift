@@ -42,7 +42,7 @@ public protocol AlertComponentTokens {
 
     // MARK: - Size
 
-    var sizeIcon: SizeSemanticToken { get }
+    var sizeAsset: SizeSemanticToken { get }
     var sizeMinHeight: SizeSemanticToken { get }
     var sizeMinHeightBottomActionPlacement: SizeSemanticToken { get }
     var sizeMinWidth: SizeSemanticToken { get }

@@ -81,9 +81,9 @@ struct ThemeOverrideOfAlertComponentTokensTests {
 
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeIcon() throws {
-        #expect(inheritedTheme.alert.sizeIcon != abstractTheme.alert.sizeIcon)
-        #expect(inheritedTheme.alert.sizeIcon == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
+    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeAsset() throws {
+        #expect(inheritedTheme.alert.sizeAsset != abstractTheme.alert.sizeAsset)
+        #expect(inheritedTheme.alert.sizeAsset == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
     }
 
     @Test func inheritedThemeCanOverrideAlertComponentTokenSizeMinHeight() throws {

@@ -47,8 +47,8 @@ final class MockThemeAccordionComponentTokenProvider: OrangeThemeAccordionCompon
     override var spacePaddingBlockTablet: SpaceSemanticToken { Self.mockThemeAccordionSpace }
     override var spacePaddingBlockBottomExpandContainerMobile: SpaceSemanticToken { Self.mockThemeAccordionSpace }
     override var spacePaddingBlockBottomExpandContainerTablet: SpaceSemanticToken { Self.mockThemeAccordionSpace }
-    override var spacePaddingBlockBottomSlotListItemContainerMobile: SpaceSemanticToken { Self.mockThemeAccordionSpace }
-    override var spacePaddingBlockBottomSlotListItemContainerTablet: SpaceSemanticToken { Self.mockThemeAccordionSpace }
+    override var spacePaddingBlockBottomSlotContainerMobile: SpaceSemanticToken { Self.mockThemeAccordionSpace }
+    override var spacePaddingBlockBottomSlotContainerTablet: SpaceSemanticToken { Self.mockThemeAccordionSpace }
     override var sizeIconMobile: SizeSemanticToken { Self.mockThemeAccordionSize }
     override var sizeIconTablet: SizeSemanticToken { Self.mockThemeAccordionSize }
     override var sizeExpandingIndicatorMobile: SizeSemanticToken { Self.mockThemeAccordionSize }

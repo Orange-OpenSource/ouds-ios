@@ -279,6 +279,43 @@ theme.button.spacePaddingBlockDefault
 
 ---
 
+### Accordion component tokens — `ListItem` removed
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `spacePaddingBlockBottomSlotListItemContainerMobile` | `spacePaddingBlockBottomSlotContainerMobile` |
+| `spacePaddingBlockBottomSlotListItemContainerTablet` | `spacePaddingBlockBottomSlotContainerTablet` |
+
+```swift
+// Before (v2.3)
+theme.accordion.spacePaddingBlockBottomSlotListItemContainerMobile
+
+// After (v3.0)
+theme.accordion.spacePaddingBlockBottomSlotContainerMobile
+```
+
+**Required action**: remove `ListItem` from the token names for `accordion` component.
+
+---
+
+### Alert Message component token — `sizeIcon` → `sizeAsset`
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `sizeIcon` | `sizeAsset` |
+
+```swift
+// Before (v2.3)
+theme.alertMessage.sizeIcon
+
+// After (v3.0)
+theme.alertMessage.sizeAsset
+```
+
+**Required action**: replace `sizeIcon` by `sizeAsset` for `alertMessage` component.
+
+---
+
 ### OUDSButton style — `.loading` → `.loading()`
 
 The `OUDSButton.Style` enum case for loading now takes an optional `progress` parameter (nil for indeterminate, double for determinate percentage).

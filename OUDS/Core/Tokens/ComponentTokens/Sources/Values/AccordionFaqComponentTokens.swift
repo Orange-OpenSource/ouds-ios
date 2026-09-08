@@ -33,8 +33,8 @@ public protocol AccordionFaqComponentTokens {
     var spacePaddingBlockTablet: SpaceSemanticToken { get }
     var spacePaddingBlockBottomExpandContainerMobile: SpaceSemanticToken { get }
     var spacePaddingBlockBottomExpandContainerTablet: SpaceSemanticToken { get }
-    var spacePaddingBlockBottomSlotListItemContainerMobile: SpaceSemanticToken { get }
-    var spacePaddingBlockBottomSlotListItemContainerTablet: SpaceSemanticToken { get }
+    var spacePaddingBlockBottomSlotContainerMobile: SpaceSemanticToken { get }
+    var spacePaddingBlockBottomSlotContainerTablet: SpaceSemanticToken { get }
 
     // MARK: - Size
 
