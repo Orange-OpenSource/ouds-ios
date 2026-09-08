@@ -79,16 +79,22 @@ open class OrangeThemeTypographyComponentTokensProvider: AllTypographyComponentT
     /// Provider of spaces semantic tokens to use for button spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of color semantic tokens to use for typography colors
+    public let colors: AllColorSemanticTokensProvider
+
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to progress indicators.
     ///
-    /// - Parameter spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    public init(spaces: AllSpaceSemanticTokensProvider? = nil) {
+    /// - Parameters:
+    ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens, if nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    public init(spaces: AllSpaceSemanticTokensProvider? = nil, colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeTypographyComponentTokensProvider")
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeTypographyComponentTokensProvider")

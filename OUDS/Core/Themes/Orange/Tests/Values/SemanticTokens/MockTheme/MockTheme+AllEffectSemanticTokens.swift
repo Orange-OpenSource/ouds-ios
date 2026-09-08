@@ -24,6 +24,7 @@ final class MockThemeEffectSemanticTokensProvider: OrangeThemeEffectSemanticToke
 
     static let mockThemeEffectSemanticToken: EffectSemanticToken = 666_666
 
+    override var blurBackdrop: EffectSemanticToken { Self.mockThemeEffectSemanticToken }
     override var blurDrag: EffectSemanticToken { Self.mockThemeEffectSemanticToken }
 }
 

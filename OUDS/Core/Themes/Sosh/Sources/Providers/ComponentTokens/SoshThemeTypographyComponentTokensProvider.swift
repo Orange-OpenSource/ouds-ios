@@ -29,16 +29,22 @@ final class SoshThemeTypographyComponentTokensProvider: AllTypographyComponentTo
     /// Provider of spaces semantic tokens to use for button spaces
     let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of color semantic tokens to use for typography colors
+    let colors: AllColorSemanticTokensProvider
+
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to progress indicators.
     ///
-    /// - Parameter spaces: Provider for space semantic tokens, if nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    init(spaces: AllSpaceSemanticTokensProvider? = nil) {
-        OL.debug("Init of OrangeThemeTypographyComponentTokensProvider")
+    /// - Parameters:
+    ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens, if nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
+    init(spaces: AllSpaceSemanticTokensProvider? = nil, colors: AllColorSemanticTokensProvider? = nil) {
+        OL.debug("Init of SoshThemeTypographyComponentTokensProvider")
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
+        self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeTypographyComponentTokensProvider")

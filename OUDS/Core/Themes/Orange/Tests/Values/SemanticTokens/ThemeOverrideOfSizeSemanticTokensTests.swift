@@ -480,6 +480,16 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.maxWidthBodySmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBoxedTextMobile() throws {
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextMobile != abstractTheme.sizes.maxWidthBoxedTextMobile)
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBoxedTextTablet() throws {
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextTablet != abstractTheme.sizes.maxWidthBoxedTextTablet)
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelXlargeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeMobile != abstractTheme.sizes.maxWidthLabelXlargeMobile)
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)

@@ -89,6 +89,8 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     override var paddingInline2xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override var paddingInline3xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override var paddingInline4xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override var paddingInline5xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override var paddingInline6xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Padding block
 
@@ -104,6 +106,7 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     override var paddingBlock2xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override var paddingBlock3xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override var paddingBlock4xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override var paddingBlock5xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Padding inset
 

@@ -38,6 +38,20 @@ struct ThemeOverrideOfTypographyComponentTokensTests {
         #expect(inheritedTheme.typography.spacePaddingBlockBottomHeadingLargeMarker != abstractTheme.typography.spacePaddingBlockBottomHeadingLargeMarker)
         #expect(inheritedTheme.typography.spacePaddingBlockBottomHeadingLargeMarker == MockThemeTypographyComponentTokenProvider.mockThemeTypographySpace)
     }
+
+    // MARK: - Colors
+
+    @Test func inheritedThemeCanOverrideTypographyComponentTokenColorContentMarker() throws {
+        #expect(inheritedTheme.typography.colorContentMarker != abstractTheme.typography.colorContentMarker)
+        #expect(inheritedTheme.typography.colorContentMarker == MockThemeTypographyComponentTokenProvider.mockThemeTypographyColor)
+    }
+
+    // MARK: - Booleans
+
+    @Test func inheritedThemeCanOverrideTypographyComponentTokenHeadingLargeMarker() throws {
+        #expect(inheritedTheme.typography.headingLargeMarker != abstractTheme.typography.headingLargeMarker)
+        #expect(inheritedTheme.typography.headingLargeMarker == false)
+    }
 }
 
 // swiftlint:enable type_name
