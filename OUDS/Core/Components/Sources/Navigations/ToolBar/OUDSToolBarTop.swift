@@ -20,10 +20,13 @@ import SwiftUI
 
 /// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
-/// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
-/// It can contains leading and trailing actions.
+/// It typically displays the page title, and may include navigation actions such as "Back" or "Close" as well as supplementary actions.
+/// It can contain leading, principal (center, single item only), and trailing actions.
 ///
-/// `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`  View helper applies a SwiftUI toolbar configuration.
+/// **Warning**: If an item is placed in principal position, the subtitle is never displayed (whatever `hasLargeTitle` is), because
+/// SwiftUI's `.principal` placement only replaces the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would
+/// otherwise keep rendering next to the item with no visible title next to it. The title itself is displayed only if `hasLargeTitle`
+/// is `true` (in that case it appears below the bar, in large title mode, not inside it).
 ///
 /// ## Appearances
 ///
@@ -71,11 +74,18 @@ import SwiftUI
 ///             leadingItems: {
 ///                 OUDSToolBarItem(navigation: .back())
 ///             },
+///             principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
 ///             trailingItems: {
 ///                 OUDSToolBarItem(label: "Label") { /* Action to process */ }
 ///                 OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
 ///             }
 ///         )
+/// ```
+///
+/// A `View` helper can also be used to apply a SwiftUI toolbar configuration.
+///
+/// ```swift
+///     toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)
 /// ```
 ///
 /// ## Design documentation
@@ -144,6 +154,8 @@ public struct OUDSToolBarTop: ViewModifier {
     private let subtitle: String?
     /// The items to display in leading position
     @OUDSToolBarItemsBuilder private let leadingItems: () -> [OUDSToolBarItem]
+    /// The item to display in principal (center) position (only one item supported)
+    private let principalItem: OUDSToolBarItem?
     /// The items to display in trailing position
     @OUDSToolBarItemsBuilder private let trailingItems: () -> [OUDSToolBarItem]
 
@@ -151,13 +163,15 @@ public struct OUDSToolBarTop: ViewModifier {
 
     /// `ViewModifier` to define an OUDS top toolbar.
     ///
-    ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)` on view placed
+    ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)` on view placed
     ///  inside `NavigationView` or`NavigationStack`.
     ///
     /// ```swift
     ///     OUDSToolBarTop(title: "Home") {
     ///         OUDSToolBarItem(navigation: .back { })
-    ///     } trailingItems: {
+    ///     },
+    ///     principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { },
+    ///     trailingItems: {
     ///         OUDSToolBarItem(label: "Done") { }
     ///     }
     /// ```
@@ -165,19 +179,23 @@ public struct OUDSToolBarTop: ViewModifier {
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed
-    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
+    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default. **Never displayed if `principalItem` is not *nil*.**
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
+    ///   - principalItem: The item displayed in the principal (center) position, *nil* by default. Only one item is supported.
+    ///     If set, the *title* is displayed only if `hasLargeTitle` is `true`, and the *subtitle* is never displayed.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
     public init(title: String,
                 hasLargeTitle: Bool = false,
                 subtitle: String? = nil,
                 leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
+                principalItem: OUDSToolBarItem? = nil,
                 trailingItems: @escaping () -> [OUDSToolBarItem] = { [] })
     {
         self.title = title
         self.hasLargeTitle = hasLargeTitle
         self.subtitle = subtitle
         self.leadingItems = leadingItems
+        self.principalItem = principalItem
         self.trailingItems = trailingItems
     }
 
@@ -188,6 +206,7 @@ public struct OUDSToolBarTop: ViewModifier {
                            hasLargeTitle: hasLargeTitle,
                            subtitle: subtitle,
                            leadingItems: leadingItems,
+                           principalItem: principalItem,
                            trailingItems: trailingItems)
     }
 }
@@ -196,30 +215,39 @@ public struct OUDSToolBarTop: ViewModifier {
 
 extension View {
 
-    /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading and trailing items.
+    /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading, principal and trailing items.
     ///
     /// The view which contains this *top toolbar* must be placed inside a `NavigationView` or `NavigationStack`,
     /// otherwise th top toolbar won't appear..
     ///
     /// There must be only one *top toolbar*.
     ///
+    /// **Warning**: If an item is placed in principal position, the subtitle is never displayed (whatever `hasLargeTitle` is), because
+    /// SwiftUI's `.principal` placement only replaces the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would
+    /// otherwise keep rendering next to the item with no visible title next to it. The title itself is displayed only if `hasLargeTitle`
+    /// is `true` (in that case it appears below the bar, in large title mode, not inside it).
+    ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed for iOS < 26.
-    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
+    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default. **Never displayed if `principalItem` is not *nil*.**
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
+    ///   - principalItem: The item displayed in the principal (center) position, *nil* by default. Only one item is supported.
+    ///     If set, the *title* is displayed only if `hasLargeTitle` is `true`, and the *subtitle* is never displayed.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
     @available(iOS 15, visionOS 1, *)
     public func toolBarTop(_ title: String,
                            hasLargeTitle: Bool = false,
                            subtitle: String? = nil,
                            @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
+                           principalItem: OUDSToolBarItem? = nil,
                            @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
     {
         modifier(ToolBarTopModifier(title: title,
                                     hasLargeTitle: hasLargeTitle,
                                     subtitle: subtitle,
                                     leadingItems: leadingItems,
+                                    principalItem: principalItem,
                                     trailingItems: trailingItems))
     }
 }
