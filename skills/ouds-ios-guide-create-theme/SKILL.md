@@ -30,6 +30,30 @@ Does the theme need to embed `.ttf` font files? If yes, collect:
 
 ---
 
+## 📚 Reference documentation
+
+To get the full list of properties / tokens by protocols:
+
+- **General OUDS documentation** : https://ios.unified-design-system.orange.com
+
+- **Semantic tokens** : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/
+  - `ColorSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/ColorSemanticTokens
+  - `BorderSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/BorderSemanticTokens
+  - `DimensionSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/DimensionSemanticTokens
+  - `SizeSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/SizeSemanticTokens
+  - `SpaceSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/SpaceSemanticTokens
+  - `FontSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/FontSemanticTokens
+  - etc.
+
+- **Component tokens** : https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/
+  - `ButtonComponentTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/ButtonComponentTokens
+  - `TextInputComponentTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/TextInputComponentTokens
+  - etc.
+
+> **Tip** : To see all properties / tokens of a provider, look in files `Values/SemanticTokens/` or `Values/ComponentTokens/` in Orange theme from OUDS iOS repository.
+
+---
+
 ## 1. Inheritance hierarchy
 
 ```
@@ -43,8 +67,9 @@ OUDSTheme
     └── YourTheme            ← from-scratch theme (Strategy B)
 ```
 
-> **Rule:** Only `OrangeTheme` may be subclassed by external code.
-> `SoshTheme`, `OrangeCompactTheme`, and `WireframeTheme` are all `final`.
+> **Rule:** Only `OrangeTheme` can be subclassed by external code.
+> `SoshTheme`, `OrangeCompactTheme`, and `WireframeTheme` are all `final`
+> but their tokens providers can be reused.
 
 ---
 
@@ -62,7 +87,7 @@ import OUDSSwiftUIOrange
 
 Each provider inherits from an `OrangeThemeXxxProvider` class. Override `@objc open` properties.
 
-**Semantic token providers available to override:**
+**Semantic token providers available to override** (Layer 2 — generic tokens):
 
 | What to override | Orange base class to inherit |
 |---|---|
@@ -80,7 +105,7 @@ Each provider inherits from an `OrangeThemeXxxProvider` class. Override `@objc o
 | Sizes (icon, component) | `OrangeThemeSizeSemanticTokensProvider` |
 | Spaces (fixed, scaled) | `OrangeThemeSpaceSemanticTokensProvider` |
 
-**Component token providers available to override:**
+**Component token providers available to override** (Layer 3 — component-specific tokens):
 
 | Component | Orange base class |
 |---|---|
@@ -106,9 +131,13 @@ Each provider inherits from an `OrangeThemeXxxProvider` class. Override `@objc o
 | Text area | `OrangeThemeTextAreaComponentTokensProvider` |
 | Text input | `OrangeThemeTextInputComponentTokensProvider` |
 
+Etc.
+
 ### 2.3 Example provider overrides
 
 ```swift
+import OUDSTokensRaw
+
 // Colors
 class YourThemeColorProvider: OrangeThemeColorSemanticTokensProvider {
     override var bgSecondary: MultipleColorSemanticToken {
@@ -177,6 +206,7 @@ class YourThemeFontProvider: OrangeThemeFontSemanticTokensProvider {
 
 ```swift
 import OUDSThemesContract
+import OUDSTokensRaw
 
 class YourTheme: OUDSTheme {
 
@@ -194,7 +224,7 @@ class YourTheme: OUDSTheme {
             colors:  colors,
             borders: borders,
             fonts:   fonts,
-            // Leave unspecified parameters as nil → Orange defaults are used.
+            // Leave unspecified parameters as nil → Orange defaults are used if OrangeTheme used as super class.
             name:    Self.name,
             tuning:  Tuning.default,  // see §5 for tuning options
             hasTypographyHeadingLargeMarker: true  // see §5.1, OUDSTheme subclass required for this parameter
@@ -284,6 +314,8 @@ Respect dependency order — some providers take others as constructor arguments
 | `inputTag` | `AllInputTagComponentTokensProvider` |
 | `textArea` | `AllTextAreaComponentTokensProvider` |
 | `textInput` | `AllTextInputComponentTokensProvider` |
+
+See init of `OrangeTheme` or `OUDSTheme` for fill list.
 
 ### 3.4 Theme class skeleton
 
@@ -393,7 +425,7 @@ public final class YourTheme: OUDSTheme, @unchecked Sendable {
 
 ## 4. Strategy C — Mix existing providers
 
-No new subclass needed. Instantiate providers from existing themes and pass them directly to `OrangeTheme`:
+No new subclass needed. Instantiate providers from existing themes and pass them directly to `OrangeTheme` or `OUDSTheme`:
 
 ```swift
 import OUDSThemesOrange
@@ -593,7 +625,7 @@ struct YourApp: App {
 }
 
 // Consume tokens in views:
-struct SomeView: View {
+struct ContentView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -606,7 +638,469 @@ struct SomeView: View {
 
 ---
 
-## 8. Validation checklist
+## 8. Token hierarchy — raw → semantic → component
+
+Understanding the three token layers is essential for creating custom themes:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  RAW TOKENS (Layer 1)                                           │
+│  Primitive values: ColorRawToken, DimensionRawToken, etc.      │
+│  Example: ColorRawTokens.colorPrimary = "#FF6600FF"            │
+│  Location: OUDSTokensRaw / YourBrandColorRawTokens             │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓ references
+┌─────────────────────────────────────────────────────────────────┐
+│  SEMANTIC TOKENS (Layer 2)                                      │
+│  Meaningful names tied to usage context; reference raw tokens  │
+│  Example: theme.colors.contentPrimary → uses ColorRawToken     │
+│  Provided by: OrangeThemeXxxSemanticTokensProvider             │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓ references
+┌─────────────────────────────────────────────────────────────────┐
+│  COMPONENT TOKENS (Layer 3)                                     │
+│  Scoped to specific components; reference semantic tokens      │
+│  Example: theme.button.colorBackgroundDefault                  │
+│  Provided by: OrangeThemeXxxComponentTokensProvider            │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Key distinction:**
+- **Semantic tokens** (`theme.colors.*`, `theme.borders.*`, `theme.spaces.*`) are generic — used across many components
+- **Component tokens** (`theme.button.*`, `theme.textInput.*`, `theme.badge.*`) are component-specific overrides
+
+---
+
+## 9. Custom raw tokens (Strategy B)
+
+When creating a from-scratch theme (Strategy B), you may need to define your own raw tokens for brand-specific colors, fonts, or dimensions.
+
+### 9.1 Raw token structure
+
+Raw tokens are organized in two parts:
+1. **Declaration** — empty enum in `Declarations/`
+2. **Values** — static constants in `Values/`
+
+### 9.2 Example: custom color raw tokens
+
+```swift
+// MyBrandColorRawTokens.swift (in Sources/Declarations/)
+import OUDSTokensRaw
+
+/// Color raw tokens exclusive to MyBrand theme.
+/// These are primitive color values (hex strings) used to build semantic tokens.
+@frozen public enum MyBrandColorRawTokens {
+    // Values are defined in MyBrandColorRawTokens+Values.swift
+}
+```
+
+```swift
+// MyBrandColorRawTokens+Values.swift (in Sources/Values/RawTokens/)
+import OUDSTokensRaw
+
+extension MyBrandColorRawTokens {
+    /// Primary brand color — orange
+    public static let brandPrimary: ColorRawToken = "#FF6600FF"
+
+    /// Secondary brand color — blue
+    public static let brandSecondary: ColorRawToken = "#0066CCFF"
+
+    /// Tertiary brand color — green
+    public static let brandTertiary: ColorRawToken = "#00AA55FF"
+
+    /// Dark variant for primary
+    public static let brandPrimaryDark: ColorRawToken = "#CC5200FF"
+
+    /// Light background
+    public static let brandBgLight: ColorRawToken = "#FFF8F0FF"
+
+    /// Dark background
+    public static let brandBgDark: ColorRawToken = "#1A1A1AFF"
+}
+```
+
+### 9.3 Example: custom font raw tokens
+
+```swift
+// MyBrandFontRawTokens.swift (in Sources/Declarations/)
+import OUDSTokensRaw
+
+/// Font family raw tokens for MyBrand theme.
+@frozen public enum MyBrandFontRawTokens {
+    // Values are defined in MyBrandFontRawTokens+Values.swift
+}
+```
+
+```swift
+// MyBrandFontRawTokens+Values.swift (in Sources/Values/RawTokens/)
+import OUDSTokensRaw
+
+extension MyBrandFontRawTokens {
+    /// Default font family
+    public static let familyDefault: FontFamilyRawToken = "MyBrand Sans"
+
+    /// Monospace font for code
+    public static let familyMono: FontFamilyRawToken = "MyBrand Code"
+}
+```
+
+### 9.4 Using custom raw tokens in semantic providers
+
+Once defined, use them in your semantic token providers:
+
+```swift
+import OUDSTokensRaw
+
+class MyBrandColorSemanticTokensProvider: AllColorSemanticTokensProvider {
+
+    // Use custom raw token directly (no override - implementing protocol directly)
+    var contentBrandPrimary: ColorSemanticToken {
+        MyBrandColorRawTokens.brandPrimary
+    }
+
+    // Or combine with existing core tokens
+    var bgPrimary: ColorSemanticToken {
+        MyBrandColorRawTokens.brandBgLight
+    }
+
+    // For light/dark variants, use MultipleColorSemanticToken
+    var bgSecondary: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(
+            light: MyBrandColorRawTokens.brandBgLight,
+            dark:  MyBrandColorRawTokens.brandBgDark
+        )
+    }
+}
+```
+
+### 9.5 Available raw token types
+
+| Type | Token enum | Used for |
+|---|---|---|
+| Colors | `ColorRawToken` (`String`) | All color values |
+| Dimensions | `DimensionRawToken` (`CGFloat`) | Sizes, spacings |
+| Font families | `FontFamilyRawToken` (`String`) | Font names |
+| Border styles | `BorderStyleRawToken` (`String`) | Border styles |
+| Elevations | `ElevationRawToken` (`String`) | Shadow configurations |
+| Grid values | `GridRawToken` (`CGFloat`) | Grid measurements |
+| Opacities | `OpacityRawToken` (`Double`) | Alpha values |
+
+---
+
+## 10. Complete example: minimal from-scratch theme
+
+This example shows a minimal but functional from-scratch theme. It uses existing core raw tokens (from `OUDSTokensRaw`) rather than defining custom ones, but demonstrates the full provider implementation.
+
+### 10.1 File structure
+
+```
+MyBrandTheme/
+├── Sources/
+│   ├── MyBrandTheme.swift              # Main theme class
+│   ├── Providers/
+│   │   ├── MyBrandColorSemanticTokensProvider.swift
+│   │   ├── MyBrandBorderSemanticTokensProvider.swift
+│   │   ├── MyBrandDimensionSemanticTokensProvider.swift
+│   │   ├── MyBrandSizeSemanticTokensProvider.swift
+│   │   ├── MyBrandSpaceSemanticTokensProvider.swift
+│   │   ├── MyBrandFontSemanticTokensProvider.swift
+│   │   └── ComponentTokens/
+│   │       └── MyBrandButtonComponentTokensProvider.swift
+│   └── Values/
+│       └── SemanticTokens/
+│           ├── MyBrandTheme+ColorSemanticTokens.swift
+│           └── MyBrandTheme+ColorMultipleSemanticTokens.swift
+└── Resources/
+    └── (font files if needed)
+```
+
+### 10.2 Color semantic provider
+
+```swift
+// MyBrandColorSemanticTokensProvider.swift
+import OUDSFoundations
+import OUDSThemesContract
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+final class MyBrandColorSemanticTokensProvider: AllColorSemanticTokensProvider {
+
+    init() {}
+
+    // Implementation in Values/SemanticTokens/
+}
+
+// MyBrandTheme+ColorSemanticTokens.swift
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+extension MyBrandColorSemanticTokensProvider: ColorSemanticTokens {
+
+    @objc public final var actionEnabledLight: ColorSemanticToken {
+        ColorRawTokens.repositoryPrimaryMedium
+    }
+    @objc public final var actionEnabledDark: ColorSemanticToken {
+        ColorRawTokens.repositoryPrimaryLow
+    }
+
+    @objc public final var contentDefaultLight: ColorSemanticToken {
+        ColorRawTokens.repositoryNeutralEmphasizedBlack
+    }
+    @objc public final var contentDefaultDark: ColorSemanticToken {
+        ColorRawTokens.repositoryNeutralEmphasizedWhite
+    }
+
+    @objc public final var bgPrimaryLight: ColorSemanticToken {
+        ColorRawTokens.repositoryNeutralEmphasizedWhite
+    }
+    @objc public final var bgPrimaryDark: ColorSemanticToken {
+        ColorRawTokens.repositoryNeutralEmphasizedBlack
+    }
+
+    // ... many more properties required by ColorSemanticTokens protocol
+    // See: https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/ColorSemanticTokens
+}
+
+// MyBrandTheme+ColorMultipleSemanticTokens.swift
+import OUDSTokensSemantic
+
+extension MyBrandColorSemanticTokensProvider: ColorMultipleSemanticTokensProvider {
+
+    @objc public final var actionEnabled: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(
+            light: ColorRawTokens.repositoryPrimaryMedium,
+            dark:  ColorRawTokens.repositoryPrimaryLow
+        )
+    }
+
+    @objc public final var contentDefault: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(
+            light: ColorRawTokens.repositoryNeutralEmphasizedBlack,
+            dark:  ColorRawTokens.repositoryNeutralEmphasizedWhite
+        )
+    }
+
+    @objc public final var bgPrimary: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(
+            light: ColorRawTokens.repositoryNeutralEmphasizedWhite,
+            dark:  ColorRawTokens.repositoryNeutralEmphasizedBlack
+        )
+    }
+
+    // ... more multiple tokens
+    // See: https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/ColorMultipleSemanticTokens
+}
+```
+
+### 10.3 Border semantic provider
+
+```swift
+// MyBrandBorderSemanticTokensProvider.swift
+import OUDSFoundations
+import OUDSThemesContract
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+final class MyBrandBorderSemanticTokensProvider: AllBorderSemanticTokensProvider {
+
+    init() {}
+}
+
+// In Values/SemanticTokens/MyBrandTheme+BorderSemanticTokens.swift
+extension MyBrandBorderSemanticTokensProvider: BorderSemanticTokens {
+
+    @objc public final var styleDefault: BorderStyleSemanticToken {
+        BorderRawTokens.styleSolid
+    }
+
+    @objc public final var widthThin: BorderWidthSemanticToken {
+        BorderRawTokens.width10
+    }
+
+    @objc public final var radiusMedium: BorderRadiusSemanticToken {
+        BorderRawTokens.radius200
+    }
+    // See: https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/BorderSemanticTokens
+}
+```
+
+### 10.4 Dimension, Size, Space providers
+
+```swift
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+// MyBrandDimensionSemanticTokensProvider.swift
+final class MyBrandDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
+    init() {}
+}
+
+// Values/SemanticTokens/...
+extension MyBrandDimensionSemanticTokensProvider: DimensionSemanticTokens {
+    @objc public final var base: DimensionRawToken { DimensionRawTokens._100 }
+}
+
+// MyBrandSizeSemanticTokensProvider.swift
+final class MyBrandSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
+    init(dimensions: AllDimensionSemanticTokensProvider) {}
+}
+// Values/...
+extension MyBrandSizeSemanticTokensProvider: SizeSemanticTokens {
+    @objc public final var iconSmall: SizeSemanticToken { DimensionRawTokens._200 }
+    @objc public final var iconMedium: SizeSemanticToken { DimensionRawTokens._300 }
+}
+
+// MyBrandSpaceSemanticTokensProvider.swift
+final class MyBrandSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider {
+    init(dimensions: AllDimensionSemanticTokensProvider) {}
+}
+// Values/...
+extension MyBrandSpaceSemanticTokensProvider: SpaceSemanticTokens {
+    @objc public final var fixedSmall: SpaceSemanticToken { DimensionRawTokens._100 }
+    @objc public final var fixedMedium: SpaceSemanticToken { DimensionRawTokens._200 }
+}
+```
+
+### 10.5 Font semantic provider
+
+```swift
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+// MyBrandFontSemanticTokensProvider.swift
+final class MyBrandFontSemanticTokensProvider: AllFontSemanticTokensProvider {
+    init() {}
+}
+
+// Values/SemanticTokens/...
+extension MyBrandFontSemanticTokensProvider: FontSemanticTokens {
+
+    @objc public final var familyDefault: FontFamilySemanticToken {
+        FontRawTokens.familyDefault
+    }
+
+    @objc public final var familyCode: FontFamilySemanticToken {
+        FontRawTokens.familyMono
+    }
+}
+
+extension MyBrandFontSemanticTokensProvider: FontMultipleSemanticTokensProvider {
+
+    @objc public final var bodyDefault: MultipleFontCompositeSemanticToken {
+        MultipleFontCompositeSemanticToken(FontCompositeSemanticToken(
+            size: DimensionRawTokens._400,
+            lineHeight: DimensionRawTokens._600,
+            weight: FontWeightRawToken.regular,
+            letterSpacing: LetterSpacingRawToken._0
+        ))
+    }
+}
+```
+
+### 10.6 Button component provider
+
+```swift
+import OUDSFoundations
+import OUDSThemesContract
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+// MyBrandButtonComponentTokensProvider.swift
+
+final class MyBrandButtonComponentTokensProvider: AllButtonComponentTokensProvider {
+
+    init(sizes: AllSizeSemanticTokensProvider,
+         borders: AllBorderSemanticTokensProvider,
+         colors: AllColorSemanticTokensProvider,
+         spaces: AllSpaceSemanticTokensProvider) {
+        self.sizes = sizes
+        self.borders = borders
+        self.colors = colors
+        self.spaces = spaces
+    }
+
+    let sizes: AllSizeSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
+}
+
+// Values/ComponentTokens/MyBrandTheme+ButtonComponentTokens.swift
+extension MyBrandButtonComponentTokensProvider: ButtonComponentTokens {
+
+    @objc public final var sizeMinHeight: SizeSemanticToken {
+        sizes.iconMedium
+    }
+
+    @objc public final var borderRadius: BorderRadiusSemanticToken {
+        borders.radiusMedium
+    }
+
+    @objc public final var colorBackgroundDefaultEnabled: ColorSemanticToken {
+        colors.actionEnabled
+    }
+
+    @objc public final var spacePaddingHorizontal: SpaceSemanticToken {
+        spaces.fixedMedium
+    }
+}
+```
+
+### 10.7 Main theme class
+
+```swift
+// MyBrandTheme.swift
+import Foundation
+import OUDSThemesContract
+import SwiftUI
+
+public final class MyBrandTheme: OUDSTheme, @unchecked Sendable {
+
+    public static let name = "MyBrand"
+
+    public init() {
+        // ── Semantic providers ─
+        let borders     = MyBrandBorderSemanticTokensProvider()
+        let colors      = MyBrandColorSemanticTokensProvider()
+        let colorModes  = MyBrandColorModeSemanticTokensProvider(colors: colors)
+        let effects     = MyBrandEffectSemanticTokensProvider()
+        let elevations  = MyBrandElevationSemanticTokensProvider()
+        let fonts       = MyBrandFontSemanticTokensProvider()
+        let grids       = MyBrandGridSemanticTokensProvider()
+        let opacities   = MyBrandOpacitySemanticTokensProvider()
+        let dimensions  = MyBrandDimensionSemanticTokensProvider()
+        let sizes       = MyBrandSizeSemanticTokensProvider(dimensions: dimensions)
+        let spaces      = MyBrandSpaceSemanticTokensProvider(dimensions: dimensions)
+
+        // ── Component providers ─
+        let button = MyBrandButtonComponentTokensProvider(
+            sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        // ... other components - see https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/
+
+        super.init(
+            borders:     borders,
+            colors:      colors,
+            colorModes:  colorModes,
+            effects:     effects,
+            elevations:  elevations,
+            fonts:       fonts,
+            grids:       grids,
+            opacities:   opacities,
+            dimensions:  dimensions,
+            sizes:       sizes,
+            spaces:      spaces,
+            button:      button,
+            // ... other components - see https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/
+            name:        Self.name,
+            tuning:      Tuning.default,
+            hasTypographyHeadingLargeMarker: false)
+    }
+}
+```
+
+---
+
+## 11. Validation checklist
 
 - [ ] `swift build` passes with zero errors
 - [ ] No provider is missing from `super.init(...)` (check §3.3 for Strategy B)
@@ -618,3 +1112,5 @@ struct SomeView: View {
 - [ ] PostScript names are registered for each weight variant used
 - [ ] `fontFamily` value matches the exact string visible in Font Book (family name or PostScript name)
 - [ ] `OUDSThemeableView` wraps the root view in the app entry point
+- [ ] All semantic token providers implement their protocol (check with Xcode protocol conformance)
+- [ ] Raw tokens used in providers exist and are spelled correctly (check `OUDSTokensRaw` module)
