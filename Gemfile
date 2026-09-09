@@ -26,7 +26,7 @@ gem 'abbrev', '0.1.2'
 
 # Grype run result on 2026-03-26
 # json     2.18.1     2.19.2    gem   GHSA-3m6g-2423-7cp3  High      < 0.1% (3rd)  < 0.1
-gem 'json', '2.21.2'
+gem 'json', '3.0.2'
 
 # Embeded in Fastlane RubyGem it seems
 # Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/security/dependabot/1)
