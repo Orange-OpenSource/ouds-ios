@@ -22,9 +22,11 @@ struct LinkButtonStyle: ButtonStyle {
     // MARK: Stored properties
 
     let layout: OUDSLink.Layout
+    let text: String
     let size: OUDSLink.Size
     let density: OUDSLink.Density
     let isFullWidth: Bool
+    let isIndicatorInline: Bool
 
     @State private var isHover: Bool
 
@@ -33,11 +35,13 @@ struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Initializer
 
-    init(layout: OUDSLink.Layout, size: OUDSLink.Size, density: OUDSLink.Density, isFullWidth: Bool) {
+    init(layout: OUDSLink.Layout, text: String, size: OUDSLink.Size, density: OUDSLink.Density, isFullWidth: Bool, isIndicatorInline: Bool) {
         self.layout = layout
+        self.text = text
         self.size = size
         self.density = density
         self.isFullWidth = isFullWidth
+        self.isIndicatorInline = isIndicatorInline
         isHover = false
     }
 
@@ -48,8 +52,18 @@ struct LinkButtonStyle: ButtonStyle {
         Group {
             switch layout {
             case let .indicator(indicator):
-                configuration.label
-                    .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState, size: size, indicator: indicator, isFullWidth: isFullWidth))
+                if isIndicatorInline {
+                    LinkInlineText(text: text,
+                                   interactionState: interactionState,
+                                   size: size,
+                                   indicator: indicator)
+                } else {
+                    configuration.label
+                        .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState,
+                                                            size: size,
+                                                            indicator: indicator,
+                                                            isFullWidth: isFullWidth))
+                }
             case .textOnly:
                 configuration.label
                     .labelStyle(LinkTextAndIconLabelStyle(interactionState: interactionState, size: size, layout: layout))
@@ -61,7 +75,7 @@ struct LinkButtonStyle: ButtonStyle {
         .padding(.horizontal, theme.link.spacePaddingInline)
         .padding(.vertical, verticalPadding)
         .frame(minWidth: minWidth, minHeight: minHeight)
-        .frame(maxWidth: isFullWidth ? .infinity : nil)
+        .frame(maxWidth: isFullWidth ? .infinity : nil, alignment: isIndicatorInline ? .leading : .center)
         .contentShape(Rectangle())
         #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in
