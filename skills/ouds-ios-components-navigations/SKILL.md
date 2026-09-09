@@ -13,10 +13,13 @@ license: MIT
 
 ```swift
 OUDSLink(text: "Text", size: .default) {}
-OUDSLink(text: "Text", indicator: .back, size: .default) {}
+OUDSLink(text: "Text", indicator: .previous, size: .default) {}
+OUDSLink(text: "A link displayed on multiple lines", indicator: .next, size: .default, isIndicatorInline: true) {}
 OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic")), size: .default) {}
 OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
 ```
+
+`isIndicatorInline` defaults to `false`. When enabled, the indicator becomes part of the text flow: `.next` and `.external` follow the final character, while `.previous` precedes the first character. No side column is reserved, and the indicator wraps naturally with the text. The size-dependent chevron spacing is preserved. If combined with `isFullWidth`, inline positioning takes precedence while the link still fills the available width.
 
 ---
 

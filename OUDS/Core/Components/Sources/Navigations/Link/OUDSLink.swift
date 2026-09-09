@@ -54,6 +54,9 @@ import SwiftUI
 ///
 ///     // Full-width: label stays, indicator anchored to the right / left
 ///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
+///
+///     // Inline: the indicator follows the last line of a multiline label
+///     OUDSLink(text: "A link displayed on multiple lines", indicator: .next, isIndicatorInline: true) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -94,6 +97,7 @@ public struct OUDSLink: View {
     private let size: Size
     private let density: Density
     private let isFullWidth: Bool
+    private let isIndicatorInline: Bool
     private let action: () -> Void
 
     @Environment(\.theme) private var theme
@@ -155,6 +159,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         isFullWidth = false
+        isIndicatorInline = false
         self.action = action
     }
 
@@ -192,6 +197,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         isFullWidth = false
+        isIndicatorInline = false
         self.action = action
     }
 
@@ -218,12 +224,17 @@ public struct OUDSLink: View {
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
     ///   The label stays anchored to the an edge and the indicator to the other edge.
     ///   Defaults to `false` (intrinsic sizing).
+    ///   - isIndicatorInline: When `true`, the indicator is part of the text flow: a next or external indicator follows the final character,
+    ///   while a previous indicator precedes the first character.
+    ///   This option takes precedence over the indicator positioning of `isFullWidth`.
+    ///   Defaults to `false` (indicator vertically centered beside the text).
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
                 indicator: Indicator,
                 size: Size = .default,
                 density: Density = .default,
                 isFullWidth: Bool = false,
+                isIndicatorInline: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
@@ -231,6 +242,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         self.isFullWidth = isFullWidth
+        self.isIndicatorInline = isIndicatorInline
         self.action = action
     }
 
@@ -253,6 +265,10 @@ public struct OUDSLink: View {
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
     ///   The label stays anchored to one edge and the indicator to the other edge.
     ///   Defaults to `false` (intrinsic sizing).
+    ///   - isIndicatorInline: When `true`, the indicator is part of the text flow: a next or external indicator follows the final character,
+    ///   while a previous indicator precedes the first character.
+    ///   This option takes precedence over the indicator positioning of `isFullWidth`.
+    ///   Defaults to `false` (indicator vertically centered beside the text).
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -261,6 +277,7 @@ public struct OUDSLink: View {
                 size: Size = .default,
                 density: Density = .default,
                 isFullWidth: Bool = false,
+                isIndicatorInline: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
@@ -268,6 +285,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         self.isFullWidth = isFullWidth
+        self.isIndicatorInline = isIndicatorInline
         self.action = action
     }
 
@@ -305,7 +323,13 @@ public struct OUDSLink: View {
                 }
             }
         }
-        .buttonStyle(LinkButtonStyle(layout: layout, size: size, density: density, isFullWidth: isFullWidth))
+        .buttonStyle(LinkButtonStyle(layout: layout,
+                                     text: text,
+                                     size: size,
+                                     density: density,
+                                     isFullWidth: isFullWidth,
+                                     isIndicatorInline: isIndicatorInline))
+        .accessibilityLabel(Text(LocalizedStringKey(text)))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
     }
