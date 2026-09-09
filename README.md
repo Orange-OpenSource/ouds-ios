@@ -178,7 +178,7 @@ The wiki lists also [the components and their availability](https://github.com/O
 - Brand Orange version: 2.7.0
 - Core Sosh version: 1.4.0
 - Brand Sosh version: 2.7.0
-- Core Wireframe version: 1.4.0
+- Core Wireframe version: 1.5.0
 - Brand Wireframe version: 2.7.0
 - Brand Orange Compact version: 2.7.0
 

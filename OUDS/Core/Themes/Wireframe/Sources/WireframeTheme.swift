@@ -50,7 +50,7 @@ import SwiftUI
 /// ## Tokens versions
 ///
 /// - Core OUDS version: 1.11.0
-/// - Core Wireframe version: 1.4.0
+/// - Core Wireframe version: 1.5.0
 /// - Brand Wireframe version: 2.7.0
 ///
 /// - Since: 0.17.0

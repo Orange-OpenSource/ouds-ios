@@ -36,8 +36,8 @@ public enum OUDSVersions {
     /// Version of the Orange Compact brand tokens library (2.7.0)
     public static let themeOrangeCompactBrandVersion = "2.7.0"
 
-    /// Version of the Wireframe core tokens library (1.4.0)
-    public static let themeWireframeCoreVersion = "1.4.0"
+    /// Version of the Wireframe core tokens library (1.5.0)
+    public static let themeWireframeCoreVersion = "1.5.0"
     /// Version of the Wireframe brand tokens library (2.7.0)
     public static let themeWireframeBrandVersion = "2.7.0"
 
