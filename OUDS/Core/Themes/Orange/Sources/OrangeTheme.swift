@@ -133,9 +133,9 @@ import OUDSTokensSemantic
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange version: 2.6.0
+/// - Brand Orange version: 2.7.0
 ///
 /// - Since: 0.8.0
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
@@ -170,6 +170,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
+    ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
     ///    - divider: All component tokens for divider
@@ -213,6 +214,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                 bar: AllBarComponentTokensProvider? = nil,
                 bulletList: AllBulletListComponentTokensProvider? = nil,
                 button: AllButtonComponentTokensProvider? = nil,
+                categoricalTag: AllCategoricalTagComponentTokensProvider? = nil,
                 checkbox: AllCheckboxComponentTokensProvider? = nil,
                 chip: AllChipComponentTokensProvider? = nil,
                 divider: AllDividerComponentTokensProvider? = nil,
@@ -259,6 +261,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
+        let categoricalTag = (categoricalTag ?? OrangeThemeCategoricalTagComponentTokensProvider(colors: colors))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
@@ -299,6 +302,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,

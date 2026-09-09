@@ -49,9 +49,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Wireframe version: 1.4.0
-/// - Brand Wireframe version: 2.6.0
+/// - Brand Wireframe version: 2.7.0
 ///
 /// - Since: 0.17.0
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
@@ -85,6 +85,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
+        let categoricalTag = WireframeThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
@@ -123,6 +124,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,

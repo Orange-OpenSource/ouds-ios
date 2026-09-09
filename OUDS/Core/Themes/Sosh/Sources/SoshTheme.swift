@@ -53,9 +53,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Sosh version: 1.4.0
-/// - Brand Sosh version: 2.6.0
+/// - Brand Sosh version: 2.7.0
 ///
 /// - Since: 0.17.0
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
@@ -89,6 +89,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
+        let categoricalTag = SoshThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
@@ -127,6 +128,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,

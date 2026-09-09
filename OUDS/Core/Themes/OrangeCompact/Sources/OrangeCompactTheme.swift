@@ -108,9 +108,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange Compact version: 2.6.0
+/// - Brand Orange Compact version: 2.7.0
 ///
 /// - Since: 0.17.0
 public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
@@ -150,6 +150,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let bar = OrangeCompactThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = OrangeCompactThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeCompactThemeBulletListComponentTokensProvider(spaces: spaces)
+        let categoricalTag = OrangeCompactThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = OrangeCompactThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = OrangeCompactThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = OrangeCompactThemeDividerComponentTokensProvider(borders: borders)
@@ -190,6 +191,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,

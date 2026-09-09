@@ -118,6 +118,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokensProvider
 
+    /// All components tokens related to categorical tag like `OUDSCategoricalTag`
+    public let categoricalTag: AllCategoricalTagComponentTokensProvider
+
     /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
@@ -223,6 +226,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
+    ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
     ///    - divider: All component tokens for divider
@@ -267,6 +271,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
                 button: AllButtonComponentTokensProvider,
+                categoricalTag: AllCategoricalTagComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
                 chip: AllChipComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
@@ -315,6 +320,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.bar = bar
         self.button = button
         self.bulletList = bulletList
+        self.categoricalTag = categoricalTag
         self.checkbox = checkbox
         self.chip = chip
         self.divider = divider
