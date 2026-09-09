@@ -77,6 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Erratic focus flickering between fields when typing in `PIN code input` component (Orange-OpenSource/ouds-ios#1744)
 - Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
 - Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
 - Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)

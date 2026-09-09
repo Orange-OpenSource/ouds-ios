@@ -298,6 +298,7 @@ public struct OUDSPinCodeInput: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 PinCodeInputContainer(_value, length: length, isError: status != .enabled, isOutlined: isOutlined, autofocus: autofocus)
+                    .id(length)
 
                 PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
             }

@@ -32,7 +32,7 @@ struct PinCodeInputContainer: View {
     private let autofocus: Bool
 
     /// To manage the focus between all fields
-    @FocusState private var focusedIndex: Int?
+    @State private var focusedIndex: Int?
     /// The digits written one by one by the user before being exposed through `value`
     @State private var digits: [String]
 
@@ -40,20 +40,6 @@ struct PinCodeInputContainer: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
-    // MARK: - Black magic
-
-    // These properties prevent double backspace processing by tracking which field was cleared and when.
-    // When a backspace occurs, we mark the field index and timestamp, then skip onChange events
-    // for that field within 100ms to avoid processing the same backspace twice.
-    // \("˚☐˚)/ ⊹₊⟡⋆
-
-    // swiftlint:disable implicit_optional_initialization
-    /// Tracks which field index was last cleared by a backspace operation
-    @State private var lastBackspaceIndex: Int? = nil
-    /// Tracks when the last backspace operation occurred (used for debouncing)
-    @State private var lastBackspaceTime: Date = .distantPast
-    // swiftlint:enable implicit_optional_initialization
 
     // MARK: - Initializer
 
@@ -228,96 +214,31 @@ struct PinCodeInputContainer: View {
             a11yLabel: accessibilityLabel(for: index),
             a11yValue: accessibilityValue(for: index),
             isFocused: focusedIndex == index,
+            shouldResignFocus: focusedIndex == nil,
+            onFocusChanged: { isFocused in
+                handleFocusChange(isFocused, at: index)
+            },
             onBackspace: {
                 handleBackspace(at: index)
             },
-            onTextInserted: { inserted in // ← nouveau
+            onTextInserted: { inserted in
                 handleTextInserted(inserted, at: index)
             })
             .foregroundColor(theme.colors.contentDefault)
             .accentColor(theme.colors.contentDefault)
-            .focused($focusedIndex, equals: index)
             .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
-        #if os(visionOS)
-            .onChange(of: digits[index]) { _, newValue in
-                let timeSinceLastBackspace = Date().timeIntervalSince(lastBackspaceTime)
-                if lastBackspaceIndex == index, timeSinceLastBackspace < 0.1 {
-                    return
-                }
-                handleDigitChange(at: index, newValue: newValue)
-            }
-        #else
-            .onChange(of: digits[index]) { newValue in
-                let timeSinceLastBackspace = Date().timeIntervalSince(lastBackspaceTime)
-                if lastBackspaceIndex == index, timeSinceLastBackspace < 0.1 {
-                    return
-                }
-                handleDigitChange(at: index, newValue: newValue)
-            }
-        #endif
         #else
         // NOTE: Source code must be compilable on macOS to build the doc...
         EmptyView()
         #endif
     }
 
-    /// To handle the written data:
-    /// 1. Filters the input to only allow digits (0-9)
-    /// 2. If more than one digit is received (e.g. autofill), distributes them across fields
-    /// 3. Moves focus to the next field when a single digit is entered
-    /// 4. Updates the final value binding when all fields are filled
-    ///
-    /// - Parameters:
-    ///    - index: The index of the field
-    ///    - newValue: The new value written in the field
-    private func handleDigitChange(at index: Int, newValue: String) { //  \("˚☐˚)/ ⊹₊⟡⋆
-        let filtered = newValue.filter(\.isNumber)
-
-        // Autofill / paste case: more than one digit received
-        if filtered.count > 1 {
-            let available = length.rawValue - index
-            let toDistribute = filtered.prefix(available)
-
-            for (offset, char) in toDistribute.enumerated() {
-                digits[index + offset] = String(char)
-            }
-
-            let joined = digits.joined()
-            if joined.count == length.rawValue, !digits.contains("") {
-                value = joined
-                focusedIndex = nil
-            } else {
-                value = ""
-                let nextIndex = index + toDistribute.count
-                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
-            }
-            return
-        }
-
-        // Normal typing: single digit
-        let single = String(filtered.prefix(1))
-
-        // If filtering changed the value, update and return (triggers onChange again)
-        if single != newValue {
-            digits[index] = single
-            return
-        }
-
-        if single.count == 1 {
-            digits[index] = single
-
-            let joined = digits.joined()
-            if joined.count == length.rawValue, !digits.contains("") {
-                value = joined
-                focusedIndex = nil
-            } else if index < length.rawValue - 1 {
-                focusedIndex = index + 1
-                value = ""
-                announceFocusChanged(forInputAt: index + 1)
-            } else {
-                value = ""
-            }
+    private func handleFocusChange(_ isFocused: Bool, at index: Int) {
+        if isFocused {
+            focusedIndex = index
+        } else if focusedIndex == index {
+            focusedIndex = nil
         }
     }
 
@@ -336,19 +257,15 @@ struct PinCodeInputContainer: View {
         let wasEmpty = digits[index].isEmpty
 
         DispatchQueue.main.async {
-            lastBackspaceTime = Date()
-
             if wasEmpty {
                 if index > 0 {
                     let previousIndex = index - 1
-                    lastBackspaceIndex = previousIndex
                     digits[previousIndex] = ""
                     value = ""
                     focusedIndex = previousIndex
                     announceFocusChanged(forInputAt: previousIndex)
                 }
             } else {
-                lastBackspaceIndex = index
                 digits[index] = ""
                 value = ""
                 focusedIndex = index
@@ -357,7 +274,7 @@ struct PinCodeInputContainer: View {
         }
     }
 
-    /// Manages any text insertion: one figit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
+    /// Manages any text insertion: one digit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
     ///
     /// - Parameters:
     ///   - text: The chain of digits inserted (filtered, only figures)
@@ -370,17 +287,21 @@ struct PinCodeInputContainer: View {
             digits[index + offset] = String(char)
         }
 
-        let joined = digits.joined()
-        let allFilled = joined.count == length.rawValue && !digits.contains("")
-
-        if allFilled {
-            value = joined
+        if let completedValue = Self.completedValue(from: digits, length: length.rawValue) {
+            value = completedValue
             focusedIndex = nil
         } else {
             value = ""
             let nextIndex = index + toDistribute.count
             focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+            announceFocusChanged(forInputAt: focusedIndex ?? nextIndex)
         }
+    }
+
+    static func completedValue(from digits: [String], length: Int) -> String? {
+        let activeDigits = digits.prefix(length)
+        guard activeDigits.count == length, activeDigits.allSatisfy({ !$0.isEmpty }) else { return nil }
+        return activeDigits.joined()
     }
 
     private func announceFocusChanged(forInputAt index: Int) {
