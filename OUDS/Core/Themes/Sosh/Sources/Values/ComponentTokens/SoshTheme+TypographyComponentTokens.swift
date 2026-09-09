@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension SoshThemeTypographyComponentTokensProvider: TypographyComponentTokens {
-    /// Has for value token MultipleColorSemanticToken(light: "#ff000000", dark: "#ff000000")
-    @objc public final var colorContentMarker: MultipleColorSemanticToken { MultipleColorSemanticToken(light: "#ff000000", dark: "#ff000000") }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
+    @objc public final var colorContentMarker: MultipleColorSemanticToken { MultipleColorSemanticToken("ouds-forbidden-color-value") }
     /// Has for value token false
     @objc public final var headingLargeMarker: Bool { false }
     /// Has for value token spaces.paddingBlockNone (= 0)
