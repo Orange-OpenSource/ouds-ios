@@ -32,7 +32,7 @@ struct PinCodeInputContainer: View {
     private let autofocus: Bool
 
     /// To manage the focus between all fields
-    @FocusState private var focusedIndex: Int?
+    @State private var focusedIndex: Int?
     /// The digits written one by one by the user before being exposed through `value`
     @State private var digits: [String]
 
@@ -214,21 +214,32 @@ struct PinCodeInputContainer: View {
             a11yLabel: accessibilityLabel(for: index),
             a11yValue: accessibilityValue(for: index),
             isFocused: focusedIndex == index,
+            shouldResignFocus: focusedIndex == nil,
+            onFocusChanged: { isFocused in
+                handleFocusChange(isFocused, at: index)
+            },
             onBackspace: {
                 handleBackspace(at: index)
             },
-            onTextInserted: { inserted in // ← nouveau
+            onTextInserted: { inserted in
                 handleTextInserted(inserted, at: index)
             })
             .foregroundColor(theme.colors.contentDefault)
             .accentColor(theme.colors.contentDefault)
-            .focused($focusedIndex, equals: index)
             .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
         #else
         // NOTE: Source code must be compilable on macOS to build the doc...
         EmptyView()
         #endif
+    }
+
+    private func handleFocusChange(_ isFocused: Bool, at index: Int) {
+        if isFocused {
+            focusedIndex = index
+        } else if focusedIndex == index {
+            focusedIndex = nil
+        }
     }
 
     /// To handle the backspace button, i.e. the keyboard feature to go back and remove
@@ -263,7 +274,7 @@ struct PinCodeInputContainer: View {
         }
     }
 
-    /// Manages any text insertion: one figit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
+    /// Manages any text insertion: one digit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
     ///
     /// - Parameters:
     ///   - text: The chain of digits inserted (filtered, only figures)
@@ -276,11 +287,8 @@ struct PinCodeInputContainer: View {
             digits[index + offset] = String(char)
         }
 
-        let joined = digits.joined()
-        let allFilled = joined.count == length.rawValue && !digits.contains("")
-
-        if allFilled {
-            value = joined
+        if let completedValue = Self.completedValue(from: digits, length: length.rawValue) {
+            value = completedValue
             focusedIndex = nil
         } else {
             value = ""
@@ -288,6 +296,12 @@ struct PinCodeInputContainer: View {
             focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
             announceFocusChanged(forInputAt: focusedIndex ?? nextIndex)
         }
+    }
+
+    static func completedValue(from digits: [String], length: Int) -> String? {
+        let activeDigits = digits.prefix(length)
+        guard activeDigits.count == length, activeDigits.allSatisfy({ !$0.isEmpty }) else { return nil }
+        return activeDigits.joined()
     }
 
     private func announceFocusChanged(forInputAt index: Int) {
