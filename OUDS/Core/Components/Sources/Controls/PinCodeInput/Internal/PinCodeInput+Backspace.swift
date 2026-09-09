@@ -119,11 +119,16 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         // by the user (Tab in Full Keyboard Access, tap on another view…) and forcing resignation
         // would fight against the system.
         //
-        // Dispatch async to avoid mutating focus during a SwiftUI layout pass.
+        // The call is synchronous (not dispatched to a later run loop turn): `becomeFirstResponder()`
+        // is a plain UIKit call, it does not mutate any SwiftUI state, so there is no "Modifying
+        // state during view update" concern here. Deferring it with `DispatchQueue.main.async`
+        // used to queue up several stale closures (one per SwiftUI re-render happening in the same
+        // update cycle) whose `!uiView.isFirstResponder` check was only valid at scheduling time;
+        // once several of them piled up for different fields, they could run out of order and make
+        // the focus visibly bounce between fields before settling. Calling it synchronously removes
+        // that race entirely: `updateUIView` always reflects the current desired focus state.
         if isFocused, !uiView.isFirstResponder {
-            DispatchQueue.main.async {
-                _ = uiView.becomeFirstResponder()
-            }
+            _ = uiView.becomeFirstResponder()
         }
     }
 
