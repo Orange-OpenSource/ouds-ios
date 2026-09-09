@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for alert components like `OUDSCategoricalTag`
+/// Declares all component tokens for categorical tag components like `OUDSCategoricalTag`
 /// Used for tokens providers like `OrangeThemeCategoricalTagComponentTokensProvider` etc.
 ///
 /// - Since: 3.0.0

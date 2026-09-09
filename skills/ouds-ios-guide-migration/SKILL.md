@@ -309,7 +309,7 @@ theme.accordion.spacePaddingBlockBottomSlotContainerMobile
 theme.alertMessage.sizeIcon
 
 // After (v3.0)
-theme.alertMessage.sizeAsset
+theme.alert.sizeAsset
 ```
 
 **Required action**: replace `sizeIcon` by `sizeAsset` for `alertMessage` component.

@@ -167,7 +167,7 @@ theme.accordion.spacePaddingBlockBottomSlotContainerMobile
 
 **Reason for Change**: Renaming of tokens in Figma specification
 
-### Renamed component tokens of alert message
+### Renamed component tokens of alert components
 
 The token of size for `alert message` component has been renamed.
 
@@ -175,7 +175,7 @@ The token of size for `alert message` component has been renamed.
 
 | Old v2 name | New v3 name |
 |-------------|-------------|
-| `sizeIcon` | `sizeAsset` |
+| `sizeIcon`  | `sizeAsset` |
 
 For example, before:
 ```swift
@@ -183,11 +183,11 @@ theme.alertMessage.sizeIcon
 ```
 and after:
 ```swift
-theme.alertMessage.sizeAsset
+theme.alert.sizeAsset
 ```
 
 **Required Action**:
-- Replace `sizeIcon` by `sizeAsset` for `alertMessage` component
+- Replace `sizeIcon` by `sizeAsset` for `alertMessage` component, and change name of token provider
 
 **Reason for Change**: Renaming of tokens in Figma specification
 
