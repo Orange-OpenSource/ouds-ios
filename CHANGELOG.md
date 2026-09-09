@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Erratic focus flickering between fields when typing in `PIN code input` component (Orange-OpenSource/ouds-ios#1744)
+- Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
+- Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
+- Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)
+- Use of asset for typography heading marker (Orange-OpenSource/ouds-ios#1689)
 - Adjust title color on toolbar bar top when content color change (Orange-OpenSource/ouds-ios#1563)
 - Truncated title on `tab bar` focused item when using *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1641)
 - `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)
