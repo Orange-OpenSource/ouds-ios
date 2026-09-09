@@ -28,6 +28,8 @@ public protocol TypographyComponentTokens {
 
     var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { get }
     var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { get }
+    var colorContentMarker: MultipleColorSemanticToken { get }
+    var headingLargeMarker: Bool { get }
 }
 
 // swiftlint:enable missing_docs

@@ -15,6 +15,8 @@ import Foundation
 import OUDSThemesContract
 import OUDSThemesOrange
 
+// swiftlint:disable function_body_length
+
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 ///
 /// Uses its own tokens providers for tests:
@@ -60,10 +62,12 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: MockThemeAccordionComponentTokenProvider(sizes: sizes, spaces: spaces),
                    alert: MockThemeAlertComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
+                   alertMessage: OrangeThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces),
                    badge: MockThemeBadgeComponentTokenProvider(spaces: spaces),
                    bar: MockThemeBarComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects),
                    bulletList: MockThemeBulletListComponentTokenProvider(spaces: spaces),
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   categoricalTag: MockThemeCategoricalTagComponentTokenProvider(colors: colors),
                    checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
@@ -81,7 +85,8 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: MockThemeInputTagComponentTokenProvider(borders: borders, colors: colors),
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
-                   typography: MockThemeTypographyComponentTokenProvider(spaces: spaces),
+                   toast: OrangeThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes),
+                   typography: MockThemeTypographyComponentTokenProvider(spaces: spaces, colors: colors),
                    resourcesBundle: Bundle.OrangeTheme,
                    name: "Mock",
                    fontFamily: fontFamily)
@@ -89,3 +94,5 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
+
+// swiftlint:enable function_body_length

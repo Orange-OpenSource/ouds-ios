@@ -59,14 +59,14 @@ struct ThemeOverrideOfAccordionFaqComponentTokensTests {
         #expect(inheritedTheme.accordion.spacePaddingBlockBottomExpandContainerTablet == MockThemeAccordionComponentTokenProvider.mockThemeAccordionSpace)
     }
 
-    @Test func inheritedThemeCanOverrideAccordionFaqComponentTokenSpacePaddingBlockBottomSlotListItemContainerMobile() throws {
-        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotListItemContainerMobile != abstractTheme.accordion.spacePaddingBlockBottomSlotListItemContainerMobile)
-        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotListItemContainerMobile == MockThemeAccordionComponentTokenProvider.mockThemeAccordionSpace)
+    @Test func inheritedThemeCanOverrideAccordionFaqComponentTokenSpacePaddingBlockBottomSlotContainerMobile() throws {
+        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotContainerMobile != abstractTheme.accordion.spacePaddingBlockBottomSlotContainerMobile)
+        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotContainerMobile == MockThemeAccordionComponentTokenProvider.mockThemeAccordionSpace)
     }
 
-    @Test func inheritedThemeCanOverrideAccordionFaqComponentTokenSpacePaddingBlockBottomSlotListItemContainerTablet() throws {
-        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotListItemContainerTablet != abstractTheme.accordion.spacePaddingBlockBottomSlotListItemContainerTablet)
-        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotListItemContainerTablet == MockThemeAccordionComponentTokenProvider.mockThemeAccordionSpace)
+    @Test func inheritedThemeCanOverrideAccordionFaqComponentTokenSpacePaddingBlockBottomSlotContainerTablet() throws {
+        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotContainerTablet != abstractTheme.accordion.spacePaddingBlockBottomSlotContainerTablet)
+        #expect(inheritedTheme.accordion.spacePaddingBlockBottomSlotContainerTablet == MockThemeAccordionComponentTokenProvider.mockThemeAccordionSpace)
     }
 
     // MARK: - Sizes

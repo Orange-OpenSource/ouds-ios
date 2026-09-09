@@ -49,9 +49,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
-/// - Core Wireframe version: 1.4.0
-/// - Brand Wireframe version: 2.6.0
+/// - Core OUDS version: 1.11.0
+/// - Core Wireframe version: 1.5.0
+/// - Brand Wireframe version: 2.7.0
 ///
 /// - Since: 0.17.0
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
@@ -80,10 +80,12 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = WireframeThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = WireframeThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
+        let alertMessage = WireframeThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces)
         let badge = WireframeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
+        let categoricalTag = WireframeThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
@@ -101,6 +103,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = WireframeThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = WireframeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = WireframeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let toast = WireframeThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
         let typography = WireframeThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
@@ -116,10 +119,12 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,
@@ -137,6 +142,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: Bundle.WireframeTheme,
                    name: Self.name,

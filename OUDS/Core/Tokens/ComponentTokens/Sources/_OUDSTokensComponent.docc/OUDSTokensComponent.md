@@ -17,7 +17,7 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.10.0
+🧬 Core version: 1.11.0
 ```
 
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
@@ -144,11 +144,13 @@ typography                     | For textual components like `OUDSText`
 - ``AccordionComponentTokens``
 - ``AccordionFaqComponentTokens``
 - ``AlertComponentTokens``
+- ``AlertMessageComponentTokens``
 - ``BarComponentTokens``
 - ``BadgeComponentTokens``
 - ``BulletListComponentTokens``
 - ``ButtonComponentTokens``
 - ``ButtonMonoComponentTokens``
+- ``CategoricalTagComponentTokens``
 - ``CheckboxComponentTokens``
 - ``ChipComponentTokens``
 - ``DividerComponentTokens``
@@ -164,6 +166,7 @@ typography                     | For textual components like `OUDSText`
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
+- ``ToastComponentTokens``
 - ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``

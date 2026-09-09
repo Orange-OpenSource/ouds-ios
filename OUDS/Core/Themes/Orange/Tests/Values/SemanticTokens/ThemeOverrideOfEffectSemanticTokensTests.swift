@@ -31,6 +31,11 @@ struct ThemeOverrideOfEffectSemanticTokensTests {
         inheritedTheme = MockTheme()
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenEffectBlurBackdrop() throws {
+        #expect(inheritedTheme.effects.blurBackdrop != abstractTheme.effects.blurBackdrop)
+        #expect(inheritedTheme.effects.blurBackdrop == MockThemeEffectSemanticTokensProvider.mockThemeEffectSemanticToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenElevationXNone() throws {
         #expect(inheritedTheme.effects.blurDrag != abstractTheme.effects.blurDrag)
         #expect(inheritedTheme.effects.blurDrag == MockThemeEffectSemanticTokensProvider.mockThemeEffectSemanticToken)

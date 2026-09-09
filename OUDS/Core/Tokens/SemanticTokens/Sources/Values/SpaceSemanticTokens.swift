@@ -76,6 +76,8 @@ public protocol SpaceSemanticTokens { // 👾
     var paddingInline2xlarge: SpaceSemanticToken { get }
     var paddingInline3xlarge: SpaceSemanticToken { get }
     var paddingInline4xlarge: SpaceSemanticToken { get }
+    var paddingInline5xlarge: SpaceSemanticToken { get }
+    var paddingInline6xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding stack
 
@@ -91,6 +93,7 @@ public protocol SpaceSemanticTokens { // 👾
     var paddingBlock2xlarge: SpaceSemanticToken { get }
     var paddingBlock3xlarge: SpaceSemanticToken { get }
     var paddingBlock4xlarge: SpaceSemanticToken { get }
+    var paddingBlock5xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inset
 

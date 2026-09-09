@@ -103,6 +103,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to alert component like `OUDSAlertMessage` and `OUDSInlineAlert`
     public let alert: AllAlertComponentTokensProvider
 
+    /// All components tokens related only to `OUDSAlertMessage`
+    public let alertMessage: AllAlertMessageComponentTokensProvider
+
     /// All components tokens related to bar components
     public let bar: AllBarComponentTokensProvider
 
@@ -114,6 +117,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
 
     /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokensProvider
+
+    /// All components tokens related to categorical tag like `OUDSCategoricalTag`
+    public let categoricalTag: AllCategoricalTagComponentTokensProvider
 
     /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
@@ -167,6 +173,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to bullet list components like `OUDSTextInput`
     public let textInput: AllTextInputComponentTokensProvider
 
+    /// All components tokens related to toast components like `OUDSToast`
+    public let toast: AllToastComponentTokensProvider
+
     /// All components tokens related to typography components
     public let typography: AllTypographyComponentTokensProvider
 
@@ -212,10 +221,12 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - spaces: All semantic tokens of spaces
     ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
+    ///    - alertMessage: All component tokens for alert message
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
+    ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
     ///    - divider: All component tokens for divider
@@ -233,6 +244,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - toast: All component tokens for toast
     ///    - typography: All component tokens for typography
     ///    - name: The name of the theme, can be used for debugging for example
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
@@ -254,10 +266,12 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 spaces: AllSpaceSemanticTokensProvider,
                 accordion: AllAccordionComponentTokensProvider,
                 alert: AllAlertComponentTokensProvider,
+                alertMessage: AllAlertMessageComponentTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
                 bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
                 button: AllButtonComponentTokensProvider,
+                categoricalTag: AllCategoricalTagComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
                 chip: AllChipComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
@@ -275,6 +289,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 inputTag: AllInputTagComponentTokensProvider,
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
+                toast: AllToastComponentTokensProvider,
                 typography: AllTypographyComponentTokensProvider,
                 resourcesBundle: Bundle,
                 name: String,
@@ -300,10 +315,12 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         // Save component tokens providers
         self.accordion = accordion
         self.alert = alert
+        self.alertMessage = alertMessage
         self.badge = badge
         self.bar = bar
         self.button = button
         self.bulletList = bulletList
+        self.categoricalTag = categoricalTag
         self.checkbox = checkbox
         self.chip = chip
         self.divider = divider
@@ -321,6 +338,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.inputTag = inputTag
         self.textArea = textArea
         self.textInput = textInput
+        self.toast = toast
         self.typography = typography
 
         // Load other configuration elements

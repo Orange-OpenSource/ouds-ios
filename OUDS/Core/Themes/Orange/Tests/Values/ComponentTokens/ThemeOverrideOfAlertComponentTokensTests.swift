@@ -37,16 +37,16 @@ struct ThemeOverrideOfAlertComponentTokensTests {
         #expect(inheritedTheme.alert.borderRadiusRounded == MockThemeAlertComponentTokenProvider.mockThemeAlertBorderRadius)
     }
 
-    @Test func inheritedThemeCanOverrideAlertComponentTokenBorderWidth() throws {
-        #expect(inheritedTheme.alert.borderWidth != abstractTheme.alert.borderWidth)
-        #expect(inheritedTheme.alert.borderWidth == MockThemeAlertComponentTokenProvider.mockThemeAlertBorderWidth)
-    }
-
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverrideAlertComponentTokenSpacePaddingBlock() throws {
         #expect(inheritedTheme.alert.spacePaddingBlock != abstractTheme.alert.spacePaddingBlock)
         #expect(inheritedTheme.alert.spacePaddingBlock == MockThemeAlertComponentTokenProvider.mockThemeAlertSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideAlertComponentTokenSpacePaddingBlockBottomContent() throws {
+        #expect(inheritedTheme.alert.spacePaddingBlockBottomContent != abstractTheme.alert.spacePaddingBlockBottomContent)
+        #expect(inheritedTheme.alert.spacePaddingBlockBottomContent == MockThemeAlertComponentTokenProvider.mockThemeAlertSpace)
     }
 
     @Test func inheritedThemeCanOverrideAlertComponentTokenSpacePaddingInlineMedium() throws {
@@ -64,26 +64,21 @@ struct ThemeOverrideOfAlertComponentTokensTests {
         #expect(inheritedTheme.alert.spaceColumnGapAction == MockThemeAlertComponentTokenProvider.mockThemeAlertSpace)
     }
 
+    @Test func inheritedThemeCanOverrideAlertComponentTokenSpaceInsetProgressIndicator() throws {
+        #expect(inheritedTheme.alert.spaceInsetProgressIndicator != abstractTheme.alert.spaceInsetProgressIndicator)
+        #expect(inheritedTheme.alert.spaceInsetProgressIndicator == MockThemeAlertComponentTokenProvider.mockThemeAlertSpace)
+    }
+
     @Test func inheritedThemeCanOverrideAlertComponentTokenSpaceRowGap() throws {
         #expect(inheritedTheme.alert.spaceRowGap != abstractTheme.alert.spaceRowGap)
         #expect(inheritedTheme.alert.spaceRowGap == MockThemeAlertComponentTokenProvider.mockThemeAlertSpace)
     }
 
-    @Test func inheritedThemeCanOverrideAlertComponentTokenSpaceRowGapAction() throws {
-        #expect(inheritedTheme.alert.spaceRowGapAction != abstractTheme.alert.spaceRowGapAction)
-        #expect(inheritedTheme.alert.spaceRowGapAction == MockThemeAlertComponentTokenProvider.mockThemeAlertSpace)
-    }
-
-    @Test func inheritedThemeCanOverrideAlertComponentTokenSpaceRowGapBullet() throws {
-        #expect(inheritedTheme.alert.spaceRowGapBullet != abstractTheme.alert.spaceRowGapBullet)
-        #expect(inheritedTheme.alert.spaceRowGapBullet == MockThemeAlertComponentTokenProvider.mockThemeAlertSpace)
-    }
-
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeIcon() throws {
-        #expect(inheritedTheme.alert.sizeIcon != abstractTheme.alert.sizeIcon)
-        #expect(inheritedTheme.alert.sizeIcon == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
+    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeAsset() throws {
+        #expect(inheritedTheme.alert.sizeAsset != abstractTheme.alert.sizeAsset)
+        #expect(inheritedTheme.alert.sizeAsset == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
     }
 
     @Test func inheritedThemeCanOverrideAlertComponentTokenSizeMinHeight() throws {
@@ -91,9 +86,9 @@ struct ThemeOverrideOfAlertComponentTokensTests {
         #expect(inheritedTheme.alert.sizeMinHeight == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
     }
 
-    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeMinHeightBottomActionPlacement() throws {
-        #expect(inheritedTheme.alert.sizeMinHeightBottomActionPlacement != abstractTheme.alert.sizeMinHeightBottomActionPlacement)
-        #expect(inheritedTheme.alert.sizeMinHeightBottomActionPlacement == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
+    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeMinHeightBottomAction() throws {
+        #expect(inheritedTheme.alert.sizeMinHeightBottomAction != abstractTheme.alert.sizeMinHeightBottomAction)
+        #expect(inheritedTheme.alert.sizeMinHeightBottomAction == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
     }
 
     @Test func inheritedThemeCanOverrideAlertComponentTokenSizeMinWidth() throws {

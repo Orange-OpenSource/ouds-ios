@@ -108,9 +108,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange Compact version: 2.6.0
+/// - Brand Orange Compact version: 2.7.0
 ///
 /// - Since: 0.17.0
 public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
@@ -145,10 +145,12 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = OrangeCompactThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = OrangeCompactThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
+        let alertMessage = OrangeCompactThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces)
         let badge = OrangeCompactThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = OrangeCompactThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = OrangeCompactThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeCompactThemeBulletListComponentTokensProvider(spaces: spaces)
+        let categoricalTag = OrangeCompactThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = OrangeCompactThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = OrangeCompactThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = OrangeCompactThemeDividerComponentTokensProvider(borders: borders)
@@ -166,6 +168,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = OrangeCompactThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeCompactThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = OrangeCompactThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let toast = OrangeCompactThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
         let typography = OrangeCompactThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
@@ -183,10 +186,12 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,
@@ -204,6 +209,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: Bundle.OrangeCompactTheme,
                    name: Self.name,

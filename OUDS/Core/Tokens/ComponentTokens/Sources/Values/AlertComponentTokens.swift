@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for alert components like `OUDSAlert`
+/// Declares all component tokens for alert components.
 /// Used for tokens providers like `OrangeThemeAlertComponentTokensProvider` etc.
 ///
 /// - Since:1.2.0
@@ -28,23 +28,22 @@ public protocol AlertComponentTokens {
 
     var borderRadiusDefault: BorderRadiusSemanticToken { get }
     var borderRadiusRounded: BorderRadiusSemanticToken { get }
-    var borderWidth: BorderWidthSemanticToken { get }
 
     // MARK: - Spaces
 
     var spacePaddingBlock: SpaceSemanticToken { get }
+    var spacePaddingBlockBottomContent: SpaceSemanticToken { get }
     var spacePaddingInline: SpaceSemanticToken { get }
     var spaceColumnGap: SpaceSemanticToken { get }
     var spaceColumnGapAction: SpaceSemanticToken { get }
+    var spaceInsetProgressIndicator: SpaceSemanticToken { get }
     var spaceRowGap: SpaceSemanticToken { get }
-    var spaceRowGapAction: SpaceSemanticToken { get }
-    var spaceRowGapBullet: SpaceSemanticToken { get }
 
     // MARK: - Size
 
-    var sizeIcon: SizeSemanticToken { get }
+    var sizeAsset: SizeSemanticToken { get }
     var sizeMinHeight: SizeSemanticToken { get }
-    var sizeMinHeightBottomActionPlacement: SizeSemanticToken { get }
+    var sizeMinHeightBottomAction: SizeSemanticToken { get }
     var sizeMinWidth: SizeSemanticToken { get }
 }
 

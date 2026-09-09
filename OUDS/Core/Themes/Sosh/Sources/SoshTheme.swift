@@ -53,9 +53,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Sosh version: 1.4.0
-/// - Brand Sosh version: 2.6.0
+/// - Brand Sosh version: 2.7.0
 ///
 /// - Since: 0.17.0
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
@@ -84,10 +84,12 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = SoshThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = SoshThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
+        let alertMessage = SoshThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces)
         let badge = SoshThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
+        let categoricalTag = SoshThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
@@ -105,6 +107,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = SoshThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = SoshThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let toast = SoshThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
         let typography = SoshThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
@@ -120,10 +123,12 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,
@@ -141,6 +146,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: Bundle.SoshTheme,
                    name: Self.name,

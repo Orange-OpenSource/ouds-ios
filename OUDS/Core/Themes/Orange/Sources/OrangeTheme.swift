@@ -133,9 +133,9 @@ import OUDSTokensSemantic
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange version: 2.6.0
+/// - Brand Orange version: 2.7.0
 ///
 /// - Since: 0.8.0
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
@@ -165,10 +165,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - spaces: All semantic tokens of spaces
     ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
+    ///    - alertMessage: All component tokens for alert message
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
+    ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
     ///    - divider: All component tokens for divider
@@ -186,6 +188,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - toast: All component tokens for toast
     ///    - typography: All component tokens for typography
     ///    - resourcesBundle: The `Bundle` of the module containing assets to load like images
     ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
@@ -206,10 +209,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                 spaces: AllSpaceSemanticTokensProvider? = nil,
                 accordion: AllAccordionComponentTokensProvider? = nil,
                 alert: AllAlertComponentTokensProvider? = nil,
+                alertMessage: AllAlertMessageComponentTokensProvider? = nil,
                 badge: AllBadgeComponentTokensProvider? = nil,
                 bar: AllBarComponentTokensProvider? = nil,
                 bulletList: AllBulletListComponentTokensProvider? = nil,
                 button: AllButtonComponentTokensProvider? = nil,
+                categoricalTag: AllCategoricalTagComponentTokensProvider? = nil,
                 checkbox: AllCheckboxComponentTokensProvider? = nil,
                 chip: AllChipComponentTokensProvider? = nil,
                 divider: AllDividerComponentTokensProvider? = nil,
@@ -227,6 +232,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                 inputTag: AllInputTagComponentTokensProvider? = nil,
                 textArea: AllTextAreaComponentTokensProvider? = nil,
                 textInput: AllTextInputComponentTokensProvider? = nil,
+                toast: AllToastComponentTokensProvider? = nil,
                 typography: AllTypographyComponentTokensProvider? = nil,
                 resourcesBundle: Bundle = Bundle.OrangeTheme,
                 name: String = OrangeTheme.name,
@@ -250,10 +256,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
         let accordion = (accordion ?? OrangeThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces))
         let alert = (alert ?? OrangeThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
+        let alertMessage = (alertMessage ?? OrangeThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces))
         let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
+        let categoricalTag = (categoricalTag ?? OrangeThemeCategoricalTagComponentTokensProvider(colors: colors))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
@@ -271,6 +279,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = (inputTag ?? OrangeThemeInputTagComponentTokensProvider(borders: borders, colors: colors))
         let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
         let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
+        let toast = (toast ?? OrangeThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes))
         let typography = (typography ?? OrangeThemeTypographyComponentTokensProvider(spaces: spaces))
 
         super.init(borders: borders,
@@ -288,10 +297,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    divider: divider,
@@ -309,6 +320,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
                    typography: typography,
                    resourcesBundle: resourcesBundle,
                    name: name,

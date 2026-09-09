@@ -209,7 +209,7 @@ let package = Package(
 
         .target(
             name: "OUDSThemesWireframe",
-            dependencies: ["OUDSThemesContract", "OUDSThemesOrange"],
+            dependencies: ["OUDSThemesContract"],
             path: "OUDS/Core/Themes/Wireframe/Sources",
             resources: [.process("Resources/")]),
         .testTarget(

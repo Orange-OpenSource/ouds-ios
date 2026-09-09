@@ -489,6 +489,6 @@ public struct OUDSAlertMessage: View {
     }
 
     private var minHeight: SizeSemanticToken {
-        link?.position == .bottom ? theme.alert.sizeMinHeightBottomActionPlacement : theme.alert.sizeMinHeight
+        link?.position == .bottom ? theme.alert.sizeMinHeightBottomAction : theme.alert.sizeMinHeight
     }
 }

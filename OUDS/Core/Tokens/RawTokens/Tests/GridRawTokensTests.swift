@@ -54,7 +54,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMaxWidthRegularValue() {
-        #expect(GridRawTokens.maxWidthRegular == 1_336)
+        #expect(GridRawTokens.maxWidthRegular == 1_366)
     }
 
     @Test func gridRawTokenMinWidthCompactValue() {

@@ -199,6 +199,9 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
     override var maxWidthBodySmallMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override var maxWidthBodySmallTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
+    override var maxWidthBoxedTextMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var maxWidthBoxedTextTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
+
     override var maxWidthLabelXlargeMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override var maxWidthLabelXlargeTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
 

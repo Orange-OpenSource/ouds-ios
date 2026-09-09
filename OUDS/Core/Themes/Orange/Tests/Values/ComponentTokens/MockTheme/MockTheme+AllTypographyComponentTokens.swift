@@ -25,15 +25,18 @@ final class MockThemeTypographyComponentTokenProvider: OrangeThemeTypographyComp
     // MARK: - Mocks and setup
 
     static let mockThemeTypographySpace: SpaceSemanticToken = 1_312
+    static let mockThemeTypographyColor = MultipleColorSemanticToken("#00FF00")
 
-    override init(spaces: AllSpaceSemanticTokensProvider?) {
-        super.init(spaces: spaces)
+    override init(spaces: AllSpaceSemanticTokensProvider?, colors: AllColorSemanticTokensProvider?) {
+        super.init(spaces: spaces, colors: colors)
     }
 
     // MARK: - Typography component tokens
 
     override var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { Self.mockThemeTypographySpace }
     override var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { Self.mockThemeTypographySpace }
+    override var colorContentMarker: MultipleColorSemanticToken { Self.mockThemeTypographyColor }
+    override var headingLargeMarker: Bool { false }
 }
 
 // swiftlint:enable required_deinit

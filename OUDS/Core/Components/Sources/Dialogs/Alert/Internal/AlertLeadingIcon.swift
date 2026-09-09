@@ -60,7 +60,7 @@ struct AlertLeadingIcon: View {
     }
 
     private var size: CGFloat {
-        theme.alert.sizeIcon * dynamicTypeSize.percentageRate / 100
+        theme.alert.sizeAsset * dynamicTypeSize.percentageRate / 100
     }
 }
 

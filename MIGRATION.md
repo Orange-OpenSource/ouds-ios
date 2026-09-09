@@ -142,6 +142,55 @@ theme.link.spacePaddingBlockDefault
 
 **Reason for Change**: Renaming of tokens in Figma specification
 
+### Renamed component tokens of accordion
+
+The tokens of spaces for `accordion` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|-------------|
+| `spacePaddingBlockBottomSlotListItemContainerMobile` | `spacePaddingBlockBottomSlotContainerMobile` |
+| `spacePaddingBlockBottomSlotListItemContainerTablet` | `spacePaddingBlockBottomSlotContainerTablet` |
+
+For example, before:
+```swift
+theme.accordion.spacePaddingBlockBottomSlotListItemContainerMobile
+```
+and after:
+```swift
+theme.accordion.spacePaddingBlockBottomSlotContainerMobile
+```
+
+**Required Action**:
+- Remove `ListItem` from the token names for `accordion` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Renamed component tokens of alert components
+
+The token of size for `alert message` component has been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|-------------|
+| `sizeIcon`  | `sizeAsset` |
+
+For example, before:
+```swift
+theme.alertMessage.sizeIcon
+```
+and after:
+```swift
+theme.alert.sizeAsset
+```
+
+**Required Action**:
+- Replace `sizeIcon` by `sizeAsset` for `alertMessage` component, and change name of token provider
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
 ### Removed icon component token
 
 An old deprecated token has finally been removed from `icon` component tokens.

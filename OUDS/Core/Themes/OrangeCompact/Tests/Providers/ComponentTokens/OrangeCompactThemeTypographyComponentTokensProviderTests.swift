@@ -30,6 +30,10 @@ struct OrangeCompactThemeTypographyComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeCompactThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultColorSemanticTokensProvider() throws {
+        #expect(provider.colors is OrangeCompactThemeColorSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

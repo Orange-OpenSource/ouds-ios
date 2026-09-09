@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
 - Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
@@ -29,6 +31,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Core `grid` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- Core `effect` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- Core `dimension` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- Core `color` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `space` semantic tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `size` semantic tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `effect` semantic tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `color` semantic tokens for `Orange` theme (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `color chart` semantic tokens for `Orange` theme (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `typography` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `button` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- **BREAKING**: `alert` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- **BREAKING**: `accordion` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - Loading state of `tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
 - Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
 - Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)

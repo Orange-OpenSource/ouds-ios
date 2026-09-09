@@ -30,7 +30,7 @@ struct AlertMessageContent: View {
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.alert.spaceRowGapAction) {
+        VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
             VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
                 Text(text)
                     .labelModerateLarge(theme)
@@ -45,7 +45,7 @@ struct AlertMessageContent: View {
                 }
 
                 if !bulletList.isEmpty {
-                    VStack(alignment: .leading, spacing: theme.alert.spaceRowGapBullet) {
+                    VStack(alignment: .leading, spacing: theme.alertMessage.spaceRowGapBullet) {
                         ForEach(Array(bulletList.enumerated()), id: \.offset) { _, text in
                             AlertMessageBulletListItem(text: text, status: status)
                         }

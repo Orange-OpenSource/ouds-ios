@@ -544,6 +544,11 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.sizeMaxSizeIconOnlySmall == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMaxWidth() throws {
+        #expect(inheritedTheme.button.sizeMaxWidth != abstractTheme.button.sizeMaxWidth)
+        #expect(inheritedTheme.button.sizeMaxWidth == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+    }
+
     @Test func inheritedThemeCanOverrideButtonComponentTokenBorderRadiusAiIconOnly() throws {
         #expect(inheritedTheme.button.borderRadiusAiIconOnly != abstractTheme.button.borderRadiusAiIconOnly)
         #expect(inheritedTheme.button.borderRadiusAiIconOnly == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)

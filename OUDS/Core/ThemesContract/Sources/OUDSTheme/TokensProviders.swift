@@ -79,6 +79,9 @@ public protocol AllAccordionComponentTokensProvider: TokensProvider, AccordionCo
 /// Something which provides all component tokens of alert
 public protocol AllAlertComponentTokensProvider: TokensProvider, AlertComponentTokens {}
 
+/// Something which provides all component tokens of alert messages
+public protocol AllAlertMessageComponentTokensProvider: TokensProvider, AlertMessageComponentTokens {}
+
 /// Something which provides all component tokens of bars
 public protocol AllBarComponentTokensProvider: TokensProvider, BarComponentTokens {}
 
@@ -90,6 +93,9 @@ public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletList
 
 /// Something which provides all component tokens of button
 public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens, ButtonMonoComponentTokens {}
+
+/// Something which provides all component tokens for categorical tag
+public protocol AllCategoricalTagComponentTokensProvider: TokensProvider, CategoricalTagComponentTokens {}
 
 /// Something which provides all component tokens of checkboxes
 public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens {}
@@ -141,6 +147,9 @@ public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComp
 
 /// Something which provides all component tokens of text input
 public protocol AllTextInputComponentTokensProvider: TokensProvider, TextInputComponentTokens {}
+
+/// Something which provides all component tokens of toast
+public protocol AllToastComponentTokensProvider: TokensProvider, ToastComponentTokens {}
 
 /// Something which provides all component tokens of typography
 public protocol AllTypographyComponentTokensProvider: TokensProvider, TypographyComponentTokens {}

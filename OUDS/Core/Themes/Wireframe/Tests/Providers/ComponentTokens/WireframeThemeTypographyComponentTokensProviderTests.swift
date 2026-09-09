@@ -30,6 +30,10 @@ struct WireframeThemeTypographyComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is WireframeThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultColorSemanticTokensProvider() throws {
+        #expect(provider.colors is WireframeThemeColorSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

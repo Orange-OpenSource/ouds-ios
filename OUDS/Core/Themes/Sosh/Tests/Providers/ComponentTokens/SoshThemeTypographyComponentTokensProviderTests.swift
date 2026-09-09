@@ -30,6 +30,10 @@ struct SoshThemeTypographyComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultColorSemanticTokensProvider() throws {
+        #expect(provider.colors is SoshThemeColorSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name
