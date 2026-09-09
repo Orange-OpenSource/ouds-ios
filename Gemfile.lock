@@ -255,6 +255,7 @@ PLATFORMS
 
 DEPENDENCIES
   abbrev (= 0.1.2)
+  excon (= 1.7.1)
   fastlane (= 2.239.0)
   json (= 2.21.2)
 

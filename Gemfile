@@ -28,6 +28,10 @@ gem 'abbrev', '0.1.2'
 # json     2.18.1     2.19.2    gem   GHSA-3m6g-2423-7cp3  High      < 0.1% (3rd)  < 0.1
 gem 'json', '2.21.2'
 
+# Embeded in Fastlane RubyGem it seems
+# Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/security/dependabot/1)
+gem 'excon', '1.7.1'
+
 # Really needed gems
 # ------------------
 
