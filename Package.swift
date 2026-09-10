@@ -34,22 +34,22 @@ let package = Package(
 
         // Umbrella library to improve Developer eXperience and let users use OUDS in only one import
 
-        // Embeds all librairies and all themes
+        // Embeds all libraries and all themes
         .library(
             name: "OUDSSwiftUI",
             targets: ["OUDSSwiftUI"]),
 
-        // Embeds all librairies but only Orange and Orange Compact themes
+        // Embeds all libraries but only Orange and Orange Compact themes
         .library(
             name: "OUDSSwiftUIOrange",
             targets: ["OUDSSwiftUIOrange"]),
 
-        // Embeds all librairies but only Orange and Sosh themes
+        // Embeds all libraries but only Orange and Sosh themes
         .library(
             name: "OUDSSwiftUIOrangeSosh",
             targets: ["OUDSSwiftUIOrangeSosh"]),
 
-        // Embeds all librairies but only Wireframe theme
+        // Embeds all libraries but only Wireframe theme
         .library(
             name: "OUDSSwiftUIWireframe",
             targets: ["OUDSSwiftUIWireframe"]),

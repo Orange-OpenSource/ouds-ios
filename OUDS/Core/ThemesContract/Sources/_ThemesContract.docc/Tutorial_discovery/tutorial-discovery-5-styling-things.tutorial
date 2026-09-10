@@ -28,7 +28,7 @@
             @Step {
                 The themes objects contains plenty of tokens gathered in tokens providers.
                 These tokens can be semantic tokens (borders, elevations, colors, etc.) or component tokens.
-                In addition, in librairies, there are raw tokens which are used by higher-level ones like semantics.
+                In addition, in libraries, there are raw tokens which are used by higher-level ones like semantics.
                 One of these family of tokens is the *space* family. 
                 Spaces are dimensions elements in pixels which can be used for margins or paddings for example. 
                 These tokens are particular: some of them can have two values, one for mobile and one for tablet, mainly the *scaled* tokens.
@@ -67,7 +67,7 @@
                 The *OUDS* package provides also view modifiers to apply effects on views, using the power of tokens.
                 For example, it is possible de define a foreground color and also a background color using a semantic token of color which will provide light and dark modes variants.
                 
-                Try to change these colors in the title of the view and the formular.
+                Try to change these colors in the title of the view and the form.
                 
                 @Code(name: "ContentView.swift", file: "tutorial-discovery-5-4.swift", previousFile: "tutorial-discovery-5-3.swift") {
                     @Image(source: "tutorial-discovery-5-4.png", alt: "Using OUDS view modifiers prevents developers to manage light and dark color scheme")
@@ -77,7 +77,7 @@
             @Step {
                 OUDS provides also view modifiers to create shadow effects, i.e. elevations. These effects are based also on tokens, defined in Figma.
                 
-                Try to apply an elevation to the formular.
+                Try to apply an elevation to the form.
                 
                 @Code(name: "ContentView.swift", file: "tutorial-discovery-5-5.swift") {
                     @Image(source: "tutorial-discovery-5-5.png", alt: "Elevations can be lovely effects on cards or square-shaped items")
@@ -87,7 +87,7 @@
             @Step {
                 Borders are also defined by tokens, exposed through themes, and usable thanks to view modifiers. They are defined by a style, a width, a radius and a color.
                 
-                Let's add a border effect to the formular.
+                Let's add a border effect to the form.
                 
                 @Code(name: "ContentView.swift", file: "tutorial-discovery-5-6.swift") {
                     @Image(source: "tutorial-discovery-5-6.png", alt: "Borders are useful to make things more visible")
@@ -160,7 +160,7 @@
                 
                 To do that, you will need to apply your own tokens providers, for example by subclassing some of them.
                 Then, override the tokens you want (read the documentation to find where they are), and apply the providers at theme init.
-                Change for exemple tokens of borders and colors, and compare what are the changes and where.
+                Change for example tokens of borders and colors, and compare what are the changes and where.
                     
                 @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-discovery-5-10.swift", previousFile: "tutorial-discovery-5-9.swift") {
                     @Image(source: "tutorial-discovery-5-10.png", alt: "Change tokens, break everything, here is the artist life!")

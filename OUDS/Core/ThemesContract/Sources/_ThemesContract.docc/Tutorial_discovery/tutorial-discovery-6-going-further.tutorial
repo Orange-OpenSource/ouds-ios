@@ -16,7 +16,7 @@
         @Steps {
             @Step {
                 The iOS technical documentation is available online. It has been generated from all the Swift DocC documentation written in the Swift Package.
-                You will find several catalogs (as many as librairies) with details about everyhting: components, tokens, themes, providers, etc.
+                You will find several catalogs (as many as libraries) with details about everything: components, tokens, themes, providers, etc.
                 
                 You can get it at [ios.unified-design-system.orange.com](https://ios.unified-design-system.orange.com/)
                 
@@ -33,7 +33,7 @@
             }
             
             @Step {
-                OUDS iOS provides also a wiki attached to its GitHub repository. The wiki is a public base of knowledge with plenty of things: available API, technicala architecture, tips about processes, tests, conventions and toolings.
+                OUDS iOS provides also a wiki attached to its GitHub repository. The wiki is a public base of knowledge with plenty of things: available API, technical architecture, tips about processes, tests, conventions and toolings.
                 
                 Have a look [on the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) to discover how OUDS works.
                 

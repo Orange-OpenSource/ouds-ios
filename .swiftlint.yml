@@ -30,6 +30,7 @@ included:
 excluded:
 - OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_discovery
 - OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_onboarding
+- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_lime
 
 # ==============
 # Disabled rules

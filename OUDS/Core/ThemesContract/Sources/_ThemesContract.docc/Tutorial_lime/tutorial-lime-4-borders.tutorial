@@ -1,0 +1,50 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Borders") {
+        Borders can be defined with line width, style, and corner radius. In this chapter, we will override some border semantic tokens to customize components.
+
+        We will use change the rafius to give components a softer, more modern look, a dashed style for borders with bigger line width.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding border tokens") {
+
+        @ContentAndMedia {
+            Border tokens are defined in `OrangeThemeBorderSemanticTokensProvider`. 
+        }
+
+        @Steps {
+            @Step {
+                Now let's add the border provider with tokens overrides. We will override `radiusMedium`, `styleDefault` and `widthThin` to make components different.
+
+                @Code(name: "Tokens.swift", file: "tutorial-lime-4.swift", previousFile: "tutorial-lime-3.swift") {
+                    @Image(source: "tutorial-lime-4.png", alt: "App with new styles for borders")
+                }
+            }
+        }
+    }
+        
+    @Assessments {
+        @MultipleChoice {
+            Are border semantic tokens isolated?
+
+            @Choice(isCorrect: true) {
+                No, plenty of components used border semantic tokens
+                    
+                @Justification(reaction: "Correct!") {
+                    Border semantic tokens are semantic tokens, so they define high level source of truth used by components.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                Yes, they can only used alone
+                    
+                @Justification(reaction: "Wrong!") {
+                    The aim of semantic tokens is to be used by higher level tokens, e.g. for components
+                }
+            }
+        }
+    }
+}

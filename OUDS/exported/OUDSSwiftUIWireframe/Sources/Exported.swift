@@ -12,7 +12,7 @@
 //
 
 /*
- Used in target "OUDSSwiftUI" embeded in product "OUDSSwiftUI", which are both umbrellas,
+ Used in target "OUDSSwiftUI" embedded in product "OUDSSwiftUI", which are both umbrellas,
  to export to users all products listed below,
  in one item,
  because not possible to have only on product pointing to several targets

@@ -30,7 +30,7 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSCheckbox`` can be related to an error situation, for example troubles for a formular.
+/// An ``OUDSCheckbox`` can be related to an error situation, for example troubles for a form librairies.
 /// A dedicated look-and-feel is implemented for that if the `isError` flag is risen.
 ///
 /// ## Accessibility considerations

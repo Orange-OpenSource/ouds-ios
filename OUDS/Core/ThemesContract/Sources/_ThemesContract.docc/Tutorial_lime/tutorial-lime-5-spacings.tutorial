@@ -1,0 +1,53 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Spacings") {
+        Spacing tokens control margins and paddings throughout the app. In this chapter, we will override spacing tokens to customize the layout spacing.
+
+        We will adjust `fixedMedium` and `fixedLarge` to create more generous spacing.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding spacing tokens") {
+
+        @ContentAndMedia {
+            Spacing tokens are defined in `OrangeThemeSpaceSemanticTokensProvider`. We will override `fixedMedium` and `fixedLarge` to increase spacing between elements.
+
+            The Lime theme uses larger spacings for a more airy layout.
+        }
+
+        @Steps {
+            @Step {
+                Start with the theme from the border chapter, which already has colors and borders overrides.
+                Now let's add the space provider with spacing overrides. We will use dimension tokens like `_150` and `_200`.
+                
+                @Code(name: "Tokens.swift", file: "tutorial-lime-5.swift", previousFile: "tutorial-lime-4.swift") {
+                    @Image(source: "tutorial-lime-5.png", alt: "App with Lime spacings")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which provider contains spacing tokens like fixedMedium and fixedLarge?
+
+            @Choice(isCorrect: true) {
+                OrangeThemeSpaceSemanticTokensProvider
+                
+                @Justification(reaction: "Correct!") {
+                    Have a look on the names of the tokens providers to get help.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                OrangeThemeBorderSemanticTokensProvider
+                
+                @Justification(reaction: "Wrong!") {
+                    Tokens providers name should be quite clear in the end.
+                }
+            }
+        }
+    }
+}

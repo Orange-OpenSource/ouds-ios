@@ -1,0 +1,90 @@
+@Tutorials(name: "Orange Unified Design System") {
+    @Intro(title: "Swift Package Lime Tutorial") {
+        Learn how to create a custom OUDS theme by overriding tokens from the Orange theme.
+        In this tutorial, you will build the Lime fake theme with its own properties
+        You'll discover how to customize colors, spacings, borders, elevations, colored surfaces, fonts and tuning.
+
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @Chapter(name: "Import of the Swift Package and choose its libraries") {
+        In this chapter you will learn how to import the OUDS iOS Swift Package and which libraries it provides
+        you should choose for your needs.
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-lime-1-package-and-libraries")
+    }
+    
+    @Chapter(name: "Introduction") {
+        In this chapter you will discover the starting point of our tutorial: a complete app using the default Orange theme first.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-2-intro")
+    }
+
+    @Chapter(name: "Colors") {
+        In this chapter you will learn how to override color tokens to create the Lime green theme.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-3-colors")
+    }
+
+    @Chapter(name: "Borders") {
+        In this chapter you will learn how to override border tokens to customize the components.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-4-borders")
+    }
+
+    @Chapter(name: "Spacings") {
+        In this chapter you will learn how to override spacing tokens to customize margins and paddings.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-5-spacings")
+    }
+
+    @Chapter(name: "Elevations") {
+        In this chapter you will learn how to override elevation tokens to customize shadows.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-6-elevations")
+    }
+
+    @Chapter(name: "Colored Surface") {
+        In this chapter you will learn how to override color mode tokens to customize the colored surface component.
+
+        @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-7-colored-surface")
+    }
+
+    @Chapter(name: "Fonts") {
+        In this chapter you will learn how to override font tokens and apply your own font through the theme.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-8-fonts")
+    }
+    
+    @Chapter(name: "Tuning") {
+        In this chapter you will learn how to define your tuning for the theme.
+
+        @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
+
+        @TutorialReference(tutorial: "doc:tutorial-lime-9-tuning")
+    }
+    
+    @Chapter(name: "Go further with more ressources") {
+        You can have questions and issues, and there are resources online? Let's see that together)!
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-lime-10-going-further")
+    }
+}
