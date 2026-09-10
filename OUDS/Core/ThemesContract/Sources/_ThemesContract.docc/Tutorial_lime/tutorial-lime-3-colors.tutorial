@@ -1,0 +1,59 @@
+@Tutorial(time: 15, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Colors") {
+        Colors are the foundation of any theme. In this chapter, we'll override color tokens to create the Lime green theme.
+
+        We will override semantic color tokens like `contentBrandPrimary`, `actionEnabled`, and `bgTertiary`, as well as component-specific color tokens for Tags.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding color tokens") {
+
+        @ContentAndMedia {
+            OUDS provides semantic color tokens that can be overridden. We will create a custom color provider by subclassing `OrangeThemeColorSemanticTokensProvider`.
+
+            Key tokens to override:
+            - `contentBrandPrimary`: Primary brand color for text
+            - `actionEnabled`: Color for enabled actions
+            - `bgTertiary`: Background color for containers
+            - `bordeBrandPrimary`: Can be used for dividers in some case
+        }
+
+        @Steps {
+            @Step {
+                Let's create the color providers. We'll override `LimeThemeColorProvider` for semantic colors (using Malachite green)
+
+                The Lime theme uses gray and green colors. We can refer to existing raw tokens, i.e. colors defined in Orange Unified Design System. You can define your own of course.
+
+                @Code(name: "Tokens.swift", file: "tutorial-lime-3.swift", previousFile: "tutorial-lime-2-2.swift") {
+                    
+                    @Image(source: "tutorial-lime-3.png", alt: "App with Lime theme and green colors")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which provider do you need to override to change the brand primary color?
+
+            @Choice(isCorrect: true) {
+                OrangeThemeColorSemanticTokensProvider
+                
+                @Justification(reaction: "Correct!") {
+                    Color semantic tokens are declared in `ColorSemanticTokens` protocol and defined in `OrangeThemeColorSemanticTokensProvider`
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                OrangeThemeCategoricalTagComponentTokensProvider
+                
+                @Justification(reaction: "Nope!") {
+                    Be aware about the tokens provider: some are for components, other for semantic tokens.
+                }
+            }
+        }
+    }
+}

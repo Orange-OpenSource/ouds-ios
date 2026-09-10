@@ -1,0 +1,52 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Elevations") {
+        Elevation tokens control shadows and depth. In this chapter, we will override elevation tokens to customize the shadow appearance.
+
+        We will use a lighter shadow to make it almost invisible.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding elevation tokens") {
+
+        @ContentAndMedia {
+            Elevation tokens are defined in `OrangeThemeElevationSemanticTokensProvider`. We will override `emphasized` to create a mmuch lighter shadow effect.
+        }
+
+        @Steps {
+            @Step {
+                Start with the theme from the spacings chapter.
+                Now let's add the elevation provider with shadow overrides.
+                Elevations are defined by composite tokens: they are constructed with several types of tokens.
+
+                @Code(name: "Tokens.swift", file: "tutorial-lime-6.swift", previousFile: "tutorial-lime-5.swift") {
+                    @Image(source: "tutorial-lime-6.png", alt: "App with lighter elevation overrides")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which provider contains elevation tokens like emphasized?
+
+            @Choice(isCorrect: true) {
+                OrangeThemeElevationSemanticTokensProvider
+                
+                @Justification(reaction: "Correct!") {
+                    Elevations are related to... shadows
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                OrangeThemeBorderSemanticTokensProvider
+                
+                @Justification(reaction: "Wrong!") {
+                    Borders are for... borders.
+                }
+            }
+        }
+    }
+}

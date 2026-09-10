@@ -1,4 +1,4 @@
-@Tutorial(time: 10, projectFiles: "OUDS-Onboarding-Tutorial.zip") {
+@Tutorial(time: 10, projectFiles: "OUDS-Lime-Tutorial.zip") {
     @Intro(title: "Swift Package integration") {
         OUDS iOS is exposed through an open source Swift Package hosted on GitHub, and provides several librairies for your needs.
         These librairies help to split products and make users able to select only what they need.
@@ -23,10 +23,9 @@
                 You can then choose the **dependency rule** you want.
                 To know which version you need, you can have a look on the [available API list](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API)
                 and also the [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases).
-    
-                Let's say you will use the some beta version, here 3.0.0-beta.8
+                Let's say you will use some release candidate version today, e.g. the version 3.0.0-rc.1
                 
-                @Image(source: "tutorial-onboarding-1-ouds-swift-package", alt: "Description by Xcode of the OUDS Swift Package with its README preview")
+                @Image(source: "tutorial-lime-1-ouds-swift-package", alt: "Description by Xcode of the OUDS Swift Package with its README preview")
             }
             
             @Step {
@@ -46,7 +45,7 @@
                                 
                 Add for example only the umbrella product merging all products mentioned above: *OUDSSwiftUI*
                 
-                @Image(source: "tutorial-onboarding-1-ouds-libraries.png", alt: "Embed librairies inside target")
+                @Image(source: "tutorial-lime-1-ouds-libraries.png", alt: "Embed librairies inside target")
             }
         }
     }
@@ -94,7 +93,7 @@
             }
 
             @Choice(isCorrect: false) {
-                None, only the Swift package dependency matter.
+                None, only the Swift package dependency matter. 
                   
                 @Justification(reaction: "Try again!") {
                     You need to chose the products the Swift package provides.

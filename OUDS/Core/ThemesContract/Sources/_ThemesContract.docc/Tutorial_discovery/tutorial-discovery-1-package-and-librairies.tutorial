@@ -31,7 +31,7 @@
             @Step {
                 Once you downloaded the package, you will see several librairies are available. 
                 They can be embeded inside your **target** librairies.
-                Things are separated to let users integrate only what they need and embed the abre minimum of content.
+                Things are separated to let users integrate only what they need and embed the bare minimum of content.
                 The *OUDSThemesContract* library provides the main elements like the `OUDSThemeableView`. The theme contract is defined inside it.
                 *OUDSThemesOrange* provides the theme implementation for the Orange products, and contains also assets and all tokens for this theme.
                 *OUDSThemesSosh* provides the theme implementation for the Sosh products, and contains also assets and all tokens for this theme.
