@@ -80,7 +80,7 @@ public struct OUDSListItemFlag: View {
                 .opacity(opacity)
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(description))
+        .accessibilityLabel(description)
         .frame(minWidth: minWidth, alignment: .center)
     }
 

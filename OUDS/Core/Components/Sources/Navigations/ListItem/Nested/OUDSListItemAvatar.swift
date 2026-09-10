@@ -179,9 +179,10 @@ public struct OUDSListItemAvatar: View {
     ///
     /// - Parameters:
     ///    - type: The type of content displayed inside the avatar. See ``AvatarType``.
-    ///    - size: The size of the avatar. Defaults to `.medium`.
-    /// **Note:** Ignored when embedded in a list item with small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///    - size: The size of the avatar. Defaults to `.medium`. I
+    ///    gnored when embedded in a list item with small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     ///    - badgeType: The type of an optional badge displayed at the bottom-trailing corner of the avatar.  Defaults to `nil`.
+    ///    - accessibilityLabel: Default set to empty string, label assigned to the avatar for Voice Over
     public init(type: AvatarType, size: Size, badgeType: BadgeType? = nil, accessibilityLabel: String = "") {
         self.type = type
         self.size = size
@@ -213,7 +214,7 @@ public struct OUDSListItemAvatar: View {
                 }
             }
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text(accessibilityLabel))
+            .accessibilityLabel(accessibilityLabel)
             .frame(width: frameSize, height: frameSize, alignment: .center)
             .background(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
