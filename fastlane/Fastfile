@@ -97,7 +97,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN UNIT TESTS
     # ------------------------------------------------------------
-    desc "Run the unit tests embeded in the Swift Package project"
+    desc "Run the unit tests embedded in the Swift Package project"
     lane :test_unit do
         puts "👉 Run unit tests of Swift Package"
 

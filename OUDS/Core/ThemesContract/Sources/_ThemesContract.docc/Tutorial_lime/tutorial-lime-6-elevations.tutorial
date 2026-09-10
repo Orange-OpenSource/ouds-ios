@@ -12,7 +12,7 @@
     @Section(title: "Overriding elevation tokens") {
 
         @ContentAndMedia {
-            Elevation tokens are defined in `OrangeThemeElevationSemanticTokensProvider`. We will override `emphasized` to create a mmuch lighter shadow effect.
+            Elevation tokens are defined in `OrangeThemeElevationSemanticTokensProvider`. We will override `emphasized` to create a much lighter shadow effect.
         }
 
         @Steps {

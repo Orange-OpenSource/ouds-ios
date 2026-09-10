@@ -13,7 +13,7 @@
         @ContentAndMedia {
             OUDS must be used in SwiftUI projects.
             
-            We suppose you already have an app or a freshly created new one, with OUDS Swift Package integrated and the librairies added to the target.
+            We suppose you already have an app or a freshly created new one, with OUDS Swift Package integrated and the libraries added to the target.
             We supposed also you have Xcode 26.4 at least, and for example an iPhone 17 Pro Max simulator.
             Source code and tokens here are the ones of version 0.20.0 ; things can change in the future.
         }
@@ -28,7 +28,7 @@
             }
          
             @Step {
-                Import the needed librairies in your file (we suppose here *OUDSSwiftUI* during all the tutorial).
+                Import the needed libraries in your file (we suppose here *OUDSSwiftUI* during all the tutorial).
                 Instanciate a new object of type `OrangeTheme`.
                 In your app root view, add the `OUDSThemeableView` and give it the new theme object.
                 

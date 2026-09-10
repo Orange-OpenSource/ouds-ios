@@ -37,7 +37,7 @@ struct OUDS_Lime_TutorialApp: App {
 
 // MARK: - Content View
 
-/// Defines a formular with several OUDS components and tokens
+/// Defines a form with several OUDS components and tokens
 struct ContentView: View {
 
     @State var selectedGender: Genders = .male

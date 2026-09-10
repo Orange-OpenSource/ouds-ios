@@ -7,13 +7,13 @@
         @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }
 
-    @Chapter(name: "Import of the Swift Package and choose its librairies") {
-        In this chapter you will learn how to import the OUDS iOS Swift Package and which librairies it provides
+    @Chapter(name: "Import of the Swift Package and choose its libraries") {
+        In this chapter you will learn how to import the OUDS iOS Swift Package and which libraries it provides
         you should choose for your needs.
         
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
         
-        @TutorialReference(tutorial: "doc:tutorial-lime-1-package-and-librairies")
+        @TutorialReference(tutorial: "doc:tutorial-lime-1-package-and-libraries")
     }
     
     @Chapter(name: "Introduction") {
@@ -65,7 +65,7 @@
     }
 
     @Chapter(name: "Fonts") {
-        In this chapter you will learn how to override font tokens and apply your own font thorugh the theme.
+        In this chapter you will learn how to override font tokens and apply your own font through the theme.
 
         @Image(source: "ic_component_intro", alt: "Logo of OUDS")
 

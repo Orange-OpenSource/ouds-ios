@@ -1,7 +1,7 @@
 @Tutorial(time: 15, projectFiles: "OUDS-Lime-Tutorial.zip") {
     @Intro(title: "Tunings") {
-        Tuning allows to define the values for the flexiblity points allowed by the Orange Group brand.
-        It permits to define wheter or not some components family can have rounded corners for example.
+        Tuning allows to define the values for the flexibility points allowed by the Orange Group brand.
+        It permits to define whether or not some components family can have rounded corners for example.
 
         @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
     }
@@ -36,7 +36,7 @@
                 Customizations of component-specific properties like border radius
                 
                 @Justification(reaction: "Correct!") {
-                    It matches the allwoed flexibility points alwoed by Orange Group brand department
+                    It matches the allowed flexibility points allowed by Orange Group brand department
                 }
             }
 

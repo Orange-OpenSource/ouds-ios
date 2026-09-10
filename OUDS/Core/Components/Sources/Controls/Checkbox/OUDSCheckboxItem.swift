@@ -36,7 +36,7 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSCheckboxItem`` can be related to an error situation, for example troubles for a formular.
+/// An ``OUDSCheckboxItem`` can be related to an error situation, for example troubles for a form.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
 /// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
 ///

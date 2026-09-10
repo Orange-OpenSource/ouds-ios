@@ -1,6 +1,6 @@
 @Tutorial(time: 10, projectFiles: "OUDS-Lime-Tutorial.zip") {
     @Intro(title: "Borders") {
-        Borders can be defined with line width, style and also radius for corners. In this chapter, we will override some border semantic tokens to create customize components.
+        Borders can be defined with line width, style, and corner radius. In this chapter, we will override some border semantic tokens to customize components.
 
         We will use change the rafius to give components a softer, more modern look, a dashed style for borders with bigger line width.
 

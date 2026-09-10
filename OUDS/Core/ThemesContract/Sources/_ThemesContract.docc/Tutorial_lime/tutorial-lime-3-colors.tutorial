@@ -18,7 +18,7 @@
             - `contentBrandPrimary`: Primary brand color for text
             - `actionEnabled`: Color for enabled actions
             - `bgTertiary`: Background color for containers
-            - `bordeBrandPrimary`: Can be used for dividers in some case
+            - `borderBrandPrimary`: Can be used for dividers in some case
         }
 
         @Steps {

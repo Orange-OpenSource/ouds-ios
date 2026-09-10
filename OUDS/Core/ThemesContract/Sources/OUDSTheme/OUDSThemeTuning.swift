@@ -20,7 +20,7 @@ public typealias Tuning = OUDSThemeTuning
 
 // MARK: - OUDS Theme Tuning
 
-/// To ease flexiblity of themes and enhance their adoption some parts of the theme can be tuned.
+/// To ease flexibility of themes and enhance their adoption some parts of the theme can be tuned.
 /// This allows for example to have a theme defined by the Brand but to apply some customization.
 ///
 /// - Since: 0.19.0

@@ -102,7 +102,7 @@ OUDSCheckboxItem("We live in a fabled world",
     }
 }
 
-Checkboxes can be embeded in a checkbox picker (`OUDSCheckboxPicker`) so as to let the users to select one or more items within several.
+Checkboxes can be embedded in a checkbox picker (`OUDSCheckboxPicker`) so as to let the users to select one or more items within several.
 
 ```swift
 // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
@@ -236,7 +236,7 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
     }
 }
 
-Radio items can be embeded in a radio picker so as to let the users to select only one item within several (`OUDSRadioPicker`).
+Radio items can be embedded in a radio picker so as to let the users to select only one item within several (`OUDSRadioPicker`).
 
 ```swift
 // Define the elements to display in radio buttons using OUDSRadioPickerData.

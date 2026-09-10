@@ -15,7 +15,7 @@ import OUDSFoundations
 
 extension OUDSVersions {
 
-    /// Displays in standard output an information message about the tokens librairies versions in use
+    /// Displays in standard output an information message about the tokens libraries versions in use
     static func logTokensLibrairiesVersions() {
         var versionsLog = "OUDS iOS Libraries Versions:\n"
         versionsLog += "- Core OUDS: \(Self.themeCoreVersion)\n"

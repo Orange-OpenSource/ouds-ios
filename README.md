@@ -103,11 +103,11 @@ https://github.com/Orange-OpenSource/ouds-ios
 
 You can choose the _dependency rule_ you want. Keep in mind OUDS iOS releases are frozen and are based on semantic versioning.
 
-### Add the librairies
+### Add the libraries
 
-In your Xcode _targets_, add the librairies you need. Everything is splitted so as to let users choose the content to embed they want.
+In your Xcode _targets_, add the libraries you need. Everything is splitted so as to let users choose the content to embed they want.
 The `OUDSSwiftUI` library embeds everything, but you may prefer instead tailor your imports.
-You can get the [detailed list of available librairies in the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
+You can get the [detailed list of available libraries in the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
 
 More technical details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
 
@@ -170,7 +170,7 @@ The wiki lists also [the components and their availability](https://github.com/O
 ## 🧬 Tokens libraries versions
 
 > [!TIP]
-> This Swift package embeds specific versions of themes / tokens librairies.
+> This Swift package embeds specific versions of themes / tokens libraries.
 > You can find more details in the online documentation and also in the wiki.
 
 - Core OUDS version: 1.11.0

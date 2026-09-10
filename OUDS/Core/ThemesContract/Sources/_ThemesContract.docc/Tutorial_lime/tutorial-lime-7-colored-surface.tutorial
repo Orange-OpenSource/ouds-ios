@@ -36,7 +36,7 @@
                 OUDSColoredSurface
                 
                 @Justification(reaction: "Correct!") {
-                    This componed defines a colored surface implying for some components monochrome variants.
+                    This component defines a colored surface implying for some components monochrome variants.
                 }
             }
 
@@ -44,7 +44,7 @@
                 OrangeThemeColorSemanticTokensProvider
                 
                 @Justification(reaction: "Wrong!") {
-                    This object is a tokens providers of colors, and not a component.
+                    This object is a tokens provider of colors, and not a component.
                 }
             }
         }

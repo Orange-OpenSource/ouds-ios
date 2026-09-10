@@ -1098,7 +1098,7 @@ OUDSBadgeIcon(status: .info, accessibilityLabel: "Like", size: .medium)
 
 ### Overview
 
-Tokens librairies have been updated, with some raw, semantic and components tokens removed or renamed.
+Tokens libraries have been updated, with some raw, semantic and components tokens removed or renamed.
 API for `action type` of `toolbar item` has been enriched.
 
 ### Before You Begin
@@ -1191,7 +1191,7 @@ For bar component tokens, "ActiveIndicator" is now "CurrentIndicator":
 **Required Action**:
 - Use the new names as explained above
 
-**Reason for Change**: Tokens librairies have been updated in design side
+**Reason for Change**: Tokens libraries have been updated in design side
 
 ### Removed tokens
 
@@ -1210,7 +1210,7 @@ All Sosh raw tokens have been changed.
 `colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`
 - Remove use of all raw tokens for Sosh and use new ones
 
-**Reason for Change**: Tokens librairies have been updated in design side
+**Reason for Change**: Tokens libraries have been updated in design side
 
 ### Renamed color charts tokens providers
 

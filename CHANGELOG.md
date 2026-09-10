@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
     
-- Tutorial for themes creations and tokens override (Orange-OpenSource/ouds-ios#1547)
+- Tutorial for themes creation and tokens overrides (Orange-OpenSource/ouds-ios#1547)
 - `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
@@ -227,8 +227,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
 - URL redirection for documentation (Orange-OpenSource/ouds-ios#1481)
 - Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
-- **BREAKING**: Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
-- **BREAKING**: Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
+- **BREAKING**: Update of tokens (tokens libraries v2.5.0) (Orange-OpenSource/ouds-ios#1473)
+- **BREAKING**: Update of tokens (tokens libraries v2.4.0) (Orange-OpenSource/ouds-ios#1437)
 
 ### Fixed
 
@@ -360,7 +360,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unused `status` and `size` properties of `badge` component (count and icon variants) removed (Orange-OpenSource/ouds-ios#1233)
 - Various cleanings in the documentation
 - Update constants file with versions values in comments for documentation
-- Display tokens librairies versions in themes Swift files
+- Display tokens libraries versions in themes Swift files
 - Update README with reference to AGENTS.md file
 - **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
 - **BREAKING**: Rename some multiple token objects (from plural to singular form)

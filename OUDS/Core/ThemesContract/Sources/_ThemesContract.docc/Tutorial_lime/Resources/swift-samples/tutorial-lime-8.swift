@@ -37,7 +37,7 @@ class LimeTheme: OrangeTheme, @unchecked Sendable {
     private static var fontsAlreadyRegistered = false
 
     // Register local fonts using TTF
-    // In the exemple we use Shantell Sans which is already known in the OUDS Core.
+    // In the example we use Shantell Sans which is already known in the OUDS Core.
     // If the font is not managed by OUDS you will need to save inside OUDS the
     // combinations between PostScript font identifiers and weights
     // with registerFont(postScript: String, forCombination: PostScriptFontNamesMapKey) API.
