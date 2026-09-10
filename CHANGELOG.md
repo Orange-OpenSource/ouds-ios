@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Discovery tutorial with OUDS v3.0.0-rc.1
 - Ruby Gem `fastlane` from v2.237.0 to v2.239.0
 - `Ruby` version from v4.0.5 to v4.0.6 for `build-and-test` workflow
 - Swift Package `SwiftFormat` from v0.62.1 to v0.63.0

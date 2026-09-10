@@ -48,7 +48,7 @@ struct ContentView: View {
 
             OUDSButton(text: "Create my profile",
                        appearance: .strong,
-                       style: creatingProfile ? .loading : .default)
+                       style: creatingProfile ? .loading(progress: nil) : .default)
             {
                 creatingProfile = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
