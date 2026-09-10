@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
     
 - Tutorial for themes creation and tokens overrides (Orange-OpenSource/ouds-ios#1547)
+
+- For `list item component`, add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
 - `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
