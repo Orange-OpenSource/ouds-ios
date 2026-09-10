@@ -108,6 +108,10 @@ public protocol AllIconComponentTokensProvider: TokensProvider, IconComponentTok
 public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens, ExpandLinkComponentTokens {}
 // TODO: #1001 - Check if relevant to add the expand link tokens in the same alias (i.e. same provider in the end)
 
+/// Hotfix for v2.4.0
+/// No support planned, API already updated with v3.0.0
+public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens {}
+
 /// Something which provides all component tokens of quantity input
 public protocol AllQuantityInputComponentTokensProvider: TokensProvider, QuantityInputComponentTokens {}
 

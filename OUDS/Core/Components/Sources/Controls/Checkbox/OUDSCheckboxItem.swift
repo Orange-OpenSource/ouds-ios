@@ -15,6 +15,9 @@ import OUDSFoundations
 import SwiftUI
 
 // swiftlint:disable file_length
+// swiftlint:disable function_default_parameter_at_end
+// swiftlint:disable line_length
+// swiftlint:disable type_body_length
 
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
 /// Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.

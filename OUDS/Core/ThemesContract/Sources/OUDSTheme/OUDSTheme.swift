@@ -130,6 +130,11 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
+    /// All components tokens related to list items list components like `OUDSStaticListItem` and `OUDSNavigationListItem`
+    /// Hotfix for v2.4.0
+    /// No support planned, API already updated with v3.0.0
+    public let listItem: AllListItemComponentTokensProvider
+
     /// All components tokens related to pin code input components like `OUDSPinCodeInput`
     public let pinCodeInput: AllPinCodeInputComponentTokensProvider
 
@@ -246,6 +251,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 divider: AllDividerComponentTokensProvider,
                 icon: AllIconComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
+                listItem: AllListItemComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
                 quantityInput: AllQuantityInputComponentTokensProvider,
                 radioButton: AllRadioButtonComponentTokensProvider,
@@ -289,6 +295,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.divider = divider
         self.icon = icon
         self.link = link
+        self.listItem = listItem
         self.pinCodeInput = pinCodeInput
         self.quantityInput = quantityInput
         self.radioButton = radioButton

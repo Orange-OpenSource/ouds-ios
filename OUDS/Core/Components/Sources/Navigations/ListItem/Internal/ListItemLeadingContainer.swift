@@ -37,10 +37,10 @@ struct ListItemLeadingContainer: View {
                 image
             case let .flag(flag):
                 flag
-                    .accessibilityHidden(true)
             case let .avatar(avatar):
                 avatar
-                    .accessibilityHidden(true)
+            case let .slot(view):
+                view
             }
         }
         .disabled(interactionState == .disabled)

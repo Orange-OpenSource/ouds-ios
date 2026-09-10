@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tokens and tokens providers dedicated to `list item` component
 - `list item` component (Orange-OpenSource/ouds-ios#265)
 
+### Fixed
+
+- For `list item` components, add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
+
 ## [2.3.1](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...2.3.1) - 2026-09-24
 
 ### Changed

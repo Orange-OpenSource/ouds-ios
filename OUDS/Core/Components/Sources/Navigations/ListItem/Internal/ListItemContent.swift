@@ -40,6 +40,7 @@ struct ListItemContent<Slot: View>: View {
                 if indicatorType == .previous {
                     ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                 }
+                .accessibilityElement(children: .combine)
 
                 if let leading {
                     leadingContainer(leading)
@@ -55,6 +56,7 @@ struct ListItemContent<Slot: View>: View {
                     ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                 }
             }
+            .accessibilityElement(children: .combine)
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
             .padding(.horizontal, theme.listItem.spacePaddingInline)
@@ -66,6 +68,7 @@ struct ListItemContent<Slot: View>: View {
                 ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)
             }
         }
+        .accessibilityElement(children: .combine)
         .frame(minWidth: theme.listItem.sizeMinWidth)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
     }

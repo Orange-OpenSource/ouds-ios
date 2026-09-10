@@ -49,7 +49,7 @@ import SwiftUI
 ///     // Leading with a country flag
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "France"),
-///         leading: .flag(.init(asset: Image("il_flag_fr"), size: .medium))
+///         leading: .flag(.init(asset: Image("il_flag_fr"), description: "France"))
 ///     )
 ///
 ///     // Leading with an avatar

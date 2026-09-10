@@ -212,6 +212,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          divider: AllDividerComponentTokensProvider? = nil,
                          icon: AllIconComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
+                         listItem: AllListItemComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
                          quantityInput: AllQuantityInputComponentTokensProvider? = nil,
                          radioButton: AllRadioButtonComponentTokensProvider? = nil,
@@ -253,6 +254,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
@@ -288,6 +290,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
