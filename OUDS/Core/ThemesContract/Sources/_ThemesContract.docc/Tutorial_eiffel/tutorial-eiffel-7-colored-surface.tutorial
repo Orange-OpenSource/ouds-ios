@@ -1,0 +1,60 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Eiffel-Tutorial.zip") {
+    @Intro(title: "Colored Surface") {
+        Color mode tokens control the colors used in colored surface components. In this chapter, we will override color mode tokens to customize the OUDSColoredSurface component.
+
+        We will change the background color of the colored surface to match the Eiffel theme.
+
+        @Image(source: "ic_colored_surface", alt: "OUDS colored surface logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding color mode tokens") {
+
+        @ContentAndMedia {
+            Color mode tokens are defined in `OrangeThemeColorModeSemanticTokensProvider`. We will override `onStatusInfoEmphasized` to change the colored surface background.
+
+            The Eiffel theme uses a light green background for the colored surface.
+        }
+
+        @Steps {
+            @Step {
+                Start with the theme from the elevations chapter.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-7-1.swift") {
+                    @Image(source: "tutorial-eiffel-7-1.png", alt: "App before color mode overrides")
+                }
+            }
+
+            @Step {
+                Now let's add the color mode provider with colored surface overrides.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-7-2.swift") {
+                    @Image(source: "tutorial-eiffel-7-2.png", alt: "App with Eiffel colored surface")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which component uses color mode tokens for its background color?
+
+            @Choice(isCorrect: true) {
+                OUDSColoredSurface
+                
+                @Justification(reaction: "Correct!") {
+                    This componed defines a colored surface implying for some components monochrome variants.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                OrangeThemeColorSemanticTokensProvider
+                
+                @Justification(reaction: "Wrong!") {
+                    This object is a tokens providers of colors, and not a component.
+                }
+            }
+        }
+    }
+}

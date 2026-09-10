@@ -257,4 +257,3 @@ All components the OUDS library provides are based on themes, handle through the
 In few words, if you want to change the look and feel for the OUDS components you use, you will have to override the matching *semantic tokens* or *component tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
 
 You are also able to define your *components tokens* and your *semantic tokens* used by them.
-

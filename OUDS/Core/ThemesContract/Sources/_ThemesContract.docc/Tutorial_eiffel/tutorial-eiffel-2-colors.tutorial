@@ -1,0 +1,69 @@
+@Tutorial(time: 15, projectFiles: "OUDS-Eiffel-Tutorial.zip") {
+    @Intro(title: "Colors") {
+        Colors are the foundation of any theme. In this chapter, we'll override color tokens to create the Eiffel green theme.
+
+        We'll override semantic color tokens like `contentBrandPrimary`, `actionEnabled`, and `bgTertiary`, as well as component-specific color tokens for Tags.
+
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding color tokens") {
+
+        @ContentAndMedia {
+            OUDS provides semantic color tokens that can be overridden. We will create a custom color provider by subclassing `OrangeThemeColorSemanticTokensProvider`.
+
+            Key tokens to override:
+            - `contentBrandPrimary`: Primary brand color for text
+            - `actionEnabled`: Color for enabled actions
+            - `bgTertiary`: Background color for containers
+
+            For Tags, we will override component tokens from `OrangeThemeCategoricalTagComponentTokensProvider`.
+        }
+
+        @Steps {
+            @Step {
+                Start with the EiffelTheme from the previous chapter. We need to add color overrides.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-2-1.swift") {
+                    @Image(source: "tutorial-eiffel-2-1.png", alt: "App before color overrides")
+                }
+            }
+
+            @Step {
+                Now let's create the color providers. We'll override:
+                - `EiffelThemeColorProvider` for semantic colors (using Malachite green)
+                - `EiffelThemeCategoricalTagComponentTokensProvider` for Tag colors
+
+                The Eiffel theme uses: Malachite green (#00A651) as the primary brand color, Gray for backgrounds and Yellow (Sun) for accent tags.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-2-2.swift") {
+                    @Image(source: "tutorial-eiffel-2-2.png", alt: "App with Eiffel colors")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which provider do you need to override to change the brand primary color?
+
+            @Choice(isCorrect: true) {
+                OrangeThemeColorSemanticTokensProvider
+                
+                @Justification(reaction: "Correct!") {
+                    Color semantic tokens are declared in `ColorSemanticTokens` protocol and defined in `OrangeThemeColorSemanticTokensProvider`
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                OrangeThemeCategoricalTagComponentTokensProvider
+                
+                @Justification(reaction: "Nope!") {
+                    Be aware about the tokens provider: some are for components, other for semantic tokens.
+                }
+            }
+        }
+    }
+}

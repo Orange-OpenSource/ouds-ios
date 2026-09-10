@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Tutorial for themes creations and tokens override (Orange-OpenSource/ouds-ios#1547)
 - `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)

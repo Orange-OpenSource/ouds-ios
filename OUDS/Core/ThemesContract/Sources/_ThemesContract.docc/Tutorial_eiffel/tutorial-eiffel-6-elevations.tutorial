@@ -1,0 +1,60 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Eiffel-Tutorial.zip") {
+    @Intro(title: "Elevations") {
+        Elevation tokens control shadows and depth. In this chapter, we will override elevation tokens to customize the shadow appearance.
+
+        We will use a stronger shadow for the emphasized elevation.
+
+        @Image(source: "ic_elevations", alt: "OUDS elevations logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding elevation tokens") {
+
+        @ContentAndMedia {
+            Elevation tokens are defined in `OrangeThemeElevationSemanticTokensProvider`. We will override `emphasized` to create a stronger shadow effect.
+
+            The Eiffel theme uses a more pronounced shadow (bottom_4_600) for emphasis.
+        }
+
+        @Steps {
+            @Step {
+                Start with the theme from the borders chapter.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-6-1.swift") {
+                    @Image(source: "tutorial-eiffel-6-1.png", alt: "App before elevation overrides")
+                }
+            }
+
+            @Step {
+                Now let's add the elevation provider with shadow overrides.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-6-2.swift") {
+                    @Image(source: "tutorial-eiffel-6-2.png", alt: "App with Eiffel elevations")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which provider contains elevation tokens like emphasized?
+
+            @Choice(isCorrect: true) {
+                OrangeThemeElevationSemanticTokensProvider
+                
+                @Justification(reaction: "Correct!") {
+                    Elevations are related to... shadows
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                OrangeThemeBorderSemanticTokensProvider
+                
+                @Justification(reaction: "Wrong!") {
+                    Borders are for... borders.
+                }
+            }
+        }
+    }
+}

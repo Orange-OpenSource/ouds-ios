@@ -1,0 +1,73 @@
+@Tutorials(name: "Orange Unified Design System") {
+    @Intro(title: "Create your own theme with OUDS iOS Swift Package") {
+        Learn how to create a custom OUDS theme by overriding tokens from the Orange theme.
+        In this tutorial, you will build the Eiffel fake theme with green, black, gray, and yellow colors.
+        You'll discover how to customize colors, radius, spacings, borders, elevations, colored surfaces, and fonts.
+
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @Chapter(name: "Introduction") {
+        In this chapter you will discover the starting point of our tutorial: a complete app using the default Orange theme.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-1-intro")
+    }
+
+    @Chapter(name: "Colors") {
+        In this chapter you will learn how to override color tokens to create the Eiffel green theme.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-2-colors")
+    }
+
+    @Chapter(name: "Radius") {
+        In this chapter you will learn how to override border radius tokens to create rounded components.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-3-radius")
+    }
+
+    @Chapter(name: "Spacings") {
+        In this chapter you will learn how to override spacing tokens to customize margins and paddings.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-4-spacings")
+    }
+
+    @Chapter(name: "Borders") {
+        In this chapter you will learn how to override border tokens to customize styles and widths.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-5-borders")
+    }
+
+    @Chapter(name: "Elevations") {
+        In this chapter you will learn how to override elevation tokens to customize shadows.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-6-elevations")
+    }
+
+    @Chapter(name: "Colored Surface") {
+        In this chapter you will learn how to override color mode tokens to customize the colored surface component.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-7-colored-surface")
+    }
+
+    @Chapter(name: "Fonts") {
+        In this chapter you will learn how to override font tokens and apply tunings to components.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+
+        @TutorialReference(tutorial: "doc:tutorial-eiffel-8-fonts")
+    }
+}

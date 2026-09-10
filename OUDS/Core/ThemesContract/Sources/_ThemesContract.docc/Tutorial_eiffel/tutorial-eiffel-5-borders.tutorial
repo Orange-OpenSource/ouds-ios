@@ -1,0 +1,62 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Eiffel-Tutorial.zip") {
+    @Intro(title: "Borders") {
+        Border tokens control border styles, widths, and colors. In this chapter, we will override border tokens to customize the appearance of bordered components.
+
+        We'll change the default style to dashed and increase the width.
+
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding border tokens") {
+
+        @ContentAndMedia {
+            Border tokens are defined in `OrangeThemeBorderSemanticTokensProvider`. We wwill override:
+            - `styleDefault`: Change from solid to dashed
+            - `widthThin`: Increase border width
+
+            The Eiffel theme uses a dashed style for a distinctive look.
+        }
+
+        @Steps {
+            @Step {
+                Start with the theme from the spacings chapter.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-5-1.swift") {
+                    @Image(source: "tutorial-eiffel-5-1.png", alt: "App before border overrides")
+                }
+            }
+
+            @Step {
+                Now let's add border style and width overrides to the border provider.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-eiffel-5-2.swift") {
+                    @Image(source: "tutorial-eiffel-5-2.png", alt: "App with Eiffel borders")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which token controls whether borders are solid or dashed?
+
+            @Choice(isCorrect: true) {
+                styleDefault
+                
+                @Justification(reaction: "Correct!") {
+                    Tokens should have clear and useful names.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                widthThin
+                
+                @Justification(reaction: "Wrong!") {
+                    Tokens should have clear and useful names.
+                }
+            }
+        }
+    }
+}
