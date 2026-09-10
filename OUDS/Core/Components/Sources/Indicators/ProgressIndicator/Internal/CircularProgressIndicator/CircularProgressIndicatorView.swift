@@ -49,7 +49,7 @@ struct CircularProgressIndicatorView: View {
                         trackColor: trackColor,
                         strokeCap: strokeCap,
                         gapSize: configuration.gapSize,
-                        size: configuration.size)
+                        size: scaledDefaultSize)
                 } else {
                     CircularProgressIndicatorIndeterminateView(
                         foregroundColor: foregroundColor,
@@ -59,7 +59,7 @@ struct CircularProgressIndicatorView: View {
                         size: scaledDefaultSize)
                 }
             }
-            .frame(maxWidth: scaledDefaultSize, maxHeight: scaledDefaultSize)
+            .frame(width: scaledDefaultSize, height: scaledDefaultSize)
 
             HelperTextView(configuration: configuration)
         }
