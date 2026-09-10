@@ -1,0 +1,67 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Introduction") {
+        Welcome to the Lime theme tutorial! In this tutorial, you will learn how to create a custom OUDS theme by overriding tokens from the Orange theme.
+
+        The Lime theme is a fake theme with its own values for colors, borders, shadows and fonts for example.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Starting point") {
+
+        @ContentAndMedia {
+            We start with a complete app using the default Orange theme. This app contains various OUDS components that we will customize throughout the tutorial:
+
+            - OUDSTag
+            - OUDSRadioPicker
+            - OUDSTextInput
+            - OUDSChipPicker
+            - OUDSHorizontalDivider
+            - OUDSCheckboxItem
+            - OUDSColoredSurface
+            - OUDSLink
+            - OUDSButton
+            - OUDSSwitchItem
+        }
+
+        @Steps {
+            @Step {
+                Let's start by seeing the app with the default Orange theme.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-lime-2-1.swift") {
+                    @Image(source: "tutorial-lime-2.png", alt: "App with default Orange theme")
+                }
+            }
+
+            @Step {
+                Now let's create the LimeTheme class by subclassing OrangeTheme.
+                
+                @Code(name: "Tokens.swift", file: "tutorial-lime-2-2.swift") { }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            What is the recommended strategy to create a custom OUDS theme?
+
+            @Choice(isCorrect: true) {
+                Subclass OrangeTheme
+                
+                @Justification(reaction: "Correct!") {
+                    Maybe the most simple solution.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                Create a theme from scratch on OUDSTheme
+                
+                @Justification(reaction: "... OK correct also.") {
+                    Not the better choice as it can imply more work.
+                }
+            }
+        }
+    }
+}

@@ -108,18 +108,18 @@ import SwiftUI
 ///
 /// ## Mandatory field indication
 ///
-/// If all fields are mandatory (several fields present): display the message “All fields are mandatory” at the top of your formular.
+/// If all fields are mandatory (several fields present): display the message “All fields are mandatory” at the top of your form.
 /// Do not use an asterisk at the end of each field label, nor the word “mandatory.”
 ///
-/// If not all fields are mandatory (several fields present): display the message “All fields marked with an \* are mandatory” at the top of your formular.
+/// If not all fields are mandatory (several fields present): display the message “All fields marked with an \* are mandatory” at the top of your form.
 /// Use an asterisk (\*) at the end of each mandatory field label, and ensures this is well vocalized.
 ///
 /// UI rendering of the asterisk must be done with *bold font weight* and *negative content color* (red on light backgrounds).
 ///
 /// Use the mention “(optional)” at the end of each optional field label. Note that this rule is not systematic, it remains an option, to be used if needed.
 ///
-/// If there is only one field in the formular, or if the mandatory nature is obvious (such as login/password),
-/// no mention is necessary since the fields are essential to the formular's functionality.
+/// If there is only one field in the form, or if the mandatory nature is obvious (such as login/password),
+/// no mention is necessary since the fields are essential to the form's functionality.
 ///
 /// ## Rich text
 ///

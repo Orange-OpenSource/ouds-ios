@@ -178,7 +178,7 @@ public final class OUDSAsyncImageCache: @unchecked Sendable {
         }
     }
 
-    /// If total used size exceeds the maw disk size allwoed, removes older files from disk
+    /// If total used size exceeds the maw disk size allowed, removes older files from disk
     private func cleanupDiskCacheIfNeeded() {
         guard let files = try? fileManager.contentsOfDirectory(at: diskCacheURL,
                                                                includingPropertiesForKeys: [.fileSizeKey, .contentModificationDateKey])

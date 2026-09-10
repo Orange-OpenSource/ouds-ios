@@ -25,7 +25,7 @@ import OUDSTokensSemantic
 /// # Usages
 ///
 /// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions for example.
-/// The system font families are used; no *Helevetica* font family is embeded nor providd  by OUDS.
+/// The system font families are used; no *Helevetica* font family is embedded nor providd  by OUDS.
 /// This theme also provides colors charts tokens.
 ///
 /// The theme can be got through environment variable:

@@ -1,0 +1,52 @@
+@Tutorial(time: 15, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Tunings") {
+        Tuning allows to define the values for the flexibility points allowed by the Orange Group brand.
+        It permits to define whether or not some components family can have rounded corners for example.
+
+        @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Defining tuning for local theme") {
+
+        @ContentAndMedia {
+            Depending to the theme, some components can have rounded corners like buttons, text inputs, alert messages,
+            progress indicators and list items.
+
+            Tunings permit to have smoother UI.
+        }
+
+        @Steps {
+            @Step {
+                Finally, let's add tunings to components. We want anything rounded as possible.
+
+                @Code(name: "Tokens.swift", file: "tutorial-lime-9.swift", previousFile: "tutorial-lime-8.swift") {
+                    @Image(source: "tutorial-lime-9.png", alt: "App with Lime theme and its own tuning")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            What are tunings in OUDS?
+
+            @Choice(isCorrect: true) {
+                Customizations of component-specific properties like border radius
+                
+                @Justification(reaction: "Correct!") {
+                    It matches the allowed flexibility points allowed by Orange Group brand department
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                Overrides of semantic tokens to make them shiny and funky
+                
+                @Justification(reaction: "Wrong!") {
+                    Good try but no.
+                }
+            }
+        }
+    }
+}

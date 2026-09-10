@@ -1,7 +1,7 @@
 @Tutorial(time: 10, projectFiles: "OUDS-Discovery-Tutorial.zip") {
     @Intro(title: "Swift Package integration") {
-        OUDS iOS is exposed through an open source Swift Package hosted on GitHub, and provides several librairies for your needs.
-        These librairies help to split products and make users able to select only what they need.
+        OUDS iOS is exposed through an open source Swift Package hosted on GitHub, and provides several libraries for your needs.
+        These libraries help to split products and make users able to select only what they need.
         SwiftUI is the only official supported framework for Apple platforms.
         
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
@@ -13,7 +13,7 @@
         
         @ContentAndMedia {
             OUDS for iOS is an open source Swift Package available on GitHub under MIT license.
-            The package and the librairies must be added through Xcode.
+            The package and the libraries must be added through Xcode.
         }
     
         @Steps {
@@ -29,23 +29,23 @@
             }
             
             @Step {
-                Once you downloaded the package, you will see several librairies are available. 
-                They can be embeded inside your **target** librairies.
-                Things are separated to let users integrate only what they need and embed the abre minimum of content.
+                Once you downloaded the package, you will see several libraries are available. 
+                They can be embedded inside your **target** libraries.
+                Things are separated to let users integrate only what they need and embed the bare minimum of content.
                 The *OUDSThemesContract* library provides the main elements like the `OUDSThemeableView`. The theme contract is defined inside it.
                 *OUDSThemesOrange* provides the theme implementation for the Orange products, and contains also assets and all tokens for this theme.
                 *OUDSThemesSosh* provides the theme implementation for the Sosh products, and contains also assets and all tokens for this theme.
                 *OUDSThemesWireframe* provides the theme implementation for the Wireframe theme, which is a theme dedicated to mockups and prototypes.
                 *OUDSThemesOrangeCompact* provides the theme implementation for the Orange products but with constraints of sizes and spaces.
                 *OUDSComponents* contains the SwiftUI OUDS components defined with the Figma specifications, and also useful view modifers.
-                *OUDSTokensRaw*, *OUDSTokensSemantic* and *OUDSTokensComponents* are librairies defining and providing the tokens for low level (raw), 
+                *OUDSTokensRaw*, *OUDSTokensSemantic* and *OUDSTokensComponents* are libraries defining and providing the tokens for low level (raw), 
                 middle level (semantic) or component levels (high level).
                 *OUDSModules* is for modules or rich components with extra logic.
                 *OUDSFoundations* is dedicated to some utilities and shared logic.
                                 
                 Add for example only the umbrella product merging all products mentioned above: *OUDSSwiftUI*
                 
-                @Image(source: "tutorial-discovery-1-ouds-libraries.png", alt: "Embed librairies inside target")
+                @Image(source: "tutorial-discovery-1-ouds-libraries.png", alt: "Embed libraries inside target")
             }
         }
     }

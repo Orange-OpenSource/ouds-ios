@@ -11,7 +11,7 @@
     @Section(title: "Add basic components") {
         
         @ContentAndMedia {
-            We will work on a kind of formular using main OUDS components.
+            We will work on a kind of form using main OUDS components.
             Feel free to style and design things as you want.
         }
         

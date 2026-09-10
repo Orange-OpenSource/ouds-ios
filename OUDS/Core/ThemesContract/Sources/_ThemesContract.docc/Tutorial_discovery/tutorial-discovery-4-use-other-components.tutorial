@@ -21,7 +21,7 @@
                 Add three tags thanks to `OUDSTag` object.
                 
                 @Code(name: "Content.swift", file: "tutorial-discovery-4-1.swift", previousFile: "tutorial-discovery-3-7.swift") {
-                    @Image(source: "tutorial-discovery-4-1.png", alt: "Tags in top of formular")
+                    @Image(source: "tutorial-discovery-4-1.png", alt: "Tags in top of form")
                 }
             }
             
@@ -39,14 +39,14 @@
             }
         
             @Step {
-                Formulars without input text are not formulars. OUDS provide an `OUDSTextInput` to let use write some text.
+                Formulars without input text are not forms. OUDS provide an `OUDSTextInput` to let use write some text.
                 This component is very rich: preffix and suffix can be defined, and also helper text and links. An icon can be added and a trailing action.
                 
                 Add two text inputs: one to get the user name with a delete action, and one for an email address.
                 Their values are exposed through `Binding` of `String`.
 
                 @Code(name: "Content.swift", file: "tutorial-discovery-4-3.swift") {
-                    @Image(source: "tutorial-discovery-4-3.png", alt: "Texts inputs are very rich and available in lot of apps and formulars")
+                    @Image(source: "tutorial-discovery-4-3.png", alt: "Texts inputs are very rich and available in lot of apps and forms")
                 }
             }
             
