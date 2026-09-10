@@ -24,18 +24,18 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Country flag with medium size (default)
-///     OUDSListItemFlag(asset: "il_flag_fr", description: "France")
+///     OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"), description: "France")
 ///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Information"),
-///         leading: .flag(.init(asset: "il_flag_fr", description: "France"))
+///         leading: .flag(.init(asset: Image(decorative: "il_flag_fr"), description: "France"))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .flag(.init(asset: "il_flag_fr", description: "France"))
+///         trailing: .flag(.init(asset: Image(decorative: "il_flag_fr"), description: "France"))
 ///     )
 /// ```
 ///

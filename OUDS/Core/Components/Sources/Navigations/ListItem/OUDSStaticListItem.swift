@@ -86,7 +86,7 @@ import SwiftUI
 ///  - `.image(OUDSListItemImage)`: A static image asset
 ///  - `.flag(OUDSListItemFlag)`: A country flag image
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
-///  - `.custom { ... }`: Any custom SwiftUI view
+///  - `.slot { ... }`: Any custom SwiftUI view
 ///
 /// ## Trailing elements
 ///
@@ -102,7 +102,7 @@ import SwiftUI
 /// - `.image(OUDSListItemImage)`:  A static image asset
 /// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
-/// - `.custom { ... }`: Any custom SwiftUI view
+/// - `.slot { ... }`: Any custom SwiftUI view
 ///
 /// ## View modifiers
 ///

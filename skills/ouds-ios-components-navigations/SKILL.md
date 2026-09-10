@@ -392,5 +392,5 @@ OUDSListItemImage(
 
 // Flag
 OUDSListItemFlag(asset: Image("flag_fr"), description: "France")
-OUDSListItemFlag(asset: Image("flag_us"), description: "France")
+OUDSListItemFlag(asset: Image("flag_us"), description: "USA")
 ```
