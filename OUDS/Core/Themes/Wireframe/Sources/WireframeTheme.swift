@@ -147,8 +147,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    resourcesBundle: Bundle.WireframeTheme,
                    name: Self.name,
                    fontFamily: WireframeBrandFontRawTokens.familyDefault,
-                   tuning: Tuning.Wireframe,
-                   hasTypographyHeadingLargeMarker: true)
+                   tuning: Tuning.Wireframe)
 
         registerFonts()
     }

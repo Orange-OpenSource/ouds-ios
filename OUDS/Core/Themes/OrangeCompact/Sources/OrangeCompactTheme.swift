@@ -214,8 +214,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    resourcesBundle: Bundle.OrangeCompactTheme,
                    name: Self.name,
                    fontFamily: fontFamily,
-                   tuning: tuning,
-                   hasTypographyHeadingLargeMarker: true)
+                   tuning: tuning)
     }
 
     deinit {}

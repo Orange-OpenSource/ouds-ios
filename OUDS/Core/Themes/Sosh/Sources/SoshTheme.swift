@@ -151,8 +151,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    resourcesBundle: Bundle.SoshTheme,
                    name: Self.name,
                    fontFamily: SoshBrandFontRawTokens.familyDefault,
-                   tuning: Tuning.Sosh,
-                   hasTypographyHeadingLargeMarker: false)
+                   tuning: Tuning.Sosh)
 
         registerFonts()
     }

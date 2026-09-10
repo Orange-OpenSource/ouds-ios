@@ -242,14 +242,14 @@ public struct OUDSHeading: View {
 
     /// Whether the marker should actually be drawn, taking into account size and theme support.
     private var mustDisplayMarker: Bool {
-        hasMarker && size == .large && theme.hasTypographyHeadingLargeMarker
+        hasMarker && size == .large && theme.typography.headingLargeMarker
     }
 
     /// Emits warnings when the parameters are used outside their supported combinations.
     private func logMisuseWarningsIfNeeded() {
         if hasMarker, size != .large {
             OL.warning("The 'hasMarker' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
-        } else if hasMarker, size == .large, !theme.hasTypographyHeadingLargeMarker {
+        } else if hasMarker, size == .large, !theme.typography.headingLargeMarker {
             OL.warning("The current theme does not support a large heading marker. The 'hasMarker' parameter is ignored.")
         }
         if coloredText != nil, size != .large {
