@@ -55,11 +55,13 @@ struct ListItemContent: View {
                         ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                     }
                 }
+                .accessibilityElement(children: .combine)
 
                 if let bottomSlot = data.bottomSlot, itemSize != .small {
                     bottomSlot.view
                 }
             }
+            .accessibilityElement(children: .combine)
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
             .padding(.horizontal, theme.listItem.spacePaddingInline)
@@ -71,6 +73,7 @@ struct ListItemContent: View {
                 ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)
             }
         }
+        .accessibilityElement(children: .combine)
         .frame(minWidth: theme.listItem.sizeMinWidth)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
     }

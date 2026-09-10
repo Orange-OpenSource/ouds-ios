@@ -198,7 +198,7 @@ OUDSStaticListItem(
 // With avatar + tag
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Profile"),
-    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium, accessibilityLabel: "")),
     trailing: .tag(OUDSTag(label: "New", size: .small))
 )
 
@@ -211,7 +211,7 @@ OUDSStaticListItem(
 // With flag
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Country"),
-    leading: .flag(OUDSListItemFlag(asset: Image("flag_fr"), size: .medium))
+    leading: .flag(OUDSListItemFlag(asset: Image("flag_fr"), description: "France"))
 )
 
 // With slot (view under texts, before helper text)
@@ -391,6 +391,6 @@ OUDSListItemImage(
 )
 
 // Flag
-OUDSListItemFlag(asset: Image("flag_fr"), size: .medium)
-OUDSListItemFlag(asset: Image("flag_us"), size: .large)
+OUDSListItemFlag(asset: Image("flag_fr"), description: "France")
+OUDSListItemFlag(asset: Image("flag_us"), description: "France")
 ```

@@ -83,8 +83,8 @@ import SwiftUI
 ///
 ///  The leading position (before the texts) accepts one optional element via ``OUDSListItemLeading``:
 ///  - `.icon(OUDSListItemIcon)`: A status or custom icon (neutral, info, warning, negative, positive)
-///  - `.image(asset:)`: A static image asset
-///  - `.flag(asset:)`: A country flag image
+///  - `.image(OUDSListItemImage)`: A static image asset
+///  - `.flag(OUDSListItemFlag)`: A country flag image
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///  - `.custom { ... }`: Any custom SwiftUI view
 ///

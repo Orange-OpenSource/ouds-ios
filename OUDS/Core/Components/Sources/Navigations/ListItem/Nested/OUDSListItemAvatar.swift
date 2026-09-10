@@ -157,6 +157,7 @@ public struct OUDSListItemAvatar: View {
     let type: AvatarType
     let size: Size
     let badgeType: BadgeType?
+    let accessibilityLabel: String
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -181,10 +182,11 @@ public struct OUDSListItemAvatar: View {
     ///    - size: The size of the avatar. Defaults to `.medium`.
     /// **Note:** Ignored when embedded in a list item with small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     ///    - badgeType: The type of an optional badge displayed at the bottom-trailing corner of the avatar.  Defaults to `nil`.
-    public init(type: AvatarType, size: Size, badgeType: BadgeType? = nil) {
+    public init(type: AvatarType, size: Size, badgeType: BadgeType? = nil, accessibilityLabel: String = "") {
         self.type = type
         self.size = size
         self.badgeType = badgeType
+        self.accessibilityLabel = accessibilityLabel
     }
 
     // MARK: Body
@@ -210,6 +212,8 @@ public struct OUDSListItemAvatar: View {
                         .foregroundStyle(foregroundColor)
                 }
             }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text(accessibilityLabel))
             .frame(width: frameSize, height: frameSize, alignment: .center)
             .background(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
@@ -218,6 +222,7 @@ public struct OUDSListItemAvatar: View {
                 badge(from: badgeType)
             }
         }
+        .accessibilityElement(children: .combine)
     }
 
     // MARK: Size helpers

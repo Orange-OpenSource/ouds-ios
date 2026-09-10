@@ -24,18 +24,18 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Country flag with medium size (default)
-///     OUDSListItemFlag(asset: "il_flag_fr")
+///     OUDSListItemFlag(asset: "il_flag_fr", description: "France")
 ///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Information"),
-///         leading: .flag(.init(asset: "il_flag_fr")
+///         leading: .flag(.init(asset: "il_flag_fr", description: "France"))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .flag(.init(asset: "il_flag_fr"))
+///         trailing: .flag(.init(asset: "il_flag_fr", description: "France"))
 ///     )
 /// ```
 ///
@@ -46,6 +46,7 @@ public struct OUDSListItemFlag: View {
     // MARK: Properties
 
     private let asset: Image
+    private let description: String
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -63,19 +64,23 @@ public struct OUDSListItemFlag: View {
     ///
     /// - Parameters:
     ///   - asset: The asset contains the image
-    public init(asset: Image) {
+    ///   - description: The description of the country flag
+    public init(asset: Image, description: String) {
         self.asset = asset
+        self.description = description
     }
 
     // MARK: Body
 
     public var body: some View {
         HStack {
-            OUDSImage(asset: asset, renderingMode: .original)
+            OUDSImage(asset: asset, accessibilityLabel: description, renderingMode: .original)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: flagHeight)
                 .opacity(opacity)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(description))
         .frame(minWidth: minWidth, alignment: .center)
     }
 
