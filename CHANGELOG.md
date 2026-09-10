@@ -4,6 +4,124 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...3.0.0) - 2026-09-10
+
+### Added
+    
+- Tutorial for themes creation and tokens overrides (Orange-OpenSource/ouds-ios#1547)
+- For `list item` components, add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
+- `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
+- `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
+- Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
+- Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
+- `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)
+- Helpers to apply OUDS styles for rich text (Orange-OpenSource/ouds-ios#1682)
+- `typography` components (Orange-OpenSource/ouds-ios#1580)
+- `list item` component (Orange-OpenSource/ouds-ios#265)
+- `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509)
+- `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
+- `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
+- `View modifier` to force keyboard closing on tap (Orange-OpenSource/ouds-ios#1530)
+- `View modifier` to apply theme to Liquid Glass SwiftUI `TabView` (Orange-OpenSource/ouds-ios#1459)
+- `View modifier` to add custom accessibility traits inside `text area` component (Orange-OpenSource/ouds-ios#1597)
+- Flag to let `link` component take full width (Orange-OpenSource/ouds-ios#1576)
+- Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- Semantic tokens of `colors` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- Components tokens for `list item` (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- Components tokens for `button` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Changed
+
+- Onboarding tutorial with OUDS v3.0.0-rc.1
+- Discovery tutorial with OUDS v3.0.0-rc.1
+- Ruby Gem `fastlane` from v2.237.0 to v2.239.0
+- `Ruby` version from v4.0.5 to v4.0.6 for `build-and-test` workflow
+- Swift Package `SwiftFormat` from v0.62.1 to v0.63.0
+- Swift Package `SwiftLintPlugins` from v0.65.0 to v0.65.1
+- GitHub Actions `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
+- GitHub Actions `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
+- GitHub Actions `github/codeql-action/upload-sarif` from v4.37.0 to v4.38.0 for `scorecard` workflow
+- GitHub Action `ruby/setup-ruby` from v1.316.0 toq v1.321.0 for `build-and-test` workflow
+- Core `grid` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- Core `effect` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- Core `dimension` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- Core `color` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `space` semantic tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `size` semantic tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `effect` semantic tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `color` semantic tokens for `Orange` theme (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `color chart` semantic tokens for `Orange` theme (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `typography` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- `button` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- **BREAKING**: `alert` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- **BREAKING**: `accordion` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- Loading state of `tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
+- Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
+- Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)
+- Update icons to v2.3.0 (Orange-OpenSource/ouds-ios#1432)
+- `progress indicator` components to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
+- `password input` component to version 1.3.1 (Orange-OpenSource/ouds-ios#1526)
+- `text input` component to version 1.4.1 (Orange-OpenSource/ouds-ios#1524)
+- **BREAKING**: `.percent` helper text of `linear progress indicator` and `circular progress indicator` components now formats the value and its `%` symbol through the localized wording key `core_progressIndicator_percent_value` instead of exposing a `spaceBefore: Bool` parameter, so the typographic rules (symbol, spacing, position) follow the current language (Orange-OpenSource/ouds-ios#1509, Orange-OpenSource/ouds-ios#409)
+- `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
+- Themes tunings values (Orange-OpenSource/ouds-ios#1669)
+- `button` component to version 3.3.0 (Orange-OpenSource/ouds-ios#1583)
+- **BREAKING**: `link` component to v2.4.0 (Orange-OpenSource/ouds-ios#1640)
+- `suggestion chip` and `filter chip` components to v1.5.0 (Orange-OpenSource/ouds-ios#1588)
+- **BREAKING**: `link` component to v2.3.0 (Orange-OpenSource/ouds-ios#1589)
+- Detection of forced legacy layout for navigation elements
+- **BREAKING**: `.neutral` and `.accent` `badge icon status` signatures
+- **BREAKING**: `.neutral` and `.accent` `alert status` parameter name
+- **BREAKING**: `.icon` and `.textAndIcon` layouts for `chip picker data` object
+- `elevation` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `color` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `link` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `button` component tokens for `Orange Compact` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `alert` component tokens for `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `text input` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- `text area` component tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `tag` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `link` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `icon` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Components token for `button` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Fixed
+
+- Broken size of the `circular progress indicator` with helper text (Orange-OpenSource/ouds-ios#1755)
+- Erratic focus flickering between fields when typing in `PIN code input` component (Orange-OpenSource/ouds-ios#1744)
+- Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
+- Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
+- Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)
+- Use of asset for typography heading marker (Orange-OpenSource/ouds-ios#1689)
+- Adjust title color on toolbar bar top when content color change (Orange-OpenSource/ouds-ios#1563)
+- Truncated title on `tab bar` focused item when using *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1641)
+- `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)
+- Usage of `PIN code input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1631)
+- Usage of `password input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1533)
+- Usage of `text input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
+- Vocalization priority for `alert message` components and usage with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1564)
+- `PIN code input` component usage with Voice Over (Orange-OpenSource/ouds-ios#1529)
+- Missing `badges` on `toolbar top` component for app on iOS 27 with Xcode 26.5 and disabled Liquid Glass configuration (Orange-OpenSource/ouds-ios#1623)
+- Missing "core_common_back" localized string for `back` button of `toolbar top` component (Orange-OpenSource/ouds-ios#1577)
+- For `alert` components, add default vocalisation on "info" status (Orange-OpenSource/ouds-ios#1561)
+- Icon assets for unordered `bullet list` item not displayed (Orange-OpenSource/ouds-ios#1615)
+
+### Removed
+
+- **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier`
+- **BREAKING**: Deprecated `OUDSBadge` API
+- **BREAKING**: Deprecated type `OUDSIcon`
+- **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
+- **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
+- **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
+
+### Security
+
+- `excon` transitive RubyGem from v0.112.0 to v1.7.1 (CVE-2026-54171)
+- `json` transitive RubyGem from v2.20.0 to v2.21.2 (CVE-2026-71847)
+
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 
 ### Added
@@ -113,8 +231,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
 - URL redirection for documentation (Orange-OpenSource/ouds-ios#1481)
 - Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
-- **BREAKING**: Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
-- **BREAKING**: Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
+- **BREAKING**: Update of tokens (tokens libraries v2.5.0) (Orange-OpenSource/ouds-ios#1473)
+- **BREAKING**: Update of tokens (tokens libraries v2.4.0) (Orange-OpenSource/ouds-ios#1437)
 
 ### Fixed
 
@@ -246,7 +364,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unused `status` and `size` properties of `badge` component (count and icon variants) removed (Orange-OpenSource/ouds-ios#1233)
 - Various cleanings in the documentation
 - Update constants file with versions values in comments for documentation
-- Display tokens librairies versions in themes Swift files
+- Display tokens libraries versions in themes Swift files
 - Update README with reference to AGENTS.md file
 - **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
 - **BREAKING**: Rename some multiple token objects (from plural to singular form)

@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
 /// to implement all tokens.
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
-/// We allow this theme to be derivated and be overriden.
+/// We allow this theme to be derivated and be overridden.
 /// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_, or *theme contract*.
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
@@ -50,7 +50,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All color charts semantic tokens exposed in one obejct
     ///
     /// If nil the theme does not provide color charts (like today `SoshTheme`).
-    /// In this case it cannot be used but can be overriden by local implementation of `AllColorChartSemanticTokensProvider`.
+    /// In this case it cannot be used but can be overridden by local implementation of `AllColorChartSemanticTokensProvider`.
     ///
     /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
     /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
@@ -59,7 +59,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All color decorative semantic tokens exposed in one obejct
     ///
     /// If nil the theme does not provide color decorative (like today `SoshTheme`).
-    /// In this case it cannot be used but can be overriden by local implementation of `AllColorDecorativeSemanticTokensProvider`
+    /// In this case it cannot be used but can be overridden by local implementation of `AllColorDecorativeSemanticTokensProvider`
     ///
     /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
     /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
@@ -97,8 +97,14 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     // MARK: - Component tokens
     // Keep things alphabetically ordered
 
-    /// All components tokens related to alert component like `OUDSAlert`
+    /// All components tokens related to alert componens
+    public let accordion: AllAccordionComponentTokensProvider
+
+    /// All components tokens related to alert component like `OUDSAlertMessage` and `OUDSInlineAlert`
     public let alert: AllAlertComponentTokensProvider
+
+    /// All components tokens related only to `OUDSAlertMessage`
+    public let alertMessage: AllAlertMessageComponentTokensProvider
 
     /// All components tokens related to bar components
     public let bar: AllBarComponentTokensProvider
@@ -112,6 +118,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokensProvider
 
+    /// All components tokens related to categorical tag like `OUDSCategoricalTag`
+    public let categoricalTag: AllCategoricalTagComponentTokensProvider
+
     /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
@@ -121,19 +130,23 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     public let divider: AllDividerComponentTokensProvider
 
-    /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
-    public let controlItem: AllControlItemComponentTokensProvider
-
     /// All components tokens related to icons components
     public let icon: AllIconComponentTokensProvider
 
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
-    /// All components tokens related to pin code input components like `OUDSPinCodeInput`
+    /// All components tokens related to list item components like `OUDSListItem` and `OUDSSmallListItem`,
+    /// and also `OUDSSwitchItem`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
+    public let listItem: AllListItemComponentTokensProvider
+
+    /// All components tokens related to pin code input components
     public let pinCodeInput: AllPinCodeInputComponentTokensProvider
 
-    /// All components tokens related to quantity input components like `OUDSQuantityInput`
+    /// All components tokens related to progress indicator components
+    public let progressIndicator: AllProgressIndicatorComponentTokensProvider
+
+    /// All components tokens related to quantity input components
     public let quantityInput: AllQuantityInputComponentTokensProvider
 
     /// All components tokens related to checkboxes components like `OUDSRadioButton` and `OUDSRadioButtonItem`
@@ -142,7 +155,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to select input components like `OUDSSelectInput`
     public let selectInput: AllSelectInputComponentTokensProvider
 
-    /// All components tokens related to skeleto components like `OUDSSkeleton`
+    /// All components tokens related to skeleto components
     public let skeleton: AllSkeletonComponentTokensProvider
 
     /// All components tokens related to switch / toggle components like `OUDSSwitch`
@@ -159,6 +172,12 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
 
     /// All components tokens related to bullet list components like `OUDSTextInput`
     public let textInput: AllTextInputComponentTokensProvider
+
+    /// All components tokens related to toast components like `OUDSToast`
+    public let toast: AllToastComponentTokensProvider
+
+    /// All components tokens related to typography components
+    public let typography: AllTypographyComponentTokensProvider
 
     // MARK: - Other elements
 
@@ -197,18 +216,22 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
+    ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
+    ///    - alertMessage: All component tokens for alert message
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
+    ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
-    ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
+    ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
+    ///    - progressIndicator: All component tokens for progress indicator
     ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
     ///    - selectInput: All component tokens for select input
@@ -218,6 +241,8 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - toast: All component tokens for toast
+    ///    - typography: All component tokens for typography
     ///    - name: The name of the theme, can be used for debugging for example
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
@@ -235,18 +260,22 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 dimensions: AllDimensionSemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
+                accordion: AllAccordionComponentTokensProvider,
                 alert: AllAlertComponentTokensProvider,
+                alertMessage: AllAlertMessageComponentTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
                 bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
                 button: AllButtonComponentTokensProvider,
+                categoricalTag: AllCategoricalTagComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
                 chip: AllChipComponentTokensProvider,
-                controlItem: AllControlItemComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
                 icon: AllIconComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
+                listItem: AllListItemComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
+                progressIndicator: AllProgressIndicatorComponentTokensProvider,
                 quantityInput: AllQuantityInputComponentTokensProvider,
                 radioButton: AllRadioButtonComponentTokensProvider,
                 selectInput: AllSelectInputComponentTokensProvider,
@@ -256,12 +285,13 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 inputTag: AllInputTagComponentTokensProvider,
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
+                toast: AllToastComponentTokensProvider,
+                typography: AllTypographyComponentTokensProvider,
                 resourcesBundle: Bundle,
                 name: String,
                 fontFamily: FontFamilySemanticToken? = nil,
                 tuning: Tuning = Tuning.default)
     {
-
         // Save semantic tokens providers
         self.borders = borders
         self.colors = colors
@@ -278,18 +308,22 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.spaces = spaces
 
         // Save component tokens providers
+        self.accordion = accordion
         self.alert = alert
+        self.alertMessage = alertMessage
         self.badge = badge
         self.bar = bar
         self.button = button
         self.bulletList = bulletList
+        self.categoricalTag = categoricalTag
         self.checkbox = checkbox
         self.chip = chip
-        self.controlItem = controlItem
         self.divider = divider
         self.icon = icon
         self.link = link
+        self.listItem = listItem
         self.pinCodeInput = pinCodeInput
+        self.progressIndicator = progressIndicator
         self.quantityInput = quantityInput
         self.radioButton = radioButton
         self.selectInput = selectInput
@@ -299,6 +333,8 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.inputTag = inputTag
         self.textArea = textArea
         self.textInput = textInput
+        self.toast = toast
+        self.typography = typography
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle

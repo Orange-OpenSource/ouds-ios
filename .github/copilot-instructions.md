@@ -295,3 +295,105 @@ bundle exec fastlane update_sbom
 - [ ] Check leaks, no leak must appear
 - [ ] Check if functions are too long or too complicated, complexity must be low
 - [ ] Check if the commit has been signed-off (i.e. DCO applied) by all commits authors
+- [ ] **Check documentation illustrations** (see section 10)
+
+## 10. Documentation illustrations ⚠️ CRITICAL
+
+When adding or modifying components, you MUST add illustrations in both:
+- Component documentation files (public API docs)
+- Theme documentation files (Orange, OrangeCompact, Sosh, Wireframe)
+
+### 10.1 Component documentation files
+
+Location: `OUDS/Core/Components/Sources/_OUDSComponents.docc/*.md`
+
+Each component MUST have an illustration with `@TabNavigator` for all 4 themes:
+
+```markdown
+@TabNavigator {
+    @Tab("Orange") {
+        ![A component in light and dark modes with Orange theme](component_nom_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A component in light and dark modes with Orange Compact theme](component_nom_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A component in light and dark modes with Sosh theme](component_nom_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A component in light and dark modes with Wireframe theme](component_nom_Wireframe)
+    }
+}
+```
+
+- Use local references (not URLs): `component_nom_Orange`
+- For components with variants (e.g., Badge standard/count/icon), use nested tabs
+
+### 10.2 Theme documentation files
+
+Location: `OUDS/Core/Themes/*/Sources/_OUDSThemes*.docc/OUDSThemes*.md`
+
+Each component MUST have an illustration with `@TabNavigator` using full URLs:
+
+```markdown
+@TabNavigator {
+    @Tab("Orange") {
+        ![A component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Orange.png)
+    }
+    @Tab("Orange Compact") {
+        ![A component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_OrangeCompact.png)
+    }
+    @Tab("Sosh") {
+        ![A component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Sosh.png)
+    }
+    @Tab("Wireframe") {
+        ![A component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Wireframe.png)
+    }
+}
+```
+
+### 10.3 Image naming conventions (snake_case only)
+
+⚠️ **IMPORTANT**: Always use snake_case in image filenames. Never use CamelCase.
+
+| Correct (snake_case) | Incorrect (CamelCase) |
+|---------------------|----------------------|
+| `component_static_list_item` | `component_staticListItem` |
+| `component_navigation_list_item` | `component_navigationListItem` |
+| `component_progress_indicator_circular` | `component_circularProgressIndicator` |
+| `component_progress_indicator_linear` | `component_linearProgressIndicator` |
+| `component_toolBarTop` | `component_toolbar` |
+| `component_typography_heading` | `component_typography` |
+
+### 10.4 Components with tabs/variants
+
+For components with multiple variants (e.g., Badge, ProgressIndicator, ListItem), use nested tabs:
+
+```markdown
+#### Badge
+
+@TabNavigator {
+    @Tab("Standard") {
+        @TabNavigator {
+            @Tab("Orange") {
+                ![Badge Standard](component_badge_Orange)
+            }
+            ...
+        }
+    }
+    @Tab("Count") {
+        ...
+    }
+    @Tab("Icon") {
+        ...
+    }
+}
+```
+
+### 10.5 Review checklist for illustrations
+
+- [ ] New component has illustration in component docs (*.md in _OUDSComponents.docc)
+- [ ] New component has illustration in all 4 theme docs (OUDSThemes*.md)
+- [ ] Image filenames use snake_case (not CamelCase)
+- [ ] Theme doc URLs point to correct snake_case filenames
+- [ ] Components with variants (Badge, ProgressIndicator, ListItem) use proper tabs

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "radio-button-selected.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -22,6 +22,9 @@ struct InputText: View {
     let label: String
     let text: Binding<String>
     let status: OUDSTextInput.Status
+    let accessibilityLabel: String
+    let accessibilityValue: String
+    let accessibilityHint: String
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -36,19 +39,34 @@ struct InputText: View {
             if textInputAsSecureField {
                 SecureField(text: text, label: textFieldLabel)
                     .labelModerateLarge(theme)
+                    .accessibilityLabel(accessibilityLabel)
+                    .accessibilityValue(accessibilityValue)
+                    .accessibilityHint(accessibilityHint)
             } else {
                 TextField(text: text, label: textFieldLabel)
                     .labelModerateLarge(theme)
+                    .accessibilityLabel(accessibilityLabel)
+                    .accessibilityValue(accessibilityValue)
+                    .accessibilityHint(accessibilityHint)
             }
         }
         .modifier(SecureTextFieldModifier(isSecureTextField: textInputAsSecureField))
         .multilineTextAlignment(.leading)
         .foregroundColor(inputTextColor)
         .tint(cursorColor.color(for: colorScheme))
-        .disabled(status == .disabled || status == .readOnly || status == .loading)
+        .disabled(disabled)
     }
 
-    // MARK: - Helper
+    // MARK: - Helpers
+
+    private var disabled: Bool {
+        switch status {
+        case .disabled, .readOnly, .loading:
+            true
+        default:
+            false
+        }
+    }
 
     private var labelColor: MultipleColorSemanticToken {
         switch status {

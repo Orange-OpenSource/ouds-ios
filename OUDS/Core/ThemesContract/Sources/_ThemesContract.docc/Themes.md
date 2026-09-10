@@ -5,7 +5,7 @@
     @PageImage(purpose: card, source: "ic_theme_intro")
 }
 
-_Themes_ are applications of specific values for _components tokens_ and dimensionsemantic tokens_ using in the end _raw tokens_.
+_Themes_ are applications of specific values for _components tokens_ and _semantic tokens_ using in the end _raw tokens_.(thus final usable low level values).
 A _theme_ contains any relevant tokens which can be used for components rendering.
 A _theme_ can use its own assets like fonts and icons.
 
@@ -21,19 +21,19 @@ Theme                                                                           
 All themes are based on a theme contract called `OUDSTheme`.
 
 _Themes_ use *tokens providers* which provide the *semantic tokens* and *component tokens* to apply in the project. 
-These tokens in most of cases can be overriden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). 
+These tokens in most of cases can be overridden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). 
 Thus we can split values and responsabilities in different _Swift Package Manager_ targets and keep overriding and inheritance possible.
 
-> Important: Only one theme, the Orange theme, can be subclassed.
+> Important: Only one theme, the Orange theme, can be subclassed. However it is possible to build its own theme.
 
 ## Architecture
 
 A theme is a *Swift class* which several tokens providers providing their own definition of tokens. 
 
-We choose to pack all semantic tokens in protocols, so as to force any theme to manage them through tokens providers. Because Swift does not have notions of abstract classes compared to Kotlin,the `OUDSTheme` which can be considered like an almost-abstract class.
+We choose to pack all semantic tokens in protocols, so as to force any theme to manage them through tokens providers. Because Swift does not have notions of abstract classes compared to Kotlin, the `OUDSTheme` which can be considered like an almost-abstract class.
 Then, a white label theme may just inherit from this class and override the tokens it needs. The real, default theme to use, will be the `OrangeTheme` providing in its module brand colors and overriding some tokens with the suitable values.
 
-Themes must be able to override semantic tokens and components tokens, and use its own raw or semantic tokens without sharing them to other themes. The existing raw tokens, shared between all themes, are not overridable because their definitions are frozen.
+Themes can be able to override semantic tokens and components tokens, and use its own raw or semantic tokens without sharing them to other themes. The existing raw tokens, shared between all themes, are not overridable because their definitions are frozen.
 
 A theme can use its own tokens providers, implemented from scratch or by inheriting from existing tokens providers.
 
@@ -64,11 +64,7 @@ However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned.
 ### Tuned values
 
 There are few elements which can be tuned. Some tunings have also been defined.
-
-Tunable elements                       | Default values    | Orange France    | Orange Business    | Max It      |                          
--------------------------------------- | ----------------- | ---------------- | ------------------ | ----------- |
-rounded corners for buttons            |     ❌ false      |    ❌ false      |      ❌ false      |   ✅ true   |
-rounded corners for text inputs        |     ❌ false      |    ❌ false      |      ✅ true       |   ✅ true   |
+You can find [the available predefined Orange-related tunings](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange#Tunable-theme).
 
 ### Tuning usages
 
@@ -91,10 +87,11 @@ The tuning to apply must be done at theme init.
 
 ## Define a custom theme if needed
 
-You will have to create a _Swift class_ which will inherit from `OrangeTheme` (if you need Orange brand assets) or `OUDSTheme`.
-You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes. We do not recommend to use directly the `OUDSTheme` as is, but you can of course, you jusr will have to add your own tokens providers.
+You will have to create a _Swift class_ which will inherit from `OrangeTheme` (if you need Orange brand assets and resources) or `OUDSTheme`.
+You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes.
+We do not recommend to use directly the `OUDSTheme` as is, but you can of course, you just will have to add your own tokens providers or pick existing ones.
 
-Then, you should override the dimensionsemantic tokens_ and _components tokens_ you want using the providers ; we recommend to use _Swift extensions_ for clarity reasons. You can use existing tokens providers or override them.
+Then, you should override the _semantic tokens_ and _components tokens_ you want using the providers; we recommend to use _Swift extensions_ for clarity reasons. You can use existing tokens providers or override them.
 
 If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
 
@@ -260,4 +257,3 @@ All components the OUDS library provides are based on themes, handle through the
 In few words, if you want to change the look and feel for the OUDS components you use, you will have to override the matching *semantic tokens* or *component tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
 
 You are also able to define your *components tokens* and your *semantic tokens* used by them.
-

@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./images/logo-OUDS.png" alt="Logo of Orange Unified Design System" height="150" />
+</p>
+
 <h1 align="center">OUDS iOS</h1>
 
 <p align="center">
@@ -9,7 +13,7 @@
   ·
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=feature_request.yml" title="Open an issue on GitHub">Request feature</a>
   ·
-  <a href="https://ios.unified-design-system.orange.com/" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
+  <a href="https://github.com/Orange-OpenSource/ouds-ios-documentation" title="Swift library technical documentation GitHub project">Swift documentation</a>
   ·
   <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki" title="Swift library wiki">Wiki</a>
   ·
@@ -26,8 +30,6 @@
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
-&nbsp;
-<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" title="GitHub Pages deployment status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" alt="GitHub Pages deployment status"></a>
 &nbsp;
 <a href="https://www.bestpractices.dev/projects/10674" title="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/10674/badge" alt="OpenSSF Best Practices"></a>
 &nbsp;
@@ -101,11 +103,11 @@ https://github.com/Orange-OpenSource/ouds-ios
 
 You can choose the _dependency rule_ you want. Keep in mind OUDS iOS releases are frozen and are based on semantic versioning.
 
-### Add the librairies
+### Add the libraries
 
-In your Xcode _targets_, add the librairies you need. Everything is splitted so as to let users choose the content to embed they want.
+In your Xcode _targets_, add the libraries you need. Everything is splitted so as to let users choose the content to embed they want.
 The `OUDSSwiftUI` library embeds everything, but you may prefer instead tailor your imports.
-You can get the [detailed list of available librairies in the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
+You can get the [detailed list of available libraries in the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
 
 More technical details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
 
@@ -168,17 +170,17 @@ The wiki lists also [the components and their availability](https://github.com/O
 ## 🧬 Tokens libraries versions
 
 > [!TIP]
-> This Swift package embeds specific versions of themes / tokens librairies.
+> This Swift package embeds specific versions of themes / tokens libraries.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core OUDS version: 1.10.0
+- Core OUDS version: 1.11.0
 - Core Orange version: 1.2.0
-- Brand Orange version: 2.5.0
+- Brand Orange version: 2.7.0
 - Core Sosh version: 1.4.0
-- Brand Sosh version: 2.5.0
-- Core Wireframe version: 1.4.0
-- Brand Wireframe version: 2.5.0
-- Brand Orange Compact version: 2.5.0
+- Brand Sosh version: 2.7.0
+- Core Wireframe version: 1.5.0
+- Brand Wireframe version: 2.7.0
+- Brand Orange Compact version: 2.7.0
 
 ## 🪲 Bugs, feature requests and discussions
 

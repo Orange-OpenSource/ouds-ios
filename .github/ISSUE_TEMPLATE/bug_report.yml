@@ -117,9 +117,9 @@ body:
     validations:
       required: true
   - type: textarea
-    id: a11y-settings
+    id: device-settings
     attributes:
-      label: Accessibility settings
-      description: Provide a description about the accessibility settings you have (vocalization with Voice Over, increased text sizes, keyboard navigation, high contrast, etc.)
+      label: Device settings
+      description: Provide a description about the accessibility settings you have (Voice Over, Dynamic Type, Full Keyboard Access, Switch Control, High Constrast, etc.). Precise if low power mode enabled or not.
     validations:
       required: true

@@ -26,55 +26,92 @@ struct ToolBarTopModifier: ViewModifier {
     let hasLargeTitle: Bool
     let subtitle: String?
     @OUDSToolBarItemsBuilder let leadingItems: [OUDSToolBarItem]
+    let principalItem: OUDSToolBarItem?
     @OUDSToolBarItemsBuilder let trailingItems: [OUDSToolBarItem]
 
     // MARK: - Initializer
 
-    /// Creates a top toobar with a title, optional subtitle (iOS 26+ only), and leading / trailing items.
+    /// Creates a top toolbar with a title, optional subtitle (iOS 26+ only), and leading / principal / trailing items.
     ///
     /// - Parameters:
-    ///   - title: The toobar title. Prefer a non-empty string.
-    ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed.
-    ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
+    ///   - title: The toolbar title. Prefer a non-empty string.
+    ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed for iOS lower than 26.
+    ///   - subtitle: Optional subtitle displayed below the title, *nil* by default. **Ignored if `principalItem` is not *nil*.**
     ///   - leadingItems: The items displayed on the leading side
+    ///   - principalItem: The item displayed in the principal (center) position (only one item supported).
+    ///     If set, the title is not displayed unless `hasLargeTitle` is `true`, and the subtitle is never displayed.
     ///   - trailingItems: The items displayed on the trailing side
     ///   - content: The content view wrapped by the toolbar.
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,
          @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem],
+         principalItem: OUDSToolBarItem? = nil,
          @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
-            OL.warning("The title of OUDSToolBarTopModifier is empty, prefer a non-empty title")
+            OL.warning("The title of ToolBarTopModifier is empty, prefer a non-empty title")
         }
         if let subtitle, subtitle.isEmpty {
-            OL.warning("The subtitle of OUDSToolBarTopModifier is empty, prefer nil instead")
+            OL.warning("The subtitle of ToolBarTopModifier is empty, prefer nil instead")
         }
 
         self.title = title
         self.hasLargeTitle = hasLargeTitle
         self.subtitle = subtitle
         self.leadingItems = leadingItems()
+        self.principalItem = principalItem
         self.trailingItems = trailingItems()
     }
 
     // MARK: - Body
 
+    @ViewBuilder
     func body(content: Content) -> some View {
-        content
-            .oudsNavigationTitle(title, subtitle: subtitle)
-        #if os(iOS) || os(visionOS)
-            .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
-        #endif
-            .toolbar {
+        if let principalItem, !hasLargeTitle {
+            // Principal item without large title: no title, no subtitle, just the toolbar with the principal item.
+            content.toolbar {
                 ToolbarItemGroup(placement: leadingPlacement) {
                     itemsView(leadingItems)
+                }
+                ToolbarItem(placement: principalPlacement) {
+                    principalItem.environment(\.toolbarItemLocation, .toolbarTop)
                 }
                 ToolbarItemGroup(placement: trailingPlacement) {
                     itemsView(trailingItems)
                 }
             }
+        } else if let principalItem {
+            // Principal item and large title: title is displayed (large mode), subtitle is never displayed.
+            // Note: SwiftUI's `.principal` placement only replaces the inline compact bar title, not the large title
+            // nor `.navigationSubtitle()` (iOS 26+), which would otherwise keep rendering next to/under the principal
+            // item with no visible title next to it. So the subtitle must never be forwarded here.
+            content
+                .oudsNavigationTitle(title, subtitle: nil, hasLargeTitle: hasLargeTitle)
+                .toolbar {
+                    ToolbarItemGroup(placement: leadingPlacement) {
+                        itemsView(leadingItems)
+                    }
+                    ToolbarItem(placement: principalPlacement) {
+                        principalItem.environment(\.toolbarItemLocation, .toolbarTop)
+                    }
+                    ToolbarItemGroup(placement: trailingPlacement) {
+                        itemsView(trailingItems)
+                    }
+                }
+        } else {
+            // No principal item: standard behavior, title and subtitle displayed as configured.
+            content
+                .oudsNavigationTitle(title, subtitle: subtitle, hasLargeTitle: hasLargeTitle)
+                .toolbar {
+                    ToolbarItemGroup(placement: leadingPlacement) {
+                        itemsView(leadingItems)
+                    }
+                    ToolbarItemGroup(placement: trailingPlacement) {
+                        itemsView(trailingItems)
+                    }
+                }
+        }
     }
 
     // MARK: - Helpers
@@ -89,6 +126,14 @@ struct ToolBarTopModifier: ViewModifier {
     private var leadingPlacement: ToolbarItemPlacement {
         #if os(iOS) || os(visionOS)
         return .topBarLeading
+        #else
+        return .automatic
+        #endif
+    }
+
+    private var principalPlacement: ToolbarItemPlacement {
+        #if os(iOS) || os(visionOS)
+        return .principal
         #else
         return .automatic
         #endif

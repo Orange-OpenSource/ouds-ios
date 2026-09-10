@@ -27,12 +27,12 @@ Some components can be used for **navigation**.
 }
 
 The ``OUDSLink`` proposes layout with text only or text with icon.
-It also proposes layout to navigate forward or backward.
+It also proposes layout to navigate forward, backward and outside the app.
 The link can be displayed in `small` or `default` size.
 
 ```swift        
-// Text only in small size
-OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+// Text in small size, with next indicator
+OUDSLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
 
 // Text and icon in default size
 OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_heart")), size: .default) {}
@@ -41,7 +41,229 @@ OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_heart")), size: .de
 OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
 
 // Navigate to previous page with link in a default size
-OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
+
+// Navigate to outside the app with link in a default size
+OUDSLink(text: "Open outside", indicator: .external, size: .default) { /* the action to process */ }
+```
+
+### List items
+
+The ``OUDSStaticListItem`` displays a non-interactive row of information, while ``OUDSNavigationListItem`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
+
+Both components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
+
+#### Static list item
+
+Use ``OUDSStaticListItem`` when the row is display-only and should not trigger any action or navigation.
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A list item component in light and dark modes with Orange theme](component_static_list_item_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A list item component in light and dark modes with Orange compact theme](component_static_list_item_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A list item component in light and dark modes with Sosh theme](component_static_list_item_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
+    }
+}
+
+
+```swift
+// Simple list item with a label only
+OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+
+// List item with full textual content
+OUDSStaticListItem(data: OUDSListItemData(
+    label: "Label",
+    hasBoldLabel: true,
+    description: "Description",
+    overline: "Overline",
+    extraLabel: "Extra label",
+    helperText: "Helper text providing guidance"
+))
+
+// List item with a leading icon and a trailing badge
+let icon = OUDSListItemIcon(status: .info, description: "", size: .medium)
+
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Notifications"),
+    leading: .icon(icon),
+    trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
+)
+
+// List item with a leading image (static asset)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Product"),
+    leading: .image(OUDSListItemImage(asset: Image("product_thumb"), size: .medium))
+)
+
+// List item with a leading async image (from URL)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Remote Product"),
+    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
+)
+
+// List item with async image and custom placeholder
+let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com/image.png")) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Loading Product"),
+    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
+)
+
+// List item with a trailing image
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Status"),
+    trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
+)
+
+// List item with slot (displayed under texts, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "With slot",
+        textSlot: .init { Text("Additional content") },
+        helperText: "Helper text"
+    )
+)
+
+// List item with bottom slot (displayed under main content, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "With bottom slot",
+        bottomSlot: .init { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+)
+
+// List item with both slot and bottomSlot
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "Label",
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+)
+```
+
+#### Navigable list item
+
+Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemIndicatorType`` defines the visual indicator shown:
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A list item component in light and dark modes with Orange theme](component_navigation_list_item_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A list item component in light and dark modes with Orange compact theme](component_navigation_list_item_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A list item component in light and dark modes with Sosh theme](component_navigation_list_item_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A list item component in light and dark modes with Wireframe theme](component_navigation_list_item_Wireframe)
+    }
+}
+
+```swift
+// Forward navigation (default)
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Next screen")
+) {
+    // Navigate to next screen
+}
+
+// External navigation
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Open website"),
+    indicatorType: .external
+) {
+    openURL(url)
+}
+
+// Backward navigation
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Go back"),
+    indicatorType: .previous
+) {
+    // Navigate back
+}
+
+// With a leading avatar and a trailing text
+let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
+
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    leading: .avatar(avatar),
+    trailing: .text(.labelMuted("Details"))
+) {
+    // Navigate to profile
+}
+
+// With a leading async image loaded from URL
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Product", description: "View product details"),
+    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/product.png")), description: "Product thumbnail", size: .medium))
+) {
+    // Navigate to product
+}
+
+// With async image and custom placeholder
+let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com/product.png")) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Loading Product", description: "View product details"),
+    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product thumbnail", size: .medium))
+) {
+    // Navigate to product
+}
+
+// List item with slot (displayed under texts, before helper text)
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Settings",
+        textSlot: .init { Text("Configure options") },
+        helperText: "Helper text"
+    )
+) {
+    // Navigate to settings
+}
+
+// List item with bottomSlot (displayed under main content, before helper text)
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Profile",
+        bottomSlot: .init { Text("Additional info") },
+        helperText: "Helper text"
+    )
+) {
+    // Navigate to profile
+}
+
+// List item with both slot and bottomSlot
+OUDSNavigationListItem(
+    data: OUDSListItemData(
+        label: "Settings",
+        textSlot: { Text("Slot content") },
+        bottomSlot: { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+) {
+    // Navigate to settings
+}
 ```
 
 ### Tab bars
@@ -114,6 +336,37 @@ OUDSTabBar(selectedTab: $selectedTab, count: 3) {
 }
 ```
 
+### Tab views
+
+The `OUDSTabView` and `OUDSLiquidGlassTabView` use the native SwiftUI `Tab` API with OUDS styles.
+They are complementary to ``OUDSTabBar``:
+
+- `OUDSTabView` — iOS 18+ / macOS 15+ / visionOS 2+, exposes a `Binding<Int>` for programmatic selection, requires an explicit `value: Int` on every `Tab`.
+- `OUDSLiquidGlassTabView` — iOS 26+ / macOS 26+ / visionOS 26+ only, accepts `Tab` without `value:` and `Tab(role: .search)`, selection is managed natively.
+
+```swift
+// OUDSTabView — iOS 18+
+// Every Tab must carry an explicit value: Int matching the selectedTab binding
+@State private var selectedTab = 0
+
+OUDSTabView(selectedTab: $selectedTab, count: 4) {
+    Tab("Label 1", image: "image_1", value: 0) { FirstView() }
+    Tab("Label 2", image: "image_2", value: 1) { SecondView() }
+    Tab("Label 3", image: "image_3", value: 2) { ThirdView() }
+    Tab(value: 3, role: .search) { SearchView() }
+}
+```
+
+```swift
+// OUDSLiquidGlassTabView — iOS 26+ only
+// Supports Tab without value: and Tab(role: .search), no selection binding
+OUDSLiquidGlassTabView {
+    Tab("Label 1", image: "image_1") { FirstView() }
+    Tab("Label 2", image: "image_2") { SecondView() }
+    Tab("Label 3", image: "image_3") { ThirdView() }
+    Tab(role: .search) { SearchView() }
+}
+```
 
 ### Toolbars
 
@@ -162,6 +415,11 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
     }
 }
 
+> **Principal item**: at most one item can be placed in the principal (center) position with `principalItem:`. When a `principalItem`
+> is set, the subtitle is **never** displayed (whatever `hasLargeTitle` is), because SwiftUI's `.principal` placement only replaces
+> the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would otherwise keep floating with no visible title next
+> to it. The title itself is displayed only if `hasLargeTitle` is `true`, in which case it appears below the bar (large title mode).
+
 ```swift
 // Apply once on the root NavigationStack to style the system navigation bar
 NavigationStack {
@@ -171,12 +429,24 @@ NavigationStack {
                         // Back button — system dismiss is automatic, no closure needed
                         OUDSToolBarItem(navigation: .back())
                     },
+                    principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
                     trailingItems: {
                         OUDSToolBarItem(label: "Label") { /* Action to process */ }
                         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
                     })
 }
 .oudsNavigationBarAppearance() // required — apply on the NavigationStack, not on the child view
+
+// Principal item + hasLargeTitle: title is displayed below the bar (large mode), subtitle is never displayed
+SomeView()
+    .toolBarTop("Title",
+                hasLargeTitle: true,
+                subtitle: "This subtitle will never be shown because a principalItem is set",
+                principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
+
+// Principal item without hasLargeTitle: neither title nor subtitle are displayed
+SomeView()
+    .toolBarTop("Title", principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
 
 // Close button — .close takes NO closure, dismiss is handled automatically
 SomeView()

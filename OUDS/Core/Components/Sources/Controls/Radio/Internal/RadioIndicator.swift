@@ -39,7 +39,7 @@ struct RadioIndicator: View {
     @ViewBuilder
     private func indicator() -> some View {
         if isOn {
-            tickImage(name: "ic_radio-button_selected")
+            tickImage(name: "Component-radio-button-radio-button-selected")
         } else {
             Color.clear
         }

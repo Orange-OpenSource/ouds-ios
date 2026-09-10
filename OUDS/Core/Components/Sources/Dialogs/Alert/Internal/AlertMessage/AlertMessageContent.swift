@@ -23,13 +23,14 @@ struct AlertMessageContent: View {
     let description: TextualContent?
     let bulletList: [TextualContent]
     let link: OUDSAlertMessage.Link?
+    let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.alert.spaceRowGapAction) {
+        VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
             VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
                 Text(text)
                     .labelModerateLarge(theme)
@@ -44,7 +45,7 @@ struct AlertMessageContent: View {
                 }
 
                 if !bulletList.isEmpty {
-                    VStack(alignment: .leading, spacing: theme.alert.spaceRowGapBullet) {
+                    VStack(alignment: .leading, spacing: theme.alertMessage.spaceRowGapBullet) {
                         ForEach(Array(bulletList.enumerated()), id: \.offset) { _, text in
                             AlertMessageBulletListItem(text: text, status: status)
                         }
@@ -53,14 +54,22 @@ struct AlertMessageContent: View {
             }
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilityLabel)
+            .accessibilitySortPriority(OUDSAlertMessage.textsAccessibilityPriority)
+            #if canImport(UIKit)
+                .modifier(AlertMessageFKACustomActionsModifier(link: link, onClose: onClose))
+            #endif
 
             // Action
             if let link, self.link?.position == .bottom {
                 OUDSLink(text: link.text, size: .default, action: link.action)
+                    .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
             }
         }
         .padding(.vertical, theme.alert.spacePaddingBlock)
         .fixedSize(horizontal: false, vertical: true)
+        .onAppear {
+            VoiceOverUtils.announce(accessibilityLabel)
+        }
     }
 
     // MARK: - Helpers
@@ -85,9 +94,11 @@ struct AlertMessageContent: View {
     private var accessibilityLabel: String {
         let labelPrefix = switch status {
         case .warning:
-            "core_alertMessage_warning_a11y".localized() + ","
+            "core_shared_warning_a11y".localized() + ","
         case .negative:
-            "core_alertMessage_negative_a11y".localized() + ","
+            "core_shared_negative_a11y".localized() + ","
+        case .info:
+            "core_alertMessage_info_a11y".localized() + ","
         default:
             ""
         }

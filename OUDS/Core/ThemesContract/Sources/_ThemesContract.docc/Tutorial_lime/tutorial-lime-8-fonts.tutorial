@@ -1,0 +1,52 @@
+@Tutorial(time: 15, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Fonts") {
+        Font tokens control typography throughout the app. In this chapter, we will override font tokens for components.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding font tokens") {
+
+        @ContentAndMedia {
+            Font tokens are defined in `OrangeThemeFontSemanticTokensProvider`. We will override heading and label fonts.
+
+            Tunings allow us to customize component-specific properties like border radius.
+        }
+
+        @Steps {
+            @Step {
+                Start with the theme from the colored surface chapter.
+                Now let's add the font provider with typography overrides.
+                
+                @Code(name: "Tokens.swift", file: "tutorial-lime-8.swift", previousFile: "tutorial-lime-7.swift") {
+                    @Image(source: "tutorial-lime-8.png", alt: "App with Shantell Sans fonts")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Can you use your own local fonts with OUDS.
+
+            @Choice(isCorrect: true) {
+                Yes
+                
+                @Justification(reaction: "Correct!") {
+                    Some fonts are already supported in OUDS. And you can register your own ones.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                
+                No, it's forbidden
+                
+                @Justification(reaction: "Wrong!") {
+                    OUDS is flexible enough to allow local themes and their fonts.
+                }
+            }
+        }
+    }
+}

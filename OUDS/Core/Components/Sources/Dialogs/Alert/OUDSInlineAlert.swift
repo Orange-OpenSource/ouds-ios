@@ -31,8 +31,8 @@ import SwiftUI
 ///     OUDSInlineAlert(label: "Warning", status: .warning)
 ///
 ///     // Add a custom icon for accent and neutral status
-///     OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
-///     OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_heart"))))
+///     OUDSInlineAlert(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
+///     OUDSInlineAlert(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_heart"))))
 /// ```
 ///
 /// ## Design documentation
@@ -57,7 +57,7 @@ import SwiftUI
 ///
 /// ![An inline alertcomponent in light and dark modes with Wireframe theme](component_inlineAlert_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.1.1 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSInlineAlert: View {

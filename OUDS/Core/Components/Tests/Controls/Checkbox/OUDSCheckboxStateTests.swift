@@ -18,21 +18,21 @@ import Testing
 struct OUDSCheckboxStateTests {
 
     /// A selected checkbox must be toggled to an unselected checkbox.
-    @Test func toogleSelectedMustGiveUnselected() {
+    @Test func toggle() {
         var selectedState = OUDSCheckboxIndicatorState.selected
         selectedState.toggle()
         #expect(selectedState == OUDSCheckboxIndicatorState.unselected)
     }
 
     /// An unselected checkbox must be toggled to a selected checkbox.
-    @Test func toogleUnselectedMustGiveSelected() {
+    @Test func `toggle unselected must give selected`() {
         var unselectedState = OUDSCheckboxIndicatorState.unselected
         unselectedState.toggle()
         #expect(unselectedState == OUDSCheckboxIndicatorState.selected)
     }
 
     /// An indeterminate checkbox must be toggled to a selected checkbox.
-    @Test func toogleUndetermibateMustGiveSelected() {
+    @Test func `toggle undetermibate must give selected`() {
         var indeterminateState = OUDSCheckboxIndicatorState.indeterminate
         indeterminateState.toggle()
         #expect(indeterminateState == OUDSCheckboxIndicatorState.selected)

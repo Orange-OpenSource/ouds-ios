@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v2.3.0 → v3.0.0](#v230--v300)
 - [v2.2.0 → v2.3.0](#v220--v230)
 - [v2.0.0 → v2.2.0](#v200--v220)
 - [v1.4.0 → v2.0.0](#v140--v200)
@@ -8,6 +9,401 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v2.3.0 → v3.0.0
+
+### Overview
+
+Tokens version 2.6 are integrated in the OUDS code base and contains several breaking changes
+with renamed or delete tokens, at least at components tokens levels.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 2.3 or older
+
+### Renamed component tokens of button
+
+The tokens of sizes and spaces for `button` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `sizeMaxHeightIconOnly` | `sizeMaxHeightIconOnlyDefault` |
+| `sizeMinHeight` | `sizeMinHeightDefault` |
+| `sizeMinWidth` | `sizeMinWidthDefault` |
+| `sizeIcon` | `sizeIconDefault` |
+| `sizeIconOnly` | `sizeIconOnlyDefault` |
+| `sizeProgressIndicator` | `sizeProgressIndicatorDefault` |
+| `spaceColumnGapIconChevron` | `spaceColumnGapIconChevronDefault` |
+| `spaceColumnGapChevron` | `spaceColumnGapChevronDefault` |
+| `spaceInsetIconOnly` | `spaceInsetIconOnlyDefault` |
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `spacePaddingInlineChevronEnd` | `spacePaddingInlineChevronEndDefault` |
+| `spacePaddingInlineChevronStart` | `spacePaddingInlineChevronStartDefault` |
+| `spacePaddingInlineEndIconStart` | `spacePaddingInlineEndIconStartDefault` |
+| `spacePaddingInlineIconNone` | `spacePaddingInlineIconNoneDefault` |
+| `spacePaddingInlineStartIconEnd` | `spacePaddingInlineStartIconEndDefault` |
+
+For example, before:
+```swift
+theme.button.sizeMinHeight
+```
+and after:
+```swift
+theme.button.sizeMinHeightDefault
+```
+
+**Required Action**:
+- Add suffix `Default` to the components tokens of sizes and spaces for `button` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Renamed component tokens of tag
+
+Some component tokens for `tag` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `spaceInsetLoaderSmall` | `spaceInsetProgressIndicatorSmall` |
+| `spaceInsetLoaderDefault` | `spaceInsetProgressIndicatorDefault` |
+
+For example, before:
+```swift
+theme.tag.spaceInsetLoaderSmall
+```
+and after:
+```swift
+theme.tag.spaceInsetProgressIndicatorSmall
+```
+
+**Required Action**:
+- `Loader` must be replaced by `ProgressIndicator`
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Tag loading API change — `hasLoader` removed, `progress` added
+
+The `hasLoader: Bool` parameter of `OUDSTag(label:...)` and `OUDSTag(_ key:...)` has been removed.
+Loading tags must now be built exclusively with the dedicated `loadingLabel` / `loadingKey` initializers,
+which also gained a new optional `progress: Double?` parameter (nil for indeterminate progress, a value
+between 0.0 and 1.0 for determinate progress), mirroring the `OUDSButton.Style.loading(progress:)` change.
+
+**Impact**: High
+
+**Before (v2.3.0)**:
+```swift
+OUDSTag(label: "Processing...", hasLoader: true)
+OUDSTag(loadingLabel: "Processing...")
+```
+
+**After (v3.0.0)**:
+```swift
+// Indeterminate progress
+OUDSTag(loadingLabel: "Processing...")
+
+// Determinate progress with percent
+OUDSTag(loadingLabel: "Processing...", progress: 0.75)
+```
+
+**Required Action**:
+- Replace any use of `OUDSTag(label:hasLoader: true, ...)` or `OUDSTag(_ key:hasLoader: true, ...)` with `OUDSTag(loadingLabel:...)` or `OUDSTag(loadingKey:...)`
+- The `hasLoader` parameter no longer exists on `OUDSTag(label:...)` / `OUDSTag(_ key:...)`; simply remove it if it was `false`
+- Optionally pass a `progress` value to `OUDSTag(loadingLabel:...)` / `OUDSTag(loadingKey:...)` for a determinate progress indicator
+
+**Reason for Change**: Use the circular progress indicator in determinate or indeterminate variant, and avoid an ambiguous API mixing status and loading tags in a single initializer
+
+### Renamed component tokens of link
+
+The tokens of sizes and spaces for `link` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `sizeMinWidthDefault`| `sizeMinWidth `|
+
+For example, before:
+```swift
+theme.link.spacePaddingBlock
+```
+and after:
+```swift
+theme.link.spacePaddingBlockDefault
+```
+
+**Required Action**:
+- Add suffix `Default` to some of the components tokens of sizes and spaces for `link` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Renamed component tokens of accordion
+
+The tokens of spaces for `accordion` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|-------------|
+| `spacePaddingBlockBottomSlotListItemContainerMobile` | `spacePaddingBlockBottomSlotContainerMobile` |
+| `spacePaddingBlockBottomSlotListItemContainerTablet` | `spacePaddingBlockBottomSlotContainerTablet` |
+
+For example, before:
+```swift
+theme.accordion.spacePaddingBlockBottomSlotListItemContainerMobile
+```
+and after:
+```swift
+theme.accordion.spacePaddingBlockBottomSlotContainerMobile
+```
+
+**Required Action**:
+- Remove `ListItem` from the token names for `accordion` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Renamed component tokens of alert components
+
+The token of size for `alert message` component has been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|-------------|
+| `sizeIcon`  | `sizeAsset` |
+
+For example, before:
+```swift
+theme.alertMessage.sizeIcon
+```
+and after:
+```swift
+theme.alert.sizeAsset
+```
+
+**Required Action**:
+- Replace `sizeIcon` by `sizeAsset` for `alertMessage` component, and change name of token provider
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Removed icon component token
+
+An old deprecated token has finally been removed from `icon` component tokens.
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `theme.icon.colorContentDefault` by `theme.colors.contentDefault` if relevant
+
+### Rename control item tokens providers
+
+The tokens provider for `control item` has been renamed to `list item`.
+This affects both the theme accessor and all public Swift types (classes, protocols).
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `theme.controlItem` by `theme.listItem`
+- Rename Swift types according to the table below:
+
+| Old type (v2.3.0) | New type (v3.0.0) |
+|---|---|
+| `OrangeThemeControlItemComponentTokensProvider` | `OrangeThemeListItemComponentTokensProvider` |
+| `OrangeCompactThemeControlItemComponentTokensProvider` | `OrangeCompactThemeListItemComponentTokensProvider` |
+| `SoshThemeControlItemComponentTokensProvider` | `SoshThemeListItemComponentTokensProvider` |
+| `WireframeThemeControlItemComponentTokensProvider` | `WireframeThemeListItemComponentTokensProvider` |
+| `AllControlItemComponentTokensProvider` | `AllListItemComponentTokensProvider` |
+| `ControlItemComponentTokens` | `ListItemComponentTokens` |
+
+```swift
+// Before (v2.3.0)
+class MyProvider: OrangeThemeControlItemComponentTokensProvider { … }
+let provider: AllControlItemComponentTokensProvider = MyProvider()
+
+// After (v3.0.0)
+class MyProvider: OrangeThemeListItemComponentTokensProvider { … }
+let provider: AllListItemComponentTokensProvider = MyProvider()
+```
+
+**Reason for Change**: "control item" does not exist anymore in Figma but "list item" does
+
+### Changes in layout of OUDS chip picker data
+
+To be aligned with new `OUDSImage` logic, the `Layout` for the `OUDSChipPickerData` has been refactored.
+
+**Before (v2.3.0)**:
+```swift
+.icon(icon: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original)
+.textAndIcon(text: "Foo", icon: Image("someImage"), renderingMode: .original)
+```
+
+**After (v3.0.0)**:
+```swift
+.image(image: OUDSImage(asset: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original))
+.textAndImage(text: "Foo", image: OUDSImage(asset: Image("someImage"), renderingMode: .original))
+```
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `.icon(icon:accessibilityLabel:renderingMode)` by `.image(image:)`
+- Replace any use of `.textAndIcon(text:icon)` by `.textAndImage(text:image:)`
+
+**Reason for Change**: Use new `OUDSImage` API
+
+### Alert status cases parameter names
+
+To be aligned with new `OUDSImage` API, the parameter names of `alert status` cases have been changed.
+
+**Before (v2.3.0)**:
+```swift
+.neutral(icon: someOudsImage)
+.accent(icon: someOudsImage)
+```
+
+**After (v3.0.0)**:
+```swift
+.neutral(image: someOudsImage)
+.accent(image: someOudsImage)
+```
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `.neutral(icon:)` by `.neutral(image:)`
+- Replace any use of `.accent(icon:)` by `.accent(image:)`
+
+**Reason for Change**: Use new `OUDSImage` API
+
+### Badge icon status
+
+To be aligned with new `OUDSImage` API, the `accent` and `neutral` `badge icon status` cases have been updated.
+
+**Before (v2.3.0)**:
+```swift
+.neutral(icon: Image("someImage"), flipped: false, renderingMode: .original)
+.accent(icon: Image("someImage"), flipped: false, renderingMode: .original)
+```
+
+**After (v3.0.0)**:
+```swift
+.neutral(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+.accent(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+```
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `.neutral(icon:flipped:renderingMode)` by `.neutral(image:)`
+- Replace any use of `.accent(icon:flipped:renderingMode:)` by `.accent(image:)`
+
+**Reason for Change**: Use new `OUDSImage` API
+
+### Renamed legacy layout modifier
+
+The `.forceOUDSLegacyTabBar()` view modifier and its underlying `OUDSLegacyTabBarModifier` type have been renamed to reflect a broader layout scope.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|---|---|
+| `forceOUDSLegacyTabBar` | `forceOUDSLegacyLayout` |
+| `OUDSLegacyTabBarModifier` | `OUDSLegacyLayoutModifier` |
+
+**Before (v2.3.0)**:
+```swift
+SomeView()
+    .forceOUDSLegacyTabBar()
+
+let modifier: OUDSLegacyTabBarModifier = ...
+```
+
+**After (v3.0.0)**:
+```swift
+SomeView()
+    .forceOUDSLegacyLayout()
+
+let modifier: OUDSLegacyLayoutModifier = ...
+```
+
+**Required Action**:
+- Replace any call to `.forceOUDSLegacyTabBar()` with `.forceOUDSLegacyLayout()`
+- Replace any reference to `OUDSLegacyTabBarModifier` with `OUDSLegacyLayoutModifier`
+
+**Reason for Change**: The modifier is no longer specific to the tab bar; it applies to the overall layout.
+
+### OUDSLink indicator — `.back` renamed to `.previous`
+
+The `OUDSLink.Indicator` enum case for backward navigation has been renamed from `.back` to `.previous`.
+
+**Impact**: High
+
+**Before (v2.3.0)**:
+```swift
+OUDSLink(text: "Back", indicator: .back, size: .default) { }
+```
+
+**After (v3.0.0)**:
+```swift
+OUDSLink(text: "Back", indicator: .previous, size: .default) { }
+```
+
+**Required Action**:
+- Replace any use of `indicator: .back` with `indicator: .previous` in `OUDSLink` calls
+
+**Reason for Change**: Improved semantic clarity — `.previous` better describes the navigation direction relative to the current page.
+
+### Text area loading case has now optional value
+
+Because the `OUDSTextArea` component now uses `OUDSCircularProgressIndicator`, a `progress` value can be assigned to the indicator.
+This new `progress` parameter even if *optional* can break pattern matching.
+
+**Impact**: Low
+
+**Before (v2.3.0)**:
+```swift
+OUDSTextArea.Status.loading()
+```
+
+**After (v3.0.0)**:
+```swift
+OUDSTextArea.Status.loading(someProgresValue)
+```
+
+### Button for loading style
+
+The `OUDSButton.Style` enum case for loading takes an optional progress (nil for indeterminate progress, Double for a percentage of progress).
+
+**Impact**: High
+
+**Before (v2.3.0)**:
+```swift
+OUDSButton(text: "Back", style: .loading, size: .default) { }
+```
+
+**After (v3.0.0)**:
+```swift
+// Indeterminate progress
+OUDSButton(text: "Back", style: .loading(), size: .default) { }
+
+// Determinate progress with percent
+OUDSButton(text: "Back", style: .loading(progress: 0.75), size: .default) { }
+```
+
+**Required Action**:
+- Replace any use of `style: .loading` with `style: .loading()` in `OUDSButton` calls
+
+**Reason for Change**: Use the circular progress indicator in determinate or indeterminate variant. 
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v2.3.0 Support**: None
 
 ## v2.2.0 → v2.3.0
 
@@ -702,7 +1098,7 @@ OUDSBadgeIcon(status: .info, accessibilityLabel: "Like", size: .medium)
 
 ### Overview
 
-Tokens librairies have been updated, with some raw, semantic and components tokens removed or renamed.
+Tokens libraries have been updated, with some raw, semantic and components tokens removed or renamed.
 API for `action type` of `toolbar item` has been enriched.
 
 ### Before You Begin
@@ -795,7 +1191,7 @@ For bar component tokens, "ActiveIndicator" is now "CurrentIndicator":
 **Required Action**:
 - Use the new names as explained above
 
-**Reason for Change**: Tokens librairies have been updated in design side
+**Reason for Change**: Tokens libraries have been updated in design side
 
 ### Removed tokens
 
@@ -808,13 +1204,13 @@ All Sosh raw tokens have been changed.
 - Remove effect raw token `blur160`
 - Remove color raw token `opacityGrayLight80800`
 - Remove color semantic tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`; use if relevant `colorAccent` bar component tokens
-- Remove radio component token `sizeIndicator`; use `controlItem.sizeControlIndicator` instead
-- Remove checkbox component token `sizeIndicator`; use `controlItem.sizeControlIndicator` instead
+- Remove radio component token `sizeIndicator`; use `theme.controlItem.sizeControlIndicator` instead (renamed `theme.listItem.sizeControlIndicator` since v3.0.0)
+- Remove checkbox component token `sizeIndicator`; use `theme.controlItem.sizeControlIndicator` instead (renamed `theme.listItem.sizeControlIndicator` since v3.0.0)
 - Remove following control item component tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`,
 `colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`
 - Remove use of all raw tokens for Sosh and use new ones
 
-**Reason for Change**: Tokens librairies have been updated in design side
+**Reason for Change**: Tokens libraries have been updated in design side
 
 ### Renamed color charts tokens providers
 

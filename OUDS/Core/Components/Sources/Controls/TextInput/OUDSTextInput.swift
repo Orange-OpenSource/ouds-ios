@@ -18,11 +18,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
 // swiftlint:disable file_length
-// swiftlint:disable function_default_parameter_at_end
-// swiftlint:disable line_length
-// swiftlint:disable type_body_length
 
 /// Text input is a UI element that allows to enter, edit, or select single-line textual data.
 /// Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries.
@@ -112,18 +108,18 @@ import SwiftUI
 ///
 /// ## Mandatory field indication
 ///
-/// If all fields are mandatory (several fields present): display the message “All fields are mandatory” at the top of your formular.
+/// If all fields are mandatory (several fields present): display the message “All fields are mandatory” at the top of your form.
 /// Do not use an asterisk at the end of each field label, nor the word “mandatory.”
 ///
-/// If not all fields are mandatory (several fields present): display the message “All fields marked with an \* are mandatory” at the top of your formular.
+/// If not all fields are mandatory (several fields present): display the message “All fields marked with an \* are mandatory” at the top of your form.
 /// Use an asterisk (\*) at the end of each mandatory field label, and ensures this is well vocalized.
 ///
 /// UI rendering of the asterisk must be done with *bold font weight* and *negative content color* (red on light backgrounds).
 ///
 /// Use the mention “(optional)” at the end of each optional field label. Note that this rule is not systematic, it remains an option, to be used if needed.
 ///
-/// If there is only one field in the formular, or if the mandatory nature is obvious (such as login/password),
-/// no mention is necessary since the fields are essential to the formular's functionality.
+/// If there is only one field in the form, or if the mandatory nature is obvious (such as login/password),
+/// no mention is necessary since the fields are essential to the form's functionality.
 ///
 /// ## Rich text
 ///
@@ -211,7 +207,7 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark modes with Wireframe theme](component_textInput_Wireframe)
 ///
-/// - Version: 1.4.0 (Figma component design version)
+/// - Version: 1.4.1 (Figma component design version)
 /// - Since: 0.20.0
 @available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTextInput: View {
@@ -244,26 +240,11 @@ public struct OUDSTextInput: View {
     ///
     /// For iOS 17+ it is possible to define a sensory feeback for the button.
     /// - Since: 0.20.0
-    public struct TrailingAction {
+    @frozen public struct TrailingAction {
 
         let icon: OUDSImage
         let actionHint: String
         let action: () -> Void
-
-        /// Creates a trailing action.
-        ///
-        /// - Parameters:
-        ///   - icon: The icon set in the ``OUDSButton``
-        ///   - actionHint: A string that describes the purpose of the button's `action`
-        ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-        ///   - renderingMode: The rendering mode to apply on the icon
-        ///   - action: The action to perform when the user triggers the button
-        @available(*, deprecated, message: "Use OUDSTextInput.TrailingAction(image:actionHint:action:) instead.")
-        public init(icon: Image, actionHint: String, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-            self.init(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode),
-                      actionHint: actionHint,
-                      action: action)
-        }
 
         /// Creates a trailing action.
         ///
@@ -281,6 +262,8 @@ public struct OUDSTextInput: View {
         ///   - actionHint: A string that describes the purpose of the button's `action`
         ///   - action: The action to perform when the user triggers the button
         public init(image: OUDSImage, actionHint: String, action: @escaping () -> Void) {
+            precondition(image.asset != nil, "OUDSTextInput.TrailingAction.icon must be created with an asset Image")
+
             if actionHint.isEmpty {
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
@@ -310,8 +293,11 @@ public struct OUDSTextInput: View {
         case richError(message: AttributedString)
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
-        /// text entered. A progress indicator appears to inform the user that an action is in progress.
-        case loading
+        /// text entered. A circular progress indicator appears to inform the user that an action is in progress.
+        /// The field remains editable while loading.
+        ///  - Parameter progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+        ///  value to `nil` to display a circular indeterminate progress indicator.
+        case loading(progress: Double? = nil)
 
         /// The`readOnly`, lets the text visible but not editable
         case readOnly
@@ -322,8 +308,10 @@ public struct OUDSTextInput: View {
 
         public static func == (lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
-            case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
+            case (.enabled, .enabled), (.readOnly, .readOnly), (.disabled, .disabled):
                 true
+            case let (.loading(lhsProgress), .loading(rhsProgress)):
+                lhsProgress == rhsProgress
             case let (.error(lhsMessage), .error(rhsMessage)):
                 lhsMessage == rhsMessage
             case let (.richError(lhsMessage), .richError(rhsMessage)):
@@ -338,7 +326,7 @@ public struct OUDSTextInput: View {
 
     /// Used to describe the helper link above the helper text.
     /// - Since: 0.20.0
-    public struct Helperlink {
+    @frozen public struct Helperlink {
         let text: String
         let action: () -> Void
 
@@ -357,53 +345,6 @@ public struct OUDSTextInput: View {
     }
 
     // MARK: - Initializers — String label + helperText: String?
-
-    /// Creates a text input.
-    ///
-    /// - Parameters:
-    ///    - label: The label displayed above the text input
-    ///    - text: The text to display and edit
-    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional leading icon, by default is *nil*
-    ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
-    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon
-    ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: An optional helper text, by default is *nil*
-    ///    - helperLink: An optional helper link, by default is *nil*
-    ///    - isOutlined: Controls the style of the text input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(label:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
-    public init(label: String,
-                text: Binding<String>,
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                suffix: String? = nil,
-                leadingIcon: Image? = nil,
-                flipLeadingIcon: Bool = false,
-                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
-                trailingAction: Self.TrailingAction? = nil,
-                helperText: String? = nil,
-                helperLink: Self.Helperlink? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: Self.Status = .enabled)
-    {
-        self.init(label: label,
-                  text: text,
-                  placeholder: placeholder,
-                  prefix: prefix,
-                  suffix: suffix,
-                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
-                  trailingAction: trailingAction,
-                  helperText: helperText,
-                  helperLink: helperLink,
-                  isOutlined: isOutlined,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  status: status)
-    }
 
     /// Creates a text input.
     ///
@@ -463,53 +404,7 @@ public struct OUDSTextInput: View {
 
     // MARK: - Initializers — String label + helperText: AttributedString
 
-    /// Creates a text input.
-    ///
-    /// - Parameters:
-    ///    - label: The label displayed above the text input
-    ///    - text: The text to display and edit
-    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional leading icon, by default is *nil*
-    ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
-    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon
-    ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: A rich `AttributedString` helper text
-    ///    - helperLink: An optional helper link, by default is *nil*
-    ///    - isOutlined: Controls the style of the text input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(label:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:AttributedString:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
-    public init(label: String,
-                text: Binding<String>,
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                suffix: String? = nil,
-                leadingIcon: Image? = nil,
-                flipLeadingIcon: Bool = false,
-                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
-                trailingAction: Self.TrailingAction? = nil,
-                helperText: AttributedString,
-                helperLink: Self.Helperlink? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: Self.Status = .enabled)
-    {
-        self.init(label: label,
-                  text: text,
-                  placeholder: placeholder,
-                  prefix: prefix,
-                  suffix: suffix,
-                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
-                  trailingAction: trailingAction,
-                  helperText: helperText,
-                  helperLink: helperLink,
-                  isOutlined: isOutlined,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  status: status)
-    }
-
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a rich attributed helper text.
     ///
     /// ```swift
@@ -558,59 +453,11 @@ public struct OUDSTextInput: View {
         self.constrainedMaxWidth = constrainedMaxWidth
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + helperText: String?
 
-    /// Creates a text input with a localized label.
-    ///
-    /// - Parameters:
-    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - text: The text to display and edit
-    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional leading icon, by default is *nil*
-    ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
-    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon
-    ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: An optional helper text, by default is *nil*
-    ///    - helperLink: An optional helper link, by default is *nil*
-    ///    - isOutlined: Controls the style of the text input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(_:tableName:bundle:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                text: Binding<String>,
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                suffix: String? = nil,
-                leadingIcon: Image? = nil,
-                flipLeadingIcon: Bool = false,
-                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
-                trailingAction: Self.TrailingAction? = nil,
-                helperText: String? = nil,
-                helperLink: Self.Helperlink? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: Self.Status = .enabled)
-    {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
-                  text: text,
-                  placeholder: placeholder,
-                  prefix: prefix,
-                  suffix: suffix,
-                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
-                  trailingAction: trailingAction,
-                  helperText: helperText,
-                  helperLink: helperLink,
-                  isOutlined: isOutlined,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  status: status)
-    }
-
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -664,59 +511,11 @@ public struct OUDSTextInput: View {
                   status: status)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + helperText: AttributedString
 
-    /// Creates a text input with a localized label and a rich attributed helper text.
-    ///
-    /// - Parameters:
-    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - text: The text to display and edit
-    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional leading icon, by default is *nil*
-    ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
-    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon
-    ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: A rich `AttributedString` helper text
-    ///    - helperLink: An optional helper link, by default is *nil*
-    ///    - isOutlined: Controls the style of the text input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(_:tableName:bundle:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:AttributedString:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                text: Binding<String>,
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                suffix: String? = nil,
-                leadingIcon: Image? = nil,
-                flipLeadingIcon: Bool = false,
-                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
-                trailingAction: Self.TrailingAction? = nil,
-                helperText: AttributedString,
-                helperLink: Self.Helperlink? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: Self.Status = .enabled)
-    {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
-                  text: text,
-                  placeholder: placeholder,
-                  prefix: prefix,
-                  suffix: suffix,
-                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
-                  trailingAction: trailingAction,
-                  helperText: helperText,
-                  helperLink: helperLink,
-                  isOutlined: isOutlined,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  status: status)
-    }
-
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a localized label and a rich attributed helper text.
     ///
     /// ```swift
@@ -770,6 +569,8 @@ public struct OUDSTextInput: View {
                   status: status)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Body
 
     public var body: some View {
@@ -789,7 +590,11 @@ public struct OUDSTextInput: View {
                 HelperErrorTextContainer(helperText: helperText, status: status)
                     .accessibilityHidden(true)
             }
-            .accessibilityElement(children: .contain)
+            // NOTE: .accessibilityElement(children: .contain) is intentionally absent here.
+            // It created a UIAccessibilityContainer barrier that prevented Full Keyboard Access
+            // (FKA) from reaching the UITextField via the UIKit view hierarchy. All a11y
+            // attributes (label, value, hint) are set directly on the TextField in InputText.swift,
+            // so VoiceOver behaviour is unaffected by this removal.
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
@@ -803,7 +608,4 @@ public struct OUDSTextInput: View {
     }
 }
 
-// swiftlint:enable function_default_parameter_at_end
-// swiftlint:enable line_length
-// swiftlint:enable type_body_length
 #endif

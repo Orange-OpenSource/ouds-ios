@@ -14,7 +14,7 @@
 @testable import OUDSThemesSosh
 import Testing
 
-/// Check if the component tokens provider under testsh as the default semantic token providers with the expected types.
+/// Check if the component tokens provider under test as the default semantic token providers with the expected types.
 struct SoshThemeTagComponentTokensProviderTests {
 
     private var provider: SoshThemeTagComponentTokensProvider

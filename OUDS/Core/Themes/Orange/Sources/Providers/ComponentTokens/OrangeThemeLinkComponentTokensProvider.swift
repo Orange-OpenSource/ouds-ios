@@ -21,7 +21,8 @@ import OUDSThemesContract
 /// Custom themes can use subclass of ``OrangeThemeLinkComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `LinkComponentTokens` so as to expose the component tokens for *links* through any `OUDSTheme`.
 /// *Link* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// colors (from `AllColorSemanticTokensProvider`) and spaces (from `AllSpaceSemanticTokensProvider`).
+/// colors (from `AllColorSemanticTokensProvider`), spaces (from `AllSpaceSemanticTokensProvider`)
+/// and dimensions (from `AllDimensionSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for link component tokens
@@ -71,13 +72,15 @@ import OUDSThemesContract
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     let linkComponentTokensProvider = OrangeThemeLinkComponentTokensProvider()
 ///
 ///     // Or use your own size, color and space semantic tokens providers (or only some)
 ///     let linkComponentTokensProvider = OrangeThemeLinkComponentTokensProvider(
 ///                                                 sizes: CustomSizeSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
-///                                                 space: CustomSpaceSemanticTokensProvider())
+///                                                 space: CustomSpaceSemanticTokensProvider(),
+///                                                 dimensions: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.9.0
@@ -92,6 +95,9 @@ open class OrangeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvide
     /// Provider of spaces semantic tokens to use for link spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimensions semantic tokens to use for link dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
@@ -101,14 +107,17 @@ open class OrangeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvide
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeLinkComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeLinkComponentTokensProvider")

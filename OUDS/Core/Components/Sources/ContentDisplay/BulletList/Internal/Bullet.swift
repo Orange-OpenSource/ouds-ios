@@ -106,7 +106,7 @@ struct UnorderedBullet: View {
         case .bullet:
             Image(decorative: bulletAssetName, bundle: theme.resourcesBundle)
         case .tick:
-            Image(decorative: "ic_bullet_list_tick", bundle: theme.resourcesBundle)
+            Image(decorative: "Component-bullet-list-bullet-tick", bundle: theme.resourcesBundle)
         case let .icon(image, _):
             image
         }
@@ -115,11 +115,11 @@ struct UnorderedBullet: View {
     private var bulletAssetName: String {
         switch level {
         case .zero:
-            "ic_bullet_list_level0"
+            "Component-bullet-list-bullet-level-0"
         case .one:
-            "ic_bullet_list_level1"
+            "Component-bullet-list-bullet-level-1"
         case .two:
-            "ic_bullet_list_level2"
+            "Component-bullet-list-bullet-level-2"
         }
     }
 

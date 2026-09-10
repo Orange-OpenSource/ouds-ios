@@ -14,10 +14,6 @@
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
-
-// swiftlint:disable line_length
-
 /// The data to use to populate the picker of ``OUDSRadioItem`` objects.
 /// Each property in this ``OUDSRadioPickerData`` is used to define the suitable ``OUDSRadioItem``.
 ///
@@ -59,46 +55,6 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     /// Can be useful for automated tests for examples or anything else.
     /// By default is nil as the logic of identifiers is in the hand of the users.
     let accessibilityIdentifier: String?
-
-    /// Defines the data to use to define the radio buttons (``OUDSRadioItem``)
-    ///
-    /// - Parameters:
-    ///    - tag: a value to discriminate one radio to another
-    ///    - label: the mandatory text to add to ``OUDSRadioItem``
-    ///    - extraLabel: An optional additional text, default set to nil
-    ///    - description: Another optional text, a description, default set to nil
-    ///    - icon: An optional image, default set to nil
-    ///    - isOutlined: True to outline the ``OUDSRadioItem``, false otherwise (default)
-    ///    - isReversed: True to use to reversed layout of the ``OUDSRadioItem``, false otherwise (default)
-    ///    - isError: True if in an error context, false otherwise (default)
-    ///    - isReadOnly: True if read only, false otherwise (default)
-    ///    - hasDivider: True if a divider must be added for the current ``OUDSRadioItem``, false otherwise (default)
-    ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
-    @available(*, deprecated, message: "Use OUDSRadioPickerData(tag:label:extraLabel:description:image:isOutlined:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) instead.")
-    public init(tag: Tag,
-                label: String,
-                extraLabel: String? = nil,
-                description: String? = nil,
-                icon: Image? = nil,
-                isOutlined: Bool = false,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                accessibilityIdentifier: String? = nil)
-    {
-        self.init(tag: tag,
-                  label: label,
-                  extraLabel: extraLabel,
-                  description: description,
-                  image: icon.map { OUDSImage(asset: $0) },
-                  isOutlined: isOutlined,
-                  isReversed: isReversed,
-                  isError: isError,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  accessibilityIdentifier: accessibilityIdentifier)
-    }
 
     /// Defines the data to use to define the radio buttons (``OUDSRadioItem``)
     ///
@@ -155,7 +111,5 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
         self.accessibilityIdentifier = accessibilityIdentifier
     }
 }
-
-// swiftlint:enable line_length
 
 #endif

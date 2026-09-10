@@ -26,8 +26,8 @@ struct TagIcon: View {
         switch type {
         case let .status(_, status):
             TagAsset(appearance: appearance, size: size, status: status)
-        case .loader:
-            TagLoader(size: size)
+        case let .loader(_, progress):
+            TagLoader(size: size, progress: progress)
         }
     }
 }
@@ -36,22 +36,46 @@ struct TagIcon: View {
 
 struct TagLoader: View {
 
+    // MARK: Properties
+
     let size: OUDSTag.Size
+    let progress: Double?
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    // MARK: Body
+
     var body: some View {
-        LoaderIndicator(color: theme.colors.contentDefault.color(for: colorScheme))
-            .padding(.all, padding)
+        Group {
+            if let progress {
+                OUDSCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: true, size: progressIndicatorSize)
+            } else {
+                OUDSCircularProgressIndicator(status: .neutral, track: false, size: progressIndicatorSize)
+            }
+        }
+        .padding(.all, padding)
+    }
+
+    // MARK: Private helpers
+
+    private var progressIndicatorSize: CGFloat {
+        let assetSize = switch size {
+        case .default:
+            theme.tag.sizeAssetDefault
+        case .small:
+            theme.tag.sizeAssetSmall
+        }
+
+        return assetSize - padding
     }
 
     private var padding: CGFloat {
         switch size {
         case .default:
-            theme.tag.spaceInsetLoaderDefault
+            theme.tag.spaceInsetProgressIndicatorDefault
         case .small:
-            theme.tag.spaceInsetLoaderSmall
+            theme.tag.spaceInsetProgressIndicatorSmall
         }
     }
 }
@@ -75,11 +99,11 @@ struct TagAsset: View {
         Group {
             if appearance == .muted, status.leading == .icon, status.category == .warning, isEnabled {
                 ZStack {
-                    Image(decorative: "ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
+                    Image(decorative: "Component-alert-warning-external-shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
                         .foregroundColor(theme.icon.colorContentStatusWarningExternalShape)
-                    Image(decorative: "ic_alert_warning_internal_shape", bundle: theme.resourcesBundle)
+                    Image(decorative: "Component-alert-warning-internal-shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
                         .foregroundColor(theme.icon.colorContentStatusWarningInternalShape)
@@ -126,13 +150,13 @@ struct TagAsset: View {
         case .accent:
             nil
         case .positive:
-            Image(decorative: "ic_alert_tick_confirmation_fill", bundle: theme.resourcesBundle)
+            Image(decorative: "Component-alert-tick-confirmation-fill", bundle: theme.resourcesBundle)
         case .warning:
-            Image(decorative: "ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
+            Image(decorative: "Component-alert-warning-external-shape", bundle: theme.resourcesBundle)
         case .negative:
-            Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
+            Image(decorative: "Component-alert-important-fill", bundle: theme.resourcesBundle)
         case .info:
-            Image(decorative: "ic_alert_info_fill", bundle: theme.resourcesBundle)
+            Image(decorative: "Component-alert-info-fill", bundle: theme.resourcesBundle)
         }
     }
 

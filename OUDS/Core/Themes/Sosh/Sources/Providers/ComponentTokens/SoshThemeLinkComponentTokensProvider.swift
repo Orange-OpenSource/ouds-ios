@@ -20,7 +20,8 @@ import OUDSThemesContract
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `LinkComponentTokens` so as to expose the component tokens for *links* through any `OUDSTheme`.
 /// *Link* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// colors (from `AllColorSemanticTokensProvider`) and spaces (from `AllSpaceSemanticTokensProvider`).
+/// colors (from `AllColorSemanticTokensProvider`), spaces (from `AllSpaceSemanticTokensProvider`) and
+/// dimensions (from `AllDimensionSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider {
@@ -34,6 +35,9 @@ final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider
     /// Provider of spaces semantic tokens to use for link spaces
     let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimensions semantic tokens to use for link dimensions
+    let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
@@ -43,14 +47,17 @@ final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeLinkComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
         self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeLinkComponentTokensProvider")

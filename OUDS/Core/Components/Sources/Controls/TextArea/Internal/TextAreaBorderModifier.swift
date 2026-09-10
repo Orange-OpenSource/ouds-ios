@@ -116,14 +116,7 @@ struct TextAreaBorderModifier: ViewModifier {
                 theme.colors.actionNegativeHover
             }
         case .loading:
-            switch interactionState {
-            case .idle:
-                theme.textInput.colorBorderEnabled
-            case .focused:
-                theme.textInput.colorBorderFocus
-            case .hover:
-                theme.textInput.colorBorderHover
-            }
+            theme.textInput.colorBorderLoading
         case .readOnly:
             theme.colors.borderMuted
         case .disabled:

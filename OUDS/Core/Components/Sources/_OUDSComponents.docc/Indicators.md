@@ -34,7 +34,7 @@ An ``OUDSBadgeCount`` displays an integer value.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Icon
@@ -58,7 +58,7 @@ An ``OUDSBadgeIcon`` displays only an icon and has specific colors.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Standard
@@ -83,6 +83,73 @@ An ``OUDSBadgeStandard`` is an empty badge like a coloured pastille.
 ```swift            
 // Info badge in medium size without information
 OUDSBadgeStandard(status: .info, size: .medium)
+```
+
+### Progress Indicators
+
+#### Circular Progress Indicator
+
+@TabNavigator {
+    @Tab("Orange") {
+        @Video(source: "component_progress_indicator_circular_Orange.video")
+    }
+    @Tab("Orange Compact") {
+        @Video(source: "component_progress_indicator_circular_OrangeCompact.video")
+    }
+    @Tab("Sosh") {
+        @Video(source: "component_progress_indicator_circular_Sosh.video")
+    }
+    @Tab("Wireframe") {
+        @Video(source: "component_progress_indicator_circular_Wireframe.video")
+    }
+}
+
+An ``OUDSCircularProgressIndicator`` is a progress indicator which can be used to display determinate value or indeterminate value with animations.
+
+```swift            
+// A circular gauge filled at 75% in neutral color with a track displayed with an animation
+OUDSCircularProgressIndicator(progress: 0.75, status: .neutral)
+
+// A circular gauge without defined value and an accent color
+OUDSCircularProgressIndicator(status: .accent)
+```
+
+#### Linear Progress Indicator
+
+@TabNavigator {
+    @Tab("Orange") {
+        @Video(source: "component_progress_indicator_linear_Orange.video")
+    }
+    @Tab("Orange Compact") {
+        @Video(source: "component_progress_indicator_linear_OrangeCompact.video")
+    }
+    @Tab("Sosh") {
+        @Video(source: "component_progress_indicator_linear_Sosh.video")
+    }
+    @Tab("Wireframe") {
+        @Video(source: "component_progress_indicator_linear_Wireframe.video")
+    }
+}
+
+An ``OUDSLinearProgressIndicator`` is a horizontal progress indicator which can be used to display determinate value or indeterminate value animations.
+
+```swift
+// A horizontal bar filled at 75% in neutral color with a track and reveal animation
+OUDSLinearProgressIndicator(progress: 0.75, status: .neutral)
+
+// A horizontal bar without defined value and an accent color
+OUDSLinearProgressIndicator(status: .accent)
+
+// A horizontal bar with a helper text center aligned, a stop indicator (determinate only) and no animations
+OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: .description("Uploading…"), animated: false)
+
+// A horizontal bar with a helper text with progress information start aligned
+// The percentage rendering (symbol, spacing, position) follows the localized wording key
+// `core_progressIndicator_percent_value` (e.g. "75%" in English, "75 %" in French, "٪75" in Arabic).
+OUDSLinearProgressIndicator(progress: 0.5, helperText: .percent(description: "Uploading…", alignment: .start))
+
+// An indeterminate horizontal bar with a helper text start aligned 
+OUDSLinearProgressIndicator(status: .info, helperText: "Processing…", helperTextAlignment: .start)
 ```
 
 ### Tag
@@ -127,8 +194,11 @@ OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_brand"
 // Text with neutral status with bullet
 OUDSTag(label: "Label", status: .neutral(bullet: true))
             
-// Tag with loader with rounded shape in small size
-OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
+// Tag with indeterminate circular progress indicator, with rounded shape in small size
+OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
+
+// Tag with determinate circular progress indicator, with rounded shape in default size
+OUDSTag(loadingLabel: "Processing...", progress: 0.75)
 ```
 
 ### Input Tag

@@ -27,7 +27,7 @@ enum ButtonInternalState {
 /// - apply foreground, background colors and add a border (width, radius and color) associated to the appearance and according to the internal state
 struct ButtonViewModifier: ViewModifier {
 
-    // MARK: Stored Properties
+    // MARK: Properties
 
     let appearance: OUDSButton.Appearance
     let state: ButtonInternalState

@@ -25,6 +25,7 @@ struct NavigationStackRefresher: ViewModifier {
 
     @Environment(\.theme) private var theme: OUDSTheme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Initializer
@@ -88,7 +89,9 @@ struct NavigationStackRefresher: ViewModifier {
         let appearance = UINavigationBarAppearance()
 
         // Foreground color (ie.titles)
-        let foregroundColor = newTheme.colors.contentDefault.color(for: newColorScheme).uiColor
+        let foregroundColor = UIColor { traitCollection in
+            (traitCollection.userInterfaceStyle == .dark ? newTheme.colors.contentDefault.color(for: .dark) : newTheme.colors.contentDefault.color(for: .light)).uiColor
+        }
 
         // Titles fonts
         var titleFont: UIFont?, largeTitleFont: UIFont?, subTitleFont: UIFont?, largeSubtitleFont: UIFont?
@@ -123,7 +126,7 @@ struct NavigationStackRefresher: ViewModifier {
 
         // Back indicator
 
-        let backImage = UIImage(named: "ic_link_previous", in: newTheme.resourcesBundle, with: .none)
+        let backImage = UIImage(named: "Component-link-previous", in: newTheme.resourcesBundle, with: .none)
         appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
 
         let backButtonAppearance = appearance.backButtonAppearance
@@ -157,7 +160,7 @@ struct NavigationStackRefresher: ViewModifier {
 
         // Background and tint colors
 
-        if isLiquidGlassDisabled {
+        if isLiquidGlassDisabled || forceOUDSLegacyLayout {
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = newTheme.bar.colorBgTranslucent.color(for: newColorScheme).uiColor
         }

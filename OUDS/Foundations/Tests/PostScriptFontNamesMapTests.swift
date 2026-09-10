@@ -99,6 +99,43 @@ struct PostScriptFontNamesMapTests {
         #expect(kApplePostScriptFontNames[PSFNMK("SF Pro", Font.Weight.black)] == "SFPro-Black")
     }
 
+    // MARK: - SF Mono
+
+    @Test
+    func sfMonoLight() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Mono", Font.Weight.light)] == "SFMono-Light")
+    }
+
+    @Test
+    func sfMonoRegular() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Mono", Font.Weight.regular)] == "SFMono-Regular")
+    }
+
+    @Test
+    func sfMono() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Mono", nil)] == "SFMono-Regular")
+    }
+
+    @Test
+    func sfMonoMedium() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Mono", Font.Weight.medium)] == "SFMono-Medium")
+    }
+
+    @Test
+    func sfMonoSemiBold() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Mono", Font.Weight.semibold)] == "SFMono-Semibold")
+    }
+
+    @Test
+    func sfMonoBold() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Mono", Font.Weight.bold)] == "SFMono-Bold")
+    }
+
+    @Test
+    func sfMonoHeavy() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Mono", Font.Weight.heavy)] == "SFMono-Heavy")
+    }
+
     // MARK: - Menlo
 
     @Test

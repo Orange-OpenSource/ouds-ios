@@ -24,8 +24,6 @@ struct ToolBarBottomModifier: ViewModifier {
     private let trailingItems: [OUDSToolBarItem]
     private let groupedItems: [OUDSToolBarItem]
 
-    @Environment(\.theme) private var theme
-
     // MARK: - Initializer
 
     /// Creates a bottom toolbar with leading and trailing items, and a space between them.

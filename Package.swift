@@ -34,22 +34,22 @@ let package = Package(
 
         // Umbrella library to improve Developer eXperience and let users use OUDS in only one import
 
-        // Embeds all librairies and all themes
+        // Embeds all libraries and all themes
         .library(
             name: "OUDSSwiftUI",
             targets: ["OUDSSwiftUI"]),
 
-        // Embeds all librairies but only Orange and Orange Compact themes
+        // Embeds all libraries but only Orange and Orange Compact themes
         .library(
             name: "OUDSSwiftUIOrange",
             targets: ["OUDSSwiftUIOrange"]),
 
-        // Embeds all librairies but only Orange and Sosh themes
+        // Embeds all libraries but only Orange and Sosh themes
         .library(
             name: "OUDSSwiftUIOrangeSosh",
             targets: ["OUDSSwiftUIOrangeSosh"]),
 
-        // Embeds all librairies but only Wireframe theme
+        // Embeds all libraries but only Wireframe theme
         .library(
             name: "OUDSSwiftUIWireframe",
             targets: ["OUDSSwiftUIWireframe"]),
@@ -102,9 +102,9 @@ let package = Package(
         // Apple Swift tool to build documentation
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.5.0"),
         // Linter for Swift code
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.65.0"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.65.1"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.62.1"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.63.0"),
     ],
 
     // MARK: - Targets
@@ -209,7 +209,7 @@ let package = Package(
 
         .target(
             name: "OUDSThemesWireframe",
-            dependencies: ["OUDSThemesContract", "OUDSThemesOrange"],
+            dependencies: ["OUDSThemesContract"],
             path: "OUDS/Core/Themes/Wireframe/Sources",
             resources: [.process("Resources/")]),
         .testTarget(

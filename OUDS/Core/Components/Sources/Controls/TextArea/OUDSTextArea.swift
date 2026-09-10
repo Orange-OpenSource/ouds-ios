@@ -74,18 +74,18 @@ import SwiftUI
 ///
 /// ## Mandatory field indication
 ///
-/// If all fields are mandatory (several fields present): display the message "All fields are mandatory" at the top of your formular.
+/// If all fields are mandatory (several fields present): display the message "All fields are mandatory" at the top of your form.
 /// Do not use an asterisk at the end of each field label, nor the word "mandatory."
 ///
-/// If not all fields are mandatory (several fields present): display the message "All fields marked with an \* are mandatory" at the top of your formular.
+/// If not all fields are mandatory (several fields present): display the message "All fields marked with an \* are mandatory" at the top of your form.
 /// Use an asterisk (\*) at the end of each mandatory field label, and ensures this is well vocalized.
 ///
 /// UI rendering of the asterisk must be done with *bold font weight* and *negative content color* (red on light backgrounds).
 ///
 /// Use the mention "(optional)" at the end of each optional field label. Note that this rule is not systematic, it remains an option, to be used if needed.
 ///
-/// If there is only one field in the formular, or if the mandatory nature is obvious,
-/// no mention is necessary since the fields are essential to the formular's functionality.
+/// If there is only one field in the form, or if the mandatory nature is obvious,
+/// no mention is necessary since the fields are essential to the form's functionality.
 ///
 /// ## Outlined style
 ///
@@ -189,7 +189,7 @@ import SwiftUI
 ///
 /// ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
 ///
-/// - Version: 1.2.0 (Figma component design version)
+/// - Version: 1.2.1 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTextArea: View {
@@ -238,9 +238,11 @@ public struct OUDSTextArea: View {
         case richError(message: AttributedString)
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
-        /// text entered. A progress indicator appears to inform the user that an action is in progress.
+        /// text entered. A circular progress indicator appears to inform the user that an action is in progress.
         /// The field remains editable while loading.
-        case loading
+        ///  - Parameter progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+        ///  value to `nil` to display a circular indeterminate progress indicator.
+        case loading(progress: Double? = nil)
 
         /// The `readOnly` status lets the text visible but not editable
         case readOnly
@@ -251,8 +253,10 @@ public struct OUDSTextArea: View {
 
         public static func == (lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
-            case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
+            case (.enabled, .enabled), (.readOnly, .readOnly), (.disabled, .disabled):
                 true
+            case let (.loading(lhsProgress), .loading(rhsProgress)):
+                lhsProgress == rhsProgress
             case let (.error(lhsMessage), .error(rhsMessage)):
                 lhsMessage == rhsMessage
             case let (.richError(lhsMessage), .richError(rhsMessage)):
@@ -317,7 +321,7 @@ public struct OUDSTextArea: View {
 
     /// Used to describe the helper link below the text area.
     /// - Since: 1.4.0
-    public struct Helperlink {
+    @frozen public struct Helperlink {
         let text: String
         let action: () -> Void
 

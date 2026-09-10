@@ -14,11 +14,6 @@
 import OUDSFoundations
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these SwiftLint commands
-
-// swiftlint:disable function_default_parameter_at_end
-// swiftlint:disable line_length
-
 // MARK: - OUDS Checkbox Item Indeterminate
 
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
@@ -42,7 +37,7 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSCheckboxItemIndeterminate`` can be related to an error situation, for example troubles for a formular.
+/// An ``OUDSCheckboxItemIndeterminate`` can be related to an error situation, for example troubles for a form.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
 /// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
 ///
@@ -165,51 +160,6 @@ public struct OUDSCheckboxItemIndeterminate: View {
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
-    /// - Parameters:
-    ///   - label: The main label text of the checkbox, must not be empty
-    ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked
-    ///   - description: A description, an additional helper text, should not be empty
-    ///   - icon: An optional icon image
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
-    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise
-    ///   - isError: `true` if the look and feel of the component must reflect an error state
-    ///   - errorText: An optional error message to display at the bottom
-    ///   - isReadOnly: True if component is in read only
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view
-    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItemIndeterminate(_:selection:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
-    public init(_ label: String,
-                selection: Binding<OUDSCheckboxIndicatorState>,
-                description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                errorText: String? = nil,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                action: (() -> Void)? = nil)
-    {
-        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
-        self.init(label,
-                  selection: selection,
-                  description: description,
-                  image: oudsImage,
-                  isReversed: isReversed,
-                  isError: isError,
-                  errorText: errorText,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  action: action)
-    }
-
-    /// Creates a checkbox with label and optional helper text, icon, divider.
-    ///
     /// ```swift
     ///     OUDSCheckboxItemIndeterminate("Select all", selection: $state)
     ///
@@ -290,6 +240,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             orientation: isReversed ? .reversed : .default)
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a checkbox with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -344,6 +295,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
                   action: action)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: Body
 
     public var body: some View {
@@ -385,6 +338,3 @@ public struct OUDSCheckboxItemIndeterminate: View {
         }
     }
 }
-
-// swiftlint:enable function_default_parameter_at_end
-// swiftlint:enable line_length

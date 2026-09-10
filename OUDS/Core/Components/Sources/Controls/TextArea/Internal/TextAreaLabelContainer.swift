@@ -56,7 +56,7 @@ struct TextAreaLabelContainer: View {
             case .idle:
                 theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.actionNegativeFocus
+                theme.colors.actionNegativePressed
             case .hover:
                 theme.colors.actionNegativeHover
             }
@@ -69,7 +69,7 @@ struct TextAreaLabelContainer: View {
             case .idle:
                 theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.actionNegativeFocus
+                theme.colors.actionNegativePressed
             case .hover:
                 theme.colors.actionNegativeHover
             }

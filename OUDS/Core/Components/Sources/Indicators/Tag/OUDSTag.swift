@@ -115,8 +115,11 @@ import SwiftUI
 ///     // Text with neutral status with bullet
 ///     OUDSTag(label: "Label", status: .neutral(bullet: true))
 ///
-///     // Tag with loader with rounded shape in small size
-///     OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
+///     // Tag with indeterminate circular progress indicator, with rounded shape in small size
+///     OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
+///
+///     // Tag with determinate circular progress indicator, with rounded shape in default size
+///     OUDSTag(loadingLabel: "Processing...", progress: 0.75)
 /// ```
 ///
 /// ## Design documentation
@@ -161,12 +164,12 @@ public struct OUDSTag: View {
         case status(label: String, status: Status)
 
         /// Tag with label in loading state
-        case loader(label: String)
+        case loader(label: String, progress: Double? = nil)
 
         /// Label of the tag
         var label: String {
             switch self {
-            case let .status(label, _), let .loader(label):
+            case let .status(label, _), let .loader(label, _):
                 label
             }
         }
@@ -175,7 +178,7 @@ public struct OUDSTag: View {
     /// The status of an `OUDSTag` determines the leading element, the background
     /// and the content colors of the tag according to the category.
     /// - Since: 0.18.0
-    public struct Status {
+    @frozen public struct Status {
 
         let leading: Self.Leading
         let category: Self.Category
@@ -244,17 +247,6 @@ public struct OUDSTag: View {
             Status(leading: leading, category: .info)
         }
 
-        /// Used to create a tag with a neutral status with leading icon.
-        ///
-        /// - Parameters:
-        ///    - icon: The icon to set as leading element in the tag
-        ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-        ///    - renderingMode: The rendering mode to apply on the icon
-        @available(*, deprecated, message: "Use OUDSTag.Status.neutral(image: OUDSImage) instead. Pass OUDSImage(asset:flipped:renderingMode:) to encapsulate image configuration.")
-        public static func neutral(icon: Image, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template) -> Status {
-            .neutral(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode))
-        }
-
         /// Used to create a tag with a neutral status with a leading ``OUDSImage`` icon.
         ///
         /// ```swift
@@ -277,17 +269,6 @@ public struct OUDSTag: View {
         /// - Parameter bullet: Default set to `false`, set to true to add bullet.
         public static func neutral(bullet: Bool = false) -> Status {
             Status(leading: bullet ? .bullet : .none, category: .neutral)
-        }
-
-        /// Used to create a tag with an accent status with leading icon.
-        ///
-        /// - Parameters:
-        ///    - icon: The icon to set as leading element in the tag
-        ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-        ///    - renderingMode: The rendering mode to apply on the icon
-        @available(*, deprecated, message: "Use OUDSTag.Status.accent(image: OUDSImage) instead. Pass OUDSImage(asset:flipped:renderingMode:) to encapsulate image configuration.")
-        public static func accent(icon: Image, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template) -> Status {
-            .accent(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode))
         }
 
         /// Used to create a tag with an accent status with a leading ``OUDSImage`` icon.
@@ -380,19 +361,16 @@ public struct OUDSTag: View {
     ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag. Default set to *emphasized*
     ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
     ///    - size: The size of the tag. Default set to *default*.
-    ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not.
-    ///    It will replace the `icon` if provided. Default set to *false*.
     public init(label: String,
                 status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
-                size: Size = .default,
-                hasLoader: Bool = false)
+                size: Size = .default)
     {
         self.appearance = appearance
         self.shape = shape
         self.size = size
-        type = hasLoader ? .loader(label: label) : .status(label: label, status: status)
+        type = .status(label: label, status: status)
     }
 
     /// Creates a tag with a localized label, looking up the key in the given bundle.
@@ -409,40 +387,42 @@ public struct OUDSTag: View {
     ///    - appearance: The importance of the tag, default set to *emphasized*
     ///    - shape: The shape of the tag, default set to *rounded*
     ///    - size: The size of the tag, default set to *default*
-    ///    - hasLoader: If an optional loader is displayed, default set to *false*
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
-                size: Size = .default,
-                hasLoader: Bool = false)
+                size: Size = .default)
     {
         let resolvedLabel = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size, hasLoader: hasLoader)
+        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size)
     }
 
-    /// Creates a tag in the loading state.
+    /// Creates a tag in the loading state indicates that the system is processing or retrieving data.
+    /// A circular progress indicator appears to inform the user that an action is in progress.
     ///
     /// The use the `View/disabled(_:)` method has no effect on this state.
     ///
     /// ```swift
-    ///     OUDSTag(loadingLabel: "Processing")
+    ///     OUDSTag(loadingLabel: "Processing...", progress: 0.75)
     /// ```
     ///
     /// - Parameters:
-    ///    - loadingLabel: The label displayed in the tag
-    ///    - shape: The shape of the tag, i.e. the corners style
-    ///    - size: The size of the tag
+    ///    - loadingLabel: The label displayed in the tag`
+    ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+    ///  value to `nil` to display a circular indeterminate progress indicator.
+    ///    - shape: The shape of the tag, i.e. the corners style, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*.
     public init(loadingLabel: String,
+                progress: Double? = nil,
                 shape: Shape = .rounded,
                 size: Size = .default)
     {
         appearance = .emphasized
         self.shape = shape
         self.size = size
-        type = .loader(label: loadingLabel)
+        type = .loader(label: loadingLabel, progress: progress)
         // "loadingLabel" instead of "label" to avoid doubts for users with init(label:status:appearance=shape:size:hasLoader) with default values
     }
 
@@ -456,16 +436,19 @@ public struct OUDSTag: View {
     ///    - loadingKey: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - shape: The shape of the tag, i.e. the corners style
-    ///    - size: The size of the tag
+    ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+    ///  value to `nil` to display a circular indeterminate progress indicator.
+    ///    - shape: The shape of the tag, i.e. the corners style, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*.
     public init(loadingKey: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
+                progress: Double? = nil,
                 shape: Shape = .rounded,
                 size: Size = .default)
     {
         let resolvedLabel = loadingKey.resolved(tableName: tableName, bundle: bundle)
-        self.init(loadingLabel: resolvedLabel, shape: shape, size: size)
+        self.init(loadingLabel: resolvedLabel, progress: progress, shape: shape, size: size)
     }
 
     // MARK: Body

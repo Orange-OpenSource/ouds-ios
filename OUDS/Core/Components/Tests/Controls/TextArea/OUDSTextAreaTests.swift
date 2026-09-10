@@ -19,7 +19,7 @@ import Testing
 struct OUDSTextAreaTests {
 
     /// Test the controls on limit exceedings
-    @MainActor @Test func textDoesExceedLimit() {
+    @MainActor @Test func `text does exceed limit`() {
         // Given
         let smallText = "1234567890"
         let helperForSmallText = OUDSTextArea.HelperText.charactersMaxCount(50)
@@ -61,7 +61,7 @@ struct OUDSTextAreaTests {
     }
 
     /// Test the controls on exceeeding counts
-    @MainActor @Test func textExceedingCount() {
+    @MainActor @Test func `text exceeding count`() {
         // Given
         var someText = "Lorem ipsum" // Length of 11
         var helperForSomeText = OUDSTextArea.HelperText.charactersMaxCount(5)
@@ -94,7 +94,7 @@ struct OUDSTextAreaTests {
     }
 
     /// Test the controls on remaining counts
-    @MainActor @Test func textRemainingCount() {
+    @MainActor @Test func `text remaining count`() {
         // Given
         var someText = "Lorem ipsum" // Length of 11
         var helperForSomeText = OUDSTextArea.HelperText.charactersMaxCount(5)

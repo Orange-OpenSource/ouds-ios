@@ -25,8 +25,8 @@ import SwiftUI
 /// This layout is used to open a link or to display a specific feature (like send feedbacks, show more, ...)
 ///
 /// ```swift
-///     // Text only in small size
-///     OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+///     // Text only in small size, in compact density
+///     OUDSLink(text: "Feedback", size: .small, density: .compact) { /* the action to process */ }
 ///
 ///     // From a localizable and a bundle
 ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
@@ -40,14 +40,20 @@ import SwiftUI
 ///
 /// ## Navigation layout
 ///
-/// This layout is used to navigate backward or forward.
+/// This layout is used to navigate backward, forward and outside the app
 ///
 /// ```swift
 ///     // Navigate to next page with link in a small size
-///     OUDSLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
+///     OUDSLink(text: "Feedback", indicator: .next, size: .small, density: .compact) { /* the action to process */ }
 ///
 ///     // Navigate to previous page with link in a default size
-///     OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+///     OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
+///
+///     // Full-width: label stays, chevron anchored to the right / left
+///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
+///
+///     // Full-width: label stays, indicator anchored to the right / left
+///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -76,7 +82,7 @@ import SwiftUI
 ///
 /// ![A link component in light and dark modes with Wireframe theme](component_link_Wireframe)
 ///
-/// - Version: 2.2.0 (Figma component design version)
+/// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.11.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLink: View {
@@ -86,6 +92,8 @@ public struct OUDSLink: View {
     private let layout: Layout
     private let text: String
     private let size: Size
+    private let density: Density
+    private let isFullWidth: Bool
     private let action: () -> Void
 
     @Environment(\.theme) private var theme
@@ -97,10 +105,17 @@ public struct OUDSLink: View {
         case small, `default`
     }
 
+    /// Represents the type of density for an `OUDSLink`.
+    /// `.compact` can be used for interfaces with a lot of content to display.
+    /// - Since: 3.0.0
+    @frozen public enum Density {
+        case `default`, compact
+    }
+
     /// Represents the arrow / chevron / indicator of an `OUDSLink`.
     /// - Since: 0.11.0
     @frozen public enum Indicator {
-        case back, next
+        case previous, next, external
     }
 
     enum Layout {
@@ -110,27 +125,6 @@ public struct OUDSLink: View {
     }
 
     // MARK: - Initializers — String label + optional icon
-
-    /// Create a link with text and icon.
-    ///
-    /// - Parameters:
-    ///   - text: Text displayed in the link
-    ///   - icon: An optional icon image
-    ///   - renderingMode: The rendering mode to apply on the icon
-    ///   - size: Size of the link
-    ///   - action: The action to perform when the user triggers the link
-    @available(*, deprecated, message: "Use OUDSLink(text:image:size:action:) instead.")
-    public init(text: String,
-                icon: Image? = nil,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                size: Size = .default,
-                action: @escaping () -> Void)
-    {
-        self.init(text: text,
-                  image: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
-                  size: size,
-                  action: action)
-    }
 
     /// Create a link with text and an optional icon.
     ///
@@ -148,44 +142,23 @@ public struct OUDSLink: View {
     ///   - text: Text displayed in the link
     ///   - image: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
     ///   - size: Size of the link
+    ///   - density: The density to apply to the link defining some spaces, default set to `.default`
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
                 image: OUDSImage? = nil,
                 size: Size = .default,
+                density: Density = .default,
                 action: @escaping () -> Void)
     {
         layout = image.map { .textAndIcon($0) } ?? .textOnly
         self.text = text
         self.size = size
+        self.density = density
+        isFullWidth = false
         self.action = action
     }
 
     // MARK: - Initializers — LocalizedStringKey + optional icon
-
-    /// Creates a link with a localized text and optional icon.
-    ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - icon: An optional icon image
-    ///   - renderingMode: The rendering mode to apply on the icon
-    ///   - size: Size of the link
-    ///   - action: The action to perform when the user triggers the link
-    @available(*, deprecated, message: "Use OUDSLink(_:tableName:bundle:image:size:action:) instead.")
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                icon: Image? = nil,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                size: Size = .default,
-                action: @escaping () -> Void)
-    {
-        self.init(text: key.resolved(tableName: tableName, bundle: bundle),
-                  image: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
-                  size: size,
-                  action: action)
-    }
 
     /// Creates a link with a localized text and optional icon, looking up the key in the given bundle.
     ///
@@ -204,48 +177,70 @@ public struct OUDSLink: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - image: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
     ///   - size: Size of the link
+    ///   - density: The density to apply to the link defining some spaces, default set to `.default`
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 image: OUDSImage? = nil,
                 size: Size = .default,
+                density: Density = .default,
                 action: @escaping () -> Void)
     {
-        self.init(text: key.resolved(tableName: tableName, bundle: bundle),
-                  image: image,
-                  size: size,
-                  action: action)
+        layout = image.map { .textAndIcon($0) } ?? .textOnly
+        text = key.resolved(tableName: tableName, bundle: bundle)
+        self.size = size
+        self.density = density
+        isFullWidth = false
+        self.action = action
     }
 
     // MARK: - Initializers — indicator (unchanged)
 
     // swiftlint:disable function_default_parameter_at_end
 
-    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after indicator" (`OUDSLink.Indicator.next`) beside the text.
+    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.previous`) or "after indicator" (`OUDSLink.Indicator.next`) beside the text.
     ///
     /// ```swift
-    ///     OUDSLink(text: "Back", indicator: .back) { }
+    ///     // A "back" link
+    ///     OUDSLink(text: "Back", indicator: .previous) { /* action to trigger */ }
+    ///     // An "open external" link
+    ///     OUDSLink(text: "Open", indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
     /// ```
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
     ///   - indicator: Indicator displayed in the link.
-    ///   When `OUDSLink.Indicator.back`, the indicator is displayed before the text.
+    ///   When `OUDSLink.Indicator.previous`, the indicator is displayed before the text.
     ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
+    ///   - density: The density to apply to the link defining some spaces, default set to `.default`
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
+    ///   The label stays anchored to the an edge and the indicator to the other edge.
+    ///   Defaults to `false` (intrinsic sizing).
     ///   - action: The action to perform when the user triggers the link
-    public init(text: String, indicator: Indicator, size: Size = .default, action: @escaping () -> Void) {
+    public init(text: String,
+                indicator: Indicator,
+                size: Size = .default,
+                density: Density = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
         layout = .indicator(indicator)
         self.text = text
         self.size = size
+        self.density = density
+        self.isFullWidth = isFullWidth
         self.action = action
     }
 
     /// Creates a link with a localized text and a navigation indicator, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .back) { }
+    ///     // A "back" link
+    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .previous) { /* action to trigger */ }
+    ///     // An "open external" link
+    ///     OUDSLink(LocalizedStringKey("open_link"), bundle: Bundle.module, indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
     /// ```
     ///
     /// - Parameters:
@@ -254,17 +249,25 @@ public struct OUDSLink: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - indicator: Indicator displayed in the link
     ///   - size: Size of the link
+    ///   - density: The density to apply to the link defining some spaces, default set to `.default`
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
+    ///   The label stays anchored to one edge and the indicator to the other edge.
+    ///   Defaults to `false` (intrinsic sizing).
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 indicator: Indicator,
                 size: Size = .default,
+                density: Density = .default,
+                isFullWidth: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
         text = key.resolved(tableName: tableName, bundle: bundle)
         self.size = size
+        self.density = density
+        self.isFullWidth = isFullWidth
         self.action = action
     }
 
@@ -302,7 +305,7 @@ public struct OUDSLink: View {
                 }
             }
         }
-        .buttonStyle(LinkButtonStyle(layout: layout, size: size))
+        .buttonStyle(LinkButtonStyle(layout: layout, size: size, density: density, isFullWidth: isFullWidth))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
     }
@@ -311,10 +314,12 @@ public struct OUDSLink: View {
 
     private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
         switch navigationIndicator {
-        case .back:
-            "ic_link_previous"
+        case .previous:
+            "Component-link-previous"
         case .next:
-            "ic_link_next"
+            "Component-link-next"
+        case .external:
+            "Component-link-external-link"
         }
     }
 }

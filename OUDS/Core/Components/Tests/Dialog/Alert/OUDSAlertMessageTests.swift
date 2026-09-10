@@ -43,4 +43,10 @@ struct OUDSAlertMessageTests {
             Issue.record("Status should be accent")
         }
     }
+
+    @Test
+    func `alert message components priority must be text then link then close button`() {
+        #expect(OUDSAlertMessage.textsAccessibilityPriority > OUDSAlertMessage.actionLinkAccessibilityPriority)
+        #expect(OUDSAlertMessage.actionLinkAccessibilityPriority > OUDSAlertMessage.closeButtonAccessibilityPriority)
+    }
 }

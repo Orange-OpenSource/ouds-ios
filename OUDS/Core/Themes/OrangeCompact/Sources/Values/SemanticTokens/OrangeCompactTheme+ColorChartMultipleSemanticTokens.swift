@@ -21,7 +21,7 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// Defines provider objects for `ColorChartSemanticTokens` so as to pack them as light and dark modes colors.
-/// These values cannot be overriden as not specified / allowed, forbidden by design.
+/// These values cannot be overridden as not specified / allowed, forbidden by design.
 ///
 /// Helps to expose color chart semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OrangeCompactThemeColorChartSemanticTokensProvider: ColorChartMultipleSemanticTokens {

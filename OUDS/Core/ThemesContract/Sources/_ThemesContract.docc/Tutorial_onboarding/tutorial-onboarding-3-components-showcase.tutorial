@@ -5,20 +5,20 @@
         @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }
 
-    @XcodeRequirement(title: "Xcode 26.4", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
 
     @Section(title: "Discover main components") {
         
         @ContentAndMedia {
             Components are gathered by group or families. You can find all of theme in the [online documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents).
-            For exemple, in *control* family you will find *checkboxes*, *radio buttons*, *switch items* and some *inputs* fields.
+            For example, in *control* family you will find *checkboxes*, *radio buttons*, *switch items* and some *inputs* fields.
             *Layouts* provides *dividers*, *buttons* are in *actions* group, *bullet lists* in *display* family.
         }
         
         @Steps {
             @Step {
                 Define a basic `Control` `View` with in its *body* a `VStack` with *theme.spaces.fixedNone* spacing.
-                Add inside the components you want, for exemple [*checkbox item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudscheckboxitem), [*radio item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsradioitem/), [*switch item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsswitchitem), [*text input*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstextinput) and [*password input*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudspasswordinput).
+                Add inside the components you want, for example [*checkbox item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudscheckboxitem), [*radio item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsradioitem/), [*switch item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsswitchitem), [*text input*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstextinput) and [*password input*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudspasswordinput).
                 Do not forget the Xcode preview.
 
                 @Code(name: "Control.swift", file: "tutorial-onboarding-3-1.swift") {

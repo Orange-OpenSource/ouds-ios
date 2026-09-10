@@ -100,6 +100,9 @@ public protocol SizeSemanticTokens {
     var maxWidthBodySmallMobile: SizeSemanticToken { get }
     var maxWidthBodySmallTablet: SizeSemanticToken { get }
 
+    var maxWidthBoxedTextMobile: SizeSemanticToken { get }
+    var maxWidthBoxedTextTablet: SizeSemanticToken { get }
+
     var maxWidthLabelXlargeMobile: SizeSemanticToken { get }
     var maxWidthLabelXlargeTablet: SizeSemanticToken { get }
     var maxWidthLabelLargeMobile: SizeSemanticToken { get }
@@ -146,7 +149,9 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Interactive area
 
-    var minInteractiveArea: SizeSemanticToken { get }
+    var minInteractiveAreaDefault: SizeSemanticToken { get }
+    var minInteractiveAreaSmall: SizeSemanticToken { get }
+    var minInteractiveAreaSmallest: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

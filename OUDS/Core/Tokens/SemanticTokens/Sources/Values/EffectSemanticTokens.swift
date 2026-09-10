@@ -24,6 +24,7 @@
 /// - Since: 0.22.0
 public protocol EffectSemanticTokens {
 
+    var blurBackdrop: EffectSemanticToken { get }
     var blurDrag: EffectSemanticToken { get }
 }
 

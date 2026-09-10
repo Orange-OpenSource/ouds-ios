@@ -29,11 +29,11 @@ import SwiftUI
 /// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
 /// and not the text making theme not readable in dark color scheme
 ///
-/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` componetabCountnt,
-/// the native API is used instead.
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadgeStandard``
+/// or ``OUDSBadgeCount``, the native API is used instead.
 ///
 /// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version, not before.
-/// However if an app is built with Xcode 26 and the flag *UIDesignRequiresCompatibility* set to *YES*, then Loquid Glass won't be applied but the alternative layout.
+/// However if an app is built with Xcode 26 and the flag *UIDesignRequiresCompatibility* set to *YES*, then Liquid Glass won't be applied but the alternative layout.
 /// Nevertheless with Xcode 27 and for iOS 27, Liquid Glass will be always applied, whatever the value of the flag is.
 ///
 /// If you use SF Symbols for images, if they exist their *fill* variant will be automatically used in the tab bar (native behaviour).
@@ -42,8 +42,8 @@ import SwiftUI
 ///
 /// - This component is tailored for iOS
 /// - On iPadOS the tabs do not apply the fonts since iPadOS 18
-/// - Because macOS does not support UIKit and because UIKIt is used to define the style of the tab bar, there is not styling of the tab bar for macOS
-/// - visionOS with is specific UI does not apply colors on tab bars and things are glasssified
+/// - Because macOS does not support UIKit and because UIKIt is used to define the style of the tab bar, there is no styling of the tab bar for macOS
+/// - visionOS with its specific UI does not apply colors on tab bars and things are glasssified
 /// - The component is not available for watchOS
 /// - The component is not available for tvOS
 ///
@@ -81,7 +81,7 @@ import SwiftUI
 ///
 /// ## Selection of tabs
 ///
-/// For iOS lower than 26, a selected tab indicator can be displayed in the `OUDSTabBar` if the `count` parameter is defined (to the number of tabs in the component)
+/// For iOS lower than 26, a selected tab indicator is displayed in the `OUDSTabBar` ; the `count` parameter must be defined (to the number of tabs in the component),
 /// and if the `selectedTab` binding value is equal to a given tag associated to a tab item.
 /// Otherwise the indicator won't appear; these parameters are mandatory to compute the location of the indicator.
 /// This rule is only applied if selected tab indicator must be displayed.
@@ -136,6 +136,11 @@ import SwiftUI
 ///             .tag(2) // Must be used for the selectedTab binding
 ///     }
 /// ```
+///
+/// ## Alternative components
+///
+/// If you want to use SwiftUI `Tab` View with or without rules, use instead `OUDSTabView`.
+/// If you target apps with Liquid Glass enabled and need `Tab` or rules, use instead `OUDSLiquidGlassTabView`.
 ///
 /// ## Design documentation
 ///
@@ -216,7 +221,7 @@ public struct OUDSTabBar<Content: View>: View {
     @State private var isTabBarHidden: Bool = false
     #endif
 
-    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyTabBar
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Initializers
@@ -319,7 +324,7 @@ public struct OUDSTabBar<Content: View>: View {
             TabView(selection: $selectedTab) {
                 content()
             }
-            .modifier(TabBarViewModifier())
+            .modifier(OUDSTabBarViewModifier())
 
             SelectedTabIndicator(selected: $selectedTab, count: tabCount, isTabBarHidden: $isTabBarHidden)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
@@ -359,7 +364,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
     private var shouldShowTabIndicator: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        if forceOUDSLegacyTabBar { return true }
+        if forceOUDSLegacyLayout { return true }
         guard isLiquidGlassDisabled else { return false }
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
         return !isLandscape
@@ -371,7 +376,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// - Returns Bool: true if iOS lower than 26.0 for iPhone or iOS lower than 18.0 for iPad, false otherwise
     private var hasLegacyLayout: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        if forceOUDSLegacyTabBar { return true }
+        if forceOUDSLegacyLayout { return true }
         // iOS < 26
         if isLiquidGlassDisabled {
             // iPhone

@@ -25,11 +25,11 @@ import SwiftUI
 ///     OUDSBadgeIcon(status: .info, accessibilityLabel: "Like", size: .medium)
 ///
 ///     // Badge with neutral status with a custom decorative icon
-///     OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+///     OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium)
 ///
 ///     // If your layout is in RTL mode but your badge has an icon with another meaning because of bad orientation,
 ///     // you can flip the icon
-///     OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart"), flipped: true), accessibilityLabel: "Like", size: .medium)
+///     OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true, accessibilityLabel: "Like"), size: .medium)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -82,25 +82,15 @@ public struct OUDSBadgeIcon: View {
     /// - Since: 2.2.0
     @frozen public enum Status {
 
-        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
-        // Not done yet to not break public API
         /// Used for general labels without specific emphasis.
         ///
-        /// - Parameters:
-        ///    - icon: The `Image` to display in the badge
-        ///    - flipped: Default set to `false`, set to `true` to mirror the image (e.g. in RTL cases if relevant)
-        ///    - renderingMode: Default set to `.template`, set to `.original` if the image of the badge should not be tinted
-        case neutral(icon: Image, flipped: Bool = false, renderingMode: Image.TemplateRenderingMode = .template)
+        /// - Parameter image: The `OUDSImage` to display in the badge
+        case neutral(image: OUDSImage)
 
-        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
-        // Not done yet to not break public API
         /// Employed to highlight discovery or exploration-related content
         ///
-        /// - Parameters:
-        ///    - icon: The `Image` to display in the badge
-        ///    - flipped: Default set to `false`, set to `true` to mirror the image (e.g. in RTL cases if relevant)
-        ///    - renderingMode: Default set to `.template`, set to `.original` if the image of the badge should not be tinted
-        case accent(icon: Image, flipped: Bool = false, renderingMode: Image.TemplateRenderingMode = .template)
+        /// - Parameter image: The `OUDSImage` to display in the badge
+        case accent(image: OUDSImage)
 
         /// Indicates success, completion, or approval
         case positive

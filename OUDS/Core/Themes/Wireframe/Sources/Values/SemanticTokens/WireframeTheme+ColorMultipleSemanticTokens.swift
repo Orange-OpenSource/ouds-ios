@@ -32,6 +32,8 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc public final var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
+    @objc public final var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
+
     // MARK: - Color - Action
 
     @objc public final var actionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionDisabledLight, dark: actionDisabledDark) }
@@ -206,6 +208,8 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc public final var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
+    @objc public final var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
+
     // MARK: - Color - Surface
 
     @objc public final var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandPrimaryLight, dark: surfaceBrandPrimaryDark) }
@@ -243,6 +247,16 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
     @objc public final var surfaceStatusWarningEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningEmphasizedLight, dark: surfaceStatusWarningEmphasizedDark) }
 
     @objc public final var surfaceStatusWarningMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningMutedLight, dark: surfaceStatusWarningMutedDark) }
+
+    // MARK: - Color - AI
+
+    @objc public final var colorAiPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiPrimaryLight, dark: colorAiPrimaryDark) }
+
+    @objc public final var colorAiSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiSecondaryLight, dark: colorAiSecondaryDark) }
+
+    @objc public final var colorAiTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiTertiaryLight, dark: colorAiTertiaryDark) }
+
+    @objc public final var colorAiQuaternary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiQuaternaryLight, dark: colorAiQuaternaryDark) }
 }
 
 // swiftlint:enable line_length

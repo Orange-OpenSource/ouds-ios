@@ -20,7 +20,7 @@ import SwiftUI
 // MARK: - OUDS ToolBar Item
 
 /// A strongly typed toolbar item container used inside:
-/// - `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
+/// - `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)`
 /// - `toolBarBottom(leadingItems:trailingItems:)`
 ///
 /// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
@@ -85,7 +85,8 @@ public struct OUDSToolBarItem: View, Identifiable {
     }
 
     /// Defines the built-in action type available for the toolbars.
-    /// Those items can be used at `.topLeading` and `.topTrailing` positions of a `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
+    /// Those items can be used at `.topLeading`, `.principal` and `.topTrailing` positions
+    /// of a `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)`
     ///
     /// - Since: 1.4.0
     @frozen public enum ActionType {
@@ -141,8 +142,8 @@ public struct OUDSToolBarItem: View, Identifiable {
         /// **Warning: if OS is iOS 26+ / Liquid Glass, the label will not appear**
         ///
         ///  - Parameters:
-        ///     - label; The optional string label displayed near to the back indicator
-        ///     - accessibilityLabel: The accessibility label to describe the back action that could be overtied if needed,d efault set to *core_common_back*
+        ///     - label: The optional string label displayed near to the back indicator
+        ///     - accessibilityLabel: The accessibility label to describe the back action that could be overridden if needed, default set to *core_common_back*
         ///     - action: The action to do when clicked. If *nil* (default) the button is disabled. By default the dismiss is done after `action` is called..
         case back(label: String? = nil, accessibilityLabel: String = "core_common_back".localized(), action: (() -> Void)? = nil)
 
@@ -153,16 +154,17 @@ public struct OUDSToolBarItem: View, Identifiable {
         var iconName: String {
             switch self {
             case .back:
-                "ic_link_previous"
+                "Component-link-previous"
             case .close:
-                "ic_button_expurge"
+                "Component-button-expurge"
             }
         }
     }
 
     // MARK: - Stored properties
 
-    private let content: Content
+    let content: Content
+
     public let id = UUID()
 
     // MARK: - Initializers
@@ -197,7 +199,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: .icon(asset: icon, accessibilityLabel: accessibilityLabel, action: action), style: .default)
     }
 
-    /// Creates a toobar item with action type.
+    /// Creates a toolbar item with action type.
     ///
     /// ```swift
     ///     // A toolbar item with an "Edit" label and an associated action
@@ -212,7 +214,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: type, style: .default)
     }
 
-    /// Creates a toobar item with action type and a style
+    /// Creates a toolbar item with action type and a style
     ///
     /// ```swift
     ///     OUDSToolBarItem(action: .label("Edit") { }, style: .tinted)
@@ -226,7 +228,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: type, style: style)
     }
 
-    /// Creates a toobar item with icon dedicated to navigation.
+    /// Creates a toolbar item with icon dedicated to navigation.
     ///
     /// ```swift
     ///     OUDSToolBarItem(navigation: .back { /* Action */ })
@@ -237,7 +239,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .navigation(type: type)
     }
 
-    /// Creates a toobar item with a custom view.
+    /// Creates a toolbar item with a custom view.
     ///
     /// Use this initializer to provide any SwiftUI view, such as a `Menu`, custom button, or complex layout.
     ///

@@ -30,6 +30,7 @@ included:
 excluded:
 - OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_discovery
 - OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_onboarding
+- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_lime
 
 # ==============
 # Disabled rules
@@ -43,6 +44,7 @@ disabled_rules:
 - extension_access_modifier
 - file_name
 - file_types_order
+- legacy_swiftui_aspect_ratio
 - multiline_arguments_brackets
 - multiline_parameters_brackets
 - opening_brace

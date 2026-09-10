@@ -60,12 +60,14 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: false)
+///     let tuning = Tuning(hasRoundedButtons: true,
+///                         hasRoundedTextInputs: true,
+///                         hasRoundedAlertMessages: false,
+///                         hasRoundedProgressIndicators: true,
+///                         hasRoundedListItems: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeCompactTheme(tuning: tuning)
-///     // Or in one line
-///     let theme = OrangeCompactTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: false))
 ///
 ///     // Or apply predefined tunings
 ///     let orangeFranceTheme = OrangeCompactTheme(tuning: Tuning.OrangeFrance)
@@ -106,9 +108,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.10.0
+/// - Core OUDS version: 1.11.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange Compact version: 2.5.0
+/// - Brand Orange Compact version: 2.7.0
 ///
 /// - Since: 0.17.0
 public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
@@ -141,18 +143,22 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let sizes = OrangeCompactThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = OrangeCompactThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
+        let accordion = OrangeCompactThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = OrangeCompactThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
+        let alertMessage = OrangeCompactThemeAlertMessageComponentTokensProvider(borders: borders, spaces: spaces)
         let badge = OrangeCompactThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = OrangeCompactThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = OrangeCompactThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeCompactThemeBulletListComponentTokensProvider(spaces: spaces)
+        let categoricalTag = OrangeCompactThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = OrangeCompactThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = OrangeCompactThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
-        let controlItem = OrangeCompactThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = OrangeCompactThemeDividerComponentTokensProvider(borders: borders)
         let icon = OrangeCompactThemeIconComponentTokensProvider(colors: colors)
-        let link = OrangeCompactThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let link = OrangeCompactThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
+        let listItem = OrangeCompactThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = OrangeCompactThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
+        let progressIndicator = OrangeCompactThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeCompactThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeCompactThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = OrangeCompactThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
@@ -162,6 +168,8 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = OrangeCompactThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeCompactThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = OrangeCompactThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let toast = OrangeCompactThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
+        let typography = OrangeCompactThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
                    colors: colors,
@@ -176,18 +184,22 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   accordion: accordion,
                    alert: alert,
+                   alertMessage: alertMessage,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
-                   controlItem: controlItem,
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,
@@ -197,6 +209,8 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   toast: toast,
+                   typography: typography,
                    resourcesBundle: Bundle.OrangeCompactTheme,
                    name: Self.name,
                    fontFamily: fontFamily,

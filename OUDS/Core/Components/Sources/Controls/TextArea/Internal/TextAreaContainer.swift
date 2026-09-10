@@ -44,41 +44,40 @@ struct TextAreaContainer: View {
     // Not a button; a11y trait for text editor defined elsewhere
     var body: some View {
         HStack(alignment: .top, spacing: theme.textInput.spaceColumnGapDefault) {
-            HStack(alignment: .top, spacing: theme.textInput.spaceColumnGapDefault) {
-                // Main content: label + text editor
-                VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
-                    // Label is always at the top in small typography — same pattern as OUDSTextInput.
-                    TextAreaLabelContainer(label: label,
-                                           isSmallLabel: isSmallLabel,
-                                           status: status,
-                                           interactionState: interactionState,
-                                           isOverLimit: isOverLimit)
+            // Main content: label + text editor
+            VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
+                // Label is always at the top in small typography — same pattern as OUDSTextInput.
+                TextAreaLabelContainer(label: label,
+                                       isSmallLabel: isSmallLabel,
+                                       status: status,
+                                       interactionState: interactionState,
+                                       isOverLimit: isOverLimit)
 
-                    TextAreaInputText(placeholder: placeholder ?? "",
-                                      text: text,
-                                      status: status,
-                                      constrainedMaxHeight: constrainedMaxHeight)
-                        .focused($focused)
-                        .allowsHitTesting(status != .readOnly && status != .disabled)
-                        .onTapGesture {
-                            guard status != .readOnly, status != .disabled else { return }
-                            focused = true
-                        }
-                }
-                .frame(minHeight: theme.textArea.sizeMinHeightInput)
-                .accessibilityLabel(accessibilityLabel)
-                .accessibilityValue(accessibilityValue)
-                .accessibilityHint(accessibilityHint ?? "")
-
-                // Trailing indicator: error icon or loading spinner.
-                // The top of the container is aligned with the top of the main content
-                TextAreaTrailingContainer(status: status,
-                                          interactionState: interactionState,
-                                          isOverLimit: isOverLimit,
-                                          isSmallLabel: isSmallLabel)
+                TextAreaInputText(placeholder: placeholder ?? "",
+                                  text: text,
+                                  status: status,
+                                  constrainedMaxHeight: constrainedMaxHeight)
+                    .frame(minHeight: theme.textArea.sizeMinHeightInput)
+                    .focused($focused)
+                    .allowsHitTesting(status != .readOnly && status != .disabled)
+                    .onTapGesture {
+                        guard status != .readOnly, status != .disabled else { return }
+                        focused = true
+                    }
             }
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityValue(accessibilityValue)
+            .accessibilityHint(accessibilityHint ?? "")
+
+            // Trailing indicator: error icon or loading spinner.
+            // The top of the container is aligned with the top of the main content
+            TextAreaTrailingContainer(status: status,
+                                      interactionState: interactionState,
+                                      isOverLimit: isOverLimit,
+                                      isSmallLabel: isSmallLabel)
         }
-        .padding(.top, theme.textArea.spacePaddingBlockTopEmpty)
+        .padding(.top, paddingTop)
+        .padding(.bottom, paddingBottom)
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
         .padding(.trailing, theme.textInput.spacePaddingInlineTrailingAction)
         .modifier(TextAreaBackgroundModifier(status: status,
@@ -96,6 +95,14 @@ struct TextAreaContainer: View {
     }
 
     // MARK: - Helpers
+
+    private var paddingTop: CGFloat {
+        isSmallLabel ? theme.textArea.spacePaddingBlock : theme.textArea.spacePaddingBlockTopEmpty
+    }
+
+    private var paddingBottom: CGFloat {
+        isSmallLabel ? theme.textArea.spacePaddingBlock : theme.spaces.fixedNone
+    }
 
     private var interactionState: TextAreaInteractionState {
         TextAreaInteractionState(focused: focused, hover: hover)

@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-framework-usage
-description: How to set up and use the OUDS iOS framework with imports, themes, tokens, view modifiers, and all available components with code examples
+description: Setup and general usage of the OUDS iOS framework — imports, themes, token namespaces, view modifiers, image rules, shared control patterns and custom font registration. Load this first; then load the matching `ouds-ios-components-*` skill for a specific component family (actions, content-display, controls, dialogs, foundations, indicators, layouts, navigations).
 license: MIT
 ---
 
@@ -9,7 +9,7 @@ license: MIT
 ## 1. Basic setup
 
 ```swift
-import OUDSSwiftUI // umbrella import — see §2 for granular alternative
+import OUDSSwiftUI // Always use the umbrella import
 
 @main
 struct MyApp: App {
@@ -35,53 +35,18 @@ struct ContentView: View {
 
 ---
 
-## 2. Imports — two modes
+## 2. Imports
 
-OUDS exposes two layers of Swift Package products. Choose one approach per project; never mix them.
+Can import internal modules, but for developer experience there are umbrella products:
 
-### Mode 1 — Umbrella import (recommended)
-
-One import pulls every required dependency. Prefer this unless you have a strong reason to minimize compiled targets.
-
-| Product | Themes included | When to use |
+| Product | Themes | When |
 |---|---|---|
-| `OUDSSwiftUI` | All (Orange, OrangeCompact, Sosh, Wireframe) | Default — use this when in doubt |
-| `OUDSSwiftUIOrange` | Orange + OrangeCompact | Orange-brand apps only |
-| `OUDSSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand Orange/Sosh apps |
-| `OUDSSwiftUIWireframe` | Wireframe only | Prototyping, no brand theme needed |
+| `OUDSSwiftUI` | All | Default |
+| `OUDSSwiftUIOrange` | Orange + OrangeCompact | Orange apps only |
+| `OUDSSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand |
+| `OUDSSwiftUIWireframe` | Wireframe | Prototyping |
 
-```swift
-import OUDSSwiftUI          // everything — default choice
-import OUDSSwiftUIOrange    // or: Orange apps only
-import OUDSSwiftUIOrangeSosh // or: Orange + Sosh multi-brand
-import OUDSSwiftUIWireframe  // or: wireframe prototyping
-```
-
-### Mode 2 — Granular (atomic) import
-
-For advanced users who want fine-grained control over compiled dependencies. Import only what the target actually needs.
-
-| Product | Content |
-|---|---|
-| `OUDSThemesOrange` | Orange theme |
-| `OUDSThemesOrangeCompact` | Orange Compact theme (depends on OrangeTheme) |
-| `OUDSThemesSosh` | Sosh theme |
-| `OUDSThemesWireframe` | Wireframe theme (depends on OrangeTheme) |
-| `OUDSThemesContract` | Theme protocols / contracts — required when using any theme |
-| `OUDSModules` | High-level screen-ready modules (depends on OUDSComponents) |
-| `OUDSComponents` | SwiftUI components |
-| `OUDSTokensComponent` | Component-level design tokens |
-| `OUDSTokensRaw` | Raw tokens + semantic tokens |
-| `OUDSFoundations` | Base utilities (lowest level) |
-
-```swift
-// Example: components + Orange theme only, no Sosh/Wireframe
-import OUDSComponents
-import OUDSThemesContract
-import OUDSThemesOrange
-```
-
-> **Rule:** always prefer an umbrella product. Use granular imports only when you explicitly need to exclude specific themes or layers from compilation.
+Internal modules: `OUDSComponents`, `OUDSTokensRaw`, `OUDSTokensSemantic`, `OUDSTokensComponent`, `OUDSThemesOrange`, `OUDSThemesSosh`, `OUDSFoundations`, etc.
 
 ---
 
@@ -139,7 +104,7 @@ RoundedRectangle(cornerRadius: 8)
 
 ---
 
-## 5b. Images in OUDS components
+## 6. Images in OUDS components
 
 **Never call SwiftUI modifiers on an `Image` that is passed as a parameter to an OUDS component.**
 
@@ -151,19 +116,22 @@ OUDS components accept `Image` — the bare SwiftUI type. Calling any modifier o
 ```swift
 OUDSButton(
     text: "Add",
-    image: Image(systemName: "plus").accessibilityHidden(true), // ❌ compile error: Image → some View
+    icon: Image(systemName: "plus").accessibilityHidden(true), // ❌ compile error: Image → some View
     appearance: .default) {}
 
 OUDSLink(
     text: "Back",
-    image: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
+    icon: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
     size: .default) {}
 ```
 
 **Always do this — pass a bare `Image` inside `OUDSImage`, swiftlint comment on the line before:**
 ```swift
 // swiftlint:disable:next accessibility_label_for_image
-OUDSLink(text: "Back", image: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
+OUDSButton(text: "Add", icon: Image(systemName: "plus"), appearance: .default) {}
+
+// swiftlint:disable:next accessibility_label_for_image
+OUDSLink(text: "Back", icon: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
 
 // swiftlint:disable:next accessibility_label_for_image
 OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {}
@@ -173,482 +141,9 @@ The `// swiftlint:disable:next accessibility_label_for_image` comment must appea
 
 Exception: `Image(decorative: "name")` suppresses the linter rule automatically and needs no comment.
 
-> **⚠ Init ambiguity warning (v2.3.0)**
->
-> The following components have both a deprecated init (`icon: Image? = nil` or `leadingIcon: Image? = nil`) and an active init (`image: OUDSImage? = nil` or `leadingImage: OUDSImage? = nil`). When the image parameter is omitted entirely, Swift may fail with `error: ambiguous use of 'init(...)'` because both overloads match.
->
-> **If this error occurs**, pass the image parameter explicitly as `nil` to disambiguate:
->
-> | Component | Parameter to add |
-> |---|---|
-> | `OUDSCheckboxItem` | `image: nil` |
-> | `OUDSCheckboxItemIndeterminate` | `image: nil` |
-> | `OUDSCheckboxPickerData` | `image: nil` |
-> | `OUDSRadioItem` | `image: nil` |
-> | `OUDSSwitchItem` | `image: nil` |
-> | `OUDSLink` | `image: nil` |
-> | `OUDSTextInput` | `leadingImage: nil` |
->
-> ```swift
-> // ❌ may be ambiguous while deprecated inits exist:
-> OUDSCheckboxItem("Label", isOn: $isOn)
->
-> // ✅ unambiguous:
-> OUDSCheckboxItem("Label", isOn: $isOn, image: nil)
-> ```
->
-> This is temporary — the ambiguity disappears once deprecated inits are removed in v3.
-
 ---
 
-## 6. Common patterns (shared by multiple components)
-
-These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInput, PasswordInput unless noted otherwise.
-
-| Pattern | Syntax |
-|---|---|
-| Error state | `isError: true, errorText: "Message"` |
-| Rich error | `errorText: AttributedString` |
-| Plain helper | `helperText: "…"` |
-| Rich helper | `helperText: AttributedString` |
-| Error status (inputs) | `status: .error(message: "…")` |
-| Rich error status | `status: .richError(message: AttributedString)` |
-| Read-only | `isReadOnly: true` |
-| Disabled | `.disabled(true)` — never combine with `isError` or `isReadOnly` |
-
-> **Forbidden combinations** (fatal error at runtime): `isError` + `isReadOnly`, `isError` + `.disabled`, `isReadOnly` + `.disabled`
-
----
-
-## 7. Components
-
-**Index:** [Button](#actions--button) · [BulletList](#content-display--bullet-list) · [Checkbox](#controls--checkbox) · [Radio](#controls--radio-button) · [Switch](#controls--switch) · [PinCode](#controls--pin-code-input) · [Password](#controls--password-input) · [Chips](#controls--chips) · [TextInput](#controls--text-input) · [TextArea](#controls--text-area) · [AlertMessage](#dialogs--alert-message) · [InlineAlert](#dialogs--inline-alert) · [Badge](#indicators--badge) · [Tag](#indicators--tag) · [InputTag](#indicators--input-tag) · [ColoredSurface](#layouts--colored-surface) · [Divider](#layouts--divider) · [Link](#navigations--link) · [TabBar](#navigations--tab-bar) · [Toolbars](#navigations--toolbars)
-
----
-
-### Actions — Button
-
-```swift
-OUDSButton(text: "Label", appearance: .default) {}
-OUDSButton(text: "Label", appearance: .default, style: .loading) {}
-OUDSButton(text: "Label", image: OUDSImage(asset: Image("ic")), appearance: .default) {}
-OUDSButton(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
-```
-
----
-
-### Content Display — Bullet List
-
-```swift
-OUDSBulletList {
-    OUDSBulletList.Item("Label 1")
-    OUDSBulletList.Item("Label 2")
-}
-OUDSBulletList(type: .ordered) {
-    OUDSBulletList.Item("Label 1") { OUDSBulletList.Item("Label 1.1") }
-}
-OUDSBulletList { OUDSBulletList.Item(AttributedString(…)) }
-```
-
----
-
-### Controls — Checkbox
-
-```swift
-OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Label")
-OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Label")
-OUDSCheckboxItem("Label", isOn: $isOn)
-OUDSCheckboxItem("Label", isOn: $isOn, description: "Helper",
-                 image: OUDSImage(asset: Image(decorative: "ic")))
-OUDSCheckboxItem("Label", isOn: $isOn,
-                 image: OUDSImage(asset: Image(decorative: "ic")), isReversed: true)
-// Raw (non-tinted) image:
-OUDSCheckboxItem("Label", isOn: $isOn,
-                 image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-// Flip icon for RTL:
-OUDSCheckboxItem("Label", isOn: $isOn,
-                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
-                                  flipped: layoutDirection == .rightToLeft))
-// LocalizedStringKey:
-OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
-                 image: OUDSImage(asset: Image(decorative: "ic")))
-// Indeterminate (three states) — also accepts LocalizedStringKey:
-OUDSCheckboxItemIndeterminate("Label", selection: $selection,
-                               image: OUDSImage(asset: Image(decorative: "ic")))
-OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module,
-                               selection: $selection)
-// Error / helper / disabled → see §6 Common patterns
-```
-
-> Parameter order: `(_ label:, isOn:, description:, image:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
-
-```swift
-// Picker — image is OUDSImage?
-OUDSCheckboxPicker(selections: $selections, checkboxes: [
-    .init(tag: "a", label: "Option A"),
-    .init(tag: "b", label: "Option B", description: "Details", isReversed: true),
-    .init(tag: "c", label: "Option C", image: OUDSImage(asset: Image(systemName: "flame"))),
-    .init(tag: "d", label: "Option D",
-          image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original)),
-])
-OUDSCheckboxPicker(selections: $selections, checkboxes: data,
-                   placement: .verticalRooted("All options", .textAndCount))
-OUDSCheckboxPicker(selections: $selections, checkboxes: data,
-                   isReversed: true, placement: .horizontal(true))
-```
-
----
-
-### Controls — Radio Button
-
-```swift
-OUDSRadio(isOn: $isOn, accessibilityLabel: "Label")
-OUDSRadioItem("Label", isOn: $isOn)
-OUDSRadioItem("Label", isOn: $isOn, image: OUDSImage(asset: Image(decorative: "ic")))
-// Raw (non-tinted) image:
-OUDSRadioItem("Label", isOn: $isOn,
-              image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-// Flip icon for RTL:
-OUDSRadioItem("Label", isOn: $isOn,
-              image: OUDSImage(asset: Image(systemName: "chevron.right"),
-                               flipped: layoutDirection == .rightToLeft))
-// LocalizedStringKey:
-OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
-              image: OUDSImage(asset: Image(decorative: "ic")))
-// Error / helper / disabled → see §6 Common patterns
-OUDSRadioPicker(selection: $selection,
-                radios: [
-                    .init(tag: "a", label: "Option A"),
-                    .init(tag: "b", label: "Option B",
-                          image: OUDSImage(asset: Image(systemName: "flame"))),
-                    .init(tag: "c", label: "Option C",
-                          image: OUDSImage(asset: Image(decorative: "il_brand"),
-                                          renderingMode: .original)),
-                ],
-                placement: .vertical)
-```
-
----
-
-### Controls — Switch
-
-```swift
-OUDSSwitch(isOn: $isOn, accessibilityLabel: "Label")
-OUDSSwitchItem("Label", isOn: $isOn)
-OUDSSwitchItem("Label", isOn: $isOn,
-               image: OUDSImage(asset: Image(decorative: "ic")))
-// Raw (non-tinted) image:
-OUDSSwitchItem("Label", isOn: $isOn,
-               image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-// Flip icon for RTL:
-OUDSSwitchItem("Label", isOn: $isOn,
-               image: OUDSImage(asset: Image(systemName: "figure.handball"),
-                                flipped: layoutDirection == .rightToLeft))
-// LocalizedStringKey:
-OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
-               image: OUDSImage(asset: Image(decorative: "ic")))
-// Error / helper / disabled → see §6 Common patterns
-```
-
----
-
-### Controls — Pin Code Input
-
-Available lengths: `.four`, `.six` (default).
-
-```swift
-OUDSPinCodeInput($value)
-OUDSPinCodeInput($value, length: .four, autofocus: true)
-OUDSPinCodeInput($value, helperText: "Enter your PIN")
-// Error status → see §6 Common patterns (status: .error / .richError)
-```
-
----
-
-### Controls — Password Input
-
-> `status` is of type `OUDSTextInput.Status` (shared with `OUDSTextInput`).
-
-```swift
-OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isHidden)
-OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isHidden,
-                  placeholder: "Min. 8 chars", prefix: "🔑", lockIcon: true)
-// Helper / error status → see §6 Common patterns
-```
-
----
-
-### Controls — Chips
-
-```swift
-OUDSSuggestionChip(text: "Label") {}
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic")), text: "Label") {}
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
-OUDSFilterChip(text: "Label") {}
-OUDSFilterChip(image: OUDSImage(asset: Image("ic")), text: "Label") {}
-OUDSFilterChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
-OUDSFilterChip(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
-OUDSFilterChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
-OUDSChipPicker(title: "Title", selection: $selection, chips: [
-    .init(tag: .value1, layout: .textAndIcon("Label", image: OUDSImage(asset: Image("ic")))),
-    .init(tag: .value2, layout: .textAndIcon("Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))), // raw image
-    .init(tag: .value3, layout: .icon(OUDSImage(asset: Image("ic")), accessibilityLabel: "Label")),
-    .init(tag: .value4, layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand")), // raw image
-])
-```
-
----
-
-### Controls — Text Input
-
-```swift
-OUDSTextInput(label: "Label", text: $text)
-OUDSTextInput(label: "Label", text: $text, placeholder: "…", prefix: "Pre", suffix: "Suf")
-OUDSTextInput(label: "Label", text: $text, leadingImage: OUDSImage(asset: Image("ic")))
-OUDSTextInput(label: "Label", text: $text,
-              leadingImage: OUDSImage(asset: Image("ic"), renderingMode: .original)) // raw image (not tinted)
-OUDSTextInput(label: "Label", text: $text,
-              leadingImage: OUDSImage(asset: Image("ic"), flipped: layoutDirection == .rightToLeft)) // flip for RTL
-OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(image: OUDSImage(asset: Image("ic")), actionHint: "Hint") {})
-OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(image: OUDSImage(asset: Image("ic"), renderingMode: .original),
-                                    actionHint: "Hint") {}) // raw image
-// Helper / error status → see §6 Common patterns
-```
-
----
-
-### Controls — Text Area
-
-`helperText` type: `.plain(String)` | `.rich(AttributedString)` | `.charactersMaxCount(UInt16)`
-
-```swift
-OUDSTextArea(label: "Label", text: $text)
-OUDSTextArea(label: "Label", text: $text, placeholder: "Describe…")
-OUDSTextArea(label: "Label", text: $text, helperText: .plain("Max 500 chars."))
-OUDSTextArea(label: "Label", text: $text, helperText: .charactersMaxCount(500))
-OUDSTextArea(label: "Label", text: $text,
-             helperLink: .init(text: "Learn more") { openUrl(url) })
-// Fixed height — no vertical growth, scroll from first overflow line
-OUDSTextArea(label: "Label", text: $text, constrainedMaxHeight: true)
-// Error status → see §6 Common patterns
-```
-
-> Height is controlled by two component tokens on `theme.textArea`:
-> - `sizeMinHeightInput` (72 pt by default) — minimum height, always applied
-> - `sizeMaxHeightInput` (240 pt by default) — maximum height before scroll (used when `constrainedMaxHeight: false`, the default)
->
-> When `constrainedMaxHeight: true`, `maxHeight` is capped to `sizeMinHeightInput`, keeping the component at a fixed compact size.
-
----
-
-### Dialogs — Alert Message
-
-Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
-
-```swift
-OUDSAlertMessage(label: "Label")
-OUDSAlertMessage(label: "Label", status: .warning, description: "Details") { /* dismiss */ }
-OUDSAlertMessage(label: "Label",
-                 status: .neutral(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
-                 bulletList: ["A", "B"],
-                 link: .init(text: "More", position: .bottom) {},
-                 onClose: {})
-// Rich description / rich bullet list: pass AttributedString instead of String
-```
-
----
-
-### Dialogs — Inline Alert
-
-Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
-
-```swift
-OUDSInlineAlert(label: "Label")
-OUDSInlineAlert(label: "Label", status: .warning)
-OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
-```
-
----
-
-### Indicators — Badge
-
-Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Sizes: `extraSmall`, `small`, `medium`, `large`
-Count parameter must be of type `UInt8`.
-
-```swift
-OUDSBadgeStandard(accessibilityLabel: "Some label", status: .neutral, size: .medium)
-OUDSBadgeCount(3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
-OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
-```
-
----
-
-### Indicators — Tag
-
-```swift
-OUDSTag(label: "Label")
-OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"))))
-OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
-OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"), flipped: true))) // flipped for RTL
-OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic"))))
-OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
-OUDSTag(label: "Label", status: .neutral(bullet: true))
-```
-
----
-
-### Indicators — Input Tag
-
-```swift
-OUDSInputTag("Label") { /* remove action */ }
-```
-
----
-
-### Layouts — Colored Surface
-
-```swift
-OUDSColoredSurface(color: theme.colorModes.onStatusPositiveEmphasized) {
-    // child views
-}
-```
-
----
-
-### Layouts — Divider
-
-```swift
-OUDSHorizontalDivider(color: .brandPrimary)
-OUDSVerticalDivider(color: .brandPrimary)
-```
-
----
-
-### Navigations — Link
-
-```swift
-OUDSLink(text: "Text", size: .default) {}
-OUDSLink(text: "Text", indicator: .back, size: .default) {}
-OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic")), size: .default) {}
-OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
-```
-
----
-
-### Navigations — Tab Bar
-
-> Never combine with `OUDSToolBarBottom` on the same screen.
-
-```swift
-// iOS 15–25
-@State private var selectedTab = 0
-OUDSTabBar(selectedTab: $selectedTab, count: 3) {
-    SomeView().tabItem { Label("Tab 1", image: "ic_1") }.tag(0)
-    OtherView().tabItem { Label("Tab 2", image: "ic_2") }.tag(1)
-}
-
-// iOS 26+
-OUDSTabBar {
-    SomeView().tabItem { Label("Tab 1", image: "ic_1") }
-    OtherView().tabItem { Label("Tab 2", image: "ic_2") }
-}
-```
-
-> Tab bar images: 26×26 pt. `OUDSTabBar(selected:count:content:)` (plain `Int`) is deprecated — use `selectedTab: Binding<Int>`.
-
----
-
-### Navigations — Toolbars
-
-> Availability: iOS 15+, visionOS 1+. Not available on watchOS, tvOS, macOS.
-
-**Setup (top toolbar):**
-- Must be inside `NavigationStack`.
-- Call `.oudsNavigationBarAppearance()` once on the root `NavigationStack`.
-- On iOS ≤ 18: add `.accentColor(theme.colors.contentDefault)` on root view for the back chevron.
-- `subtitle` rendered on iOS 26+ only; ignored when `hasLargeTitle: true`.
-
-**Setup (bottom toolbar):**
-- Never combine with `OUDSTabBar` on the same screen.
-- `groupedItems` layout meaningful on iOS 26+ only.
-
-```swift
-// Top — minimal
-NavigationStack {
-    ContentView().toolBarTop("Title")
-}
-
-// Top — with items
-NavigationStack {
-    ContentView()
-        .toolBarTop("Title",
-            leadingItems: { OUDSToolBarItem(navigation: .back()) },
-            trailingItems: {
-                OUDSToolBarItem(icon: Image("ic_settings"), accessibilityLabel: "Settings") {}
-            })
-}
-
-// Top — large title + subtitle (subtitle iOS 26+ only)
-ContentView().toolBarTop("Title", hasLargeTitle: true, subtitle: "Sub")
-
-// Bottom — leading/trailing split
-ContentView()
-    .toolBarBottom(
-        leadingItems: { OUDSToolBarItem(label: "Edit") {} },
-        trailingItems: { OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {} })
-
-// Bottom — grouped (iOS 26+ only)
-ContentView()
-    .toolBarBottom(groupedItems: {
-        OUDSToolBarItem(label: "Save") {}
-        OUDSToolBarItem(icon: Image("ic_delete"), accessibilityLabel: "Delete") {}
-    })
-```
-
-**`OUDSToolBarItem` reference:**
-
-```swift
-OUDSToolBarItem(label: "Edit") {}                              // text action
-OUDSToolBarItem(icon: Image("ic"), accessibilityLabel: "X") {} // icon action
-OUDSToolBarItem(navigation: .back())                           // back — auto dismiss
-OUDSToolBarItem(navigation: .back(label: "Cancel"))            // back with label (ignored iOS 26+)
-OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() }) // back + custom action
-OUDSToolBarItem(navigation: .close)                            // close — NO closure, auto dismiss
-
-// Badge on icon (v2.0.0+) — icon actions only
-OUDSToolBarItem(action: .icon(asset: Image("ic_bell"), accessibilityLabel: "Notif",
-                              badgeType: .standard))
-OUDSToolBarItem(action: .icon(asset: Image("ic_mail"), accessibilityLabel: "Mail",
-                              badgeType: .number(count: 9)))
-
-// Action style — iOS 26+ only
-if #available(iOS 26, *) {
-    OUDSToolBarItem(action: .label("Save", emphasized: false, accessibilityHint: nil) {},
-                    style: .prominent)  // .default | .prominent | .tinted
-}
-
-// Custom view
-OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
-
-// Conditional (result-builder syntax)
-.toolBarTop("Title", trailingItems: {
-    if isEditing {
-        OUDSToolBarItem(label: "Done") { isEditing = false }
-    } else {
-        OUDSToolBarItem(label: "Edit") { isEditing = true }
-    }
-})
-```
-
-> Badge rendering: iOS ≤ 25 → `OUDSBadge`; iOS 26+ top → native system badge; iOS 26+ bottom → `OUDSBadge` forced.
-
----
-
-## Registering custom fonts
+## 7. Registering custom fonts
 
 To use a custom font family with OUDS, two steps are required after adding the TTF files to your project:
 
@@ -677,3 +172,200 @@ registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("W
 ```
 
 `kApplePostScriptFontNames` exposes the full map (read-only). OUDS uses it internally to resolve `Font` objects from theme font tokens. Unregistered combinations fall back to the family name without spaces.
+
+---
+
+## 8. Styled AttributedString with hyperlinks
+
+OUDS provides utilities to create styled `AttributedString` from plain text or Markdown, with custom styling for links based on their text or URL.
+
+Font tokens (e.g. `theme.fonts.bodyDefaultMedium`) are `MultipleFontCompositeSemanticToken` values, not SwiftUI `Font`.
+Convert them with `Font.makeFont(family:from:isCompact:)` before using them in `AttributedStringUrlConfiguration` or `AttributedString.from(...)`.
+
+### Basic usage — Markdown
+
+```swift
+import OUDSComponents
+import SwiftUI
+
+let markdown = "Read our [terms of service](https://example.com/terms) and [privacy policy](https://example.com/privacy)"
+
+let textColor = theme.colors.contentDefault.color(for: colorScheme)
+let textFont = Font(Font.makeFont(family: theme.fontFamily,
+                                   from: theme.fonts.bodyDefaultMedium,
+                                   isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+let urlColor = theme.colors.contentBrandPrimary.color(for: colorScheme)
+let urlFont = Font(Font.makeFont(family: theme.fontFamily,
+                                  from: theme.fonts.bodyStrongMedium,
+                                  isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact))
+
+let configurations: [AttributedStringUrlConfiguration] = [
+    AttributedStringUrlConfiguration(
+        text: "terms of service",
+        color: urlColor,
+        font: urlFont
+    ),
+    AttributedStringUrlConfiguration(
+        text: "privacy policy",
+        urlToOpen: URL(string: "https://example.com/privacy")!,
+        color: urlColor,
+        font: urlFont
+    ),
+    AttributedStringUrlConfiguration(
+        color: urlColor,
+        font: urlFont
+    )
+]
+
+let attributedString = AttributedString.from(
+    markdown: markdown,
+    foregroundColor: textColor,
+    font: textFont,
+    urlConfigurations: configurations
+)
+```
+
+### Basic usage — plain text
+
+Use `AttributedString.from(text:foregroundColor:font:urlConfigurations:)` when the text and the words to turn into hyperlinks are known upfront
+(no Markdown syntax). Each configuration **must** provide both `text` and `urlToOpen`, otherwise it is ignored:
+
+```swift
+let attributedString = AttributedString.from(
+    text: "You must read the terms of service before continuing",
+    foregroundColor: textColor,
+    font: textFont,
+    urlConfigurations: [
+        AttributedStringUrlConfiguration(
+            text: "terms of service",
+            urlToOpen: URL(string: "https://example.com/terms")!,
+            color: urlColor,
+            font: urlFont
+        )
+    ]
+)
+```
+
+A `LocalizedStringKey`-based overload is also available: `AttributedString.from(_:tableName:bundle:foregroundColor:font:urlConfigurations:)`.
+`AttributedStringUrlConfiguration` also has a `LocalizedStringKey`-based initializer: `AttributedStringUrlConfiguration(_:tableName:bundle:urlToOpen:color:font:)`.
+
+### Foreground color only (no hyperlinks)
+
+If you only need to apply a color to a whole text or Markdown source (no custom font, no hyperlink styling), use the simpler overloads:
+
+```swift
+let coloredText = AttributedString.from(text: "Some plain text", foregroundColor: textColor)
+let coloredKey = AttributedString.from("some.localized.key", foregroundColor: textColor)
+let coloredMarkdown = AttributedString.from(markdown: someMarkdown, foregroundColor: textColor)
+```
+
+Each of these also has a `ColorSemanticToken`-based overload, e.g. `AttributedString.from(text:foregroundColor: ColorSemanticToken)`.
+
+### Configuration options
+
+| Initializer | Use case |
+|---|---|
+| `AttributedStringUrlConfiguration(text:urlToOpen:color:font:)` | Match by text **and** URL, set custom URL. Required form for `AttributedString.from(text:...)` |
+| `AttributedStringUrlConfiguration(text:color:font:)` | Match by text only (URL taken from Markdown). Only usable with `AttributedString.from(markdown:...)` |
+| `AttributedStringUrlConfiguration(urlToOpen:color:font:)` | Match by URL only. Only usable with `AttributedString.from(markdown:...)` |
+| `AttributedStringUrlConfiguration(color:font:)` | Default fallback for any unmatched link. Only usable with `AttributedString.from(markdown:...)` |
+
+### Matching priority (Markdown only)
+
+For each hyperlink found in the Markdown source, the **first** configuration in the `urlConfigurations` array that matches (by URL **or** by text) is applied:
+
+1. Configurations are scanned in array order; the first one whose `urlToOpen` matches the link's URL, or whose `text` matches the link's text, wins.
+2. If no configuration matches, the default configuration (the one with no `text` and no `urlToOpen`) is applied, if any.
+3. If neither matches, a warning is logged and the base `foregroundColor` / `font` style is kept.
+
+`AttributedString.from(text:...)` does not use this fallback logic: only configurations with both `text` and `urlToOpen` set are applied, matched by exact text.
+
+---
+
+## 10. AsyncImage — cached image loading
+
+``OUDSAsyncImage`` is a cached version of ``SwiftUI/AsyncImage``. It loads images from URLs and caches them in memory (100MB) and on disk (500MB).
+
+```swift
+import OUDSSwiftUI
+
+// Basic usage
+OUDSAsyncImage(url: URL(string: "https://example.com/photo.png"))
+
+// With content transformation and placeholder
+OUDSAsyncImage(url: url) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+// With phases for full control
+OUDSAsyncImage(url: url) { phase in
+    switch phase {
+    case .empty: ProgressView()
+    case .success(let image): image.resizable()
+    case .failure: Image(systemName: "photo")
+    }
+}
+
+// Cache management
+OUDSAsyncImageCache.shared.clearCache()           // memory + disk
+OUDSAsyncImageCache.shared.clearMemoryCache()
+OUDSAsyncImageCache.shared.clearDiskCache()
+```
+
+The cache uses ``OUDSAsyncImageCache/Settings`` internally (100MB memory, 500MB disk).
+
+---
+
+## 11. Layout and localization helpers
+
+### RTL/LTR image flipping
+
+If your app supports right-to-left (RTL) layouts, use ``OUDSImage`` to flip icons automatically:
+
+```swift
+@Environment(\.layoutDirection) private var layoutDirection
+
+OUDSCheckboxItem(
+    "Label",
+    isOn: $isOn,
+    image: OUDSImage(
+        asset: Image(systemName: "figure.handball"),
+        flipped: layoutDirection == .rightToLeft
+    ),
+    isReversed: layoutDirection == .rightToLeft
+)
+```
+
+### Detecting Arabic locale
+
+Use ``OUDSUtils/isArabicLanguageInUse()`` to detect if Arabic is in use and switch font family:
+
+```swift
+func localizedHelveticaFont() -> String {
+    return (OUDSUtils.isArabicLanguageInUse() ? "Helvetica Neue Arabic" : "Helvetica Neue")
+}
+
+let theme = OrangeTheme(fontFamily: localizedHelveticaFont())
+```
+
+---
+
+## 12. Component skills
+
+Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
+
+| Family | Skill | Components |
+|---|---|---|
+| Actions | `ouds-ios-components-actions` | OUDSButton |
+| Content Display | `ouds-ios-components-content-display` | OUDSBulletList |
+| Controls | `ouds-ios-components-controls` | OUDSCheckbox, OUDSRadio, OUDSSwitch, OUDSSuggestionChip / OUDSFilterChip / OUDSChipPicker, OUDSPinCodeInput, OUDSPasswordInput, OUDSTextInput, OUDSTextArea |
+| Dialogs | `ouds-ios-components-dialogs` | OUDSAlertMessage, OUDSInlineAlert |
+| Foundations | `ouds-ios-components-foundations` | OUDSDisplay, OUDSHeading, OUDSLabel, OUDSBody, OUDSCode |
+| Indicators | `ouds-ios-components-indicators` | OUDSBadge*, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator, OUDSLinearProgressIndicator |
+| Layouts | `ouds-ios-components-layouts` | OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider |
+| Navigations | `ouds-ios-components-navigations` | OUDSLink, OUDSTabBar, OUDSToolBarItem / `toolBarTop` / `toolBarBottom` |
+
+---

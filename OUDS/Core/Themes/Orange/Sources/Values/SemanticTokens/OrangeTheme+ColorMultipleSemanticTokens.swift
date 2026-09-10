@@ -21,9 +21,9 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark modes colors.
-/// These values can be overriden inside `OrangeThemeColorSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
-/// Some tokens do not have values assigned in the design system, and must be overriden.
-/// Some tokens must be overriden in `OrangeTheme` side because they rely on Orange brand colors.
+/// These values can be overridden inside `OrangeThemeColorSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// Some tokens do not have values assigned in the design system, and must be overridden.
+/// Some tokens must be overridden in `OrangeTheme` side because they rely on Orange brand colors.
 /// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
@@ -34,6 +34,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var opacityLower: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityLowerLight, dark: opacityLowerDark) }
 
     @objc open var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
+
+    @objc open var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
 
     // MARK: - Color - Action
 
@@ -209,6 +211,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
+    @objc open var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
+
     // MARK: - Color - Surface
 
     @objc open var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandPrimaryLight, dark: surfaceBrandPrimaryDark) }
@@ -246,6 +250,16 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var surfaceStatusWarningEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningEmphasizedLight, dark: surfaceStatusWarningEmphasizedDark) }
 
     @objc open var surfaceStatusWarningMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningMutedLight, dark: surfaceStatusWarningMutedDark) }
+
+    // MARK: - Color - AI
+
+    @objc open var colorAiPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiPrimaryLight, dark: colorAiPrimaryDark) }
+
+    @objc open var colorAiSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiSecondaryLight, dark: colorAiSecondaryDark) }
+
+    @objc open var colorAiTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiTertiaryLight, dark: colorAiTertiaryDark) }
+
+    @objc open var colorAiQuaternary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiQuaternaryLight, dark: colorAiQuaternaryDark) }
 }
 
 // swiftlint:enable line_length

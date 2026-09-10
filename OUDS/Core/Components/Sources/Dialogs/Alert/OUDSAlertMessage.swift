@@ -40,8 +40,8 @@ import SwiftUI
 ///         // Add a custom icon for accent and neutral status
 ///         // with original rendering mode (to avoid tints) or not.
 ///         // By default, tinted, template mode.
-///         OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
-///         OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)))
+///         OUDSAlertMessage(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
+///         OUDSAlertMessage(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)))
 ///
 ///         // Add a custom action (i.e Link) at bottom (could also at top trailing position)
 ///         @Environment(\.openURL) private var openUrl
@@ -87,7 +87,7 @@ import SwiftUI
 ///
 /// ![An alert message component in light and dark modes with Wireframe theme](component_alertMessage_Wireframe)
 ///
-/// - Version: 1.1.0 (Figma component design version)
+/// - Version: 1.1.1 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
 public struct OUDSAlertMessage: View {
@@ -103,11 +103,17 @@ public struct OUDSAlertMessage: View {
 
     @Environment(\.theme) private var theme
 
+    // MARK: - Constants
+
+    static let textsAccessibilityPriority = 300.0
+    static let actionLinkAccessibilityPriority = 200.0
+    static let closeButtonAccessibilityPriority = 100.0
+
     // MARK: - Link
 
     // swiftlint:disable nesting
     /// Used to describe the link display in the `OUDSAlertMessage`
-    public struct Link {
+    @frozen public struct Link {
 
         /// The position of an `OUDSAlertMessage.Link`in the alert message.
         @frozen public enum Position {
@@ -471,7 +477,7 @@ public struct OUDSAlertMessage: View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertLeadingIcon(status: status)
                 .padding(.top, theme.alert.spacePaddingBlock)
-            AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link)
+            AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link, onClose: onClose)
             AlertMessageAction(link: link, onClose: onClose)
         }
         .padding(.leading, theme.alert.spacePaddingInline)
@@ -479,9 +485,10 @@ public struct OUDSAlertMessage: View {
         .frame(minWidth: theme.alert.sizeMinWidth, minHeight: minHeight, alignment: .leading)
         .modifier(AlertMessageBackgroundModifier(status: status))
         .modifier(AlertMessageBorderModifier(status: status))
+        .accessibilityElement(children: .contain)
     }
 
     private var minHeight: SizeSemanticToken {
-        link?.position == .bottom ? theme.alert.sizeMinHeightBottomActionPlacement : theme.alert.sizeMinHeight
+        link?.position == .bottom ? theme.alert.sizeMinHeightBottomAction : theme.alert.sizeMinHeight
     }
 }

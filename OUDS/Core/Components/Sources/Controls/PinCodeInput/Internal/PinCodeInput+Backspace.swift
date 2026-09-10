@@ -30,6 +30,8 @@ import SwiftUI
 /// - BackspaceTextField (UITextField): Custom UITextField that detects backspace
 struct BackspaceDetectingTextField: UIViewRepresentable {
 
+    // MARK: - Properties
+
     @Binding var text: String
     @Binding var displayText: String
 
@@ -37,8 +39,13 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
     let index: Int
     let a11yLabel: String
     let a11yValue: String
+    let isFocused: Bool
+    let shouldResignFocus: Bool
+    let onFocusChanged: (Bool) -> Void
     let onBackspace: () -> Void
     let onTextInserted: (String) -> Void
+
+    // MARK: - UI View Representable
 
     /// Creates the UITextField instance.
     ///
@@ -48,6 +55,7 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         let textField = BackspaceTextField()
 
         textField.delegate = context.coordinator
+        context.coordinator.onFocusChanged = onFocusChanged
         textField.keyboardType = .numberPad
         textField.textAlignment = .center
         textField.onTextInserted = onTextInserted
@@ -79,6 +87,7 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         // Always refresh callbacks in case the closures captured new values after a SwiftUI re-render
         uiView.onBackspace = onBackspace
         uiView.onTextInserted = onTextInserted
+        context.coordinator.onFocusChanged = onFocusChanged
 
         // Only update the displayed text if it actually changed, to avoid unnecessary UIKit updates
         if uiView.text != displayText {
@@ -89,6 +98,16 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         // changes and the value string switches between "Empty" and the actual digit)
         uiView.accessibilityLabel = a11yLabel
         uiView.accessibilityValue = a11yValue
+
+        uiView.shouldBeFocused = isFocused
+        if isFocused, !uiView.isFirstResponder {
+            DispatchQueue.main.async { [weak uiView] in
+                guard let uiView, uiView.shouldBeFocused, !uiView.isFirstResponder else { return }
+                _ = uiView.becomeFirstResponder()
+            }
+        } else if shouldResignFocus, uiView.isFirstResponder {
+            _ = uiView.resignFirstResponder()
+        }
     }
 
     /// Creates the coordinator that acts as the `UITextFieldDelegate`.
@@ -105,6 +124,7 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
 
         @Binding var text: String
         let index: Int
+        var onFocusChanged: ((Bool) -> Void)?
 
         init(text: Binding<String>, index: Int) {
             _text = text
@@ -112,6 +132,14 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         }
 
         deinit {}
+
+        func textFieldDidBeginEditing(_ textField: UITextField) {
+            onFocusChanged?(true)
+        }
+
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            onFocusChanged?(false)
+        }
 
         /// Called when the text field's text is about to change.
         ///
@@ -163,6 +191,9 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
 /// together after a short silence (50ms), allowing the parent to handle them as a complete code.
 @MainActor
 final class BackspaceTextField: UITextField {
+
+    /// The latest focus requested by SwiftUI. Deferred focus work checks this value before running.
+    var shouldBeFocused = false
 
     /// Callback triggered when the backspace key is pressed.
     var onBackspace: (() -> Void)?

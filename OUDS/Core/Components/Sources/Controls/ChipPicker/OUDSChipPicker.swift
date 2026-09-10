@@ -39,13 +39,13 @@ import SwiftUI
 ///     var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 ///         [
 ///             OUDSChipPickerData(tag: Drink.virginHolyLava,
-///                                layout: .textAndIcon("Virgin Holy Lava", image: OUDSImage(asset: Image(systemName: "flame")))),
+///                                layout: .textAndImage("Virgin Holy Lava", image: OUDSImage(asset: Image(systemName: "flame")))),
 ///
 ///             OUDSChipPickerData(tag: Drink.ipaBeer,
-///                                layout: .textAndIcon("IPA Beer", image: OUDSImage(asset: Image(systemName: "dog.fill")))),
+///                                layout: .textAndImage("IPA Beer", image: OUDSImage(asset: Image(systemName: "dog.fill")))),
 ///
 ///             OUDSChipPickerData(tag: Drink.mineralWater,
-///                                layout: .textAndIcon("Mineral water", image: OUDSImage(asset: Image(systemName: "waterbottle.fill")))),
+///                                layout: .textAndImage("Mineral water", image: OUDSImage(asset: Image(systemName: "waterbottle.fill")))),
 ///         ]
 ///     }
 ///
@@ -326,10 +326,10 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         switch data.layout {
         case let .text(text):
             OUDSFilterChip(text: text, selected: selected, action: action)
-        case let .icon(icon, accessibilityLabel, renderingMode):
-            OUDSFilterChip(image: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, selected: selected, action: action)
-        case let .textAndIcon(text, icon, renderingMode):
-            OUDSFilterChip(image: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, selected: selected, action: action)
+        case let .image(image):
+            OUDSFilterChip(image: image, accessibilityLabel: image.accessibilityLabel ?? "", selected: selected, action: action)
+        case let .textAndImage(text, image):
+            OUDSFilterChip(image: image, text: text, selected: selected, action: action)
         }
     }
 

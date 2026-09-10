@@ -27,19 +27,37 @@ struct ButtonLoadingContentModifier: ViewModifier {
     // MARK: Stored Properties
 
     let appearance: OUDSButton.Appearance
+    let size: OUDSButton.Size
+    let progress: Double?
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
     @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body
 
     func body(content: Content) -> some View {
         content
             .overlay {
-                LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .modifier(LoaderSizeModifier(size: size))
+                Group {
+                    if let progress {
+                        CircularProgressIndicatorDeterminateView(progress: progress,
+                                                                 animated: true,
+                                                                 foregroundColor: colorToken.color(for: colorScheme),
+                                                                 trackColor: .clear,
+                                                                 strokeCap: strokeCap,
+                                                                 gapSize: .default,
+                                                                 size: sizeProgressIndicator)
+                    } else {
+                        CircularProgressIndicatorIndeterminateView(foregroundColor: colorToken.color(for: colorScheme),
+                                                                   trackColor: .clear,
+                                                                   strokeCap: strokeCap,
+                                                                   gapSize: .default,
+                                                                   size: sizeProgressIndicator)
+                    }
+                }
+                .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
             }
     }
 
@@ -62,8 +80,20 @@ struct ButtonLoadingContentModifier: ViewModifier {
         }
     }
 
-    private var size: CGFloat {
-        theme.button.sizeLoader
+    private var sizeProgressIndicator: CGFloat {
+        switch size {
+        case .default:
+            theme.button.sizeProgressIndicatorDefault
+        case .small:
+            theme.button.sizeProgressIndicatorSmall
+        }
+    }
+
+    private var strokeCap: CGLineCap {
+        let effectiveRadius = theme.tuning.hasRoundedProgressIndicators
+            ? theme.progressIndicator.borderRadiusRounded
+            : theme.progressIndicator.borderRadiusDefault
+        return (effectiveRadius > 0) ? .round : .butt
     }
 }
 

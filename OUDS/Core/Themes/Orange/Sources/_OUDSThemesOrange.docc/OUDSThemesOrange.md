@@ -16,7 +16,7 @@ The Orange theme overrides some tokens from the basic `OUDSTheme` and should be 
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 2.5.0
+🧬 Theme version: 2.7.0
 ```
 
 This is the default theme any Orange branded app should use, and can be subclassed to define for example themes dedicated to countries.
@@ -76,12 +76,12 @@ Some tuning object exists.
     // Define your theme tuning
     let tuning = Tuning(hasRoundedButtons: true, 
                         hasRoundedTextInputs: true,
-                        hasRoundedAlertMessages: true)
+                        hasRoundedAlertMessages: true,
+                        hasRoundedProgressIndicators: true,
+                        hasRoundedListItems: true)
 
     // Apply it to your theme
     let theme = OrangeTheme(tuning: tuning)
-    // Or in one line
-    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true))
 
     // Or apply predefined tunings
     let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
@@ -99,11 +99,13 @@ let theme = OrangeTheme(tuning: Tuning.OrangeFrance)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ❌ false  
-rounded corners text inputs    | ❌ false  
-rounded corners alert messages | ❌ false
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ❌ false  
+rounded corners text inputs         | ❌ false  
+rounded corners alert messages      | ❌ false
+rounded corners progress indicators | ❌ false
+rounded corners list items          | ❌ false
 
 ### "Orange Business" tuning
 
@@ -115,11 +117,13 @@ let theme = OrangeTheme(tuning: Tuning.OrangeBusiness)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ❌ false  
-rounded corners text inputs    | ✅ true 
-rounded corners alert messages | ✅ true 
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ❌ false  
+rounded corners text inputs         | ✅ true 
+rounded corners alert messages      | ❌ false 
+rounded corners progress indicators | ❌ false
+rounded corners list items          | ❌ false
 
 ### "Max it" tuning
 
@@ -131,11 +135,13 @@ let theme = OrangeTheme(tuning: Tuning.MaxIt)
 
 It applies the following settings:
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | ✅ true  
-rounded corners text inputs    | ✅ true  
-rounded corners alert messages | ✅ true
+Tunable elements                    | Default values                          
+----------------------------------- | ------------------------------------- 
+rounded corners buttons             | ✅ true  
+rounded corners text inputs         | ✅ true  
+rounded corners alert messages      | ✅ true
+rounded corners progress indicators | ✅ true
+rounded corners list items          | ✅ true
 
 ## Typography
 
@@ -455,7 +461,17 @@ struct YourApp: App {
 
 #### Badge
 
-![A badge component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
+@TabNavigator {
+    @Tab("Badge standard") {
+        ![A badge standard component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
+    }
+    @Tab("Badge count") {
+        ![A badge count component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeCount_Orange.png)
+    }
+    @Tab("Badge icon") {
+        ![A badge icon component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeIcon_Orange.png)
+    }
+}
 
 #### Tags
 
@@ -493,12 +509,76 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("With Liquid Glass") {
-        ![A tab component in light mode with Orange theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Orange_light.png)        
+        ![A tab component in light mode with Orange theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Orange_light.png)
     }
     @Tab("Without Liquid Glass") {
         ![A tab component in light mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Orange_light.png)
     }
 }
+
+#### List item
+
+@TabNavigator {
+    @Tab("Static") {
+        ![A static list item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_static_list_item_Orange.png)
+    }
+    @Tab("Navigation") {
+        ![A navigation list item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_navigation_list_item_Orange.png)
+    }
+}
+
+#### Tool bar
+
+![A tool bar component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_Orange_light.png)
+
+### Dialogs
+
+#### Alert message
+
+![An alert message component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Orange.png)
+
+#### Inline alert
+
+![An inline alert component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_Orange.png)
+
+### Controls
+
+#### Pin code input
+
+![A pin code input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_Orange.png)
+
+#### Password input
+
+![A password input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_Orange.png)
+
+#### Text area
+
+![A text area component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_Orange.png)
+
+### Indicators
+
+#### Progress indicator
+
+@TabNavigator {
+    @Tab("Circular") {
+        ![A circular progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_Orange.png)
+    }
+    @Tab("Linear") {
+        ![A linear progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_Orange.png)
+    }
+}
+
+### Layouts
+
+#### Colored surface
+
+![A colored surface component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_Orange.png)
+
+### Foundations
+
+#### Typography
+
+![A typography component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_Orange.png)
 
 ## Topics
 

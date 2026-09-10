@@ -69,7 +69,7 @@ Build the Swift Package to be sure the package is compilable
 [bundle exec] fastlane ios test_unit
 ```
 
-Run the unit tests embeded in the Swift Package project
+Run the unit tests embedded in the Swift Package project
 
 ----
 

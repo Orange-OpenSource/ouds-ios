@@ -1,0 +1,52 @@
+@Tutorial(time: 10, projectFiles: "OUDS-Lime-Tutorial.zip") {
+    @Intro(title: "Colored Surface") {
+        Color mode tokens control the colors used in colored surface components. In this chapter, we will override color mode tokens to customize the OUDSColoredSurface component.
+
+        We will change the background color of the colored surface to match the Lime theme.
+
+        @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Overriding color mode tokens") {
+
+        @ContentAndMedia {
+            Color mode tokens are defined in `OrangeThemeColorModeSemanticTokensProvider`. These tokens are special because they define high level rules of behaviors for colored surface like type of colors or monochrome mode.
+        }
+
+        @Steps {
+            @Step {
+                Some token providers need references to others.
+
+                The Lime theme uses a light green background for the colored surface. There is a semantic token of color which must be updated, and the provider of color modes tokens should refer to it.
+                
+                @Code(name: "Tokens.swift", file: "tutorial-lime-7.swift", previousFile: "tutorial-lime-3.swift") {
+                    @Image(source: "tutorial-lime-7.png", alt: "App with color mode changes")
+                }
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            Which component uses color mode tokens for its background color?
+
+            @Choice(isCorrect: true) {
+                OUDSColoredSurface
+                
+                @Justification(reaction: "Correct!") {
+                    This component defines a colored surface implying for some components monochrome variants.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                OrangeThemeColorSemanticTokensProvider
+                
+                @Justification(reaction: "Wrong!") {
+                    This object is a tokens provider of colors, and not a component.
+                }
+            }
+        }
+    }
+}

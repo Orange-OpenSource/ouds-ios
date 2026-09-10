@@ -7,13 +7,13 @@
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
     }
     
-    @Chapter(name: "Import of the Swift Package and choose its librairies") {
-        In this chapter you will learn how to import the OUDS iOS Swift Package and which librairies it provides
+    @Chapter(name: "Import of the Swift Package and choose its libraries") {
+        In this chapter you will learn how to import the OUDS iOS Swift Package and which libraries it provides
         you should choose for your needs.
         
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
         
-        @TutorialReference(tutorial: "doc:tutorial-discovery-1-package-and-librairies")
+        @TutorialReference(tutorial: "doc:tutorial-discovery-1-package-and-libraries")
     }
 
     @Chapter(name: "Preparation of the theme") {

@@ -34,6 +34,8 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var opacityLowerDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var opacityTransparentLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var opacityTransparentDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityTransparentInverseLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityTransparentInverseDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     override public var actionDisabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var actionEnabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -223,6 +225,8 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var overlayDragDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var overlayModalSheetDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var overlayBackdropDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var overlayFloatingLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var overlayFloatingDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     override public var surfaceBrandPrimaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var surfaceBrandPrimaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -261,6 +265,17 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var surfaceStatusWarningEmphasizedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var surfaceStatusWarningMutedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
+    // MARK: - Color - AI
+
+    override public var colorAiPrimaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorAiPrimaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorAiSecondaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorAiSecondaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorAiTertiaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorAiTertiaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorAiQuaternaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorAiQuaternaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+
     // MARK: - Color semantic tokens - Multiples
 
     // MARK: - Color - Opacity
@@ -268,6 +283,7 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var opacityLowest: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
     override public var opacityLower: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
     override public var opacityTransparent: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
+    override public var opacityTransparentInverse: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
 
     // MARK: - Color - Action
 
@@ -372,6 +388,7 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var overlayDrag: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
     override public var overlayModalSheet: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
     override public var overlayBackdrop: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
+    override public var overlayFloating: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
 
     // MARK: - Color - Surface
 
@@ -393,6 +410,13 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var surfaceStatusPositiveMuted: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
     override public var surfaceStatusWarningEmphasized: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
     override public var surfaceStatusWarningMuted: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: - Color - AI
+
+    override public var colorAiPrimary: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
+    override public var colorAiSecondary: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
+    override public var colorAiTertiary: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
+    override public var colorAiQuaternary: MultipleColorSemanticToken { Self.mockThemeMultipleColorSemanticToken }
 }
 
 // swiftlint:enable required_deinit

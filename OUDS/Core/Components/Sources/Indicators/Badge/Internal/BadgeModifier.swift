@@ -24,7 +24,6 @@ struct BadgeModifier: ViewModifier {
     private let standardSize: OUDSBadgeStandard.Size
 
     @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled: Bool
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: - Initializer

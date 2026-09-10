@@ -96,6 +96,10 @@ struct OrangeThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
+    @Test func defaultAccordionComponentTokensProvider() throws {
+        #expect(theme.accordion is OrangeThemeAccordionComponentTokensProvider)
+    }
+
     @Test func defaultAlertComponentTokensProvider() throws {
         #expect(theme.alert is OrangeThemeAlertComponentTokensProvider)
     }
@@ -128,10 +132,6 @@ struct OrangeThemeTests {
         #expect(theme.divider is OrangeThemeDividerComponentTokensProvider)
     }
 
-    @Test func defaultControlItemComponentTokensProvider() throws {
-        #expect(theme.controlItem is OrangeThemeControlItemComponentTokensProvider)
-    }
-
     @Test func defaultIconComponentTokensProvider() throws {
         #expect(theme.icon is OrangeThemeIconComponentTokensProvider)
     }
@@ -142,6 +142,10 @@ struct OrangeThemeTests {
 
     @Test func defaultPinCodeInputComponentTokensProvider() throws {
         #expect(theme.pinCodeInput is OrangeThemePinCodeInputComponentTokensProvider)
+    }
+
+    @Test func defaultProgressIndicatorComponentTokensProvider() throws {
+        #expect(theme.progressIndicator is OrangeThemeProgressIndicatorComponentTokensProvider)
     }
 
     @Test func defaultQuantityInputComponentTokensProvider() throws {
@@ -178,6 +182,10 @@ struct OrangeThemeTests {
 
     @Test func defaultTextInputComponentTokensProvider() throws {
         #expect(theme.textInput is OrangeThemeTextInputComponentTokensProvider)
+    }
+
+    @Test func defaultTypographyComponentTokensProvider() throws {
+        #expect(theme.typography is OrangeThemeTypographyComponentTokensProvider)
     }
 }
 

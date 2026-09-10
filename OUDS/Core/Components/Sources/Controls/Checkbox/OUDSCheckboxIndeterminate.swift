@@ -31,7 +31,7 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSCheckboxIndeterminate`` can be related to an error situation, for example troubles for a formular.
+/// An ``OUDSCheckboxIndeterminate`` can be related to an error situation, for example troubles for a form.
 /// A dedicated look-and-feel is implemented for that if the `isError` flag is risen.
 ///
 /// ## Accessibility considerations

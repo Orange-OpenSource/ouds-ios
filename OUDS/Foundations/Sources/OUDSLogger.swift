@@ -23,7 +23,7 @@ public typealias OL = OUDSLogger
 /// Set `OUDSLogger.verbose = true` to enable them.
 ///
 /// - Since: 0.8.0
-public struct OUDSLogger {
+@frozen public struct OUDSLogger {
 
     private init() {}
 

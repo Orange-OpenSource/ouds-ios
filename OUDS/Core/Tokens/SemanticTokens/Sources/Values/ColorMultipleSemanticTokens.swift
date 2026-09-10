@@ -58,6 +58,8 @@ public protocol ColorMultipleSemanticTokens {
 
     var opacityTransparent: MultipleColorSemanticToken { get }
 
+    var opacityTransparentInverse: MultipleColorSemanticToken { get }
+
     // MARK: - Color - Action
 
     var actionDisabled: MultipleColorSemanticToken { get }
@@ -232,6 +234,8 @@ public protocol ColorMultipleSemanticTokens {
 
     var overlayBackdrop: MultipleColorSemanticToken { get }
 
+    var overlayFloating: MultipleColorSemanticToken { get }
+
     // MARK: - Color - Surface
 
     var surfaceBrandPrimary: MultipleColorSemanticToken { get }
@@ -269,6 +273,16 @@ public protocol ColorMultipleSemanticTokens {
     var surfaceStatusWarningEmphasized: MultipleColorSemanticToken { get }
 
     var surfaceStatusWarningMuted: MultipleColorSemanticToken { get }
+
+    // MARK: - Color - AI
+
+    var colorAiPrimary: MultipleColorSemanticToken { get }
+
+    var colorAiSecondary: MultipleColorSemanticToken { get }
+
+    var colorAiTertiary: MultipleColorSemanticToken { get }
+
+    var colorAiQuaternary: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

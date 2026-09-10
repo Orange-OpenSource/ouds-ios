@@ -23,16 +23,21 @@ struct LinkButtonStyle: ButtonStyle {
 
     let layout: OUDSLink.Layout
     let size: OUDSLink.Size
+    let density: OUDSLink.Density
+    let isFullWidth: Bool
 
     @State private var isHover: Bool
+
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Initializer
 
-    init(layout: OUDSLink.Layout, size: OUDSLink.Size) {
+    init(layout: OUDSLink.Layout, size: OUDSLink.Size, density: OUDSLink.Density, isFullWidth: Bool) {
         self.layout = layout
         self.size = size
+        self.density = density
+        self.isFullWidth = isFullWidth
         isHover = false
     }
 
@@ -44,7 +49,7 @@ struct LinkButtonStyle: ButtonStyle {
             switch layout {
             case let .indicator(indicator):
                 configuration.label
-                    .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState, size: size, indicator: indicator))
+                    .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState, size: size, indicator: indicator, isFullWidth: isFullWidth))
             case .textOnly:
                 configuration.label
                     .labelStyle(LinkTextAndIconLabelStyle(interactionState: interactionState, size: size, layout: layout))
@@ -54,8 +59,10 @@ struct LinkButtonStyle: ButtonStyle {
             }
         }
         .padding(.horizontal, theme.link.spacePaddingInline)
-        .padding(.vertical, theme.link.spacePaddingBlock)
+        .padding(.vertical, verticalPadding)
         .frame(minWidth: minWidth, minHeight: minHeight)
+        .frame(maxWidth: isFullWidth ? .infinity : nil)
+        .contentShape(Rectangle())
         #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in
                 self.isHover = isHover
@@ -66,11 +73,25 @@ struct LinkButtonStyle: ButtonStyle {
     // MARK: Helpers
 
     private var minWidth: Double {
-        size == .small ? theme.link.sizeMinWidthSmall : theme.link.sizeMinWidthDefault
+        size == .small ? theme.link.sizeMinWidthSmall : theme.link.sizeMinWidth
     }
 
     private var minHeight: Double {
-        size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
+        switch density {
+        case .default:
+            size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
+        case .compact:
+            theme.link.sizeMinHeightCompactDensity
+        }
+    }
+
+    private var verticalPadding: Double {
+        switch density {
+        case .default:
+            size == .small ? theme.link.spacePaddingBlockSmall : theme.link.spacePaddingBlockDefault
+        case .compact:
+            size == .small ? theme.link.spacePaddingBlockCompactDensitySmall : theme.link.spacePaddingBlockCompactDensityDefault
+        }
     }
 }
 
@@ -83,20 +104,29 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
     let interactionState: OUDSButtonInteractionState
     let size: OUDSLink.Size
     let indicator: OUDSLink.Indicator
+    let isFullWidth: Bool
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(alignment: .center, spacing: spacing) {
-            if indicator == .back {
+            if indicator == .previous {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
                     .modifier(LinkColorIndicatorModifier(interactionState: interactionState))
+
+                if isFullWidth {
+                    Spacer(minLength: 0)
+                }
             }
 
             configuration.title
                 .modifier(LinkTextModifier(interactionState: interactionState, size: size, layout: .indicator(indicator)))
                 .modifier(LinkColorContentModifier(interactionState: interactionState))
 
-            if indicator == .next {
+            if indicator == .next || indicator == .external {
+                if isFullWidth {
+                    Spacer(minLength: 0)
+                }
+
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
                     .modifier(LinkColorIndicatorModifier(interactionState: interactionState))

@@ -17,7 +17,7 @@ You are free to choose whether or not you want a branch or a specific tag, pick 
 
 You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags. You can find release tags (e.g. *1.0.0*) and release candidates tags (e.g. *1.0.0-rc3*).
 
-### Import the librairies you need
+### Import the libraries you need
 
 You should use one (or several) of the following imports for your needs, which are basically _Swift Package_ products.
 
@@ -47,10 +47,10 @@ Import the _Swift Package_ product which suits your needs:
 
 Umbrella                  | Description                          
 ------------------------- | ------------------------------------- 
-OUDSSwiftUI               | All librairies listed above and all themes  
-OUDSSwiftUIOrange         | All librairies listed above but with only Orange and Orange Compact themes
-OUDSSwiftUIWireframe      | All librairies listed above but with only Wireframe theme
-OUDSSwiftUIOrangeSosh     | All librairies listed above but with only Orange and Sosh themes
+OUDSSwiftUI               | All libraries listed above and all themes  
+OUDSSwiftUIOrange         | All libraries listed above but with only Orange and Orange Compact themes
+OUDSSwiftUIWireframe      | All libraries listed above but with only Wireframe theme
+OUDSSwiftUIOrangeSosh     | All libraries listed above but with only Orange and Sosh themes
 
 ### Chose your theme
 

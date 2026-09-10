@@ -42,17 +42,17 @@ struct AlertLeadingIcon: View {
             case let .accent(icon):
                 icon?.update(with: theme.colors.contentStatusAccent)
             case let .neutral(icon):
-                icon?.update(with: theme.icon.colorContentDefault)
+                icon?.update(with: theme.colors.contentDefault)
             case .negative:
-                OUDSImage(assetName: "ic_alert_important_fill", color: theme.colors.contentStatusNegative)
+                OUDSImage(name: "Component-alert-important-fill", color: theme.colors.contentStatusNegative)
             case .positive:
-                OUDSImage(assetName: "ic_alert_tick_confirmation_fill", color: theme.colors.contentStatusPositive)
+                OUDSImage(name: "Component-alert-tick-confirmation-fill", color: theme.colors.contentStatusPositive)
             case .info:
-                OUDSImage(assetName: "ic_alert_info_fill", color: theme.colors.contentStatusInfo)
+                OUDSImage(name: "Component-alert-info-fill", color: theme.colors.contentStatusInfo)
             case .warning:
                 ZStack {
-                    OUDSImage(assetName: "ic_alert_warning_external_shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                    OUDSImage(assetName: "ic_alert_warning_internal_shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                    OUDSImage(name: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                    OUDSImage(name: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
                 }
             }
         }
@@ -60,7 +60,7 @@ struct AlertLeadingIcon: View {
     }
 
     private var size: CGFloat {
-        theme.alert.sizeIcon * dynamicTypeSize.percentageRate / 100
+        theme.alert.sizeAsset * dynamicTypeSize.percentageRate / 100
     }
 }
 

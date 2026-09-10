@@ -45,9 +45,9 @@ struct CheckboxIndicator: View {
     @ViewBuilder
     private func indicator() -> some View {
         if indicatorState == .selected {
-            tickImage(name: "ic_checkbox_selected")
+            tickImage(name: "Component-checkbox-checkbox-selected")
         } else if indicatorState == .indeterminate {
-            tickImage(name: "ic_checkbox_undeterminate")
+            tickImage(name: "Component-checkbox-checkbox-undetermined")
         } else { // .unselected
             Color.clear
         }

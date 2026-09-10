@@ -26,6 +26,7 @@ struct ToolBarItemActionButton: View {
     let type: OUDSToolBarItem.ActionType
     let style: OUDSToolBarItem.ActionStyle
 
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
@@ -38,7 +39,7 @@ struct ToolBarItemActionButton: View {
             } label: {
                 // fixedSize(). to let items use suitable size to display text withut beeing truncated all the times
                 // padding of 4 to make the text "breath" and not be to stucked to items borders
-                if isLiquidGlassDisabled {
+                if isLiquidGlassDisabled || forceOUDSLegacyLayout {
                     Text(label).modifier(FontLabelModifier(style: emphasized ? .medium : .regular)).fixedSize().padding(4)
                 } else {
                     Text(label).modifier(FontLabelModifier(style: .medium)).fixedSize().padding(4)
@@ -76,11 +77,13 @@ struct ToolBarItemActionButton: View {
 private struct ToolBarItemBadgeModifier: ViewModifier {
 
     let type: OUDSToolBarItem.BadgeType?
+
     @Environment(\.toolbarItemLocation) private var location
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
 
     func body(content: Content) -> some View {
-        if isLiquidGlassDisabled {
+        if isLiquidGlassDisabled || forceOUDSLegacyLayout {
             oudsBadgeLayout(content)
         } else {
             switch location {
@@ -133,6 +136,7 @@ struct ToolBarItemNavigationButton: View {
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Body
@@ -141,7 +145,7 @@ struct ToolBarItemNavigationButton: View {
         Group {
             switch type {
             case let .back(label, accessibilityLabel, action):
-                if isLiquidGlassDisabled {
+                if isLiquidGlassDisabled || forceOUDSLegacyLayout {
                     Button {
                         action?()
                         presentationMode.wrappedValue.dismiss()

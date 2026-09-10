@@ -199,6 +199,9 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
     override var maxWidthBodySmallMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override var maxWidthBodySmallTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
+    override var maxWidthBoxedTextMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var maxWidthBoxedTextTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
+
     override var maxWidthLabelXlargeMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override var maxWidthLabelXlargeTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
@@ -218,7 +221,9 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
 
     // MARK: - Semantic token - Sizing - Interactive area
 
-    override var minInteractiveArea: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var minInteractiveAreaDefault: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var minInteractiveAreaSmall: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var minInteractiveAreaSmallest: SizeSemanticToken { Self.mockThemeSizeRawToken }
 }
 
 // swiftlint:enable required_deinit

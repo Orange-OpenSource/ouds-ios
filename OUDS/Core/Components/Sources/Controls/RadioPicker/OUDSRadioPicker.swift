@@ -112,19 +112,19 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     /// The type of layout the picker must have
     private let placement: OUDSRadioPickerPlacement
 
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to apply the outlined layout
+    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to apply the outlined layout
     private let isOutlined: Bool
 
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to apply the reversed layout
+    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to apply the reversed layout
     private let isReversed: Bool
 
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to error mode
+    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to error mode
     private let isError: Bool
 
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to read only mode
+    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to read only mode
     private let isReadOnly: Bool
 
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and displays a divider (except for the last one)
+    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and displays a divider (except for the last one)
     private let hasDivider: Bool
 
     /// The custom spacing to apply between items by user

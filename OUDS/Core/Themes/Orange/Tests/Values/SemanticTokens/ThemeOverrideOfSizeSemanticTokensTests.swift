@@ -480,6 +480,16 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.maxWidthBodySmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBoxedTextMobile() throws {
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextMobile != abstractTheme.sizes.maxWidthBoxedTextMobile)
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBoxedTextTablet() throws {
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextTablet != abstractTheme.sizes.maxWidthBoxedTextTablet)
+        #expect(inheritedTheme.sizes.maxWidthBoxedTextTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelXlargeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeMobile != abstractTheme.sizes.maxWidthLabelXlargeMobile)
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
@@ -522,9 +532,19 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
 
     // MARK: - Semantic token - Sizing - Interactive area
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeMinInteractiveArea() throws {
-        #expect(inheritedTheme.sizes.minInteractiveArea != abstractTheme.sizes.minInteractiveArea)
-        #expect(inheritedTheme.sizes.minInteractiveArea == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMinInteractiveAreaDefault() throws {
+        #expect(inheritedTheme.sizes.minInteractiveAreaDefault != abstractTheme.sizes.minInteractiveAreaDefault)
+        #expect(inheritedTheme.sizes.minInteractiveAreaDefault == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMinInteractiveAreaSmall() throws {
+        #expect(inheritedTheme.sizes.minInteractiveAreaSmall != abstractTheme.sizes.minInteractiveAreaSmall)
+        #expect(inheritedTheme.sizes.minInteractiveAreaSmall == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMinInteractiveAreaSmallest() throws {
+        #expect(inheritedTheme.sizes.minInteractiveAreaSmallest != abstractTheme.sizes.minInteractiveAreaSmallest)
+        #expect(inheritedTheme.sizes.minInteractiveAreaSmallest == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 }
 
