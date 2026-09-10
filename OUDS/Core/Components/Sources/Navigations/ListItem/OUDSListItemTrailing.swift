@@ -81,7 +81,7 @@ import SwiftUI
 ///     // Trailing with a country flag
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "France"),
-///         trailing: .flag(.init(asset: Image("il_flag_fr"), size: .medium))
+///         trailing: .flag(.init(asset: Image("il_flag_fr"), description: "France"))
 ///     )
 ///
 ///     // Trailing with an avatar
