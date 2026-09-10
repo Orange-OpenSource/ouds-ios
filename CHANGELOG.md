@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
     
 - Tutorial for themes creation and tokens overrides (Orange-OpenSource/ouds-ios#1547)
-
 - For `list item` components, add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
 - `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
@@ -88,6 +87,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Broken size of the `circular progress indicator` with helper text (Orange-OpenSource/ouds-ios#1755)
 - Erratic focus flickering between fields when typing in `PIN code input` component (Orange-OpenSource/ouds-ios#1744)
 - Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
 - Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
