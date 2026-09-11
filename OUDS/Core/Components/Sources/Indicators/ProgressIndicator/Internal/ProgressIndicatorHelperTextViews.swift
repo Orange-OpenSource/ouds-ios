@@ -14,9 +14,77 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Two Elements Helper Text View
+// MARK: - Helper Text View
 
-struct TwoElementsHelperTextView: View {
+struct ProgressIndicatorHelprTextView: View {
+
+    // MARK: Properties
+
+    let percent: Double?
+    let description: String?
+    let alighnment: OUDSLinearProgressIndicator.HelperTextAlignment
+
+    @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    // MARK: Body
+
+    var body: some View {
+        switch alighnment {
+        case .center:
+            CenteredHelperTextView(description: description, percent: percentString)
+        case .start:
+            EdgedHelperTextView(start: percentString, end: description)
+        case .end:
+            EdgedHelperTextView(start: description, end: percentString)
+        }
+    }
+
+    // MARK: Helper
+
+    private var percentString: String? {
+        if let percent {
+            let value = Int((percent * 100).rounded())
+            return "core_progressIndicator_percent_value".localized(with: value)
+        } else {
+            return nil
+        }
+    }
+}
+
+// MARK: - Centered helper text
+
+private struct CenteredHelperTextView: View {
+
+    // MARK: Properties
+
+    let description: String?
+    let percent: String?
+
+    @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    // MARK: Body
+
+    var body: some View {
+        HStack(alignment: .top, spacing: theme.progressIndicator.spaceColumnGap) {
+            if let percent, !percent.isEmpty {
+                Text(percent).labelDefaultMedium(theme)
+            }
+            if let description, !description.isEmpty {
+                Text(description).labelDefaultMedium(theme)
+            }
+        }
+        .foregroundColor(theme.colors.contentDefault)
+        .multilineTextAlignment(.center)
+        .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular),
+               alignment: .center)
+    }
+}
+
+// MARK: - Edged helper text
+
+private struct EdgedHelperTextView: View {
 
     // MARK: Properties
 
@@ -46,52 +114,3 @@ struct TwoElementsHelperTextView: View {
     }
 }
 
-// MARK: - One Element Helper Text View
-
-struct OneElementHelperTextView: View {
-
-    // MARK: Properties
-
-    let description: String?
-    let alignment: OUDSLinearProgressIndicator.HelperTextAlignment
-
-    @Environment(\.theme) private var theme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
-    // MARK: Body
-
-    var body: some View {
-        if let description, !description.isEmpty {
-            Text(description)
-                .labelDefaultMedium(theme)
-                .foregroundColor(theme.colors.contentDefault)
-                .multilineTextAlignment(multilineTextAlignment)
-                .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular),
-                       alignment: frameAlignment)
-        }
-    }
-
-    // MARK: Helpers
-
-    private var frameAlignment: Alignment {
-        switch alignment {
-        case .center:
-            .center
-        case .start:
-            .leading
-        case .end:
-            .trailing
-        }
-    }
-
-    private var multilineTextAlignment: TextAlignment {
-        switch alignment {
-        case .center:
-            .center
-        case .start:
-            .leading
-        case .end:
-            .trailing
-        }
-    }
-}
