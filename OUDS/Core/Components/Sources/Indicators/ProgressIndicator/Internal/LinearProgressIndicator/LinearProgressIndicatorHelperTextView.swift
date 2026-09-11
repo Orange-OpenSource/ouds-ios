@@ -23,7 +23,7 @@ struct IndeterminateHelperTextView: View {
     let configuration: LinearProgressIndicatorConfiguration.Indeterminate
 
     var body: some View {
-        ProgressIndicatorHelprTextView(percent: nil, description: configuration.helperText, alighnment: configuration.helperTextAlignment)
+        ProgressIndicatorHelprTextView(percent: nil, description: configuration.helperText, alignment: configuration.helperTextAlignment)
     }
 }
 
@@ -36,10 +36,10 @@ struct DeterminateProgressIndicatorHelperText: View {
     var body: some View {
         switch configuration.helperText {
         case let .description(description, alignment):
-            ProgressIndicatorHelprTextView(percent: nil, description: description, alighnment: alignment)
+            ProgressIndicatorHelprTextView(percent: nil, description: description, alignment: alignment)
 
         case let .percent(description, alignment):
-            ProgressIndicatorHelprTextView(percent: configuration.progress, description: description, alighnment: alignment)
+            ProgressIndicatorHelprTextView(percent: configuration.progress, description: description, alignment: alignment)
 
         default:
             EmptyView()
