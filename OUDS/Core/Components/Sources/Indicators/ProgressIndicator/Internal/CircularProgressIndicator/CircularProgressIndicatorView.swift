@@ -123,9 +123,9 @@ private struct HelperTextView: View {
         if let helperTextType = configuration.helperTextType {
             switch helperTextType {
             case let .description(description):
-                ProgressIndicatorHelprTextView(percent: nil, description: description, alighnment: .center)
+                ProgressIndicatorHelprTextView(percent: nil, description: description, alignment: .center)
             case let .percent(description):
-                ProgressIndicatorHelprTextView(percent: configuration.progress, description: description, alighnment: .center)
+                ProgressIndicatorHelprTextView(percent: configuration.progress, description: description, alignment: .center)
             }
         }
     }
