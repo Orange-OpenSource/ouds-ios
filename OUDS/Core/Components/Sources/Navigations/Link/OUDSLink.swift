@@ -294,6 +294,25 @@ public struct OUDSLink: View {
     // MARK: - Body
 
     public var body: some View {
+        switch layout {
+        case .indicator(let indicator):
+            switch indicator {
+            case .next, .external:
+                OUDSInteractionButton(action: action) { state in
+                    LinkInlineText(text: text,
+                                   interactionState: state,
+                                   size: size,
+                                   indicator: indicator)
+                }
+            case .previous:
+                oldContent
+            }
+        default:
+            oldContent
+        }
+    }
+
+    private var oldContent: some View {
         Button(action: action) {
             switch layout {
             case let .indicator(navigationIndicator):
@@ -323,12 +342,11 @@ public struct OUDSLink: View {
                 }
             }
         }
+        .buttonStyle(LinkButtonStyle(layout: layout, size: size, density: density, isFullWidth: isFullWidth))
         .buttonStyle(LinkButtonStyle(layout: layout,
-                                     text: text,
                                      size: size,
                                      density: density,
-                                     isFullWidth: isFullWidth,
-                                     isIndicatorInline: isIndicatorInline))
+                                     isFullWidth: isFullWidth))
         .accessibilityLabel(Text(LocalizedStringKey(text)))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)

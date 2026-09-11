@@ -50,7 +50,7 @@ struct LinkInlineText: View {
     }
 
     private var composedText: Text {
-        let label = Text(LocalizedStringKey(text))
+        let label = Text(text)
             .foregroundColor(contentColor.color(for: colorScheme))
             .underline(interactionState == .hover || interactionState == .pressed)
         let icon = Text(indicatorImage)
