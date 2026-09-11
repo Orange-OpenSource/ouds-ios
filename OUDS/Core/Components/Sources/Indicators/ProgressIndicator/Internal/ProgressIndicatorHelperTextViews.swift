@@ -22,7 +22,7 @@ struct ProgressIndicatorHelprTextView: View {
 
     let percent: Double?
     let description: String?
-    let alighnment: OUDSLinearProgressIndicator.HelperTextAlignment
+    let alignment: OUDSLinearProgressIndicator.HelperTextAlignment
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -30,13 +30,21 @@ struct ProgressIndicatorHelprTextView: View {
     // MARK: Body
 
     var body: some View {
-        switch alighnment {
+        switch alignment {
         case .center:
             CenteredHelperTextView(description: description, percent: percentString)
         case .start:
-            EdgedHelperTextView(start: percentString, end: description)
+            if let percentString {
+                EdgedHelperTextView(start: percentString, end: description)
+            } else {
+                EdgedHelperTextView(start: description, end: nil)
+            }
         case .end:
-            EdgedHelperTextView(start: description, end: percentString)
+            if let percentString {
+                EdgedHelperTextView(start: description, end: percentString)
+            } else {
+                EdgedHelperTextView(start: nil, end: description)
+            }
         }
     }
 
