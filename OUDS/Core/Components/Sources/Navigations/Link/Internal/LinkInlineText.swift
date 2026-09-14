@@ -24,47 +24,47 @@ import UIKit
 
 struct LinkInlineText: View {
 
+    // MARK: Properties
+
     let text: String
     let interactionState: OUDSButtonInteractionState
+    let density: OUDSLink.Density
     let size: OUDSLink.Size
     let indicator: OUDSLink.Indicator
+    let isFullWidth: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.layoutDirection) private var layoutDirection
-    @Environment(\.oudsSurfaceColor) private var surfaceColor
     @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    // MARK: Body
 
     var body: some View {
-        Group {
-            switch size {
-            case .small:
-                composedText.labelStrongMedium(theme)
-            case .default:
-                composedText.labelStrongLarge(theme)
-            }
+        HStack{
+            let label = Text(text)
+                .foregroundColor(contentColor.color(for: colorScheme))
+                .underline(interactionState == .hover || interactionState == .pressed)
+            let icon = Text(indicatorImage)
+                .foregroundColor(indicatorColor.color(for: colorScheme))
+                .baselineOffset(indicatorBaselineOffset)
+
+            Text("\(label)\(icon)")
+                .font(nativeFont.font)
+                .multilineTextAlignment(.leading)
         }
-        .multilineTextAlignment(.leading)
+        .padding(.horizontal, theme.link.spacePaddingInline)
+        .padding(.vertical, verticalPadding)
+        .frame(minWidth: minWidth, minHeight: minHeight)
+        .frame(maxWidth: isFullWidth ? .infinity : nil, alignment: .center)
+        .contentShape(Rectangle())
+
     }
 
-    private var composedText: Text {
-        let label = Text(text)
-            .foregroundColor(contentColor.color(for: colorScheme))
-            .underline(interactionState == .hover || interactionState == .pressed)
-        let icon = Text(indicatorImage)
-            .foregroundColor(indicatorColor.color(for: colorScheme))
-            .baselineOffset(indicatorBaselineOffset)
-
-        OUDSWCAG21Ratio.debugContrastRatio(contentColor, surfaceColor)
-        OUDSWCAG21Ratio.debugContrastRatio(indicatorColor, surfaceColor, .nonTextual)
-
-        if indicator == .previous {
-            return Text("\(icon)\(label)")
-        }
-        return Text("\(label)\(icon)")
-    }
+    // MARK: Heleprs
 
     private var indicatorImage: Image {
         let image = LinkInlineIndicatorImage.make(resourceName: resourceName,
@@ -84,11 +84,13 @@ struct LinkInlineText: View {
     }
 
     private var indicatorBaselineOffset: CGFloat {
-        (nativeFont.capHeight - indicatorLayoutHeight) / 2
+        let baselineOffset = (nativeFont.capHeight - indicatorLayoutHeight) / 2
+        print("baeselineOffset: \(baselineOffset)")
+        return baselineOffset
     }
 
     private var indicatorLayoutHeight: CGFloat {
-        min(iconSize, nativeFontLineHeight)
+        nativeFontLineHeight
     }
 
     private var nativeFont: NativeFont {
@@ -107,7 +109,7 @@ struct LinkInlineText: View {
     }
 
     private var iconSize: CGFloat {
-        size == .small ? theme.link.sizeIconSmall : theme.link.sizeIconDefault
+        (size == .small ? theme.link.sizeIconSmall : theme.link.sizeIconDefault) * dynamicTypeSize.percentageRate / 100
     }
 
     private var spacing: CGFloat {
@@ -162,16 +164,39 @@ struct LinkInlineText: View {
             case .disabled, .readOnly:
                 theme.link.monoColorContentDisabled
             }
+        } else {
+            return switch interactionState {
+            case .enabled:
+                theme.link.colorChevronEnabled
+            case .hover:
+                theme.link.colorChevronHover
+            case .pressed:
+                theme.link.colorChevronPressed
+            case .disabled, .readOnly:
+                theme.colors.actionDisabled
+            }
         }
-        return switch interactionState {
-        case .enabled:
-            theme.link.colorChevronEnabled
-        case .hover:
-            theme.link.colorChevronHover
-        case .pressed:
-            theme.link.colorChevronPressed
-        case .disabled, .readOnly:
-            theme.colors.actionDisabled
+    }
+
+    private var minWidth: Double {
+        size == .small ? theme.link.sizeMinWidthSmall : theme.link.sizeMinWidth
+    }
+
+    private var minHeight: Double {
+        switch density {
+        case .default:
+            size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
+        case .compact:
+            theme.link.sizeMinHeightCompactDensity
+        }
+    }
+
+    private var verticalPadding: Double {
+        switch density {
+        case .default:
+            size == .small ? theme.link.spacePaddingBlockSmall : theme.link.spacePaddingBlockDefault
+        case .compact:
+            size == .small ? theme.link.spacePaddingBlockCompactDensitySmall : theme.link.spacePaddingBlockCompactDensityDefault
         }
     }
 }
@@ -237,6 +262,7 @@ struct LinkInlineIndicatorMetrics {
                      indicator: OUDSLink.Indicator,
                      layoutDirection: LayoutDirection) -> UIImage
     {
+        // Get Image from cache is exist
         let cacheKey = cacheKey(resourceName: resourceName,
                                 bundle: bundle,
                                 metrics: metrics,
@@ -245,16 +271,25 @@ struct LinkInlineIndicatorMetrics {
         if let cachedImage = cache.object(forKey: cacheKey) {
             return cachedImage
         }
+
+        // Not in cache, load image asset from ressources
         guard let source = UIImage(named: resourceName, in: bundle, compatibleWith: nil) else {
             return UIImage()
         }
 
+        // Create a canvas withe width equal to iconsize + spacing
         let canvasSize = CGSize(width: metrics.iconSize + metrics.spacing, height: metrics.iconSize)
         let format = UIGraphicsImageRendererFormat.default()
         format.opaque = false
         let renderer = UIGraphicsImageRenderer(size: canvasSize, format: format)
+
+        // Reender image in canavas, at the right position:
+        // - RTL: spacing is on the right, so set image at position 0
+        // - LTR: sacing in on the left, so set the image at the spacing position
+        // and set the width, and the height equal to the icon size.
+        // **Remark: dont forget to flip the icon for RTL**
         let image = renderer.image { context in
-            let iconRect = CGRect(x: iconOriginX(indicator: indicator, layoutDirection: layoutDirection, spacing: metrics.spacing),
+            let iconRect = CGRect(x: layoutDirection == .rightToLeft ? 0 : metrics.spacing,
                                   y: 0,
                                   width: metrics.iconSize,
                                   height: metrics.iconSize)
@@ -264,23 +299,18 @@ struct LinkInlineIndicatorMetrics {
             }
             source.draw(in: iconRect)
         }
+
         let verticalInset = max(0, (metrics.iconSize - metrics.layoutHeight) / 2)
+        print("verticalInset: \(verticalInset)")
         let templateImage = image
             .withAlignmentRectInsets(UIEdgeInsets(top: verticalInset, left: 0, bottom: verticalInset, right: 0))
             .withRenderingMode(.alwaysTemplate)
+        
+        // set image in the cache for next use
         cache.setObject(templateImage, forKey: cacheKey)
         return templateImage
     }
     #endif
-
-    private static func iconOriginX(indicator: OUDSLink.Indicator,
-                                    layoutDirection: LayoutDirection,
-                                    spacing: CGFloat) -> CGFloat
-    {
-        let indicatorPrecedesText = indicator == .previous
-        let isRightToLeft = layoutDirection == .rightToLeft
-        return indicatorPrecedesText == isRightToLeft ? spacing : 0
-    }
 
     private static func cacheKey(resourceName: String,
                                  bundle: Bundle,
