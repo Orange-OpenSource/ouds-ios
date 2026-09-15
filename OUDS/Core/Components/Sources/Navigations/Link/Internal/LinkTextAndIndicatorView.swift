@@ -22,7 +22,7 @@ import AppKit
 import UIKit
 #endif
 
-struct LinkInlineText: View {
+struct LinkTextAndIndicatorView: View {
 
     // MARK: Properties
 
@@ -31,7 +31,6 @@ struct LinkInlineText: View {
     let density: OUDSLink.Density
     let size: OUDSLink.Size
     let indicator: OUDSLink.Indicator
-    let isFullWidth: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -44,24 +43,35 @@ struct LinkInlineText: View {
     // MARK: Body
 
     var body: some View {
-        HStack{
-            let label = Text(text)
-                .foregroundColor(contentColor.color(for: colorScheme))
-                .underline(interactionState == .hover || interactionState == .pressed)
-            let icon = Text(indicatorImage)
-                .foregroundColor(indicatorColor.color(for: colorScheme))
-                .baselineOffset(indicatorBaselineOffset)
+        switch indicator {
+        case .previous:
+            HStack(alignment: .center, spacing: spacing) {
+                Image(resourceName, bundle: theme.resourcesBundle)
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(indicatorColor.color(for: colorScheme))
+                    .frame(width: iconSize, height: iconSize)
+                        .toFlip(layoutDirection == .rightToLeft)
 
-            Text("\(label)\(icon)")
-                .font(nativeFont.font)
-                .multilineTextAlignment(.leading)
+                Text(text)
+                    .foregroundColor(contentColor.color(for: colorScheme))
+                    .underline(interactionState == .hover || interactionState == .pressed)
+                    .font(Font(nativeFont))
+            }
+        case .external, .next:
+            HStack(alignment: .center, spacing: spacing) {
+                let label = Text(text)
+                    .foregroundColor(contentColor.color(for: colorScheme))
+                    .underline(interactionState == .hover || interactionState == .pressed)
+                let icon = Text(indicatorImage)
+                    .foregroundColor(indicatorColor.color(for: colorScheme))
+                    .baselineOffset(indicatorBaselineOffset)
+
+                Text("\(label)\(icon)")
+                    .font(Font(nativeFont))
+                    .multilineTextAlignment(.leading)
+            }
         }
-        .padding(.horizontal, theme.link.spacePaddingInline)
-        .padding(.vertical, verticalPadding)
-        .frame(minWidth: minWidth, minHeight: minHeight)
-        .frame(maxWidth: isFullWidth ? .infinity : nil, alignment: .center)
-        .contentShape(Rectangle())
-
     }
 
     // MARK: Heleprs
@@ -84,9 +94,7 @@ struct LinkInlineText: View {
     }
 
     private var indicatorBaselineOffset: CGFloat {
-        let baselineOffset = (nativeFont.capHeight - indicatorLayoutHeight) / 2
-        print("baeselineOffset: \(baselineOffset)")
-        return baselineOffset
+        (nativeFont.capHeight - indicatorLayoutHeight) / 2
     }
 
     private var indicatorLayoutHeight: CGFloat {
@@ -94,10 +102,9 @@ struct LinkInlineText: View {
     }
 
     private var nativeFont: NativeFont {
-        let token = size == .small ? theme.fonts.labelStrongMedium : theme.fonts.labelStrongLarge
-        return Font.makeFont(family: theme.fontFamily,
-                             from: token,
-                             isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
+        Font.makeFont(family: theme.fontFamily,
+                      from: size == .small ? theme.fonts.labelStrongMedium : theme.fonts.labelStrongLarge,
+                      isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
     }
 
     private var nativeFontLineHeight: CGFloat {
@@ -128,79 +135,29 @@ struct LinkInlineText: View {
     }
 
     private var contentColor: MultipleColorSemanticToken {
-        if useMonochrome {
-            return switch interactionState {
-            case .enabled:
-                theme.link.monoColorContentEnabled
-            case .hover:
-                theme.link.monoColorContentHover
-            case .pressed:
-                theme.link.monoColorContentPressed
-            case .disabled, .readOnly:
-                theme.link.monoColorContentDisabled
-            }
-        }
-        return switch interactionState {
-        case .enabled:
-            theme.link.colorContentEnabled
-        case .hover:
-            theme.link.colorContentHover
-        case .pressed:
-            theme.link.colorContentPressed
-        case .disabled, .readOnly:
-            theme.colors.actionDisabled
-        }
+        LinkColorProvider.colorContent(from: theme, with: interactionState, useMonochrome: useMonochrome)
     }
 
     private var indicatorColor: MultipleColorSemanticToken {
-        if useMonochrome {
-            return switch interactionState {
-            case .enabled:
-                theme.link.monoColorContentEnabled
-            case .hover:
-                theme.link.monoColorContentHover
-            case .pressed:
-                theme.link.monoColorContentPressed
-            case .disabled, .readOnly:
-                theme.link.monoColorContentDisabled
-            }
-        } else {
-            return switch interactionState {
-            case .enabled:
-                theme.link.colorChevronEnabled
-            case .hover:
-                theme.link.colorChevronHover
-            case .pressed:
-                theme.link.colorChevronPressed
-            case .disabled, .readOnly:
-                theme.colors.actionDisabled
-            }
-        }
-    }
-
-    private var minWidth: Double {
-        size == .small ? theme.link.sizeMinWidthSmall : theme.link.sizeMinWidth
-    }
-
-    private var minHeight: Double {
-        switch density {
-        case .default:
-            size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
-        case .compact:
-            theme.link.sizeMinHeightCompactDensity
-        }
-    }
-
-    private var verticalPadding: Double {
-        switch density {
-        case .default:
-            size == .small ? theme.link.spacePaddingBlockSmall : theme.link.spacePaddingBlockDefault
-        case .compact:
-            size == .small ? theme.link.spacePaddingBlockCompactDensitySmall : theme.link.spacePaddingBlockCompactDensityDefault
+        switch interactionState {
+        case .enabled:
+            useMonochrome ? theme.link.monoColorContentEnabled : theme.link.colorChevronEnabled
+        case .hover:
+            useMonochrome ? theme.link.monoColorContentHover : theme.link.colorChevronHover
+        case .pressed:
+            useMonochrome ? theme.link.monoColorContentPressed : theme.link.colorChevronPressed
+        case .disabled, .readOnly:
+            useMonochrome ? theme.link.monoColorContentDisabled : theme.colors.actionDisabled
         }
     }
 }
 
+
+// MARK: Link indicator image
+
+/// Used to display image with additional space before the indicator asset.
+/// To reduse cpu usage, the image is store into a cache.
+/// It is based on `UIImage` and `UIGraphicsImageRenderer`.
 @MainActor enum LinkInlineIndicatorImage {
 
     struct LinkInlineIndicatorMetrics {

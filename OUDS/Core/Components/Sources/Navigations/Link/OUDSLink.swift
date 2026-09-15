@@ -294,72 +294,23 @@ public struct OUDSLink: View {
     // MARK: - Body
 
     public var body: some View {
-        switch layout {
-        case .indicator(let indicator):
-            switch indicator {
-            case .next, .external:
-                OUDSInteractionButton(action: action) { state in
-                    LinkInlineText(text: text,
-                                   interactionState: state,
-                                   density: density,
-                                   size: size,
-                                   indicator: indicator,
-                                   isFullWidth: isFullWidth)
-                }
-            case .previous:
-                oldContent
-            }
-        default:
-            oldContent
-        }
-    }
-
-    private var oldContent: some View {
-        Button(action: action) {
+        OUDSInteractionButton(action: action) { state in
             switch layout {
-            case let .indicator(navigationIndicator):
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    Image(decorative: resourceName(for: navigationIndicator), bundle: theme.resourcesBundle)
-                        .renderingMode(.template)
-                        .resizable()
-                        .toFlip(layoutDirection == .rightToLeft)
-                }
+            case .indicator(let indicator):
+                LinkTextAndIndicatorView(text: text,
+                                         interactionState: state,
+                                         density: density,
+                                         size: size,
+                                         indicator: indicator)
+            case .textAndIcon(let image):
+                LinkTextAndIconView(text: text, icon: image, size: size, layout: layout, interactionState: state)
             case .textOnly:
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    EmptyView()
-                }
-            case let .textAndIcon(oudsImage):
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    if let asset = oudsImage.asset {
-                        asset
-                            .renderingMode(oudsImage.renderingMode)
-                            .resizable()
-                    }
-                }
+                LinkTextAndIconView(text: text, icon: nil, size: size, layout: layout, interactionState: state)
             }
         }
-        .buttonStyle(LinkButtonStyle(layout: layout, size: size, density: density, isFullWidth: isFullWidth))
+        .modifier(LinkFrameModifier(size: size, density: density, isFullWidth: isFullWidth))
         .accessibilityLabel(Text(LocalizedStringKey(text)))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
-    }
-
-    // MARK: - Helpers
-
-    private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
-        switch navigationIndicator {
-        case .previous:
-            "Component-link-previous"
-        case .next:
-            "Component-link-next"
-        case .external:
-            "Component-link-external-link"
-        }
     }
 }
