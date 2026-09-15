@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `link` to display `next` and `external` indicators just after last characters (Orange-OpenSource/ouds-ios#1748)
 - Ruby Gem `fastlane` from v2.239.0 to v2.240.0
 
 ### Fixed
