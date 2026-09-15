@@ -54,6 +54,9 @@ import SwiftUI
 ///
 ///     // Full-width: label stays, indicator anchored to the right / left
 ///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
+///
+///     // Inline: the indicator follows the last line of a multiline label
+///     OUDSLink(text: "A link displayed on multiple lines", indicator: .next, isIndicatorInline: true) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -94,6 +97,7 @@ public struct OUDSLink: View {
     private let size: Size
     private let density: Density
     private let isFullWidth: Bool
+    private let isIndicatorInline: Bool
     private let action: () -> Void
 
     @Environment(\.theme) private var theme
@@ -155,6 +159,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         isFullWidth = false
+        isIndicatorInline = false
         self.action = action
     }
 
@@ -192,6 +197,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         isFullWidth = false
+        isIndicatorInline = false
         self.action = action
     }
 
@@ -218,12 +224,17 @@ public struct OUDSLink: View {
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
     ///   The label stays anchored to the an edge and the indicator to the other edge.
     ///   Defaults to `false` (intrinsic sizing).
+    ///   - isIndicatorInline: When `true`, the indicator is part of the text flow: a next or external indicator follows the final character,
+    ///   while a previous indicator precedes the first character.
+    ///   This option takes precedence over the indicator positioning of `isFullWidth`.
+    ///   Defaults to `false` (indicator vertically centered beside the text).
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
                 indicator: Indicator,
                 size: Size = .default,
                 density: Density = .default,
                 isFullWidth: Bool = false,
+                isIndicatorInline: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
@@ -231,6 +242,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         self.isFullWidth = isFullWidth
+        self.isIndicatorInline = isIndicatorInline
         self.action = action
     }
 
@@ -253,6 +265,10 @@ public struct OUDSLink: View {
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
     ///   The label stays anchored to one edge and the indicator to the other edge.
     ///   Defaults to `false` (intrinsic sizing).
+    ///   - isIndicatorInline: When `true`, the indicator is part of the text flow: a next or external indicator follows the final character,
+    ///   while a previous indicator precedes the first character.
+    ///   This option takes precedence over the indicator positioning of `isFullWidth`.
+    ///   Defaults to `false` (indicator vertically centered beside the text).
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -261,6 +277,7 @@ public struct OUDSLink: View {
                 size: Size = .default,
                 density: Density = .default,
                 isFullWidth: Bool = false,
+                isIndicatorInline: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
@@ -268,6 +285,7 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         self.isFullWidth = isFullWidth
+        self.isIndicatorInline = isIndicatorInline
         self.action = action
     }
 
@@ -276,50 +294,23 @@ public struct OUDSLink: View {
     // MARK: - Body
 
     public var body: some View {
-        Button(action: action) {
+        OUDSInteractionButton(action: action) { state in
             switch layout {
-            case let .indicator(navigationIndicator):
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    Image(decorative: resourceName(for: navigationIndicator), bundle: theme.resourcesBundle)
-                        .renderingMode(.template)
-                        .resizable()
-                        .toFlip(layoutDirection == .rightToLeft)
-                }
+            case .indicator(let indicator):
+                LinkTextAndIndicatorView(text: text,
+                                         interactionState: state,
+                                         density: density,
+                                         size: size,
+                                         indicator: indicator)
+            case .textAndIcon(let image):
+                LinkTextAndIconView(text: text, icon: image, size: size, layout: layout, interactionState: state)
             case .textOnly:
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    EmptyView()
-                }
-            case let .textAndIcon(oudsImage):
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    if let asset = oudsImage.asset {
-                        asset
-                            .renderingMode(oudsImage.renderingMode)
-                            .resizable()
-                    }
-                }
+                LinkTextAndIconView(text: text, icon: nil, size: size, layout: layout, interactionState: state)
             }
         }
-        .buttonStyle(LinkButtonStyle(layout: layout, size: size, density: density, isFullWidth: isFullWidth))
+        .modifier(LinkFrameModifier(size: size, density: density, isFullWidth: isFullWidth))
+        .accessibilityLabel(Text(LocalizedStringKey(text)))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
-    }
-
-    // MARK: - Helpers
-
-    private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
-        switch navigationIndicator {
-        case .previous:
-            "Component-link-previous"
-        case .next:
-            "Component-link-next"
-        case .external:
-            "Component-link-external-link"
-        }
     }
 }
