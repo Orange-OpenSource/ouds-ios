@@ -69,9 +69,9 @@ struct LinkInlineText: View {
     private var indicatorImage: Image {
         let image = LinkInlineIndicatorImage.make(resourceName: resourceName,
                                                   bundle: theme.resourcesBundle,
-                                                  metrics: LinkInlineIndicatorMetrics(iconSize: iconSize,
-                                                                                      layoutHeight: indicatorLayoutHeight,
-                                                                                      spacing: spacing),
+                                                  metrics: .init(iconSize: iconSize,
+                                                                 layoutHeight: indicatorLayoutHeight,
+                                                                 spacing: spacing),
                                                   indicator: indicator,
                                                   layoutDirection: layoutDirection)
         #if os(macOS)
@@ -201,13 +201,13 @@ struct LinkInlineText: View {
     }
 }
 
-struct LinkInlineIndicatorMetrics {
-    let iconSize: CGFloat
-    let layoutHeight: CGFloat
-    let spacing: CGFloat
-}
-
 @MainActor enum LinkInlineIndicatorImage {
+
+    struct LinkInlineIndicatorMetrics {
+        let iconSize: CGFloat
+        let layoutHeight: CGFloat
+        let spacing: CGFloat
+    }
 
     #if os(macOS)
     private static let cache = NSCache<NSString, NSImage>()
@@ -218,6 +218,7 @@ struct LinkInlineIndicatorMetrics {
                      indicator: OUDSLink.Indicator,
                      layoutDirection: LayoutDirection) -> NSImage
     {
+        // Get Image from cache if exist
         let cacheKey = cacheKey(resourceName: resourceName,
                                 bundle: bundle,
                                 metrics: metrics,
@@ -226,17 +227,25 @@ struct LinkInlineIndicatorMetrics {
         if let cachedImage = cache.object(forKey: cacheKey) {
             return cachedImage
         }
+
+        // Not in cache, load image asset from ressources
         guard let source = bundle.image(forResource: resourceName) else {
-            return NSImage(size: NSSize(width: metrics.iconSize + metrics.spacing, height: metrics.iconSize))
+            return NSImage(size: NSSize(width: metrics.iconSize + metrics.spacing, height: metrics.layoutHeight))
         }
 
-        let canvasSize = NSSize(width: metrics.iconSize + metrics.spacing, height: metrics.iconSize)
+        let canvasSize = NSSize(width: metrics.iconSize + metrics.spacing, height: metrics.layoutHeight)
         let destination = NSImage(size: canvasSize)
         destination.lockFocus()
         defer { destination.unlockFocus() }
 
-        let iconRect = NSRect(x: iconOriginX(indicator: indicator, layoutDirection: layoutDirection, spacing: metrics.spacing),
-                              y: 0,
+        // Reender image in canavas, at the right position:
+        // - RTL: spacing is on the right, so set image is at position 0
+        // - LTR: sacing in on the left, so set the image at the spacing position
+        // and set the width, and the height equal to the icon size.
+        // **Remark: dont forget to flip the icon for RTL**
+
+        let iconRect = NSRect(x: layoutDirection == .rightToLeft ? 0 : metrics.spacing,
+                              y: (metrics.layoutHeight - metrics.iconSize)/2,
                               width: metrics.iconSize,
                               height: metrics.iconSize)
         if layoutDirection == .rightToLeft, let context = NSGraphicsContext.current?.cgContext {
@@ -248,9 +257,13 @@ struct LinkInlineIndicatorMetrics {
         } else {
             source.draw(in: iconRect)
         }
+
+        // Set image as templete
         destination.isTemplate = true
-        destination.alignmentRect = alignmentRect(imageSize: canvasSize, layoutHeight: metrics.layoutHeight)
+
+        // Set image in cache for next use
         cache.setObject(destination, forKey: cacheKey)
+
         return destination
     }
     #else
@@ -262,7 +275,7 @@ struct LinkInlineIndicatorMetrics {
                      indicator: OUDSLink.Indicator,
                      layoutDirection: LayoutDirection) -> UIImage
     {
-        // Get Image from cache is exist
+        // Get Image from cache if exist
         let cacheKey = cacheKey(resourceName: resourceName,
                                 bundle: bundle,
                                 metrics: metrics,
@@ -277,8 +290,8 @@ struct LinkInlineIndicatorMetrics {
             return UIImage()
         }
 
-        // Create a canvas withe width equal to iconsize + spacing
-        let canvasSize = CGSize(width: metrics.iconSize + metrics.spacing, height: metrics.iconSize)
+        // Create a canvas with width equal to icon size + spacing and heigh is layout height
+        let canvasSize = CGSize(width: metrics.iconSize + metrics.spacing, height: metrics.layoutHeight)
         let format = UIGraphicsImageRendererFormat.default()
         format.opaque = false
         let renderer = UIGraphicsImageRenderer(size: canvasSize, format: format)
@@ -290,24 +303,23 @@ struct LinkInlineIndicatorMetrics {
         // **Remark: dont forget to flip the icon for RTL**
         let image = renderer.image { context in
             let iconRect = CGRect(x: layoutDirection == .rightToLeft ? 0 : metrics.spacing,
-                                  y: 0,
+                                  y: (metrics.layoutHeight - metrics.iconSize)/2,
                                   width: metrics.iconSize,
                                   height: metrics.iconSize)
             if layoutDirection == .rightToLeft {
                 context.cgContext.translateBy(x: iconRect.minX + iconRect.maxX, y: 0)
                 context.cgContext.scaleBy(x: -1, y: 1)
             }
+
             source.draw(in: iconRect)
         }
 
-        let verticalInset = max(0, (metrics.iconSize - metrics.layoutHeight) / 2)
-        print("verticalInset: \(verticalInset)")
-        let templateImage = image
-            .withAlignmentRectInsets(UIEdgeInsets(top: verticalInset, left: 0, bottom: verticalInset, right: 0))
-            .withRenderingMode(.alwaysTemplate)
+        // Set image as templete
+        let templateImage = image.withRenderingMode(.alwaysTemplate)
         
         // set image in the cache for next use
         cache.setObject(templateImage, forKey: cacheKey)
+
         return templateImage
     }
     #endif
@@ -320,14 +332,4 @@ struct LinkInlineIndicatorMetrics {
     {
         "\(bundle.bundlePath)|\(resourceName)|\(metrics.iconSize)|\(metrics.layoutHeight)|\(metrics.spacing)|\(indicator)|\(layoutDirection)" as NSString
     }
-
-    #if os(macOS)
-    private static func alignmentRect(imageSize: NSSize, layoutHeight: CGFloat) -> NSRect {
-        let verticalInset = max(0, (imageSize.height - layoutHeight) / 2)
-        return NSRect(x: 0,
-                      y: verticalInset,
-                      width: imageSize.width,
-                      height: imageSize.height - 2 * verticalInset)
-    }
-    #endif
 }
