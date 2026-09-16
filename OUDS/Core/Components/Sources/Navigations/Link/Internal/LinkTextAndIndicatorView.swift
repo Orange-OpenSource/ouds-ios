@@ -51,7 +51,8 @@ struct LinkTextAndIndicatorView: View {
                     .renderingMode(.template)
                     .foregroundColor(indicatorColor.color(for: colorScheme))
                     .frame(width: iconSize, height: iconSize)
-                        .toFlip(layoutDirection == .rightToLeft)
+                    .toFlip(layoutDirection == .rightToLeft)
+                    .accessibilityHidden(true)
 
                 Text(text)
                     .foregroundColor(contentColor.color(for: colorScheme))
@@ -152,7 +153,6 @@ struct LinkTextAndIndicatorView: View {
     }
 }
 
-
 // MARK: Link indicator image
 
 /// Used to display image with additional space before the indicator asset.
@@ -202,7 +202,7 @@ struct LinkTextAndIndicatorView: View {
         // **Remark: dont forget to flip the icon for RTL**
 
         let iconRect = NSRect(x: layoutDirection == .rightToLeft ? 0 : metrics.spacing,
-                              y: (metrics.layoutHeight - metrics.iconSize)/2,
+                              y: (metrics.layoutHeight - metrics.iconSize) / 2,
                               width: metrics.iconSize,
                               height: metrics.iconSize)
         if layoutDirection == .rightToLeft, let context = NSGraphicsContext.current?.cgContext {
@@ -260,7 +260,7 @@ struct LinkTextAndIndicatorView: View {
         // **Remark: dont forget to flip the icon for RTL**
         let image = renderer.image { context in
             let iconRect = CGRect(x: layoutDirection == .rightToLeft ? 0 : metrics.spacing,
-                                  y: (metrics.layoutHeight - metrics.iconSize)/2,
+                                  y: (metrics.layoutHeight - metrics.iconSize) / 2,
                                   width: metrics.iconSize,
                                   height: metrics.iconSize)
             if layoutDirection == .rightToLeft {
@@ -273,7 +273,7 @@ struct LinkTextAndIndicatorView: View {
 
         // Set image as templete
         let templateImage = image.withRenderingMode(.alwaysTemplate)
-        
+
         // set image in the cache for next use
         cache.setObject(templateImage, forKey: cacheKey)
 
