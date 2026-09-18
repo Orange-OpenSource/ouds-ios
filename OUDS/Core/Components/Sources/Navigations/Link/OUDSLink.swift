@@ -49,14 +49,12 @@ import SwiftUI
 ///     // Navigate to previous page with link in a default size
 ///     OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
 ///
-///     // Full-width: label stays, chevron anchored to the right / left
+///     // The link taks full width but chevron stays just after the last character
 ///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
 ///
-///     // Full-width: label stays, indicator anchored to the right / left
+///     // The link taks full width but indicator stays just after the last character
 ///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
 ///
-///     // Inline: the indicator follows the last line of a multiline label
-///     OUDSLink(text: "A link displayed on multiple lines", indicator: .next, isIndicatorInline: true) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -97,7 +95,6 @@ public struct OUDSLink: View {
     private let size: Size
     private let density: Density
     private let isFullWidth: Bool
-    private let isIndicatorInline: Bool
     private let action: () -> Void
 
     @Environment(\.theme) private var theme
@@ -159,7 +156,6 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         isFullWidth = false
-        isIndicatorInline = false
         self.action = action
     }
 
@@ -197,7 +193,6 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         isFullWidth = false
-        isIndicatorInline = false
         self.action = action
     }
 
@@ -221,20 +216,14 @@ public struct OUDSLink: View {
     ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
-    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
-    ///   The label stays anchored to the an edge and the indicator to the other edge.
-    ///   Defaults to `false` (intrinsic sizing).
-    ///   - isIndicatorInline: When `true`, the indicator is part of the text flow: a next or external indicator follows the final character,
-    ///   while a previous indicator precedes the first character.
-    ///   This option takes precedence over the indicator positioning of `isFullWidth`.
-    ///   Defaults to `false` (indicator vertically centered beside the text).
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width. Defaults to `false` (intrinsic sizing).
+    ///   **Remarks**: For full witdth, if have the label stays anchored to the an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
                 indicator: Indicator,
                 size: Size = .default,
                 density: Density = .default,
                 isFullWidth: Bool = false,
-                isIndicatorInline: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
@@ -242,7 +231,6 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         self.isFullWidth = isFullWidth
-        self.isIndicatorInline = isIndicatorInline
         self.action = action
     }
 
@@ -262,13 +250,8 @@ public struct OUDSLink: View {
     ///   - indicator: Indicator displayed in the link
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
-    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
-    ///   The label stays anchored to one edge and the indicator to the other edge.
-    ///   Defaults to `false` (intrinsic sizing).
-    ///   - isIndicatorInline: When `true`, the indicator is part of the text flow: a next or external indicator follows the final character,
-    ///   while a previous indicator precedes the first character.
-    ///   This option takes precedence over the indicator positioning of `isFullWidth`.
-    ///   Defaults to `false` (indicator vertically centered beside the text).
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width. Defaults to `false` (intrinsic sizing).
+    ///   **Remarks**: For full witdth, if have the label stays anchored to the an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -277,7 +260,6 @@ public struct OUDSLink: View {
                 size: Size = .default,
                 density: Density = .default,
                 isFullWidth: Bool = false,
-                isIndicatorInline: Bool = false,
                 action: @escaping () -> Void)
     {
         layout = .indicator(indicator)
@@ -285,7 +267,6 @@ public struct OUDSLink: View {
         self.size = size
         self.density = density
         self.isFullWidth = isFullWidth
-        self.isIndicatorInline = isIndicatorInline
         self.action = action
     }
 
