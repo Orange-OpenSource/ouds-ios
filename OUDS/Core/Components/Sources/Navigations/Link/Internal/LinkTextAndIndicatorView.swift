@@ -69,9 +69,8 @@ struct LinkTextAndIndicatorView: View {
                     .baselineOffset(indicatorBaselineOffset)
 
                 Text("\(label)\(icon)")
-                    .font(Font(nativeFont))
-                    .multilineTextAlignment(.leading)
             }
+            .multilineTextAlignment(.leading)
         }
     }
 
