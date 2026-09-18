@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `link` to display `next` and `external` indicators just after last characters (Orange-OpenSource/ouds-ios#1748)
 - Ruby Gem `fastlane` from v2.239.0 to v2.240.0
 
 ### Fixed
@@ -20,10 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     
 - Tutorial for themes creation and tokens overrides (Orange-OpenSource/ouds-ios#1547)
 - For `list item` components, add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
+
+- Parameter for `link` component to stuck the indicator to the text and not have it besides (Orange-OpenSource/ouds-ios#1748)
 - `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
+- Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
+- `subtitle` on `toolbar top` for iOS < 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
 - Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)

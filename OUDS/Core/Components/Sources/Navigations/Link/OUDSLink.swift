@@ -49,11 +49,12 @@ import SwiftUI
 ///     // Navigate to previous page with link in a default size
 ///     OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
 ///
-///     // Full-width: label stays, chevron anchored to the right / left
+///     // The link taks full width but chevron stays just after the last character
 ///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
 ///
-///     // Full-width: label stays, indicator anchored to the right / left
+///     // The link taks full width but indicator stays just after the last character
 ///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
+///
 /// ```
 ///
 /// ## Colored Surface
@@ -215,9 +216,8 @@ public struct OUDSLink: View {
     ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
-    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
-    ///   The label stays anchored to the an edge and the indicator to the other edge.
-    ///   Defaults to `false` (intrinsic sizing).
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width. Defaults to `false` (intrinsic sizing).
+    ///   **Remarks**: For full witdth, if have the label stays anchored to the an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
                 indicator: Indicator,
@@ -250,9 +250,8 @@ public struct OUDSLink: View {
     ///   - indicator: Indicator displayed in the link
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
-    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
-    ///   The label stays anchored to one edge and the indicator to the other edge.
-    ///   Defaults to `false` (intrinsic sizing).
+    ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width. Defaults to `false` (intrinsic sizing).
+    ///   **Remarks**: For full witdth, if have the label stays anchored to the an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -276,50 +275,23 @@ public struct OUDSLink: View {
     // MARK: - Body
 
     public var body: some View {
-        Button(action: action) {
+        OUDSInteractionButton(action: action) { state in
             switch layout {
-            case let .indicator(navigationIndicator):
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    Image(decorative: resourceName(for: navigationIndicator), bundle: theme.resourcesBundle)
-                        .renderingMode(.template)
-                        .resizable()
-                        .toFlip(layoutDirection == .rightToLeft)
-                }
+            case .indicator(let indicator):
+                LinkTextAndIndicatorView(text: text,
+                                         interactionState: state,
+                                         density: density,
+                                         size: size,
+                                         indicator: indicator)
+            case .textAndIcon(let image):
+                LinkTextAndIconView(text: text, icon: image, size: size, layout: layout, interactionState: state)
             case .textOnly:
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    EmptyView()
-                }
-            case let .textAndIcon(oudsImage):
-                Label {
-                    Text(LocalizedStringKey(text))
-                } icon: {
-                    if let asset = oudsImage.asset {
-                        asset
-                            .renderingMode(oudsImage.renderingMode)
-                            .resizable()
-                    }
-                }
+                LinkTextAndIconView(text: text, icon: nil, size: size, layout: layout, interactionState: state)
             }
         }
-        .buttonStyle(LinkButtonStyle(layout: layout, size: size, density: density, isFullWidth: isFullWidth))
+        .modifier(LinkFrameModifier(size: size, density: density, isFullWidth: isFullWidth))
+        .accessibilityLabel(Text(LocalizedStringKey(text)))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
-    }
-
-    // MARK: - Helpers
-
-    private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
-        switch navigationIndicator {
-        case .previous:
-            "Component-link-previous"
-        case .next:
-            "Component-link-next"
-        case .external:
-            "Component-link-external-link"
-        }
     }
 }
