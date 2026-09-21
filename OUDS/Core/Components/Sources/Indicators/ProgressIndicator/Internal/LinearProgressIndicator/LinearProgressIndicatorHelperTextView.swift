@@ -39,7 +39,10 @@ struct DeterminateProgressIndicatorHelperText: View {
             ProgressIndicatorHelprTextView(percent: nil, description: description, alignment: alignment)
 
         case let .percent(description, alignment):
-            ProgressIndicatorHelprTextView(percent: configuration.progress, description: description, alignment: alignment)
+            // Remove description if center
+            ProgressIndicatorHelprTextView(percent: configuration.progress,
+                                           description: alignment == .center ? nil : description,
+                                           alignment: alignment)
 
         default:
             EmptyView()
