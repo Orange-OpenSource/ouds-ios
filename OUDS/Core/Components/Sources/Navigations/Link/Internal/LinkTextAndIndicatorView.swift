@@ -16,10 +16,10 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-#if os(macOS)
-import AppKit
-#else
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
 #endif
 
 // MARK: - Link Text And Indicator View
@@ -62,6 +62,7 @@ struct LinkTextAndIndicatorView: View {
                     .font(Font(nativeFont))
             }
         case .external, .next:
+            #if !os(watchOS)
             HStack(alignment: .center, spacing: spacing) {
                 let label = Text(text)
                     .foregroundColor(contentColor.color(for: colorScheme))
@@ -71,19 +72,53 @@ struct LinkTextAndIndicatorView: View {
                     .baselineOffset(indicatorBaselineOffset)
 
                 if size == .small { // Use dedicated typography view modifier to apply letter spacings, line height, kerning / tracking etc.
-                    Text("\(label)\(icon)")
-                        .labelStrongMedium(theme)
+                    if layoutDirection == .leftToRight {
+                        Text("\(label)\(icon)")
+                            .labelStrongMedium(theme)
+                    } else { // .rightToLeft
+                        Text("\(icon)\(label)")
+                            .labelStrongMedium(theme)
+                    }
                 } else {
-                    Text("\(label)\(icon)")
-                        .labelStrongLarge(theme)
+                    if layoutDirection == .leftToRight {
+                        Text("\(label)\(icon)")
+                            .labelStrongLarge(theme)
+                    } else { // .rightToLeft
+                        Text("\(icon)\(label)")
+                            .labelStrongLarge(theme)
+                    }
                 }
             }
             .multilineTextAlignment(.leading)
+            #else
+            HStack(alignment: .center, spacing: spacing) {
+                if size == .small {
+                    Text(text)
+                        .foregroundColor(contentColor.color(for: colorScheme))
+                        .underline(interactionState == .hover || interactionState == .pressed)
+                        .labelStrongMedium(theme)
+                } else {
+                    Text(text)
+                        .foregroundColor(contentColor.color(for: colorScheme))
+                        .underline(interactionState == .hover || interactionState == .pressed)
+                        .labelStrongLarge(theme)
+                }
+
+                Image(resourceName, bundle: theme.resourcesBundle)
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(indicatorColor.color(for: colorScheme))
+                    .frame(width: iconSize, height: iconSize)
+                    .toFlip(layoutDirection == .rightToLeft)
+                    .accessibilityHidden(true)
+            }
+            #endif
         }
     }
 
     // MARK: Heleprs
 
+    #if !os(watchOS) // watchOS cannot import both AppKit and UIKit, thus #1748 cannot be implemented
     private var indicatorImage: Image {
         let image = LinkInlineIndicatorImage.make(resourceName: resourceName,
                                                   bundle: theme.resourcesBundle,
@@ -92,10 +127,10 @@ struct LinkTextAndIndicatorView: View {
                                                                  spacing: spacing),
                                                   indicator: indicator,
                                                   layoutDirection: layoutDirection)
-        #if os(macOS)
+        #if canImport(AppKit)
         // swiftlint:disable:next accessibility_label_for_image
         return Image(nsImage: image).renderingMode(.template)
-        #else
+        #elseif canImport(UIKit)
         // swiftlint:disable:next accessibility_label_for_image
         return Image(uiImage: image).renderingMode(.template)
         #endif
@@ -106,12 +141,13 @@ struct LinkTextAndIndicatorView: View {
     }
 
     private var indicatorLayoutHeight: CGFloat {
-        #if os(macOS)
+        #if canImport(AppKit)
         NSLayoutManager().defaultLineHeight(for: nativeFont)
-        #else
+        #elseif canImport(UIKit)
         nativeFont.lineHeight
         #endif
     }
+    #endif
 
     private var nativeFont: NativeFont {
         Font.makeFont(family: theme.fontFamily,
@@ -156,6 +192,7 @@ struct LinkTextAndIndicatorView: View {
     }
 }
 
+#if !os(watchOS)
 // MARK: - Link Inline Indicator Image
 
 /// Used to display image with additional space before the indicator asset.
@@ -167,7 +204,7 @@ enum LinkInlineIndicatorImage {
         let spacing: CGFloat
     }
 
-    #if os(macOS)
+    #if canImport(AppKit)
     nonisolated(unsafe) private static let cache = NSCache<NSString, NSImage>()
 
     static func make(resourceName: String,
@@ -224,7 +261,8 @@ enum LinkInlineIndicatorImage {
 
         return destination
     }
-    #else
+
+    #elseif canImport(UIKit)
     nonisolated(unsafe) private static let cache = NSCache<NSString, UIImage>()
 
     static func make(resourceName: String,
@@ -291,3 +329,4 @@ enum LinkInlineIndicatorImage {
         "\(bundle.bundlePath)|\(resourceName)|\(metrics.iconSize)|\(metrics.layoutHeight)|\(metrics.spacing)|\(indicator)|\(layoutDirection)" as NSString
     }
 }
+#endif
