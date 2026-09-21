@@ -121,4 +121,3 @@ private struct EdgedHelperTextView: View {
         .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular))
     }
 }
-
