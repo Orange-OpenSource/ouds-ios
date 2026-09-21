@@ -15,8 +15,6 @@ import OUDSThemesContract
 import OUDSTokensComponent
 import SwiftUI
 
-// MARK: - Link frame modifer
-
 struct LinkFrameModifier: ViewModifier {
 
     // MARK: Properties
@@ -34,8 +32,7 @@ struct LinkFrameModifier: ViewModifier {
         content
             .padding(.horizontal, theme.link.spacePaddingInline)
             .padding(.vertical, verticalPadding)
-            .frame(minWidth: minWidth, minHeight: minHeight)
-            .frame(maxWidth: isFullWidth ? .infinity : nil, alignment: .leading)
+            .frame(minWidth: minWidth, maxWidth: isFullWidth ? .infinity : nil, minHeight: minHeight, alignment: .leading)
             .contentShape(Rectangle())
     }
 

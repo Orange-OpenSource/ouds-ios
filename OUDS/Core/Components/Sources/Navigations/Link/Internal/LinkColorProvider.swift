@@ -15,6 +15,7 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 
 enum LinkColorProvider {
+
     static func colorContent(from theme: OUDSTheme, with interactionState: OUDSButtonInteractionState, useMonochrome: Bool) -> MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:

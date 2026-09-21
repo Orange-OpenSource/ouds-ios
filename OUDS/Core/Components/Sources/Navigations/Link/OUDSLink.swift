@@ -49,13 +49,15 @@ import SwiftUI
 ///     // Navigate to previous page with link in a default size
 ///     OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
 ///
-///     // The link taks full width but chevron stays just after the last character
+///     // The link takes full width but chevron stays just after the last character
 ///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
 ///
-///     // The link taks full width but indicator stays just after the last character
+///     // The link takes full width but indicator stays just after the last character
 ///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
 ///
 /// ```
+///
+/// If the text must be to an edge, and the indicator on the other edge, the `OUDSNavigationListItem` should be used instead.
 ///
 /// ## Colored Surface
 ///
@@ -217,7 +219,7 @@ public struct OUDSLink: View {
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width. Defaults to `false` (intrinsic sizing).
-    ///   **Remarks**: For full witdth, if have the label stays anchored to the an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
+    ///   **Remarks**: For full width, if we have the label which stays anchored to an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
                 indicator: Indicator,
@@ -251,7 +253,7 @@ public struct OUDSLink: View {
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width. Defaults to `false` (intrinsic sizing).
-    ///   **Remarks**: For full witdth, if have the label stays anchored to the an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
+    ///   **Remarks**: For full width, if we have the label which stays anchored to an edge and the indicator to the other edge, prefer use `OUDSNavigationListItem`.
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -276,20 +278,21 @@ public struct OUDSLink: View {
 
     public var body: some View {
         OUDSInteractionButton(action: action) { state in
-            switch layout {
-            case .indicator(let indicator):
-                LinkTextAndIndicatorView(text: text,
-                                         interactionState: state,
-                                         density: density,
-                                         size: size,
-                                         indicator: indicator)
-            case .textAndIcon(let image):
-                LinkTextAndIconView(text: text, icon: image, size: size, layout: layout, interactionState: state)
-            case .textOnly:
-                LinkTextAndIconView(text: text, icon: nil, size: size, layout: layout, interactionState: state)
-            }
+            Group {
+                switch layout {
+                case let .indicator(indicator):
+                    LinkTextAndIndicatorView(text: text,
+                                             interactionState: state,
+                                             density: density,
+                                             size: size,
+                                             indicator: indicator)
+                case let .textAndIcon(image):
+                    LinkTextAndIconView(text: text, icon: image, size: size, layout: layout, interactionState: state)
+                case .textOnly:
+                    LinkTextAndIconView(text: text, icon: nil, size: size, layout: layout, interactionState: state)
+                }
+            }.modifier(LinkFrameModifier(size: size, density: density, isFullWidth: isFullWidth))
         }
-        .modifier(LinkFrameModifier(size: size, density: density, isFullWidth: isFullWidth))
         .accessibilityLabel(Text(LocalizedStringKey(text)))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)

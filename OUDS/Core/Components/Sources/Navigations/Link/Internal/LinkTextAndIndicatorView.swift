@@ -22,6 +22,8 @@ import AppKit
 import UIKit
 #endif
 
+// MARK: - Link Text And Indicator View
+
 struct LinkTextAndIndicatorView: View {
 
     // MARK: Properties
@@ -34,11 +36,11 @@ struct LinkTextAndIndicatorView: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: Body
 
@@ -68,7 +70,13 @@ struct LinkTextAndIndicatorView: View {
                     .foregroundColor(indicatorColor.color(for: colorScheme))
                     .baselineOffset(indicatorBaselineOffset)
 
-                Text("\(label)\(icon)")
+                if size == .small { // Use dedicated typography view modifier to apply letter spacings, line height, kerning / tracking etc.
+                    Text("\(label)\(icon)")
+                        .labelStrongMedium(theme)
+                } else {
+                    Text("\(label)\(icon)")
+                        .labelStrongLarge(theme)
+                }
             }
             .multilineTextAlignment(.leading)
         }
@@ -98,21 +106,17 @@ struct LinkTextAndIndicatorView: View {
     }
 
     private var indicatorLayoutHeight: CGFloat {
-        nativeFontLineHeight
+        #if os(macOS)
+        NSLayoutManager().defaultLineHeight(for: nativeFont)
+        #else
+        nativeFont.lineHeight
+        #endif
     }
 
     private var nativeFont: NativeFont {
         Font.makeFont(family: theme.fontFamily,
                       from: size == .small ? theme.fonts.labelStrongMedium : theme.fonts.labelStrongLarge,
                       isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
-    }
-
-    private var nativeFontLineHeight: CGFloat {
-        #if os(macOS)
-        NSLayoutManager().defaultLineHeight(for: nativeFont)
-        #else
-        nativeFont.lineHeight
-        #endif
     }
 
     private var iconSize: CGFloat {
@@ -152,12 +156,10 @@ struct LinkTextAndIndicatorView: View {
     }
 }
 
-// MARK: Link indicator image
+// MARK: - Link Inline Indicator Image
 
 /// Used to display image with additional space before the indicator asset.
-/// To reduse cpu usage, the image is store into a cache.
-/// It is based on `UIImage` and `UIGraphicsImageRenderer`.
-@MainActor enum LinkInlineIndicatorImage {
+enum LinkInlineIndicatorImage {
 
     struct LinkInlineIndicatorMetrics {
         let iconSize: CGFloat
@@ -166,7 +168,7 @@ struct LinkTextAndIndicatorView: View {
     }
 
     #if os(macOS)
-    private static let cache = NSCache<NSString, NSImage>()
+    nonisolated(unsafe) private static let cache = NSCache<NSString, NSImage>()
 
     static func make(resourceName: String,
                      bundle: Bundle,
@@ -174,7 +176,7 @@ struct LinkTextAndIndicatorView: View {
                      indicator: OUDSLink.Indicator,
                      layoutDirection: LayoutDirection) -> NSImage
     {
-        // Get Image from cache if exist
+        // Get image from cache if exists
         let cacheKey = cacheKey(resourceName: resourceName,
                                 bundle: bundle,
                                 metrics: metrics,
@@ -194,9 +196,9 @@ struct LinkTextAndIndicatorView: View {
         destination.lockFocus()
         defer { destination.unlockFocus() }
 
-        // Reender image in canavas, at the right position:
+        // Render image in canvas, at the right position:
         // - RTL: spacing is on the right, so set image is at position 0
-        // - LTR: sacing in on the left, so set the image at the spacing position
+        // - LTR: spacing in on the left, so set the image at the spacing position
         // and set the width, and the height equal to the icon size.
         // **Remark: dont forget to flip the icon for RTL**
 
@@ -223,7 +225,7 @@ struct LinkTextAndIndicatorView: View {
         return destination
     }
     #else
-    private static let cache = NSCache<NSString, UIImage>()
+    nonisolated(unsafe) private static let cache = NSCache<NSString, UIImage>()
 
     static func make(resourceName: String,
                      bundle: Bundle,
@@ -231,7 +233,7 @@ struct LinkTextAndIndicatorView: View {
                      indicator: OUDSLink.Indicator,
                      layoutDirection: LayoutDirection) -> UIImage
     {
-        // Get Image from cache if exist
+        // Get image from cache if exists
         let cacheKey = cacheKey(resourceName: resourceName,
                                 bundle: bundle,
                                 metrics: metrics,
@@ -252,9 +254,9 @@ struct LinkTextAndIndicatorView: View {
         format.opaque = false
         let renderer = UIGraphicsImageRenderer(size: canvasSize, format: format)
 
-        // Reender image in canavas, at the right position:
+        // Render image in canvas, at the right position:
         // - RTL: spacing is on the right, so set image at position 0
-        // - LTR: sacing in on the left, so set the image at the spacing position
+        // - LTR: spacing in on the left, so set the image at the spacing position
         // and set the width, and the height equal to the icon size.
         // **Remark: dont forget to flip the icon for RTL**
         let image = renderer.image { context in
