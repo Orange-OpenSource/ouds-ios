@@ -26,7 +26,6 @@ struct LinkTextAndIconView: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
-    @Environment(\.oudsSurfaceColor) private var surfaceColor
 
     // MARK: - Body
 

@@ -56,7 +56,7 @@ struct LinkTextAndIndicatorView: View {
                     .toFlip(layoutDirection == .rightToLeft)
                     .accessibilityHidden(true)
 
-                Text(text)
+                Text(LocalizedStringKey(text))
                     .foregroundColor(contentColor.color(for: colorScheme))
                     .underline(interactionState == .hover || interactionState == .pressed)
                     .font(Font(nativeFont))
@@ -116,7 +116,7 @@ struct LinkTextAndIndicatorView: View {
         }
     }
 
-    // MARK: Heleprs
+    // MARK: Helpers
 
     #if !os(watchOS) // watchOS cannot import both AppKit and UIKit, thus #1748 cannot be implemented
     private var indicatorImage: Image {

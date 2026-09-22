@@ -24,7 +24,6 @@ struct LinkFrameModifier: ViewModifier {
     let isFullWidth: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Body
 
