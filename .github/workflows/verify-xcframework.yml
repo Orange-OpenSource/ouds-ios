@@ -1,0 +1,90 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/tree/main/images/macos
+
+# Rules for this GitHub Actions workflow
+# - workflow can be triggered manually if needed (workflow_dispatch)
+# - use "almost" frozen version of macOS
+# - is for branches main, develop and all
+# - automatically triggered when pull request is opened and has new commits (synchronize)
+# - only VERIFIES that the XCFramework compiles cleanly; does NOT publish anything to a GitHub Release
+# - produces a short-lived (7 days) workflow artefact for local inspection when needed
+# But beware, triggered on commit push, so do not be a push-machine-gun!
+
+name: Build XCFramework product
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+      - develop
+      - '*'
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+      - develop
+      - '*'
+
+permissions:
+  contents: read
+
+# Cancel-in-progress to avoid to have more and more runs for the same thing in the branch or pull request
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  build-xcframework:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Set up Xcode 26.4.1
+        run: |
+          sudo xcode-select -s /Applications/Xcode_26.4.1.app/Contents/Developer
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0, https://github.com/ruby/setup-ruby
+        with:
+          ruby-version: '4.0.6'
+
+      - name: Install Fastlane
+        run: |
+          bundle install
+
+      - name: Build XCFramework
+        run: |
+          bundle exec fastlane build_xcframework
+
+      - name: Upload XCFramework artefact (short retention)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: OUDSSwiftUIOrangeSosh-xcframework
+          path: |
+            dist/*.xcframework.zip
+            dist/*.xcframework.zip.sha256
+            dist/RELEASE_NOTES_XCFRAMEWORK.md
+          if-no-files-found: error
+          retention-days: 1
