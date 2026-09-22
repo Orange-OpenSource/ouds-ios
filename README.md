@@ -167,6 +167,16 @@ The wiki lists also [the components and their availability](https://github.com/O
 > You can verify their integrity with commands from GPG tool of GitHub CLI client.
 > Please [refer to the wiki to choose the options you need](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds#tags-commits-releases-and-artifacts-signature)
 
+## 📦 Binary distribution (XCFramework)
+
+In addition to the standard Swift Package distribution, OUDS is also published as a **dynamic XCFramework** for the `OUDSSwiftUIOrangeSosh` umbrella product. 
+This distribution is intended to solve the duplication / symbol-conflict problem that appears when several third-party XCFrameworks each embed 
+their own copy of OUDS in the same application.
+
+- Artefacts (`OUDSSwiftUIOrangeSosh-<version>.xcframework.zip` + SHA-256) are attached to [GitHub Releases][https://github.com/Orange-OpenSource/ouds-ios/releases].
+- SPM remains the primary distribution channel; the XCFramework is an opt-in additional artefact. [Open a discussion for more evolutions](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/return-of-experience-and-feedbacks).
+- Add the XCFramework to your XCode proejct, and import `OUDSSwiftUIOrangeSosh` dependency. `OrangeCompact` and `Wireframe` themes are not shipped.
+
 ## 🧬 Tokens libraries versions
 
 > [!TIP]
