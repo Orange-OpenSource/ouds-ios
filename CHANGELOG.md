@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - In `circular progress indicator`, set helper text in two texts to fix alignment (Orange-OpenSource/ouds-ios#1753)
 - `list item` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1714)
+- Make product exportable and usable as XCFramework for Orange and Sosh themes on iOS (Orange-OpenSource/ouds-ios#1767)
 - Ruby Gem `fastlane` from v2.239.0 to v2.240.0
 
 ### Fixed
