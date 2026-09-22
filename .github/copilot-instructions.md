@@ -428,3 +428,95 @@ Example for `maxWidthBoxedText`:
 - Implemented as `@objc public final` in OrangeCompact, Sosh, Wireframe
 - Mock value in `MockThemeSizeSemanticTokensProvider`
 - Test in `ThemeOverrideOfSizeMultipleSemanticTokensTests`
+
+## 12. XCFramework distribution and module stability ⚠️ CRITICAL
+
+OUDS is primarily distributed as a Swift Package, but it is ALSO built as a
+dynamic XCFramework (product `OUDSSwiftUIOrangeSosh`) for consumers that need
+a shared binary.
+
+This binary distribution requires compiling with
+`BUILD_LIBRARY_FOR_DISTRIBUTION=YES`, which triggers Swift's **module
+stability** rules. Under these rules, the compiler emits a textual
+`.swiftinterface` file next to each `.swiftmodule`, and applies additional
+strictness to the public API of every source file.
+
+### 12.1 The `import CoreGraphics` rule
+
+Any source file that exposes — directly or transitively — a public API using
+a type that ultimately resolves to `CGFloat` MUST explicitly `import CoreGraphics`
+(or `import CoreFoundation`, equivalent). Otherwise the build
+fails at the `SwiftEmitModule` step with an error such as:
+
+```
+error: 'EffectRawToken' aliases 'CoreFoundation.CGFloat' and cannot be used
+here because 'CoreFoundation' was not imported by this file
+```
+
+This applies even if:
+- Another module already imported by the file (`Foundation`, `SwiftUI`,
+  `OUDSTokensRaw`, …) transitively re-exports `CGFloat`.
+- The file compiles fine under standard SPM builds (which do NOT enforce
+  module stability).
+
+The rule is **per file**, not per module: each `.swift` file that publicly
+exposes a `CGFloat`-derived type must have its own `import CoreGraphics`.
+
+### 12.2 When is the import required?
+
+| Public construct in the file                                            | `import CoreGraphics` required?  |
+|-------------------------------------------------------------------------|----------------------------------|
+| `public typealias X = CGFloat`                                          | Yes — always                     |
+| `public typealias X = Y` where `Y = CGFloat` (short chain)              | Usually yes — add it defensively |
+| `public typealias X = Y` where `Y = Z = CGFloat` (long chain)           | Often no, but add it if in doubt |
+| `public static let x: X = value` where `X` resolves to `CGFloat`        | Yes — always                     |
+| `var x: X { get }` in a public protocol where `X` resolves to `CGFloat` | Yes — always                     |
+| `@objc public final var x: X { … }` where `X` resolves to `CGFloat`     | Yes — always                     |
+| Body of a method using `CGFloat` internally                             | No — bodies are not in the swiftinterface |
+| Type used only in `internal` / `private` API                            | No — out of public surface       |
+
+### 12.3 Convention in the OUDS codebase
+
+When such an import is added purely to satisfy the XCFramework build (and
+not because the file semantically depends on `CoreGraphics` for its own
+logic), it MUST be commented as follows so that future maintainers understand
+why it is there despite `import Foundation` or `import SwiftUI` being already
+present:
+
+```swift
+import CoreGraphics // Needed for XCFramework generation
+```
+
+Prefer `CoreGraphics` over `CoreFoundation` for consistency with the rest of
+the codebase (iOS/macOS idiomatic convention).
+
+### 12.4 Package.swift dependency declarations
+
+The same XCFramework build also requires that every SPM target explicitly
+declares in its `dependencies:` list ALL the modules that any of its source
+files `import`. Standard SPM tolerates transitive dependencies (a target
+that only declares `OUDSThemesContract` can still import `OUDSTokensRaw`
+because `OUDSThemesContract` itself depends on it); the Xcode 26 explicit
+module scanner used during `xcodebuild archive` does not.
+
+When adding a new `import OUDSSomething` in a source file, always add
+`"OUDSSomething"` to the enclosing target's `dependencies:` array in
+`Package.swift`, even if it is already pulled in transitively.
+
+**Dependency lists MUST be kept sorted alphabetically in `Package.swift` for
+consistency and reviewability — this is a project-wide convention that
+applies to every target's `dependencies:` array (both `.target` and
+`.testTarget`).**
+
+### 12.5 Umbrella product linkage
+
+The umbrella product that is packaged as an XCFramework
+(`OUDSSwiftUIOrangeSosh`) is declared with `type: .dynamic` in
+`Package.swift`. Do NOT pass `MACH_O_TYPE=mh_dylib` at the `xcodebuild`
+level — it would be applied to every target in the package graph, produce
+duplicated PIF targets (objfile + framework variants for the same module),
+and confuse the Swift 6 explicit module scanner into emitting spurious
+"missing dependency on X" warnings that get promoted to errors.
+
+The dynamic nature of the umbrella must be declared once, at the product
+level in `Package.swift`.

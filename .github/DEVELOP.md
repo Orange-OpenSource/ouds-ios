@@ -20,6 +20,7 @@
 - [Dead code](#dead-code)
 - [Software Bill of Materials](#software-bill-of-materials)
 - [Update of dependencies](#update-of-dependencies)
+- [Generate XCFramework](#generate-xcframework)
 - [CI/CD](#cicd)
 - [Use of GenAI](#use-of-genai)
 - [Use of robots](#use-of-robots)
@@ -506,6 +507,21 @@ To update dependencies of the project, supossing *Renovate* for example provides
 - Update the changelog
 - Update the SBOM
 - Make a nice commit message (e.g. `chore(deps):`) for the merge
+
+## Generate XCFramework
+
+Some users may need to use OUDS iOS through an XCFramework, and not commonly with sources compiled through the repository with Swift Package Manager.
+Thus, **before creation of GitHub release**, run the script below:
+
+```bash
+./scripts/build-xcframework.sh VERSION
+```
+
+where VERSION will be the tag of the current version / version to ship (e.g. 3.1.0-rc.1, 3.1.0 etc.).
+
+> [!IMPORTANT]
+> Because GitHub releases are immutable, we need to create the XCFramework BEFORE creating the release on GitHub
+> so as to attach the artefacts to the associated release.
 
 ## CI/CD
 
