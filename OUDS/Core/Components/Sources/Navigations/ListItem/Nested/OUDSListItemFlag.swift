@@ -73,15 +73,10 @@ public struct OUDSListItemFlag: View {
     // MARK: Body
 
     public var body: some View {
-        HStack {
-            OUDSImage(asset: asset, accessibilityLabel: description, renderingMode: .original)
-                .aspectRatio(contentMode: .fit)
-                .frame(height: flagHeight)
-                .opacity(opacity)
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(description)
-        .frame(minWidth: minWidth, alignment: .center)
+        OUDSImage(asset: asset, accessibilityLabel: description, renderingMode: .original)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: flagWidth)
+            .opacity(opacity)
     }
 
     // MARK: Helpers
@@ -90,11 +85,7 @@ public struct OUDSListItemFlag: View {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled
     }
 
-    private var flagHeight: SizeSemanticToken {
-        theme.listItem.sizeFlagHeight * dynamicTypeSize.percentageRate / 100
-    }
-
-    private var minWidth: SizeSemanticToken {
+    private var flagWidth: SizeSemanticToken {
         let rawSize = if itemSize == .small {
             theme.listItem.sizeAssetSmall
         } else {

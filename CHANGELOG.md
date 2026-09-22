@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `lits item` to v1.2.0 (Orange-OpenSource/ouds-ios#1714)
 - Ruby Gem `fastlane` from v2.239.0 to v2.240.0
 
 ### Fixed
