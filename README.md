@@ -175,7 +175,7 @@ their own copy of OUDS in the same application.
 
 - Artefacts (`OUDSSwiftUIOrangeSosh-<version>.xcframework.zip` + SHA-256) are attached to [GitHub Releases][https://github.com/Orange-OpenSource/ouds-ios/releases].
 - SPM remains the primary distribution channel; the XCFramework is an opt-in additional artefact. [Open a discussion for more evolutions](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/return-of-experience-and-feedbacks).
-- Add the XCFramework to your XCode proejct, and import `OUDSSwiftUIOrangeSosh` dependency. `OrangeCompact` and `Wireframe` themes are not shipped.
+- Unzip the XCFramework archive, add all 10 XCFrameworks to your Xcode project, embed and sign only `OUDSSwiftUIOrangeSosh`, and import that dependency. `OrangeCompact` and `Wireframe` themes are not shipped.
 
 ## 🧬 Tokens libraries versions
 
