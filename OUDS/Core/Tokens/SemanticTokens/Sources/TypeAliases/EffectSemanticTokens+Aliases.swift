@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import CoreGraphics // Needed for XCFramework generation
 import OUDSTokensRaw
 
 /// Basically a semantic token for effect is a raw token for effect, to keep grammar clean and clear with design system grammar.
