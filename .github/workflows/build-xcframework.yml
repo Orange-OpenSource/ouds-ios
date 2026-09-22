@@ -20,7 +20,7 @@
 # - is for branches main, develop and all
 # - automatically triggered when pull request is opened and has new commits (synchronize)
 # - only VERIFIES that the XCFramework compiles cleanly; does NOT publish anything to a GitHub Release
-# - produces a short-lived (7 days) workflow artefact for local inspection when needed
+# - produces a short-lived (1 day) workflow artefact for local inspection when needed
 # But beware, triggered on commit push, so do not be a push-machine-gun!
 
 name: Build XCFramework product
