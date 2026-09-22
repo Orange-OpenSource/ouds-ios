@@ -11,6 +11,8 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
+require "shellwords"
+
 # Lanes
 # ------
 
@@ -112,7 +114,7 @@ platform :ios do
         version = options[:version] || ENV["XCFRAMEWORK_VERSION"] || ""
         puts "👉 Build XCFramework (version=#{version.empty? ? '<auto>' : version})"
 
-        sh "cd .. && ./scripts/build-xcframework.sh \"#{version}\""
+        sh "cd .. && ./scripts/build-xcframework.sh #{Shellwords.escape(version)}"
 
         Dir.chdir ".." do
             unless Dir.exist?("dist")
