@@ -20,7 +20,7 @@
 
 # Please keep the list sorted.
 
-chetan-kmr-0607 <118420797+chetan-kmr-0607@users.noreply.github.com>
+Chetan Kumar <118420797+chetan-kmr-0607@users.noreply.github.com>
 Diksha Dhanaji Dabhole <dikshadabhole78@gmail.com>
 Julien Déramond <julien.deramond@orange.com>
 Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
