@@ -42,3 +42,14 @@
 
 # Produced by .gitlab-ci.yml
 /.cache/
+<<<<<<< HEAD
+=======
+
+# Produced by scripts/import-icons.sh
+/scripts/.icon-import-logs/
+
+# Produced by scripts/build-xcframework.sh
+/build/
+/dist/
+*.xcarchive
+>>>>>>> dccea794b1 (ci: add script to generate `OUDSSwiftUIOrangeSosh` XCFramework and update codebase to make it possible (#1767) (#1768))
