@@ -90,7 +90,7 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLink: View {
 
-    // MARK: - Stored Properties
+    // MARK: - Properties
 
     private let layout: Layout
     private let text: String
@@ -99,8 +99,7 @@ public struct OUDSLink: View {
     private let isFullWidth: Bool
     private let action: () -> Void
 
-    @Environment(\.theme) private var theme
-    @Environment(\.layoutDirection) private var layoutDirection
+    // MARK: - Types
 
     /// Represents the size of an `OUDSLink`.
     /// - Since: 0.11.0
@@ -283,7 +282,6 @@ public struct OUDSLink: View {
                 case let .indicator(indicator):
                     LinkTextAndIndicatorView(text: text,
                                              interactionState: state,
-                                             density: density,
                                              size: size,
                                              indicator: indicator)
                 case let .textAndIcon(image):

@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: - Helper Text View
 
-struct ProgressIndicatorHelprTextView: View {
+struct ProgressIndicatorHelperTextView: View {
 
     // MARK: Properties
 
@@ -32,7 +32,7 @@ struct ProgressIndicatorHelprTextView: View {
     var body: some View {
         switch alignment {
         case .center:
-            CenteredHelperTextView(description: description, percent: percentString)
+            CenteredHelperTextView(percent: percentString, description: description)
         case .start:
             if let percentString {
                 EdgedHelperTextView(start: percentString, end: description)
@@ -66,8 +66,8 @@ private struct CenteredHelperTextView: View {
 
     // MARK: Properties
 
-    let description: String?
     let percent: String?
+    let description: String?
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
