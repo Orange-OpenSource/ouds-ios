@@ -103,17 +103,20 @@ private struct EdgedHelperTextView: View {
 
     var body: some View {
         HStack(alignment: .top) {
-            Text(start ?? "")
-                .labelDefaultMedium(theme)
-                .foregroundColor(theme.colors.contentDefault)
-                .multilineTextAlignment(.leading)
-
+            if let start {
+                Text(start)
+                    .labelDefaultMedium(theme)
+                    .foregroundColor(theme.colors.contentDefault)
+                    .multilineTextAlignment(.leading)
+            }
             Spacer()
 
-            Text(end ?? "")
-                .labelDefaultMedium(theme)
-                .foregroundColor(theme.colors.contentDefault)
-                .multilineTextAlignment(.trailing)
+            if let end {
+                Text(end)
+                    .labelDefaultMedium(theme)
+                    .foregroundColor(theme.colors.contentDefault)
+                    .multilineTextAlignment(.trailing)
+            }
         }
         .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular))
     }
