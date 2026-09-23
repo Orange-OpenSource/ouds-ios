@@ -41,12 +41,6 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
     // MARK: Body
 
-    @Environment(\.theme) private var theme
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
-
-    // MARK: Body
-
     func body(content: Content) -> some View {
         #if os(macOS) || os(watchOS) || os(tvOS)
         content

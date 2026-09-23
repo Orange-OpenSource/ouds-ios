@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSThemesContract
 import SwiftUI
 
 /// Used to apply the right style on an ``OUDSButton`` according to the `appearance`
@@ -68,22 +69,25 @@ struct StyleForButton: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        switch style {
-        case .default:
-            configuration
-                .label
-                .frame(minWidth: minWidth,
-                       maxWidth: maxWidth,
-                       minHeight: minHeight,
-                       alignment: .center)
-                .contentShape(Rectangle())
-                .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
-        case let .loading(progress):
-            configuration.label
-                .frame(maxWidth: maxWidth)
-                .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
-                .modifier(ButtonLoadingContentModifier(appearance: appearance, size: size, progress: progress))
+        VStack {
+            switch style {
+            case .default:
+                configuration
+                    .label
+                    .frame(minWidth: minWidth,
+                           maxWidth: isFullWidth ? .infinity : nil,
+                           minHeight: minHeight,
+                           alignment: .center)
+                    .contentShape(Rectangle())
+                    .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
+            case let .loading(progress):
+                configuration
+                    .label
+                    .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
+                    .modifier(ButtonLoadingContentModifier(appearance: appearance, size: size, progress: progress))
+            }
         }
+        .frame(maxWidth: maxWidth)
     }
 
     private var minWidth: CGFloat {
@@ -104,8 +108,8 @@ struct StyleForButton: ButtonStyle {
         }
     }
 
-    private var maxWidth: CGFloat? {
-        isFullWidth ? .infinity : nil
+    private var maxWidth: CGFloat {
+        isFullWidth ? .infinity : theme.button.sizeMaxWidth
     }
 
     private func internalState(isPressed: Bool) -> ButtonInternalState {
