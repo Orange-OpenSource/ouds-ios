@@ -397,3 +397,34 @@ For components with multiple variants (e.g., Badge, ProgressIndicator, ListItem)
 - [ ] Image filenames use snake_case (not CamelCase)
 - [ ] Theme doc URLs point to correct snake_case filenames
 - [ ] Components with variants (Badge, ProgressIndicator, ListItem) use proper tabs
+
+## 11. Token Implementation Guidelines
+
+When adding new semantic or component tokens to a theme, follow this pattern:
+
+### 11.1 Declaration
+
+Declare the token in the corresponding protocol (e.g., `SizeMultipleSemanticTokens`, `ButtonComponentTokens`).
+
+### 11.2 Implementation by Theme
+
+| Theme | Access Modifier | Override Allowed |
+|-------|-----------------|------------------|
+| **Orange** | `@objc open` | Yes - base theme for subclassing |
+| **OrangeCompact** | `@objc public final` | No |
+| **Sosh** | `@objc public final` | No |
+| **Wireframe** | `@objc public final` | No |
+
+### 11.3 Override Tests (Orange Theme Only)
+
+For `OrangeTheme`, add override tests to ensure subclasses can override token values:
+
+1. Add mock value in `MockTheme*TokensProvider` (e.g., `MockThemeSizeSemanticTokensProvider`)
+2. Add test in `ThemeOverrideOf*TokensTests` to verify the override works
+
+Example for `maxWidthBoxedText`:
+- Token declared in `SizeMultipleSemanticTokens` protocol
+- Implemented as `@objc open` in `OrangeTheme+SizeMultipleSemanticTokens`
+- Implemented as `@objc public final` in OrangeCompact, Sosh, Wireframe
+- Mock value in `MockThemeSizeSemanticTokensProvider`
+- Test in `ThemeOverrideOfSizeMultipleSemanticTokensTests`

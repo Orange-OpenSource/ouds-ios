@@ -74,7 +74,7 @@ extension OrangeThemeSizeSemanticTokensProvider: SizeMultipleSemanticTokens {
     @objc open var maxWidthLabelMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelMediumMobile, regular: maxWidthLabelMediumTablet) }
     @objc open var maxWidthLabelSmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelSmallMobile, regular: maxWidthLabelSmallTablet) }
 
-    @objc public final var maxWidthBoxedText: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthBoxedTextMobile, regular: maxWidthBoxedTextTablet) }
+    @objc open var maxWidthBoxedText: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthBoxedTextMobile, regular: maxWidthBoxedTextTablet) }
 }
 
 // swiftlint:enable line_length

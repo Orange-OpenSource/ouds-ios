@@ -34,8 +34,8 @@ struct ListItemTextContainer: View {
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @Environment(\.oudsListItemContainersAlignment) private var alignment
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.oudsListItemContainersAlignment) private var alignment
 
     // MARK: Body
 
@@ -52,7 +52,7 @@ struct ListItemTextContainer: View {
                         .labelModerateSmall(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
-                        .frame(maxWidth: maxWoidth, alignment: .leading)
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                 }
 
                 HStack {
@@ -65,7 +65,7 @@ struct ListItemTextContainer: View {
                                 Text(labelText).labelDefaultLarge(theme)
                             }
                         }
-                        .frame(maxWidth: maxWoidth, alignment: .leading)
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                     case let .custom(customView, _):
                         customView
                             .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)
@@ -82,7 +82,7 @@ struct ListItemTextContainer: View {
                         .labelStrongMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(labelsColor)
-                        .frame(maxWidth: maxWoidth, alignment: .leading)
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                 }
 
                 if let description = data.description, !description.isEmpty {
@@ -90,7 +90,7 @@ struct ListItemTextContainer: View {
                         .labelDefaultMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
-                        .frame(maxWidth: maxWoidth, alignment: .leading)
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                 }
             }
             .accessibilityElement(children: .combine)
@@ -104,6 +104,7 @@ struct ListItemTextContainer: View {
         .padding(.top, topPadding)
         .frame(maxWidth: .infinity, minHeight: minHeight, alignment: verticalAlignment)
     }
+
     // swiftlint:enable closure_body_length
 
     // MARK: Helpers
@@ -129,7 +130,7 @@ struct ListItemTextContainer: View {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentMuted
     }
 
-    private var maxWoidth: CGFloat {
+    private var maxWidth: CGFloat {
         switch itemSize {
         case .small:
             theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular)
