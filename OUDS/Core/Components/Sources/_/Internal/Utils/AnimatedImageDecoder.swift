@@ -34,9 +34,6 @@ struct AnimatedImageContent: Sendable {
     /// The ordered list of decoded frames.
     let frames: [AnimatedImageFrame]
 
-    /// The number of times the animation must loop, `0` meaning infinite.
-    let loopCount: Int
-
     /// The total duration, in seconds, of one animation loop.
     var totalDuration: TimeInterval {
         frames.reduce(0) { $0 + $1.duration }
@@ -81,7 +78,7 @@ enum AnimatedImageDecoder {
 
         guard !frames.isEmpty else { return nil }
 
-        return AnimatedImageContent(frames: frames, loopCount: loopCount(source: source))
+        return AnimatedImageContent(frames: frames)
     }
 
     // MARK: Helpers
@@ -109,27 +106,6 @@ enum AnimatedImageDecoder {
         }
 
         return defaultFrameDuration
-    }
-
-    /// Reads the loop count of the animation from the first frame's properties (`0` means infinite).
-    private static func loopCount(source: CGImageSource) -> Int {
-        guard let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [CFString: Any] else {
-            return 0
-        }
-
-        if let gifProperties = properties[kCGImagePropertyGIFDictionary] as? [CFString: Any],
-           let loopCount = gifProperties[kCGImagePropertyGIFLoopCount] as? Int
-        {
-            return loopCount
-        }
-
-        if let webpProperties = properties[kCGImagePropertyWebPDictionary] as? [CFString: Any],
-           let loopCount = webpProperties[kCGImagePropertyWebPLoopCount] as? Int
-        {
-            return loopCount
-        }
-
-        return 0
     }
 }
 

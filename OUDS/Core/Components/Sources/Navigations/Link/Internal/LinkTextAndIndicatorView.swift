@@ -30,7 +30,6 @@ struct LinkTextAndIndicatorView: View {
 
     let text: String
     let interactionState: OUDSButtonInteractionState
-    let density: OUDSLink.Density
     let size: OUDSLink.Size
     let indicator: OUDSLink.Indicator
 
