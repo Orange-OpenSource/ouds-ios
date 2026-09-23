@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `list item` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1714)
 - Ruby Gem `fastlane` from v2.239.0 to v2.240.0
 
 ### Fixed
 
+- **BREAKING**: missing `maxWidthBoxedText` token in `SizeMultipleSemanticTokens` (Orange-OpenSource/ouds-ios#1714)
 - For `link` component, behavior of `full width` mode and display of `next` and `external` indicators just after last character (Orange-OpenSource/ouds-ios#1748)
 - Add back missing token (of v2.6 library) for `alert message` component 
 
