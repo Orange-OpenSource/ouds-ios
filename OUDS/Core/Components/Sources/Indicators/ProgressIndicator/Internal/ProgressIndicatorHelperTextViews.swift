@@ -24,9 +24,6 @@ struct ProgressIndicatorHelperTextView: View {
     let description: String?
     let alignment: OUDSLinearProgressIndicator.HelperTextAlignment
 
-    @Environment(\.theme) private var theme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
     // MARK: Body
 
     var body: some View {
