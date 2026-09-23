@@ -20,6 +20,7 @@
 - [Dead code](#dead-code)
 - [Software Bill of Materials](#software-bill-of-materials)
 - [Update of dependencies](#update-of-dependencies)
+- [Generate XCFramework](#generate-xcframework)
 - [CI/CD](#cicd)
 - [Use of GenAI](#use-of-genai)
 - [Use of robots](#use-of-robots)
@@ -506,6 +507,36 @@ To update dependencies of the project, supossing *Renovate* for example provides
 - Update the changelog
 - Update the SBOM
 - Make a nice commit message (e.g. `chore(deps):`) for the merge
+
+## Generate XCFramework
+
+Some users may need to use OUDS iOS through an XCFramework, and not commonly with sources compiled through the repository with Swift Package Manager.
+Thus, **before creation of GitHub release**, run the script below:
+
+```bash
+./scripts/build-xcframework.sh VERSION
+```
+
+where VERSION will be the tag of the current version / version to ship (e.g. 3.1.0-rc.1, 3.1.0 etc.).
+
+> [!IMPORTANT]
+> Because GitHub releases are immutable, we need to create the XCFramework BEFORE creating the release on GitHub
+> so as to attach the artefacts to the associated release.
+
+> [!NOTE]
+> The user for its own project will need to make a drag and drop of all XCFrameworks defined in the result ZIP,
+> add them to the targets they want,
+> and consume them with for example the umbrella import of OUDSSwiftUIOrangeSosh.
+
+An .xcframework is Apple's container for shipping a single logical library across multiple platform/architecture slices (iOS device, iOS simulator, macOS, etc.). 
+Its Info.plist enforces a strict rule: each slice identifier (e.g. ios-arm64) may appear exactly once in the AvailableLibraries array.
+Consequently, `xcodebuild -create-xcframework` rejects any attempt to bundle multiple frameworks that target the same slice, failing with a library with the identifier 'ios-arm64' already exists. There is no supported way — via Apple tooling — to pack several distinct frameworks inside one xcframework.
+
+OUDS is architected as many (~10) SPM modules re-exported by an umbrella (OUDSSwiftUIOrangeSosh) via @_exported import.
+Even though the umbrella dylib statically links all the atomic code and contains every public symbol at runtime, the Swift compiler still needs to load each atomic module's `.swiftmodule` at compile time to type-check consumer code (because public type identities remain qualified by their originating module, e.g. `OUDSThemesContract.OUDSTheme`). 
+Since we cannot merge everything into a single xcframework and cannot ship the atomic swiftmodules inside the umbrella's Modules/ directory (Xcode's module resolver won't pick them up there), the pragmatic distribution is ten separate xcframeworks: one umbrella carrying all the code (*Embed & Sign*) plus nine atomic swiftmodule-only stubs with empty binaries (*Do Not Embed*). Consumers who find drag-and-dropping ten xcframeworks tedious can wrap them all behind a single Package.swift with binaryTarget entries, which SPM then transparently manages as one dependency.
+
+Because the documentation is very heavy in OUDS (because of how Apple generates the doc), it cannot be embedded in the xcframeworks. Thus users need to pick DOcC archive from GitHub releases or check the onmine documentation through the website.
 
 ## CI/CD
 

@@ -52,6 +52,15 @@ OUDSSwiftUIOrange         | All libraries listed above but with only Orange and 
 OUDSSwiftUIWireframe      | All libraries listed above but with only Wireframe theme
 OUDSSwiftUIOrangeSosh     | All libraries listed above but with only Orange and Sosh themes
 
+### Special case of XCFramework
+
+> Note: The prefered solution to use OUDS is to use Swift Package Manager and pull sources from the repository to compile the project.
+> XCFramework can be used by picked assets from GitHub Releases artifacts.
+
+If the XCFramework is used, i.e. the one only for iOS with only Orange and Sosh themes:
+- add all the atomical XCFrameworks in the project
+- import `OUDSSwiftUIOrangeSosh`
+
 ### Chose your theme
 
 The *Orange Unified Design System* framework provides today four themes:

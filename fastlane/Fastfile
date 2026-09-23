@@ -11,6 +11,8 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
+require "shellwords"
+
 # Lanes
 # ------
 
@@ -102,5 +104,35 @@ platform :ios do
         puts "👉 Run unit tests of Swift Package"
 
         sh "cd .. && swift test"
+    end
+
+    # ------------------------------------------------------------
+    # BUILD XCFRAMEWORK
+    # ------------------------------------------------------------
+    desc "Build the dynamic OUDSSwiftUIOrangeSosh.xcframework for iOS and verify the resulting artefacts (zip + sha256 + release notes) in dist/. Pass the version through the `version` parameter (defaults to git describe, then to 0.0.0-dev)."
+    lane :build_xcframework do |options|
+        version = options[:version] || ENV["XCFRAMEWORK_VERSION"] || ""
+        puts "👉 Build XCFramework (version=#{version.empty? ? '<auto>' : version})"
+
+        sh "cd .. && ./scripts/build-xcframework.sh #{Shellwords.escape(version)}"
+
+        Dir.chdir ".." do
+            unless Dir.exist?("dist")
+                UI.user_error!("dist/ directory not found. The build script did not produce any artefact.")
+            end
+
+            xcframework_zip = Dir.glob("dist/*.xcframework.zip").first
+            UI.user_error!("No .xcframework.zip artefact found in dist/. The build script did not produce the expected artefact.") if xcframework_zip.nil?
+
+            sha_file = "#{xcframework_zip}.sha256"
+            UI.user_error!("Checksum file #{sha_file} not found.") unless File.exist?(sha_file)
+
+            release_notes = "dist/RELEASE_NOTES_XCFRAMEWORK.md"
+            UI.user_error!("Release notes file #{release_notes} not found.") unless File.exist?(release_notes)
+
+            UI.success("XCFramework zip     : #{xcframework_zip}")
+            UI.success("XCFramework sha256  : #{sha_file}")
+            UI.success("Release notes       : #{release_notes}")
+        end
     end
 end

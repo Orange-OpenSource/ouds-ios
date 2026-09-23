@@ -93,7 +93,7 @@ You can find available releases on [GitHub releases](https://github.com/Orange-O
 The wiki contains also a page [listing the available API](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
 Versions, builds and releases are explained [also in this page](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds).
 
-### Add the dependency
+### Add the dependency (Swift Package Manager)
 
 First, you must add as _package dependency_ of your _project_ the URL of this _Swift Package_ GitHub repository:
 
@@ -103,13 +103,25 @@ https://github.com/Orange-OpenSource/ouds-ios
 
 You can choose the _dependency rule_ you want. Keep in mind OUDS iOS releases are frozen and are based on semantic versioning.
 
-### Add the libraries
-
 In your Xcode _targets_, add the libraries you need. Everything is splitted so as to let users choose the content to embed they want.
 The `OUDSSwiftUI` library embeds everything, but you may prefer instead tailor your imports.
+The `OUDSSwiftUIOrangeSosh` library alsmo everything but not the `Orange Compact` and `Wireframe` themes.
 You can get the [detailed list of available libraries in the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
 
 More technical details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
+
+### Add the dependency (XCFramework)
+
+Get the XCFramework ZIP file from the [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases) of the version you want.
+Uncompress the ZIP, and if you want check its checksum or cryptographic signature.
+Otherwise uncompress the XCFramework ZIP, and drag and drop all the XCFrameworks (~10) in your Xcode project.
+Associate them to the target(s) you want.
+And, in your source xcode, when you use OUDS items, import **OUDSSwiftUIOrangeSosh**.
+
+> [!NOTE]
+> XCFramework is not the prefered solution to use OUDS.
+> Thus the XCFramework available are tailored for iOS platform with only Orange and Sosh themes.
+> For more evolutions feel free to contact the maintainers.
 
 ### Instanciate and inject theme
 
@@ -166,6 +178,16 @@ The wiki lists also [the components and their availability](https://github.com/O
 > Releases are immutable and in most of time cryptographically signed (commits, tags and artifacts).
 > You can verify their integrity with commands from GPG tool of GitHub CLI client.
 > Please [refer to the wiki to choose the options you need](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds#tags-commits-releases-and-artifacts-signature)
+
+## 📦 Binary distribution (XCFramework)
+
+In addition to the standard Swift Package distribution, OUDS is also published as a **dynamic XCFramework** for the `OUDSSwiftUIOrangeSosh` umbrella product. 
+This distribution is intended to solve the duplication / symbol-conflict problem that appears when several third-party XCFrameworks each embed 
+their own copy of OUDS in the same application.
+
+- Artefacts (`OUDSSwiftUIOrangeSosh-<version>.xcframework.zip` + SHA-256) are attached to [GitHub Releases][https://github.com/Orange-OpenSource/ouds-ios/releases].
+- SPM remains the primary distribution channel; the XCFramework is an opt-in additional artefact. [Open a discussion for more evolutions](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/return-of-experience-and-feedbacks).
+- Unzip the XCFramework archive, add all 10 XCFrameworks to your Xcode project, embed and sign only `OUDSSwiftUIOrangeSosh`, and import that dependency. `OrangeCompact` and `Wireframe` themes are not shipped.
 
 ## 🧬 Tokens libraries versions
 

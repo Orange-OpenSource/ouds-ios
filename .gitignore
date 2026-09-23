@@ -45,3 +45,8 @@
 
 # Produced by scripts/import-icons.sh
 /scripts/.icon-import-logs/
+
+# Produced by scripts/build-xcframework.sh
+/build/
+/dist/
+*.xcarchive
