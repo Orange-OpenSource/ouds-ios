@@ -93,7 +93,9 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let icon = SoshThemeIconComponentTokensProvider(colors: colors)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let progressIndicator = SoshThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = SoshThemeSelectInputComponentTokensProvider(dimensions: dimensions)
@@ -126,7 +128,9 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,
@@ -165,7 +169,8 @@ extension Tuning {
     /// and **rounded corners for alert messages**.
     public static let Sosh = Tuning(hasRoundedButtons: false,
                                     hasRoundedTextInputs: false,
-                                    hasRoundedAlertMessages: true)
+                                    hasRoundedAlertMessages: true,
+                                    hasRoundedListItems: false)
 }
 
 // swiftlint:enable function_body_length

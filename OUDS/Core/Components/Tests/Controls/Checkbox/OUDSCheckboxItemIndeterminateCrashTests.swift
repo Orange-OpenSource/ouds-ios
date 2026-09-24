@@ -26,7 +26,7 @@ struct OUDSCheckboxItemIndeterminateCrashTests {
     /// Verify that `OUDSCheckboxItemIndeterminate` crashes when both `isReadOnly` and `isError` are set to `true`.
     /// This is forbidden by design as a component cannot be in both error and read-only states.
     @Test
-    func checkboxItemIndeterminateCrashesWhenReadOnlyAndError() async {
+    func `checkbox item indeterminate crashes when read only and error`() async {
         await #expect(processExitsWith: .failure) {
             let selection = OUDSCheckboxIndicatorState.indeterminate
             _ = OUDSCheckboxItemIndeterminate("Test",

@@ -58,12 +58,14 @@ import OUDSTokensSemantic
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true)
+///     let tuning = Tuning(hasRoundedButtons: true,
+///                         hasRoundedTextInputs: true,
+///                         hasRoundedAlertMessages: true,
+///                         hasRoundedProgressIndicators: true,
+///                         hasRoundedListItems: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeTheme(tuning: tuning)
-///     // Or in one line
-///     let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true))
 ///
 ///     // Or apply predefined tunings
 ///     let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
@@ -210,7 +212,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          divider: AllDividerComponentTokensProvider? = nil,
                          icon: AllIconComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
+                         listItem: AllListItemComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
+                         progressIndicator: AllProgressIndicatorComponentTokensProvider? = nil,
                          quantityInput: AllQuantityInputComponentTokensProvider? = nil,
                          radioButton: AllRadioButtonComponentTokensProvider? = nil,
                          selectInput: AllSelectInputComponentTokensProvider? = nil,
@@ -251,7 +255,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let progressIndicator = (progressIndicator ?? OrangeThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
         let selectInput = (selectInput ?? OrangeThemeSelectInputComponentTokensProvider(dimensions: dimensions))
@@ -286,7 +292,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,

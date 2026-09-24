@@ -89,7 +89,9 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let listItem = WireframeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let progressIndicator = WireframeThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let quantityInput = WireframeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = WireframeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = WireframeThemeSelectInputComponentTokensProvider(dimensions: dimensions)
@@ -122,7 +124,9 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,
@@ -161,7 +165,8 @@ extension Tuning {
     /// and **rounded corners for alert messages**.
     public static let Wireframe = Tuning(hasRoundedButtons: false,
                                          hasRoundedTextInputs: false,
-                                         hasRoundedAlertMessages: true)
+                                         hasRoundedAlertMessages: true,
+                                         hasRoundedListItems: false)
 }
 
 // swiftlint:enable function_body_length

@@ -60,12 +60,14 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: false)
+///     let tuning = Tuning(hasRoundedButtons: true,
+///                         hasRoundedTextInputs: true,
+///                         hasRoundedAlertMessages: false,
+///                         hasRoundedProgressIndicators: true,
+///                         hasRoundedListItems: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeCompactTheme(tuning: tuning)
-///     // Or in one line
-///     let theme = OrangeCompactTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: false))
 ///
 ///     // Or apply predefined tunings
 ///     let orangeFranceTheme = OrangeCompactTheme(tuning: Tuning.OrangeFrance)
@@ -152,7 +154,9 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let divider = OrangeCompactThemeDividerComponentTokensProvider(borders: borders)
         let icon = OrangeCompactThemeIconComponentTokensProvider(colors: colors)
         let link = OrangeCompactThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let listItem = OrangeCompactThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let pinCodeInput = OrangeCompactThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
+        let progressIndicator = OrangeCompactThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeCompactThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeCompactThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = OrangeCompactThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
@@ -187,7 +191,9 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,

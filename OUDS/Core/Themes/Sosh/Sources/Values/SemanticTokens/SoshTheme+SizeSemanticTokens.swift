@@ -213,4 +213,10 @@ extension SoshThemeSizeSemanticTokensProvider: SizeSemanticTokens {
     @objc public final var maxWidthLabelSmallMobile: SizeSemanticToken { DimensionRawTokens._6000 }
     /// Has for value token DimensionRawTokens._6000 (= 640)
     @objc public final var maxWidthLabelSmallTablet: SizeSemanticToken { DimensionRawTokens._6000 }
+    /// Has for value token DimensionRawTokens._600 (= 48)
+    @objc public final var minInteractiveAreaDefault: SizeSemanticToken { DimensionRawTokens._600 }
+    /// Has for value token DimensionRawTokens._7000 (= 720)
+    @objc public final var maxWidthBoxedTextMobile: SizeSemanticToken { DimensionRawTokens._7000 }
+    /// Has for value token DimensionRawTokens._8000 (= 800)
+    @objc public final var maxWidthBoxedTextTablet: SizeSemanticToken { DimensionRawTokens._8000 }
 }

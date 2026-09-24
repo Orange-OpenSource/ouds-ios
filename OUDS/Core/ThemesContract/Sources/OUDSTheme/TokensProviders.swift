@@ -14,6 +14,8 @@
 import OUDSTokensComponent
 import OUDSTokensSemantic
 
+// swiftlint:disable type_name
+
 // MARK: - Root
 
 /// Protocol to add to any semantic or component tokens provider so as to be gather with all providers and given to the theme for initialization
@@ -92,7 +94,7 @@ public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComp
 /// Something which provides all component tokens of chip
 public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens {}
 
-/// Something which provides all component tokens for control-item-layout-based components
+/// Something which provides all component tokens of control item
 public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens {}
 
 /// Something which provides all component tokens of divider
@@ -101,12 +103,17 @@ public protocol AllDividerComponentTokensProvider: TokensProvider, DividerCompon
 /// Something which provides all component tokens of pin code input
 public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeInputComponentTokens {}
 
+/// Something which provides all component tokens of progress indicator
+public protocol AllProgressIndicatorComponentTokensProvider: TokensProvider, ProgressIndicatorComponentTokens {}
+
 /// Something which provides all components tokens for icons
 public protocol AllIconComponentTokensProvider: TokensProvider, IconComponentTokens {}
 
 /// Something which provides all component tokens of link
-public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens, ExpandLinkComponentTokens {}
-// TODO: #1001 - Check if relevant to add the expand link tokens in the same alias (i.e. same provider in the end)
+public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
+
+/// Something which provides all component tokens of list item
+public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens {}
 
 /// Something which provides all component tokens of quantity input
 public protocol AllQuantityInputComponentTokensProvider: TokensProvider, QuantityInputComponentTokens {}
@@ -134,3 +141,5 @@ public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComp
 
 /// Something which provides all component tokens of text input
 public protocol AllTextInputComponentTokensProvider: TokensProvider, TextInputComponentTokens {}
+
+// swiftlint:enable type_name

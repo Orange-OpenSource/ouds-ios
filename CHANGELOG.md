@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.1...2.4.0) - 2026-09-24
+
+### Added
+
+- `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
+- Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
+- `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
+- Tokens and tokens providers dedicated to `list item` component
+- `list item` component (Orange-OpenSource/ouds-ios#265)
+
+### Changed
+
+- Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)
+
+### Fixed
+
+- For `list item` components, add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
+
 ## [2.3.1](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...2.3.1) - 2026-09-24
 
 ### Changed

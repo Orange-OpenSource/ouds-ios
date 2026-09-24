@@ -18,11 +18,23 @@ Target platforms: iOS 15, iPadOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16. 
 
 Load skills on demand for detailed guidance:
 
-- **`ouds-ios-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)
-- **`ouds-ios-framework-usage`** — full usage reference: imports, themes, tokens, view modifiers, all components with code examples
-- **`ouds-ios-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
-- **`ouds-ios-migration`** — step-by-step migration guide from v1.0.0 to v2.3.0 (current); covers all breaking changes, removed APIs and deprecated symbols
-- **`ouds-ios-create-theme`** — step-by-step guide to create a custom OUDS theme (subclass OrangeTheme, from scratch on OUDSTheme, mix of providers, local fonts)
+Framework:
+- **`ouds-ios-framework-usage`** — setup and shared reference: imports, themes, token namespaces, view modifiers, image rules, shared control patterns, custom fonts. Load this first when any OUDS code is involved.
+
+Components:
+- **`ouds-ios-components-actions`** — OUDSButton
+- **`ouds-ios-components-content-display`** — OUDSBulletList
+- **`ouds-ios-components-controls`** — Checkbox, Radio, Switch, Chips, PinCodeInput, PasswordInput, TextInput, TextArea
+- **`ouds-ios-components-dialogs`** — OUDSAlertMessage, OUDSInlineAlert
+- **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator
+- **`ouds-ios-components-layouts`** — OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider
+- **`ouds-ios-components-navigations`** — OUDSLink, OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
+
+Guides:
+- **`ouds-ios-guide-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)
+- **`ouds-ios-guide-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
+- **`ouds-ios-guide-migration`** — step-by-step migration guide from v1.0.0 to v2.3.0 (current); covers all breaking changes, removed APIs and deprecated symbols
+- **`ouds-ios-guide-create-theme`** — step-by-step guide to create a custom OUDS theme (subclass OrangeTheme, from scratch on OUDSTheme, mix of providers, local fonts)
 
 ## Key files
 

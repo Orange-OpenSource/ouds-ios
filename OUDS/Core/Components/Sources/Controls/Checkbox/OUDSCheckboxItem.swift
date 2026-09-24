@@ -14,8 +14,6 @@
 import OUDSFoundations
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
-
 // swiftlint:disable file_length
 // swiftlint:disable function_default_parameter_at_end
 // swiftlint:disable line_length
