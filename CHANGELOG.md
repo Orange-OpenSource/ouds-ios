@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- `excon` transitive RubyGem from v1.7.1 to v1.7.2 (CVE-2026-54171)
+- Ruby Gem `fastlane` from v2.240.0 to v2.240.1
+- `excon` transitive RubyGem from v1.7.1 to v1.7.2b (CVE-2026-54171)
 - `Ruby` version from v4.0.6 to v4.0.7 for `build-and-test` andg `build-xcframework` workflows
 - GitHub Actions `actions/upload-artifact` action from v4.6.2 to v7.0.1 for `build-xcframework` workflow
 - GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.0 to v4.38.2 for `scorecard` workflow
