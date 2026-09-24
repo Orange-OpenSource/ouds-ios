@@ -52,12 +52,12 @@ public struct OUDSLegacyLayoutModifier: ViewModifier {
     /// Defines environment variable to precise the legacy tab bar must be forced
     public func body(content: Content) -> some View {
         content
-            .environment(\.forceOUDSLegacyLayout, true)
+            .environment(\.forceOUDSLegacyTabBar, true)
     }
 }
 
 extension EnvironmentValues {
 
     /// A flag indicating the OUDS tab bar must have the legacy layout.
-    @Entry public var forceOUDSLegacyLayout: Bool = false
+    @Entry public var forceOUDSLegacyTabBar: Bool = false
 }

@@ -26,7 +26,7 @@ struct ToolBarItemActionButton: View {
     let type: OUDSToolBarItem.ActionType
     let style: OUDSToolBarItem.ActionStyle
 
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
@@ -80,7 +80,7 @@ private struct ToolBarItemBadgeModifier: ViewModifier {
 
     @Environment(\.toolbarItemLocation) private var location
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
 
     func body(content: Content) -> some View {
         if isLiquidGlassDisabled || forceOUDSLegacyLayout {
@@ -136,7 +136,7 @@ struct ToolBarItemNavigationButton: View {
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.presentationMode) private var presentationMode
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Body

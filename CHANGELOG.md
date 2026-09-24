@@ -4,23 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...develop)
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...develop)
+## [2.3.1](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...2.3.1) - 2026-09-24
 
 ### Changed
 
 - Make product exportable and usable as XCFramework for Orange and Sosh themes on iOS (Orange-OpenSource/ouds-ios#1767)
-- In `circular progress indicator`, set helper text in two texts to fix alignment (Orange-OpenSource/ouds-ios#1753)
-- `list item` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1714)
-- Ruby Gem `fastlane` from v2.239.0 to v2.240.0
 
 ### Fixed
 
 - Erratic focus flickering between fields when typing in `PIN code input` component (Orange-OpenSource/ouds-ios#1744)
-- Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
-- Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
-- Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)
-- Use of asset for typography heading marker (Orange-OpenSource/ouds-ios#1689)
 - Adjust title color on toolbar bar top when content color change (Orange-OpenSource/ouds-ios#1563)
 - Truncated title on `tab bar` focused item when using *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1641)
 - `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)

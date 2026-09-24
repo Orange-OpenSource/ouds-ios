@@ -216,7 +216,7 @@ public struct OUDSTabBar<Content: View>: View {
     @State private var isTabBarHidden: Bool = false
     #endif
 
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Initializers

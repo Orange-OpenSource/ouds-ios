@@ -25,7 +25,7 @@ struct NavigationStackRefresher: ViewModifier {
 
     @Environment(\.theme) private var theme: OUDSTheme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Initializer
