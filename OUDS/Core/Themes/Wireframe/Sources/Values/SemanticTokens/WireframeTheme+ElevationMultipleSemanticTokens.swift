@@ -21,7 +21,7 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// Defines provider objects for elevation semantic tokens but "multiple", i.e. tokens with values depending to color schemes.
-/// These values can be overriden inside `WireframeThemeElevationSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// These values can be overridden inside `WireframeThemeElevationSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension WireframeThemeElevationSemanticTokensProvider: ElevationMultipleSemanticTokens {
 
     public var colorElevated: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorElevatedLight, dark: colorElevatedDark) }

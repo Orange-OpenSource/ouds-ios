@@ -23,7 +23,7 @@ import SwiftUI
 // swiftlint:disable line_length
 
 /// Defines provider objects for `ColorModeSemanticTokens` so as to pack them as light and dark modes colors.
-/// These values can be overriden inside `WireframeThemeColorModeSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// These values can be overridden inside `WireframeThemeColorModeSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTokens {
 
     // MARK: - Multiple tokens

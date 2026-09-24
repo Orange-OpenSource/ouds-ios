@@ -30,6 +30,9 @@ struct InlineAlertLabel: View {
             .foregroundColor(contentColor)
             .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
             .accessibilityLabel(accessibilityLabel)
+            .onAppear {
+                VoiceOverUtils.announce(accessibilityLabel)
+            }
     }
 
     // MARK: - Private helper
@@ -55,6 +58,8 @@ struct InlineAlertLabel: View {
             "core_alertMessage_warning_a11y".localized() + ","
         case .negative:
             "core_alertMessage_negative_a11y".localized() + ","
+        case .info:
+            "core_alertMessage_info_a11y".localized() + ","
         default:
             ""
         }

@@ -63,7 +63,7 @@ struct BulletListItem: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             HStack(alignment: .top, spacing: spacing) {
-                Bullet(type: type, level: level, textStyle: textStyle, isBold: isBold, index: index)
+                Bullet(type: item.subListType ?? type, level: level, textStyle: textStyle, isBold: isBold, index: index)
                 BulletListLabel(label: item.text, textStyle: textStyle, isBold: isBold)
             }
             .accessibilityElement(children: .combine)
@@ -123,7 +123,8 @@ struct BulletListItem: View {
     }
 
     private var accessibilityLabel: String {
-        let orderedPrefix: String? = if case .ordered = type {
+        let effectiveType = item.subListType ?? type
+        let orderedPrefix: String? = if case .ordered = effectiveType {
             accessibilityLabelPrefix
         } else {
             nil

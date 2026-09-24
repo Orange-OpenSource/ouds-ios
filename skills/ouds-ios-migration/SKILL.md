@@ -23,6 +23,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
+| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier` |
 
 ---
 
@@ -39,6 +40,11 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 ## Detection grep commands
 
 ```bash
+# Breaking changes (v3.0.0)
+grep -rn \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier" \
+  --include="*.swift" .
+
 # Active deprecations (v2.x)
 grep -rn \
   "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container" \
@@ -233,6 +239,249 @@ This workaround is only needed until the deprecated initialisers are removed in 
 
 ---
 
+## v2.3.0 → v3.0.0
+
+**Backward compatibility**: None. All changes are breaking.
+
+### Button component tokens — add `Default` suffix
+
+15 size and space tokens for `OUDSButton` have been renamed. Add the `Default` suffix to each.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `sizeMaxHeightIconOnly` | `sizeMaxHeightIconOnlyDefault` |
+| `sizeMinHeight` | `sizeMinHeightDefault` |
+| `sizeMinWidth` | `sizeMinWidthDefault` |
+| `sizeIcon` | `sizeIconDefault` |
+| `sizeIconOnly` | `sizeIconOnlyDefault` |
+| `sizeProgressIndicator` | `sizeProgressIndicatorDefault` |
+| `spaceColumnGapIconChevron` | `spaceColumnGapIconChevronDefault` |
+| `spaceColumnGapChevron` | `spaceColumnGapChevronDefault` |
+| `spaceInsetIconOnly` | `spaceInsetIconOnlyDefault` |
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `spacePaddingInlineChevronEnd` | `spacePaddingInlineChevronEndDefault` |
+| `spacePaddingInlineChevronStart` | `spacePaddingInlineChevronStartDefault` |
+| `spacePaddingInlineEndIconStart` | `spacePaddingInlineEndIconStartDefault` |
+| `spacePaddingInlineIconNone` | `spacePaddingInlineIconNoneDefault` |
+| `spacePaddingInlineStartIconEnd` | `spacePaddingInlineStartIconEndDefault` |
+
+```swift
+// Before (v2.3)
+theme.button.sizeMinHeight
+theme.button.spacePaddingBlock
+
+// After (v3.0)
+theme.button.sizeMinHeightDefault
+theme.button.spacePaddingBlockDefault
+```
+
+**Required action**: for each row, global find-and-replace `theme.button.<oldName>` → `theme.button.<newName>`.
+
+---
+
+### Tag component tokens — `Loader` → `ProgressIndicator`
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `spaceInsetLoaderSmall` | `spaceInsetProgressIndicatorSmall` |
+| `spaceInsetLoaderDefault` | `spaceInsetProgressIndicatorDefault` |
+
+```swift
+// Before (v2.3)
+theme.tag.spaceInsetLoaderSmall
+
+// After (v3.0)
+theme.tag.spaceInsetProgressIndicatorSmall
+```
+
+**Required action**: replace `Loader` with `ProgressIndicator` in all `theme.tag` token names.
+
+---
+
+### Link component tokens — mixed rename
+
+> Note the asymmetry: one token gains `Default`, the other loses it.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `sizeMinWidthDefault` | `sizeMinWidth` |
+
+```swift
+// Before (v2.3)
+theme.link.spacePaddingBlock
+theme.link.sizeMinWidthDefault
+
+// After (v3.0)
+theme.link.spacePaddingBlockDefault
+theme.link.sizeMinWidth
+```
+
+**Required action**: apply both renames independently; a bulk "add Default" pass will break `sizeMinWidth`.
+
+---
+
+### Removed: `icon.colorContentDefault`
+
+The token `theme.icon.colorContentDefault` has been fully removed (was deprecated in v2.x).
+
+```swift
+// Before (v2.3)
+theme.icon.colorContentDefault
+
+// After (v3.0) — verify semantic equivalence before replacing
+theme.colors.contentDefault
+```
+
+**Required action**: replace any use of `theme.icon.colorContentDefault` with `theme.colors.contentDefault`.
+
+---
+
+### Provider renamed: `controlItem` → `listItem`
+
+The `controlItem` tokens provider no longer exists in Figma and has been removed from the Swift API.
+This affects both the theme accessor and all public Swift types (classes, protocols).
+
+```swift
+// Before (v2.3)
+theme.controlItem.someToken
+
+// After (v3.0)
+theme.listItem.someToken
+```
+
+**Required action**: global find-and-replace `theme.controlItem` → `theme.listItem` across the codebase.
+
+All Swift types have been renamed accordingly:
+
+| Old type (v2.3) | New type (v3.0) |
+|---|---|
+| `OrangeThemeControlItemComponentTokensProvider` | `OrangeThemeListItemComponentTokensProvider` |
+| `OrangeCompactThemeControlItemComponentTokensProvider` | `OrangeCompactThemeListItemComponentTokensProvider` |
+| `SoshThemeControlItemComponentTokensProvider` | `SoshThemeListItemComponentTokensProvider` |
+| `WireframeThemeControlItemComponentTokensProvider` | `WireframeThemeListItemComponentTokensProvider` |
+| `AllControlItemComponentTokensProvider` | `AllListItemComponentTokensProvider` |
+| `ControlItemComponentTokens` | `ListItemComponentTokens` |
+
+```swift
+// Before (v2.3)
+class MyProvider: OrangeThemeControlItemComponentTokensProvider { … }
+let provider: AllControlItemComponentTokensProvider = MyProvider()
+
+// After (v3.0)
+class MyProvider: OrangeThemeListItemComponentTokensProvider { … }
+let provider: AllListItemComponentTokensProvider = MyProvider()
+```
+
+**Required action**: rename all subclasses and type annotations referencing the old types above.
+
+---
+
+### OUDSChipPickerData.Layout — `.icon` and `.textAndIcon` cases replaced
+
+Both layout cases of `OUDSChipPickerData.Layout` that accepted bare `Image` parameters have been removed and replaced by cases that accept `OUDSImage`.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `.icon(icon:accessibilityLabel:renderingMode:)` | `.image(image:)` |
+| `.textAndIcon(text:icon:renderingMode:)` | `.textAndImage(text:image:)` |
+
+```swift
+// Before (v2.3)
+.icon(icon: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original)
+.textAndIcon(text: "Foo", icon: Image("someImage"), renderingMode: .original)
+
+// After (v3.0)
+.image(image: OUDSImage(asset: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original))
+.textAndImage(text: "Foo", image: OUDSImage(asset: Image("someImage"), renderingMode: .original))
+```
+
+**Required action**:
+- Replace `.icon(icon:accessibilityLabel:renderingMode:)` with `.image(image:)`, wrapping the asset, accessibility label and rendering mode into a single `OUDSImage`.
+- Replace `.textAndIcon(text:icon:renderingMode:)` with `.textAndImage(text:image:)`, wrapping the asset and rendering mode into a single `OUDSImage`.
+
+---
+
+### OUDSBadgeIcon status — `neutral` and `accent` now accept `OUDSImage`
+
+The `.neutral(icon:flipped:renderingMode:)` and `.accent(icon:flipped:renderingMode:)` cases of `OUDSBadgeIcon` status have been replaced: the three separate parameters are now grouped into a single `OUDSImage` passed as `image:`.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `.neutral(icon:flipped:renderingMode:)` | `.neutral(image: OUDSImage)` |
+| `.accent(icon:flipped:renderingMode:)` | `.accent(image: OUDSImage)` |
+
+```swift
+// Before (v2.3)
+.neutral(icon: Image("someImage"), flipped: false, renderingMode: .original)
+.accent(icon: Image("someImage"), flipped: false, renderingMode: .original)
+
+// After (v3.0)
+.neutral(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+.accent(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+```
+
+**Required action**:
+- Replace `.neutral(icon:flipped:renderingMode:)` with `.neutral(image:)`, wrapping asset, flip flag and rendering mode into a single `OUDSImage`.
+- Replace `.accent(icon:flipped:renderingMode:)` with `.accent(image:)`, same wrapping.
+
+---
+
+### Alert status — `icon:` parameter renamed to `image:` and made optional
+
+The `.neutral(icon:)` and `.accent(icon:)` cases of alert status have two changes:
+- The parameter label is renamed from `icon:` to `image:`.
+- The type changes from `OUDSImage` (required) to `OUDSImage?` with a default value of `nil`, making the parameter optional.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `.neutral(icon: someOudsImage)` | `.neutral(image: someOudsImage)` |
+| `.accent(icon: someOudsImage)` | `.accent(image: someOudsImage)` |
+| — | `.neutral()` / `.accent()` (no image, new in v3.0) |
+
+```swift
+// Before (v2.3)
+.neutral(icon: someOudsImage)
+.accent(icon: someOudsImage)
+
+// After (v3.0)
+.neutral(image: someOudsImage)
+.accent(image: someOudsImage)
+
+// Also valid in v3.0 — no image (uses nil default)
+.neutral()
+.accent()
+```
+
+**Required action**:
+- Replace `.neutral(icon:)` with `.neutral(image:)`.
+- Replace `.accent(icon:)` with `.accent(image:)`.
+
+---
+
+### Modifier renamed: `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`
+
+The `.forceOUDSLegacyTabBar()` view modifier and its underlying `OUDSLegacyTabBarModifier` type have been renamed to reflect a broader layout scope.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `.forceOUDSLegacyTabBar()` | `.forceOUDSLegacyLayout()` |
+| `OUDSLegacyTabBarModifier` | `OUDSLegacyLayoutModifier` |
+
+```swift
+// Before (v2.3)
+SomeView().forceOUDSLegacyTabBar()
+let modifier: OUDSLegacyTabBarModifier = ...
+
+// After (v3.0)
+SomeView().forceOUDSLegacyLayout()
+let modifier: OUDSLegacyLayoutModifier = ...
+```
+
+**Required action**: global find-and-replace `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout` and `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`.
+
+---
+
 ## Verification checklist
 
 ```bash
@@ -240,6 +489,12 @@ swift build
 
 swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|foundation"
 
+# v3.0 breaking changes — must return nothing
+grep -rn \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:\|OrangeThemeControlItemComponentTokensProvider\|OrangeCompactThemeControlItemComponentTokensProvider\|SoshThemeControlItemComponentTokensProvider\|WireframeThemeControlItemComponentTokensProvider\|AllControlItemComponentTokensProvider\|ControlItemComponentTokens\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier" \
+  --include="*.swift" .
+
+# v2.x deprecated symbols — must return nothing
 grep -rn \
   "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|leadingIcon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container\|buttonBorderRadius\|buttonBorderWidth\|Multiple.*Tokens\b\|OrangeBusinessTools\|oudsVerticalSizeClass\|UnorderedIcon\|\.ouds[A-Z]" \
   --include="*.swift" .

@@ -24,6 +24,9 @@ struct InputContainer: View {
     let suffix: String?
     let status: OUDSTextInput.Status
     let interactionState: TextInputInteractionState
+    let accessibilityLabel: String
+    let accessibilityValue: String
+    let accessibilityHint: String
 
     @Environment(\.theme) private var theme
 
@@ -45,7 +48,10 @@ struct InputContainer: View {
             // Input text container
             InputText(label: placeholder ?? label,
                       text: text,
-                      status: status)
+                      status: status,
+                      accessibilityLabel: accessibilityLabel,
+                      accessibilityValue: accessibilityValue,
+                      accessibilityHint: accessibilityHint)
 
             // Suffix container
             if let placeholder,

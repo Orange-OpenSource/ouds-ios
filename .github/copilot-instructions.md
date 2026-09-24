@@ -295,3 +295,231 @@ bundle exec fastlane update_sbom
 - [ ] Check leaks, no leak must appear
 - [ ] Check if functions are too long or too complicated, complexity must be low
 - [ ] Check if the commit has been signed-off (i.e. DCO applied) by all commits authors
+<<<<<<< HEAD
+=======
+- [ ] **Check documentation illustrations** (see section 10)
+
+## 10. Documentation illustrations ⚠️ CRITICAL
+
+When adding or modifying components, you MUST add illustrations in both:
+- Component documentation files (public API docs)
+- Theme documentation files (Orange, OrangeCompact, Sosh, Wireframe)
+
+### 10.1 Component documentation files
+
+Location: `OUDS/Core/Components/Sources/_OUDSComponents.docc/*.md`
+
+Each component MUST have an illustration with `@TabNavigator` for all 4 themes:
+
+```markdown
+@TabNavigator {
+    @Tab("Orange") {
+        ![A component in light and dark modes with Orange theme](component_nom_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A component in light and dark modes with Orange Compact theme](component_nom_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A component in light and dark modes with Sosh theme](component_nom_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A component in light and dark modes with Wireframe theme](component_nom_Wireframe)
+    }
+}
+```
+
+- Use local references (not URLs): `component_nom_Orange`
+- For components with variants (e.g., Badge standard/count/icon), use nested tabs
+
+### 10.2 Theme documentation files
+
+Location: `OUDS/Core/Themes/*/Sources/_OUDSThemes*.docc/OUDSThemes*.md`
+
+Each component MUST have an illustration with `@TabNavigator` using full URLs:
+
+```markdown
+@TabNavigator {
+    @Tab("Orange") {
+        ![A component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Orange.png)
+    }
+    @Tab("Orange Compact") {
+        ![A component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_OrangeCompact.png)
+    }
+    @Tab("Sosh") {
+        ![A component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Sosh.png)
+    }
+    @Tab("Wireframe") {
+        ![A component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Wireframe.png)
+    }
+}
+```
+
+### 10.3 Image naming conventions (snake_case only)
+
+⚠️ **IMPORTANT**: Always use snake_case in image filenames. Never use CamelCase.
+
+| Correct (snake_case) | Incorrect (CamelCase) |
+|---------------------|----------------------|
+| `component_static_list_item` | `component_staticListItem` |
+| `component_navigation_list_item` | `component_navigationListItem` |
+| `component_progress_indicator_circular` | `component_circularProgressIndicator` |
+| `component_progress_indicator_linear` | `component_linearProgressIndicator` |
+| `component_toolBarTop` | `component_toolbar` |
+| `component_typography_heading` | `component_typography` |
+
+### 10.4 Components with tabs/variants
+
+For components with multiple variants (e.g., Badge, ProgressIndicator, ListItem), use nested tabs:
+
+```markdown
+#### Badge
+
+@TabNavigator {
+    @Tab("Standard") {
+        @TabNavigator {
+            @Tab("Orange") {
+                ![Badge Standard](component_badge_Orange)
+            }
+            ...
+        }
+    }
+    @Tab("Count") {
+        ...
+    }
+    @Tab("Icon") {
+        ...
+    }
+}
+```
+
+### 10.5 Review checklist for illustrations
+
+- [ ] New component has illustration in component docs (*.md in _OUDSComponents.docc)
+- [ ] New component has illustration in all 4 theme docs (OUDSThemes*.md)
+- [ ] Image filenames use snake_case (not CamelCase)
+- [ ] Theme doc URLs point to correct snake_case filenames
+- [ ] Components with variants (Badge, ProgressIndicator, ListItem) use proper tabs
+
+## 11. Token Implementation Guidelines
+
+When adding new semantic or component tokens to a theme, follow this pattern:
+
+### 11.1 Declaration
+
+Declare the token in the corresponding protocol (e.g., `SizeMultipleSemanticTokens`, `ButtonComponentTokens`).
+
+### 11.2 Implementation by Theme
+
+| Theme | Access Modifier | Override Allowed |
+|-------|-----------------|------------------|
+| **Orange** | `@objc open` | Yes - base theme for subclassing |
+| **OrangeCompact** | `@objc public final` | No |
+| **Sosh** | `@objc public final` | No |
+| **Wireframe** | `@objc public final` | No |
+
+### 11.3 Override Tests (Orange Theme Only)
+
+For `OrangeTheme`, add override tests to ensure subclasses can override token values:
+
+1. Add mock value in `MockTheme*TokensProvider` (e.g., `MockThemeSizeSemanticTokensProvider`)
+2. Add test in `ThemeOverrideOf*TokensTests` to verify the override works
+
+Example for `maxWidthBoxedText`:
+- Token declared in `SizeMultipleSemanticTokens` protocol
+- Implemented as `@objc open` in `OrangeTheme+SizeMultipleSemanticTokens`
+- Implemented as `@objc public final` in OrangeCompact, Sosh, Wireframe
+- Mock value in `MockThemeSizeSemanticTokensProvider`
+- Test in `ThemeOverrideOfSizeMultipleSemanticTokensTests`
+
+## 12. XCFramework distribution and module stability ⚠️ CRITICAL
+
+OUDS is primarily distributed as a Swift Package, but it is ALSO built as a
+dynamic XCFramework (product `OUDSSwiftUIOrangeSosh`) for consumers that need
+a shared binary.
+
+This binary distribution requires compiling with
+`BUILD_LIBRARY_FOR_DISTRIBUTION=YES`, which triggers Swift's **module
+stability** rules. Under these rules, the compiler emits a textual
+`.swiftinterface` file next to each `.swiftmodule`, and applies additional
+strictness to the public API of every source file.
+
+### 12.1 The `import CoreGraphics` rule
+
+Any source file that exposes — directly or transitively — a public API using
+a type that ultimately resolves to `CGFloat` MUST explicitly `import CoreGraphics`
+(or `import CoreFoundation`, equivalent). Otherwise the build
+fails at the `SwiftEmitModule` step with an error such as:
+
+```
+error: 'EffectRawToken' aliases 'CoreFoundation.CGFloat' and cannot be used
+here because 'CoreFoundation' was not imported by this file
+```
+
+This applies even if:
+- Another module already imported by the file (`Foundation`, `SwiftUI`,
+  `OUDSTokensRaw`, …) transitively re-exports `CGFloat`.
+- The file compiles fine under standard SPM builds (which do NOT enforce
+  module stability).
+
+The rule is **per file**, not per module: each `.swift` file that publicly
+exposes a `CGFloat`-derived type must have its own `import CoreGraphics`.
+
+### 12.2 When is the import required?
+
+| Public construct in the file                                            | `import CoreGraphics` required?  |
+|-------------------------------------------------------------------------|----------------------------------|
+| `public typealias X = CGFloat`                                          | Yes — always                     |
+| `public typealias X = Y` where `Y = CGFloat` (short chain)              | Usually yes — add it defensively |
+| `public typealias X = Y` where `Y = Z = CGFloat` (long chain)           | Often no, but add it if in doubt |
+| `public static let x: X = value` where `X` resolves to `CGFloat`        | Yes — always                     |
+| `var x: X { get }` in a public protocol where `X` resolves to `CGFloat` | Yes — always                     |
+| `@objc public final var x: X { … }` where `X` resolves to `CGFloat`     | Yes — always                     |
+| Body of a method using `CGFloat` internally                             | No — bodies are not in the swiftinterface |
+| Type used only in `internal` / `private` API                            | No — out of public surface       |
+
+### 12.3 Convention in the OUDS codebase
+
+When such an import is added purely to satisfy the XCFramework build (and
+not because the file semantically depends on `CoreGraphics` for its own
+logic), it MUST be commented as follows so that future maintainers understand
+why it is there despite `import Foundation` or `import SwiftUI` being already
+present:
+
+```swift
+import CoreGraphics // Needed for XCFramework generation
+```
+
+Prefer `CoreGraphics` over `CoreFoundation` for consistency with the rest of
+the codebase (iOS/macOS idiomatic convention).
+
+### 12.4 Package.swift dependency declarations
+
+The same XCFramework build also requires that every SPM target explicitly
+declares in its `dependencies:` list ALL the modules that any of its source
+files `import`. Standard SPM tolerates transitive dependencies (a target
+that only declares `OUDSThemesContract` can still import `OUDSTokensRaw`
+because `OUDSThemesContract` itself depends on it); the Xcode 26 explicit
+module scanner used during `xcodebuild archive` does not.
+
+When adding a new `import OUDSSomething` in a source file, always add
+`"OUDSSomething"` to the enclosing target's `dependencies:` array in
+`Package.swift`, even if it is already pulled in transitively.
+
+**Dependency lists MUST be kept sorted alphabetically in `Package.swift` for
+consistency and reviewability — this is a project-wide convention that
+applies to every target's `dependencies:` array (both `.target` and
+`.testTarget`).**
+
+### 12.5 Umbrella product linkage
+
+The umbrella product that is packaged as an XCFramework
+(`OUDSSwiftUIOrangeSosh`) is declared with `type: .dynamic` in
+`Package.swift`. Do NOT pass `MACH_O_TYPE=mh_dylib` at the `xcodebuild`
+level — it would be applied to every target in the package graph, produce
+duplicated PIF targets (objfile + framework variants for the same module),
+and confuse the Swift 6 explicit module scanner into emitting spurious
+"missing dependency on X" warnings that get promoted to errors.
+
+The dynamic nature of the umbrella must be declared once, at the product
+level in `Package.swift`.
+>>>>>>> dccea794b1 (ci: add script to generate `OUDSSwiftUIOrangeSosh` XCFramework and update codebase to make it possible (#1767) (#1768))

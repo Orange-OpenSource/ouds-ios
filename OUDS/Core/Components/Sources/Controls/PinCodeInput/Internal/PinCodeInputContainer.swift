@@ -16,8 +16,6 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Pin Code Input Container
-
 struct PinCodeInputContainer: View {
 
     // MARK: - Properties
@@ -34,7 +32,7 @@ struct PinCodeInputContainer: View {
     private let autofocus: Bool
 
     /// To manage the focus between all fields
-    @FocusState private var focusedIndex: Int?
+    @State private var focusedIndex: Int?
     /// The digits written one by one by the user before being exposed through `value`
     @State private var digits: [String]
 
@@ -42,20 +40,6 @@ struct PinCodeInputContainer: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
-    // MARK: - Black magic
-
-    // These properties prevent double backspace processing by tracking which field was cleared and when.
-    // When a backspace occurs, we mark the field index and timestamp, then skip onChange events
-    // for that field within 100ms to avoid processing the same backspace twice.
-    // \("˚☐˚)/ ⊹₊⟡⋆
-
-    // swiftlint:disable implicit_optional_initialization
-    /// Tracks which field index was last cleared by a backspace operation
-    @State private var lastBackspaceIndex: Int? = nil
-    /// Tracks when the last backspace operation occurred (used for debouncing)
-    @State private var lastBackspaceTime: Date = .distantPast
-    // swiftlint:enable implicit_optional_initialization
 
     // MARK: - Initializer
 
@@ -112,11 +96,17 @@ struct PinCodeInputContainer: View {
                 // The label and value are set directly on the UITextField inside BackspaceDetectingTextField.
             }
         }
-        // .contain keeps each digit field individually reachable by VoiceOver swipe gestures inside the group.
-        // VoiceOver first announces the group label (groupAccessibilityLabel), then the user can swipe
-        // into the container to reach and vocalize each individual digit field.
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel(groupAccessibilityLabel)
+        // Accessibility grouping is applied conditionally:
+        // - When VoiceOver is active, we wrap the row in a `.contain` group with a global label
+        //   ("Enter the code with N digits"), so VoiceOver announces the group and lets the user
+        //   swipe into it to reach each digit individually.
+        // - When VoiceOver is NOT active (typical Full Keyboard Access scenario), we deliberately
+        //   avoid `.accessibilityElement(children: .contain)`. That modifier creates a
+        //   UIAccessibilityContainer barrier that hides the underlying UITextField children from
+        //   UIKit's focus system, making the whole component unreachable by Tab/Shift+Tab in FKA.
+        //   Without the container, each `UITextField` inside `BackspaceDetectingTextField` is a
+        //   native `UIFocusItem` and can be reached natively by FKA Tab navigation.
+        .modifier(PinCodeInputVoiceOverGroupModifier(groupLabel: groupAccessibilityLabel))
         .onAppear {
             // Focus on the first empty field if:
             // - autofocus is enabled (empty value case)
@@ -160,18 +150,6 @@ struct PinCodeInputContainer: View {
         }
     }
 
-    /// Returns `true` when VoiceOver (or any assistive technology that relies on explicit focus
-    /// control) is currently running.
-    /// When `true`, automatic focus advancement to the next field is suppressed so that the user
-    /// can navigate fields at their own pace via VoiceOver swipe gestures.
-    private var isVoiceOverRunning: Bool {
-        #if canImport(UIKit)
-        UIAccessibility.isVoiceOverRunning
-        #else
-        false
-        #endif
-    }
-
     private func accessibilityValue(for index: Int) -> String {
         let value = digits[index]
         if value.isEmpty {
@@ -189,7 +167,7 @@ struct PinCodeInputContainer: View {
     /// - Parameter index: The 0-based index of the digit field
     /// - Returns: The localized positional label
     private func accessibilityLabel(for index: Int) -> String {
-        "core_pinCodeInput_digitLabel_a11y" <- (index + 1)
+        "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
     }
 
     /// Returns the accessibility label for the group container of all digit fields.
@@ -235,105 +213,32 @@ struct PinCodeInputContainer: View {
             index: index,
             a11yLabel: accessibilityLabel(for: index),
             a11yValue: accessibilityValue(for: index),
+            isFocused: focusedIndex == index,
+            shouldResignFocus: focusedIndex == nil,
+            onFocusChanged: { isFocused in
+                handleFocusChange(isFocused, at: index)
+            },
             onBackspace: {
                 handleBackspace(at: index)
             },
-            onTextInserted: { inserted in // ← nouveau
+            onTextInserted: { inserted in
                 handleTextInserted(inserted, at: index)
             })
             .foregroundColor(theme.colors.contentDefault)
             .accentColor(theme.colors.contentDefault)
-            .focused($focusedIndex, equals: index)
             .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
-        #if os(visionOS)
-            .onChange(of: digits[index]) { _, newValue in
-                let timeSinceLastBackspace = Date().timeIntervalSince(lastBackspaceTime)
-                if lastBackspaceIndex == index, timeSinceLastBackspace < 0.1 {
-                    return
-                }
-                handleDigitChange(at: index, newValue: newValue)
-            }
-        #else
-            .onChange(of: digits[index]) { newValue in
-                let timeSinceLastBackspace = Date().timeIntervalSince(lastBackspaceTime)
-                if lastBackspaceIndex == index, timeSinceLastBackspace < 0.1 {
-                    return
-                }
-                handleDigitChange(at: index, newValue: newValue)
-            }
-        #endif
         #else
         // NOTE: Source code must be compilable on macOS to build the doc...
         EmptyView()
         #endif
     }
 
-    /// To handle the written data:
-    /// 1. Filters the input to only allow digits (0-9)
-    /// 2. If more than one digit is received (e.g. autofill), distributes them across fields
-    /// 3. Moves focus to the next field when a single digit is entered
-    /// 4. Updates the final value binding when all fields are filled
-    ///
-    /// - Parameters:
-    ///    - index: The index of the field
-    ///    - newValue: The new value written in the field
-    private func handleDigitChange(at index: Int, newValue: String) { //  \("˚☐˚)/ ⊹₊⟡⋆
-        let filtered = newValue.filter(\.isNumber)
-
-        // Autofill / paste case: more than one digit received
-        if filtered.count > 1 {
-            let available = length.rawValue - index
-            let toDistribute = filtered.prefix(available)
-
-            for (offset, char) in toDistribute.enumerated() {
-                digits[index + offset] = String(char)
-            }
-
-            let joined = digits.joined()
-            if joined.count == length.rawValue, !digits.contains("") {
-                value = joined
-                focusedIndex = nil
-            } else {
-                value = ""
-                // Move focus to the next empty field only when VoiceOver is not running.
-                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
-                // would interrupt their navigation.
-                if !isVoiceOverRunning {
-                    let nextIndex = index + toDistribute.count
-                    focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
-                }
-            }
-            return
-        }
-
-        // Normal typing: single digit
-        let single = String(filtered.prefix(1))
-
-        // If filtering changed the value, update and return (triggers onChange again)
-        if single != newValue {
-            digits[index] = single
-            return
-        }
-
-        if single.count == 1 {
-            digits[index] = single
-
-            let joined = digits.joined()
-            if joined.count == length.rawValue, !digits.contains("") {
-                value = joined
-                focusedIndex = nil
-            } else if index < length.rawValue - 1 {
-                // Move focus to the next field only when VoiceOver is not running.
-                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
-                // would interrupt their navigation.
-                if !isVoiceOverRunning {
-                    focusedIndex = index + 1
-                }
-                value = ""
-            } else {
-                value = ""
-            }
+    private func handleFocusChange(_ isFocused: Bool, at index: Int) {
+        if isFocused {
+            focusedIndex = index
+        } else if focusedIndex == index {
+            focusedIndex = nil
         }
     }
 
@@ -352,26 +257,24 @@ struct PinCodeInputContainer: View {
         let wasEmpty = digits[index].isEmpty
 
         DispatchQueue.main.async {
-            lastBackspaceTime = Date()
-
             if wasEmpty {
                 if index > 0 {
                     let previousIndex = index - 1
-                    lastBackspaceIndex = previousIndex
                     digits[previousIndex] = ""
                     value = ""
                     focusedIndex = previousIndex
+                    announceFocusChanged(forInputAt: previousIndex)
                 }
             } else {
-                lastBackspaceIndex = index
                 digits[index] = ""
                 value = ""
                 focusedIndex = index
+                announceFocusChanged(forInputAt: index)
             }
         }
     }
 
-    /// Manages any text insertion: one figit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
+    /// Manages any text insertion: one digit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
     ///
     /// - Parameters:
     ///   - text: The chain of digits inserted (filtered, only figures)
@@ -384,22 +287,66 @@ struct PinCodeInputContainer: View {
             digits[index + offset] = String(char)
         }
 
-        let joined = digits.joined()
-        let allFilled = joined.count == length.rawValue && !digits.contains("")
-
-        if allFilled {
-            value = joined
+        if let completedValue = Self.completedValue(from: digits, length: length.rawValue) {
+            value = completedValue
             focusedIndex = nil
         } else {
             value = ""
-            // Move focus to the next empty field only when VoiceOver is not running.
-            // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
-            // would interrupt their navigation.
-            if !isVoiceOverRunning {
-                let nextIndex = index + toDistribute.count
-                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
-            }
+            let nextIndex = index + toDistribute.count
+            focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+            announceFocusChanged(forInputAt: focusedIndex ?? nextIndex)
+        }
+    }
+
+    static func completedValue(from digits: [String], length: Int) -> String? {
+        let activeDigits = digits.prefix(length)
+        guard activeDigits.count == length, activeDigits.allSatisfy({ !$0.isEmpty }) else { return nil }
+        return activeDigits.joined()
+    }
+
+    private func announceFocusChanged(forInputAt index: Int) {
+        let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
+        VoiceOverUtils.announce(message)
+    }
+}
+
+// MARK: - VoiceOver-only Grouping Modifier
+
+/// Applies `.accessibilityElement(children: .contain)` and a group label ONLY when VoiceOver is running.
+///
+/// The PIN code component is a row of `BackspaceDetectingTextField` (a `UIViewRepresentable` wrapping
+/// a custom `UITextField`). We want two different accessibility behaviours:
+///
+/// - **VoiceOver ON**: expose the whole row as a single container with a spoken group label
+///   ("Enter the code with N digits"). The user can then swipe inside the container to reach and
+///   vocalize each digit individually.
+///
+/// - **VoiceOver OFF (typical Full Keyboard Access scenario)**: do **not** apply `.contain`.
+///   That modifier creates a `UIAccessibilityContainer` barrier which hides every underlying
+///   `UITextField` from UIKit's focus system, making the whole component unreachable by Tab in FKA.
+///   Without it, each `UITextField` remains a native `UIFocusItem` and is reached directly by
+///   FKA navigation, one digit at a time.
+struct PinCodeInputVoiceOverGroupModifier: ViewModifier {
+
+    // NOTE: People needing both Full Keyboard Access and VoiceOver simultaneously will get the
+    // VoiceOver behaviour (grouped container). See https://github.com/Orange-OpenSource/ouds-ios/issues/1631
+
+    let groupLabel: String
+
+    @Environment(\.accessibilityVoiceOverEnabled) private var isVoiceOverEnabled
+
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if isVoiceOverEnabled {
+            content
+                .accessibilityElement(children: .contain)
+                .accessibilityLabel(groupLabel)
+        } else {
+            // Do not add a container: keep each UITextField natively focusable by FKA.
+            // (┛ಠ_ಠ)┛彡┻━┻
+            content
         }
     }
 }
+
 #endif

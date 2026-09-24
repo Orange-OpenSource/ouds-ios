@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
 /// to implement all tokens.
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
-/// We allow this theme to be derivated and be overriden.
+/// We allow this theme to be derivated and be overridden.
 /// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_, or *theme contract*.
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
@@ -50,7 +50,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All color charts semantic tokens exposed in one obejct
     ///
     /// If nil the theme does not provide color charts (like today `SoshTheme`).
-    /// In this case it cannot be used but can be overriden by local implementation of `AllColorChartSemanticTokensProvider`.
+    /// In this case it cannot be used but can be overridden by local implementation of `AllColorChartSemanticTokensProvider`.
     ///
     /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
     /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
@@ -59,7 +59,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All color decorative semantic tokens exposed in one obejct
     ///
     /// If nil the theme does not provide color decorative (like today `SoshTheme`).
-    /// In this case it cannot be used but can be overriden by local implementation of `AllColorDecorativeSemanticTokensProvider`
+    /// In this case it cannot be used but can be overridden by local implementation of `AllColorDecorativeSemanticTokensProvider`
     ///
     /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
     /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)

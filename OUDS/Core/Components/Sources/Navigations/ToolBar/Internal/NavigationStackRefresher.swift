@@ -25,6 +25,7 @@ struct NavigationStackRefresher: ViewModifier {
 
     @Environment(\.theme) private var theme: OUDSTheme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Initializer
@@ -88,7 +89,9 @@ struct NavigationStackRefresher: ViewModifier {
         let appearance = UINavigationBarAppearance()
 
         // Foreground color (ie.titles)
-        let foregroundColor = newTheme.colors.contentDefault.color(for: newColorScheme).uiColor
+        let foregroundColor = UIColor { traitCollection in
+            (traitCollection.userInterfaceStyle == .dark ? newTheme.colors.contentDefault.color(for: .dark) : newTheme.colors.contentDefault.color(for: .light)).uiColor
+        }
 
         // Titles fonts
         var titleFont: UIFont?, largeTitleFont: UIFont?, subTitleFont: UIFont?, largeSubtitleFont: UIFont?
@@ -157,7 +160,7 @@ struct NavigationStackRefresher: ViewModifier {
 
         // Background and tint colors
 
-        if isLiquidGlassDisabled {
+        if isLiquidGlassDisabled || forceOUDSLegacyLayout {
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = newTheme.bar.colorBgTranslucent.color(for: newColorScheme).uiColor
         }

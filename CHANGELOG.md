@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.1](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...2.3.1) - 2026-09-24
+
+### Changed
+
+- Make product exportable and usable as XCFramework for Orange and Sosh themes on iOS (Orange-OpenSource/ouds-ios#1767)
+
+### Fixed
+
+- Erratic focus flickering between fields when typing in `PIN code input` component (Orange-OpenSource/ouds-ios#1744)
+- Adjust title color on toolbar bar top when content color change (Orange-OpenSource/ouds-ios#1563)
+- Truncated title on `tab bar` focused item when using *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1641)
+- `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)
+- Usage of `PIN code input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1631)
+- Usage of `text input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
+- Vocalization priority for `alert message` components and usage with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1564)
+- `PIN code input` component usage with Voice Over (Orange-OpenSource/ouds-ios#1529)
+- Missing `badges` on `toolbar top` component for app on iOS 27 with Xcode 26.5 and disabled Liquid Glass configuration (Orange-OpenSource/ouds-ios#1623)
+- Missing "core_common_back" localized string for `back` button of `toolbar top` component (Orange-OpenSource/ouds-ios#1577)
+- For `alert` components, add default vocalisation on "info" status (Orange-OpenSource/ouds-ios#1561)
+- Icon assets for unordered `bullet list` item not displayed (Orange-OpenSource/ouds-ios#1615)
+
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 
 ### Added

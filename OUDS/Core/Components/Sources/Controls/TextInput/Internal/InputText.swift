@@ -22,6 +22,9 @@ struct InputText: View {
     let label: String
     let text: Binding<String>
     let status: OUDSTextInput.Status
+    let accessibilityLabel: String
+    let accessibilityValue: String
+    let accessibilityHint: String
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -36,9 +39,15 @@ struct InputText: View {
             if textInputAsSecureField {
                 SecureField(text: text, label: textFieldLabel)
                     .labelModerateLarge(theme)
+                    .accessibilityLabel(accessibilityLabel)
+                    .accessibilityValue(accessibilityValue)
+                    .accessibilityHint(accessibilityHint)
             } else {
                 TextField(text: text, label: textFieldLabel)
                     .labelModerateLarge(theme)
+                    .accessibilityLabel(accessibilityLabel)
+                    .accessibilityValue(accessibilityValue)
+                    .accessibilityHint(accessibilityHint)
             }
         }
         .modifier(SecureTextFieldModifier(isSecureTextField: textInputAsSecureField))
