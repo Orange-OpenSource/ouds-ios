@@ -77,7 +77,7 @@ open class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - name: A name to give to the theme, used for debugging for example. If nil, "WhiteLabel" will be used.
-    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead te one from the device.
+    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device.
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
     public init(colors: AllColorSemanticTokensProvider? = nil,
                 colorsCharts: AllColorChartSemanticTokensProvider? = nil,
