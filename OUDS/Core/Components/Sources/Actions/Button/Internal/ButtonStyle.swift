@@ -69,47 +69,20 @@ struct StyleForButton: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        VStack {
-            switch style {
-            case .default:
-                configuration
-                    .label
-                    .frame(minWidth: minWidth,
-                           maxWidth: isFullWidth ? .infinity : nil,
-                           minHeight: minHeight,
-                           alignment: .center)
-                    .contentShape(Rectangle())
-                    .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
-            case let .loading(progress):
-                configuration
-                    .label
-                    .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
-                    .modifier(ButtonLoadingContentModifier(appearance: appearance, size: size, progress: progress))
-            }
-        }
-        .frame(maxWidth: maxWidth)
-    }
-
-    private var minWidth: CGFloat {
-        switch size {
+        switch style {
         case .default:
-            theme.button.sizeMinWidthDefault
-        case .small:
-            theme.button.sizeMinWidthSmall
+            configuration
+                .label
+                .modifier(ButtonFrameSizeModifier(size: size, isFullWidth: isFullWidth))
+                .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
+                .contentShape(Rectangle())
+        case let .loading(progress):
+            configuration
+                .label
+                .modifier(ButtonFrameSizeModifier(size: size, isFullWidth: isFullWidth))
+                .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
+                .modifier(ButtonLoadingContentModifier(appearance: appearance, size: size, progress: progress))
         }
-    }
-
-    private var minHeight: CGFloat {
-        switch size {
-        case .default:
-            theme.button.sizeMinHeightDefault
-        case .small:
-            theme.button.sizeMinHeightSmall
-        }
-    }
-
-    private var maxWidth: CGFloat {
-        isFullWidth ? .infinity : theme.button.sizeMaxWidth
     }
 
     private func internalState(isPressed: Bool) -> ButtonInternalState {
