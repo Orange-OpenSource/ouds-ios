@@ -213,6 +213,7 @@ swift package \
     --target OUDSThemesOrange \
     --target OUDSThemesOrangeCompact \
     --target OUDSThemesSosh \
+    --target OUDSThemesWhiteLabel \
     --target OUDSThemesWireframe \
     --target OUDSTokensComponent \
     --target OUDSTokensSemantic \
@@ -340,6 +341,7 @@ if [[ $use_git -eq 1 ]]; then
     cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeCompact/ic_theme_orangecompact.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSThemesSosh/ic_theme_sosh.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSThemesWireframe/ic_theme_wireframe.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesWhiteLabel/ic_theme_whitelabel.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSTokensComponent/ic_design_token_figma_component.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" "$DOCS_DIRECTORY/images"

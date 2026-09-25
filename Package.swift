@@ -55,6 +55,11 @@ let package = Package(
             name: "OUDSSwiftUIWireframe",
             targets: ["OUDSSwiftUIWireframe"]),
 
+        // Embeds all libraries but only White Label and Wireframe themes
+        .library(
+            name: "OUDSSwiftUIWhiteLabel",
+            targets: ["OUDSSwiftUIWhiteLabel"]),
+
         // MARK: Atomic products
 
         // Better user of products, choose only the one users want
@@ -71,6 +76,9 @@ let package = Package(
         .library(
             name: "OUDSThemesWireframe",
             targets: ["OUDSThemesWireframe"]),
+        .library(
+            name: "OUDSThemesWhiteLabel",
+            targets: ["OUDSThemesWhiteLabel"]),
         .library(
             name: "OUDSThemesContract",
             targets: ["OUDSThemesContract"]),
@@ -126,6 +134,7 @@ let package = Package(
                 "OUDSThemesOrange",
                 "OUDSThemesOrangeCompact",
                 "OUDSThemesSosh",
+                "OUDSThemesWhiteLabel",
                 "OUDSThemesWireframe",
                 "OUDSTokensComponent",
                 "OUDSTokensRaw",
@@ -176,6 +185,21 @@ let package = Package(
                 "OUDSTokensSemantic",
             ],
             path: "OUDS/exported/OUDSSwiftUIWireframe/Sources"),
+
+        .target(
+            name: "OUDSSwiftUIWhiteLabel",
+            dependencies: [
+                "OUDSComponents",
+                "OUDSFoundations",
+                "OUDSModules",
+                "OUDSThemesContract",
+                "OUDSThemesWhiteLabel",
+                "OUDSThemesWireframe",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
+            path: "OUDS/exported/OUDSSwiftUIWhiteLabel/Sources"),
 
         // MARK: Atomic targets
 
@@ -242,6 +266,22 @@ let package = Package(
             name: "OUDSThemesWirefame-Tests",
             dependencies: ["OUDSThemesWireframe", "TestsUtils"],
             path: "OUDS/Core/Themes/Wireframe/Tests"),
+
+        .target(
+            name: "OUDSThemesWhiteLabel",
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSThemesContract",
+                "OUDSThemesWireframe",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
+            path: "OUDS/Core/Themes/WhiteLabel/Sources"),
+        .testTarget(
+            name: "OUDSThemesWhiteLabel-Tests",
+            dependencies: ["OUDSThemesWhiteLabel", "OUDSThemesWireframe", "TestsUtils"],
+            path: "OUDS/Core/Themes/WhiteLabel/Tests"),
 
         .target(
             name: "OUDSThemesContract",

@@ -45,6 +45,7 @@ Can import internal modules, but for developer experience there are umbrella pro
 | `OUDSSwiftUIOrange` | Orange + OrangeCompact | Orange apps only |
 | `OUDSSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand |
 | `OUDSSwiftUIWireframe` | Wireframe | Prototyping |
+| `OUDSSwiftUIWhiteLabel` | WhiteLabel | White label or gray label branded apps |
 
 Internal modules: `OUDSComponents`, `OUDSTokensRaw`, `OUDSTokensSemantic`, `OUDSTokensComponent`, `OUDSThemesOrange`, `OUDSThemesSosh`, `OUDSFoundations`, etc.
 
@@ -57,7 +58,7 @@ OUDSThemeableView(theme: OrangeTheme()) { … }   // inject at root
 @Environment(\.theme) private var theme          // consume anywhere
 ```
 
-Available: `OrangeTheme`, `OrangeCompact`, `SoshTheme`, `WireframeTheme`.
+Available: `OrangeTheme`, `OrangeCompact`, `SoshTheme`, `WireframeTheme`, `WhiteLabel`.
 
 ---
 

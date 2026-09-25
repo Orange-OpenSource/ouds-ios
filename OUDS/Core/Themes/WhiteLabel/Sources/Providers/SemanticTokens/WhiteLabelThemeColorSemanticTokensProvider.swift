@@ -13,6 +13,7 @@
 
 import OUDSFoundations
 import OUDSThemesContract
+import OUDSThemesWireframe
 
 // swiftlint:disable type_name
 
@@ -20,19 +21,20 @@ import OUDSThemesContract
 /// This provider should be integrated as a `AllColorSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 ///
-/// - Since: 0.17.0
-open class WireframeThemeColorSemanticTokensProvider: AllColorSemanticTokensProvider {
+/// - Since: 3.1.0
+open class WhiteLabelThemeColorSemanticTokensProvider: WireframeThemeColorSemanticTokensProvider {
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider
-    public init() {
-        OL.debug("Init of WireframeThemeColorSemanticTokensProvider")
+    override public init() {
+        super.init()
+        OL.debug("Init of WhiteLabelThemeColorSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "WireframeThemeColorSemanticTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "WhiteLabelThemeColorSemanticTokensProvider")
         #endif
     }
 
@@ -41,13 +43,6 @@ open class WireframeThemeColorSemanticTokensProvider: AllColorSemanticTokensProv
         Self.instanceCount--
         #endif
     }
-
-    // ଘ( ･ω･)_/ﾟ･:*:･｡☆
-    // Note: So as to help the integration of generated code produced by the tokenator
-    // the implementation of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
-    // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ColorMultipleSemanticTokens.swift
-    // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ColorSemanticTokens.swift
-    // This declaration of WireframeThemeColorSemanticTokensProvider is here to allow to write documentation.
 }
 
 // swiftlint:enable type_name

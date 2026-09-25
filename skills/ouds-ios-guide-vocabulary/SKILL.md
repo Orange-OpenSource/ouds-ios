@@ -19,6 +19,11 @@ license: MIT
 | **component** | SwiftUI view shipped by OUDS with well-defined layout and behaviour (buttons, switches, links, …) |
 | **view modifier** | Object which changes the style or look and feel of a component |
 | **typography** | Style applied on texts with font line height, letter spacing weight, size and family |
+| **white label** | Theme for white label or gray label branded applications, based from Wireframe theme, with few elements to customize if needed |
+| **Wireframe** | Theme for prototypes and mockups with themes not related to Orange and Sosh brands |
+| **Sosh** | Related to Sosh brand |
+| **Orange** | Related to Orange brand |
+| **Orange Compact** | Theme for Orange brand with tokens defined so as to manage UI with constraints on spaces and dimensions |
 
 ## When to load which skill
 

@@ -17,6 +17,7 @@ Theme                                                                           
 [Orange Compact](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangecompact/)| For some Orange products with heavy / rich UI and dimensions constraints           
 [Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
 [Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
+[White label](https://ios.unified-design-system.orange.com/documentation/oudsthemeswhitelabel/)            | For white label or gray label branded apps, backed to Wireframe theme
 
 All themes are based on a theme contract called `OUDSTheme`.
 
