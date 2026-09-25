@@ -54,7 +54,7 @@ import SwiftUI
 /// - Brand Wireframe version: 2.7.0
 ///
 /// - Since: 0.17.0
-public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
+open class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
     /// The theme name ("Wireframe")
     public static let name = "Wireframe"
@@ -65,9 +65,24 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
     // MARK: - Initializers
 
     /// Constructor of the `Wireframe` theme with its own providers of tokens.
-    public init() {
+    ///
+    /// - Parameters:
+    ///    - colors: All tokens of colors to apply. If nil, `WireframeThemeColorSemanticTokensProvider` will be used
+    ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
+    ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
+    ///    - name: A name to give to the theme. If nil, `WireframeTheme.name` wil be used.
+    ///    - fontFamily: The font family to apply for this theme. If nil, `WireframeBrandFontRawTokens.familyDefault` will be used.
+    ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
+    public init(colors: AllColorSemanticTokensProvider? = nil,
+                colorsCharts: AllColorChartSemanticTokensProvider? = nil,
+                colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
+                name: String? = nil,
+                fontFamily: String? = nil,
+                tuning: Tuning? = nil)
+    {
+
         let borders = WireframeThemeBorderSemanticTokensProvider()
-        let colors = WireframeThemeColorSemanticTokensProvider()
+        let colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         let colorModes = WireframeThemeColorModeSemanticTokensProvider(colors: colors)
         let effects = WireframeThemeEffectSemanticTokensProvider()
         let elevations = WireframeThemeElevationSemanticTokensProvider()
@@ -106,9 +121,15 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let toast = WireframeThemeToastComponentTokensProvider(borders: borders, dimensions: dimensions, sizes: sizes)
         let typography = WireframeThemeTypographyComponentTokensProvider(spaces: spaces)
 
+        let name = (name ?? WireframeTheme.name)
+        let fontFamily = (fontFamily ?? WireframeBrandFontRawTokens.familyDefault)
+        let tuning = (tuning ?? Tuning.Wireframe)
+
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   colorsCharts: colorsCharts,
+                   colorsDecorative: colorsDecorative,
                    effects: effects,
                    elevations: elevations,
                    fonts: fonts,
@@ -145,9 +166,9 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    toast: toast,
                    typography: typography,
                    resourcesBundle: Bundle.WireframeTheme,
-                   name: Self.name,
-                   fontFamily: WireframeBrandFontRawTokens.familyDefault,
-                   tuning: Tuning.Wireframe)
+                   name: name,
+                   fontFamily: fontFamily,
+                   tuning: tuning)
 
         registerFonts()
     }
