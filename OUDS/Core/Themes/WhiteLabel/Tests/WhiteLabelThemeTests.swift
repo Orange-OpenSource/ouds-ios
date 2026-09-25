@@ -12,33 +12,66 @@
 //
 
 import OUDSThemesContract
+@testable import OUDSThemesWhiteLabel
 @testable import OUDSThemesWireframe
 import Testing
 
 /// Check if the theme has the default configuration and tokens providers with the expected types.
-struct WireframeThemeTests {
+struct WhiteLabelTests {
 
-    private var theme: WireframeTheme
+    private var theme: WhiteLabelTheme
 
     init() {
-        theme = WireframeTheme()
+        theme = WhiteLabelTheme()
     }
 
     // MARK: - Tests - Misc.
 
     @Test func themeName() throws {
-        #expect(theme.name == "Wireframe")
+        #expect(theme.name == "WhiteLabel")
     }
 
     // MARK: - Tests - Theme tuning
 
-    @Test func defaultTuningOfWireframeTheme() {
+    @Test func defaultTuningOfWhiteLabelTheme() {
         let tuning = theme.tuning
-        #expect(tuning.hasRoundedButtons == false)
-        #expect(tuning.hasRoundedTextInputs == false)
-        #expect(tuning.hasRoundedAlertMessages == true)
-        #expect(tuning.hasRoundedProgressIndicators == true)
-        #expect(tuning.hasRoundedListItems == false)
+        #expect(tuning == Tuning.Wireframe)
+    }
+
+    // MARK: - Tests - Font family
+
+    @Test func defaultFontFamilyOfWhiteLabelTheme() {
+        let fontFamily = theme.fontFamily
+        #expect(fontFamily == WireframeBrandFontRawTokens.familyDefault)
+    }
+
+    // MARK: - Tests - Custom White Label theme
+
+    @Test func customWhiteLabelTheme() {
+
+        // Given
+        let customColors: AllColorSemanticTokensProvider = WhiteLabelThemeColorSemanticTokensProvider()
+        let customName = "Test-Name"
+        let customFontFamily = "Test-Font-Family"
+        let customTuning = Tuning(hasRoundedButtons: true,
+                                  hasRoundedTextInputs: true,
+                                  hasRoundedAlertMessages: false,
+                                  hasRoundedProgressIndicators: false,
+                                  hasRoundedListItems: true)
+
+        // When
+        let customWhiteLabelTheme = WhiteLabelTheme(colors: customColors,
+                                                    name: customName,
+                                                    fontFamily: customFontFamily,
+                                                    tuning: customTuning)
+
+        // Then
+        #expect(customWhiteLabelTheme.colors is WhiteLabelThemeColorSemanticTokensProvider)
+        #expect(customWhiteLabelTheme.colorsCharts == nil)
+        #expect(customWhiteLabelTheme.colorsDecorative == nil)
+        #expect(customWhiteLabelTheme.name == customName)
+        #expect(customWhiteLabelTheme.fontFamily == customFontFamily)
+        #expect(customWhiteLabelTheme.tuning == customTuning)
     }
 
     // MARK: - Tests - Semantic tokens providers
