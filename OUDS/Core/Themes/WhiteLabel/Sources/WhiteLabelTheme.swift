@@ -66,7 +66,7 @@ import SwiftUI
 /// See the tokens version from `WireframeTheme`.
 ///
 /// - Since: 3.1.0
-public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
+open class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
 
     // MARK: - Initializers
 
@@ -77,23 +77,24 @@ public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - name: A name to give to the theme, used for debugging for example. If nil, "WhiteLabel" will be used.
-    ///    - fontFamily: The font family to apply for this theme. If nil, `WireframeBrandFontRawTokens.familyDefault` will be used.
+    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead te one from the device.
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
-    override public init(colors: AllColorSemanticTokensProvider? = nil,
-                         colorsCharts: AllColorChartSemanticTokensProvider? = nil,
-                         colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
-                         name: String? = nil,
-                         fontFamily: String? = nil,
-                         tuning: Tuning? = nil)
+    public init(colors: AllColorSemanticTokensProvider? = nil,
+                colorsCharts: AllColorChartSemanticTokensProvider? = nil,
+                colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
+                name: String? = nil,
+                fontFamily: String = "",
+                tuning: Tuning? = nil)
     {
         let colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         let name = (name ?? "WhiteLabel")
-        let fontFamily = (fontFamily ?? WireframeBrandFontRawTokens.familyDefault)
         let tuning = (tuning ?? Tuning.Wireframe)
 
+        let fonts = WhiteLabelThemeFontSemanticTokensProvider(fontFamily: fontFamily)
         super.init(colors: colors,
                    colorsCharts: colorsCharts,
                    colorsDecorative: colorsDecorative,
+                   fonts: fonts,
                    name: name,
                    fontFamily: fontFamily,
                    tuning: tuning)

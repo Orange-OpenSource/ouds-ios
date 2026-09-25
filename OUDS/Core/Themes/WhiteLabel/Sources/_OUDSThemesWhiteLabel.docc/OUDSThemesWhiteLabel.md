@@ -76,6 +76,8 @@ let tuning = Tuning(hasRoundedButtons: true,
 let theme = WhiteLabelTheme(tuning: tuning)
 ```
 
+> Important: But beware, these are only flags using inside components definitions to chose the token to apply. Some tokens for rounded and not rounded cases can have the same values in the end (like for Wireframe theme) or not (like for Orange theme).
+
 ## Typography
 
 The Wireframe theme uses the native system font family, but it can be defined otherwise.
@@ -140,6 +142,110 @@ Update the [ThemeSelection.swift](https://github.com/Orange-OpenSource/ouds-ios-
 
 Then build and run the app and enjoy!
 
+## Example
+
+```swift
+// MARK: - Name, tuning
+
+let kDesignToolboxWhiteLabelName = "Design Toolbox White Label"
+
+let kDesignToolboxWhiteLabelTuning = Tuning(hasRoundedButtons: true,
+                                            hasRoundedTextInputs: true,
+                                            hasRoundedAlertMessages: true,
+                                            hasRoundedProgressIndicators: true,
+                                            hasRoundedListItems: true)
+
+// MARK: - Fonts
+
+let kDesignToolboxWhiteLabelFontFamily = "Winky Rough"
+
+// To prevent to register each time the fonts and get warnings
+var designToolboxWhiteLabelFontAlreadyRegistered = false
+
+func registerDesignToolboxWhiteLabelFonts() {
+    if !designToolboxWhiteLabelFontAlreadyRegistered {
+        registerFont(postScript: "WinkyRough-Regular_Light", forCombination: PSFNMK(kDesignToolboxWhiteLabelFontFamily, Font.Weight.light))
+        registerFont(postScript: "WinkyRough-Regular", forCombination: PSFNMK(kDesignToolboxWhiteLabelFontFamily, Font.Weight.regular))
+        registerFont(postScript: "WinkyRough-Regular_Medium", forCombination: PSFNMK(kDesignToolboxWhiteLabelFontFamily, Font.Weight.medium))
+        registerFont(postScript: "WinkyRough-Regular_SemiBold", forCombination: PSFNMK(kDesignToolboxWhiteLabelFontFamily, Font.Weight.semibold))
+        registerFont(postScript: "WinkyRough-Regular_Bold", forCombination: PSFNMK(kDesignToolboxWhiteLabelFontFamily, Font.Weight.bold))
+        registerFont(postScript: "WinkyRough-Regular_Black", forCombination: PSFNMK(kDesignToolboxWhiteLabelFontFamily, Font.Weight.black))
+        
+        let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+        fonts?.forEach {
+            CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil)
+        }
+        
+        designToolboxWhiteLabelFontAlreadyRegistered = true
+    }
+}
+
+// MARK: - Colors (raw)
+
+enum DesignToolboxWhiteLabelRawColors {
+
+    static let bloodRed = "#C0392BFF"
+    static let vividRed = "#FF6B6BFF"
+    static let concreteGrey = "#F0F0F0FF"
+    static let nearBlack = "#1C1C1EFF"
+    static let softGrey = "#E0E0E0FF"
+    static let deepGrey = "#2C2C2EFF"
+    static let mutedLight = "#6E6E73FF"
+    static let mutedDark = "#8E8E93FF"
+    static let borderLight = "#D0D0D0FF"
+}
+
+// MARK: - Colors (semantic)
+
+// Override the tokens you want
+class DesignToolboxColorSemanticTokensProvider: WhiteLabelThemeColorSemanticTokensProvider {
+
+       override open var bgPrimary: MultipleColorSemanticToken {
+           MultipleColorSemanticToken(light: DesignToolboxWhiteLabelRawColors.concreteGrey, dark: DesignToolboxWhiteLabelRawColors.nearBlack)
+       }
+
+       override open var bgSecondary: MultipleColorSemanticToken {
+           MultipleColorSemanticToken(light: DesignToolboxWhiteLabelRawColors.softGrey, dark: DesignToolboxWhiteLabelRawColors.deepGrey)
+       }
+
+       override open var contentDefault: MultipleColorSemanticToken {
+           MultipleColorSemanticToken(light: DesignToolboxWhiteLabelRawColors.nearBlack, dark: DesignToolboxWhiteLabelRawColors.concreteGrey)
+       }
+
+       override open var contentMuted: MultipleColorSemanticToken {
+           MultipleColorSemanticToken(light: DesignToolboxWhiteLabelRawColors.mutedLight, dark: DesignToolboxWhiteLabelRawColors.mutedDark)
+       }
+
+       override open var contentBrandPrimary: MultipleColorSemanticToken {
+           MultipleColorSemanticToken(light: DesignToolboxWhiteLabelRawColors.bloodRed, dark: DesignToolboxWhiteLabelRawColors.vividRed)
+       }
+
+       override open var actionEnabled: MultipleColorSemanticToken {
+           MultipleColorSemanticToken(light: DesignToolboxWhiteLabelRawColors.bloodRed, dark: DesignToolboxWhiteLabelRawColors.vividRed)
+       }
+
+       override open var borderBrandPrimary: MultipleColorSemanticToken {
+           MultipleColorSemanticToken(light: DesignToolboxWhiteLabelRawColors.bloodRed, dark: DesignToolboxWhiteLabelRawColors.vividRed)
+       }
+}
+
+let kDesignToolboxWhiteLabelColors = DesignToolboxColorSemanticTokensProvider()
+
+// MARK: - Theme instanciation
+
+let myDesignToolboxWhiteLabelTheme = WhiteLabelTheme(colors: kDesignToolboxWhiteLabelColors,
+                                                     name: kDesignToolboxWhiteLabelName,
+                                                     fontFamily: kDesignToolboxWhiteLabelFontFamily,
+                                                     tuning: kDesignToolboxWhiteLabelTuning)
+
+// MARK: - Inject the theme
+
+var body: some View {
+    OUDSThemeableView(theme: myDesignToolboxWhiteLabelTheme) {
+        YourAppContent()
+    }
+}
+```
 ## Topics
 
 ### Group

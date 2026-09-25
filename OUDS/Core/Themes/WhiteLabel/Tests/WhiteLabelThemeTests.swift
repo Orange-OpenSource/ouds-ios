@@ -106,7 +106,7 @@ struct WhiteLabelTests {
     }
 
     @Test func defaultFontSemanticTokensProvider() {
-        #expect(theme.fonts is WireframeThemeFontSemanticTokensProvider)
+        #expect(theme.fonts is WhiteLabelThemeFontSemanticTokensProvider)
     }
 
     @Test func defaultGridSemanticTokensProvider() {

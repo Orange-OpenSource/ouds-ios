@@ -20,17 +20,17 @@ import OUDSTokensSemantic
 
 extension WireframeThemeFontSemanticTokensProvider: FontSemanticTokens {
     /// Has for value token familySystem (= "Shantell Sans")
-    @objc public final var familyBody: FontFamilySemanticToken { familySystem }
+    @objc open var familyBody: FontFamilySemanticToken { familySystem }
     /// Has for value token FontRawTokens.familyMonospaceSfMono (= "SF Mono")
-    @objc public final var familyCode: FontFamilySemanticToken { FontRawTokens.familyMonospaceSfMono }
+    @objc open var familyCode: FontFamilySemanticToken { FontRawTokens.familyMonospaceSfMono }
     /// Has for value token familySystem (= "Shantell Sans")
-    @objc public final var familyDisplay: FontFamilySemanticToken { familySystem }
+    @objc open var familyDisplay: FontFamilySemanticToken { familySystem }
     /// Has for value token familySystem (= "Shantell Sans")
-    @objc public final var familyHeading: FontFamilySemanticToken { familySystem }
+    @objc open var familyHeading: FontFamilySemanticToken { familySystem }
     /// Has for value token familySystem (= "Shantell Sans")
-    @objc public final var familyLabel: FontFamilySemanticToken { familySystem }
+    @objc open var familyLabel: FontFamilySemanticToken { familySystem }
     /// Has for value token WireframeBrandFontRawTokens.familyDefault (= "Shantell Sans")
-    @objc public final var familySystem: FontFamilySemanticToken { WireframeBrandFontRawTokens.familyDefault }
+    @objc open var familySystem: FontFamilySemanticToken { WireframeBrandFontRawTokens.familyDefault }
     /// Has for value token FontRawTokens.letterSpacing250 (= 0.2)
     @objc public final var letterSpacingBodyLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing250 }
     /// Has for value token FontRawTokens.letterSpacing250 (= 0.2)

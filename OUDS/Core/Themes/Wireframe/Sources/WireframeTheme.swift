@@ -70,14 +70,16 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colors: All tokens of colors to apply. If nil, `WireframeThemeColorSemanticTokensProvider` will be used
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
+    ///    - fonts: All tokens of fonts. Default set to nil. If so, `WireframeThemeFontSemanticTokensProvider` will be used instead.
     ///    - name: A name to give to the theme. If nil, `WireframeTheme.name` wil be used.
-    ///    - fontFamily: The font family to apply for this theme. If nil, `WireframeBrandFontRawTokens.familyDefault` will be used.
+    ///    - fontFamily: The font family to apply for this theme. If empty, `WireframeBrandFontRawTokens.familyDefault` will be used.
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
     public init(colors: AllColorSemanticTokensProvider? = nil,
                 colorsCharts: AllColorChartSemanticTokensProvider? = nil,
                 colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
+                fonts: AllFontSemanticTokensProvider? = nil,
                 name: String? = nil,
-                fontFamily: String? = nil,
+                fontFamily: String = "",
                 tuning: Tuning? = nil)
     {
 
@@ -86,7 +88,7 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let colorModes = WireframeThemeColorModeSemanticTokensProvider(colors: colors)
         let effects = WireframeThemeEffectSemanticTokensProvider()
         let elevations = WireframeThemeElevationSemanticTokensProvider()
-        let fonts = WireframeThemeFontSemanticTokensProvider()
+        let fonts = (fonts ?? WireframeThemeFontSemanticTokensProvider())
         let grids = WireframeThemeGridSemanticTokensProvider()
         let opacities = WireframeThemeOpacitySemanticTokensProvider()
         let dimensions = WireframeThemeDimensionSemanticTokensProvider()
@@ -122,7 +124,7 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let typography = WireframeThemeTypographyComponentTokensProvider(spaces: spaces)
 
         let name = (name ?? WireframeTheme.name)
-        let fontFamily = (fontFamily ?? WireframeBrandFontRawTokens.familyDefault)
+        let fontFamily = (fontFamily.isEmpty ? WireframeBrandFontRawTokens.familyDefault : fontFamily)
         let tuning = (tuning ?? Tuning.Wireframe)
 
         super.init(borders: borders,

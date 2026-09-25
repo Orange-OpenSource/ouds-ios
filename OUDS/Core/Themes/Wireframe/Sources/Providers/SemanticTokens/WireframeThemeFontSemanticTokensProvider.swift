@@ -19,14 +19,14 @@ import OUDSThemesContract
 /// all tokens to the users.
 ///
 /// - Since: 0.17.0
-final class WireframeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvider {
+open class WireframeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvider {
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider
-    init() {
+    public init() {
         OL.debug("Init of WireframeThemeFontSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
