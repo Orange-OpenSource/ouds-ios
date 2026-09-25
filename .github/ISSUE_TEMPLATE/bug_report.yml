@@ -14,7 +14,7 @@ body:
   - type: input
     id: device
     attributes:
-      label: Your test device
+      label: Your test device(s)
       description: 
       placeholder: iPhone 13 pro
     validations:
@@ -22,7 +22,7 @@ body:
   - type: input
     id: os-version
     attributes:
-      label: Device OS version
+      label: Device(s) OS version(s)
       description: 
       placeholder: iOS 15.1
     validations:
@@ -44,6 +44,27 @@ body:
     validations:
       required: true      
   - type: input
+    id: app-orientation
+    attributes:
+      label: App orientation(s)
+      placeholder: Portrait and / or landscape
+    validations:
+      required: true
+  - type: input
+    id: app-language
+    attributes:
+      label: App language(s)
+      placeholder: English
+    validations:
+      required: true   
+  - type: input
+    id: device-language
+    attributes:
+      label: Device language
+      placeholder: English
+    validations:
+      required: false    
+  - type: input
     id: xcode-version
     attributes:
       label: Xcode version
@@ -56,28 +77,7 @@ body:
       label: Swift version
       placeholder: "Add 'swift --version' command outputs"
     validations:
-      required: false
-  - type: input
-    id: app-orientation
-    attributes:
-      label: App orientation
-      placeholder: Portrait and / or landscape
-    validations:
-      required: false
-  - type: input
-    id: app-language
-    attributes:
-      label: App language
-      placeholder: English
-    validations:
-      required: false   
-  - type: input
-    id: device-language
-    attributes:
-      label: Device language
-      placeholder: English
-    validations:
-      required: false               
+      required: false                 
   - type: input
     id: app-token-lib-version
     attributes:
@@ -123,3 +123,10 @@ body:
       description: Provide a description about the accessibility settings you have (Voice Over, Dynamic Type, Full Keyboard Access, Switch Control, High Constrast, etc.). Precise if low power mode enabled or not.
     validations:
       required: true
+  - type: textarea
+    id: code-samples
+    attributes:
+      label: Code samples to show the bug
+      description: Add code samples and / or Xcode sample project to show the bug you got and help maintainers to reproduce it. Except longer moment to solve the bug if nothing is provided.
+    validations:
+      required: false
