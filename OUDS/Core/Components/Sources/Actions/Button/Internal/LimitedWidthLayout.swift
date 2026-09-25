@@ -15,28 +15,22 @@ import SwiftUI
 
 // MARK: - Limited Width Layout
 
-/// A custom SwiftUI layout that constrains a view's width while
-/// preserving its intrinsic width whenever possible.
+/// A custom SwiftUI layout that constrains a view's width while preserving its intrinsic width whenever possible.
 ///
-/// `LimitedWidthLayout` is designed for views such as buttons,
-/// labels, and text containers that should:
+/// `LimitedWidthLayout` is designed for views such as buttons, labels, and text containers that should:
 ///
 /// - remain as small as their content allows,
 /// - never exceed a specified maximum width,
 /// - never exceed the width proposed by their parent,
 /// - respect a configurable minimum width,
 /// - respect a configurable minimum height,
-/// - and allow multiline content to adapt its height when its
-///   width is constrained.
+/// - and allow multiline content to adapt its height when its width is constrained.
 ///
 /// The layout performs two measurements:
 ///
-/// 1. It first asks the subview for its ideal size using
-///    `ProposedViewSize.unspecified`.
-/// 2. It calculates the final width from the intrinsic width,
-///    maximum width, minimum width, and available width.
-/// 3. It measures the subview again using that final width,
-///    allowing content such as `Text` to wrap onto multiple lines.
+/// 1. It first asks the subview for its ideal size using `ProposedViewSize.unspecified`.
+/// 2. It calculates the final width from the intrinsic width, maximum width, minimum width, and available width.
+/// 3. It measures the subview again using that final width, allowing content such as `Text` to wrap onto multiple lines.
 ///
 /// For example, given:
 ///
@@ -55,10 +49,6 @@ import SwiftUI
 /// the final width will be 120 points.
 ///
 /// This makes the layout useful for controls that should be "as small as possible, but no larger than X".
-///
-/// - Important:
-///   `Layout` is available starting with iOS 16, macOS 13, tvOS 16, watchOS 9, and visionOS 1.
-
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, visionOS 1.0, *)
 private struct LimitedWidthLayout: Layout {
 
@@ -77,15 +67,13 @@ private struct LimitedWidthLayout: Layout {
 
     /// Calculates the size required by the layout for the given proposal.
     ///
-    /// The layout first measures the subview without constraints to
-    /// determine its ideal size. It then calculates a final width
-    /// constrained by:
+    /// The layout first measures the subview without constraints to determine its ideal size.
+    /// It then calculates a final width constrained by:
     ///
     ///     minWidth <= width <= min(maxWidth, availableWidth)
     ///
-    /// The subview is then measured a second time using the calculated
-    /// width. This second measurement is important for multiline
-    /// content because the subview can determine its required height
+    /// The subview is then measured a second time using the calculated width.
+    /// This second measurement is important for multiline content because the subview can determine its required height
     /// after the width constraint has been applied.
     ///
     /// - Parameters:
@@ -100,26 +88,10 @@ private struct LimitedWidthLayout: Layout {
             return .zero
         }
 
-        // 1. An unspecified proposal asks the subview for its ideal size.
         let idealSize = subview.sizeThatFits(.unspecified)
-
-        // 2. Determine the available width.
-        // The parent may not provide a width.
-        // In that case, treat the available width as infinite.
         let availableWidth = proposal.width ?? .infinity
-
-        // 3. Calculate the final width.
-        // The desired behavior is:
-        //     min(availableWidth, maxWidth, intrinsicWidth
-        // while respecting minWidth.
         let width = min(availableWidth, max(minWidth, min(idealSize.width, maxWidth)))
-
-        // 4. Measure the content again using the final width.
-        // This second measurement allows flexible content such as
-        // Text to wrap onto multiple lines when necessary.
         let constrainedSize = subview.sizeThatFits(ProposedViewSize(width: width, height: nil))
-
-        // 5. Apply the minimum height.
         let height = max(minHeight, constrainedSize.height)
 
         return CGSize(width: width, height: height)
@@ -136,22 +108,14 @@ private struct LimitedWidthLayout: Layout {
     ///   - proposal: The size proposed by the parent layout.
     ///   - subviews: The views managed by this layout.
     ///   - cache: A cache that can be used to store layout information.
-    func placeSubviews(
-        in bounds: CGRect,
-        proposal: ProposedViewSize,
-        subviews: Subviews,
-        cache: inout ()
-    ) {
-
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         guard let subview = subviews.first else {
             return
         }
 
-        subview.place(
-            at: CGPoint(x: bounds.midX, y: bounds.midY),
-            anchor: .center,
-            proposal: ProposedViewSize(width: bounds.width, height: bounds.height)
-        )
+        subview.place(at: CGPoint(x: bounds.midX, y: bounds.midY),
+                      anchor: .center,
+                      proposal: ProposedViewSize(width: bounds.width, height: bounds.height))
     }
 }
 
@@ -159,15 +123,12 @@ private struct LimitedWidthLayout: Layout {
 
 /// Provides the `limitedWidth` modifier for SwiftUI views.
 ///
-/// The modifier uses `LimitedWidthLayout` to calculate a width that
-/// preserves the view's intrinsic size while respecting both the
-/// available space and the configured maximum width.
-
+/// The modifier uses `LimitedWidthLayout` to calculate a width that preserves the view's intrinsic size
+/// while respecting both the available space and the configured maximum width.
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, visionOS 1.0, *)
 extension View {
 
-    /// Limits the view's width while preserving its intrinsic width
-    /// whenever possible.
+    /// Limits the view's width while preserving its intrinsic width whenever possible.
     ///
     /// The final width is calculated from:
     ///
@@ -190,19 +151,17 @@ extension View {
     ///     }
     ///     .limitedWidth(maxWidth: 480)
     ///
-    /// A short label remains close to its intrinsic width, while a
-    /// longer label can grow up to 480 points. If the available space
-    /// is smaller than 480 points, the view is constrained to that
-    /// available space and multiline content can wrap accordingly.
+    /// A short label remains close to its intrinsic width, while a longer label can grow up to 480 points.
+    /// If the available space is smaller than 480 points, the view is constrained to that available space and multiline content can wrap accordingly.
     ///
     /// - Parameters:
-    ///   - maxWidth: The maximum width allowed for the view.
     ///   - minWidth: The minimum width allowed for the view.
+    ///   - maxWidth: The maximum width allowed for the view.
     ///   - minHeight: The minimum height allowed for the view.
     ///
     /// - Returns: A view whose width and height are constrained
     ///   according to the specified limits.
-    func limitedWidth(maxWidth: CGFloat, minWidth: CGFloat, minHeight: CGFloat) -> some View {
+    func limitedWidth(minWidth: CGFloat, maxWidth: CGFloat, minHeight: CGFloat) -> some View {
         LimitedWidthLayout(maxWidth: maxWidth, minWidth: minWidth, minHeight: minHeight) {
             self
         }

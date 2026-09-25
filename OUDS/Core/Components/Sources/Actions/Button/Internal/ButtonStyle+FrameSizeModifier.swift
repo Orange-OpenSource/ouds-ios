@@ -33,7 +33,7 @@ struct ButtonFrameSizeModifier: ViewModifier {
             if isFullWidth {
                 content.frame(minWidth: minWidth, maxWidth: .infinity, minHeight: minHeight)
             } else {
-                content.limitedWidth(maxWidth: maxWidth, minWidth: minWidth, minHeight: minHeight)
+                content.limitedWidth(minWidth: minWidth, maxWidth: maxWidth, minHeight: minHeight)
             }
         } else {
             content.frame(minWidth: minWidth,

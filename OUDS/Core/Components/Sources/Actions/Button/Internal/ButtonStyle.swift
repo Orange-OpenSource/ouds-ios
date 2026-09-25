@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSThemesContract
 import SwiftUI
 
 /// Used to apply the right style on an ``OUDSButton`` according to the `appearance`
