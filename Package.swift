@@ -55,7 +55,7 @@ let package = Package(
             name: "OUDSSwiftUIWireframe",
             targets: ["OUDSSwiftUIWireframe"]),
 
-        // Embeds all libraries but only Wireframe theme
+        // Embeds all libraries but only White Label and Wireframe themes
         .library(
             name: "OUDSSwiftUIWhiteLabel",
             targets: ["OUDSSwiftUIWhiteLabel"]),

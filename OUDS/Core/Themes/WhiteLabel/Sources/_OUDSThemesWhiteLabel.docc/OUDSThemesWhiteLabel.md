@@ -80,7 +80,7 @@ let theme = WhiteLabelTheme(tuning: tuning)
 
 ## Typography
 
-The Wireframe theme uses the native system font family, but it can be defined otherwise.
+The White Label theme uses the native system font family by default, but it can be defined otherwise.
 You will need to add to define the font family parameter of the theme.
 
 ```swift
@@ -126,11 +126,11 @@ class MyColorTokensProvider: WhiteLabelThemeColorSemanticTokensProvider {
 
     // Give the values you want to the tokens you want
     // Some tokens have only one value...
-    @objc var repositoryInfoLow: ColorSemanticToken { ColorRawTokens.functionalSun200 }
-    @objc var repositoryInfoHighest: ColorSemanticToken { ColorRawTokens.functionalSun800 }
+    @objc override var repositoryInfoLow: ColorSemanticToken { ColorRawTokens.functionalSun200 }
+    @objc override var repositoryInfoHighest: ColorSemanticToken { ColorRawTokens.functionalSun800 }
     
     // ...and other tokens can have a pair of values, for light and dark modes
-    @objc var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: repositoryInfoLow, dark: repositoryInfoHighest) }
+    @objc override var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: repositoryInfoLow, dark: repositoryInfoHighest) }
 }    
 ```
 

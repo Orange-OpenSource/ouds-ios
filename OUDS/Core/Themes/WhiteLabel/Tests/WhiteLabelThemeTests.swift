@@ -42,7 +42,7 @@ struct WhiteLabelTests {
 
     @Test func defaultFontFamilyOfWhiteLabelTheme() {
         let fontFamily = theme.fontFamily
-        #expect(fontFamily == WireframeBrandFontRawTokens.familyDefault)
+        #expect(fontFamily == "")
     }
 
     // MARK: - Tests - Custom White Label theme
