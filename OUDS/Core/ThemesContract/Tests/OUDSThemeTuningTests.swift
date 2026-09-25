@@ -66,4 +66,24 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.MaxIt.hasRoundedProgressIndicators == true)
         #expect(Tuning.MaxIt.hasRoundedListItems == true)
     }
+
+    // MARK: - Helpers tuning
+
+    @Test
+    func nothingRoundedTuning() {
+        #expect(Tuning.nothingRounded.hasRoundedButtons == false)
+        #expect(Tuning.nothingRounded.hasRoundedTextInputs == false)
+        #expect(Tuning.nothingRounded.hasRoundedAlertMessages == false)
+        #expect(Tuning.nothingRounded.hasRoundedProgressIndicators == false)
+        #expect(Tuning.nothingRounded.hasRoundedListItems == false)
+    }
+
+    @Test
+    func allRoundedTuning() {
+        #expect(Tuning.allRounded.hasRoundedButtons == true)
+        #expect(Tuning.allRounded.hasRoundedTextInputs == true)
+        #expect(Tuning.allRounded.hasRoundedAlertMessages == true)
+        #expect(Tuning.allRounded.hasRoundedProgressIndicators == true)
+        #expect(Tuning.allRounded.hasRoundedListItems == true)
+    }
 }

@@ -29,7 +29,7 @@ open class WhiteLabelThemeColorSemanticTokensProvider: WireframeThemeColorSemant
     #endif
 
     /// Intializes the provider
-    override init() {
+    override public init() {
         super.init()
         OL.debug("Init of WhiteLabelThemeColorSemanticTokensProvider")
         #if DEBUG
