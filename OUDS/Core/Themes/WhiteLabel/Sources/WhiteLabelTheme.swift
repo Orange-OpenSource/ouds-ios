@@ -61,12 +61,16 @@ import SwiftUI
 ///     let theme = WhiteLabelTheme(tuning: tuning)
 /// ```
 ///
+/// Note the `Tuning` only defines flags the components will read. But in the end the rounded corners are defined in tokens.
+/// Thus even if the rounded corners are enabled in `Tuning`, it the same radius values are used in the components for both rounded and not rounded
+/// cases the component may not change.
+///
 /// ## Tokens versions
 ///
 /// See the tokens version from `WireframeTheme`.
 ///
 /// - Since: 3.1.0
-open class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
+public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
 
     // MARK: - Initializers
 
@@ -77,13 +81,13 @@ open class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - name: A name to give to the theme, used for debugging for example. If nil, "WhiteLabel" will be used.
-    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device.
+    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Default set to "SF Pro"
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
     public init(colors: AllColorSemanticTokensProvider? = nil,
                 colorsCharts: AllColorChartSemanticTokensProvider? = nil,
                 colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
                 name: String? = nil,
-                fontFamily: String = "",
+                fontFamily: String = "SF Pro",
                 tuning: Tuning? = nil)
     {
         let colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

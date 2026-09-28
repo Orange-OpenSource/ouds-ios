@@ -12,12 +12,12 @@ See https://github.com/swiftlang/swift-docc/issues/1283
 
 This White Label theme is a specific theme. It has been designed to let users have their own theme to update like a grey label theme, or to keep as is like a white label theme.
 
-The White Label theme is based on the Wireframe theme which is dedicated to mockups and prototypes.
-However is is possible to override the semantic tokens of colors, change the tuning and choose the font family to apply.
+The White Label theme is based on the Wireframe theme (which is dedicated to mockups and prototypes).
+However ii is possible to override the semantic tokens of colors, change the tuning and choose the font family to apply.
 
 ## Overview
 
-> Important: The White Label theme, as a child of Wireframe themme does not embed charts colors nor decorative colors yet, but they can be defined.
+> Important: The White Label theme, as a child of Wireframe themme does not embed by default charts colors nor decorative colors yet, but they can be defined.
 
 ## How to use the theme
 
@@ -138,7 +138,7 @@ class MyColorTokensProvider: WhiteLabelThemeColorSemanticTokensProvider {
 
 To test your own White Label theme implementation, you can use for example the [Design System Toolbox application](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
-Update the [ThemeSelection.swift](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/DesignToolbox/DesignToolbox/Navigation/ThemeSelection.swift) file so as to had your theme in the themes selector.
+Add you own implementation for the tokens of [White Label Theme Example]().
 
 Then build and run the app and enjoy!
 
@@ -147,7 +147,7 @@ Then build and run the app and enjoy!
 ```swift
 // MARK: - Name, tuning
 
-let kDesignToolboxWhiteLabelName = "Design Toolbox White Label"
+let kDesignToolboxWhiteLabelName = "White Label Theme Example"
 
 let kDesignToolboxWhiteLabelTuning = Tuning(hasRoundedButtons: true,
                                             hasRoundedTextInputs: true,
