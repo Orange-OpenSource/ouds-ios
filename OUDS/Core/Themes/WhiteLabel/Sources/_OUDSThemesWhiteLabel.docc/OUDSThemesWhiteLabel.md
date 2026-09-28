@@ -138,7 +138,7 @@ class MyColorTokensProvider: WhiteLabelThemeColorSemanticTokensProvider {
 
 To test your own White Label theme implementation, you can use for example the [Design System Toolbox application](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
-Add you own implementation for the tokens of [White Label Theme Example]().
+Add you own implementation for the tokens of [White Label Theme Example](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/DesignToolbox/DesignToolbox/White%20Label%20Example/White%20Label%20Theme%20Example.swift).
 
 Then build and run the app and enjoy!
 
