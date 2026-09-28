@@ -64,7 +64,6 @@ struct TextInputContainer: View {
                         }
 
                         InputContainer(text: text,
-                                       label: labelPosition == .top ? "" : label,
                                        placeholder: placeholder,
                                        prefix: prefix,
                                        suffix: suffix,
