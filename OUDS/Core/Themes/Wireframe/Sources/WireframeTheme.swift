@@ -72,14 +72,14 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - fonts: All tokens of fonts. Default set to nil. If so, `WireframeThemeFontSemanticTokensProvider` will be used instead.
     ///    - name: A name to give to the theme. If nil, `WireframeTheme.name` wil be used.
-    ///    - fontFamily: The font family to apply for this theme. IIf empty, the system will use instead the one from the device. Prefer `WireframeBrandFontRawTokens.familyDefault.
+    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Prefer `WireframeBrandFontRawTokens.familyDefault`.
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
     public init(colors: AllColorSemanticTokensProvider? = nil,
                 colorsCharts: AllColorChartSemanticTokensProvider? = nil,
                 colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
                 fonts: AllFontSemanticTokensProvider? = nil,
                 name: String? = nil,
-                fontFamily: String = "",
+                fontFamily: String = WireframeBrandFontRawTokens.familyDefault,
                 tuning: Tuning? = nil)
     {
 

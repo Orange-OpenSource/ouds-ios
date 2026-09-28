@@ -41,6 +41,13 @@ struct WireframeThemeTests {
         #expect(tuning.hasRoundedListItems == false)
     }
 
+    // MARK: - Tests - Font family
+
+    @Test func defaultFontFamilyOfWireframeTheme() {
+        let fontFamily = theme.fontFamily
+        #expect(fontFamily == "Shantell Sans")
+    }
+
     // MARK: - Tests - Semantic tokens providers
 
     @Test func defaultBorderSemanticTokensProvider() {
