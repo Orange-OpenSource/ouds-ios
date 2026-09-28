@@ -26,237 +26,237 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     // MARK: - Color - Opacity
 
-    @objc public final var opacityLowest: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityLowestLight, dark: opacityLowestDark) }
+    @objc open var opacityLowest: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityLowestLight, dark: opacityLowestDark) }
 
-    @objc public final var opacityLower: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityLowerLight, dark: opacityLowerDark) }
+    @objc open var opacityLower: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityLowerLight, dark: opacityLowerDark) }
 
-    @objc public final var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
+    @objc open var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
-    @objc public final var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
+    @objc open var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
 
     // MARK: - Color - Action
 
-    @objc public final var actionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionDisabledLight, dark: actionDisabledDark) }
+    @objc open var actionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionDisabledLight, dark: actionDisabledDark) }
 
-    @objc public final var actionEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionEnabledLight, dark: actionEnabledDark) }
+    @objc open var actionEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionEnabledLight, dark: actionEnabledDark) }
 
-    @objc public final var actionFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionFocusLight, dark: actionFocusDark) }
+    @objc open var actionFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionFocusLight, dark: actionFocusDark) }
 
-    @objc public final var actionHighlighted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionHighlightedLight, dark: actionHighlightedDark) }
+    @objc open var actionHighlighted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionHighlightedLight, dark: actionHighlightedDark) }
 
-    @objc public final var actionHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionHoverLight, dark: actionHoverDark) }
+    @objc open var actionHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionHoverLight, dark: actionHoverDark) }
 
-    @objc public final var actionLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionLoadingLight, dark: actionLoadingDark) }
+    @objc open var actionLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionLoadingLight, dark: actionLoadingDark) }
 
-    @objc public final var actionNegativeEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeEnabledLight, dark: actionNegativeEnabledDark) }
+    @objc open var actionNegativeEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeEnabledLight, dark: actionNegativeEnabledDark) }
 
-    @objc public final var actionNegativeFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeFocusLight, dark: actionNegativeFocusDark) }
+    @objc open var actionNegativeFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeFocusLight, dark: actionNegativeFocusDark) }
 
-    @objc public final var actionNegativeHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeHoverLight, dark: actionNegativeHoverDark) }
+    @objc open var actionNegativeHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeHoverLight, dark: actionNegativeHoverDark) }
 
-    @objc public final var actionNegativeLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeLoadingLight, dark: actionNegativeLoadingDark) }
+    @objc open var actionNegativeLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativeLoadingLight, dark: actionNegativeLoadingDark) }
 
-    @objc public final var actionNegativePressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativePressedLight, dark: actionNegativePressedDark) }
+    @objc open var actionNegativePressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionNegativePressedLight, dark: actionNegativePressedDark) }
 
-    @objc public final var actionPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionPressedLight, dark: actionPressedDark) }
+    @objc open var actionPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionPressedLight, dark: actionPressedDark) }
 
-    @objc public final var actionSelected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSelectedLight, dark: actionSelectedDark) }
+    @objc open var actionSelected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSelectedLight, dark: actionSelectedDark) }
 
-    @objc public final var actionSupportEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportEnabledLight, dark: actionSupportEnabledDark) }
+    @objc open var actionSupportEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportEnabledLight, dark: actionSupportEnabledDark) }
 
-    @objc public final var actionSupportDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportDisabledLight, dark: actionSupportDisabledDark) }
+    @objc open var actionSupportDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportDisabledLight, dark: actionSupportDisabledDark) }
 
-    @objc public final var actionSupportFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportFocusLight, dark: actionSupportFocusDark) }
+    @objc open var actionSupportFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportFocusLight, dark: actionSupportFocusDark) }
 
-    @objc public final var actionSupportHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportHoverLight, dark: actionSupportHoverDark) }
+    @objc open var actionSupportHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportHoverLight, dark: actionSupportHoverDark) }
 
-    @objc public final var actionSupportLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportLoadingLight, dark: actionSupportLoadingDark) }
+    @objc open var actionSupportLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportLoadingLight, dark: actionSupportLoadingDark) }
 
-    @objc public final var actionSupportPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportPressedLight, dark: actionSupportPressedDark) }
+    @objc open var actionSupportPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionSupportPressedLight, dark: actionSupportPressedDark) }
 
-    @objc public final var actionVisited: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionVisitedLight, dark: actionVisitedDark) }
+    @objc open var actionVisited: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionVisitedLight, dark: actionVisitedDark) }
 
-    @objc public final var actionReadOnlyPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionReadOnlyPrimaryLight, dark: actionReadOnlyPrimaryDark) }
+    @objc open var actionReadOnlyPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionReadOnlyPrimaryLight, dark: actionReadOnlyPrimaryDark) }
 
-    @objc public final var actionReadOnlySecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
+    @objc open var actionReadOnlySecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
 
     // MARK: - Color - Background
 
-    @objc public final var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgPrimaryLight, dark: bgPrimaryDark) }
+    @objc open var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgPrimaryLight, dark: bgPrimaryDark) }
 
-    @objc public final var bgSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgSecondaryLight, dark: bgSecondaryDark) }
+    @objc open var bgSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgSecondaryLight, dark: bgSecondaryDark) }
 
-    @objc public final var bgTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgTertiaryLight, dark: bgTertiaryDark) }
+    @objc open var bgTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgTertiaryLight, dark: bgTertiaryDark) }
 
-    @objc public final var bgInverseLow: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgInverseLowLight, dark: bgInverseLowDark) }
+    @objc open var bgInverseLow: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgInverseLowLight, dark: bgInverseLowDark) }
 
-    @objc public final var bgInverseHigh: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgInverseHighLight, dark: bgInverseHighDark) }
+    @objc open var bgInverseHigh: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgInverseHighLight, dark: bgInverseHighDark) }
 
     // MARK: - Color - Border
 
-    @objc public final var borderBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderBrandPrimaryLight, dark: borderBrandPrimaryDark) }
+    @objc open var borderBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderBrandPrimaryLight, dark: borderBrandPrimaryDark) }
 
-    @objc public final var borderBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderBrandSecondaryLight, dark: borderBrandSecondaryDark) }
+    @objc open var borderBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderBrandSecondaryLight, dark: borderBrandSecondaryDark) }
 
-    @objc public final var borderBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderBrandTertiaryLight, dark: borderBrandTertiaryDark) }
+    @objc open var borderBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderBrandTertiaryLight, dark: borderBrandTertiaryDark) }
 
-    @objc public final var borderDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderDefaultLight, dark: borderDefaultDark) }
+    @objc open var borderDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderDefaultLight, dark: borderDefaultDark) }
 
-    @objc public final var borderEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderEmphasizedLight, dark: borderEmphasizedDark) }
+    @objc open var borderEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderEmphasizedLight, dark: borderEmphasizedDark) }
 
-    @objc public final var borderFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderFocusLight, dark: borderFocusDark) }
+    @objc open var borderFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderFocusLight, dark: borderFocusDark) }
 
-    @objc public final var borderFocusInset: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderFocusInsetLight, dark: borderFocusInsetDark) }
+    @objc open var borderFocusInset: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderFocusInsetLight, dark: borderFocusInsetDark) }
 
-    @objc public final var borderMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderMutedLight, dark: borderMutedDark) }
+    @objc open var borderMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderMutedLight, dark: borderMutedDark) }
 
-    @objc public final var borderOnBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderOnBrandPrimaryLight, dark: borderOnBrandPrimaryDark) }
+    @objc open var borderOnBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderOnBrandPrimaryLight, dark: borderOnBrandPrimaryDark) }
 
-    @objc public final var borderOnBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderOnBrandSecondaryLight, dark: borderOnBrandSecondaryDark) }
+    @objc open var borderOnBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderOnBrandSecondaryLight, dark: borderOnBrandSecondaryDark) }
 
-    @objc public final var borderOnBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
+    @objc open var borderOnBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
 
-    @objc public final var borderMinimal: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderMinimalLight, dark: borderMinimalDark) }
+    @objc open var borderMinimal: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderMinimalLight, dark: borderMinimalDark) }
 
-    @objc public final var borderStatusPositive: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusPositiveLight, dark: borderStatusPositiveDark) }
+    @objc open var borderStatusPositive: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusPositiveLight, dark: borderStatusPositiveDark) }
 
-    @objc public final var borderStatusInfo: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusInfoLight, dark: borderStatusInfoDark) }
+    @objc open var borderStatusInfo: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusInfoLight, dark: borderStatusInfoDark) }
 
-    @objc public final var borderStatusWarning: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusWarningLight, dark: borderStatusWarningDark) }
+    @objc open var borderStatusWarning: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusWarningLight, dark: borderStatusWarningDark) }
 
-    @objc public final var borderStatusNegative: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusNegativeLight, dark: borderStatusNegativeDark) }
+    @objc open var borderStatusNegative: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusNegativeLight, dark: borderStatusNegativeDark) }
 
-    @objc public final var borderStatusAccent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusAccentLight, dark: borderStatusAccentDark) }
+    @objc open var borderStatusAccent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderStatusAccentLight, dark: borderStatusAccentDark) }
 
     // MARK: - Color - Content
 
-    @objc public final var contentBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentBrandPrimaryLight, dark: contentBrandPrimaryDark) }
+    @objc open var contentBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentBrandPrimaryLight, dark: contentBrandPrimaryDark) }
 
-    @objc public final var contentBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentBrandSecondaryLight, dark: contentBrandSecondaryDark) }
+    @objc open var contentBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentBrandSecondaryLight, dark: contentBrandSecondaryDark) }
 
-    @objc public final var contentBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentBrandTertiaryLight, dark: contentBrandTertiaryDark) }
+    @objc open var contentBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentBrandTertiaryLight, dark: contentBrandTertiaryDark) }
 
-    @objc public final var contentDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentDefaultLight, dark: contentDefaultDark) }
+    @objc open var contentDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentDefaultLight, dark: contentDefaultDark) }
 
-    @objc public final var contentDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentDisabledLight, dark: contentDisabledDark) }
+    @objc open var contentDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentDisabledLight, dark: contentDisabledDark) }
 
-    @objc public final var contentMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentMutedLight, dark: contentMutedDark) }
+    @objc open var contentMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentMutedLight, dark: contentMutedDark) }
 
-    @objc public final var contentOnActionSelected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionSelectedLight, dark: contentOnActionSelectedDark) }
+    @objc open var contentOnActionSelected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionSelectedLight, dark: contentOnActionSelectedDark) }
 
-    @objc public final var contentOnActionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionDisabledLight, dark: contentOnActionDisabledDark) }
+    @objc open var contentOnActionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionDisabledLight, dark: contentOnActionDisabledDark) }
 
-    @objc public final var contentOnActionEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionEnabledLight, dark: contentOnActionEnabledDark) }
+    @objc open var contentOnActionEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionEnabledLight, dark: contentOnActionEnabledDark) }
 
-    @objc public final var contentOnActionFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionFocusLight, dark: contentOnActionFocusDark) }
+    @objc open var contentOnActionFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionFocusLight, dark: contentOnActionFocusDark) }
 
-    @objc public final var contentOnActionHighlighted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionHighlightedLight, dark: contentOnActionHighlightedDark) }
+    @objc open var contentOnActionHighlighted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionHighlightedLight, dark: contentOnActionHighlightedDark) }
 
-    @objc public final var contentOnActionHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionHoverLight, dark: contentOnActionHoverDark) }
+    @objc open var contentOnActionHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionHoverLight, dark: contentOnActionHoverDark) }
 
-    @objc public final var contentOnActionLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionLoadingLight, dark: contentOnActionLoadingDark) }
+    @objc open var contentOnActionLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionLoadingLight, dark: contentOnActionLoadingDark) }
 
-    @objc public final var contentOnActionPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionPressedLight, dark: contentOnActionPressedDark) }
+    @objc open var contentOnActionPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnActionPressedLight, dark: contentOnActionPressedDark) }
 
-    @objc public final var contentOnBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnBrandPrimaryLight, dark: contentOnBrandPrimaryDark) }
+    @objc open var contentOnBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnBrandPrimaryLight, dark: contentOnBrandPrimaryDark) }
 
-    @objc public final var contentOnBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnBrandSecondaryLight, dark: contentOnBrandSecondaryDark) }
+    @objc open var contentOnBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnBrandSecondaryLight, dark: contentOnBrandSecondaryDark) }
 
-    @objc public final var contentOnBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnBrandTertiaryLight, dark: contentOnBrandTertiaryDark) }
+    @objc open var contentOnBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnBrandTertiaryLight, dark: contentOnBrandTertiaryDark) }
 
-    @objc public final var contentOnStatusPositiveMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusPositiveMutedLight, dark: contentOnStatusPositiveMutedDark) }
+    @objc open var contentOnStatusPositiveMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusPositiveMutedLight, dark: contentOnStatusPositiveMutedDark) }
 
-    @objc public final var contentOnStatusPositiveEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusPositiveEmphasizedLight, dark: contentOnStatusPositiveEmphasizedDark) }
+    @objc open var contentOnStatusPositiveEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusPositiveEmphasizedLight, dark: contentOnStatusPositiveEmphasizedDark) }
 
-    @objc public final var contentOnStatusWarningMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusWarningMutedLight, dark: contentOnStatusWarningMutedDark) }
+    @objc open var contentOnStatusWarningMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusWarningMutedLight, dark: contentOnStatusWarningMutedDark) }
 
-    @objc public final var contentOnStatusWarningEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusWarningEmphasizedLight, dark: contentOnStatusWarningEmphasizedDark) }
+    @objc open var contentOnStatusWarningEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusWarningEmphasizedLight, dark: contentOnStatusWarningEmphasizedDark) }
 
-    @objc public final var contentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentInverseLight, dark: contentInverseDark) }
+    @objc open var contentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentInverseLight, dark: contentInverseDark) }
 
-    @objc public final var contentOnStatusNegativeMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusNegativeMutedLight, dark: contentOnStatusNegativeMutedDark) }
+    @objc open var contentOnStatusNegativeMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusNegativeMutedLight, dark: contentOnStatusNegativeMutedDark) }
 
-    @objc public final var contentOnStatusNegativeEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusNegativeEmphasizedLight, dark: contentOnStatusNegativeEmphasizedDark) }
+    @objc open var contentOnStatusNegativeEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusNegativeEmphasizedLight, dark: contentOnStatusNegativeEmphasizedDark) }
 
-    @objc public final var contentOnStatusInfoMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusInfoMutedLight, dark: contentOnStatusInfoMutedDark) }
+    @objc open var contentOnStatusInfoMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusInfoMutedLight, dark: contentOnStatusInfoMutedDark) }
 
-    @objc public final var contentOnStatusInfoEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusInfoEmphasizedLight, dark: contentOnStatusInfoEmphasizedDark) }
+    @objc open var contentOnStatusInfoEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusInfoEmphasizedLight, dark: contentOnStatusInfoEmphasizedDark) }
 
-    @objc public final var contentOnStatusAccentMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusAccentMutedLight, dark: contentOnStatusAccentMutedDark) }
+    @objc open var contentOnStatusAccentMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusAccentMutedLight, dark: contentOnStatusAccentMutedDark) }
 
-    @objc public final var contentOnStatusAccentEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusAccentEmphasizedLight, dark: contentOnStatusAccentEmphasizedDark) }
+    @objc open var contentOnStatusAccentEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentOnStatusAccentEmphasizedLight, dark: contentOnStatusAccentEmphasizedDark) }
 
-    @objc public final var contentStatusAccent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusAccentLight, dark: contentStatusAccentDark) }
+    @objc open var contentStatusAccent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusAccentLight, dark: contentStatusAccentDark) }
 
-    @objc public final var contentStatusInfo: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusInfoLight, dark: contentStatusInfoDark) }
+    @objc open var contentStatusInfo: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusInfoLight, dark: contentStatusInfoDark) }
 
-    @objc public final var contentStatusNegative: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusNegativeLight, dark: contentStatusNegativeDark) }
+    @objc open var contentStatusNegative: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusNegativeLight, dark: contentStatusNegativeDark) }
 
-    @objc public final var contentStatusPositive: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusPositiveLight, dark: contentStatusPositiveDark) }
+    @objc open var contentStatusPositive: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusPositiveLight, dark: contentStatusPositiveDark) }
 
-    @objc public final var contentStatusWarning: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusWarningLight, dark: contentStatusWarningDark) }
+    @objc open var contentStatusWarning: MultipleColorSemanticToken { MultipleColorSemanticToken(light: contentStatusWarningLight, dark: contentStatusWarningDark) }
 
     // MARK: - Color - Overlay
 
-    @objc public final var overlayDropdown: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayDropdownLight, dark: overlayDropdownDark) }
+    @objc open var overlayDropdown: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayDropdownLight, dark: overlayDropdownDark) }
 
-    @objc public final var overlayTooltip: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayTooltipLight, dark: overlayTooltipDark) }
+    @objc open var overlayTooltip: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayTooltipLight, dark: overlayTooltipDark) }
 
-    @objc public final var overlayDrag: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayDragLight, dark: overlayDragDark) }
+    @objc open var overlayDrag: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayDragLight, dark: overlayDragDark) }
 
-    @objc public final var overlayModalSheet: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalSheetLight, dark: overlayModalSheetDark) }
+    @objc open var overlayModalSheet: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalSheetLight, dark: overlayModalSheetDark) }
 
-    @objc public final var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
+    @objc open var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
-    @objc public final var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
+    @objc open var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
 
     // MARK: - Color - Surface
 
-    @objc public final var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandPrimaryLight, dark: surfaceBrandPrimaryDark) }
+    @objc open var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandPrimaryLight, dark: surfaceBrandPrimaryDark) }
 
-    @objc public final var surfaceBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandSecondaryLight, dark: surfaceBrandSecondaryDark) }
+    @objc open var surfaceBrandSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandSecondaryLight, dark: surfaceBrandSecondaryDark) }
 
-    @objc public final var surfaceBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandTertiaryLight, dark: surfaceBrandTertiaryDark) }
+    @objc open var surfaceBrandTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandTertiaryLight, dark: surfaceBrandTertiaryDark) }
 
-    @objc public final var surfaceStatusAccentEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusAccentEmphasizedLight, dark: surfaceStatusAccentEmphasizedDark) }
+    @objc open var surfaceStatusAccentEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusAccentEmphasizedLight, dark: surfaceStatusAccentEmphasizedDark) }
 
-    @objc public final var surfaceStatusAccentMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusAccentMutedLight, dark: surfaceStatusAccentMutedDark) }
+    @objc open var surfaceStatusAccentMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusAccentMutedLight, dark: surfaceStatusAccentMutedDark) }
 
-    @objc public final var surfaceStatusInfoEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusInfoEmphasizedLight, dark: surfaceStatusInfoEmphasizedDark) }
+    @objc open var surfaceStatusInfoEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusInfoEmphasizedLight, dark: surfaceStatusInfoEmphasizedDark) }
 
-    @objc public final var surfaceStatusInfoMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusInfoMutedLight, dark: surfaceStatusInfoMutedDark) }
+    @objc open var surfaceStatusInfoMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusInfoMutedLight, dark: surfaceStatusInfoMutedDark) }
 
-    @objc public final var surfaceStatusNegativeEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusNegativeEmphasizedLight, dark: surfaceStatusNegativeEmphasizedDark) }
+    @objc open var surfaceStatusNegativeEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusNegativeEmphasizedLight, dark: surfaceStatusNegativeEmphasizedDark) }
 
-    @objc public final var surfaceStatusNegativeMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusNegativeMutedLight, dark: surfaceStatusNegativeMutedDark) }
+    @objc open var surfaceStatusNegativeMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusNegativeMutedLight, dark: surfaceStatusNegativeMutedDark) }
 
-    @objc public final var surfaceInverseHigh: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceInverseHighLight, dark: surfaceInverseHighDark) }
+    @objc open var surfaceInverseHigh: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceInverseHighLight, dark: surfaceInverseHighDark) }
 
-    @objc public final var surfaceInverseLow: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceInverseLowLight, dark: surfaceInverseLowDark) }
+    @objc open var surfaceInverseLow: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceInverseLowLight, dark: surfaceInverseLowDark) }
 
-    @objc public final var surfacePrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfacePrimaryLight, dark: surfacePrimaryDark) }
+    @objc open var surfacePrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfacePrimaryLight, dark: surfacePrimaryDark) }
 
-    @objc public final var surfaceSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceSecondaryLight, dark: surfaceSecondaryDark) }
+    @objc open var surfaceSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceSecondaryLight, dark: surfaceSecondaryDark) }
 
-    @objc public final var surfaceTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceTertiaryLight, dark: surfaceTertiaryDark) }
+    @objc open var surfaceTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceTertiaryLight, dark: surfaceTertiaryDark) }
 
-    @objc public final var surfaceStatusPositiveEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusPositiveEmphasizedLight, dark: surfaceStatusPositiveEmphasizedDark) }
+    @objc open var surfaceStatusPositiveEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusPositiveEmphasizedLight, dark: surfaceStatusPositiveEmphasizedDark) }
 
-    @objc public final var surfaceStatusPositiveMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusPositiveMutedLight, dark: surfaceStatusPositiveMutedDark) }
+    @objc open var surfaceStatusPositiveMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusPositiveMutedLight, dark: surfaceStatusPositiveMutedDark) }
 
-    @objc public final var surfaceStatusWarningEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningEmphasizedLight, dark: surfaceStatusWarningEmphasizedDark) }
+    @objc open var surfaceStatusWarningEmphasized: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningEmphasizedLight, dark: surfaceStatusWarningEmphasizedDark) }
 
-    @objc public final var surfaceStatusWarningMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningMutedLight, dark: surfaceStatusWarningMutedDark) }
+    @objc open var surfaceStatusWarningMuted: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceStatusWarningMutedLight, dark: surfaceStatusWarningMutedDark) }
 
     // MARK: - Color - AI
 
-    @objc public final var colorAiPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiPrimaryLight, dark: colorAiPrimaryDark) }
+    @objc open var colorAiPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiPrimaryLight, dark: colorAiPrimaryDark) }
 
-    @objc public final var colorAiSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiSecondaryLight, dark: colorAiSecondaryDark) }
+    @objc open var colorAiSecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiSecondaryLight, dark: colorAiSecondaryDark) }
 
-    @objc public final var colorAiTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiTertiaryLight, dark: colorAiTertiaryDark) }
+    @objc open var colorAiTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiTertiaryLight, dark: colorAiTertiaryDark) }
 
-    @objc public final var colorAiQuaternary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiQuaternaryLight, dark: colorAiQuaternaryDark) }
+    @objc open var colorAiQuaternary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiQuaternaryLight, dark: colorAiQuaternaryDark) }
 }
 
 // swiftlint:enable line_length

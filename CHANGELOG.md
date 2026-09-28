@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...develop)
 
+### Added
+
+- `White label` theme (Orange-OpenSource/ouds-ios#1772)
+
 ### Changed
 
 - `button` component to version v3.4.0 (Orange-OpenSource/ouds-ios#1653)
