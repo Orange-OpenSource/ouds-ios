@@ -30,19 +30,24 @@ body:
   - type: checkboxes
     id: liquid-glass-disabled
     attributes:
-      label: Is Liquid Glass disabled
+      label: Is Liquid Glass disabled?
       options:
         - label: Yes, Liquid Glass is disabled (or OS version is older than 26)
         - label: No, Liquid Glass is enabled (or OS version is 26 or newer)
-    validations:
-      required: true
   - type: input
     id: app-ouds-lib-version
     attributes:
       label: OUDS iOS library version
-      placeholder: "1.4.0"
+      placeholder: "3.1.0"
     validations:
-      required: true      
+      required: true    
+  - type: checkboxes
+    id: app-ouds-lib-integration
+    attributes:
+      label: How do you integrate OUDS in your app?
+      options:
+        - label: With Swift Package, as usual, pointing to GitHub repository
+        - label: With XCFramework picked from GitHub release
   - type: input
     id: app-orientation
     attributes:
@@ -106,7 +111,7 @@ body:
     id: what-happened
     attributes:
       label: Describe the issue
-      description: Provide a summary of the issue, including specific steps to reproduce with as much detail as possible. Do not forget to hide sensitive or personal data (phone numbers, accounts, messages, emails etc).
+      description: Provide a summary of the issue, including specific steps to reproduce with as much detail as possible. Do not forget to hide sensitive or personal data (phone numbers, accounts, messages, emails etc). Precise if your pprojectroejct is an app, an SDK, or something else.
     validations:
       required: true
   - type: textarea
