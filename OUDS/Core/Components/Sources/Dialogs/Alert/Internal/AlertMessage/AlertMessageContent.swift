@@ -26,23 +26,25 @@ struct AlertMessageContent: View {
     let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: - Body
 
     var body: some View {
         // TODO: #1659 - Remove token alert.spaceRowGapAction from codebase
-        VStack(alignment: .leading, spacing: theme.alert.spaceRowGapAction) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
                 Text(text)
                     .labelModerateLarge(theme)
                     .foregroundColor(foregroundColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(maxWidth: maxWidthText, alignment: .leading)
 
                 if let description, !description.isEmpty {
                     textView(for: description)
                         .labelDefaultMedium(theme)
                         .foregroundColor(foregroundColor)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: maxWidthText, alignment: .leading)
+                        .padding(.bottom, theme.alert.spacePaddingBlockBottomContent)
                 }
 
                 if !bulletList.isEmpty {
@@ -51,6 +53,7 @@ struct AlertMessageContent: View {
                             AlertMessageBulletListItem(text: text, status: status)
                         }
                     }
+                    .padding(.bottom, theme.alert.spacePaddingBlockBottomContent)
                 }
             }
             .accessibilityElement(children: .combine)
@@ -74,6 +77,10 @@ struct AlertMessageContent: View {
     }
 
     // MARK: - Helpers
+
+    private var maxWidthText: CGFloat {
+        theme.sizes.maxWidthBoxedText.dimension(for: horizontalSizeClass ?? .regular)
+    }
 
     private var foregroundColor: MultipleColorSemanticToken {
         switch status {
