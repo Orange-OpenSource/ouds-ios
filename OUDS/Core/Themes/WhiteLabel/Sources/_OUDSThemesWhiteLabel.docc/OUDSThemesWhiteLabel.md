@@ -12,12 +12,12 @@ See https://github.com/swiftlang/swift-docc/issues/1283
 
 This White Label theme is a specific theme. It has been designed to let users have their own theme to update like a grey label theme, or to keep as is like a white label theme.
 
-The White Label theme is based on the Wireframe theme (which is dedicated to mockups and prototypes).
-However ii is possible to override the semantic tokens of colors, change the tuning and choose the font family to apply.
-
 ## Overview
 
-> Important: The White Label theme, as a child of Wireframe themme does not embed by default charts colors nor decorative colors yet, but they can be defined.
+The White Label theme is based on the Wireframe theme (which is dedicated to mockups and prototypes).
+However it is possible to override the semantic tokens of colors, change the tuning and choose the font family to apply.
+
+> Important: The White Label theme, as a child of Wireframe theme does not embed by default charts colors nor decorative colors yet, but they can be defined.
 
 ## How to use the theme
 
