@@ -66,7 +66,7 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_26.4.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1.327.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '4.0.6'
 

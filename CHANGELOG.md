@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- GitHub Action `ruby/setup-ruby` from v1.321.0 to v1.327.0 for `build-and-test` and `build-xcframework` workflows
 - `button` component to version v3.4.0 (Orange-OpenSource/ouds-ios#1653)
 - Make product exportable and usable as XCFramework for Orange and Sosh themes on iOS (Orange-OpenSource/ouds-ios#1767)
 - In `circular progress indicator`, set helper text in two texts to fix alignment (Orange-OpenSource/ouds-ios#1753)
