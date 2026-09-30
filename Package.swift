@@ -14,9 +14,6 @@
 
 import PackageDescription
 
-/// Exposing OUDS through a Swift Package is a good start.
-/// Expose it through Pod or XCFramework should be investigated later.
-/// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have separated responsibilities.
 let package = Package(
 
     // MARK: - Package setup
@@ -42,6 +39,7 @@ let package = Package(
         // Embeds all libraries but only Orange and Orange Compact themes
         .library(
             name: "OUDSSwiftUIOrange",
+            type: .dynamic, // Needed for XCFramework generation (single dylib umbrella)
             targets: ["OUDSSwiftUIOrange"]),
 
         // Embeds all libraries but only Orange and Sosh themes

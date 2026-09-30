@@ -57,9 +57,12 @@ OUDSSwiftUIOrangeSosh     | All libraries listed above but with only Orange and 
 > Note: The prefered solution to use OUDS is to use Swift Package Manager and pull sources from the repository to compile the project.
 > XCFramework can be used by picked assets from GitHub Releases artifacts.
 
-If the XCFramework is used, i.e. the one only for iOS with only Orange and Sosh themes:
-- add all the atomical XCFrameworks in the project
-- import `OUDSSwiftUIOrangeSosh`
+Two XCFrameworks are available: one containing `OrangeTheme` and `SoshTheme` (*OUDSSwiftUIOrangeSosh*) 
+and another with `OrangeTheme` and `OrangeCompactTheme` (*OUDSSwiftUIOrange*).
+
+If an XCFramework is used:
+- add all the atomical XCFrameworks in the project (~10)
+- import `OUDSSwiftUIOrangeSosh` or `OUDSSwiftUIOrange`
 
 ### Chose your theme
 

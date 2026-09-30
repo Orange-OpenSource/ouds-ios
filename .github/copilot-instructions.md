@@ -432,8 +432,8 @@ Example for `maxWidthBoxedText`:
 ## 12. XCFramework distribution and module stability ⚠️ CRITICAL
 
 OUDS is primarily distributed as a Swift Package, but it is ALSO built as a
-dynamic XCFramework (product `OUDSSwiftUIOrangeSosh`) for consumers that need
-a shared binary.
+dynamic XCFramework (products `OUDSSwiftUIOrangeSosh` and `OUDSSwiftUIOrange`)
+for consumers that need a shared binary.
 
 This binary distribution requires compiling with
 `BUILD_LIBRARY_FOR_DISTRIBUTION=YES`, which triggers Swift's **module

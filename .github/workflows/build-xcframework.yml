@@ -78,13 +78,13 @@ jobs:
         run: |
           bundle exec fastlane build_xcframework
 
-      - name: Upload XCFramework artefact (short retention)
+      - name: Upload XCFramework artefact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: OUDSSwiftUIOrangeSosh-xcframework
+          name: OUDSSwiftUI-xcframeworks
           path: |
             dist/*.xcframework.zip
             dist/*.xcframework.zip.sha256
-            dist/RELEASE_NOTES_XCFRAMEWORK.md
+            dist/RELEASE_NOTES_XCFRAMEWORK_*.md
           if-no-files-found: error
           retention-days: 1
