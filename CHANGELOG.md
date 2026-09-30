@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Swift Package `SwiftFormat` from v0.63.0 to v0.63.1
 - Ruby Gem `fastlane` from v2.240.0 to v2.240.1
 - `excon` transitive RubyGem from v1.7.1 to v1.7.2b (CVE-2026-54171)
 - `Ruby` version from v4.0.6 to v4.0.7 for `build-and-test` andg `build-xcframework` workflows
