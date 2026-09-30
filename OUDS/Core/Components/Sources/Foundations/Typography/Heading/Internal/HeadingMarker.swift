@@ -38,7 +38,7 @@ struct HeadingMarker: View {
             .renderingMode(.template)
             .resizable()
             .toFlip(layoutDirection == .rightToLeft)
-            .foregroundStyle(theme.colors.contentBrandPrimary)
+            .foregroundStyle(theme.typography.colorContentMarker)
             .frame(width: Self.markerWidth, height: Self.markerHeight)
             .padding(.top, theme.typography.spacePaddingBlockTopHeadingLargeMarker)
             .padding(.bottom, theme.typography.spacePaddingBlockBottomHeadingLargeMarker)
