@@ -116,8 +116,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Foundations
 
-    /// Version of the Figma specifications for the component typgography) (1.0.0)
-    public static let componentTypographyVersion = "1.0.0"
+    /// Version of the Figma specifications for the component typgography) (1.1.0)
+    public static let componentTypographyVersion = "1.1.0"
 
     // MARK: - Components versions - Indicator
 
