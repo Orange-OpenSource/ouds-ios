@@ -258,4 +258,57 @@ struct OUDSCircularProgressIndicatorTests {
                                                                    helperText: .description("Uploading"))
         #expect(configuration.accessibilityLabel == "Uploading")
     }
+
+    // MARK: - Public initializer: indeterminate helper text normalization
+    //
+    // These tests cover the bug where the indeterminate initializer wrapped a nil / empty `helperText`
+    // into `.description("")`, which caused the internal VStack to reserve space for an empty helper
+    // text slot and vertically mis-centered the indicator inside embedding components (OUDSTag loading,
+    // OUDSCategoricalTag loading, etc.).
+
+    @Test @MainActor
+    func `indeterminate initializer without helper text must produce a nil helperTextType`() {
+        let indicator = OUDSCircularProgressIndicator()
+        #expect(indicator.configuration.helperTextType == nil)
+        #expect(indicator.configuration.accessibilityLabel == nil)
+        #expect(indicator.configuration.isIndeterminate)
+    }
+
+    @Test @MainActor
+    func `indeterminate initializer with explicit nil helper text must produce a nil helperTextType`() {
+        let indicator = OUDSCircularProgressIndicator(status: .info, helperText: nil)
+        #expect(indicator.configuration.helperTextType == nil)
+        #expect(indicator.configuration.accessibilityLabel == nil)
+    }
+
+    @Test @MainActor
+    func `indeterminate initializer with empty helper text must produce a nil helperTextType`() {
+        let indicator = OUDSCircularProgressIndicator(status: .info, helperText: "")
+        #expect(indicator.configuration.helperTextType == nil)
+        #expect(indicator.configuration.accessibilityLabel == nil)
+    }
+
+    @Test @MainActor
+    func `indeterminate initializer with non-empty helper text must wrap it as description`() {
+        let indicator = OUDSCircularProgressIndicator(status: .info, helperText: "Processing")
+        #expect(indicator.configuration.helperTextType == .description("Processing"))
+        #expect(indicator.configuration.accessibilityLabel == "Processing")
+    }
+
+    // MARK: - Public initializer: determinate helper text pass-through
+
+    @Test @MainActor
+    func `determinate initializer without helper text must keep a nil helperTextType`() {
+        let indicator = OUDSCircularProgressIndicator(progress: 0.5)
+        #expect(indicator.configuration.helperTextType == nil)
+        #expect(indicator.configuration.accessibilityLabel == nil)
+    }
+
+    @Test @MainActor
+    func `determinate initializer with description helper text must preserve it`() {
+        let indicator = OUDSCircularProgressIndicator(progress: 0.5,
+                                                      helperText: .description("Uploading"))
+        #expect(indicator.configuration.helperTextType == .description("Uploading"))
+        #expect(indicator.configuration.accessibilityLabel == "Uploading")
+    }
 }
