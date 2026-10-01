@@ -23,46 +23,61 @@ struct CategoricalTagIcon: View {
     @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
+        iconContent?
+            .renderingMode(appliedRenderingMode)
+            .resizable()
+            .toFlip(flipped)
+            .foregroundColor(contentColor)
+            .padding(.all, padding)
+    }
+
+    private var iconContent: Image? {
         switch leading {
         case .none:
-            EmptyView()
+            nil
         case .bullet:
             Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
-                .renderingMode(.template)
-                .resizable()
-                .foregroundColor(contentColor)
-                .padding(.all, bulletPadding)
         case let .icon(oudsImage):
-            if let asset = oudsImage.asset {
-                asset
-                    .renderingMode(oudsImage.renderingMode)
-                    .resizable()
-                    .toFlip(oudsImage.flipped)
-                    .foregroundColor(contentColor)
-                    .padding(.all, iconPadding)
-            }
+            oudsImage.asset
         }
+    }
+
+    private var appliedRenderingMode: Image.TemplateRenderingMode {
+        if case let .icon(oudsImage) = leading {
+            return oudsImage.renderingMode
+        }
+        return .template
+    }
+
+    private var flipped: Bool {
+        if case let .icon(oudsImage) = leading {
+            return oudsImage.flipped
+        }
+        return false
     }
 
     private var contentColor: MultipleColorSemanticToken {
         isEnabled ? theme.categoricalTag.colorContent : theme.colors.contentOnActionDisabled
     }
 
-    private var bulletPadding: CGFloat {
-        switch size {
-        case .default:
-            theme.tag.spaceInsetBulletDefault
-        case .small:
-            theme.tag.spaceInsetBulletSmall
-        }
-    }
-
-    private var iconPadding: CGFloat {
-        switch size {
-        case .default:
-            theme.tag.spaceInsetIconDefault
-        case .small:
-            theme.tag.spaceInsetIconSmall
+    private var padding: CGFloat {
+        switch leading {
+        case .none:
+            0
+        case .bullet:
+            switch size {
+            case .default:
+                theme.tag.spaceInsetBulletDefault
+            case .small:
+                theme.tag.spaceInsetBulletSmall
+            }
+        case .icon:
+            switch size {
+            case .default:
+                theme.tag.spaceInsetIconDefault
+            case .small:
+                theme.tag.spaceInsetIconSmall
+            }
         }
     }
 }
