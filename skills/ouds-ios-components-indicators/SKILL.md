@@ -43,6 +43,27 @@ OUDSInputTag("Label") { /* remove action */ }
 
 ---
 
+## Categorical Tag
+
+Categories: `category1` to `category5` — each defines background color (emerald, sky, amber, amethyst, pink)
+
+```swift
+OUDSCategoricalTag(label: "Label")
+OUDSCategoricalTag(label: "Label", category: .category2)
+OUDSCategoricalTag(label: "Label", category: .category3, leading: .bullet)
+OUDSCategoricalTag(label: "Label", category: .category4, leading: .icon(OUDSImage(asset: Image(decorative: "ic_heart"))))
+OUDSCategoricalTag(label: "Label", category: .category5, shape: .square, size: .small)
+```
+
+Notes:
+- Always emphasized (no muted appearance unlike OUDSTag)
+- Uses `theme.categoricalTag.colorBgCategoryX` for background and `theme.categoricalTag.colorContent` for text/icon color
+- Supports bullet and custom icon (same as OUDSTag)
+- Shape: `.rounded` (default) or `.square`
+- Size: `.default` (default) or `.small`
+
+---
+
 ## Circular Progress Indicator
 
 Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Gap sizes: `default`, `small`

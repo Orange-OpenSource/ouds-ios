@@ -186,7 +186,7 @@ public struct OUDSTag: View {
 
         /// The leading element of the tag
         /// - Since: 0.18.0
-        @frozen public enum Leading {
+        @frozen public enum Leading { // TODO: v4 - Mutualize with OUDSCategoricalTag
             /// Means no element
             case none
 
