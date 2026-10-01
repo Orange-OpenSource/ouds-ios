@@ -18,8 +18,10 @@ struct CategoricalTagLabel: View {
 
     let size: OUDSTag.Size
     let label: String
+    let isLoading: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
         Group {
@@ -32,6 +34,13 @@ struct CategoricalTagLabel: View {
                     .labelModerateSmall(theme)
             }
         }
-        .foregroundColor(theme.categoricalTag.colorContent)
+        .foregroundColor(contentColor)
+    }
+
+    private var contentColor: MultipleColorSemanticToken {
+        if isLoading {
+            return theme.colors.contentDefault
+        }
+        return isEnabled ? theme.categoricalTag.colorContent : theme.colors.contentOnActionDisabled
     }
 }

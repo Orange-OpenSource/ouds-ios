@@ -104,7 +104,15 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
     private let shape: OUDSTag.Shape
     private let size: OUDSTag.Size
     private let leading: Leading
+    private let loadingType: LoadingType
     private let label: String
+
+    // MARK: - Internal types
+
+    enum LoadingType { // TODO: v4 - Mutualize with OUDSTag
+        case none
+        case loading(label: String, progress: Double?)
+    }
 
     // MARK: - Configuration enums
 
@@ -169,6 +177,64 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
         self.leading = leading
         self.shape = shape
         self.size = size
+        loadingType = .none
+    }
+
+    /// Creates a categorical tag in the loading state indicates that the system is processing or retrieving data.
+    /// A circular progress indicator appears to inform the user that an action is in progress.
+    ///
+    /// Use the `View/disabled(_:)` method has no effect on this state.
+    ///
+    /// ```swift
+    ///     OUDSCategoricalTag(loadingLabel: "Processing...", progress: 0.75)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - loadingLabel: The label displayed in the tag
+    ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+    ///  value to `nil` to display a circular indeterminate progress indicator.
+    ///    - category: The category determining the background color. Default set to *category1*.
+    ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
+    ///    - size: The size of the tag. Default set to *default*.
+    public init(loadingLabel: String,
+                progress: Double? = nil,
+                category: Category = .category1,
+                shape: OUDSTag.Shape = .rounded,
+                size: OUDSTag.Size = .default)
+    {
+        label = loadingLabel
+        self.category = category
+        leading = .none
+        self.shape = shape
+        self.size = size
+        loadingType = .loading(label: loadingLabel, progress: progress)
+    }
+
+    /// Creates a categorical tag in the loading state with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSCategoricalTag(loadingKey: LocalizedStringKey("loading_tag"), bundle: Bundle.module)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - loadingKey: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - progress: The loading progress, where 0.0 represents no progress and 1.0 represents full progress. Set this
+    ///  value to `nil` to display a circular indeterminate progress indicator.
+    ///    - category: The category determining the background color. Default set to *category1*.
+    ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
+    ///    - size: The size of the tag. Default set to *default*.
+    public init(loadingKey: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                progress: Double? = nil,
+                category: Category = .category1,
+                shape: OUDSTag.Shape = .rounded,
+                size: OUDSTag.Size = .default)
+    {
+        let resolvedLabel = loadingKey.resolved(tableName: tableName, bundle: bundle)
+        self.init(loadingLabel: resolvedLabel, progress: progress, category: category, shape: shape, size: size)
     }
 
     /// Creates a categorical tag with a localized label, looking up the key in the given bundle.
@@ -201,24 +267,66 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
 
     public var body: some View {
         Label {
-            CategoricalTagLabel(size: size, label: label)
+            CategoricalTagLabel(size: size, label: label, isLoading: isLoading)
         } icon: {
-            CategoricalTagIcon(size: size, leading: leading)
+            iconView
         }
         .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
-        .modifier(CategoricalTagBackgroundModifier(category: category))
+        .modifier(CategoricalTagBackgroundModifier(category: category, isLoading: isLoading))
         .modifier(TagShapeModifier(shape: shape))
-        .accessibilityLabel(label)
+        .accessibilityLabel(accessibilityLabel)
     }
 
     // MARK: - Helpers
 
-    private var hasIcon: Bool {
-        switch leading {
-        case .icon, .bullet:
-            true
+    @ViewBuilder
+    private var iconView: some View {
+        switch loadingType {
         case .none:
-            false
+            CategoricalTagIcon(size: size, leading: leading)
+        case let .loading(_, progress):
+            if let progress {
+                OUDSCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: true, size: progressIndicatorSize)
+            } else {
+                OUDSCircularProgressIndicator(status: .neutral, track: false, size: progressIndicatorSize)
+            }
         }
+    }
+
+    private var progressIndicatorSize: CGFloat {
+        switch size {
+        case .default:
+            16
+        case .small:
+            12
+        }
+    }
+
+    private var isLoading: Bool {
+        if case .loading = loadingType {
+            return true
+        }
+        return false
+    }
+
+    private var hasIcon: Bool {
+        switch loadingType {
+        case .none:
+            switch leading {
+            case .icon, .bullet:
+                true
+            case .none:
+                false
+            }
+        case .loading:
+            true
+        }
+    }
+
+    private var accessibilityLabel: String {
+        if case .loading = loadingType {
+            return label + ", " + "core_common_loading_a11y".localized()
+        }
+        return label
     }
 }
