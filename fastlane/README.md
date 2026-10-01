@@ -77,7 +77,7 @@ Run the unit tests embedded in the Swift Package project
 [bundle exec] fastlane ios build_xcframework
 ```
 
-Build the dynamic OUDSSwiftUIOrangeSosh.xcframework for iOS and verify the resulting artefacts (zip + sha256 + release notes) in dist/. Pass the version through the `version` parameter (defaults to git describe, then to 0.0.0-dev).
+Build the dynamic OUDSSwiftUIOrange.xcframework and OUDSSwiftUIOrangeSosh.xcframework for iOS and verify the resulting artefacts (zip + sha256 + release notes) in dist/. Pass the version through the `version` parameter (defaults to git describe, then to 0.0.0-dev).
 
 ----
 
