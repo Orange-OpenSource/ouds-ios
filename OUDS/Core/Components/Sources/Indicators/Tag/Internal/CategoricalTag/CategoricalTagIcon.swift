@@ -20,31 +20,32 @@ struct CategoricalTagIcon: View {
     let leading: OUDSCategoricalTag.Leading
 
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
-        Group {
-            switch leading {
-            case .none:
-                EmptyView()
-            case .bullet:
-                Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
-                    .renderingMode(.template)
+        switch leading {
+        case .none:
+            EmptyView()
+        case .bullet:
+            Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
+                .renderingMode(.template)
+                .resizable()
+                .foregroundColor(contentColor)
+                .padding(.all, bulletPadding)
+        case let .icon(oudsImage):
+            if let asset = oudsImage.asset {
+                asset
+                    .renderingMode(oudsImage.renderingMode)
                     .resizable()
-                    .foregroundColor(theme.categoricalTag.colorContent)
-                    .padding(.all, bulletPadding)
-            case let .icon(oudsImage):
-                if let asset = oudsImage.asset {
-                    asset
-                        .renderingMode(oudsImage.renderingMode)
-                        .resizable()
-                        .toFlip(oudsImage.flipped)
-                        .foregroundColor(theme.categoricalTag.colorContent)
-                        .padding(.all, iconPadding)
-                } else {
-                    EmptyView()
-                }
+                    .toFlip(oudsImage.flipped)
+                    .foregroundColor(contentColor)
+                    .padding(.all, iconPadding)
             }
         }
+    }
+
+    private var contentColor: MultipleColorSemanticToken {
+        isEnabled ? theme.categoricalTag.colorContent : theme.colors.contentOnActionDisabled
     }
 
     private var bulletPadding: CGFloat {

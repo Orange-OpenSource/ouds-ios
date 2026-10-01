@@ -17,25 +17,35 @@ import SwiftUI
 struct CategoricalTagBackgroundModifier: ViewModifier {
 
     let category: OUDSCategoricalTag.Category
+    let isLoading: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     func body(content: Content) -> some View {
         content.background(backgroundColor)
     }
 
     private var backgroundColor: MultipleColorSemanticToken {
-        switch category {
-        case .category1:
-            theme.categoricalTag.colorBgCategory1
-        case .category2:
-            theme.categoricalTag.colorBgCategory2
-        case .category3:
-            theme.categoricalTag.colorBgCategory3
-        case .category4:
-            theme.categoricalTag.colorBgCategory4
-        case .category5:
-            theme.categoricalTag.colorBgCategory5
+        if isLoading {
+            return theme.colors.surfaceSecondary
+        }
+
+        if isEnabled {
+            switch category {
+            case .category1:
+                return theme.categoricalTag.colorBgCategory1
+            case .category2:
+                return theme.categoricalTag.colorBgCategory2
+            case .category3:
+                return theme.categoricalTag.colorBgCategory3
+            case .category4:
+                return theme.categoricalTag.colorBgCategory4
+            case .category5:
+                return theme.categoricalTag.colorBgCategory5
+            }
+        } else {
+            return theme.colors.actionDisabled
         }
     }
 }
