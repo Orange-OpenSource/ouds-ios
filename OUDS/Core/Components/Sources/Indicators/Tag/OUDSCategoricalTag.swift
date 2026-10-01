@@ -71,10 +71,6 @@ import SwiftUI
 ///     OUDSCategoricalTag(label: "Label", category: .category4, shape: .square, size: .small)
 /// ```
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-tag)
-///
 /// ## Themes rendering
 ///
 /// ### Orange
@@ -84,10 +80,6 @@ import SwiftUI
 /// ### Orange Compact
 ///
 /// ![A categorical tag component in light and dark modes with Orange Compact theme](component_categoricalTag_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A categorical tag component in light and dark modes with Sosh theme](component_categoricalTag_Sosh)
 ///
 /// ### Wireframe
 ///

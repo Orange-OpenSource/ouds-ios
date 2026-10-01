@@ -16,11 +16,15 @@ import SwiftUI
 
 struct CategoricalTagIcon: View {
 
+    // MARK: Properties
+
     let size: OUDSTag.Size
     let leading: OUDSCategoricalTag.Leading
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+
+    // MARK: Body
 
     var body: some View {
         iconContent?
@@ -30,6 +34,8 @@ struct CategoricalTagIcon: View {
             .foregroundColor(contentColor)
             .padding(.all, padding)
     }
+
+    // MARK: Helpers
 
     private var iconContent: Image? {
         switch leading {

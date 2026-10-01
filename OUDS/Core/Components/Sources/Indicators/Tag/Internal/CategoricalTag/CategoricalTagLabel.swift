@@ -16,12 +16,16 @@ import SwiftUI
 
 struct CategoricalTagLabel: View {
 
+    // MARK: Properties
+
     let size: OUDSTag.Size
     let label: String
     let isLoading: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+
+    // MARK: Body
 
     var body: some View {
         Group {
@@ -36,6 +40,8 @@ struct CategoricalTagLabel: View {
         }
         .foregroundColor(contentColor)
     }
+
+    // MARK: Helpers
 
     private var contentColor: MultipleColorSemanticToken {
         if isLoading {

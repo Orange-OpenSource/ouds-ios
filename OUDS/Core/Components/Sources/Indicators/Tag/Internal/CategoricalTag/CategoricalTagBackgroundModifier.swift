@@ -16,15 +16,21 @@ import SwiftUI
 
 struct CategoricalTagBackgroundModifier: ViewModifier {
 
+    // MARK: Properties
+
     let category: OUDSCategoricalTag.Category
     let isLoading: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
 
+    // MARK: Body
+
     func body(content: Content) -> some View {
         content.background(backgroundColor)
     }
+
+    // MARK: Helpers
 
     private var backgroundColor: MultipleColorSemanticToken {
         if isLoading {
