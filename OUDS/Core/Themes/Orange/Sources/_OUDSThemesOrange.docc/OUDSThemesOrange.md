@@ -418,6 +418,26 @@ struct YourApp: App {
 }
 <!-- Maybe not relevant to display checkbox picker -->
 
+#### Chips
+
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Orange.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Orange.png)
+    }
+}
+<!-- Maybe not relevant to display chip picker -->
+
+#### Password input
+
+![A password input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_Orange.png)
+
+#### Pin code input
+
+![A pin code input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_Orange.png)
+
 #### Radios
 
 @TabNavigator {
@@ -441,21 +461,29 @@ struct YourApp: App {
     }
 }
 
-#### Chips
+#### Text area
 
-@TabNavigator {
-    @Tab("Filter chip") {
-        ![A filter chip component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Orange.png)        
-    }
-    @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Orange.png)
-    }
-}
-<!-- Maybe not relevant to display chip picker -->
+![A text area component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_Orange.png)
 
 #### Text input
 
 ![A text input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Orange.png)
+
+### Dialogs
+
+#### Alert message
+
+![An alert message component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Orange.png)
+
+#### Inline alert
+
+![An inline alert component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_Orange.png)
+
+### Foundations
+
+#### Typography
+
+![A typography component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_Orange.png)
 
 ### Indicators
 
@@ -473,11 +501,25 @@ struct YourApp: App {
     }
 }
 
+#### Progress indicator
+
+@TabNavigator {
+    @Tab("Circular") {
+        ![A circular progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_Orange.png)
+    }
+    @Tab("Linear") {
+        ![A linear progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_Orange.png)
+    }
+}
+
 #### Tags
 
 @TabNavigator {
     @Tab("Tag") {
         ![A tag component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)        
+    }
+    @Tab("Tag") {
+        ![A categorical tag component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_categoricalTag_Orange.png)        
     }
     @Tab("Input tag") {
         ![An input tag component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_Orange.png)
@@ -486,7 +528,9 @@ struct YourApp: App {
 
 ### Layouts
 
-<!-- Maybe not relevant to display colored surface -->
+#### Colored surface
+
+![A colored surface component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_Orange.png)
 
 #### Dividers
 
@@ -505,17 +549,6 @@ struct YourApp: App {
 
 ![A link component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Orange.png)
 
-#### Tab bar
-
-@TabNavigator {
-    @Tab("With Liquid Glass") {
-        ![A tab component in light mode with Orange theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Orange_light.png)
-    }
-    @Tab("Without Liquid Glass") {
-        ![A tab component in light mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Orange_light.png)
-    }
-}
-
 #### List item
 
 @TabNavigator {
@@ -527,58 +560,27 @@ struct YourApp: App {
     }
 }
 
-#### Tool bar
-
-![A tool bar component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_Orange_light.png)
-
-### Dialogs
-
-#### Alert message
-
-![An alert message component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Orange.png)
-
-#### Inline alert
-
-![An inline alert component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_Orange.png)
-
-### Controls
-
-#### Pin code input
-
-![A pin code input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_Orange.png)
-
-#### Password input
-
-![A password input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_Orange.png)
-
-#### Text area
-
-![A text area component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_Orange.png)
-
-### Indicators
-
-#### Progress indicator
+#### Tab bar
 
 @TabNavigator {
-    @Tab("Circular") {
-        ![A circular progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_Orange.png)
+    @Tab("With Liquid Glass") {
+        ![A tab component in light mode with Orange theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Orange_light.png)
     }
-    @Tab("Linear") {
-        ![A linear progress indicator component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_Orange.png)
+    @Tab("Without Liquid Glass") {
+        ![A tab component in light mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Orange_light.png)
     }
 }
 
-### Layouts
+#### Tool bar
 
-#### Colored surface
-
-![A colored surface component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_Orange.png)
-
-### Foundations
-
-#### Typography
-
-![A typography component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_Orange.png)
+@TabNavigator {
+    @Tab("Top") {
+        ![A top tool bar component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_Orange_light.png)
+    }
+    @Tab("Bottom") {
+        ![A bottom tool bar component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarBottom_Orange_light.png)
+    }
+}
 
 ## Topics
 
