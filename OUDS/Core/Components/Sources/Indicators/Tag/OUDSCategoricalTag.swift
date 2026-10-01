@@ -265,11 +265,14 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
 
     // MARK: - Body
 
+    @Environment(\.theme) private var theme
+
     public var body: some View {
-        Label {
-            CategoricalTagLabel(size: size, label: label, isLoading: isLoading)
-        } icon: {
+        HStack(alignment: .center, spacing: spacing) {
             iconView
+                .frame(width: assetSize, height: assetSize, alignment: .center)
+
+            CategoricalTagLabel(size: size, label: label, isLoading: isLoading)
         }
         .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
         .modifier(CategoricalTagBackgroundModifier(category: category, isLoading: isLoading))
@@ -290,6 +293,24 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
             } else {
                 OUDSCircularProgressIndicator(status: .neutral, track: false, size: progressIndicatorSize)
             }
+        }
+    }
+
+    private var spacing: CGFloat {
+        switch size {
+        case .default:
+            theme.tag.spaceColumnGapDefault
+        case .small:
+            theme.tag.spaceColumnGapSmall
+        }
+    }
+
+    private var assetSize: CGFloat {
+        switch size {
+        case .default:
+            theme.tag.sizeAssetDefault
+        case .small:
+            theme.tag.sizeAssetSmall
         }
     }
 
