@@ -64,186 +64,81 @@ let shimmerDuration: Double = 0.8
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.1.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-
 public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
 
     // MARK: - Properties
 
-    @Binding var isAnimated: Bool
     private let securityMargin: Bool
     private var shape: Shape
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    @Environment(\.skeletonState) private var skeletonState
 
     // MARK: - Initializer
 
-    /// Cretae a skeleton
+    /// Cretate a skeleton  with the default `Rectangle` shape.
     /// - Parameters:
-    ///     -  isAnimated: Flag that controls the skeleton's animation behavior.
     ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
     ///     - shape: The shape to apply on the skeleton, `Rectangle()` by default.
-    public init(isAnimated: Binding<Bool> = .constant(true),
-                securityMargin: Bool = true,
-                shape: Shape = Rectangle()) {
-        _isAnimated = isAnimated
+    public init(securityMargin: Bool = true, shape: Shape = Rectangle()) {
         self.securityMargin = securityMargin
         self.shape = shape
     }
+
+    /// Cretate a skeleton  with the default `RoundedRectangle` shape according to the `cornerRadius`
+    ///
+    /// - Parameters:
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
+    ///     - cornerRadius: The radius used by `RoundedRectagle` shape to apply the skeleton.
+    init(securityMargin: Bool = true, cornerRadius: CGFloat) where Shape == RoundedRectangle {
+        self.init(securityMargin: securityMargin, shape: RoundedRectangle(cornerRadius: cornerRadius))
+    }
+
 
     // MARK: - Body
 
     public var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                theme.skeleton.colorBg.color(for: colorScheme)
+        if let skeletonState {
+            GeometryReader { geometry in
+                ZStack {
+                    theme.skeleton.colorBg.color(for: colorScheme)
 
-                if isAnimated && !lowPowerModeObserver.isLowPowerModeEnabled && !reduceMotion {
-                    ShimmerView(width: geometry.size.width)
-                }
-            }
-            .clipShape(shape)
-            .padding(.vertical, securityMargin ? theme.spaces.paddingBlock3xsmall : 0)
-        }
-    }
-}
-
-// MARK: - Shimmer
-
-private struct ShimmerView: View {
-
-    //  MARK: Properties
-
-    let width: CGFloat
-    @State private var progress: CGFloat = 0
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    //  MARK: Body
-
-    var body: some View {
-        LinearGradient(
-            stops: [ .init(color: colorStart, location: 0.0),
-                     .init(color: colorMiddle, location: 0.5),
-                     .init(color: colorEnd, location: 1.0)],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
-        .frame(width: width)
-        .offset(x: lerp(from: -width, to: width, progress: progress))
-        .onAppear {
-            startAnimation()
-        }
-    }
-
-    //  MARK: Helpers
-
-    private var colorStart: Color {
-        theme.skeleton.colorGradientStartEnd.color(for: colorScheme)
-    }
-
-    private var colorEnd: Color {
-        theme.skeleton.colorGradientStartEnd.color(for: colorScheme)
-    }
-
-    private var colorMiddle: Color {
-        theme.skeleton.colorGradientMiddle.color(for: colorScheme)
-    }
-
-    private func startAnimation() {
-        progress = 0
-
-        withAnimation(.timingCurve(0.42, 0.0, 0.58, 1.0, duration: shimmerDuration)) {
-            progress = 1
-        }
-
-        // 450 ms : pause à la position finale
-        DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
-            guard !Task.isCancelled else { return }
-            progress = 0
-            startAnimation()
-        }
-    }
-
-    private func lerp(from: CGFloat, to: CGFloat, progress: CGFloat) -> CGFloat {
-        from + (to - from) * progress
-    }
-}
-
-// MARK: - Convenience Initializers
-
-extension OUDSSkeleton where Shape == Rectangle {
-
-    init(isAnimated: Binding<Bool> = .constant(true), securityMargin: Bool = true) {
-        self.init(isAnimated: isAnimated,
-            securityMargin: securityMargin,
-            shape: Rectangle()
-        )
-    }
-}
-
-extension OUDSSkeleton where Shape == RoundedRectangle {
-
-    init(isAnimated: Binding<Bool> = .constant(true),
-        securityMargin: Bool = true,
-        cornerRadius: CGFloat) {
-        self.init(
-            isAnimated: isAnimated,
-            securityMargin: securityMargin,
-            shape: RoundedRectangle(
-                cornerRadius: cornerRadius
-            )
-        )
-    }
-}
-
-// MARK: - Skeleton Wrapper
-
-struct OUDSSkeletonContainer<Content: View, SkeletonShape: SwiftUI.Shape>: View {
-
-    let visible: Bool
-    let isAnimated: Binding<Bool>
-    let securityMargin: Bool
-    let shape: SkeletonShape
-    let content: () -> Content
-
-    init(
-        visible: Bool,
-        isAnimated: Binding<Bool> = .constant(true),
-        securityMargin: Bool = true,
-        shape: SkeletonShape = Rectangle(),
-        @ViewBuilder content: @escaping () -> Content
-    ) {
-        self.visible = visible
-        self.isAnimated = isAnimated
-        self.securityMargin = securityMargin
-        self.shape = shape
-        self.content = content
-    }
-
-    var body: some View {
-        if visible {
-            content()
-                .hidden()
-                .overlay {
-                    GeometryReader { geometry in
-                        OUDSSkeleton(
-                            isAnimated: isAnimated,
-                            securityMargin: securityMargin,
-                            shape: shape
-                        )
-                        .frame(
-                            width: geometry.size.width,
-                            height: geometry.size.height
-                        )
+                    if skeletonState.isAnimated {
+                        SkeletonShimmerView(width: geometry.size.width)
                     }
                 }
                 .clipShape(shape)
-        } else {
-            content()
+                .padding(.vertical, securityMargin ? theme.spaces.paddingBlock3xsmall : 0)
+            }
         }
+    }
+}
+
+// MARK: - View Helpers to apply skeleton
+
+extension View {
+    /// Apply a skeleton on the current component with the default `Rectangle` shape
+    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement.
+    ///
+    /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
+    /// - Since: 3.1.0
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+    public func skeleton(securityMargin: Bool = true) -> some View {
+        modifier(SkeletonModifier(securityMargin: securityMargin, shape: Rectangle()))
+    }
+
+    /// Apply a skeleton on the current component with a dedicated shape.
+    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement.
+    ///
+    /// - Parameters:
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
+    ///     - shape: The shape applied on the skeleton.
+    ///
+    /// - Since: 3.1.0
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+    public func skeleton<S: SwiftUI.Shape>(securityMargin: Bool = true, shape: S) -> some View {
+        modifier(SkeletonModifier(securityMargin: securityMargin, shape: shape))
     }
 }
 
@@ -251,45 +146,25 @@ struct OUDSSkeletonContainer<Content: View, SkeletonShape: SwiftUI.Shape>: View 
 
 struct SkeletonModifier<S: SwiftUI.Shape>: ViewModifier {
 
-    let visible: Bool
-    let isAnimated: Binding<Bool>
     let securityMargin: Bool
     let shape: S
 
+    @Environment(\.skeletonState) private var skeletonState
+
     func body(content: Content) -> some View {
-        OUDSSkeletonContainer(
-            visible: visible,
-            isAnimated: isAnimated,
-            securityMargin: securityMargin,
-            shape: shape
-        ) {
+        if let skeletonState {
+            content
+                .hidden()
+                .overlay {
+                    GeometryReader { geometry in
+                        OUDSSkeleton(securityMargin: securityMargin, shape: shape)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    }
+                }
+                .clipShape(shape)
+        } else {
             content
         }
-    }
-}
-
-extension View {
-
-    func skeleton(visible: Bool, isAnimated: Binding<Bool>, securityMargin: Bool = true) -> some View {
-        modifier(
-            SkeletonModifier(visible: visible, isAnimated: isAnimated, securityMargin: securityMargin, shape: Rectangle())
-        )
-    }
-
-    func skeleton<S: SwiftUI.Shape>(
-        visible: Bool,
-        isAnimated: Binding<Bool>,
-        securityMargin: Bool = true,
-        shape: S
-    ) -> some View {
-        modifier(
-            SkeletonModifier(
-                visible: visible,
-                isAnimated: isAnimated,
-                securityMargin: securityMargin,
-                shape: shape
-            )
-        )
     }
 }
 
@@ -297,18 +172,15 @@ extension View {
 
 #Preview("Skeleton") {
     VStack(spacing: 20) {
-
-        OUDSSkeleton(isAnimated: .constant(true))
-        .frame(width: 200, height: 62)
-
         OUDSSkeleton()
-        .frame(width: 200, height: 62)
+            .frame(width: 200, height: 62)
 
         OUDSSkeleton(securityMargin: false)
-        .frame(width: 200, height: 62)
+            .frame(width: 200, height: 62)
 
         OUDSSkeleton(cornerRadius: 12)
-        .frame(width: 200, height: 62)
+            .frame(width: 200, height: 62)
     }
+    .oudsSkeletonState(isVisible: true, isAnimated: true)
     .padding()
 }
