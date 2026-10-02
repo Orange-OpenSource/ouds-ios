@@ -73,6 +73,8 @@ extension WireframeThemeSizeSemanticTokensProvider: SizeMultipleSemanticTokens {
     @objc public final var maxWidthLabelLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelLargeMobile, regular: maxWidthLabelLargeTablet) }
     @objc public final var maxWidthLabelMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelMediumMobile, regular: maxWidthLabelMediumTablet) }
     @objc public final var maxWidthLabelSmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelSmallMobile, regular: maxWidthLabelSmallTablet) }
+
+    @objc public final var maxWidthBoxedText: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthBoxedTextMobile, regular: maxWidthBoxedTextTablet) }
 }
 
 // swiftlint:enable line_length

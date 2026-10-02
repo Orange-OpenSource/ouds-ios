@@ -241,12 +241,12 @@ public struct OUDSListItemIcon: View {
         case .default:
             switch size {
             case .medium:
-                theme.listItem.sizeAssetMedium
+                theme.sizes.iconWithLabelLargeSizeMedium
             case .large:
-                theme.listItem.sizeAssetLarge
+                theme.sizes.iconWithLabelLargeSizeLarge
             }
         case .small:
-            theme.listItem.sizeAssetSmall
+            theme.sizes.iconWithLabelLargeSizeSmall
         }
 
         return rawSize * dynamicTypeSize.percentageRate / 100

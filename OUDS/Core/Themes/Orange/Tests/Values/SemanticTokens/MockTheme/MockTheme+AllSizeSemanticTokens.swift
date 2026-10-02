@@ -218,6 +218,7 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
     override var maxWidthLabelLarge: MultipleSizeSemanticToken { Self.mockThemeSizeCompositeToken }
     override var maxWidthLabelMedium: MultipleSizeSemanticToken { Self.mockThemeSizeCompositeToken }
     override var maxWidthLabelSmall: MultipleSizeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var maxWidthBoxedText: MultipleSizeSemanticToken { Self.mockThemeSizeCompositeToken }
 
     // MARK: - Semantic token - Sizing - Interactive area
 

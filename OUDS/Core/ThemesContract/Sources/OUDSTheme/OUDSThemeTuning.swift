@@ -23,11 +23,11 @@ public typealias Tuning = OUDSThemeTuning
 /// To ease flexibility of themes and enhance their adoption some parts of the theme can be tuned.
 /// This allows for example to have a theme defined by the Brand but to apply some customization.
 ///
+/// But beware, these are only flags using inside components definitions to chose the token to apply.
+/// Some tokens for rounded and not rounded cases can have the same values in the end (like for Wireframe theme) or not (like for Orange theme).
+///
 /// - Since: 0.19.0
 public struct OUDSThemeTuning: @unchecked Sendable {
-
-    /// Unique identifier for the tuning
-    private let id = UUID()
 
     // MARK: Tuned properties
 
@@ -79,7 +79,11 @@ extension Tuning: Equatable {
     ///    - lhs: One of the tuning to test
     ///    - rhs: One of the tuning to test
     public static func == (lhs: Tuning, rhs: Tuning) -> Bool {
-        lhs.id == rhs.id
+        (lhs.hasRoundedButtons == rhs.hasRoundedButtons)
+            && (lhs.hasRoundedTextInputs == rhs.hasRoundedTextInputs)
+            && (lhs.hasRoundedAlertMessages == rhs.hasRoundedAlertMessages)
+            && (lhs.hasRoundedProgressIndicators == rhs.hasRoundedProgressIndicators)
+            && (lhs.hasRoundedListItems == rhs.hasRoundedListItems)
     }
 }
 
@@ -92,7 +96,7 @@ extension Tuning {
 
     /// The theme tuning for *Orange France* is the default one.
     /// There are no rounded corners.
-    public static let OrangeFrance = Tuning.default
+    public static let OrangeFrance = Tuning.nothingRounded
 
     /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**,
     /// a,d **alert messages**, **progress indicatprs** and **list items**.
@@ -107,9 +111,19 @@ extension Tuning {
     /// **rounded corners for text / PIN code / password / text area inputs**,
     /// **rounded corners for alert messages**,
     /// **rounded corners list items** and **progress indicators**.
-    public static let MaxIt = Tuning(hasRoundedButtons: true,
-                                     hasRoundedTextInputs: true,
-                                     hasRoundedAlertMessages: true,
-                                     hasRoundedProgressIndicators: true,
-                                     hasRoundedListItems: true)
+    public static let MaxIt = Tuning.allRounded
+
+    /// Predefined tuning making everything rounded.
+    public static let allRounded = Tuning(hasRoundedButtons: true,
+                                          hasRoundedTextInputs: true,
+                                          hasRoundedAlertMessages: true,
+                                          hasRoundedProgressIndicators: true,
+                                          hasRoundedListItems: true)
+
+    /// Predefined tuning making everything not rounded.
+    public static let nothingRounded = Tuning(hasRoundedButtons: false,
+                                              hasRoundedTextInputs: false,
+                                              hasRoundedAlertMessages: false,
+                                              hasRoundedProgressIndicators: false,
+                                              hasRoundedListItems: false)
 }

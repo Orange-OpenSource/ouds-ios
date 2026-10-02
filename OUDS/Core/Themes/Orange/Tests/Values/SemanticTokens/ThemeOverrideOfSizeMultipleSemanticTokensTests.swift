@@ -211,6 +211,11 @@ struct ThemeOverrideOfSizeMultipleSemanticTokensTests {
         #expect(inheritedTheme.sizes.maxWidthLabelSmall != abstractTheme.sizes.maxWidthLabelSmall)
         #expect(inheritedTheme.sizes.maxWidthLabelSmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBoxedText() throws {
+        #expect(inheritedTheme.sizes.maxWidthBoxedText != abstractTheme.sizes.maxWidthBoxedText)
+        #expect(inheritedTheme.sizes.maxWidthBoxedText == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    }
 }
 
 // swiftlint:enable type_name

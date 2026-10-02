@@ -45,6 +45,11 @@ public protocol AlertComponentTokens {
     var sizeMinHeight: SizeSemanticToken { get }
     var sizeMinHeightBottomAction: SizeSemanticToken { get }
     var sizeMinWidth: SizeSemanticToken { get }
+
+    // MARK: - Deprecated (v2.6)
+
+    @available(*, deprecated, message: "This token is not available anymore with version 2.7 of tokens library")
+    var spaceRowGapAction: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

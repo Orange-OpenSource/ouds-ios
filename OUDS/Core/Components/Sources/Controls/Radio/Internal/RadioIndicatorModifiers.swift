@@ -215,7 +215,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
             if colorSchemeContrast == .increased, colorScheme == .light {
                 theme.colors.contentDefault
             } else {
-                isOn ? theme.colors.actionSelected : theme.colors.actionEnabled
+                isOn ? theme.colors.actionSelected : theme.colors.borderEmphasized
             }
         }
     }

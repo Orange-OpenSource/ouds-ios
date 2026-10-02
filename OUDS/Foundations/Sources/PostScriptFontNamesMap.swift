@@ -78,7 +78,10 @@ extension [PostScriptFontNamesMapKey: String] {
     /// - Parameter key: The key to use to get a value
     public subscript(orKey key: Key) -> String {
         guard let value = self[key] else {
-            OL.warning("It seems there is missing rule for PostScript identifier with '\(key.familyName)'/'\(key.fontWeight)'. Fallback to '\(key.description)'")
+            // Keep log commented, otherwise to much polluting.
+            // White Label theme allows empty font family to fallback to system one.
+            // In the case waening is noisy and not that luch useful.
+            // OL.warning("It seems there is missing rule for PostScript identifier with '\(key.familyName)'/'\(key.fontWeight)'. Fallback to '\(key.description)'")
             return key.description
         }
         return value

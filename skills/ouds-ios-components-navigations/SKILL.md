@@ -13,7 +13,7 @@ license: MIT
 
 ```swift
 OUDSLink(text: "Text", size: .default) {}
-OUDSLink(text: "Text", indicator: .back, size: .default) {}
+OUDSLink(text: "Text", indicator: .previous, size: .default) {}
 OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic")), size: .default) {}
 OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
 ```

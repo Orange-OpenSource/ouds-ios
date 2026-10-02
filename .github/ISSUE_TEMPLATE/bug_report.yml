@@ -14,7 +14,7 @@ body:
   - type: input
     id: device
     attributes:
-      label: Your test device
+      label: Your test device(s)
       description: 
       placeholder: iPhone 13 pro
     validations:
@@ -22,7 +22,7 @@ body:
   - type: input
     id: os-version
     attributes:
-      label: Device OS version
+      label: Device(s) OS version(s)
       description: 
       placeholder: iOS 15.1
     validations:
@@ -30,19 +30,45 @@ body:
   - type: checkboxes
     id: liquid-glass-disabled
     attributes:
-      label: Is Liquid Glass disabled
+      label: Is Liquid Glass disabled?
       options:
         - label: Yes, Liquid Glass is disabled (or OS version is older than 26)
         - label: No, Liquid Glass is enabled (or OS version is 26 or newer)
-    validations:
-      required: true
   - type: input
     id: app-ouds-lib-version
     attributes:
       label: OUDS iOS library version
-      placeholder: "1.4.0"
+      placeholder: "3.1.0"
     validations:
-      required: true      
+      required: true    
+  - type: checkboxes
+    id: app-ouds-lib-integration
+    attributes:
+      label: How do you integrate OUDS in your app?
+      options:
+        - label: With Swift Package, as usual, pointing to GitHub repository
+        - label: With XCFramework picked from GitHub release
+  - type: input
+    id: app-orientation
+    attributes:
+      label: App orientation(s)
+      placeholder: Portrait and / or landscape
+    validations:
+      required: true
+  - type: input
+    id: app-language
+    attributes:
+      label: App language(s)
+      placeholder: English
+    validations:
+      required: true   
+  - type: input
+    id: device-language
+    attributes:
+      label: Device language
+      placeholder: English
+    validations:
+      required: false    
   - type: input
     id: xcode-version
     attributes:
@@ -56,28 +82,7 @@ body:
       label: Swift version
       placeholder: "Add 'swift --version' command outputs"
     validations:
-      required: false
-  - type: input
-    id: app-orientation
-    attributes:
-      label: App orientation
-      placeholder: Portrait and / or landscape
-    validations:
-      required: false
-  - type: input
-    id: app-language
-    attributes:
-      label: App language
-      placeholder: English
-    validations:
-      required: false   
-  - type: input
-    id: device-language
-    attributes:
-      label: Device language
-      placeholder: English
-    validations:
-      required: false               
+      required: false                 
   - type: input
     id: app-token-lib-version
     attributes:
@@ -106,7 +111,7 @@ body:
     id: what-happened
     attributes:
       label: Describe the issue
-      description: Provide a summary of the issue, including specific steps to reproduce with as much detail as possible. Do not forget to hide sensitive or personal data (phone numbers, accounts, messages, emails etc).
+      description: Provide a summary of the issue, including specific steps to reproduce with as much detail as possible. Do not forget to hide sensitive or personal data (phone numbers, accounts, messages, emails etc). Precise if your project is an app, an SDK, or something else.
     validations:
       required: true
   - type: textarea
@@ -123,3 +128,10 @@ body:
       description: Provide a description about the accessibility settings you have (Voice Over, Dynamic Type, Full Keyboard Access, Switch Control, High Constrast, etc.). Precise if low power mode enabled or not.
     validations:
       required: true
+  - type: textarea
+    id: code-samples
+    attributes:
+      label: Code samples to show the bug
+      description: Add code samples and / or Xcode sample project to show the bug you got and help maintainers to reproduce it. Except longer moment to solve the bug if nothing is provided.
+    validations:
+      required: false

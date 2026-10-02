@@ -23,7 +23,7 @@ struct IndeterminateHelperTextView: View {
     let configuration: LinearProgressIndicatorConfiguration.Indeterminate
 
     var body: some View {
-        OneElementHelperTextView(description: configuration.helperText, alignment: configuration.helperTextAlignment)
+        ProgressIndicatorHelperTextView(percent: nil, description: configuration.helperText, alignment: configuration.helperTextAlignment)
     }
 }
 
@@ -36,24 +36,16 @@ struct DeterminateProgressIndicatorHelperText: View {
     var body: some View {
         switch configuration.helperText {
         case let .description(description, alignment):
-            OneElementHelperTextView(description: description, alignment: alignment)
+            ProgressIndicatorHelperTextView(percent: nil, description: description, alignment: alignment)
+
         case let .percent(description, alignment):
-            let percent = percent()
-            switch alignment {
-            case .center:
-                OneElementHelperTextView(description: percent, alignment: alignment)
-            case .start:
-                TwoElementsHelperTextView(start: percent, end: description)
-            case .end:
-                TwoElementsHelperTextView(start: description, end: percent)
-            }
+            // Remove description if center
+            ProgressIndicatorHelperTextView(percent: configuration.progress,
+                                            description: alignment == .center ? nil : description,
+                                            alignment: alignment)
+
         default:
             EmptyView()
         }
-    }
-
-    private func percent() -> String {
-        let value = Int((configuration.progress * 100).rounded())
-        return "core_progressIndicator_percent_value".localized(with: value)
     }
 }

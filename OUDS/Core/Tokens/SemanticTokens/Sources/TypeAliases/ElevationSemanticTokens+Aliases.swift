@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import CoreGraphics // Needed for XCFramework generation
 import OUDSTokensRaw
 
 /// Basically an elevation semantic token for X offset is a raw token for elevation, with the same final type, to keep grammar clean and clear with design system grammar.

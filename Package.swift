@@ -14,9 +14,6 @@
 
 import PackageDescription
 
-/// Exposing OUDS through a Swift Package is a good start.
-/// Expose it through Pod or XCFramework should be investigated later.
-/// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have separated responsibilities.
 let package = Package(
 
     // MARK: - Package setup
@@ -42,17 +39,24 @@ let package = Package(
         // Embeds all libraries but only Orange and Orange Compact themes
         .library(
             name: "OUDSSwiftUIOrange",
+            type: .dynamic, // Needed for XCFramework generation (single dylib umbrella)
             targets: ["OUDSSwiftUIOrange"]),
 
         // Embeds all libraries but only Orange and Sosh themes
         .library(
             name: "OUDSSwiftUIOrangeSosh",
+            type: .dynamic, // Needed for XCFramework generation (single dylib umbrella)
             targets: ["OUDSSwiftUIOrangeSosh"]),
 
         // Embeds all libraries but only Wireframe theme
         .library(
             name: "OUDSSwiftUIWireframe",
             targets: ["OUDSSwiftUIWireframe"]),
+
+        // Embeds all libraries but only White Label and Wireframe themes
+        .library(
+            name: "OUDSSwiftUIWhiteLabel",
+            targets: ["OUDSSwiftUIWhiteLabel"]),
 
         // MARK: Atomic products
 
@@ -71,6 +75,9 @@ let package = Package(
             name: "OUDSThemesWireframe",
             targets: ["OUDSThemesWireframe"]),
         .library(
+            name: "OUDSThemesWhiteLabel",
+            targets: ["OUDSThemesWhiteLabel"]),
+        .library(
             name: "OUDSThemesContract",
             targets: ["OUDSThemesContract"]),
         .library(
@@ -84,7 +91,7 @@ let package = Package(
             targets: ["OUDSTokensComponent"]),
         .library(
             name: "OUDSTokensSemantic",
-            targets: ["OUDSTokensRaw"]),
+            targets: ["OUDSTokensSemantic"]),
         .library(
             name: "OUDSTokensRaw",
             targets: ["OUDSTokensRaw"]),
@@ -104,7 +111,7 @@ let package = Package(
         // Linter for Swift code
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.65.1"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.63.0"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.63.1"),
     ],
 
     // MARK: - Targets
@@ -118,108 +125,170 @@ let package = Package(
         .target(
             name: "OUDSSwiftUI",
             dependencies: [
+                "OUDSComponents",
+                "OUDSFoundations",
+                "OUDSModules",
+                "OUDSThemesContract",
                 "OUDSThemesOrange",
                 "OUDSThemesOrangeCompact",
                 "OUDSThemesSosh",
+                "OUDSThemesWhiteLabel",
                 "OUDSThemesWireframe",
-                "OUDSThemesContract",
-                "OUDSModules",
-                "OUDSComponents",
                 "OUDSTokensComponent",
-                "OUDSTokensSemantic",
                 "OUDSTokensRaw",
-                "OUDSFoundations",
+                "OUDSTokensSemantic",
             ],
             path: "OUDS/exported/OUDSSwiftUI/Sources"),
 
         .target(
             name: "OUDSSwiftUIOrange",
             dependencies: [
+                "OUDSComponents",
+                "OUDSFoundations",
+                "OUDSModules",
+                "OUDSThemesContract",
                 "OUDSThemesOrange",
                 "OUDSThemesOrangeCompact",
-                "OUDSThemesContract",
-                "OUDSModules",
-                "OUDSComponents",
                 "OUDSTokensComponent",
-                "OUDSTokensSemantic",
                 "OUDSTokensRaw",
-                "OUDSFoundations",
+                "OUDSTokensSemantic",
             ],
             path: "OUDS/exported/OUDSSwiftUIOrange/Sources"),
 
         .target(
             name: "OUDSSwiftUIOrangeSosh",
             dependencies: [
+                "OUDSComponents",
+                "OUDSFoundations",
+                "OUDSModules",
+                "OUDSThemesContract",
                 "OUDSThemesOrange",
                 "OUDSThemesSosh",
-                "OUDSThemesContract",
-                "OUDSModules",
-                "OUDSComponents",
                 "OUDSTokensComponent",
-                "OUDSTokensSemantic",
                 "OUDSTokensRaw",
-                "OUDSFoundations",
+                "OUDSTokensSemantic",
             ],
             path: "OUDS/exported/OUDSSwiftUIOrangeSosh/Sources"),
 
         .target(
             name: "OUDSSwiftUIWireframe",
             dependencies: [
-                "OUDSThemesWireframe",
-                "OUDSThemesContract",
-                "OUDSModules",
                 "OUDSComponents",
-                "OUDSTokensComponent",
-                "OUDSTokensSemantic",
-                "OUDSTokensRaw",
                 "OUDSFoundations",
+                "OUDSModules",
+                "OUDSThemesContract",
+                "OUDSThemesWireframe",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
             ],
             path: "OUDS/exported/OUDSSwiftUIWireframe/Sources"),
+
+        .target(
+            name: "OUDSSwiftUIWhiteLabel",
+            dependencies: [
+                "OUDSComponents",
+                "OUDSFoundations",
+                "OUDSModules",
+                "OUDSThemesContract",
+                "OUDSThemesWhiteLabel",
+                "OUDSThemesWireframe",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
+            path: "OUDS/exported/OUDSSwiftUIWhiteLabel/Sources"),
 
         // MARK: Atomic targets
 
         .target(
             name: "OUDSThemesOrange",
-            dependencies: ["OUDSThemesContract"],
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSThemesContract",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
             path: "OUDS/Core/Themes/Orange/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
             name: "OUDSThemesOrange-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesOrange"],
+            dependencies: ["OUDSThemesOrange", "TestsUtils"],
             path: "OUDS/Core/Themes/Orange/Tests"),
 
         .target(
             name: "OUDSThemesOrangeCompact",
-            dependencies: ["OUDSThemesContract", "OUDSThemesOrange"],
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSThemesContract",
+                "OUDSThemesOrange",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
             path: "OUDS/Core/Themes/OrangeCompact/Sources"),
         .testTarget(
             name: "OUDSThemesOrangeCompact-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesOrangeCompact"],
+            dependencies: ["OUDSThemesOrangeCompact", "TestsUtils"],
             path: "OUDS/Core/Themes/OrangeCompact/Tests"),
 
         .target(
             name: "OUDSThemesSosh",
-            dependencies: ["OUDSThemesContract"],
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSThemesContract",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
             path: "OUDS/Core/Themes/Sosh/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
             name: "OUDSThemesSosh-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesSosh"],
+            dependencies: ["OUDSThemesSosh", "TestsUtils"],
             path: "OUDS/Core/Themes/Sosh/Tests"),
 
         .target(
             name: "OUDSThemesWireframe",
-            dependencies: ["OUDSThemesContract"],
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSThemesContract",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
             path: "OUDS/Core/Themes/Wireframe/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
             name: "OUDSThemesWirefame-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesWireframe"],
+            dependencies: ["OUDSThemesWireframe", "TestsUtils"],
             path: "OUDS/Core/Themes/Wireframe/Tests"),
 
         .target(
+            name: "OUDSThemesWhiteLabel",
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSThemesContract",
+                "OUDSThemesWireframe",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
+            path: "OUDS/Core/Themes/WhiteLabel/Sources"),
+        .testTarget(
+            name: "OUDSThemesWhiteLabel-Tests",
+            dependencies: ["OUDSThemesWhiteLabel", "OUDSThemesWireframe", "TestsUtils"],
+            path: "OUDS/Core/Themes/WhiteLabel/Tests"),
+
+        .target(
             name: "OUDSThemesContract",
-            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
             path: "OUDS/Core/ThemesContract/Sources"),
         .testTarget(
             name: "OUDSThemesContract-Tests",
@@ -233,7 +302,13 @@ let package = Package(
 
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSTokensComponent", "OUDSThemesContract"],
+            dependencies: [
+                "OUDSFoundations",
+                "OUDSThemesContract",
+                "OUDSTokensComponent",
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+            ],
             path: "OUDS/Core/Components/Sources",
             resources: [.process("_/Resources/")]),
         .testTarget(
@@ -248,7 +323,7 @@ let package = Package(
 
         .target(
             name: "OUDSTokensSemantic",
-            dependencies: ["OUDSTokensRaw"],
+            dependencies: ["OUDSFoundations", "OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/SemanticTokens/Sources"),
         .testTarget(
             name: "OUDSTokensSemantic-Tests",
@@ -261,7 +336,7 @@ let package = Package(
             path: "OUDS/Core/Tokens/RawTokens/Sources"),
         .testTarget(
             name: "OUDSTokensRaw-Tests",
-            dependencies: ["TestsUtils", "OUDSTokensRaw"],
+            dependencies: ["OUDSTokensRaw", "TestsUtils"],
             path: "OUDS/Core/Tokens/RawTokens/Tests"),
 
         .target(
