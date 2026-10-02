@@ -518,7 +518,7 @@ struct YourApp: App {
     @Tab("Tag") {
         ![A tag component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)        
     }
-    @Tab("Tag") {
+    @Tab("Categorical tag") {
         ![A categorical tag component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_categoricalTag_Orange.png)        
     }
     @Tab("Input tag") {
