@@ -45,7 +45,7 @@ OUDSInputTag("Label") { /* remove action */ }
 
 ## Categorical Tag
 
-Categories: `category1` to `category5` — each defines background color (emerald, sky, amber, amethyst, pink)
+Categories: `category1` to `category5` — each maps to a theme-defined background color (for example, emerald, sky, amber, amethyst, and pink in Orange themes)
 
 ```swift
 OUDSCategoricalTag(label: "Label")
