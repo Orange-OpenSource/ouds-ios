@@ -201,6 +201,36 @@ OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
 OUDSTag(loadingLabel: "Processing...", progress: 0.75)
 ```
 
+### Categorical Tag
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A categorical tag component in light and dark modes with Orange theme](component_categoricalTag_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A categorical tag component in light and dark modes with Orange Compact theme](component_categoricalTag_OrangeCompact)
+    }
+    @Tab("Wireframe") {
+        ![A categorical tag component in light and dark modes with Wireframe theme](component_categoricalTag_Wireframe)
+    }
+}
+
+An ``OUDSCategoricalTag`` is like an ``OUDSTag`` but without appearance notion and with categories instead of statuses.
+
+```swift
+     // Text only with category 1, rounded shape, default size
+     OUDSCategoricalTag(label: "Label", category: .category1)
+
+     // Text with category 2 and bullet
+     OUDSCategoricalTag(label: "Label", category: .category2, leading: .bullet)
+
+     // Text with category 3 and custom icon
+     OUDSCategoricalTag(label: "Label", category: .category3, leading: .icon(OUDSImage(asset: Image(decorative: "ic_heart"))))
+
+     // Small size, square shape
+     OUDSCategoricalTag(label: "Label", category: .category4, shape: .square, size: .small)
+```
+
 ### Input Tag
 
 @TabNavigator {
