@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...develop)
+
+### Changed
+
+- `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
+
 ## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
 
 ### Added
@@ -19,7 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions `actions/upload-artifact` action from v4.6.2 to v7.0.1 for `build-xcframework` workflow
 - GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.0 to v4.38.2 for `scorecard` workflow
 - GitHub Actions `ruby/setup-ruby` action from v1.321.0 to v1.327.0 for `build-and-test` and `build-xcframework` workflows
-- `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
 - `button` component to version v3.4.0 (Orange-OpenSource/ouds-ios#1653)
 - Make product exportable and usable as XCFramework for Orange and Sosh themes on iOS (Orange-OpenSource/ouds-ios#1767)
 - In `circular progress indicator`, set helper text in two texts to fix alignment (Orange-OpenSource/ouds-ios#1753)
