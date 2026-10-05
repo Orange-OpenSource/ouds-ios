@@ -37,6 +37,7 @@ struct AlertMessageContent: View {
                 Text(text)
                     .labelModerateLarge(theme)
                     .foregroundColor(foregroundColor)
+                    .multilineTextAlignment(.leading)
                     .frame(maxWidth: maxWidthText, alignment: .leading)
 
                 if let description, !description.isEmpty {
@@ -65,7 +66,7 @@ struct AlertMessageContent: View {
 
             // Action
             if let link, self.link?.position == .bottom {
-                OUDSLink(text: link.text, size: .default, density: .default, action: link.action)
+                OUDSLink(text: link.text, size: .default, density: .compact, action: link.action)
                     .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
             }
         }
