@@ -74,6 +74,13 @@ extension Font {
         #endif
 
         if let family {
+            // Link to the apple restriction of "SF Mono" font usage,
+            // (https://github.com/supercomputra/SF-Mono-Font/issues/3),
+            // we need to use system api instead of the font name
+            if family.contains("SF Mono") {
+                return NativeFont.monospacedSystemFont(ofSize: scaledFontSize, weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
+            }
+
             // Can be a custom font loaded from side assets or another custom font available in the OS
             let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: adaptiveFontToken.weight))]
             if let customFont = NativeFont(name: composedFontFamily, size: scaledFontSize) {
