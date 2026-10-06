@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...develop)
+
+### Changed
+
+- `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
+
 ## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
 
 ### Added
@@ -43,6 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
+- Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
+- `subtitle` on `toolbar top` for iOS < 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
 - Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)

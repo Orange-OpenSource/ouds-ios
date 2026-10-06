@@ -87,7 +87,7 @@ import SwiftUI
 ///
 /// ![An alert message component in light and dark modes with Wireframe theme](component_alertMessage_Wireframe)
 ///
-/// - Version: 1.1.1 (Figma component design version)
+/// - Version: 1.2.0 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
 public struct OUDSAlertMessage: View {
@@ -476,7 +476,7 @@ public struct OUDSAlertMessage: View {
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertLeadingIcon(status: status)
-                .padding(.top, theme.alert.spacePaddingBlock)
+                .padding(.vertical, theme.alert.spacePaddingBlock)
             AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link, onClose: onClose)
             AlertMessageAction(link: link, onClose: onClose)
         }
