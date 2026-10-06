@@ -476,6 +476,7 @@ public struct OUDSAlertMessage: View {
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertLeadingIcon(status: status)
+                .padding(.vertical, theme.alert.spacePaddingBlock)
             AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link, onClose: onClose)
             AlertMessageAction(link: link, onClose: onClose)
         }

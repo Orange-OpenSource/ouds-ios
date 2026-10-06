@@ -57,7 +57,6 @@ struct AlertLeadingIcon: View {
             }
         }
         .frame(width: size, height: size)
-        .padding(.vertical, theme.alert.spacePaddingBlock)
     }
 
     private var size: CGFloat {
