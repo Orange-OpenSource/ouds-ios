@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensSemantic
 import SwiftUI
 
 /// Text component used to structure the hierarchy of a screen.
@@ -102,6 +103,7 @@ public struct OUDSHeading: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: - Size
 
@@ -227,6 +229,7 @@ public struct OUDSHeading: View {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 styledText
                     .foregroundColor(theme.colors.contentDefault)
+                    .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
                 HeadingMarker()
             }
             .accessibilityElement(children: .combine)
@@ -234,6 +237,7 @@ public struct OUDSHeading: View {
         } else {
             styledText
                 .foregroundColor(theme.colors.contentDefault)
+                .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
                 .accessibilityAddTraits(.isHeader)
         }
     }
@@ -287,4 +291,19 @@ public struct OUDSHeading: View {
         attributed[range].foregroundColor = theme.colors.contentBrandSecondary.color(for: colorScheme)
         return Text(attributed)
     }
+
+    /// Apply the correct maxWidth based on the requested size.
+    private var maxWidth: MultipleSizeSemanticToken {
+        switch size {
+        case .xLarge:
+            theme.sizes.maxWidthHeadingXlarge
+        case .large:
+            theme.sizes.maxWidthHeadingLarge
+        case .medium:
+            theme.sizes.maxWidthHeadingMedium
+        case .small:
+            theme.sizes.maxWidthHeadingSmall
+        }
+    }
+
 }
