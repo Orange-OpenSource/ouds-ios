@@ -35,8 +35,7 @@ struct TagLabelStyle: LabelStyle {
             configuration.title
         }
         .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
-        .modifier(TagBackgroundModifier(appearance: appearance, type: type))
-        .modifier(TagShapeModifier(shape: shape))
+        .modifier(TagAspectModifier(appearance: appearance, shape: shape, size: size, type: type))
     }
 
     // MARK: Helpers
@@ -74,3 +73,4 @@ struct TagLabelStyle: LabelStyle {
         return rawSize * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
     }
 }
+
