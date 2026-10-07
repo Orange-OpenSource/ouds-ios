@@ -31,7 +31,7 @@ public final class OUDSSkeletonState {
 }
 
 extension View {
-    public func oudsSkeletonState(isVisible: Bool = true, isAnimated: Bool = true) -> some View {
+    public func oudsSkeleton(isVisible: Bool = true, isAnimated: Bool = true) -> some View {
         self.modifier(SkeletonStateModifier(isVisible: isVisible, isAnimated: isAnimated))
     }
 }

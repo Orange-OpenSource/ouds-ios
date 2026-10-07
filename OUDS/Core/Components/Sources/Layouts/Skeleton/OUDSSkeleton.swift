@@ -181,6 +181,6 @@ struct SkeletonModifier<S: SwiftUI.Shape>: ViewModifier {
         OUDSSkeleton(cornerRadius: 12)
             .frame(width: 200, height: 62)
     }
-    .oudsSkeletonState(isVisible: true, isAnimated: true)
+    .oudsSkeleton(isVisible: true, isAnimated: true)
     .padding()
 }
