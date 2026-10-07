@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
+- `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
 
 ## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
 

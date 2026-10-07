@@ -305,5 +305,4 @@ public struct OUDSHeading: View {
             theme.sizes.maxWidthHeadingSmall
         }
     }
-
 }
