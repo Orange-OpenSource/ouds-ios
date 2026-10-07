@@ -400,7 +400,6 @@ public struct OUDSButton: View {
         }
         .buttonStyle(StyleForButton(appearance: appearance, style: style, size: size, isHover: isHover, isFullWidth: isFullWidth))
         .disabled(style != Self.Style.default)
-        .skeleton()
         .accessibilityLabel(accessibilityLabel)
         #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in

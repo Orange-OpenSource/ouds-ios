@@ -34,31 +34,37 @@ struct ButtonLoadingContentModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
+    @Environment(\.skeletonState) private var skeletonState
 
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content
-            .overlay {
-                Group {
-                    if let progress {
-                        CircularProgressIndicatorDeterminateView(progress: progress,
-                                                                 animated: true,
-                                                                 foregroundColor: colorToken.color(for: colorScheme),
-                                                                 trackColor: .clear,
-                                                                 strokeCap: strokeCap,
-                                                                 gapSize: .default,
-                                                                 size: sizeProgressIndicator)
-                    } else {
-                        CircularProgressIndicatorIndeterminateView(foregroundColor: colorToken.color(for: colorScheme),
-                                                                   trackColor: .clear,
-                                                                   strokeCap: strokeCap,
-                                                                   gapSize: .default,
-                                                                   size: sizeProgressIndicator)
+        // No need to display the indicator if it is a skeleton
+        if skeletonState != nil {
+            content
+        } else {
+            content
+                .overlay {
+                    Group {
+                        if let progress {
+                            CircularProgressIndicatorDeterminateView(progress: progress,
+                                                                     animated: true,
+                                                                     foregroundColor: colorToken.color(for: colorScheme),
+                                                                     trackColor: .clear,
+                                                                     strokeCap: strokeCap,
+                                                                     gapSize: .default,
+                                                                     size: sizeProgressIndicator)
+                        } else {
+                            CircularProgressIndicatorIndeterminateView(foregroundColor: colorToken.color(for: colorScheme),
+                                                                       trackColor: .clear,
+                                                                       strokeCap: strokeCap,
+                                                                       gapSize: .default,
+                                                                       size: sizeProgressIndicator)
+                        }
                     }
+                    .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
                 }
-                .modifier(LoaderSizeModifier(size: sizeProgressIndicator))
-            }
+        }
     }
 
     // MARK: Private helpers

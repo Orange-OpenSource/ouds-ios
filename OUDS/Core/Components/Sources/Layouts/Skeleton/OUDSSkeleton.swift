@@ -79,9 +79,9 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
 
     /// Cretate a skeleton  with the default `Rectangle` shape.
     /// - Parameters:
-    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
     ///     - shape: The shape to apply on the skeleton, `Rectangle()` by default.
-    public init(securityMargin: Bool = true, shape: Shape = Rectangle()) {
+    public init(securityMargin: Bool = false, shape: Shape = Rectangle()) {
         self.securityMargin = securityMargin
         self.shape = shape
     }
@@ -89,9 +89,9 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     /// Cretate a skeleton  with the default `RoundedRectangle` shape according to the `cornerRadius`
     ///
     /// - Parameters:
-    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
     ///     - cornerRadius: The radius used by `RoundedRectagle` shape to apply the skeleton.
-    init(securityMargin: Bool = true, cornerRadius: CGFloat) where Shape == RoundedRectangle {
+    init(securityMargin: Bool = false, cornerRadius: CGFloat) where Shape == RoundedRectangle {
         self.init(securityMargin: securityMargin, shape: RoundedRectangle(cornerRadius: cornerRadius))
     }
 
@@ -121,10 +121,10 @@ extension View {
     /// Apply a skeleton on the current component with the default `Rectangle` shape
     /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement.
     ///
-    /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
+    /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
     /// - Since: 3.1.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func skeleton(securityMargin: Bool = true) -> some View {
+    public func skeleton(securityMargin: Bool = false) -> some View {
         modifier(SkeletonModifier(securityMargin: securityMargin, shape: Rectangle()))
     }
 
@@ -132,12 +132,12 @@ extension View {
     /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement.
     ///
     /// - Parameters:
-    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to true.
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
     ///     - shape: The shape applied on the skeleton.
     ///
     /// - Since: 3.1.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func skeleton<S: SwiftUI.Shape>(securityMargin: Bool = true, shape: S) -> some View {
+    public func skeleton<S: SwiftUI.Shape>(securityMargin: Bool = false, shape: S) -> some View {
         modifier(SkeletonModifier(securityMargin: securityMargin, shape: shape))
     }
 }
