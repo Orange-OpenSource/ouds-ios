@@ -34,8 +34,6 @@ struct InputTagContent: View {
         .padding(.leading, theme.tag.spacePaddingInlineDefault)
         .padding(.trailing, theme.tag.spacePaddingInlineAssetDefault)
         .frame(minWidth: theme.tag.sizeMinWidthDefault, minHeight: theme.tag.sizeMinHeightDefault)
-        .modifier(InputTagBackgroundModifier(state: interactionState))
-        .modifier(InputTagForegroundModifier(state: interactionState))
-        .modifier(InputTagBorderModifier(state: interactionState))
+        .modifier(InputTagAspectModifier(interactionState: interactionState))
     }
 }

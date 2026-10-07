@@ -152,7 +152,9 @@ struct SkeletonModifier<S: SwiftUI.Shape>: ViewModifier {
     @Environment(\.skeletonState) private var skeletonState
 
     func body(content: Content) -> some View {
-        if let skeletonState {
+        if skeletonState == nil {
+            content
+        } else {
             content
                 .hidden()
                 .overlay {
@@ -162,8 +164,6 @@ struct SkeletonModifier<S: SwiftUI.Shape>: ViewModifier {
                     }
                 }
                 .clipShape(shape)
-        } else {
-            content
         }
     }
 }
