@@ -4,11 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...develop)
 
 ### Added
 
 - `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
+
+## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
+
+### Added
+
 - `White label` theme (Orange-OpenSource/ouds-ios#1772)
 
 ### Changed
