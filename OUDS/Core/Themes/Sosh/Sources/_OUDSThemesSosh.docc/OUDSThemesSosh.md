@@ -109,6 +109,26 @@ You cannot derivate the Sosh theme.
 }
 <!-- Maybe not relevant to display checkbox picker -->
 
+#### Chips
+
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Sosh.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Sosh.png)
+    }
+}
+<!-- Maybe not relevant to display chip picker -->
+
+#### Pin code input
+
+![A pin code input component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_Sosh.png)
+
+#### Password input
+
+![A password input component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_Sosh.png)
+
 #### Radios
 
 @TabNavigator {
@@ -132,21 +152,29 @@ You cannot derivate the Sosh theme.
     }
 }
 
-#### Chips
+#### Text area
 
-@TabNavigator {
-    @Tab("Filter chip") {
-        ![A filter chip component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Sosh.png)        
-    }
-    @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Sosh.png)
-    }
-}
-<!-- Maybe not relevant to display chip picker -->
+![A text area component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_Sosh.png)
 
 #### Text input
 
 ![A text input component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Sosh.png)
+
+### Dialogs
+
+#### Alert message
+
+![An alert message component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Sosh.png)
+
+#### Inline alert
+
+![An inline alert component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_Sosh.png)
+
+### Foundations
+
+#### Typography
+
+![A typography component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_Sosh.png)
 
 ### Indicators
 
@@ -164,6 +192,17 @@ You cannot derivate the Sosh theme.
     }
 }
 
+#### Progress indicator
+
+@TabNavigator {
+    @Tab("Circular") {
+        ![A circular progress indicator component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_Sosh.png)
+    }
+    @Tab("Linear") {
+        ![A linear progress indicator component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_Sosh.png)
+    }
+}
+
 #### Tags
 
 @TabNavigator {
@@ -177,7 +216,9 @@ You cannot derivate the Sosh theme.
 
 ### Layouts
 
-<!-- Maybe not relevant to display colored surface -->
+#### Colored surface
+
+![A colored surface component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_Sosh.png)
 
 #### Dividers
 
@@ -196,17 +237,6 @@ You cannot derivate the Sosh theme.
 
 ![A link component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Sosh.png)
 
-#### Tab bar
-
-@TabNavigator {
-    @Tab("With Liquid Glass") {
-        ![A tab component in light mode with Sosh theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Sosh_light.png)
-    }
-    @Tab("Without Liquid Glass") {
-        ![A tab component in light mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Sosh_light.png)
-    }
-}
-
 #### List item
 
 @TabNavigator {
@@ -218,58 +248,27 @@ You cannot derivate the Sosh theme.
     }
 }
 
-#### Tool bar
-
-![A tool bar component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_Sosh_light.png)
-
-### Dialogs
-
-#### Alert message
-
-![An alert message component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Sosh.png)
-
-#### Inline alert
-
-![An inline alert component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_Sosh.png)
-
-### Controls
-
-#### Pin code input
-
-![A pin code input component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_Sosh.png)
-
-#### Password input
-
-![A password input component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_Sosh.png)
-
-#### Text area
-
-![A text area component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_Sosh.png)
-
-### Indicators
-
-#### Progress indicator
+#### Tab bar
 
 @TabNavigator {
-    @Tab("Circular") {
-        ![A circular progress indicator component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_Sosh.png)
+    @Tab("With Liquid Glass") {
+        ![A tab component in light mode with Sosh theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Sosh_light.png)
     }
-    @Tab("Linear") {
-        ![A linear progress indicator component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_Sosh.png)
+    @Tab("Without Liquid Glass") {
+        ![A tab component in light mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Sosh_light.png)
     }
 }
 
-### Layouts
+#### Tool bar
 
-#### Colored surface
-
-![A colored surface component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_Sosh.png)
-
-### Foundations
-
-#### Typography
-
-![A typography component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_Sosh.png)
+@TabNavigator {
+    @Tab("Top") {
+        ![A top tool bar component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_Sosh_light.png)
+    }
+    @Tab("Bottom") {
+        ![A bottom tool bar component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarBottom_Sosh_light.png)
+    }
+}
 
 ## Topics
 
