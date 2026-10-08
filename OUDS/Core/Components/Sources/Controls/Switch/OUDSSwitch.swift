@@ -140,6 +140,7 @@ public struct OUDSSwitch: View {
                        minHeight: theme.switch.sizeMinHeight,
                        maxHeight: theme.switch.sizeMaxHeight,
                        alignment: .center)
+                .skeleton(shape: RoundedRectangle(cornerRadius: theme.switch.borderRadiusTrack))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(accessibilityLabel)
