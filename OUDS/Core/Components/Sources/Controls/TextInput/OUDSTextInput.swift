@@ -605,6 +605,7 @@ public struct OUDSTextInput: View {
                maxWidth: constrainedMaxWidth ? theme.textInput.sizeMaxWidth : .infinity,
                minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
+        .skeleton()
     }
 }
 
