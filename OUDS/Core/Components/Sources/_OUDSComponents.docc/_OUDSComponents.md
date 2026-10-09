@@ -316,7 +316,7 @@ to inform all components in the current page to be displayed in skeleton.
     var body: some View {
         VStack {
             OUDSHeading("My header")
-            OUDSBody("A long body text here")
+            OUDSAlertMessage(label: "Some text here", description: "You should read this text")
             OUDSButton(text: "Show Skeleton") { showSkeleton = true }
         }
         .oudsSkeleton(isVisible: showSkeleton) 
