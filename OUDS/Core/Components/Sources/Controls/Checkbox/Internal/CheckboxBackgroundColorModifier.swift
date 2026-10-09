@@ -26,15 +26,18 @@ struct CheckboxBackgroundColorModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        switch interactionState {
-        case .enabled, .disabled, .readOnly:
-            content
-        case .hover:
-            content.background(theme.listItem.colorBgHover)
-                .clipShape(RoundedRectangle(cornerRadius: theme.listItem.borderRadiusItemOnly))
-        case .pressed:
-            content.background(theme.listItem.colorBgPressed)
-                .clipShape(RoundedRectangle(cornerRadius: theme.listItem.borderRadiusItemOnly))
+        Group {
+            switch interactionState {
+            case .enabled, .disabled, .readOnly:
+                content
+            case .hover:
+                content.background(theme.listItem.colorBgHover)
+                    .clipShape(RoundedRectangle(cornerRadius: theme.listItem.borderRadiusItemOnly))
+            case .pressed:
+                content.background(theme.listItem.colorBgPressed)
+                    .clipShape(RoundedRectangle(cornerRadius: theme.listItem.borderRadiusItemOnly))
+            }
         }
+        .skeleton(shape: RoundedRectangle(cornerRadius: theme.listItem.borderRadiusItemOnly))
     }
 }

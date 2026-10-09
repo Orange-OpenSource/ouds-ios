@@ -116,5 +116,6 @@ public struct OUDSInlineAlert: View {
             AlertLeadingIcon(status: status)
             InlineAlertLabel(text: text, status: status)
         }
+        .skeleton(securityMargin: true)
     }
 }

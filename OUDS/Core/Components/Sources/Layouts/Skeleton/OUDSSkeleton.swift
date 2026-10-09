@@ -1,0 +1,181 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import Combine
+import OUDSFoundations
+import OUDSThemesContract
+import OUDSTokensSemantic
+import SwiftUI
+
+// MARK: - Skeleton
+
+/// A skeleton is a UI element that indicates when content is loading. The skeleton enhances user experience by
+/// temporarily replacing content with gray areas or animations that simulate the visual structure of the forthcoming
+/// content.
+///
+/// The animation is automatically disabled if the low power mode or the accessibility reduce motion are activated.
+///
+/// ## Code samples
+///
+/// ```swift
+///     // Create a skeleton page
+///     HStack {
+///          // Heding skeleton
+///         OUDSSkeleton(securityMargin: true).frmae(wifth: 180, height: 48)
+///
+///         // Body skeleton
+///         OUDSSkeleton(securityMargin: true).frmae(wifth: 300, height: 150)
+///     }
+///
+///     // Apply skeleton on a component (a button)
+///     Button {
+///     } label: {
+///         VStack {
+///             Text("Title")
+///             Label("Subtutle", systemImage: "phone")
+///         }
+///     }
+///     .skeleton()
+/// ```
+///
+/// ## Design documentation
+///
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-skeleton)
+///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A skeleton component in light and dark modes with Orange theme](component_skeleton)
+///
+/// ### Orange Compact
+///
+/// ![A skeleton component in light and dark modes with Orange Compact theme](component_skeleton)
+///
+/// ### Sosh
+///
+/// ![A skeleton component in light and dark modes with Sosh theme](component_skeleton)
+///
+/// ### Wireframe
+///
+/// ![A skeleton component in light and dark modes with Wireframe theme](component_skeleton)
+///
+/// - Version: 1.0.0 (Figma component design version)
+/// - Since: 3.2.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
+
+    // MARK: - Properties
+
+    private let securityMargin: Bool
+    private var shape: Shape
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.skeletonState) private var skeletonState
+
+    // MARK: - Initializer
+
+    /// Cretate a skeleton  with the default `Rectangle` shape.
+    /// - Parameters:
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
+    ///     - shape: The shape to apply on the skeleton, `Rectangle()` by default.
+    public init(securityMargin: Bool = false, shape: Shape = Rectangle()) {
+        self.securityMargin = securityMargin
+        self.shape = shape
+    }
+
+    /// Cretate a skeleton  with the default `RoundedRectangle` shape according to the `cornerRadius`
+    ///
+    /// - Parameters:
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
+    ///     - cornerRadius: The radius used by `RoundedRectagle` shape to apply the skeleton.
+    init(securityMargin: Bool = false, cornerRadius: CGFloat = .infinity) where Shape == RoundedRectangle {
+        self.init(securityMargin: securityMargin, shape: RoundedRectangle(cornerRadius: cornerRadius))
+    }
+
+    // MARK: - Body
+
+    public var body: some View {
+        if let skeletonState {
+            GeometryReader { geometry in
+                ZStack {
+                    theme.skeleton.colorBg.color(for: colorScheme)
+
+                    if skeletonState.isAnimated {
+                        SkeletonShimmerView(width: geometry.size.width)
+                    }
+                }
+                .clipShape(shape)
+                .padding(.vertical, securityMargin ? theme.spaces.paddingBlock3xsmall : 0)
+            }
+        }
+    }
+}
+
+// MARK: - View Helpers to apply skeleton on a component
+
+extension View {
+    /// Apply a skeleton on the current component with the default `Rectangle` shape.
+    ///
+    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement using
+    /// `oudsSkeleton(isVisible:isAnimated:)
+    ///
+    /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
+    /// - Since: 3.2.0
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+    public func skeleton(securityMargin: Bool = false) -> some View {
+        modifier(SkeletonModifier(securityMargin: securityMargin, shape: Rectangle()))
+    }
+
+    /// Apply a skeleton on the current component with a dedicated shape.
+    /// 
+    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement using
+    /// `oudsSkeleton(isVisible:isAnimated:)
+    ///
+    /// - Parameters:
+    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
+    ///     - shape: The shape applied on the skeleton.
+    ///
+    /// - Since: 3.2.0
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+    public func skeleton<S: SwiftUI.Shape>(shape: S, securityMargin: Bool = false) -> some View {
+        modifier(SkeletonModifier(securityMargin: securityMargin, shape: shape))
+    }
+}
+
+// MARK: - Skeleton Modifier
+
+struct SkeletonModifier<S: SwiftUI.Shape>: ViewModifier {
+
+    let securityMargin: Bool
+    let shape: S
+
+    @Environment(\.skeletonState) private var skeletonState
+
+    func body(content: Content) -> some View {
+        if skeletonState == nil {
+            content
+        } else {
+            content
+                .hidden()
+                .overlay {
+                    GeometryReader { geometry in
+                        OUDSSkeleton(securityMargin: securityMargin, shape: shape)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    }
+                }
+                .clipShape(shape)
+        }
+    }
+}

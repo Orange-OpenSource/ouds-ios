@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -24,24 +25,12 @@ struct BulletListLabel: View {
     let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
 
-    @Environment(\.theme) private var theme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
     // MARK: - Body
 
     var body: some View {
         textView(for: label)
             .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
-            .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
-    }
-
-    private var maxWidth: MultipleSizeSemanticToken {
-        switch textStyle {
-        case .bodyLarge:
-            theme.sizes.maxWidthBodyLarge
-        case .bodyMedium:
-            theme.sizes.maxWidthBodyMedium
-        }
+            .modifier(FrameModifier(textStyle: textStyle))
     }
 }
 
@@ -72,6 +61,35 @@ struct BulletTextModifier: ViewModifier {
             } else {
                 content.bodyDefaultMedium(theme)
             }
+        }
+    }
+}
+
+struct FrameModifier: ViewModifier {
+
+    let textStyle: OUDSBulletList.TextStyle
+
+    @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    func body(content: Content) -> some View {
+        if #available(iOS 16, *) {
+            content
+                .limitedWidth(minWidth: 0,
+                              maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular),
+                              minHeight: 0)
+        } else {
+            content
+                .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+        }
+    }
+
+    private var maxWidth: MultipleSizeSemanticToken {
+        switch textStyle {
+        case .bodyLarge:
+            theme.sizes.maxWidthBodyLarge
+        case .bodyMedium:
+            theme.sizes.maxWidthBodyMedium
         }
     }
 }

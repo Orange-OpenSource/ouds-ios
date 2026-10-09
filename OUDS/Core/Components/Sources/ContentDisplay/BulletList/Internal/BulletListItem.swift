@@ -70,6 +70,7 @@ struct BulletListItem: View {
             .accessibilityLabel(accessibilityLabel)
             .padding(.leading, leadingPadding)
             .padding(.vertical, verticalPadding)
+            .skeleton(securityMargin: true)
 
             let enumeratedSubItems = item.subItems.enumerated()
             ForEach(Array(enumeratedSubItems), id: \.offset) { index, subItem in
@@ -82,6 +83,7 @@ struct BulletListItem: View {
                                accessibilityLabelPrefix: Self.prefixAfter(accessibilityLabelPrefix, for: nextLevel, at: index))
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Private helpers
