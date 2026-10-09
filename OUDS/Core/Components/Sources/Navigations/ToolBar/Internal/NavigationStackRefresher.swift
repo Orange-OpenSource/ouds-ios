@@ -25,7 +25,7 @@ struct NavigationStackRefresher: ViewModifier {
 
     @Environment(\.theme) private var theme: OUDSTheme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyLayout
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyTabBar
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Initializer
@@ -160,7 +160,7 @@ struct NavigationStackRefresher: ViewModifier {
 
         // Background and tint colors
 
-        if isLiquidGlassDisabled || forceOUDSLegacyLayout {
+        if isLiquidGlassDisabled || forceOUDSLegacyTabBar {
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = newTheme.bar.colorBgTranslucent.color(for: newColorScheme).uiColor
         }
