@@ -19,10 +19,13 @@ import SwiftUI
 extension EnvironmentValues {
 
     /// The `OUDSSkeletonState` to indicate if the skeleton of components should be displayed and animated or not according to the `isAnimated` flag.
-    @Entry public var skeletonState: OUDSSkeletonState? = nil
+    @Entry var skeletonState: OUDSSkeletonState? = nil
 }
 
-public final class OUDSSkeletonState {
+// MARK: - OUDS Skeleton state
+
+/// Defines if the skeleton is animated or not.
+final class OUDSSkeletonState {
     let isAnimated: Bool
 
     init(isAnimated: Bool) {
@@ -31,7 +34,14 @@ public final class OUDSSkeletonState {
 }
 
 extension View {
-    public func oudsSkeleton(isVisible: Bool = true, isAnimated: Bool = true) -> some View {
+
+    /// Used to activate and animate the skeleton on components.
+    ///
+    /// - Paramters:
+    ///     - isVisible: flag to present the skeleton.
+    ///     - isAnimated: flag to animate the shimer effect on the skeleton. `true` by default.
+    ///     The animation is automatically disabled if the low power mode or the accessibility reduce motion are activated.
+    public func oudsSkeleton(isVisible: Bool, isAnimated: Bool = true) -> some View {
         self.modifier(SkeletonStateModifier(isVisible: isVisible, isAnimated: isAnimated))
     }
 }

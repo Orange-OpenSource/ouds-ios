@@ -27,9 +27,12 @@ let shimmerDuration: Double = 0.8
 /// temporarily replacing content with gray areas or animations that simulate the visual structure of the forthcoming
 /// content.
 ///
+/// The animation is automatically disabled if the low power mode or the accessibility reduce motion are activated.
+///
 /// ## Code samples
 ///
 /// ```swift
+///     // Create a skeleton page
 ///     HStack {
 ///          // Heding skeleton
 ///         OUDSSkeleton(securityMargin: true).frmae(wifth: 180, height: 48)
@@ -37,6 +40,16 @@ let shimmerDuration: Double = 0.8
 ///         // Body skeleton
 ///         OUDSSkeleton(securityMargin: true).frmae(wifth: 300, height: 150)
 ///     }
+///
+///     // Apply skeleton on a component (a button)
+///     Button {
+///     } label: {
+///         VStack {
+///             Text("Title")
+///             Label("Subtutle", systemImage: "phone")
+///         }
+///     }
+///     .skeleton()
 /// ```
 ///
 /// ## Design documentation
@@ -62,7 +75,7 @@ let shimmerDuration: Double = 0.8
 /// ![A skeleton component in light and dark modes with Wireframe theme](component_skeleton_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 3.1.0
+/// - Since: 3.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
 
@@ -115,27 +128,31 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     }
 }
 
-// MARK: - View Helpers to apply skeleton
+// MARK: - View Helpers to apply skeleton on a component
 
 extension View {
-    /// Apply a skeleton on the current component with the default `Rectangle` shape
-    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement.
+    /// Apply a skeleton on the current component with the default `Rectangle` shape.
+    ///
+    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement using
+    /// `oudsSkeleton(isVisible:isAnimated:)
     ///
     /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
-    /// - Since: 3.1.0
+    /// - Since: 3.2.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func skeleton(securityMargin: Bool = false) -> some View {
         modifier(SkeletonModifier(securityMargin: securityMargin, shape: Rectangle()))
     }
 
     /// Apply a skeleton on the current component with a dedicated shape.
-    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement.
+    /// 
+    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement using
+    /// `oudsSkeleton(isVisible:isAnimated:)
     ///
     /// - Parameters:
     ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
     ///     - shape: The shape applied on the skeleton.
     ///
-    /// - Since: 3.1.0
+    /// - Since: 3.2.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func skeleton<S: SwiftUI.Shape>(securityMargin: Bool = false, shape: S) -> some View {
         modifier(SkeletonModifier(securityMargin: securityMargin, shape: shape))
@@ -166,21 +183,4 @@ struct SkeletonModifier<S: SwiftUI.Shape>: ViewModifier {
                 .clipShape(shape)
         }
     }
-}
-
-// MARK: - Preview
-
-#Preview("Skeleton") {
-    VStack(spacing: 20) {
-        OUDSSkeleton()
-            .frame(width: 200, height: 62)
-
-        OUDSSkeleton(securityMargin: false)
-            .frame(width: 200, height: 62)
-
-        OUDSSkeleton(cornerRadius: 12)
-            .frame(width: 200, height: 62)
-    }
-    .oudsSkeleton(isVisible: true, isAnimated: true)
-    .padding()
 }
