@@ -56,19 +56,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A skeleton component in light and dark modes with Orange theme](component_skeleton_Orange)
+/// ![A skeleton component in light and dark modes with Orange theme](component_skeleton)
 ///
 /// ### Orange Compact
 ///
-/// ![A skeleton component in light and dark modes with Orange Compact theme](component_skeleton_OrangeCompact)
+/// ![A skeleton component in light and dark modes with Orange Compact theme](component_skeleton)
 ///
 /// ### Sosh
 ///
-/// ![A skeleton component in light and dark modes with Sosh theme](component_skeleton_Sosh)
+/// ![A skeleton component in light and dark modes with Sosh theme](component_skeleton)
 ///
 /// ### Wireframe
 ///
-/// ![A skeleton component in light and dark modes with Wireframe theme](component_skeleton_Wireframe)
+/// ![A skeleton component in light and dark modes with Wireframe theme](component_skeleton)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.2.0
@@ -100,7 +100,7 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     /// - Parameters:
     ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
     ///     - cornerRadius: The radius used by `RoundedRectagle` shape to apply the skeleton.
-    init(securityMargin: Bool = false, cornerRadius: CGFloat) where Shape == RoundedRectangle {
+    init(securityMargin: Bool = false, cornerRadius: CGFloat = .infinity) where Shape == RoundedRectangle {
         self.init(securityMargin: securityMargin, shape: RoundedRectangle(cornerRadius: cornerRadius))
     }
 
