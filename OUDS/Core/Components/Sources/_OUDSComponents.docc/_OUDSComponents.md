@@ -325,7 +325,7 @@ to inform all components in the current page to be displayed in skeleton.
 
 ### Create a full skeleton screen  
 
-If a more complexe or dynamic page (i.e. without compoenents) need to be created in its skeleton representation, the library proposes the `OUDSSkeleton` component.
+If a more complexe or dynamic page (i.e. without compoenents) need to be created in its skeleton representation, the library proposes the ``OUDSSkeleton` component.
 
 ```swift
     VStack {
