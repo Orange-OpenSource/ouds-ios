@@ -298,3 +298,69 @@ let simpleText = AttributedString.from(text: "Some plain text",
 let simpleMarkdown = AttributedString.from(markdown: someMarkdown,
                                            foregroundColor: theme.colors.contentDefault.color(for: colorScheme))
 ```
+
+## Apply skeleton on components
+
+A skeleton is a UI element that indicates when content is loading. The skeleton enhances user experience by
+temporarily replacing content with gray areas or animations that simulate the visual structure of the forthcoming content.
+
+### Activate skeleton on page
+
+Lot of componnents in OUDS library propose their own skeleton representation according to `OUDSSkeletonState` set in the SwiftUi environment. 
+To udate the state the `oudsSkeleton(isVisible:isAnimated:)` can be applied on top view of the screen 
+to inform all components in the current page to be displayed in skeleton. 
+
+```swift
+    @State var showSkeleton = false
+
+    var body: some View {
+        VStack {
+            OUDSHeading("My header")
+            OUDSBody("A long body text here")
+            OUDSButton(text: "Show Skeleton") { showSkeleton = true }
+        }
+        .oudsSkeleton(isVisible: showSkeleton) 
+    }
+```
+
+### Create a full skeleton screen  
+
+If a more complexe or dynamic page (i.e. without compoenents) need to be created in its skeleton representation, the library proposes the `OUDSSkeleton` component.
+
+```swift
+    VStack {
+        // Heding skeleton
+        OUDSSkeleton(securityMargin: true).frmae(wifth: 180, height: 48)
+
+        // Body skeleton
+        OUDSSkeleton(securityMargin: true).frmae(wifth: 300, height: 150)
+
+        // Footer skeleton
+        OUDSSkeleton(securityMargin: true).frmae(wifth: 180, height: 54)
+    }
+```
+
+### Create your own component supporting skeleton
+
+The library propose a helper to apply skeleton on top of a custom component using the `skeleton` view modifier. 
+
+```swift
+    // My Component
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("The title")
+                .skeleton()
+            
+            Button {    
+            } label: {
+                VStack {
+                    Text("Title")
+                    Label("Subtutle", systemImage: "phone")
+                }
+            }
+            .skeleton()
+        }
+    }
+```
+
+
