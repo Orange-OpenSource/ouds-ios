@@ -11,30 +11,31 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import SwiftUI
 import OUDSThemesContract
+import SwiftUI
 
 // MARK: - The Shimmer apply on skeleton
 
 struct SkeletonShimmerView: View {
 
-    //  MARK: Properties
+    //  MARK: - Properties
+
+    let animationDuration: Double = 1.25
+    let shimmerDuration: Double = 0.8
 
     let width: CGFloat
     @State private var progress: CGFloat = 0
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    //  MARK: Body
+    //  MARK: - Body
 
     var body: some View {
-        LinearGradient(
-            stops: [ .init(color: colorStart, location: 0.0),
-                     .init(color: colorMiddle, location: 0.5),
-                     .init(color: colorEnd, location: 1.0)],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
+        LinearGradient(stops: [ .init(color: colorStart, location: 0.0),
+                                .init(color: colorMiddle, location: 0.5),
+                                .init(color: colorEnd, location: 1.0)],
+                       startPoint: .leading,
+                       endPoint: .trailing)
         .frame(width: width)
         .offset(x: lerp(from: -width, to: width, progress: progress))
         .onAppear {
@@ -42,7 +43,7 @@ struct SkeletonShimmerView: View {
         }
     }
 
-    //  MARK: Helpers
+    //  MARK: - Helpers
 
     private var colorStart: Color {
         theme.skeleton.colorGradientStartEnd.color(for: colorScheme)

@@ -73,4 +73,3 @@ struct TagLabelStyle: LabelStyle {
         return rawSize * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
     }
 }
-
