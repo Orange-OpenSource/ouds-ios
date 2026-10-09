@@ -31,6 +31,8 @@ final class OUDSSkeletonState {
     init(isAnimated: Bool) {
         self.isAnimated = isAnimated
     }
+
+    deinit {}
 }
 
 extension View {

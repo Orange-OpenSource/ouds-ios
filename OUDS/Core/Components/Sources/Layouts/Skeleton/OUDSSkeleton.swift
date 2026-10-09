@@ -17,10 +17,6 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// 800 ms : déplacement
-let animationDuration: Double = 1.25
-let shimmerDuration: Double = 0.8
-
 // MARK: - Skeleton
 
 /// A skeleton is a UI element that indicates when content is loading. The skeleton enhances user experience by
@@ -108,7 +104,6 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
         self.init(securityMargin: securityMargin, shape: RoundedRectangle(cornerRadius: cornerRadius))
     }
 
-
     // MARK: - Body
 
     public var body: some View {
@@ -154,7 +149,7 @@ extension View {
     ///
     /// - Since: 3.2.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func skeleton<S: SwiftUI.Shape>(securityMargin: Bool = false, shape: S) -> some View {
+    public func skeleton<S: SwiftUI.Shape>(shape: S, securityMargin: Bool = false) -> some View {
         modifier(SkeletonModifier(securityMargin: securityMargin, shape: shape))
     }
 }
