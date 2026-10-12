@@ -25,7 +25,7 @@ struct HeadingMarker: View {
 
     var body: some View {
         if !theme.typography.headingLargeMarker {
-            // Edge case when there is a race which occurs during a switch of theme (i.e. Orange to Sosh), prevents crashes on redrax
+            // Edge case during a theme switch (e.g. Orange to Sosh) that prevents crashes during redraw
             EmptyView()
         } else {
             Image(decorative: "ic_typography_heading_marker", bundle: theme.resourcesBundle)
