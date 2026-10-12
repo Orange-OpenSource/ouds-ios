@@ -81,13 +81,13 @@ public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - name: A name to give to the theme, used for debugging for example. If nil, "WhiteLabel" will be used.
-    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Default set to "SF Pro"
+    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Default set to empty to have native system font.
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
     public init(colors: AllColorSemanticTokensProvider? = nil,
                 colorsCharts: AllColorChartSemanticTokensProvider? = nil,
                 colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
                 name: String? = nil,
-                fontFamily: String = "SF Pro",
+                fontFamily: String = "",
                 tuning: Tuning? = nil)
     {
         let colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

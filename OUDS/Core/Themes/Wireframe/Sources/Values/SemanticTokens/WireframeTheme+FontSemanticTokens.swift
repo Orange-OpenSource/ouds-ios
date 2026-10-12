@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 extension WireframeThemeFontSemanticTokensProvider: FontSemanticTokens {
     /// Has for value token familySystem (= "Shantell Sans")
     @objc open var familyBody: FontFamilySemanticToken { familySystem }
-    /// Has for value token FontRawTokens.familyMonospaceSfMono (= "SF Mono")
-    @objc open var familyCode: FontFamilySemanticToken { FontRawTokens.familyMonospaceSfMono }
+    /// Has for value token FontRawTokens.familyMonospaceMenlo (= "Menlo")
+    @objc open var familyCode: FontFamilySemanticToken { FontRawTokens.familyMonospaceMenlo } // WARNING: Manualy changed instead of SF Mono
     /// Has for value token familySystem (= "Shantell Sans")
     @objc open var familyDisplay: FontFamilySemanticToken { familySystem }
     /// Has for value token familySystem (= "Shantell Sans")

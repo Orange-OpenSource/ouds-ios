@@ -149,24 +149,11 @@ nonisolated(unsafe) private var internalApplePostScriptFontNames: PostScriptFont
 
         // "Noto Sans" defined in FontRawTokens but does not exist as is in font books
 
-        PSFNMK("SF Pro", Font.Weight.ultraLight): "SFPro-Ultralight",
-        PSFNMK("SF Pro", Font.Weight.thin): "SFPro-Thin",
-        PSFNMK("SF Pro", Font.Weight.light): "SFPro-Light",
-        PSFNMK("SF Pro", Font.Weight.regular): "SFPro-Regular",
-        PSFNMK("SF Pro", nil /* courant */ ): "SFPro-Regular",
-        PSFNMK("SF Pro", Font.Weight.medium): "SFPro-Medium",
-        PSFNMK("SF Pro", Font.Weight.semibold): "SFPro-Semibold",
-        PSFNMK("SF Pro", Font.Weight.bold): "SFPro-Bold",
-        PSFNMK("SF Pro", Font.Weight.heavy): "SFPro-Heavy",
-        PSFNMK("SF Pro", Font.Weight.black): "SFPro-Black",
+        // "SF Pro" defined in FontRawTokens but does not exist at all in font books
+        // Even if Apple native system font, not available by name
 
-        PSFNMK("SF Mono", Font.Weight.light): "SFMono-Light",
-        PSFNMK("SF Mono", Font.Weight.regular): "SFMono-Regular",
-        PSFNMK("SF Mono", nil /* courant */ ): "SFMono-Regular",
-        PSFNMK("SF Mono", Font.Weight.medium): "SFMono-Medium",
-        PSFNMK("SF Mono", Font.Weight.semibold): "SFMono-Semibold",
-        PSFNMK("SF Mono", Font.Weight.bold): "SFMono-Bold",
-        PSFNMK("SF Mono", Font.Weight.heavy): "SFMono-Heavy",
+        // "SF Mono" defined in FontRawTokens but does not exist at all in font books
+        // Even if Apple native monospaced system font, not available by name
 
         // "Roboto" defined in FontRawTokens but does not exist at all in font books
 
@@ -176,8 +163,6 @@ nonisolated(unsafe) private var internalApplePostScriptFontNames: PostScriptFont
 
         PSFNMK("Courier New", nil /* normal */ ): "CourierNewPSMT",
         PSFNMK("Courier New", Font.Weight.bold): "CourierNewPS-BoldMT",
-
-        // "SF Mono" defined in FontRawTokens but does not exist at all in font books
 
         // MARK: Orange
 
