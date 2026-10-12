@@ -23,7 +23,7 @@ extension OrangeCompactThemeFontSemanticTokensProvider: FontSemanticTokens {
     /// Has for value token familySystem (= "Helvetica Neue")
     @objc public final var familyBody: FontFamilySemanticToken { familySystem }
     /// Has for value token FontRawTokens.familyMonospaceMenlo (= "Menlo")
-    @objc public final var familyCode: FontFamilySemanticToken { FontRawTokens.familyMonospaceMenlo } // WARNING: Manualy changed instead of SF Mono
+    @objc public final var familyCode: FontFamilySemanticToken { FontRawTokens.familyMonospaceMenlo } // WARNING: manually changed instead of SF Mono
     /// Has for value token familySystem (= "Helvetica Neue")
     @objc public final var familyDisplay: FontFamilySemanticToken { familySystem }
     /// Has for value token familySystem (= "Helvetica Neue")
