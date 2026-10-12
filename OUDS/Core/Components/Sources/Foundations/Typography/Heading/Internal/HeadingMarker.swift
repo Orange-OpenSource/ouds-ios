@@ -24,8 +24,8 @@ struct HeadingMarker: View {
     // MARK: Body
 
     var body: some View {
-            Image(decorative: "ic_typography_heading_marker", bundle: theme.resourcesBundle)
-                .renderingMode(.template)
+        Image(decorative: "ic_typography_heading_marker", bundle: theme.resourcesBundle)
+            .renderingMode(.template)
             .toFlip(layoutDirection == .rightToLeft)
             .foregroundStyle(theme.typography.colorContentMarker)
             .padding(.top, theme.typography.spacePaddingBlockTopHeadingLargeMarker)
