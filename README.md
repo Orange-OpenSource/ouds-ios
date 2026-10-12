@@ -39,7 +39,7 @@
 &nbsp;
 <a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="FOSSA status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield" alt="FOSSA status for licences policy"></a>
 &nbsp;
-<a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="FOSSA status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield&issueType=security" alt="FOSSA sattus for security policy"/></a>
+<a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="FOSSA status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield&issueType=security" alt="FOSSA status for security policy"/></a>
 &nbsp;
 <a href="https://skills.sh/Orange-OpenSource/ouds-ios" title="Agent skills"><img src="https://skills.sh/b/Orange-OpenSource/ouds-ios" alt="skills.sh"></a>
 </p>
@@ -124,7 +124,7 @@ And, in your source xcode, when you use OUDS items, import **OUDSSwiftUIOrangeSo
 > Thus the XCFrameworks available are tailored for iOS platform with only Orange and / or Sosh themes.
 > For more evolutions feel free to contact the maintainers.
 
-### Instanciate and inject theme
+### Instantiate and inject a theme
 
 In the root view of your app, add the `OUDSThemeableView` with inside the _theme_ object you want to apply.
 You can instanciate the theme object on the fly, but only once.
@@ -221,9 +221,9 @@ Please read through our [contributing guidelines](https://github.com/Orange-Open
 
 ## 🔒 Data and privacy
 
-The Orange Unified Design System library is a Software Development Kit (SDK) that allows developpers to create Orange branded mobile applications.
+The Orange Unified Design System library is a Software Development Kit (SDK) that allows developers to create Orange-branded mobile applications.
 As such:
-- this SDK does not handle any personnal data
+- this SDK does not handle any personal data
 - this SDK does not require any device permission to work
 
 ## ⚖️ Copyright and license
@@ -236,5 +236,5 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 Flash the QrCode below or click on it to download the *Design System Toolbox* app.
 
 <p align="center">
-<a href="https://web.unified-design-system.orange.com/docs/0.5/examples/download-app/" title="Orange Unified Desin Sysem Design System Toolbox page"><img src="./images/design-toolbox-download-page-qrcode.png" alt="QrCode redirecting to Orange Unified Desin Sysem Design System Toolbox page" width="125" height="125"></a>
+<a href="https://web.unified-design-system.orange.com/docs/0.5/examples/download-app/" title="Orange Unified Design System Toolbox page"><img src="./images/design-toolbox-download-page-qrcode.png" alt="QR code redirecting to Orange Unified Design System Toolbox page" width="125" height="125"></a>
 </p>

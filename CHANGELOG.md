@@ -30,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Swift Package `SwiftFormat` from v0.63.0 to v0.63.1
 - Ruby Gem `fastlane` from v2.240.0 to v2.240.1
 - `excon` transitive RubyGem from v1.7.1 to v1.7.2b (CVE-2026-54171)
-- `Ruby` version from v4.0.6 to v4.0.7 for `build-and-test` andg `build-xcframework` workflows
+- `Ruby` version from v4.0.6 to v4.0.7 for `build-and-test` and `build-xcframework` workflows
 - GitHub Actions `actions/upload-artifact` action from v4.6.2 to v7.0.1 for `build-xcframework` workflow
 - GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.0 to v4.38.2 for `scorecard` workflow
 - GitHub Actions `ruby/setup-ruby` action from v1.321.0 to v1.327.0 for `build-and-test` and `build-xcframework` workflows
@@ -87,7 +87,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
 - GitHub Actions `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
 - GitHub Actions `github/codeql-action/upload-sarif` from v4.37.0 to v4.38.0 for `scorecard` workflow
-- GitHub Action `ruby/setup-ruby` from v1.316.0 toq v1.321.0 for `build-and-test` workflow
+- GitHub Action `ruby/setup-ruby` from v1.316.0 to v1.321.0 for `build-and-test` workflow
 - Core `grid` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - Core `effect` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - Core `dimension` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)

@@ -155,7 +155,7 @@ Adhering to the following process is the best way to get your work included in t
 
 **IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/LICENSE).
 
-Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
+Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on the `develop` branch: if any prerequisites are not fulfilled in the pull request, it will not be merged.
 
 8. If your evolutions can be tested inside a sandbox app (like [Design System Toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/)), add in the pull request details the branch and the associated pull request (with of course codebase pointing to the suitable package branch)
 
@@ -168,7 +168,7 @@ Respect the architecture of the project, and [refer to the wiki if needed](https
 
 > [!IMPORTANT]
 > About naming of the components and their parameters, use the parameters and components grammar as defined in Figma specifications.
-> Do not use your own wordings for such things as consitency must be kept between Figma specifications and all products of OUDS.
+> Do not use your own wording for these items; consistency must be maintained between the Figma specifications and all OUDS products.
 
 ## Commits Style
 
@@ -187,7 +187,7 @@ Co-authored-by: Author firstname and lastname <author email>
 Signed-off-by: Author firstname and lastname <first author email>
 ```
 
-If the commut embeds work of several authors, use the *Co-authored-by* tag (in use in GitHub):
+If a commit contains contributions from several authors, use the *Co-authored-by* tag (used by GitHub):
 
 ```text
 fix: title of your commit (#43)
@@ -245,7 +245,7 @@ Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
 
-Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthesis some commercial name.
+Finally, if you want to note that you used a *generative AI* tool, you can add an "Assisted-by" field to your commit with the model in use and its commercial name in parentheses.
 
 ```text
 feat: add thousands of tokens (#666)
@@ -274,10 +274,10 @@ You can refer to the documentation about [-s / --signoff](https://git-scm.com/do
 
 ## Review workflow
 
-Because we want to define and provide an amazing design system for developers, we want to onboard for any evolutions the Q/A team for tests and also the design ans accessibiltiy (a11y) teams so as to check the fixes, patches or evolutions have been well implemented and tested.
+Because we want to provide an excellent design system for developers, we involve the QA team in testing every change, as well as the design and accessibility (a11y) teams, to ensure that fixes and new features are well implemented and tested.
 
-The following chart explain how the review is done with also the intermediate alpha builds.
-In few words, alpha builds are made for reviewers, and the merge is processed if and only if any review have been done.
+The following chart explains the review process, including the intermediate alpha builds.
+In short, alpha builds are made for reviewers, and changes are merged only after all required reviews are complete.
 
 ```mermaid
 flowchart TD

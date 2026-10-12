@@ -21,7 +21,7 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane ios check_dead_code
 ```
 
-Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
+Run Periphery to look for dead code in the codebase. Avoid strict mode because some false positives remain and the command must be fine-tuned.
 
 ### ios format
 
