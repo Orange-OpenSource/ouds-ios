@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensSemantic
 import SwiftUI
 
 /// Text component used to structure the hierarchy of a screen.
@@ -88,7 +89,7 @@ import SwiftUI
 ///
 /// ![A heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.1.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSHeading: View {
@@ -102,6 +103,7 @@ public struct OUDSHeading: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: - Size
 
@@ -227,6 +229,7 @@ public struct OUDSHeading: View {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 styledText
                     .foregroundColor(theme.colors.contentDefault)
+                    .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
                 HeadingMarker()
             }
             .accessibilityElement(children: .combine)
@@ -234,6 +237,7 @@ public struct OUDSHeading: View {
         } else {
             styledText
                 .foregroundColor(theme.colors.contentDefault)
+                .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
                 .accessibilityAddTraits(.isHeader)
         }
     }
@@ -286,5 +290,19 @@ public struct OUDSHeading: View {
         }
         attributed[range].foregroundColor = theme.colors.contentBrandSecondary.color(for: colorScheme)
         return Text(attributed)
+    }
+
+    /// Apply the correct maxWidth based on the requested size.
+    private var maxWidth: MultipleSizeSemanticToken {
+        switch size {
+        case .xLarge:
+            theme.sizes.maxWidthHeadingXlarge
+        case .large:
+            theme.sizes.maxWidthHeadingLarge
+        case .medium:
+            theme.sizes.maxWidthHeadingMedium
+        case .small:
+            theme.sizes.maxWidthHeadingSmall
+        }
     }
 }
