@@ -1,0 +1,93 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/tree/main/images/macos
+
+name: Check and update Renovate PR
+
+on:
+  schedule:
+    - cron: '0 23 * * *' # Each dat at 11 pm
+  workflow_dispatch:
+
+permissions:
+  pull-requests: write
+
+jobs:
+  update-renovate-prs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List open PRs
+        id: list-prs
+        uses: actions/github-script@v7
+        with:
+          result-encoding: string
+          script: |
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            
+            const renovatePRs = prs.filter(pr => pr.user?.login === 'renovate[bot]');
+            
+            if (renovatePRs.length === 0) {
+              console.log('No PRs from renovate[bot] found');
+              return JSON.stringify([]);
+            }
+            
+            console.log(`Found ${renovatePRs.length} PR(s) from renovate[bot]`);
+            return JSON.stringify(renovatePRs.map(pr => ({
+              number: pr.number,
+              title: pr.title,
+              url: pr.html_url
+            })));
+
+      - name: Process renovate PRs
+        if: steps.list-prs.outputs.result != '[]'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const renovatePRs = JSON.parse('${{ steps.list-prs.outputs.result }}');
+            
+            for (const pr of renovatePRs) {
+              console.log(`Processing PR #${pr.number}: ${pr.title}`);
+              
+              // Add assignee
+              try {
+                await github.rest.issues.addAssignees({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  assignees: ['pylapp']
+                });
+                console.log(`  ✓ Added assignee pylapp`);
+              } catch (e) {
+                console.log(`  ⚠ Could not add assignee: ${e.message}`);
+              }
+              
+              // Add labels
+              try {
+                await github.rest.issues.setLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['dependencies', '🛠️ technical']
+                });
+                console.log(`  ✓ Added labels`);
+              } catch (e) {
+                console.log(`  ⚠ Could not add labels: ${e.message}`);
+              }
+            }
