@@ -159,7 +159,7 @@ public struct OUDSTag: View {
     // MARK: - Configuration enums
 
     /// The internal type of tag
-    enum `Type` {
+    enum `Type` { // TODO: v4 - Mutualize with OUDSCategoricalTag
         /// Tag with label and status
         case status(label: String, status: Status)
 
@@ -186,7 +186,7 @@ public struct OUDSTag: View {
 
         /// The leading element of the tag
         /// - Since: 0.18.0
-        @frozen public enum Leading {
+        @frozen public enum Leading { // TODO: v4 - Mutualize with OUDSCategoricalTag
             /// Means no element
             case none
 
@@ -322,7 +322,7 @@ public struct OUDSTag: View {
 
     /// Defines the shape of an `OUDSTag`
     /// - Since: 0.18.0
-    @frozen public enum Shape {
+    @frozen public enum Shape { // TODO: v4 - Mutualize with OUDSCategoricalTag
         /// A tag with sharp, square corners.
         /// Squared tags provide a more formal, structured, or technical feel. They are often used in business contexts to label promotions, offers, or important notices.
         case square
@@ -334,7 +334,7 @@ public struct OUDSTag: View {
 
     /// Defines the size of an `OUDSTag`
     /// - Since: 0.18.0
-    @frozen public enum Size {
+    @frozen public enum Size { // TODO: v4 - Mutualize with OUDSCategoricalTag
         /// The standard tag size, suitable for most use cases and offering good readability.
         case `default`
 
