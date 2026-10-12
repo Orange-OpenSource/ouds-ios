@@ -32,18 +32,18 @@ struct SkeletonShimmerView: View {
 
     var body: some View {
         LinearGradient(stops:
-                        [
-                            .init(color: colorStart, location: 0.0),
-                            .init(color: colorMiddle, location: 0.5),
-                            .init(color: colorEnd, location: 1.0),
-                        ],
-                    startPoint: .leading,
-                    endPoint: .trailing)
-        .frame(width: width)
-        .offset(x: lerp(from: -width, to: width, progress: progress))
-        .onAppear {
-            startAnimation()
-        }
+            [
+                .init(color: colorStart, location: 0.0),
+                .init(color: colorMiddle, location: 0.5),
+                .init(color: colorEnd, location: 1.0),
+            ],
+            startPoint: .leading,
+            endPoint: .trailing)
+            .frame(width: width)
+            .offset(x: lerp(from: -width, to: width, progress: progress))
+            .onAppear {
+                startAnimation()
+            }
     }
 
     // MARK: - Helpers

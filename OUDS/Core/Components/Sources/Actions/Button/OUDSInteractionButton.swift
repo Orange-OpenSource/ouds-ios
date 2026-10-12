@@ -65,7 +65,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 
     public var body: some View {
         Button("") {
-            if !isReadOnly && skeletonState == nil {
+            if !isReadOnly, skeletonState == nil {
                 action()
             }
         }

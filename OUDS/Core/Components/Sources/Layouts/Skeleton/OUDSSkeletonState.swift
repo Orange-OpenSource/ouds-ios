@@ -44,7 +44,7 @@ extension View {
     ///     - isAnimated: flag to animate the shimer effect on the skeleton. `true` by default.
     ///     The animation is automatically disabled if the low power mode or the accessibility reduce motion are activated.
     public func oudsSkeleton(isVisible: Bool, isAnimated: Bool = true) -> some View {
-        self.modifier(SkeletonStateModifier(isVisible: isVisible, isAnimated: isAnimated))
+        modifier(SkeletonStateModifier(isVisible: isVisible, isAnimated: isAnimated))
     }
 }
 
@@ -74,6 +74,6 @@ private struct SkeletonStateModifier: ViewModifier {
     // MARK: - State builder
 
     private var state: OUDSSkeletonState {
-        .init(isAnimated: (isAnimated && !reduceMotion && !lowPowerModeObserver.isLowPowerModeEnabled))
+        .init(isAnimated: isAnimated && !reduceMotion && !lowPowerModeObserver.isLowPowerModeEnabled)
     }
 }

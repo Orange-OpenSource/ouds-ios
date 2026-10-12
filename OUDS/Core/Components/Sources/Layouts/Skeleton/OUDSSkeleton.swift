@@ -139,7 +139,7 @@ extension View {
     }
 
     /// Apply a skeleton on the current component with a dedicated shape.
-    /// 
+    ///
     /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement using
     /// `oudsSkeleton(isVisible:isAnimated:)
     ///
@@ -149,7 +149,7 @@ extension View {
     ///
     /// - Since: 3.2.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func skeleton<S: SwiftUI.Shape>(shape: S, securityMargin: Bool = false) -> some View {
+    public func skeleton(shape: some SwiftUI.Shape, securityMargin: Bool = false) -> some View {
         modifier(SkeletonModifier(securityMargin: securityMargin, shape: shape))
     }
 }

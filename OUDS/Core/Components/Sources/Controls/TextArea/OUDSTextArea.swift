@@ -426,6 +426,7 @@ public struct OUDSTextArea: View {
                   constrainedMaxHeight: constrainedMaxHeight,
                   status: status)
     }
+
     // swiftlint:enable function_default_parameter_at_end
 
     // MARK: - Over-limit helpers
