@@ -56,7 +56,7 @@ open class OrangeThemeElevationSemanticTokensProvider: AllElevationSemanticToken
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Intializes the provider
+    /// Initializes the provider.
     public init() {
         OL.debug("Init of OrangeThemeElevationSemanticTokensProvider")
         #if DEBUG

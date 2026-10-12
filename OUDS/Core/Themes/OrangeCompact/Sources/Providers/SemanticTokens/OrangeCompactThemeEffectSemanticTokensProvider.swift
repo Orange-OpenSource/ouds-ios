@@ -27,7 +27,7 @@ final class OrangeCompactThemeEffectSemanticTokensProvider: AllEffectSemanticTok
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Intializes the provider
+    /// Initializes the provider.
     init() {
         OL.debug("Init of OrangeCompactThemeEffectSemanticTokensProvider")
         #if DEBUG

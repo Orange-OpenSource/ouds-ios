@@ -26,7 +26,7 @@ extension View {
     ///
     /// - Parameters:
     ///     - edge: The set of edges to pad for this view.
-    ///     - scaledSpaces: The sementic spaces `MultipleSpaceSemanticToken` that defines spaces depending to size classes.
+    ///     - scaledSpaces: The semantic spaces defined by `MultipleSpaceSemanticToken`, which vary based on size classes.
     ///     If set to `nil`, SwiftUI uses a platform-specific default amount. Default set to `nil`.
     /// - Returns: A view that's padded by the specified amount on the specified edges.
     public func padding(_ edge: Edge.Set, _ scaledSpaces: MultipleSpaceSemanticToken) -> some View {

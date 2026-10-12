@@ -19,12 +19,12 @@ import SwiftUI
 /// If a font token exists with its value depending to the size class, it must be packed in such ``MultipleFontCompositeSemanticToken``.
 ///
 /// ```swift
-///         // Assuming in Figma with have a font semantic token displayLarge,
+///         // Assuming in Figma we have a font semantic token displayLarge,
 ///         // with values depending to size class. These values are defined as font composite raw tokens.
 ///         let bold850 = FontCompositeSemanticToken(size: size850, lineHeight: lineHeight1050, weight: weight700, letterSpacing: letterSpacing850)
 ///         let bold1450 = FontCompositeSemanticToken(size: size1450, lineHeight: lineHeight1850, weight: weight700, letterSpacing: letterSpacing1450)
 ///
-///         // Then the develoment team declares an "higher" level font semantic token
+///         // Then the development team declares a higher-level font semantic token
 ///         // inside FontCompositeSemanticTokens protocol,
 ///         // and defined inside OrangeTheme+FontCompositeSemanticTokens extension
 ///         var displayLarge: MultipleFontCompositeSemanticToken {

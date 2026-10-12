@@ -29,7 +29,7 @@ final class SoshThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Intializes the provider
+    /// Initializes the provider.
     /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeSpaceSemanticTokensProvider")

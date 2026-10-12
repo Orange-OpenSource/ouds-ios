@@ -23,13 +23,13 @@ Orange Unified Design System: Build Sharper. Ship faster. Perform better.
 
 *Orange Unified Design System* has been implemented in two code repositories:
 
-- a SwiftUI code library exposed as Swift Package for all Apple platforms ([Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSOurce/ouds-ios))
-- a demo application named *Design System Toolbox* that can be launched to show the guidelines, components and modules ([Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSOurce/ouds-ios-design-system-toolbox))
+- a SwiftUI code library distributed as a Swift package for all Apple platforms ([Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSource/ouds-ios))
+- a demo application named *Design System Toolbox* that can be launched to show the guidelines, components, and modules ([Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox))
 
-This demo app also shows how to use the library or to style existing components.
-Using these resources will allow you to create Orange branded applications faster and will inherit all the work that was done to make sure that all presented codes are fully tested regarding the brand, the ecodesign, the open source and the accessibility compliances.
+This demo app also shows how to use the library and style existing components.
+Using these resources will help you create Orange-branded applications faster while benefiting from the work done to ensure that all examples meet the brand, ecodesign, open-source, and accessibility requirements.
 
-You can get details about the this design system in [the official website unified-design-system.orange.com](https://unified-design-system.orange.com/).
+You can find more details about this design system on the official website, [unified-design-system.orange.com](https://unified-design-system.orange.com/).
 
 > Note: Orange Unified Design System framework supports iOS / iPadOS 15 and later.
 
@@ -39,9 +39,9 @@ You can get details about the this design system in [the official website unifie
 
 ## Data and privacy
 
-The Orange Unified Design System library is a Software Development Kit (SDK) that allows developpers to create Orange branded mobile applications.
+The Orange Unified Design System library is a Software Development Kit (SDK) that allows developers to create Orange-branded mobile applications.
 As such:
-- this SDK does not handle any personnal data
+- this SDK does not handle any personal data
 - this SDK does not require any device permission to work
 
 ## Topics

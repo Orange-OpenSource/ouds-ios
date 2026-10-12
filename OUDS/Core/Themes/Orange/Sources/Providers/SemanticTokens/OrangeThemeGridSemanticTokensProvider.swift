@@ -62,7 +62,7 @@ open class OrangeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider 
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Intializes the provider
+    /// Initializes the provider.
     public init() {
         OL.debug("Init of OrangeThemeGridSemanticTokensProvider")
         #if DEBUG

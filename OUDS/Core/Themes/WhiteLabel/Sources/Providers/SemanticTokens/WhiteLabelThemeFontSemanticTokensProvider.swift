@@ -36,7 +36,7 @@ final class WhiteLabelThemeFontSemanticTokensProvider: WireframeThemeFontSemanti
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Intializes the provider
+    /// Initializes the provider.
     ///
     /// - Parameter fontFamily: The name of the font family to apply
     init(fontFamily: String = "") {

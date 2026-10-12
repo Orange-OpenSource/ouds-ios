@@ -17,7 +17,7 @@
 
 // swiftlint:disable missing_docs
 
-/// This is a group of semantic tokens for **colors modes**, used for example** for background colors on surface**.
+/// This is a group of semantic tokens for **color modes**, used, for example, for **background colors on surfaces**.
 /// It defines all ``ColorModeSemanticToken``  a theme must have for surfaced colors.
 /// These tokens are then gathered inside ``MultipleColorModeSemanticToken`` defined in ``ColorModeMultipleSemanticTokens``.
 ///

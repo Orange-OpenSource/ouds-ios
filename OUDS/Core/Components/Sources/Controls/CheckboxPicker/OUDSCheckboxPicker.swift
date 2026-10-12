@@ -71,7 +71,7 @@ import SwiftUI
 ///
 ///     // The picker can apply some settings to all its radio buttons.
 ///     // It can be also horizontal with a scroll indicator.
-///     // Here all the the checkboxes are in read only mode and use reversed layout.
+///     // Here all the checkboxes are in read-only mode and use a reversed layout.
 ///     // Here the picker is horizontal and shows the scroll indicator
 ///     OUDSCheckboxPicker(selections: $selections,
 ///                        checkboxes: someDataToPopulate)
@@ -259,7 +259,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     }
 
     /// Given the `type` enriches the given `text` or not.
-    /// Displays the selections copunt or not depending to the layout direction.
+    /// Displays the selection count based on the layout direction.
     /// - Parameters:
     ///    - text: The text to display as label for the root checkbox, to update if needed
     ///    - type: The type of display

@@ -17,7 +17,7 @@ import SwiftUI
 
 /// A `ViewModifier` to apply to `ListItemContent` view so as to define an outline effect, i.e.
 /// draw kind of borders around the object, or a divider.
-/// The divider and the ouline effetct can be affected by the rounded corner flag of the theme `Tuning`.
+/// The divider and outline effect can be affected by the rounded-corner flag in the theme's `Tuning`.
 struct ListItemBordersModifier: ViewModifier {
 
     // MARK: Properties

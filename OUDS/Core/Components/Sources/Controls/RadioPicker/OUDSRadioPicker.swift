@@ -67,7 +67,7 @@ import SwiftUI
 ///
 ///     // The picker can apply some settings to all its radio buttons.
 ///     // It can be also horitzontal with a scroll indicator.
-///     // Here all the the radio buttons are in read only mode and use reversed layout.
+///     // Here all the radio buttons are in read-only mode and use a reversed layout.
 ///     OUDSRadioPicker(selection: $selection,
 ///                     radios: someDataToPopulate,
 ///                     isReversed: true,

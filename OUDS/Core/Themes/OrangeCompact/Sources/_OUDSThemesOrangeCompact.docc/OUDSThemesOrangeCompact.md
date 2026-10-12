@@ -129,7 +129,7 @@ However if, in very particular cases, you need to use another font family, you c
 // Supposing you want to use another font:
 // - like the Luciole font (https://luciole-vision.com/) (very good for accessibility)
 // - or the Roboto font (https://fonts.google.com/specimen/Roboto) (to support cyrillic alphabet)
-// - or hevletica Neue Arabic (for arabic alphabet Helvetica flavoured)
+// - or Helvetica Neue Arabic (for the Arabic alphabet, in a Helvetica style)
 // 1. Add the TTF files in your project
     
 // 2. Register the fonts with, for example, the function below
