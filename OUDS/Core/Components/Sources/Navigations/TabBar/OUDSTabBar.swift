@@ -61,7 +61,7 @@ import SwiftUI
 ///
 /// - If your tabs embedded in the `OUDSTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
 /// - If your tabs embedded in the `OUDSTabBar` display a badge (empty or with text), vocalize it in your tab to let users know what it is (unread messages, new things, etc)
-/// by using accessibiltiy value
+/// by using an accessibility value.
 ///
 /// ```swift
 ///     OUDSTabBar {
@@ -298,7 +298,7 @@ public struct OUDSTabBar<Content: View>: View {
     // MARK: Body
 
     /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
-    /// Rendering wil change depending to OS version, with a top divider and a selected tab indicator for legacy layouts.
+    /// Rendering will change depending on the OS version, with a top divider and selected tab indicator for legacy layouts.
     public var body: some View {
         #if os(iOS)
         // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones in portrait mode only,

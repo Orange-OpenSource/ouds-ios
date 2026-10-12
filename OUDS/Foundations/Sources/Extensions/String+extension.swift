@@ -50,11 +50,11 @@ extension String {
     /// If the current string is a *color* in *hexadecimal RGBA format*, returns the values
     /// in *hexadecimal RGB format*. Otherwise returns *nil*.
     ///
-    /// For examplle, a color named "opacity dodger blue" is defined with the hexadecimal RGBA code
+    /// For example, a color named "opacity dodger blue" is defined with the hexadecimal RGBA code
     /// "26B2FF14", which can be seen in RGBA as RGBA(38,178,255,0.08).
     /// For this value, it will return "EEF9FF" (corresponding to RGB(238,249,255)
     ///
-    /// - Returns String? - The hexadeicaml RGA color value if relevant
+    /// - Returns: The hexadecimal RGB color value, if applicable.
     public func toHex6() -> String? {
         // Expected #RRGGBB or #RRGGBBAA
         guard hasPrefix("#"), count == 7 || count == 9 else {

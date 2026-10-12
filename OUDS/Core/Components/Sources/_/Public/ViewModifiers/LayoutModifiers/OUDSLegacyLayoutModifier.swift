@@ -40,7 +40,7 @@ public struct OUDSLegacyLayoutModifier: ViewModifier {
     /// To prevent to pollute logs
     private static var usersHaveBeenWarned: Bool = false
 
-    /// Instanciates the `OUDSLegacyLayoutModifier` and displays error messages in the standard output
+    /// Initializes the `OUDSLegacyLayoutModifier` and displays error messages in the standard output.
     public init() {
         if !Self.usersHaveBeenWarned {
             OL.warning("You should not force the legacy layout of the navigation elements like bars; please embrace Liquid Glass!")

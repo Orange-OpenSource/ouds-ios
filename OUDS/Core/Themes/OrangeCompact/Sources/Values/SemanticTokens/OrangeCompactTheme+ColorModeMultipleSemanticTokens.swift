@@ -80,7 +80,7 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
     /// - Parameters:
     ///    - mode: The color mode token to test
     ///    - current: The current color scheme
-    /// - Returns: The color scheme to consider depending to the theme rules
+    /// - Returns: The color scheme to consider based on the theme rules.
     public func useColorScheme(for mode: MultipleColorModeSemanticToken,
                                _ current: ColorScheme) -> ColorScheme
     {
@@ -112,7 +112,7 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
     /// - if both light and dark versions are monochrome, returns true, otherwise false
     ///
     /// - Parameter mode: The color mode token to test
-    /// - Returns: The flag for monochrome mode depending to the theme rules
+    /// - Returns: The flag for monochrome mode based on the theme rules.
     public func isMonochrome(mode: MultipleColorModeSemanticToken) -> Bool {
         let lightIsMonochrome = ColorModeRawTokens.isMonochrome(mode: mode.light)
         let darkIsMonochrome = ColorModeRawTokens.isMonochrome(mode: mode.dark)

@@ -19,7 +19,7 @@ import SwiftUI
 
 /// This is the theme for Sosh brand.
 /// This is an override of the default basic `OUDSTheme` for the **Sosh brand theme**
-/// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
+/// It can override any properties from its superclass, but it cannot be subclassed.
 ///
 /// ## Usages
 ///

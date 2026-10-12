@@ -17,6 +17,6 @@ import Foundation
 /// See https://a11y-guidelines.orange.com/en/mobile/ios/design/#touch-target
 public let kMinimalTouchAreaWidth: CGFloat = 44
 
-/// A touch area with an height equal to 44 pt at least is preferred for accessibility reasons
+/// A touch area with a height of at least 44 pt is preferred for accessibility reasons.
 /// See https://a11y-guidelines.orange.com/en/mobile/ios/design/#touch-target
 public let kMinimalTouchAreaHeight: CGFloat = 44

@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// The Orange theme is the bsic, default, theme for any Orange products.
-/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
+/// This is an override of the abstract `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
 /// # Usages
@@ -147,7 +147,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     /// Constructor of the Orange theme.
     /// It needs several tokens providers for semantic tokens and component tokens.
-    /// If a nil token provider is given, the default version associated fo the theme is used.
+    /// If a nil token provider is given, the default version associated with the theme is used.
     ///
     /// - Parameters:
     ///    - borders: All semantic tokens of borders

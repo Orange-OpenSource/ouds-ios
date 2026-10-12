@@ -19,7 +19,7 @@ import SwiftUI
 
 /// This Wireframe theme is a theme for some specific usages, like for prototyping and design of journeys with non-Orange charted themes.
 /// This is an override of the default basic `OUDSTheme` for some usages.
-/// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
+/// It can override any properties from its superclass, but it cannot be subclassed.
 ///
 /// To get it:
 /// ```swift
@@ -71,7 +71,7 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - fonts: All tokens of fonts. Default set to nil. If so, `WireframeThemeFontSemanticTokensProvider` will be used instead.
-    ///    - name: A name to give to the theme. If nil, `WireframeTheme.name` wil be used.
+    ///    - name: A name to give to the theme. If nil, `WireframeTheme.name` will be used.
     ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Prefer `WireframeBrandFontRawTokens.familyDefault`.
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
     public init(colors: AllColorSemanticTokensProvider? = nil,

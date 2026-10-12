@@ -21,7 +21,7 @@ import UIKit
 
 extension EnvironmentValues {
 
-    /// The `oudsHorizontalSizeClass` instance exposed as en environment values across the library for the horizontal viewport.
+    /// The `oudsHorizontalSizeClass` value exposed through the environment across the library for the horizontal viewport.
     ///
     /// You receive a ``OUDSUserInterfaceSizeClass`` value when you read this environment value.
     /// The value tells you about the amount of horizontal space available to the view that reads it.
@@ -32,7 +32,7 @@ extension EnvironmentValues {
     /// ```
     @Entry public var oudsHorizontalSizeClass: OUDSUserInterfaceSizeClass = .regular
 
-    /// The `oudsVerticalSizeClass` instance exposed as en environment values across the library for the vertical viewport.
+    /// The `oudsVerticalSizeClass` value exposed through the environment across the library for the vertical viewport.
     ///
     /// You receive a ``OUDSUserInterfaceSizeClass`` value when you read this environment value.
     /// The value tells you about the amount of vertical space available to the view that reads it.
@@ -45,7 +45,7 @@ extension EnvironmentValues {
 }
 
 /// Enumerates the size classes defined by the design system.
-/// The __extraCompact__ size class if for screens with width < 389.
+/// The __extraCompact__ size class is for screens with a width under 389 points.
 /// The __compact__ and __regular__ size classes are the standard Apple classes.
 ///
 /// See: https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes
