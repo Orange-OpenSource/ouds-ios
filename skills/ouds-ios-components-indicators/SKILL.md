@@ -45,7 +45,7 @@ OUDSInputTag("Label") { /* remove action */ }
 
 ## Categorical Tag
 
-Categories: `category1` to `category5` — each maps to a theme-defined background color (for example, emerald, sky, amber, amethyst, and pink in Orange themes)
+Categories: `category1` to `category5` — each maps to a theme-defined background color (for example, emerald, sky, amber, amethyst, and pink in Orange themes). Supported themes are Orange, Orange Compact, and Wireframe; Sosh is not supported.
 
 ```swift
 OUDSCategoricalTag(label: "Label")

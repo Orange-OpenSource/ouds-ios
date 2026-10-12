@@ -99,6 +99,8 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
     private let loadingType: LoadingType
     private let label: String
 
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
+
     // MARK: - Internal types
 
     enum LoadingType { // TODO: v4 - Mutualize with OUDSTag
@@ -298,12 +300,13 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
     }
 
     private var assetSize: CGFloat {
-        switch size {
+        let rawSize = switch size {
         case .default:
             theme.tag.sizeAssetDefault
         case .small:
             theme.tag.sizeAssetSmall
         }
+        return rawSize * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
     }
 
     private var progressIndicatorSize: CGFloat {
