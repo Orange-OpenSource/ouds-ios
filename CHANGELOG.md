@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
 - `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
 
+### Fixed
+
+- Use of `Menlo` font family for `code` typography through update of `familyCode` font semantic token (Orange-OpenSource/ouds-ios#1799)
+
 ## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
 
 ### Added

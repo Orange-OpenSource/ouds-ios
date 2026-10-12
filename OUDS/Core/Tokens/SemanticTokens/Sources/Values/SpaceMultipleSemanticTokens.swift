@@ -39,7 +39,7 @@
 ///         var scaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.outOfSystem50 }
 ///
 ///         // The 'higher level' spacing semantic tokens wrapping them and exposed to users,
-///         // declared (in SpaceMultipleSemanticTokens.swift) and defined (in OUDSTheme+SpaceMultipleSemanticTokens.swift) manualy
+///         // declared (in SpaceMultipleSemanticTokens.swift) and defined (in OUDSTheme+SpaceMultipleSemanticTokens.swift) manually
 ///         var scaledNone: MultipleSpaceSemanticToken { MultipleSpaceSemanticToken(compact: scaledNoneMobile, regular: scaledNoneTablet) }
 ///
 ///         // Thus users can in their components use scaledNone as defined in their design system

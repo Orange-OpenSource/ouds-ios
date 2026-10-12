@@ -58,7 +58,7 @@ extension String {
 
 There are several _composite class_ defined to match the objects available in *Figma*.
 In fact the design system implementations should expose pack of values so as to gather several tokens in one object.
-All such *composites* instances are defined in separated files. In fact *tokenator* cannot generate such tokens as they are not defined in its JSON file to process because *Figma* is not able to manage *composite tokens*, even if tinkered by the design team. These tokens are updated manualy by the development team.
+All such *composites* instances are defined in separated files. In fact *tokenator* cannot generate such tokens as they are not defined in its JSON file to process because *Figma* is not able to manage *composite tokens*, even if tinkered by the design team. These tokens are updated manually by the development team.
 
 The raw tokens groups are declared in `enum` objects which will gather the raw tokens in extensions.
 In fact, raw tokens are defined as `static let` dimensionstored properties_, an adding them in an `enum` is more optimized for namespaces reasons. Thus all `public enum` gathering raw tokens are defined there.

@@ -42,7 +42,7 @@ struct WhiteLabelTests {
 
     @Test func defaultFontFamilyOfWhiteLabelTheme() {
         let fontFamily = theme.fontFamily
-        #expect(fontFamily == "SF Pro")
+        #expect(fontFamily?.isEmpty ?? true)
     }
 
     // MARK: - Tests - Custom White Label theme
