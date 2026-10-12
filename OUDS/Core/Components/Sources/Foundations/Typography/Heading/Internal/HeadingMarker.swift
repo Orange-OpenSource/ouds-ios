@@ -24,12 +24,17 @@ struct HeadingMarker: View {
     // MARK: Body
 
     var body: some View {
-        Image(decorative: "ic_typography_heading_marker", bundle: theme.resourcesBundle)
-            .renderingMode(.template)
-            .toFlip(layoutDirection == .rightToLeft)
-            .foregroundStyle(theme.typography.colorContentMarker)
-            .padding(.top, theme.typography.spacePaddingBlockTopHeadingLargeMarker)
-            .padding(.bottom, theme.typography.spacePaddingBlockBottomHeadingLargeMarker)
-            .accessibilityHidden(true)
+        if !theme.typography.headingLargeMarker {
+            // Edge case when there is a race which occurs during a switch of theme (i.e. Orange to Sosh), prevents crashes on redrax
+            EmptyView()
+        } else {
+            Image(decorative: "ic_typography_heading_marker", bundle: theme.resourcesBundle)
+                .renderingMode(.template)
+                .toFlip(layoutDirection == .rightToLeft)
+                .foregroundStyle(theme.typography.colorContentMarker)
+                .padding(.top, theme.typography.spacePaddingBlockTopHeadingLargeMarker)
+                .padding(.bottom, theme.typography.spacePaddingBlockBottomHeadingLargeMarker)
+                .accessibilityHidden(true)
+        }
     }
 }
