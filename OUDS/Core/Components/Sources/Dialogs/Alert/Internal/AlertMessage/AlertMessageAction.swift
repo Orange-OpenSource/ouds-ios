@@ -28,7 +28,7 @@ struct AlertMessageAction: View {
     var body: some View {
         HStack(alignment: .center, spacing: theme.alert.spaceColumnGapAction) {
             if let link, self.link?.position == .topTrailing {
-                OUDSLink(text: link.text, size: .default, action: link.action)
+                OUDSLink(text: link.text, size: .default, density: .default, action: link.action)
                     .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
             }
 
