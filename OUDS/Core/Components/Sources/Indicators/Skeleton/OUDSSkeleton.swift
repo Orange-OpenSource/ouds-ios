@@ -11,10 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Combine
-import OUDSFoundations
-import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Skeleton
@@ -25,27 +21,41 @@ import SwiftUI
 ///
 /// The animation is automatically disabled if the low power mode or the accessibility reduce motion are activated.
 ///
+/// The "`security margin` includes or not transparent vertical padding (with 0% opacity) at the top and bottom of the skeleton component.
+/// This padding prevents the creation of excessively large uniform surfaces, maintaining a visually balanced and structured layout.
+///
 /// ## Code samples
 ///
+/// Use plain object ``OUDSSkeleton`` to draw a skeleton:
+///
 /// ```swift
-///     // Create a skeleton page
 ///     HStack {
-///          // Heding skeleton
-///         OUDSSkeleton(securityMargin: true).frmae(wifth: 180, height: 48)
+///         OUDSSkeleton(securityMargin: true).frame(width: 180, height: 48)
 ///
-///         // Body skeleton
-///         OUDSSkeleton(securityMargin: true).frmae(wifth: 300, height: 150)
+///         OUDSSkeleton(securityMargin: true).frame(width: 300, height: 150)
 ///     }
+/// ```
 ///
-///     // Apply skeleton on a component (a button)
+/// Apply a skeleton effect to enable on a `View`:
+///
+/// ```swift
 ///     Button {
+///
 ///     } label: {
 ///         VStack {
 ///             Text("Title")
-///             Label("Subtutle", systemImage: "phone")
+///             Label("Subtitle", systemImage: "phone")
 ///         }
 ///     }
 ///     .skeleton()
+/// ```
+///
+/// Enable the skeleton mode on a view hierarchy:
+///
+/// ```swift
+///     SomeView()
+///         .oudsSkeleton(isVisible: true)
+///
 /// ```
 ///
 /// ## Design documentation
@@ -56,19 +66,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A skeleton component in light and dark modes with Orange theme](component_skeleton)
+/// ![A skeleton component in light and dark modes with Orange theme](component_skeleton_Orange)
 ///
 /// ### Orange Compact
 ///
-/// ![A skeleton component in light and dark modes with Orange Compact theme](component_skeleton)
+/// ![A skeleton component in light and dark modes with Orange Compact theme](component_skeleton_OrangeCompact)
 ///
 /// ### Sosh
 ///
-/// ![A skeleton component in light and dark modes with Sosh theme](component_skeleton)
+/// ![A skeleton component in light and dark modes with Sosh theme](component_skeleton_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A skeleton component in light and dark modes with Wireframe theme](component_skeleton)
+/// ![A skeleton component in light and dark modes with Wireframe theme](component_skeleton_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.2.0
@@ -84,12 +94,13 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.skeletonState) private var skeletonState
 
-    // MARK: - Initializer
+    // MARK: - Initializers
 
     /// Cretate a skeleton  with the default `Rectangle` shape.
+    ///
     /// - Parameters:
-    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
-    ///     - shape: The shape to apply on the skeleton, `Rectangle()` by default.
+    ///    - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to `false`.
+    ///    - shape: The shape to apply on the skeleton, `Rectangle()` by default.
     public init(securityMargin: Bool = false, shape: Shape = Rectangle()) {
         self.securityMargin = securityMargin
         self.shape = shape
@@ -98,9 +109,9 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     /// Cretate a skeleton  with the default `RoundedRectangle` shape according to the `cornerRadius`
     ///
     /// - Parameters:
-    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
-    ///     - cornerRadius: The radius used by `RoundedRectagle` shape to apply the skeleton.
-    init(securityMargin: Bool = false, cornerRadius: CGFloat = .infinity) where Shape == RoundedRectangle {
+    ///    - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to `false`.
+    ///    - cornerRadius: The radius used by `RoundedRectagle` shape to apply the skeleton.
+    public init(securityMargin: Bool = false, cornerRadius: CGFloat) where Shape == RoundedRectangle {
         self.init(securityMargin: securityMargin, shape: RoundedRectangle(cornerRadius: cornerRadius))
     }
 
@@ -123,15 +134,16 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     }
 }
 
-// MARK: - View Helpers to apply skeleton on a component
+// MARK: - View helpers
 
 extension View {
+
     /// Apply a skeleton on the current component with the default `Rectangle` shape.
     ///
-    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement using
+    /// The skeleton is displayed only if  the skeleton state is set into the environment using
     /// `oudsSkeleton(isVisible:isAnimated:)
     ///
-    /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
+    /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to `false`.
     /// - Since: 3.2.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func skeleton(securityMargin: Bool = false) -> some View {
@@ -140,42 +152,27 @@ extension View {
 
     /// Apply a skeleton on the current component with a dedicated shape.
     ///
-    /// The skeleton is displyed only if  the `OUDSSkeletonState` is set into the environement using
+    /// The skeleton is displyed only if  the skeleton state is set into the environment using
     /// `oudsSkeleton(isVisible:isAnimated:)
     ///
     /// - Parameters:
-    ///     - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to false.
-    ///     - shape: The shape applied on the skeleton.
-    ///
+    ///    - shape: The shape applied on the skeleton.
+    ///    - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to `false`.
     /// - Since: 3.2.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func skeleton(shape: some SwiftUI.Shape, securityMargin: Bool = false) -> some View {
         modifier(SkeletonModifier(securityMargin: securityMargin, shape: shape))
     }
-}
 
-// MARK: - Skeleton Modifier
-
-struct SkeletonModifier<S: SwiftUI.Shape>: ViewModifier {
-
-    let securityMargin: Bool
-    let shape: S
-
-    @Environment(\.skeletonState) private var skeletonState
-
-    func body(content: Content) -> some View {
-        if skeletonState == nil {
-            content
-        } else {
-            content
-                .hidden()
-                .overlay {
-                    GeometryReader { geometry in
-                        OUDSSkeleton(securityMargin: securityMargin, shape: shape)
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                    }
-                }
-                .clipShape(shape)
-        }
+    /// Used to activate and animate the skeleton on components.
+    /// The animation is automatically disabled if the low power mode or the accessibility reduce motion are activated.
+    ///
+    /// - Parameters:
+    ///    - isVisible: Flag to present the skeleton for components managing this layout.
+    ///    - isAnimated: Flag to animate the shimer effect on the skeleton. `true` by default.
+    /// - Since: 3.2.0
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+    public func oudsSkeleton(isVisible: Bool, isAnimated: Bool = true) -> some View {
+        modifier(SkeletonStateModifier(isVisible: isVisible, isAnimated: isAnimated))
     }
 }

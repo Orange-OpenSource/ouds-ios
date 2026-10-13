@@ -11,20 +11,21 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
 import SwiftUI
-
-// MARK: - The Shimmer apply on skeleton
 
 struct SkeletonShimmerView: View {
 
+    // MARK: - Configurations
+
+    static let animationDuration: Double = 1.25
+    static let shimmerDuration: Double = 0.8
+
     // MARK: - Properties
 
-    let animationDuration: Double = 1.25
-    let shimmerDuration: Double = 0.8
-
     let width: CGFloat
+
     @State private var progress: CGFloat = 0
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
@@ -63,12 +64,11 @@ struct SkeletonShimmerView: View {
     private func startAnimation() {
         progress = 0
 
-        withAnimation(.timingCurve(0.42, 0.0, 0.58, 1.0, duration: shimmerDuration)) {
+        withAnimation(.timingCurve(0.42, 0.0, 0.58, 1.0, duration: Self.shimmerDuration)) {
             progress = 1
         }
 
-        // 450 ms : pause à la position finale
-        DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.animationDuration) {
             guard !Task.isCancelled else { return }
             progress = 0
             startAnimation()

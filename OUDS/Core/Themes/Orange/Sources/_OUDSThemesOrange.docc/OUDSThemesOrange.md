@@ -512,6 +512,10 @@ struct YourApp: App {
     }
 }
 
+#### Skeleton
+
+![A skeleton component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_skeleton_Orange.png)
+
 #### Tags
 
 @TabNavigator {

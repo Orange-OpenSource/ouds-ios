@@ -152,6 +152,84 @@ OUDSLinearProgressIndicator(progress: 0.5, helperText: .percent(description: "Up
 OUDSLinearProgressIndicator(status: .info, helperText: "Processing…", helperTextAlignment: .start)
 ```
 
+### Skeletons
+
+@TabNavigator {
+    @Tab("Orange") {
+        @Video(source: "component_skeleton_Orange.video")
+    }
+    @Tab("Orange Compact") {
+        @Video(source: "component_skeleton_OrangeCompact.video")
+    }
+    @Tab("Sosh") {
+        @Video(source: "component_skeleton_Sosh.video")
+    }
+    @Tab("Wireframe") {
+        @Video(source: "component_skeleton_Wireframe.video")
+    }
+}
+
+A skeleton is a UI element that indicates when content is loading. The ``OUDSSkeleton`` enhances user experience by
+temporarily replacing content with gray areas or animations that simulate the visual structure of the forthcoming content.
+
+#### Activate skeleton for OUDS components
+
+Lot of componnents in OUDS library propose their own skeleton representation according to skeleton state set in the SwiftUI environment. 
+Apply `oudsSkeleton(isVisible:isAnimated:)` to uodate the state on the view and its children 
+to inform all components in the hierarchy to be displayed in skeleton. 
+
+```swift
+    @State var isLoading = false
+
+    var body: some View {
+        VStack {
+            OUDSHeading("My header")
+            OUDSAlertMessage(label: "Some text here", description: "You should read this text")
+            OUDSButton(text: "Do some action") { isLoading = true }
+        }
+        .oudsSkeleton(isVisible: isLoading) 
+    }
+```
+
+### Draw skeletons  
+
+It is possible to define a skeleton using ``OUDSSkeleton`` and a frame.
+
+```swift
+    VStack {
+        // Heading skeleton
+        OUDSSkeleton(securityMargin: true).frame(width: 180, height: 48)
+
+        // Body skeleton
+        OUDSSkeleton(securityMargin: true).frame(width: 300, height: 150)
+
+        // Footer skeleton
+        OUDSSkeleton(securityMargin: true).frame(width: 180, height: 54)
+    }
+```
+
+### Prepare Views for skeleton layout
+
+The `skeleton` helper applies skeleton on top of a View; the skeleton layout will be rendered with `oudsSkeleton(isVisible:)`.
+
+```swift
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("The title")
+                .skeleton()
+            
+            Button {    
+            } label: {
+                VStack {
+                    Text("Title")
+                    Label("Subtitle", systemImage: "phone")
+                }
+            }
+            .skeleton()
+        }
+    }
+```
+
 ### Tag
 
 @TabNavigator {
