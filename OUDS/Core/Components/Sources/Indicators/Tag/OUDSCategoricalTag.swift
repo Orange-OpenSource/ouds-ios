@@ -270,7 +270,7 @@ public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to desig
         }
         .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
         .modifier(CategoricalTagBackgroundModifier(category: category, isLoading: isLoading))
-        // .modifier(TagShapeModifier(shape: shape)) // TODO: #1651 Fix this borken source line
+        .modifier(CategoricalTagShapeModifier(shape: shape))
         .accessibilityLabel(accessibilityLabel)
     }
 
