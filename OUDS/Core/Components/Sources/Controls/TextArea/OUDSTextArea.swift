@@ -18,6 +18,8 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
+// swiftlint:disable file_length
+
 /// Text area is a UI element that allows to type, edit, or select longer blocks of textual data, such as comments, messages or descriptions;
 /// by expanding vertically and offering more space to input text.
 /// It provides a visual and interactive affordance for multiline text entry while supporting labels, placeholders, descriptions, and validation feedback.

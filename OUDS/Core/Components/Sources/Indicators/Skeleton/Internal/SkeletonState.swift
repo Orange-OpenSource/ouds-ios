@@ -19,7 +19,7 @@ import SwiftUI
 extension EnvironmentValues {
 
     /// The skeleton state indicates if the skeleton of components should be displayed, animated or not, according to its `isAnimated` flag.
-    @Entry var skeletonState: SkeletonState? = nil
+    @Entry var skeletonState: SkeletonState?
 }
 
 // MARK: - Skeleton State

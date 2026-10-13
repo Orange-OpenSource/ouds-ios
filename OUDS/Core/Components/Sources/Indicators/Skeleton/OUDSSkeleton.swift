@@ -106,6 +106,7 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
         self.shape = shape
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Cretate a skeleton  with the default `RoundedRectangle` shape according to the `cornerRadius`
     ///
     /// - Parameters:
@@ -114,6 +115,8 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     public init(securityMargin: Bool = false, cornerRadius: CGFloat) where Shape == RoundedRectangle {
         self.init(securityMargin: securityMargin, shape: RoundedRectangle(cornerRadius: cornerRadius))
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: - Body
 
