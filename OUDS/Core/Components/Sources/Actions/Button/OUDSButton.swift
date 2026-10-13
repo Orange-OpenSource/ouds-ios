@@ -151,6 +151,7 @@ public struct OUDSButton: View {
     private let action: () -> Void
 
     @State private var isHover: Bool
+    @Environment(\.skeletonState) private var skeletonState
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     private enum `Type` {
@@ -388,7 +389,12 @@ public struct OUDSButton: View {
             OL.fatal("An OUDSButton with OUDSButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
         }
 
-        Button(action: action) {
+        Button {
+            if skeletonState == nil {
+                action()
+            }
+        }
+        label: {
             switch type {
             case let .icon(image):
                 ButtonIcon(image: image, size: size)

@@ -42,8 +42,8 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 
     private let isReadOnly: Bool
     private let action: () -> Void
-
     @ViewBuilder private let content: (OUDSButtonInteractionState) -> Content
+
     @Environment(\.skeletonState) private var skeletonState
 
     // MARK: Initializer
