@@ -42,8 +42,8 @@ struct SkeletonShimmerView: View {
             endPoint: .trailing)
             .frame(width: width)
             .offset(x: lerp(from: -width, to: width, progress: progress))
-            .onAppear {
-                startAnimation()
+            .task {
+                await startAnimation()
             }
     }
 
@@ -61,17 +61,15 @@ struct SkeletonShimmerView: View {
         theme.skeleton.colorGradientMiddle.color(for: colorScheme)
     }
 
-    private func startAnimation() {
-        progress = 0
-
-        withAnimation(.timingCurve(0.42, 0.0, 0.58, 1.0, duration: Self.shimmerDuration)) {
-            progress = 1
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + Self.animationDuration) {
-            guard !Task.isCancelled else { return }
+    private func startAnimation() async {
+        while !Task.isCancelled {
             progress = 0
-            startAnimation()
+
+            withAnimation(.timingCurve(0.42, 0.0, 0.58, 1.0, duration: Self.shimmerDuration)) {
+                progress = 1
+            }
+
+            try? await Task.sleep(nanoseconds: UInt64(Self.animationDuration * 1_000_000_000))
         }
     }
 
