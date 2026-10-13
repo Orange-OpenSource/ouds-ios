@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `excon` transitive RubyGem from v1.7.2 to v1.7.3
 - Swift Package `SwiftFormat` from v0.63.1 to v0.64.0
 - GitHub Actions `actions/github-script` from v7 to v9 for `check-renovate-dependencies-prs` workflow
 - GitHub Actions `ossf/scorecard-action` from v2.4.4 to v2.5.0 for `scorecard` workflow
