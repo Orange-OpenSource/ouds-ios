@@ -54,7 +54,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     SomeView()
-///         .oudsSkeleton(isVisible: true)
+///         .showSkeleton(isVisible: true)
 ///
 /// ```
 ///
@@ -144,7 +144,7 @@ extension View {
     /// Apply a skeleton on the current component with the default `Rectangle` shape.
     ///
     /// The skeleton is displayed only if  the skeleton state is set into the environment using
-    /// `oudsSkeleton(isVisible:isAnimated:)
+    /// `showSkeleton(isVisible:isAnimated:)
     ///
     /// - Parameter securityMargin: Whether to apply vertical padding to the skeleton. Defaults to `false`.
     /// - Since: 3.2.0
@@ -156,7 +156,7 @@ extension View {
     /// Apply a skeleton on the current component with a dedicated shape.
     ///
     /// The skeleton is displyed only if  the skeleton state is set into the environment using
-    /// `oudsSkeleton(isVisible:isAnimated:)
+    /// `showSkeleton(isVisible:isAnimated:)
     ///
     /// - Parameters:
     ///    - shape: The shape applied on the skeleton.
@@ -175,7 +175,7 @@ extension View {
     ///    - isAnimated: Flag to animate the shimer effect on the skeleton. `true` by default.
     /// - Since: 3.2.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func oudsSkeleton(isVisible: Bool, isAnimated: Bool = true) -> some View {
+    public func showSkeleton(isVisible: Bool, isAnimated: Bool = true) -> some View {
         modifier(SkeletonStateModifier(isVisible: isVisible, isAnimated: isAnimated))
     }
 }

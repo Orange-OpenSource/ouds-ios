@@ -175,7 +175,7 @@ temporarily replacing content with gray areas or animations that simulate the vi
 #### Activate skeleton for OUDS components
 
 Lot of components in OUDS library propose their own skeleton representation according to skeleton state set in the SwiftUI environment. 
-Apply `oudsSkeleton(isVisible:isAnimated:)` to update the state on the view and its children 
+Apply `showSkeleton(isVisible:isAnimated:)` to update the state on the view and its children 
 to inform all components in the hierarchy to be displayed in skeleton. 
 
 ```swift
@@ -187,7 +187,7 @@ to inform all components in the hierarchy to be displayed in skeleton.
             OUDSAlertMessage(label: "Some text here", description: "You should read this text")
             OUDSButton(text: "Do some action") { isLoading = true }
         }
-        .oudsSkeleton(isVisible: isLoading) 
+        .showSkeleton(isVisible: isLoading) 
     }
 ```
 
@@ -210,7 +210,7 @@ It is possible to define a skeleton using ``OUDSSkeleton`` and a frame.
 
 ### Prepare Views for skeleton layout
 
-The `skeleton` helper applies skeleton on top of a View; the skeleton layout will be rendered with `oudsSkeleton(isVisible:)`.
+The `skeleton` helper applies skeleton on top of a View; the skeleton layout will be rendered with `showSkeleton(isVisible:)`.
 
 ```swift
     var body: some View {
