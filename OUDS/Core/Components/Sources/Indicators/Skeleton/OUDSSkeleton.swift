@@ -21,7 +21,7 @@ import SwiftUI
 ///
 /// The animation is automatically disabled if the low power mode or the accessibility reduce motion are activated.
 ///
-/// The "`security margin` includes or not transparent vertical padding (with 0% opacity) at the top and bottom of the skeleton component.
+/// The `security margin` includes or not transparent vertical padding (with 0% opacity) at the top and bottom of the skeleton component.
 /// This padding prevents the creation of excessively large uniform surfaces, maintaining a visually balanced and structured layout.
 ///
 /// ## Code samples
@@ -96,7 +96,7 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
 
     // MARK: - Initializers
 
-    /// Cretate a skeleton  with the default `Rectangle` shape.
+    /// Create a skeleton  with the default `Rectangle` shape.
     ///
     /// - Parameters:
     ///    - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to `false`.
@@ -107,7 +107,7 @@ public struct OUDSSkeleton<Shape: SwiftUI.Shape>: View {
     }
 
     // swiftlint:disable function_default_parameter_at_end
-    /// Cretate a skeleton  with the default `RoundedRectangle` shape according to the `cornerRadius`
+    /// Create a skeleton  with the default `RoundedRectangle` shape according to the `cornerRadius`
     ///
     /// - Parameters:
     ///    - securityMargin: Whether to apply vertical padding to the skeleton. Defaults to `false`.

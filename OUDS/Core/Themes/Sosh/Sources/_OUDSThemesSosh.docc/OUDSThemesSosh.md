@@ -205,7 +205,7 @@ You cannot derivate the Sosh theme.
 
 #### Skeleton
 
-![A skeleton component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_skeleton_Sosh.png)
+![A skeleton component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_skeleton_Sosh.png)
 
 #### Tags
 

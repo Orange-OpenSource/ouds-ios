@@ -19,7 +19,7 @@ import Testing
 struct SkeletonShimmerViewTests {
 
     @Test
-    func `animation duration must be 1.25 seconds)`() {
+    func `animation duration must be 1.25 seconds`() {
         #expect(SkeletonShimmerView.animationDuration == 1.25)
     }
 

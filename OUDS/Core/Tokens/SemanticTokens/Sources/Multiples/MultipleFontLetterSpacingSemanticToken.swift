@@ -83,5 +83,5 @@ public final class MultipleFontLetterSpacingSemanticToken: NSObject, Sendable {
 
     // NOTE: Cannot be Comparable
     // Indeed values are decimals which can be negative, positive or zero
-    // And are not homogenic: some values one by one can be bigger then lower
+    // And are not homogenic: some values one by one can be bigger than lower
 }

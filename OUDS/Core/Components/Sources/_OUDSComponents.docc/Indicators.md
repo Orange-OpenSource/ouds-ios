@@ -174,8 +174,8 @@ temporarily replacing content with gray areas or animations that simulate the vi
 
 #### Activate skeleton for OUDS components
 
-Lot of componnents in OUDS library propose their own skeleton representation according to skeleton state set in the SwiftUI environment. 
-Apply `oudsSkeleton(isVisible:isAnimated:)` to uodate the state on the view and its children 
+Lot of components in OUDS library propose their own skeleton representation according to skeleton state set in the SwiftUI environment. 
+Apply `oudsSkeleton(isVisible:isAnimated:)` to update the state on the view and its children 
 to inform all components in the hierarchy to be displayed in skeleton. 
 
 ```swift

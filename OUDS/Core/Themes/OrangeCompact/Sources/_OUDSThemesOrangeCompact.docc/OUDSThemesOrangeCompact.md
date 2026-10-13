@@ -286,7 +286,7 @@ You cannot derivate the *Orange Compact* theme.
 
 #### Skeleton
 
-![A skeleton component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_skeleton_OrangeCompact.png)
+![A skeleton component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_skeleton_OrangeCompact.png)
 
 #### Tags
 
