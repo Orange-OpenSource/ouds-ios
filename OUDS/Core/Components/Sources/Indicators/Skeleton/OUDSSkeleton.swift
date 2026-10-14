@@ -58,6 +58,14 @@ import SwiftUI
 ///
 /// ```
 ///
+/// ## Accessibility considerations
+///
+/// If the skeletons are used to draw a page in loading state, it is important to use Voice Over to make an announcement to vocalize the loading state of the page.
+/// In this case there is no need to vocalise the skeletons one by one.
+///
+/// If the skeleton is used for one object in a screen, an accessibility label should be added to the component
+/// in order to make Voice Over able to focus and vocalize the loading state of the component.
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-skeleton)
