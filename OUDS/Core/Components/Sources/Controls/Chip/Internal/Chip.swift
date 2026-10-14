@@ -66,8 +66,7 @@ struct Chip: View {
         .padding(.leading, leadingPadding)
         .padding(.trailing, trailingPadding)
         .frame(minWidth: theme.chip.sizeMinWidth, minHeight: theme.chip.sizeMinHeight)
-        .modifier(ChipBackgroundModifier(state: interactionState, selected: selected))
-        .modifier(ChipBorderModifier(state: interactionState, selected: selected))
+        .modifier(ChipAspectModifier(state: interactionState, selected: selected))
     }
 
     // MARK: - Private helpers
@@ -202,6 +201,24 @@ private struct ChipSelectionIndicator: View {
             theme.chip.colorContentSelectedPressed
         case .disabled:
             theme.chip.colorContentSelectedDisabled
+        }
+    }
+}
+
+struct ChipAspectModifier: ViewModifier {
+    let state: OUDSChipInteractionState
+    let selected: Bool
+
+    @Environment(\.skeletonState) private var skeletonState
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        if skeletonState == nil {
+            content
+                .modifier(ChipBackgroundModifier(state: state, selected: selected))
+                .modifier(ChipBorderModifier(state: state, selected: selected))
+        } else {
+            content.skeleton(shape: RoundedRectangle(cornerRadius: theme.chip.borderRadius))
         }
     }
 }

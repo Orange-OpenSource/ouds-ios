@@ -297,3 +297,9 @@ let simpleText = AttributedString.from(text: "Some plain text",
 let simpleMarkdown = AttributedString.from(markdown: someMarkdown,
                                            foregroundColor: theme.colors.contentDefault.color(for: colorScheme))
 ```
+
+<!--
+NOTE: This is the landing page of the OUDSComponents products.
+It should contain high-level API and other topics which cannot be placed elsewhere.
+For components, prefer to update the suitable catalog.
+-->

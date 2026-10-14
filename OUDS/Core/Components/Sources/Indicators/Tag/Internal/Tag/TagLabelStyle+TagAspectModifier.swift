@@ -11,25 +11,28 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-struct TagShapeModifier: ViewModifier {
+struct TagAspectModifier: ViewModifier {
 
-    // MARK: Stored properties
-
+    let appearance: OUDSTag.Appearance
     let shape: OUDSTag.Shape
-
+    let size: OUDSTag.Size
+    let type: OUDSTag.`Type`
+    @Environment(\.skeletonState) private var skeletonState
     @Environment(\.theme) private var theme
 
-    // MARK: Body
-
     func body(content: Content) -> some View {
-        content
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+        if skeletonState == nil {
+            content
+                .modifier(TagBackgroundModifier(appearance: appearance, type: type))
+                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+        } else {
+            content.skeleton(shape: RoundedRectangle(cornerRadius: cornerRadius))
+        }
     }
-
-    // MARK: Helper
 
     private var cornerRadius: CGFloat {
         switch shape {

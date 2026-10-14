@@ -14,8 +14,6 @@
 import Foundation
 import OUDSFoundations
 
-// swiftlint:disable line_length
-
 /// Kind of semantic tokens which will wrap a combination of ``MultipleFontLetterSpacingSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
 /// If a font letter-spacing token has a value that depends on the size class (compact or regular mode), it must be packed in a ``MultipleFontLetterSpacingSemanticToken``.
@@ -85,5 +83,5 @@ public final class MultipleFontLetterSpacingSemanticToken: NSObject, Sendable {
 
     // NOTE: Cannot be Comparable
     // Indeed values are decimals which can be negative, positive or zero
-    // And are not homogenic: some vales one by one can be bigger then lower
-} // swiftlint:enable line_length
+    // And are not homogenic: some values one by one can be bigger than lower
+}

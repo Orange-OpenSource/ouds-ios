@@ -200,6 +200,10 @@ You cannot derivate the *Wireframe* theme.
     }
 }
 
+#### Skeleton
+
+![A skeleton component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_skeleton_Wireframe.png)
+
 #### Tags
 
 @TabNavigator {

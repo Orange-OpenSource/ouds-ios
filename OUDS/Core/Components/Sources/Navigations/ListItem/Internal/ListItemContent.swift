@@ -75,6 +75,7 @@ struct ListItemContent: View {
         }
         .accessibilityElement(children: .combine)
         .frame(minWidth: theme.listItem.sizeMinWidth)
+        .skeleton(securityMargin: true)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
     }
 
