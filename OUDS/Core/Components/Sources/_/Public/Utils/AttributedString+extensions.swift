@@ -103,6 +103,7 @@ import SwiftUI
 /// Prefer use other components like `Text` from SwiftUI.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public struct AttributedStringUrlConfiguration {
 
     let text: String?

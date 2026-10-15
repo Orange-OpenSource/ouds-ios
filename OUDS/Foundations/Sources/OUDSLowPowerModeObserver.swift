@@ -41,6 +41,7 @@ actor LowPowerModeActor {
 ///
 /// - Since: 0.16.0
 @MainActor
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class OUDSLowPowerModeObserver: ObservableObject {
 
     /// The published property saying if device is in low power mode (true) or not (false)

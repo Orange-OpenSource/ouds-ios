@@ -46,6 +46,7 @@ extension EnvironmentValues {
 /// Helps to define some metrics like tab bar heights.
 ///
 /// - Since: 1.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public enum iPhoneDevice: CustomStringConvertible, Sendable {
 
     /*

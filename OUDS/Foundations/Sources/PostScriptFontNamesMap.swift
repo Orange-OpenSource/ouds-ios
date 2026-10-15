@@ -19,6 +19,7 @@ import SwiftUI
 public typealias PSFNMK = PostScriptFontNamesMapKey
 
 /// Key of the map containing PostScript name to use for a font depending to its family name and weight.
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
 
     /// The font family name as defined in raw tokens
@@ -119,6 +120,7 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 /// - Parameters:
 ///    - identifier: The PostScript identifier as defined in police books
 ///    - key: The combination of font name and weight
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public func registerFont(postScript identifier: String, forCombination key: PostScriptFontNamesMapKey) {
     internalApplePostScriptFontNames[key] = identifier
 }

@@ -25,6 +25,7 @@ extension View {
     ///
     /// - Parameter edges: The set of edges to add margin for this view (default is  `.all`).
     /// - Returns: A view that's margin are added by the specified amount on the specified edges.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func gridMargin(_ edges: Edge.Set = .all) -> some View {
         modifier(GridMarginModifier(edges: edges))
     }

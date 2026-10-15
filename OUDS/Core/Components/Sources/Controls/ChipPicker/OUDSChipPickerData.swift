@@ -18,6 +18,7 @@ import SwiftUI
 /// Each property in this ``OUDSChipPickerData`` is used to define the suitable ``OUDSFilterChip``.
 ///
 /// - Since: 0.17.0
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSChipPickerData<Tag> where Tag: Hashable {
 
     /// The identifier, supposed to be unique, to discriminate the element.

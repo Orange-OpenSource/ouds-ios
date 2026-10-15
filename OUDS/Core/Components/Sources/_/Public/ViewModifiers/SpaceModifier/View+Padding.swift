@@ -29,6 +29,7 @@ extension View {
     ///     - scaledSpaces: The semantic spaces defined by `MultipleSpaceSemanticToken`, which vary based on size classes.
     ///     If set to `nil`, SwiftUI uses a platform-specific default amount. Default set to `nil`.
     /// - Returns: A view that's padded by the specified amount on the specified edges.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func padding(_ edge: Edge.Set, _ scaledSpaces: MultipleSpaceSemanticToken) -> some View {
         modifier(VerticalModifier(edge: edge, space: scaledSpaces))
             .modifier(HorizontalModifier(edge: edge, space: scaledSpaces))

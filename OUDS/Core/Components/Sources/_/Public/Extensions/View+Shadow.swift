@@ -25,6 +25,7 @@ extension View {
     ///
     /// - Parameter elevation: The token to give for the shadow / elevation effect depending to the color scheme
     /// - Returns `View`: The current `View` with the shadow / elevation effect
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func shadow(_ elevation: MultipleElevationCompositeRawToken) -> some View {
         modifier(ColorSchemeBasedElevationViewModifier(elevation: elevation))
     }

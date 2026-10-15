@@ -47,6 +47,7 @@ extension View {
     ///
     /// Note this second case works only if *YourView* does not refer directly to the `theme` (see [#1268](https://github.com/Orange-OpenSource/ouds-ios/issues/1268))
     @ViewBuilder
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func wireframePreview() -> some View {
         #if DEBUG
         if ProcessInfo.doesRunOnXcodePreview {

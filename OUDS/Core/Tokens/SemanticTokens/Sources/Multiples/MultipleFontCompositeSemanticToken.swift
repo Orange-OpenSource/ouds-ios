@@ -43,6 +43,7 @@ import SwiftUI
 /// In fact there is not "font composite semantic tokens" defined in the *Figma* kit.
 ///
 /// - Since: 0.22.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class MultipleFontCompositeSemanticToken: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports

@@ -25,6 +25,7 @@ extension String {
     ///
     /// - Parameter weight: The weight to apply to the font
     /// - Returns: The PostScript name with the weight, or the font name is the PostScript name is unknown or not managed
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func fontNameInPostScript(using weight: String) -> String {
         kApplePostScriptFontNames[orKey: PSFNMK(self, weight: weight)]
     }
@@ -40,6 +41,7 @@ extension String {
 
     /// Converts *self*, supposed to be hexadecimal representation, to int value
     /// - Returns Int: The associated value, or nil if failed
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func fromHexToInt() -> Int? {
         let hexString = trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var intValue: UInt64 = 0
@@ -55,6 +57,7 @@ extension String {
     /// For this value, it will return "EEF9FF" (corresponding to RGB(238,249,255)
     ///
     /// - Returns: The hexadecimal RGB color value, if applicable.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func toHex6() -> String? {
         // Expected #RRGGBB or #RRGGBBAA
         guard hasPrefix("#"), count == 7 || count == 9 else {

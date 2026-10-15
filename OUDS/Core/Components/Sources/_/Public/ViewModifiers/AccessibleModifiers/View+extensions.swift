@@ -42,6 +42,7 @@ extension View {
     ///    - hasLargeTitle: Flag to activate the large title. Default is `false`.
     ///
     /// - Returns View: The view with a new modifier
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsNavigationTitle(_ title: String, subtitle: String? = nil, hasLargeTitle: Bool = false) -> some View {
         #if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
@@ -68,6 +69,7 @@ extension View {
     ///
     /// - Parameter requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
     /// - Returns View: The view with a new modifier
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func requestAccessibleFocus(_ requestFocus: AccessibilityFocusState<Bool>) -> some View {
         modifier(RequestAccessibleFocusModifier(requestFocus: requestFocus,
                                                 deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
@@ -90,6 +92,7 @@ extension View {
     ///    - requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
     ///    - target: The item which will get the focus
     /// - Returns View: The view with a new modifier
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func requestAccessibleFocus(_ requestFocus: AccessibilityFocusState<AccessibilityFocusable?>, for target: AccessibilityFocusable) -> some View {
         modifier(RestrictedRequestAccessibleFocusModifier(requestFocus: requestFocus,
                                                           target: target,

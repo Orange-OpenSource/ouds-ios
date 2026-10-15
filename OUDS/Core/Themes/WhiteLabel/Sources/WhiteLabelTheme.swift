@@ -70,6 +70,7 @@ import SwiftUI
 /// See the tokens version from `WireframeTheme`.
 ///
 /// - Since: 3.1.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
 
     // MARK: - Initializers

@@ -42,6 +42,7 @@ import OUDSFoundations
 /// ```
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class MultipleFontLetterSpacingSemanticToken: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports

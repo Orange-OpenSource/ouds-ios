@@ -36,6 +36,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 2.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSInteractionButton<Content>: View where Content: View {
 
     // MARK: Properties
@@ -113,6 +114,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 /// ```
 ///
 /// - Since: 2.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSInteractionButtonStyle<Content>: ButtonStyle where Content: View {
 
     // MARK: Properties

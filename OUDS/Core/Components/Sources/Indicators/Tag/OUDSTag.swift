@@ -193,7 +193,7 @@ public struct OUDSTag: View {
             /// To display the leading bullet
             case bullet
 
-            /// To display the leadiong icon. For `OUDSTag.Status.Category.neutral` and `OUDSTag.Status.Category.accent`
+            /// To display the leading icon. For `OUDSTag.Status.Category.neutral` and `OUDSTag.Status.Category.accent`
             /// the decorative icon need to be provided. For other categories, a default icon is already provided.
             case icon
         }

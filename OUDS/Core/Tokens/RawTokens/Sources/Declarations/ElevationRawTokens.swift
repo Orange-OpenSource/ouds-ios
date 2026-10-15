@@ -17,6 +17,7 @@
 /// Combinations of these three values can be defined inside ``ElevationCompositeRawToken`` i.e. *composite tokens* defining a whil box shadow to use for elevation effect.
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum ElevationRawTokens {
 
     // Values are defined in *ElevationRawTokens+Values.swift* file updated by the tokenator and *ElevationRawTokens+Values.swift* updated manually by the development team.

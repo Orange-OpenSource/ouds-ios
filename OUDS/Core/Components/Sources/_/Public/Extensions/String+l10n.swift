@@ -30,6 +30,7 @@ extension String {
     /// Else, as fallback the default language from *Bundle.module* is used.
     ///
     /// - Returns String: The conversion of `self` as `NSLocalizedString`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func localized() -> String {
 
         // let preferredLocalization = Bundle.preferredLocalization
@@ -60,6 +61,7 @@ extension String {
     /// Will then inject as `String` the given `argument` inside the parameterized string.
     /// - Parameter argument: The unique value to insert in the localized string with `self` as key
     /// - Returns: The localized `String`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func localized(with argument: CVarArg) -> String {
         String(format: localized(), argument)
     }
@@ -69,6 +71,7 @@ extension String {
     ///    - lhs: The localizable value to update
     ///    - rhs: The value as String to inject in `lhs`
     /// - Returns String: The final result
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public static func <- (lhs: String, rhs: String) -> String {
         String(format: lhs.localized(), rhs)
     }
@@ -78,6 +81,7 @@ extension String {
     ///    - lhs: The localizable value to update
     ///    - rhs: The value as Int to inject in `lhs`
     /// - Returns String: The final result
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public static func <- (lhs: String, rhs: Int) -> String {
         String(format: lhs.localized(), rhs)
     }

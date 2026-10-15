@@ -101,6 +101,7 @@ extension Divider {
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
     @MainActor
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func vertical(color: OUDSDividerColor) -> some View {
         modifier(DividerModifier(orientation: .vertical, dividerColor: color))
     }

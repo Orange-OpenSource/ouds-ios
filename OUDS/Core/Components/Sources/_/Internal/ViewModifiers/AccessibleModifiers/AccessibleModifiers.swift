@@ -145,6 +145,7 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 /// ```
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum AccessibilityFocusable: Hashable {
     case none
     case some(id: String)

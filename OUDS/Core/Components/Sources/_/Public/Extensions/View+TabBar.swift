@@ -18,6 +18,7 @@ import SwiftUI
 extension View {
 
     /// Get the tab bar within the view hierarchy
+    @available(iOS 15, *)
     public func findTabBar() -> UITabBar? {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return nil }

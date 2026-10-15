@@ -19,6 +19,7 @@ import OUDSTokensSemantic
 /// List of colors available for dividers (i.e. `OUDSHorizontalDivider` or `OUDSVerticalDivider`)
 ///
 /// - Since: 0.14.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSDividerColor {
     case `default`
     case muted

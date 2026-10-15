@@ -37,6 +37,7 @@ extension View {
     ///     - radius: The radius of the border to apply
     ///     - color: The colors of the border (depending to the `colorScheme`)
     /// - Returns some View: The current `View` but with a border.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func border(
         style: BorderStyleSemanticToken,
         width: BorderWidthSemanticToken,
@@ -59,6 +60,7 @@ extension View {
     /// ```
     ///
     /// - Returns some View: The current `View` but with a default border.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func borderDefault() -> some View {
         modifier(BorderDefaultModifier())
     }
