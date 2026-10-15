@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Ruby Gem `fastlane` from v2.240.1 to v2.241.1
 - `excon` transitive RubyGem from v1.7.2 to v1.7.3
 - Swift Package `SwiftFormat` from v0.63.1 to v0.64.0
 - GitHub Actions `actions/github-script` from v7 to v9 for `check-renovate-dependencies-prs` workflow

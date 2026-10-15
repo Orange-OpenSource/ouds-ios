@@ -35,7 +35,7 @@ gem 'excon', '1.7.3'
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.240.1'
+gem 'fastlane', '2.241.1'
 
 # Magic
 
