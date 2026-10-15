@@ -175,6 +175,7 @@ public struct OUDSListItemData {
         case text(_: String, isBold: Bool = false)
 
         /// A custom SwiftUI view used as the label, with an accessibility label for Voice Over.
+        /// Paddings must be managed by the given `View` in the slot.
         ///
         /// - Parameters:
         ///   - view: The custom SwiftUI view to render as the label.
@@ -244,6 +245,8 @@ public struct OUDSListItemData {
     ///
     /// This slot is positioned below the main row content and above the helper text.
     /// It is useful for displaying additional information that should be visually separated from the main texts.
+    ///
+    /// Paddings must be managed by the given `View` in the slot.
     ///
     /// **Note:** Not displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``).
     let bottomSlot: Slot?

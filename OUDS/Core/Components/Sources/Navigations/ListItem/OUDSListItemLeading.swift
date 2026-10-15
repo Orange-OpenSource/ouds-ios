@@ -121,6 +121,8 @@ import SwiftUI
     /// The custom view is responsible for its own accessibility: unlike `.flag` and `.avatar`,
     /// it is **not** automatically hidden from assistive technologies.
     ///
+    /// Paddings must be managed by the given `View` in the slot.
+    ///
     /// **Note:** Not displayed when the list item is in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``),
     /// since its layout cannot be adapted automatically to the reduced space.
     case slot(AnyView)
