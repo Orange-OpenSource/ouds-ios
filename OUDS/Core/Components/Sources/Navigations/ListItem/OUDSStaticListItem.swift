@@ -130,7 +130,8 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
+/// - [Static list item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-static-list-item )
+/// - [Static card item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-static-card-item )
 ///
 /// ## Themes rendering
 ///

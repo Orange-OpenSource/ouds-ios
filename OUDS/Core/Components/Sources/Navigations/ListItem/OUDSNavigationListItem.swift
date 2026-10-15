@@ -165,7 +165,8 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
+/// - [Navigation list item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-navigation-list-item)
+/// - [Navigation card item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-navigation-card-item)
 ///
 /// ## Themes rendering
 ///

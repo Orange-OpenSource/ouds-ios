@@ -148,7 +148,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-circular-progress-indicator)
 ///
 /// ## Themes rendering
 ///
@@ -171,7 +171,7 @@ import SwiftUI
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
+public struct OUDSCircularProgressIndicator: View {
 
     /// The default component size (matches the Android reference implementation and Material 3 defaults).
     public static let defaultSize: CGFloat = 48.0

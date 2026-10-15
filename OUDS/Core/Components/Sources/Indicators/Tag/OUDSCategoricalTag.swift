@@ -71,6 +71,10 @@ import SwiftUI
 ///     OUDSCategoricalTag(label: "Label", category: .category4, shape: .square, size: .small)
 /// ```
 ///
+/// ## Design documentation
+///
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-categorical-tag)
+///
 /// ## Themes rendering
 ///
 /// ### Orange
@@ -88,7 +92,7 @@ import SwiftUI
 /// - Version: 1.0.0
 /// - Since: 3.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSCategoricalTag: View { // TODO: #1782 - Add hyperlink to design system documentation
+public struct OUDSCategoricalTag: View {
 
     // MARK: - Properties
 
