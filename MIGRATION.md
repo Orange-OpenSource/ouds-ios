@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v3.0.0 → v3.2.0](#v300--v320)
 - [v2.3.0 → v3.0.0](#v230--v300)
 - [v2.2.0 → v2.3.0](#v220--v230)
 - [v2.0.0 → v2.2.0](#v200--v220)
@@ -9,6 +10,144 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v3.0.0 → v3.2.0
+
+### Overview
+
+The ``OUDSListItemData`` initializers have been reorganized so that **every textual field**
+(`label`, `description`, `overline`, `extraLabel`, `helperText`) can accept **either a `String`
+or a styled `AttributedString`**, instead of only the `overline`.
+
+The six former initializers (one per combination of label type × overline type) are now
+deprecated and replaced by three unified initializers.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 3.0.0 or later.
+
+#### Backward compatibility
+
+- **Fully source-compatible**: all existing call sites keep compiling. They will emit
+  deprecation warnings but still work. No public API has been removed.
+
+### Public `TextualContent` type
+
+The previously-internal `TextualContent` enum is now **public** and `@frozen`. It represents
+a textual value that can be either a plain `String` or a styled `AttributedString`:
+
+```swift
+@frozen
+public enum TextualContent: Sendable, ExpressibleByStringLiteral {
+    case raw(String)
+    case attributed(AttributedString)
+}
+```
+
+Thanks to the `ExpressibleByStringLiteral` conformance, a string literal is implicitly
+converted to `.raw(…)`, so plain-text call sites stay concise.
+
+### New `.rich` case on `OUDSListItemData.Label`
+
+The `OUDSListItemData.Label` enum gains a new case for styled labels:
+
+```swift
+public enum Label {
+    case text(_: String, isBold: Bool = false)
+    case rich(_: AttributedString)              // new in v3.2.0
+    case custom(_ view: AnyView, accessibilityLabel: String)
+}
+```
+
+`Label` also conforms to `ExpressibleByStringLiteral`, so string literals convert to
+`.text(literal, isBold: false)` where the type is explicit.
+
+### New unified initializers
+
+```swift
+// Replaces the 4 initializers with `label: String` / `label: some View`
+public init(
+    label: Label,
+    description: TextualContent? = nil,
+    overline: TextualContent? = nil,
+    extraLabel: TextualContent? = nil,
+    helperText: TextualContent? = nil,
+    textSlot: Slot? = nil,
+    bottomSlot: Slot? = nil)
+
+public init(
+    label: some View,
+    accessibilityLabel: String,
+    description: TextualContent? = nil,
+    overline: TextualContent? = nil,
+    extraLabel: TextualContent? = nil,
+    helperText: TextualContent? = nil,
+    textSlot: Slot? = nil,
+    bottomSlot: Slot? = nil)
+
+// Replaces the 2 initializers with `key: LocalizedStringKey`
+public init(
+    key: LocalizedStringKey,
+    tableName: String? = nil,
+    bundle: Bundle = .main,
+    hasBoldLabel: Bool = false,
+    description: TextualContent? = nil,
+    overline: TextualContent? = nil,
+    extraLabel: TextualContent? = nil,
+    helperText: TextualContent? = nil,
+    textSlot: Slot? = nil,
+    bottomSlot: Slot? = nil)
+```
+
+### Migration
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (v3.0 — deprecated) | After (v3.2) |
+|---|---|
+| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(label: .text("Foo"))` |
+| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .text("Foo", isBold: true))` |
+| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(label: .text("Foo"), description: "Bar", overline: "Over")` |
+| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(label: .text("Foo"), overline: .attributed(myAttr))` |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` *(signature unchanged, textual fields now accept `TextualContent`)* |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(signature unchanged, textual fields now accept `TextualContent`)* |
+
+**New capability** — any textual field can now be styled:
+
+```swift
+// Before (v3.0) — only `overline` could be styled
+OUDSListItemData(label: "Foo", overline: myStyledOverline)
+
+// After (v3.2) — any textual field can be styled
+OUDSListItemData(
+    label: .rich(myStyledLabel),
+    description: .attributed(myStyledDescription),
+    overline: .attributed(myStyledOverline),
+    extraLabel: "Plain string literal",
+    helperText: .attributed(myStyledHelper))
+```
+
+**Required Action**:
+- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(label: .text("Foo"), …)`.
+- Replace `hasBoldLabel: true` with `.text("Foo", isBold: true)`.
+- Replace `overline: myAttributedString` with `overline: .attributed(myAttributedString)` and
+  move the `overline:` parameter to its canonical position (after `description:` in the new
+  init order).
+- The `LocalizedStringKey` initializers keep the same label; only the optional textual fields
+  change type from `String?` / `AttributedString` to `TextualContent?`.
+
+> **Note on overload resolution**: as long as the deprecated `String` initializers remain
+> available, a call site such as `OUDSListItemData(label: "Foo")` still resolves to the
+> deprecated `String` overload (Swift prefers direct `String` matches over
+> `ExpressibleByStringLiteral` conversions to `Label`), so you will see a deprecation warning.
+> Migrate to `.text(…)` to silence it. When the deprecated initializers are eventually removed
+> in v4.x, the string-literal form will transparently resolve to the new unified initializer
+> via `ExpressibleByStringLiteral`.
+
+**Reason for Change**: Unify the API so that every textual field of a list item can carry
+rich text, not only the overline, without multiplying initializer overloads.
 
 ## v2.3.0 → v3.0.0
 

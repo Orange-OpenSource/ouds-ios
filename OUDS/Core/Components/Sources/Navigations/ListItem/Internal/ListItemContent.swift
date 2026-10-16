@@ -69,8 +69,8 @@ struct ListItemContent: View {
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
 
-            if let helperText = data.helperText {
-                ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)
+            if let helperTextContent = data.helperTextContent {
+                ListItemHelperTextContainer(text: helperTextContent, interactionState: interactionState)
             }
         }
         .accessibilityElement(children: .combine)

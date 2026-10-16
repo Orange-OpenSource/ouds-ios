@@ -34,7 +34,7 @@ Components:
 Guides:
 - **`ouds-ios-guide-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)
 - **`ouds-ios-guide-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
-- **`ouds-ios-guide-migration`** — step-by-step migration guide from v1.0.0 to v2.3.0 (current); covers all breaking changes, removed APIs and deprecated symbols
+- **`ouds-ios-guide-migration`** — step-by-step migration guide from v1.0.0 to v3.2.0 (current); covers all breaking changes, removed APIs and deprecated symbols
 - **`ouds-ios-guide-create-theme`** — step-by-step guide to create a custom OUDS theme (subclass OrangeTheme, from scratch on OUDSTheme, mix of providers, local fonts)
 
 For pull request reviews and before commit:

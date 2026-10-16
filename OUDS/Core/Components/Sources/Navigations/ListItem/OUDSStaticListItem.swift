@@ -27,11 +27,11 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Simple list item with a label only
-///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSStaticListItem(data: OUDSListItemData(label: .text("Label")))
 ///
 ///     // List item with more textual content
 ///     let data = OUDSListItemData(
-///         label: "Label",
+///         label: .text("Label"),
 ///         description: "Description",
 ///         overline: "Overline",
 ///         extraLabel: "Extra Label"
@@ -40,21 +40,21 @@ import SwiftUI
 ///
 ///     // List item with leading icon and trailing badge
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .text("Label")),
 ///         leading: .icon(.init(type: .info, size: .medium)),
 ///         trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 ///     )
 ///
 ///     // List item with avatar as leading and text as trailing
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label", description: "Description"),
+///         data: OUDSListItemData(label: .text("Label"), description: "Description"),
 ///         leading: .avatar(.init(type: .icon, size: .medium)),
 ///         trailing: .text(.label("Info"))
 ///     )
 ///
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "SMS credit"),
+///         data: OUDSListItemData(label: .text("SMS credit")),
 ///         trailing: .custom {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
@@ -63,7 +63,7 @@ import SwiftUI
 ///     // List item with slot (displayed under texts, before helper text)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(
-///             label: "Label",
+///             label: .text("Label"),
 ///             textSlot: { Text("Additional content") },
 ///             helperText: "Helper text"
 ///         )
@@ -72,7 +72,7 @@ import SwiftUI
 ///     // List item with bottomSlot (displayed under main content, before helper text)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(
-///             label: "Label",
+///             label: .text("Label"),
 ///             bottomSlot: { Text("Bottom content") },
 ///             helperText: "Helper text"
 ///         )
@@ -115,7 +115,7 @@ import SwiftUI
 /// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images) should be displayed with rounded corners.
 ///
 /// ```swift
-///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSStaticListItem(data: OUDSListItemData(label: .text("Label")))
 ///         .oudsListItemSize(.small)
 ///         .oudsListItemContainerAlignment(.top)
 ///         .oudsListCardStyle(.outlined())
