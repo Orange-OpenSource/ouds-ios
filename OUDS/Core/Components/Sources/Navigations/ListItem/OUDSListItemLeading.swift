@@ -36,33 +36,33 @@ import SwiftUI
 ///     // Leading with a status icon
 ///     let icon = OUDSListItemIcon(type: .info, size: .medium)
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .text("Label")),
 ///         leading: .icon(icon)
 ///     )
 ///
 ///     // Leading with an image
 ///     let image = OUDSListItemImage(asset: Image("il_placeholder"), size: .medium)
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .text("Label")),
 ///         leading: .image(image)
 ///     )
 ///
 ///     // Leading with a country flag
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "France"),
+///         data: OUDSListItemData(label: .text("France")),
 ///         leading: .flag(.init(asset: Image("il_flag_fr"), description: "France"))
 ///     )
 ///
 ///     // Leading with an avatar
 ///     let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Profile"),
+///         data: OUDSListItemData(label: .text("Profile")),
 ///         leading: .avatar(avatar)
 ///     )
 ///
 ///     // Leading with a custom view, e.g. a gauge showing a remaining SMS credit
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "SMS credit"),
+///         data: OUDSListItemData(label: .text("SMS credit")),
 ///         leading: .slot {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
@@ -131,7 +131,7 @@ import SwiftUI
     ///
     /// ```swift
     ///     OUDSStaticListItem(
-    ///         data: OUDSListItemData(label: "SMS credit"),
+    ///         data: OUDSListItemData(label: .text("SMS credit")),
     ///         leading: .slot {
     ///             OUDSCircularProgressIndicator(progress: 0.75)
     ///         }

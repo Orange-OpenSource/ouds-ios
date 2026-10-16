@@ -18,12 +18,17 @@ import SwiftUI
 
 /// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
 ///
-/// The label area supports two modes via ``OUDSListItemData/Label``:
+/// The label area supports three modes via ``OUDSListItemData/Label``:
 /// - **`.text(String, isBold: Bool)`**: The label is rendered as a styled `Text` view.
 ///   When `isBold` is `true`, a bold typography is applied.
+/// - **`.rich(AttributedString)`**: A user-styled `AttributedString` is rendered as-is inside the
+///   label area; its plain-string projection is used for Voice Over vocalization.
 /// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
 ///   as-is inside the label area. The provided `accessibilityLabel` is used in the combined
 ///   Voice Over vocalization.
+///
+/// The optional textual fields (`overline`, `extraLabel`, `description`) accept either a plain
+/// `String` or a styled `AttributedString` through ``TextualContent``.
 struct ListItemTextContainer: View {
 
     // MARK: Properties
@@ -66,6 +71,9 @@ struct ListItemTextContainer: View {
                             }
                         }
                         .frame(maxWidth: maxWidth, alignment: .leading)
+                    case let .rich(attributedString):
+                        Text(attributedString)
+                            .frame(maxWidth: maxWidth, alignment: .leading)
                     case let .custom(customView, _):
                         customView
                             .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)
@@ -74,19 +82,19 @@ struct ListItemTextContainer: View {
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelsColor)
 
-                if let extraLabel = data.extraLabel,
-                   !extraLabel.isEmpty,
+                if let extraLabelContent = data.extraLabelContent,
+                   !extraLabelContent.isEmpty,
                    itemSize == .default
                 {
-                    Text(extraLabel)
+                    textView(for: extraLabelContent)
                         .labelStrongMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(labelsColor)
                         .frame(maxWidth: maxWidth, alignment: .leading)
                 }
 
-                if let description = data.description, !description.isEmpty {
-                    Text(description)
+                if let descriptionContent = data.descriptionContent, !descriptionContent.isEmpty {
+                    textView(for: descriptionContent)
                         .labelDefaultMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
@@ -178,12 +186,12 @@ struct ListItemTextContainer: View {
             parts.append(labelString)
         }
 
-        if itemSize != .small, let extraLabel = data.extraLabel {
-            parts.append(extraLabel)
+        if itemSize != .small, let extraLabelContent = data.extraLabelContent {
+            parts.append(extraLabelContent.rawValue)
         }
 
-        if let description = data.description {
-            parts.append(description)
+        if let descriptionContent = data.descriptionContent {
+            parts.append(descriptionContent.rawValue)
         }
 
         return parts.joined(separator: ", ")

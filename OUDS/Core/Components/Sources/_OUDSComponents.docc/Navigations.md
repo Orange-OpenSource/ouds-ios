@@ -75,12 +75,11 @@ Use ``OUDSStaticListItem`` when the row is display-only and should not trigger a
 
 ```swift
 // Simple list item with a label only
-OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+OUDSStaticListItem(data: OUDSListItemData(label: .text("Label")))
 
 // List item with full textual content
 OUDSStaticListItem(data: OUDSListItemData(
-    label: "Label",
-    hasBoldLabel: true,
+    label: .text("Label", isBold: true),
     description: "Description",
     overline: "Overline",
     extraLabel: "Extra label",
@@ -91,20 +90,20 @@ OUDSStaticListItem(data: OUDSListItemData(
 let icon = OUDSListItemIcon(status: .info, description: "", size: .medium)
 
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Notifications"),
+    data: OUDSListItemData(label: .text("Notifications")),
     leading: .icon(icon),
     trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 )
 
 // List item with a leading image (static asset)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Product"),
+    data: OUDSListItemData(label: .text("Product")),
     leading: .image(OUDSListItemImage(asset: Image("product_thumb"), size: .medium))
 )
 
 // List item with a leading async image (from URL)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Remote Product"),
+    data: OUDSListItemData(label: .text("Remote Product")),
     leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
 )
 
@@ -116,20 +115,20 @@ let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com
 }
 
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Loading Product"),
+    data: OUDSListItemData(label: .text("Loading Product")),
     leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
 )
 
 // List item with a trailing image
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Status"),
+    data: OUDSListItemData(label: .text("Status")),
     trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
 )
 
 // List item with slot (displayed under texts, before helper text)
 OUDSStaticListItem(
     data: OUDSListItemData(
-        label: "With slot",
+        label: .text("With slot"),
         textSlot: .init { Text("Additional content") },
         helperText: "Helper text"
     )
@@ -138,7 +137,7 @@ OUDSStaticListItem(
 // List item with bottom slot (displayed under main content, before helper text)
 OUDSStaticListItem(
     data: OUDSListItemData(
-        label: "With bottom slot",
+        label: .text("With bottom slot"),
         bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
@@ -147,12 +146,39 @@ OUDSStaticListItem(
 // List item with both slot and bottomSlot
 OUDSStaticListItem(
     data: OUDSListItemData(
-        label: "Label",
+        label: .text("Label"),
         textSlot: .init { Text("Slot content") },
         bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
 )
+```
+
+##### Rich text content
+
+Every textual field (`label`, `description`, `overline`, `extraLabel`, `helperText`) accepts
+either a `String` or an `AttributedString`. The optional fields use ``TextualContent``
+(`.raw` / `.attributed`) while the label uses ``OUDSListItemData/Label``
+(`.text` / `.rich` / `.custom`).
+
+String literals are accepted thanks to `ExpressibleByStringLiteral` on both types, so plain
+text call sites remain concise.
+
+```swift
+// Fully styled label and overline (user controls fonts, colors, markdown…)
+let styledLabel = AttributedString.from(text: "Premium",
+                                        foregroundColor: .orange,
+                                        font: .headline)
+let styledOverline = AttributedString.from(text: "FEATURED",
+                                           foregroundColor: .purple,
+                                           font: .caption)
+
+OUDSStaticListItem(data: OUDSListItemData(
+    label: .rich(styledLabel),
+    description: "Plain description via string literal",
+    overline: .attributed(styledOverline),
+    helperText: .attributed(AttributedString("A rich helper"))
+))
 ```
 
 #### Navigable list item
@@ -177,14 +203,14 @@ Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. Th
 ```swift
 // Forward navigation (default)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Next screen")
+    data: OUDSListItemData(label: .text("Next screen"))
 ) {
     // Navigate to next screen
 }
 
 // External navigation
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Open website"),
+    data: OUDSListItemData(label: .text("Open website")),
     indicatorType: .external
 ) {
     openURL(url)
@@ -192,7 +218,7 @@ OUDSNavigationListItem(
 
 // Backward navigation
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Go back"),
+    data: OUDSListItemData(label: .text("Go back")),
     indicatorType: .previous
 ) {
     // Navigate back
@@ -202,7 +228,7 @@ OUDSNavigationListItem(
 let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
 
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    data: OUDSListItemData(label: .text("Profile"), description: "View your profile"),
     leading: .avatar(avatar),
     trailing: .text(.labelMuted("Details"))
 ) {
@@ -211,7 +237,7 @@ OUDSNavigationListItem(
 
 // With a leading async image loaded from URL
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Product", description: "View product details"),
+    data: OUDSListItemData(label: .text("Product"), description: "View product details"),
     leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/product.png")), description: "Product thumbnail", size: .medium))
 ) {
     // Navigate to product
@@ -225,7 +251,7 @@ let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com
 }
 
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Loading Product", description: "View product details"),
+    data: OUDSListItemData(label: .text("Loading Product"), description: "View product details"),
     leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product thumbnail", size: .medium))
 ) {
     // Navigate to product
@@ -234,7 +260,7 @@ OUDSNavigationListItem(
 // List item with slot (displayed under texts, before helper text)
 OUDSNavigationListItem(
     data: OUDSListItemData(
-        label: "Settings",
+        label: .text("Settings"),
         textSlot: .init { Text("Configure options") },
         helperText: "Helper text"
     )
@@ -245,7 +271,7 @@ OUDSNavigationListItem(
 // List item with bottomSlot (displayed under main content, before helper text)
 OUDSNavigationListItem(
     data: OUDSListItemData(
-        label: "Profile",
+        label: .text("Profile"),
         bottomSlot: .init { Text("Additional info") },
         helperText: "Helper text"
     )
@@ -256,7 +282,7 @@ OUDSNavigationListItem(
 // List item with both slot and bottomSlot
 OUDSNavigationListItem(
     data: OUDSListItemData(
-        label: "Settings",
+        label: .text("Settings"),
         textSlot: { Text("Slot content") },
         bottomSlot: { Text("Bottom content") },
         helperText: "Helper text"
@@ -431,7 +457,7 @@ NavigationStack {
                     },
                     principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
                     trailingItems: {
-                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
+                        OUDSToolBarItem(label: .text("Label")) { /* Action to process */ }
                         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
                     })
 }
@@ -459,14 +485,14 @@ SomeView()
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .back(label: "Cancel"))
+                    OUDSToolBarItem(navigation: .back(label: .text("Cancel")))
                 })
 
 // Back button with custom action executed before automatic dismiss
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() })
+                    OUDSToolBarItem(navigation: .back(label: .text("Back")) { saveDraft() })
                 })
 
 // On iOS ≤ 18, add on the root view to color the system back-button chevron correctly
@@ -517,7 +543,7 @@ SomeView()
 // Leading + trailing split — works on all supported OS versions
 SomeView()
     .toolBarBottom(leadingItems: {
-        OUDSToolBarItem(label: "Some label") { /* Action to process */ }
+        OUDSToolBarItem(label: .text("Some label")) { /* Action to process */ }
     }, trailingItems: {
         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
     })
@@ -526,7 +552,7 @@ SomeView()
 // On earlier OS versions the system splits the items into leading/trailing positions.
 SomeView()
     .toolBarBottom(groupedItems: {
-        OUDSToolBarItem(label: "Save") { /* Action to process */ }
+        OUDSToolBarItem(label: .text("Save")) { /* Action to process */ }
         OUDSToolBarItem(icon: Image(decorative: "ic_delete"), accessibilityLabel: "Delete") { /* Action to process */ }
     })
 ```

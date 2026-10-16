@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tool to detect public API breakings (Orange-OpenSource/ouds-ios#1800)
 - `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
 - `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
+- Public `@frozen` `TextualContent` enum (`.raw(String)` / `.attributed(AttributedString)`) with `ExpressibleByStringLiteral` conformance
+- New `.rich(AttributedString)` case on `OUDSListItemData.Label` and `ExpressibleByStringLiteral` conformance for string-literal ergonomics
+- Unified `OUDSListItemData` initializers accepting `TextualContent?` for `description`, `overline`, `extraLabel`, `helperText` — any textual field can now be a styled `AttributedString`, not only the `overline`
 
 ### Changed
 
@@ -20,6 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Documentation for some components with DSM hyperlinks (Orange-OpenSource/ouds-ios#1813)
 - `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
 - `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
+
+### Deprecated
+
+- All six `String` / `AttributedString` initializers of `OUDSListItemData`; use the new unified initializers taking `OUDSListItemData.Label` + `TextualContent`
 
 ### Fixed
 
