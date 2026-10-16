@@ -1,0 +1,105 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/tree/main/images/macos
+
+# Rules for this GitHub Actions workflow
+# - workflow can be triggered manually if needed (workflow_dispatch)
+# - is for all branches including main (API checks must guard the release branch too)
+# - automatically triggered when pull request is opened and has new commits (synchronize)
+# - compares the current commit against the latest stable tag x.y.z
+#   (pre-release tags such as x.y.z-alpha, -beta, -rc are ignored)
+
+name: Check public API breaks
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - '**'
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+      - develop
+      - '**'
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Cancel-in-progress to avoid to have more and more runs for the same thing in the branch or pull request
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  check-api-break:
+    runs-on: macos-26
+    timeout-minutes: 90
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Need full history + tags so that `git worktree add <tag>` works
+          # inside scripts/check-API-break.sh.
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Set up Xcode 26.4.1
+        run: |
+          sudo xcode-select -s /Applications/Xcode_26.4.1.app/Contents/Developer
+
+      - name: Resolve latest stable tag
+        id: refs
+        run: |
+          set -euo pipefail
+
+          OLD_REF="$(git tag --sort=-v:refname \
+              | grep -E '^v?[0-9]+\.[0-9]+\.[0-9]+$' \
+              | head -n 1 || true)"
+
+          if [ -z "$OLD_REF" ]; then
+              echo "::notice::No stable tag (x.y.z) found. Skipping API break check."
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              exit 0
+          fi
+
+          NEW_REF="${{ github.sha }}"
+
+          # Short-circuit if HEAD is already the tagged commit itself:
+          # there is nothing to compare, this would be a no-op.
+          if [ "$(git rev-parse "$NEW_REF")" = "$(git rev-parse "${OLD_REF}^{commit}")" ]; then
+              echo "::notice::HEAD is the tag $OLD_REF itself, nothing to compare."
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              exit 0
+          fi
+
+          echo "Comparing $OLD_REF -> $NEW_REF"
+          echo "old=$OLD_REF" >> "$GITHUB_OUTPUT"
+          echo "new=$NEW_REF" >> "$GITHUB_OUTPUT"
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+      - name: Check public API breaks
+        if: steps.refs.outputs.skip != 'true'
+        run: |
+          scripts/check-API-break.sh \
+              "${{ steps.refs.outputs.old }}" \
+              "${{ steps.refs.outputs.new }}" \
+              --verbose

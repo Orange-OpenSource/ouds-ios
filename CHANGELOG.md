@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Tool to detect public API breakings (Orange-OpenSource/ouds-ios#1800)
 - `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
 - `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
 
