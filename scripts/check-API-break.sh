@@ -166,7 +166,7 @@ for p in "${PLATFORMS[@]}"; do
     platform_triple "$p" >/dev/null || die "Unknown platform: $p"
 done
 
-MODULES=("${ATOMIC_MODULES[@]}")
+MODULES=("${ATOMIC_MODULES[@]}") # MODULES=("${ATOMIC_MODULES[@]}" "$UMBRELLA_PRODUCT") <--- doublon maybe
 
 # Workspace
 # ---------

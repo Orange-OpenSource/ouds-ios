@@ -28,7 +28,7 @@ on:
     branches:
       - main
       - develop
-      - '*'
+      - '**'
 
   pull_request:
     types:
@@ -37,7 +37,7 @@ on:
     branches:
       - main
       - develop
-      - '*'
+      - '**'
 
   workflow_dispatch:
 
