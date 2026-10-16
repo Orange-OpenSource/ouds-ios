@@ -21,6 +21,7 @@
 - [Software Bill of Materials](#software-bill-of-materials)
 - [Update of dependencies](#update-of-dependencies)
 - [Generate XCFramework objects](#generate-xcframework-objects)
+- [Check API breakings](#check-api-breakings)
 - [CI/CD](#cicd)
 - [Use of GenAI](#use-of-genai)
 - [Use of robots](#use-of-robots)
@@ -537,6 +538,26 @@ Even though the umbrella dylib statically links all the atomic code and contains
 Since we cannot merge everything into a single xcframework and cannot ship the atomic swiftmodules inside the umbrella's Modules/ directory (Xcode's module resolver won't pick them up there), the pragmatic distribution is ten separate xcframeworks: one umbrella carrying all the code (*Embed & Sign*) plus nine atomic swiftmodule-only stubs with empty binaries (*Do Not Embed*). Consumers who find drag-and-dropping ten xcframeworks tedious can wrap them all behind a single Package.swift with binaryTarget entries, which SPM then transparently manages as one dependency.
 
 Because the documentation is very heavy in OUDS (because of how Apple generates the doc), it cannot be embedded in the xcframeworks. Thus users need to pick DOcC archive from GitHub releases or check the onmine documentation through the website.
+
+## Check API breakings
+
+A script should be used to check if any public API has been broken.
+
+To check for all supported platforms for OUDS, since version v3.1.0 to HEAD:
+```shell
+./scripts/check-API-break.sh 3.1.0 HEAD
+```
+
+To specify some platforms, since version v3.1.0 to HEAD, in verbose mode:
+```shell
+./scripts/check-API-break.sh 3.1.0 HEAD --verbose --platforms ios,tvos
+```
+
+> [!IMPORTANT]
+> Always have a human reading the sources and the diff to find any breaks.
+> The tool used in this script, swift-api-digester, does not consider sources breaks as API breaks.
+> Thus a parameter with a default value in the past but mandatory today won't fail the script
+> and will pass silently.
 
 ## CI/CD
 
