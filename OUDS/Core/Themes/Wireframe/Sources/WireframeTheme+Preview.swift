@@ -61,4 +61,49 @@ extension View {
         self
         #endif
     }
+
+    /// Wraps `self` `View` inside an `OUDSThemeableView` applying the ``WireframeTheme``.
+    /// This helper should be used in two cases:
+    /// - to debug a `View` in Xcode `#Preview` macro
+    /// - to let end-users testing on their side in `#Preview` macro your `View` based on OUDS.
+    ///
+    /// ```swift
+    ///     // In this case, apply the theme on the preview
+    ///     #Preview {
+    ///        SampleView().wireframePreview(tuning: someTuning)
+    ///     }
+    /// ```
+    ///
+    /// ```swift
+    ///     // In this case, you defined a `View` you provide to outside developers who use `#Preview` macro
+    ///     // In your side:
+    ///     struct YourView: View {
+    ///         var body: some View {
+    ///            yourContentView.wireframePreview(tuning: someTuning)
+    ///         }
+    ///     }
+    ///
+    ///     // In their side:
+    ///     #Preview {
+    ///         TheirView() // Using your view
+    ///     }
+    /// ```
+    ///
+    /// - Parameter tuning: The `OUDSThemeTuning` to apply to the theme
+    /// - Since: 3.2.0
+    @ViewBuilder
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+    public func wireframePreview(tuning: Tuning) -> some View {
+        #if DEBUG
+        if ProcessInfo.doesRunOnXcodePreview {
+            OUDSThemeableView(theme: WireframeTheme(tuning: tuning)) {
+                self
+            }
+        } else {
+            self
+        }
+        #else
+        self
+        #endif
+    }
 }
