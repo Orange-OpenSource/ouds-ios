@@ -58,9 +58,11 @@ jobs:
       - name: Process renovate PRs
         if: steps.list-prs.outputs.result != '[]'
         uses: actions/github-script@v7
+        env:
+          RENOVATE_PRS: ${{ steps.list-prs.outputs.result }}
         with:
           script: |
-            const renovatePRs = JSON.parse('${{ steps.list-prs.outputs.result }}');
+            const renovatePRs = JSON.parse(process.env.RENOVATE_PRS);
             
             for (const pr of renovatePRs) {
               console.log(`Processing PR #${pr.number}: ${pr.title}`);
