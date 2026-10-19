@@ -372,14 +372,14 @@ let redText = AttributedString.from(text: "Error", foregroundColor: .red)
 // Color + font
 let styledText = AttributedString.from(
     text: "Warning",
-    foregroundColor: Color(oudsthemecolors: .functionalColorsWarning),
+    foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
     font: .body
 )
 
 // Using theme colors
 let greenText = AttributedString.from(
     text: "Success",
-    foregroundColor: theme.colors.functionalColorsPositive,
+    foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityPositiveMedium),
     font: .headline
 )
 ```
@@ -391,17 +391,17 @@ OUDSStaticListItem(
     data: OUDSListItemData(
         label: .rich(AttributedString.from(
             text: "Payment problems",
-            foregroundColor: theme.colors.functionalColorsNegative,
+            foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
             font: .body
         )),
         description: .rich(AttributedString.from(
             text: "Action required",
-            foregroundColor: theme.colors.functionalColorsWarning,
+        foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
             font: .body
         )),
         overline: .rich(AttributedString.from(
             text: "Services activated",
-            foregroundColor: theme.colors.functionalColorsPositive,
+            foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityPositiveMedium),
             font: .body
         )),
         extraLabel: .rich(AttributedString.from(
@@ -413,16 +413,6 @@ OUDSStaticListItem(
     trailing: .badge(.count(OUDSBadgeCount(1, accessibilityLabel: "1", status: .negative, size: .medium)))
 )
 ```
-
-### Available color tokens
-
-| Token | Purpose |
-|-------|---------|
-| `theme.colors.functionalColorsNegative` | Red (errors, problems) |
-| `theme.colors.functionalColorsPositive` | Green (success, activated) |
-| `theme.colors.functionalColorsWarning` | Yellow/Orange (warnings) |
-| `theme.colors.functionalColorsAccent` | Orange (brand accent) |
-| `theme.colors.functionalColorsInfo` | Blue (information) |
 
 ---
 

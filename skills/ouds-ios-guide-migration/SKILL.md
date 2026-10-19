@@ -605,12 +605,12 @@ Both `OUDSTextualContent` and `OUDSListItemData.Label` conform to `ExpressibleBy
 
 | Old (v3.0 — deprecated) | New (v3.2) |
 |---|---|
-| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(label: .text("Foo"))` |
-| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .text("Foo", isBold: true))` |
-| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(label: .text("Foo"), description: "Bar", overline: "Over")` *(string literals auto-convert to `.raw`)* |
-| `OUDSListItemData(label: "Foo", overline: myAttributedString)` | `OUDSListItemData(label: .text("Foo"), overline: .rich(myAttributedString))` |
-| `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` *(same shape, `overline` now accepts `OUDSTextualContent`)* |
-| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(same shape, textual fields now accept `OUDSTextualContent`)* |
+| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(itemLabel: .text("Foo"))` |
+| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(itemLabel: .text("Foo", isBold: true))` |
+| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(itemLabel: .text("Foo"), description: "Bar", overline: "Over")` |
+| `OUDSListItemData(label: "Foo", overline: myAttributedString)` | `OUDSListItemData(itemLabel: .text("Foo"), overline: .rich(myAttributedString))` |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` | `OUDSListItemData(viewLabel: myView, accessibilityLabel: "Foo", overline: "Over")` |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(localized: "foo.label")` |
 
 **New capability (v3.2)**: every textual field can now be a styled `AttributedString`, not just `overline`:
 
@@ -620,7 +620,7 @@ OUDSListItemData(label: "Foo", overline: myStyledOverline)
 
 // After (v3.2) — any textual field can be styled
 OUDSListItemData(
-    label: .rich(myStyledLabel),
+    itemLabel: .rich(myStyledLabel),
     description: .rich(myStyledDescription),
     overline: .rich(myStyledOverline),
     extraLabel: "Plain string literal",
@@ -636,14 +636,14 @@ import SwiftUI
 // Colored label (red)
 let redLabel = AttributedString.from(
     text: "Payment problems",
-    foregroundColor: theme.colors.functionalColorsNegative,
+    foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
     font: .body
 )
 
 // Colored overline (green)
 let greenOverline = AttributedString.from(
     text: "Services activated",
-    foregroundColor: theme.colors.functionalColorsPositive,
+    foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityPositiveMedium),
     font: .body
 )
 
@@ -657,10 +657,10 @@ let orangeExtra = AttributedString.from(
 // Full example
 OUDSStaticListItem(
     data: OUDSListItemData(
-        label: .rich(redLabel),
+        itemLabel: .rich(redLabel),
         description: .rich(AttributedString.from(
             text: "Action required",
-            foregroundColor: theme.colors.functionalColorsWarning,
+            foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityWarningMedium),
             font: .body
         )),
         overline: .rich(greenOverline),
@@ -671,7 +671,7 @@ OUDSStaticListItem(
 ```
 
 **Required action**:
-- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(label: .text("Foo"), …)`.
+- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(itemLabel: .text("Foo"), …)`.
 - Replace `hasBoldLabel: true` with `.text("Foo", isBold: true)`.
 - Replace `overline: myAttributedString` with `overline: .rich(myAttributedString)` and move the `overline:` parameter to its canonical position (after `description:` in the new init order).
 - `key: LocalizedStringKey` initializers keep the same label; only the optional textual fields change type from `String?` / `AttributedString` to `OUDSTextualContent?`.

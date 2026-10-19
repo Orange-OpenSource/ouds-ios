@@ -42,7 +42,7 @@ a textual value that can be either a plain `String` or a styled `AttributedStrin
 @frozen
 public enum OUDSTextualContent: Sendable, ExpressibleByStringLiteral {
     case raw(String)
-    case attributed(AttributedString)
+    case rich(AttributedString)
 }
 ```
 
@@ -87,9 +87,9 @@ public init(
     textSlot: Slot? = nil,
     bottomSlot: Slot? = nil)
 
-// Replaces the 2 initializers with `key: LocalizedStringKey`
+// Replaces the 2 initializers with `localized: LocalizedStringKey`
 public init(
-    key: LocalizedStringKey,
+    localized: LocalizedStringKey,
     tableName: String? = nil,
     bundle: Bundle = .main,
     hasBoldLabel: Bool = false,
@@ -107,12 +107,12 @@ public init(
 
 | Before (v3.0 — deprecated) | After (v3.2) |
 |---|---|
-| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(label: .text("Foo"))` |
-| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .text("Foo", isBold: true))` |
-| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(label: .text("Foo"), description: "Bar", overline: "Over")` |
-| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(label: .text("Foo"), overline: .rich(myAttr))` |
-| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` *(signature unchanged, textual fields now accept `OUDSTextualContent`)* |
-| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(signature unchanged, textual fields now accept `OUDSTextualContent`)* |
+| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(itemLabel: .text("Foo"))` |
+| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(itemLabel: .text("Foo", isBold: true))` |
+| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(itemLabel: .text("Foo"), description: "Bar", overline: "Over")` |
+| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(itemLabel: .text("Foo"), overline: .rich(myAttr))` |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(viewLabel: myView, accessibilityLabel: "Foo")` |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(localized: "foo.label")` |
 
 **New capability** — any textual field can now be styled:
 
@@ -122,7 +122,7 @@ OUDSListItemData(label: "Foo", overline: myStyledOverline)
 
 // After (v3.2) — any textual field can be styled
 OUDSListItemData(
-    label: .rich(myStyledLabel),
+    itemLabel: .rich(myStyledLabel),
     description: .rich(myStyledDescription),
     overline: .rich(myStyledOverline),
     extraLabel: "Plain string literal",
@@ -130,7 +130,7 @@ OUDSListItemData(
 ```
 
 **Required Action**:
-- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(label: .text("Foo"), …)`.
+- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(itemLabel: .text("Foo"), …)`.
 - Replace `hasBoldLabel: true` with `.text("Foo", isBold: true)`.
 - Replace `overline: myAttributedString` with `overline: .rich(myAttributedString)` and
   move the `overline:` parameter to its canonical position (after `description:` in the new

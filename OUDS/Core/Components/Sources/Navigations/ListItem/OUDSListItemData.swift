@@ -25,21 +25,21 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Minimal: label only (string literal is implicitly converted to .text)
-///     let data = OUDSListItemData(label: .text("Label"))
+///     let data = OUDSListItemData(itemLabel: .text("Label"))
 ///
 ///     // Label with bold style
-///     let data = OUDSListItemData(label: .text("Label", isBold: true))
+///     let data = OUDSListItemData(itemLabel: .text("Label", isBold: true))
 ///
 ///     // Styled rich label (user-controlled font, color, markdown…)
 ///     let data = OUDSListItemData(
-///         label: .rich(AttributedString.from(text: "Label",
-///                                           foregroundColor: .orange,
-///                                           font: .headline))
+///         itemLabel: .rich(AttributedString.from(text: "Label",
+///                                                foregroundColor: .orange,
+///                                                font: .headline))
 ///     )
 ///
 ///     // Custom view as label with accessibility label
 ///     let data = OUDSListItemData(
-///         label: HStack {
+///         viewLabel: HStack {
 ///             Image(systemName: "star.fill")
 ///             Text("Custom Label")
 ///         },
@@ -48,7 +48,7 @@ import SwiftUI
 ///
 ///     // Full content with text label (string literals auto-convert to .raw OUDSTextualContent)
 ///     let data = OUDSListItemData(
-///         label: .text("Label"),
+///         itemLabel: .text("Label"),
 ///         description: "Description",
 ///         overline: "Overline",
 ///         extraLabel: "Extra Label",
@@ -57,7 +57,7 @@ import SwiftUI
 ///
 ///     // Mixed raw / rich text per field — any textual field can be styled
 ///     let data = OUDSListItemData(
-///         label: .text("Label"),
+///         itemLabel: .text("Label"),
 ///         description: .rich(myStyledDescription),
 ///         overline: "Plain overline",
 ///         helperText: .rich(myStyledHelper)
@@ -73,14 +73,14 @@ import SwiftUI
 ///
 ///     // With slot (displayed under texts, before helper text)
 ///     let dataWithSlot = OUDSListItemData(
-///         label: .text("Label"),
+///         itemLabel: .text("Label"),
 ///         textSlot: OUDSListItemData.Slot { Text("Additional content") },
 ///         helperText: "Helper text"
 ///     )
 ///
 ///     // With text slot and bottom slot (bottom slot displayed under text slot, before helper text)
 ///     let dataWithBothSlots = OUDSListItemData(
-///         label: .text("Label"),
+///         itemLabel: .text("Label"),
 ///         textSlot: OUDSListItemData.Slot { Text("Slot content") },
 ///         bottomSlot: OUDSListItemData.Slot { Text("Bottom content") },
 ///         helperText: "Helper text"
@@ -106,7 +106,7 @@ import SwiftUI
 /// ```swift
 ///     // overline, extraLabel and bottomSlot will not be displayed
 ///     OUDSStaticListItem(data: OUDSListItemData(
-///         label: .text("Label"),
+///         itemLabel: .text("Label"),
 ///         overline: "Hidden in small",
 ///         extraLabel: "Also hidden in small"
 ///     ))
@@ -174,7 +174,7 @@ public struct OUDSListItemData {
     /// an arbitrary view.
     ///
     /// - Since: 3.0.0
-    public enum Label: ExpressibleByStringLiteral {
+    @frozen public enum Label: ExpressibleByStringLiteral {
         /// A plain text string label.
         ///
         /// - Parameters:
@@ -272,7 +272,7 @@ public struct OUDSListItemData {
     /// `ExpressibleByStringLiteral`.
     ///
     /// - Parameters:
-    ///   - label: The primary content of the list item (plain text, rich text or custom view).
+    ///   - itemLabel: The primary content of the list item (plain text, rich text or custom view).
     ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
     ///   - overline: An optional text displayed above the label. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
@@ -284,7 +284,7 @@ public struct OUDSListItemData {
     ///
     /// - Since: 3.2.0
     public init(
-        label: Label,
+        itemLabel: Label, // TODO: v4 - When older inits will be removed, renamed parameter to "label" instead of "itemLabel"
         description: OUDSTextualContent? = nil,
         overline: OUDSTextualContent? = nil,
         extraLabel: OUDSTextualContent? = nil,
@@ -292,7 +292,7 @@ public struct OUDSListItemData {
         textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
-        labelContent = label
+        labelContent = itemLabel
         descriptionContent = description
         overlineContent = overline
         extraLabelContent = extraLabel
@@ -307,7 +307,7 @@ public struct OUDSListItemData {
     /// either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
     ///
     /// - Parameters:
-    ///   - label: A custom SwiftUI view to use as the primary label of the list item.
+    ///   - viewLabel: A custom SwiftUI view to use as the primary label of the list item.
     ///   - accessibilityLabel: A text used for Voice Over vocalization of the custom label.
     ///     This value is used to build the combined accessibility label of the list item text container.
     ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
@@ -321,7 +321,7 @@ public struct OUDSListItemData {
     ///
     /// - Since: 3.2.0
     public init(
-        label: some View,
+        viewLabel: some View, // TODO: v4 - When older inits will be removed, renamed parameter to "label" instead of "viewLabel"
         accessibilityLabel: String,
         description: OUDSTextualContent? = nil,
         overline: OUDSTextualContent? = nil,
@@ -331,7 +331,7 @@ public struct OUDSListItemData {
         bottomSlot: Slot? = nil)
     {
         self.init(
-            label: .custom(AnyView(label), accessibilityLabel: accessibilityLabel),
+            itemLabel: .custom(AnyView(viewLabel), accessibilityLabel: accessibilityLabel),
             description: description,
             overline: overline,
             extraLabel: extraLabel,
@@ -361,7 +361,7 @@ public struct OUDSListItemData {
     ///
     /// - Since: 3.2.0
     public init(
-        key: LocalizedStringKey,
+        localized key: LocalizedStringKey, // TODO: v4 - When older inits will be removed, renamed parameter to "key" instead of "localized"
         tableName: String? = nil,
         bundle: Bundle = .main,
         hasBoldLabel: Bool = false,
@@ -373,7 +373,7 @@ public struct OUDSListItemData {
         bottomSlot: Slot? = nil)
     {
         self.init(
-            label: .text(key.resolved(tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
+            itemLabel: .text(key.resolved(tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
             description: description,
             overline: overline,
             extraLabel: extraLabel,

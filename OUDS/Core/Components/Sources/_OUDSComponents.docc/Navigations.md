@@ -457,7 +457,7 @@ NavigationStack {
                     },
                     principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
                     trailingItems: {
-                        OUDSToolBarItem(label: .text("Label")) { /* Action to process */ }
+                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
                         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
                     })
 }
@@ -485,14 +485,14 @@ SomeView()
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .back(label: .text("Cancel")))
+                    OUDSToolBarItem(navigation: .back(label: "Cancel"))
                 })
 
 // Back button with custom action executed before automatic dismiss
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .back(label: .text("Back")) { saveDraft() })
+                    OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() })
                 })
 
 // On iOS ≤ 18, add on the root view to color the system back-button chevron correctly

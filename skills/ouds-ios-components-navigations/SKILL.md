@@ -92,7 +92,7 @@ ContentView().toolBarTop("Title", hasLargeTitle: true, subtitle: "Sub")
 // Bottom — leading/trailing split
 ContentView()
     .toolBarBottom(
-        leadingItems: { OUDSToolBarItem(label: .text("Edit")) {} },
+        leadingItems: { OUDSToolBarItem(label: "Edit") {} },
         trailingItems: { OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {} })
 
 // Bottom — grouped (iOS 26+ only)
@@ -201,12 +201,12 @@ OUDSStaticListItem(data: OUDSListItemData(
 OUDSStaticListItem(data: OUDSListItemData(
     label: .rich(AttributedString.from(
         text: "Important",
-        foregroundColor: theme.colors.functionalColorsNegative,
+        foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
         font: .body
     )),
     description: .rich(AttributedString.from(
         text: "Warning",
-        foregroundColor: theme.colors.functionalColorsWarning,
+        foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityWarningMedium),
         font: .body
     ))
 ))
@@ -227,7 +227,7 @@ OUDSStaticListItem(
 OUDSStaticListItem(
     data: OUDSListItemData(label: .text("Profile")),
     leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium, accessibilityLabel: "")),
-    trailing: .tag(OUDSTag(label: .text("New"), size: .small))
+    trailing: .tag(OUDSTag(label: "New", size: .small))
 )
 
 // With trailing text
