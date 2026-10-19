@@ -24,6 +24,8 @@ struct PinCodeInputContainer: View {
     @Binding private var value: String
     /// Number of boxes / size of the code to write
     private let length: OUDSPinCodeInput.Length
+    /// Flag to hide or show the code
+    private let hiddenCharacters: Bool
     /// If there is an error context about the value of the container
     private let isError: Bool
     /// If the outline layout must be applied on the container
@@ -45,12 +47,14 @@ struct PinCodeInputContainer: View {
 
     init(_ value: Binding<String>,
          length: OUDSPinCodeInput.Length,
+         hiddenCharacters: Bool,
          isError: Bool,
          isOutlined: Bool,
          autofocus: Bool)
     {
         _value = value
         self.length = length
+        self.hiddenCharacters = hiddenCharacters
         self.isError = isError
         self.isOutlined = isOutlined
         self.autofocus = autofocus
@@ -194,7 +198,7 @@ struct PinCodeInputContainer: View {
                 OUDSPinCodeInput.placeholderCharacter
             }
         } else {
-            OUDSPinCodeInput.obfuscationCharacter
+            hiddenCharacters ? OUDSPinCodeInput.obfuscationCharacter : digits[index]
         }
     }
 
