@@ -1,50 +1,79 @@
 name: Component Request
 description: Please fill out the following details for your component creation / update request.
-title: "For / Add component ..."
+title: "In library, add component X / For component X, update ..."
 labels: ["🧰 library", "⚛️ component", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
+type: Enhancement
+projects: ["Orange-OpenSource/40"]
 body:
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Describe your need in details
+      description: Describe your needs in details with use cases and examples
     validations:
       required: true      
   - type: textarea
     id: motivation_context
     attributes:
-      label: Motivation & Context
-      description: Why is this evolution required? What problem does it solve?
+      label: Motivation and Context
+      description: Why is this evolution required? What problem does it solve? For which customers? In which countries?
   - type: checkboxes
     attributes:
-      label: Types of change
-      description: Please fill the suitable items in the list
+      label: Types of Change
+      description: Please select the suitable item in the list
       options:
         - label: Add new component
-        - label: Update existing component  
+        - label: Update existing component
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false        
   - type: checkboxes
     attributes:
-      label: Checklist for Core Team
-      description: Some points to check before any merge
+      label: Core Team - Definition of Ready
+      description: For core team only, prerequisites to fill to implement the evolution
       options:
-        - label: Tokens library have been updated if needed
-        - label: Technical Swift DocC documentation has been updated
-        - label: AI agents skills files have been updated
-        - label: Unit tests have been updated
-        - label: UI tests have been updated
+        - label: Design specifications are available (i.e. reviewed and validated)
+        - label: Tokens to use are available (i.e. integrated in the code base)
+  - type: checkboxes
+    attributes:
+      label: Core Team - Definition of Done (Swift Package)
+      description: For core team only, elements to fill for the Swift Package product to be able to ship the evolutions
+      options:
+        - label: Component is implemented / updated
+        - label: Update themes documentation catalogs with components screenshots (optional)
+        - label: Update component catalog with code samples (optional)
+        - label: Check if web documentation can be generated without issues ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#generation))
+        - label: Update GenAI usage skill files if needed (optional)
+        - label: Update unit tests (optional)
+        - label: Update changelog
+        - label: Update tokens library if needed (optional)
         - label: Accessibility has been considered with Voice Over navigation
         - label: Accessibility has been considered with Full Keyboard Access navigation
         - label: Accessibility has been considered with Switch Control navigation
         - label: Accessibility has been considered with reduced animations
         - label: Accessibility has been considered with Dynamic Types usages
         - label: Ecodesign has been considered with low power mode
-        - label: Snapshots tests have been updated
-        - label: Design System Toolbox has been updated
-        - label: Tested on iOS
-        - label: Tested on iPadOS
-        - label: Tested on tvOS
-        - label: Tested on macOS
-        - label: Tested on visionOS
-        - label: Tested on watchOS
-        - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround
+        - label: Retrocompatibility / API break has been checked, or broken API have been flagged as deprecated with a workaround ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#check-api-breakings))
+  - type: checkboxes
+    attributes:
+      label: Core Team - Definition of Done (Design System Toolbox)
+      description: For core team only, elements to fill for the Design System Toolbox app to be able to ship the evolutions
+      options:
+        - label: Showcase of components
+        - label: Integration of components if relevant (optional)
+        - label: Update of unit tests if needed (optional)
+        - label: Update of UI tests if needed (optional)
+        - label: Update of snapshot tests if needed (optional)
+        - label: Update of changelog
+        - label: Test evolutions on iOS
+        - label: Test evolutions on iPadOS
+        - label: Test evolutions on tvOS
+        - label: Test evolutions on macOS
+        - label: Test evolutions on visionOS
+        - label: Test evolutions on watchOS

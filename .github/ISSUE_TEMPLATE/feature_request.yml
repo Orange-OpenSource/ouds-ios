@@ -3,6 +3,8 @@ description: Suggest a new epic or feature to be added to the backlog.
 title: "Add feature ..."
 labels: ["🧰 library", "🗳️ feature", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
+type: Enhancement
+projects: ["Orange-OpenSource/40"]
 body:
   - type: checkboxes
     attributes:
@@ -11,16 +13,12 @@ body:
       options:
         - label: I have [searched the backlog](https://github.com/Orange-OpenSource/ouds-ios/issues) for duplicate or closed feature requests
           required: true
-  - type: markdown
-    attributes:
-      value: |
-        New Feature Description
   - type: textarea
     id: user
     attributes:
       label: As a 
       description: 
-      placeholder: type of user / context of use
+      placeholder: type of user, context of use, countries, etc.
     validations:
       required: true
   - type: textarea
@@ -28,7 +26,7 @@ body:
     attributes:
       label: ... I want to
       description: 
-      placeholder: perform some task
+      placeholder: perform some task, in a paticular contexte, somewhere, somehow
     validations:
       required: true
   - type: textarea
@@ -36,22 +34,22 @@ body:
     attributes:
       label: ... so that I can
       description: 
-      placeholder: achieve some goal
+      placeholder: achieve some goal, fill a need
     validations:
       required: true
   - type: textarea
     id: motivation
     attributes:
-      label: Motivation and context
+      label: Motivation and Context
       description: Is your feature request related to a problem? Please describe.
-      placeholder: A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+      placeholder: A clear and concise description of what the problem is. For example I'm always frustrated when...
     validations:
       required: false
   - type: textarea
     id: solution
     attributes:
       label: Proposed Solution
-      description: Describe the solution you'd like
+      description: Describe the solution you would like
       placeholder: A clear and concise description of what you want to happen.
     validations:
       required: false
@@ -71,3 +69,36 @@ body:
       placeholder: ex. email@example.com
     validations:
       required: false
+  - type: checkboxes
+    attributes:
+      label: Core Team - Definition of Done (Swift Package)
+      description: For core team only, elements to fill for the Swift Package product to be able to ship the evolutions
+      options:
+        - label: Feature is implemented / updated
+        - label: Update documentation catalog with code samples (optional)
+        - label: Check if web documentation can be generated without issues ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#generation))
+        - label: Update GenAI usage skill files if needed (optional)
+        - label: Update unit tests (optional)
+        - label: Update changelog
+        - label: Accessibility has been considered with Voice Over navigation
+        - label: Accessibility has been considered with Full Keyboard Access navigation
+        - label: Accessibility has been considered with Switch Control navigation
+        - label: Accessibility has been considered with reduced animations
+        - label: Accessibility has been considered with Dynamic Types usages
+        - label: Ecodesign has been considered with low power mode
+        - label: Retrocompatibility / API break has been checked, or broken API have been flagged as deprecated with a workaround ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#check-api-breakings))
+  - type: checkboxes
+    attributes:
+      label: Core Team - Definition of Done (Design System Toolbox)
+      description: For core team only, elements to fill for the Design System Toolbox app to be able to ship the evolutions
+      options:
+        - label: Showcase of feature
+        - label: Integration of feature if relevant (optional)
+        - label: Update of unit tests if needed (optional)
+        - label: Update of changelog
+        - label: Test evolutions on iOS
+        - label: Test evolutions on iPadOS
+        - label: Test evolutions on tvOS
+        - label: Test evolutions on macOS
+        - label: Test evolutions on visionOS
+        - label: Test evolutions on watchOS

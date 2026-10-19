@@ -1,0 +1,32 @@
+name: Design System Toolbox App Update Request
+description: Please fill out the following details for your design system toolbox app update request.
+title: "For design system toolbox, ..."
+labels: ["📱 design toolbox", "🔍 triage"]
+assignees: ["ludovic35", "pylapp"]
+type: Enhancement
+projects: ["Orange-OpenSource/40"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe your needs in details. Which screens? Which tokens, components or modules?
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Core Team - Definition of Done (Design System Toolbox)
+      description: For core team only, elements to fill for the Design System Toolbox app to be able to ship the evolutions
+      options:
+        - label: Add the asked evolutions
+        - label: Integration of components if relevant (optional)
+        - label: Update of unit tests if needed (optional)
+        - label: Update of UI tests if needed (optional)
+        - label: Update of snapshot tests if needed (optional)
+        - label: Update of changelog
+        - label: Test evolutions on iOS
+        - label: Test evolutions on iPadOS
+        - label: Test evolutions on tvOS
+        - label: Test evolutions on macOS
+        - label: Test evolutions on visionOS
+        - label: Test evolutions on watchOS
