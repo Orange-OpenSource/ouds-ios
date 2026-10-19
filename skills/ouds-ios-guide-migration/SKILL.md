@@ -599,7 +599,7 @@ OUDSLink(text: "Back", indicator: .previous, size: .default) { }
 
 The six initializers of `OUDSListItemData` (one per combination of `String` / `some View` / `LocalizedStringKey` label × raw / `AttributedString` overline) are deprecated and replaced by three unified initializers that accept:
 - a `OUDSListItemData.Label` for the label, with three cases: `.text(String, isBold:)`, `.rich(AttributedString)`, `.custom(AnyView, accessibilityLabel:)`;
-- a `OUDSTextualContent?` (public, `@frozen` enum with `.raw(String)` and `.attributed(AttributedString)`) for each of `description`, `overline`, `extraLabel`, `helperText`.
+- a `OUDSTextualContent?` (public, `@frozen` enum with `.raw(String)` and `.rich(AttributedString)`) for each of `description`, `overline`, `extraLabel`, `helperText`.
 
 Both `OUDSTextualContent` and `OUDSListItemData.Label` conform to `ExpressibleByStringLiteral`, so string literals continue to work in call sites without any `.raw(…)` / `.text(…)` boilerplate once the deprecated initializers are removed.
 
@@ -608,7 +608,7 @@ Both `OUDSTextualContent` and `OUDSListItemData.Label` conform to `ExpressibleBy
 | `OUDSListItemData(label: "Foo")` | `OUDSListItemData(label: .text("Foo"))` |
 | `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .text("Foo", isBold: true))` |
 | `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(label: .text("Foo"), description: "Bar", overline: "Over")` *(string literals auto-convert to `.raw`)* |
-| `OUDSListItemData(label: "Foo", overline: myAttributedString)` | `OUDSListItemData(label: .text("Foo"), overline: .attributed(myAttributedString))` |
+| `OUDSListItemData(label: "Foo", overline: myAttributedString)` | `OUDSListItemData(label: .text("Foo"), overline: .rich(myAttributedString))` |
 | `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` *(same shape, `overline` now accepts `OUDSTextualContent`)* |
 | `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(same shape, textual fields now accept `OUDSTextualContent`)* |
 
@@ -621,16 +621,59 @@ OUDSListItemData(label: "Foo", overline: myStyledOverline)
 // After (v3.2) — any textual field can be styled
 OUDSListItemData(
     label: .rich(myStyledLabel),
-    description: .attributed(myStyledDescription),
-    overline: .attributed(myStyledOverline),
+    description: .rich(myStyledDescription),
+    overline: .rich(myStyledOverline),
     extraLabel: "Plain string literal",
-    helperText: .attributed(myStyledHelper))
+    helperText: .rich(myStyledHelper))
+```
+
+**Concrete example with colors:**
+
+```swift
+import OUDSSwiftUI
+import SwiftUI
+
+// Colored label (red)
+let redLabel = AttributedString.from(
+    text: "Payment problems",
+    foregroundColor: theme.colors.functionalColorsNegative,
+    font: .body
+)
+
+// Colored overline (green)
+let greenOverline = AttributedString.from(
+    text: "Services activated",
+    foregroundColor: theme.colors.functionalColorsPositive,
+    font: .body
+)
+
+// Colored extraLabel (orange)
+let orangeExtra = AttributedString.from(
+    text: "offers available",
+    foregroundColor: .orange,
+    font: .body
+)
+
+// Full example
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: .rich(redLabel),
+        description: .rich(AttributedString.from(
+            text: "Action required",
+            foregroundColor: theme.colors.functionalColorsWarning,
+            font: .body
+        )),
+        overline: .rich(greenOverline),
+        extraLabel: .rich(orangeExtra)
+    ),
+    trailing: .badge(.count(OUDSBadgeCount(3, accessibilityLabel: "3", status: .negative, size: .medium)))
+)
 ```
 
 **Required action**:
 - Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(label: .text("Foo"), …)`.
 - Replace `hasBoldLabel: true` with `.text("Foo", isBold: true)`.
-- Replace `overline: myAttributedString` with `overline: .attributed(myAttributedString)` and move the `overline:` parameter to its canonical position (after `description:` in the new init order).
+- Replace `overline: myAttributedString` with `overline: .rich(myAttributedString)` and move the `overline:` parameter to its canonical position (after `description:` in the new init order).
 - `key: LocalizedStringKey` initializers keep the same label; only the optional textual fields change type from `String?` / `AttributedString` to `OUDSTextualContent?`.
 
 > **Note on overload resolution**: as long as the deprecated String initializers remain available, a call site such as `OUDSListItemData(label: "Foo")` still resolves to the deprecated `String` overload (Swift prefers direct `String` matches over `ExpressibleByStringLiteral` conversions to `Label`), so you will see a deprecation warning. Migrate to `.text(…)` to silence it. When the deprecated initializers are eventually removed in v4.x, the string-literal form will transparently resolve to the new unified initializer via `ExpressibleByStringLiteral`.

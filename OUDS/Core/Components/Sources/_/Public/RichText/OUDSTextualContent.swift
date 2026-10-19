@@ -30,7 +30,7 @@ import SwiftUI
 ///     let overline: OUDSTextualContent = .raw("Overline")
 ///
 ///     // User-styled rich text
-///     let helper: OUDSTextualContent = .attributed(AttributedString("Styled helper"))
+///     let helper: OUDSTextualContent = .rich(AttributedString("Styled helper"))
 /// ```
 ///
 /// - Since: 3.2.0

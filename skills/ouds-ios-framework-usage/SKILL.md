@@ -354,7 +354,79 @@ let theme = OrangeTheme(fontFamily: localizedHelveticaFont())
 
 ---
 
-## 12. Component skills
+## 12. Styled text with `.rich(AttributedString)`
+
+Several OUDS components accept styled text via `OUDSTextualContent` or `OUDSListItemData.Label`. Use `.rich(AttributedString)` to apply custom colors and fonts.
+
+**Important**: Use `AttributedString.from(text:foregroundColor:font:)` to create styled text. The Swift standard library's `AttributedString("text", foregroundColor:)` initializer does **not** exist.
+
+### Basic colored text
+
+```swift
+import OUDSSwiftUI
+import SwiftUI
+
+// Color only (font is optional)
+let redText = AttributedString.from(text: "Error", foregroundColor: .red)
+
+// Color + font
+let styledText = AttributedString.from(
+    text: "Warning",
+    foregroundColor: Color(oudsthemecolors: .functionalColorsWarning),
+    font: .body
+)
+
+// Using theme colors
+let greenText = AttributedString.from(
+    text: "Success",
+    foregroundColor: theme.colors.functionalColorsPositive,
+    font: .headline
+)
+```
+
+### In OUDSListItemData
+
+```swift
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: .rich(AttributedString.from(
+            text: "Payment problems",
+            foregroundColor: theme.colors.functionalColorsNegative,
+            font: .body
+        )),
+        description: .rich(AttributedString.from(
+            text: "Action required",
+            foregroundColor: theme.colors.functionalColorsWarning,
+            font: .body
+        )),
+        overline: .rich(AttributedString.from(
+            text: "Services activated",
+            foregroundColor: theme.colors.functionalColorsPositive,
+            font: .body
+        )),
+        extraLabel: .rich(AttributedString.from(
+            text: "offers available",
+            foregroundColor: .orange,
+            font: .body
+        ))
+    ),
+    trailing: .badge(.count(OUDSBadgeCount(1, accessibilityLabel: "1", status: .negative, size: .medium)))
+)
+```
+
+### Available color tokens
+
+| Token | Purpose |
+|-------|---------|
+| `theme.colors.functionalColorsNegative` | Red (errors, problems) |
+| `theme.colors.functionalColorsPositive` | Green (success, activated) |
+| `theme.colors.functionalColorsWarning` | Yellow/Orange (warnings) |
+| `theme.colors.functionalColorsAccent` | Orange (brand accent) |
+| `theme.colors.functionalColorsInfo` | Blue (information) |
+
+---
+
+## 13. Component skills
 
 Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
 

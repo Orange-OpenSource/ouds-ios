@@ -158,7 +158,7 @@ OUDSStaticListItem(
 
 Every textual field (`label`, `description`, `overline`, `extraLabel`, `helperText`) accepts
 either a `String` or an `AttributedString`. The optional fields use ``OUDSTextualContent``
-(`.raw` / `.attributed`) while the label uses ``OUDSListItemData/Label``
+(`.raw` / `.rich`) while the label uses ``OUDSListItemData/Label``
 (`.text` / `.rich` / `.custom`).
 
 String literals are accepted thanks to `ExpressibleByStringLiteral` on both types, so plain
@@ -176,8 +176,8 @@ let styledOverline = AttributedString.from(text: "FEATURED",
 OUDSStaticListItem(data: OUDSListItemData(
     label: .rich(styledLabel),
     description: "Plain description via string literal",
-    overline: .attributed(styledOverline),
-    helperText: .attributed(AttributedString("A rich helper"))
+    overline: .rich(styledOverline),
+    helperText: .rich(AttributedString("A rich helper"))
 ))
 ```
 

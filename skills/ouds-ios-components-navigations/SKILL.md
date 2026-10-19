@@ -152,7 +152,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 |------|---------|
 | `OUDSListItemData` | Textual data: label, description, overline, extraLabel, helperText, textSlot, bottomSlot |
 | `OUDSListItemData.Label` | Label content: `.text(String, isBold:)`, `.rich(AttributedString)`, `.custom(AnyView, accessibilityLabel:)`; string-literal convertible |
-| `OUDSTextualContent` | Shared text payload for `description` / `overline` / `extraLabel` / `helperText`: `.raw(String)` or `.attributed(AttributedString)`; string-literal convertible |
+| `OUDSTextualContent` | Shared text payload for `description` / `overline` / `extraLabel` / `helperText`: `.raw(String)` or `.rich(AttributedString)`; string-literal convertible |
 | `OUDSListItemLeading` | Leading element: icon, image, flag, avatar, custom view |
 | `OUDSListItemTrailing` | Trailing element: text, badge, tag, icon, image, flag, avatar, custom view |
 
@@ -161,7 +161,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 
 > **Rich text**: every textual field (label, description, overline, extraLabel, helperText) accepts
 > either a plain `String` or a styled `AttributedString`. Pass string literals directly (they map to
-> `.text` / `.raw`) or use `.rich(...)` / `.attributed(...)` for styled content.
+> `.text` / `.raw`) or use `.rich(...)` / `.rich(...)` for styled content.
 
 **Shared view modifiers:**
 
@@ -192,9 +192,23 @@ OUDSStaticListItem(data: OUDSListItemData(
 // Rich text content for any textual field
 OUDSStaticListItem(data: OUDSListItemData(
     label: .rich(AttributedString.from(text: "Premium", foregroundColor: .orange, font: .headline)),
-    description: .attributed(myStyledDescription),
+    description: .rich(myStyledDescription),
     overline: "Plain overline",
-    helperText: .attributed(AttributedString("A rich helper"))
+    helperText: .rich(AttributedString.from(text: "A rich helper", foregroundColor: .gray, font: .caption))
+))
+
+// Alternative: using theme colors
+OUDSStaticListItem(data: OUDSListItemData(
+    label: .rich(AttributedString.from(
+        text: "Important",
+        foregroundColor: theme.colors.functionalColorsNegative,
+        font: .body
+    )),
+    description: .rich(AttributedString.from(
+        text: "Warning",
+        foregroundColor: theme.colors.functionalColorsWarning,
+        font: .body
+    ))
 ))
 
 // With leading icon

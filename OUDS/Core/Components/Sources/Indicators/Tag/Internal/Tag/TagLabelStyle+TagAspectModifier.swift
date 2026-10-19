@@ -19,10 +19,10 @@ struct TagAspectModifier: ViewModifier {
 
     let appearance: OUDSTag.Appearance
     let shape: OUDSTag.Shape
-    let size: OUDSTag.Size
     let type: OUDSTag.`Type`
-    @Environment(\.skeletonState) private var skeletonState
+
     @Environment(\.theme) private var theme
+    @Environment(\.skeletonState) private var skeletonState
 
     func body(content: Content) -> some View {
         if skeletonState == nil {

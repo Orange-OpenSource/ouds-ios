@@ -41,7 +41,7 @@ struct OUDSTextualContentTests {
         #expect(content.rawValue == "éàü 日本語 🍊")
     }
 
-    // MARK: - rawValue — .attributed case
+    // MARK: - rawValue — .rich case
 
     @Test func `rawValue of attributed case returns plain characters`() {
         let content = OUDSTextualContent.rich(AttributedString("world"))
@@ -84,7 +84,7 @@ struct OUDSTextualContentTests {
         #expect(!content.isEmpty)
     }
 
-    // MARK: - isEmpty — .attributed case
+    // MARK: - isEmpty — .rich case
 
     @Test func `isEmpty of attributed case is true for empty attributed string`() {
         let content = OUDSTextualContent.rich(AttributedString(""))

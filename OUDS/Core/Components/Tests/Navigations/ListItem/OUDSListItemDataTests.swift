@@ -18,7 +18,7 @@ import Testing
 /// Tests the textual content behavior of `OUDSListItemData`. Since v3.2.0 every optional textual
 /// field (`description`, `overline`, `extraLabel`, `helperText`) is normalized internally as a
 /// `OUDSTextualContent?` so that each one can carry either a plain `String` (`.raw`) or a styled
-/// `AttributedString` (`.attributed`).
+/// `AttributedString` (`.rich`).
 struct OUDSListItemDataTests {
 
     // MARK: - overline (String)
@@ -35,7 +35,7 @@ struct OUDSListItemDataTests {
 
     @Test func `overline as a string literal resolves to a raw overlineContent, not an attributed one`() {
         // Ensures no ambiguity at the call site: string literals convert to `.raw` through
-        // `ExpressibleByStringLiteral`, never to `.attributed`.
+        // `ExpressibleByStringLiteral`, never to `.rich`.
         let data = OUDSListItemData(label: .text("Label"), overline: "Overline")
 
         guard case .raw = data.overlineContent else {
@@ -51,7 +51,7 @@ struct OUDSListItemDataTests {
         let data = OUDSListItemData(label: .text("Label"), overline: .rich(attributed))
 
         guard case let .rich(text) = data.overlineContent else {
-            Issue.record("Expected .attributed overlineContent")
+            Issue.record("Expected .rich overlineContent")
             return
         }
         #expect(text == attributed)
@@ -62,7 +62,7 @@ struct OUDSListItemDataTests {
         let data = OUDSListItemData(label: Text("Label"), accessibilityLabel: "Label", overline: .rich(attributed))
 
         guard case let .rich(text) = data.overlineContent else {
-            Issue.record("Expected .attributed overlineContent")
+            Issue.record("Expected .rich overlineContent")
             return
         }
         #expect(text == attributed)
@@ -73,7 +73,7 @@ struct OUDSListItemDataTests {
         let data = OUDSListItemData(key: "Label", overline: .rich(attributed))
 
         guard case let .rich(text) = data.overlineContent else {
-            Issue.record("Expected .attributed overlineContent")
+            Issue.record("Expected .rich overlineContent")
             return
         }
         #expect(text == attributed)
@@ -104,7 +104,7 @@ struct OUDSListItemDataTests {
         let data = OUDSListItemData(label: .text("Label"), description: .rich(attributed))
 
         guard case let .rich(text) = data.descriptionContent else {
-            Issue.record("Expected .attributed descriptionContent")
+            Issue.record("Expected .rich descriptionContent")
             return
         }
         #expect(text == attributed)
@@ -115,7 +115,7 @@ struct OUDSListItemDataTests {
         let data = OUDSListItemData(label: .text("Label"), extraLabel: .rich(attributed))
 
         guard case let .rich(text) = data.extraLabelContent else {
-            Issue.record("Expected .attributed extraLabelContent")
+            Issue.record("Expected .rich extraLabelContent")
             return
         }
         #expect(text == attributed)
@@ -126,7 +126,7 @@ struct OUDSListItemDataTests {
         let data = OUDSListItemData(label: .text("Label"), helperText: .rich(attributed))
 
         guard case let .rich(text) = data.helperTextContent else {
-            Issue.record("Expected .attributed helperTextContent")
+            Issue.record("Expected .rich helperTextContent")
             return
         }
         #expect(text == attributed)

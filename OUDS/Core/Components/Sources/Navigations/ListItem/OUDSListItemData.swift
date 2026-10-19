@@ -58,9 +58,9 @@ import SwiftUI
 ///     // Mixed raw / rich text per field — any textual field can be styled
 ///     let data = OUDSListItemData(
 ///         label: .text("Label"),
-///         description: .attributed(myStyledDescription),
+///         description: .rich(myStyledDescription),
 ///         overline: "Plain overline",
-///         helperText: .attributed(myStyledHelper)
+///         helperText: .rich(myStyledHelper)
 ///     )
 ///
 ///     // Usage with a static list item

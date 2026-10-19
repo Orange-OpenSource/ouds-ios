@@ -110,7 +110,7 @@ public init(
 | `OUDSListItemData(label: "Foo")` | `OUDSListItemData(label: .text("Foo"))` |
 | `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .text("Foo", isBold: true))` |
 | `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(label: .text("Foo"), description: "Bar", overline: "Over")` |
-| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(label: .text("Foo"), overline: .attributed(myAttr))` |
+| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(label: .text("Foo"), overline: .rich(myAttr))` |
 | `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` *(signature unchanged, textual fields now accept `OUDSTextualContent`)* |
 | `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(signature unchanged, textual fields now accept `OUDSTextualContent`)* |
 
@@ -123,16 +123,16 @@ OUDSListItemData(label: "Foo", overline: myStyledOverline)
 // After (v3.2) — any textual field can be styled
 OUDSListItemData(
     label: .rich(myStyledLabel),
-    description: .attributed(myStyledDescription),
-    overline: .attributed(myStyledOverline),
+    description: .rich(myStyledDescription),
+    overline: .rich(myStyledOverline),
     extraLabel: "Plain string literal",
-    helperText: .attributed(myStyledHelper))
+    helperText: .rich(myStyledHelper))
 ```
 
 **Required Action**:
 - Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(label: .text("Foo"), …)`.
 - Replace `hasBoldLabel: true` with `.text("Foo", isBold: true)`.
-- Replace `overline: myAttributedString` with `overline: .attributed(myAttributedString)` and
+- Replace `overline: myAttributedString` with `overline: .rich(myAttributedString)` and
   move the `overline:` parameter to its canonical position (after `description:` in the new
   init order).
 - The `LocalizedStringKey` initializers keep the same label; only the optional textual fields
