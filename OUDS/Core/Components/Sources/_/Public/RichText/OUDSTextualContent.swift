@@ -17,37 +17,37 @@ import SwiftUI
 
 /// A textual value that can be either a plain `String` or a styled `AttributedString`.
 ///
-/// `TextualContent` is used by several OUDS components to let callers provide either a raw string or
+/// `OUDSTextualContent` is used by several OUDS components to let callers provide either a raw string or
 /// a user-styled rich text (`AttributedString`) through a single parameter. It conforms to
 /// `ExpressibleByStringLiteral` so a string literal is implicitly converted to the ``raw(_:)`` case,
 /// keeping plain-text call sites concise.
 ///
 /// ```swift
 ///     // Plain string literal (implicitly converted to .raw)
-///     let description: TextualContent = "A plain description"
+///     let description: OUDSTextualContent = "A plain description"
 ///
 ///     // Explicit raw string
-///     let overline: TextualContent = .raw("Overline")
+///     let overline: OUDSTextualContent = .raw("Overline")
 ///
 ///     // User-styled rich text
-///     let helper: TextualContent = .attributed(AttributedString("Styled helper"))
+///     let helper: OUDSTextualContent = .attributed(AttributedString("Styled helper"))
 /// ```
 ///
-/// - Since: 3.0.0
+/// - Since: 3.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen
-public enum TextualContent: Sendable, ExpressibleByStringLiteral {
+public enum OUDSTextualContent: Sendable, ExpressibleByStringLiteral {
 
     /// The text is a raw `String` to use as is.
     case raw(String)
 
     /// The text is an `AttributedString`, a rich text whose styling (font, color, markdown…) is
     /// fully controlled by the caller.
-    case attributed(AttributedString)
+    case rich(AttributedString)
 
     /// Creates a ``raw(_:)`` value from a string literal.
     ///
-    /// This conformance lets any call site pass a plain string literal where a ``TextualContent``
+    /// This conformance lets any call site pass a plain string literal where a ``OUDSTextualContent``
     /// is expected, without wrapping it in `.raw(…)`.
     public init(stringLiteral value: String) {
         self = .raw(value)
@@ -59,7 +59,7 @@ public enum TextualContent: Sendable, ExpressibleByStringLiteral {
         switch self {
         case let .raw(text):
             text
-        case let .attributed(text):
+        case let .rich(text):
             String(text.characters)
         }
     }
@@ -69,7 +69,7 @@ public enum TextualContent: Sendable, ExpressibleByStringLiteral {
         switch self {
         case let .raw(text):
             text.isEmpty
-        case let .attributed(text):
+        case let .rich(text):
             text.isEmpty
         }
     }

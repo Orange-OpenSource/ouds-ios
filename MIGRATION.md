@@ -33,14 +33,14 @@ deprecated and replaced by three unified initializers.
 - **Fully source-compatible**: all existing call sites keep compiling. They will emit
   deprecation warnings but still work. No public API has been removed.
 
-### Public `TextualContent` type
+### Public `OUDSTextualContent` type
 
-The previously-internal `TextualContent` enum is now **public** and `@frozen`. It represents
+The previously-internal `OUDSTextualContent` enum is now **public** and `@frozen`. It represents
 a textual value that can be either a plain `String` or a styled `AttributedString`:
 
 ```swift
 @frozen
-public enum TextualContent: Sendable, ExpressibleByStringLiteral {
+public enum OUDSTextualContent: Sendable, ExpressibleByStringLiteral {
     case raw(String)
     case attributed(AttributedString)
 }
@@ -70,20 +70,20 @@ public enum Label {
 // Replaces the 4 initializers with `label: String` / `label: some View`
 public init(
     label: Label,
-    description: TextualContent? = nil,
-    overline: TextualContent? = nil,
-    extraLabel: TextualContent? = nil,
-    helperText: TextualContent? = nil,
+    description: OUDSTextualContent? = nil,
+    overline: OUDSTextualContent? = nil,
+    extraLabel: OUDSTextualContent? = nil,
+    helperText: OUDSTextualContent? = nil,
     textSlot: Slot? = nil,
     bottomSlot: Slot? = nil)
 
 public init(
     label: some View,
     accessibilityLabel: String,
-    description: TextualContent? = nil,
-    overline: TextualContent? = nil,
-    extraLabel: TextualContent? = nil,
-    helperText: TextualContent? = nil,
+    description: OUDSTextualContent? = nil,
+    overline: OUDSTextualContent? = nil,
+    extraLabel: OUDSTextualContent? = nil,
+    helperText: OUDSTextualContent? = nil,
     textSlot: Slot? = nil,
     bottomSlot: Slot? = nil)
 
@@ -93,10 +93,10 @@ public init(
     tableName: String? = nil,
     bundle: Bundle = .main,
     hasBoldLabel: Bool = false,
-    description: TextualContent? = nil,
-    overline: TextualContent? = nil,
-    extraLabel: TextualContent? = nil,
-    helperText: TextualContent? = nil,
+    description: OUDSTextualContent? = nil,
+    overline: OUDSTextualContent? = nil,
+    extraLabel: OUDSTextualContent? = nil,
+    helperText: OUDSTextualContent? = nil,
     textSlot: Slot? = nil,
     bottomSlot: Slot? = nil)
 ```
@@ -111,8 +111,8 @@ public init(
 | `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .text("Foo", isBold: true))` |
 | `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(label: .text("Foo"), description: "Bar", overline: "Over")` |
 | `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(label: .text("Foo"), overline: .attributed(myAttr))` |
-| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` *(signature unchanged, textual fields now accept `TextualContent`)* |
-| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(signature unchanged, textual fields now accept `TextualContent`)* |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` *(signature unchanged, textual fields now accept `OUDSTextualContent`)* |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(signature unchanged, textual fields now accept `OUDSTextualContent`)* |
 
 **New capability** — any textual field can now be styled:
 
@@ -136,7 +136,7 @@ OUDSListItemData(
   move the `overline:` parameter to its canonical position (after `description:` in the new
   init order).
 - The `LocalizedStringKey` initializers keep the same label; only the optional textual fields
-  change type from `String?` / `AttributedString` to `TextualContent?`.
+  change type from `String?` / `AttributedString` to `OUDSTextualContent?`.
 
 > **Note on overload resolution**: as long as the deprecated `String` initializers remain
 > available, a call site such as `OUDSListItemData(label: "Foo")` still resolves to the

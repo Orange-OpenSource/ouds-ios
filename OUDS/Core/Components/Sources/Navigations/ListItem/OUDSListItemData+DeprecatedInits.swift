@@ -17,14 +17,14 @@ import SwiftUI
 ///
 /// All six initializers below were introduced in v3.0.0 (one per combination of label type
 /// × overline type) and are now deprecated in favor of the three unified initializers added
-/// in v3.2.0 that accept ``TextualContent`` for every optional textual field.
+/// in v3.2.0 that accept ``OUDSTextualContent`` for every optional textual field.
 ///
 /// They forward to the new unified initializers so existing call sites keep working unchanged;
 /// only a deprecation warning is emitted.
 ///
 /// See `MIGRATION.md` section `v3.0.0 → v3.2.0` for the full migration guide.
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-extension OUDSListItemData {
+extension OUDSListItemData { // TODO: v4 - Remove these old inits
 
     // MARK: - String label
 
@@ -41,7 +41,9 @@ extension OUDSListItemData {
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
     ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
-    @available(*, deprecated, message: "Use init(label:Label, …) with TextualContent. See MIGRATION.md v3.2.0.")
+    ///
+    /// - Since: 3.0.0
+    @available(*, deprecated, message: "Use init(label:Label, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
     public init(
         label: String,
         hasBoldLabel: Bool = false,
@@ -75,7 +77,9 @@ extension OUDSListItemData {
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
     ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
-    @available(*, deprecated, message: "Use init(label:Label, …) with TextualContent. See MIGRATION.md v3.2.0.")
+    ///
+    /// - Since: 3.0.0
+    @available(*, deprecated, message: "Use init(label:Label, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
     public init(
         label: String,
         overline: AttributedString,
@@ -89,7 +93,7 @@ extension OUDSListItemData {
         self.init(
             label: .text(label, isBold: hasBoldLabel),
             description: description.map { .raw($0) },
-            overline: .attributed(overline),
+            overline: .rich(overline),
             extraLabel: extraLabel.map { .raw($0) },
             helperText: helperText.map { .raw($0) },
             textSlot: textSlot,
@@ -118,7 +122,9 @@ extension OUDSListItemData {
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
     ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
-    @available(*, deprecated, message: "Use init(label:some View, accessibilityLabel:, …) with TextualContent. See MIGRATION.md v3.2.0.")
+    ///
+    /// - Since: 3.0.0
+    @available(*, deprecated, message: "Use init(label:some View, accessibilityLabel:, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
     public init(
         label: some View,
         accessibilityLabel: String,
@@ -152,7 +158,9 @@ extension OUDSListItemData {
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
     ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
-    @available(*, deprecated, message: "Use init(label:some View, accessibilityLabel:, …) with TextualContent. See MIGRATION.md v3.2.0.")
+    ///
+    /// - Since: 3.0.0
+    @available(*, deprecated, message: "Use init(label:some View, accessibilityLabel:, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
     public init(
         label: some View,
         accessibilityLabel: String,
@@ -166,7 +174,7 @@ extension OUDSListItemData {
         self.init(
             label: .custom(AnyView(label), accessibilityLabel: accessibilityLabel),
             description: description.map { .raw($0) },
-            overline: .attributed(overline),
+            overline: .rich(overline),
             extraLabel: extraLabel.map { .raw($0) },
             helperText: helperText.map { .raw($0) },
             textSlot: textSlot,
@@ -190,7 +198,9 @@ extension OUDSListItemData {
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
     ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
-    @available(*, deprecated, message: "Use init(key:LocalizedStringKey, …) with TextualContent. See MIGRATION.md v3.2.0.")
+    ///
+    /// - Since: 3.0.0
+    @available(*, deprecated, message: "Use init(key:LocalizedStringKey, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
     public init(
         key: LocalizedStringKey,
         tableName: String? = nil,
@@ -228,7 +238,9 @@ extension OUDSListItemData {
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
     ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
-    @available(*, deprecated, message: "Use init(key:LocalizedStringKey, …) with TextualContent. See MIGRATION.md v3.2.0.")
+    ///
+    /// - Since: 3.0.0
+    @available(*, deprecated, message: "Use init(key:LocalizedStringKey, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
     public init(
         key: LocalizedStringKey,
         overline: AttributedString,
@@ -244,7 +256,7 @@ extension OUDSListItemData {
         self.init(
             label: .text(key.resolved(tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
             description: description.map { .raw($0) },
-            overline: .attributed(overline),
+            overline: .rich(overline),
             extraLabel: extraLabel.map { .raw($0) },
             helperText: helperText.map { .raw($0) },
             textSlot: textSlot,

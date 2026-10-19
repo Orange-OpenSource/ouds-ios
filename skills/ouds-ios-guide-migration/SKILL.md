@@ -24,7 +24,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
-| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers taking `OUDSListItemData.Label` + `TextualContent` for `description` / `overline` / `extraLabel` / `helperText`. `TextualContent` becomes `public @frozen` and both `TextualContent` and `OUDSListItemData.Label` conform to `ExpressibleByStringLiteral`. New `.rich(AttributedString)` case on `OUDSListItemData.Label` for styled labels. |
+| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers taking `OUDSListItemData.Label` + `OUDSTextualContent` for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen` and both `OUDSTextualContent` and `OUDSListItemData.Label` conform to `ExpressibleByStringLiteral`. New `.rich(AttributedString)` case on `OUDSListItemData.Label` for styled labels. |
 
 ---
 
@@ -595,13 +595,13 @@ OUDSLink(text: "Back", indicator: .previous, size: .default) { }
 
 **Backward compatibility**: Fully source-compatible. All v3.0.0 call sites keep compiling; they produce deprecation warnings but still work. No API has been removed.
 
-### OUDSListItemData — unified initializers with `TextualContent` and `.rich` label
+### OUDSListItemData — unified initializers with `OUDSTextualContent` and `.rich` label
 
 The six initializers of `OUDSListItemData` (one per combination of `String` / `some View` / `LocalizedStringKey` label × raw / `AttributedString` overline) are deprecated and replaced by three unified initializers that accept:
 - a `OUDSListItemData.Label` for the label, with three cases: `.text(String, isBold:)`, `.rich(AttributedString)`, `.custom(AnyView, accessibilityLabel:)`;
-- a `TextualContent?` (public, `@frozen` enum with `.raw(String)` and `.attributed(AttributedString)`) for each of `description`, `overline`, `extraLabel`, `helperText`.
+- a `OUDSTextualContent?` (public, `@frozen` enum with `.raw(String)` and `.attributed(AttributedString)`) for each of `description`, `overline`, `extraLabel`, `helperText`.
 
-Both `TextualContent` and `OUDSListItemData.Label` conform to `ExpressibleByStringLiteral`, so string literals continue to work in call sites without any `.raw(…)` / `.text(…)` boilerplate once the deprecated initializers are removed.
+Both `OUDSTextualContent` and `OUDSListItemData.Label` conform to `ExpressibleByStringLiteral`, so string literals continue to work in call sites without any `.raw(…)` / `.text(…)` boilerplate once the deprecated initializers are removed.
 
 | Old (v3.0 — deprecated) | New (v3.2) |
 |---|---|
@@ -609,8 +609,8 @@ Both `TextualContent` and `OUDSListItemData.Label` conform to `ExpressibleByStri
 | `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .text("Foo", isBold: true))` |
 | `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(label: .text("Foo"), description: "Bar", overline: "Over")` *(string literals auto-convert to `.raw`)* |
 | `OUDSListItemData(label: "Foo", overline: myAttributedString)` | `OUDSListItemData(label: .text("Foo"), overline: .attributed(myAttributedString))` |
-| `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` *(same shape, `overline` now accepts `TextualContent`)* |
-| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(same shape, textual fields now accept `TextualContent`)* |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` | `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` *(same shape, `overline` now accepts `OUDSTextualContent`)* |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(key: "foo.label")` *(same shape, textual fields now accept `OUDSTextualContent`)* |
 
 **New capability (v3.2)**: every textual field can now be a styled `AttributedString`, not just `overline`:
 
@@ -631,7 +631,7 @@ OUDSListItemData(
 - Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(label: .text("Foo"), …)`.
 - Replace `hasBoldLabel: true` with `.text("Foo", isBold: true)`.
 - Replace `overline: myAttributedString` with `overline: .attributed(myAttributedString)` and move the `overline:` parameter to its canonical position (after `description:` in the new init order).
-- `key: LocalizedStringKey` initializers keep the same label; only the optional textual fields change type from `String?` / `AttributedString` to `TextualContent?`.
+- `key: LocalizedStringKey` initializers keep the same label; only the optional textual fields change type from `String?` / `AttributedString` to `OUDSTextualContent?`.
 
 > **Note on overload resolution**: as long as the deprecated String initializers remain available, a call site such as `OUDSListItemData(label: "Foo")` still resolves to the deprecated `String` overload (Swift prefers direct `String` matches over `ExpressibleByStringLiteral` conversions to `Label`), so you will see a deprecation warning. Migrate to `.text(…)` to silence it. When the deprecated initializers are eventually removed in v4.x, the string-literal form will transparently resolve to the new unified initializer via `ExpressibleByStringLiteral`.
 
@@ -660,7 +660,7 @@ grep -rn \
   --include="*.swift" .
 
 # v3.2.0 deprecated OUDSListItemData String/AttributedString initializers.
-# A warning-free call site now uses .text("…") / .rich(…) for `label` and TextualContent for other fields.
+# A warning-free call site now uses .text("…") / .rich(…) for `label` and OUDSTextualContent for other fields.
 grep -rnE \
   'OUDSListItemData\(\s*label:\s*"|OUDSListItemData\([^)]*hasBoldLabel:' \
   --include="*.swift" .

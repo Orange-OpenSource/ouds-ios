@@ -19,7 +19,7 @@ struct HelperErrorTextContainer: View {
 
     // MARK: - Properties
 
-    let helperText: TextualContent?
+    let helperText: OUDSTextualContent?
     let status: OUDSTextInput.Status
 
     @Environment(\.theme) private var theme

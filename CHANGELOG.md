@@ -9,13 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Flag to display full value instead of bullets in `PIN code input` component (Orange-OpenSource/ouds-ios#1762)
+- `list item` components inits with `OUDSTextualContent` parameters for raw and attributed strings (Orange-OpenSource/ouds-ios#1812)
 - `Tuning` parameter for Orange, Orange Compact, Wireframe and White Label themes Xcode previews (Orange-OpenSource/ouds-ios#1793)
 - Tool to detect public API breakings (Orange-OpenSource/ouds-ios#1800)
 - `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
 - `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
-- Public `@frozen` `TextualContent` enum (`.raw(String)` / `.attributed(AttributedString)`) with `ExpressibleByStringLiteral` conformance
-- New `.rich(AttributedString)` case on `OUDSListItemData.Label` and `ExpressibleByStringLiteral` conformance for string-literal ergonomics
-- Unified `OUDSListItemData` initializers accepting `TextualContent?` for `description`, `overline`, `extraLabel`, `helperText` — any textual field can now be a styled `AttributedString`, not only the `overline`
 
 ### Changed
 
@@ -26,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-- All six `String` / `AttributedString` initializers of `OUDSListItemData`; use the new unified initializers taking `OUDSListItemData.Label` + `TextualContent`
+- All six `String` / `AttributedString` initializers of `OUDSListItemData`; use the new unified initializers taking `OUDSListItemData.Label` + `OUDSTextualContent`
 
 ### Fixed
 

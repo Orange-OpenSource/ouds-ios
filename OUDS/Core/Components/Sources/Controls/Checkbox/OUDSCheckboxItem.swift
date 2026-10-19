@@ -231,7 +231,7 @@ public struct OUDSCheckboxItem: View {
 
         _isOn = isOn
 
-        let errorTextContent: TextualContent? = if let errorText {
+        let errorTextContent: OUDSTextualContent? = if let errorText {
             .raw(errorText)
         } else {
             nil
@@ -323,7 +323,7 @@ public struct OUDSCheckboxItem: View {
             icon: image,
             isOutlined: false,
             isError: isError,
-            errorText: .attributed(errorText),
+            errorText: .rich(errorText),
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             constrainedMaxWidth: constrainedMaxWidth,

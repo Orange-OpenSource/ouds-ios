@@ -152,7 +152,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 |------|---------|
 | `OUDSListItemData` | Textual data: label, description, overline, extraLabel, helperText, textSlot, bottomSlot |
 | `OUDSListItemData.Label` | Label content: `.text(String, isBold:)`, `.rich(AttributedString)`, `.custom(AnyView, accessibilityLabel:)`; string-literal convertible |
-| `TextualContent` | Shared text payload for `description` / `overline` / `extraLabel` / `helperText`: `.raw(String)` or `.attributed(AttributedString)`; string-literal convertible |
+| `OUDSTextualContent` | Shared text payload for `description` / `overline` / `extraLabel` / `helperText`: `.raw(String)` or `.attributed(AttributedString)`; string-literal convertible |
 | `OUDSListItemLeading` | Leading element: icon, image, flag, avatar, custom view |
 | `OUDSListItemTrailing` | Trailing element: text, badge, tag, icon, image, flag, avatar, custom view |
 
@@ -181,7 +181,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 // Minimal
 OUDSStaticListItem(data: OUDSListItemData(label: .text("Label")))
 
-// Full textual content (string literals auto-convert to .raw TextualContent)
+// Full textual content (string literals auto-convert to .raw OUDSTextualContent)
 OUDSStaticListItem(data: OUDSListItemData(
     label: .text("Label"),
     description: "Description",

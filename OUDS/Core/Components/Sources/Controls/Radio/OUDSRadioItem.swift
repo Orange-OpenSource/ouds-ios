@@ -242,7 +242,7 @@ public struct OUDSRadioItem: View {
 
         _isOn = isOn
 
-        let errorTextContent: TextualContent? = if let errorText {
+        let errorTextContent: OUDSTextualContent? = if let errorText {
             .raw(errorText)
         } else {
             nil
@@ -345,7 +345,7 @@ public struct OUDSRadioItem: View {
             icon: image,
             isOutlined: isOutlined,
             isError: isError,
-            errorText: .attributed(errorText),
+            errorText: .rich(errorText),
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             constrainedMaxWidth: constrainedMaxWidth,

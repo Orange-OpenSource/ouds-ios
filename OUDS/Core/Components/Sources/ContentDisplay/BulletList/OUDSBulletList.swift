@@ -175,7 +175,7 @@ public struct OUDSBulletList: View {
 
         // MARK: Properties
 
-        let text: TextualContent
+        let text: OUDSTextualContent
         let subListType: OUDSBulletList.`Type`?
         let subListTextStyle: OUDSBulletList.TextStyle?
         let subListHasBoldText: Bool?
@@ -239,7 +239,7 @@ public struct OUDSBulletList: View {
                     subListHasBoldText: Bool? = nil,
                     @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
         {
-            text = .attributed(richText)
+            text = .rich(richText)
             self.subListType = subListType
             self.subListTextStyle = subListTextStyle
             self.subListHasBoldText = subListHasBoldText

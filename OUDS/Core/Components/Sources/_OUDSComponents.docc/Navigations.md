@@ -157,7 +157,7 @@ OUDSStaticListItem(
 ##### Rich text content
 
 Every textual field (`label`, `description`, `overline`, `extraLabel`, `helperText`) accepts
-either a `String` or an `AttributedString`. The optional fields use ``TextualContent``
+either a `String` or an `AttributedString`. The optional fields use ``OUDSTextualContent``
 (`.raw` / `.attributed`) while the label uses ``OUDSListItemData/Label``
 (`.text` / `.rich` / `.custom`).
 

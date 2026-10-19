@@ -122,7 +122,7 @@ public struct OUDSPasswordInput: View {
     let placeholder: String?
     let prefix: String?
     let lockIcon: Bool
-    let helperText: TextualContent?
+    let helperText: OUDSTextualContent?
     let status: OUDSTextInput.Status
     let isOutlined: Bool
     let constrainedMaxWidth: Bool
@@ -227,7 +227,7 @@ public struct OUDSPasswordInput: View {
     {
         self.label = label
         self.password = password
-        self.helperText = .attributed(helperText)
+        self.helperText = .rich(helperText)
         self.placeholder = placeholder
         self.prefix = prefix
         self.lockIcon = lockIcon
@@ -346,7 +346,7 @@ public struct OUDSPasswordInput: View {
                               isOutlined: isOutlined,
                               constrainedMaxWidth: constrainedMaxWidth,
                               status: status)
-            case let .attributed(richHelperText):
+            case let .rich(richHelperText):
                 OUDSTextInput(label: label,
                               text: password,
                               placeholder: placeholder,

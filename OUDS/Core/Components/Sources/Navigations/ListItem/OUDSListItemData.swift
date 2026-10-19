@@ -19,7 +19,7 @@ import SwiftUI
 /// ``OUDSListItemData`` groups all the text-based information that a list item can display:
 /// a mandatory label (either a `String`, an `AttributedString` or a custom `View`) and optional
 /// description, overline, extra label and helper text. Each optional textual field accepts either
-/// a `String` or an `AttributedString` through ``TextualContent``, plus optional slots.
+/// a `String` or an `AttributedString` through ``OUDSTextualContent``, plus optional slots.
 ///
 /// ## Code samples
 ///
@@ -46,7 +46,7 @@ import SwiftUI
 ///         accessibilityLabel: "Favorite Custom Label"
 ///     )
 ///
-///     // Full content with text label (string literals auto-convert to .raw TextualContent)
+///     // Full content with text label (string literals auto-convert to .raw OUDSTextualContent)
 ///     let data = OUDSListItemData(
 ///         label: .text("Label"),
 ///         description: "Description",
@@ -229,22 +229,22 @@ public struct OUDSListItemData {
     let labelContent: Label
 
     /// An optional secondary text displayed below the label.
-    /// Accepts either a plain `String` or a styled `AttributedString` through ``TextualContent``.
-    let descriptionContent: TextualContent?
+    /// Accepts either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
+    let descriptionContent: OUDSTextualContent?
 
     /// An optional small text displayed above the label, often used for categories or metadata.
-    /// Accepts either a plain `String` or a styled `AttributedString` through ``TextualContent``.
+    /// Accepts either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
     /// **Ignored when the list item size is `.small`.**
-    let overlineContent: TextualContent?
+    let overlineContent: OUDSTextualContent?
 
     /// An optional additional text displayed below the description.
-    /// Accepts either a plain `String` or a styled `AttributedString` through ``TextualContent``.
+    /// Accepts either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
     /// **Ignored when the list item size is `.small`.**
-    let extraLabelContent: TextualContent?
+    let extraLabelContent: OUDSTextualContent?
 
     /// An optional supporting text displayed below the list item row, outside the main content area.
-    /// Accepts either a plain `String` or a styled `AttributedString` through ``TextualContent``.
-    let helperTextContent: TextualContent?
+    /// Accepts either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
+    let helperTextContent: OUDSTextualContent?
 
     /// An optional custom view displayed under the texts (overline, label, extra label, description)
     /// but before the helper text.
@@ -267,8 +267,8 @@ public struct OUDSListItemData {
     /// Creates a new list item data model with a label and optional textual fields.
     ///
     /// Every optional textual field (`description`, `overline`, `extraLabel`, `helperText`) accepts
-    /// either a plain `String` or a styled `AttributedString` through ``TextualContent``. A plain
-    /// string literal is automatically converted to ``TextualContent/raw(_:)`` thanks to
+    /// either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``. A plain
+    /// string literal is automatically converted to ``OUDSTextualContent/raw(_:)`` thanks to
     /// `ExpressibleByStringLiteral`.
     ///
     /// - Parameters:
@@ -285,10 +285,10 @@ public struct OUDSListItemData {
     /// - Since: 3.2.0
     public init(
         label: Label,
-        description: TextualContent? = nil,
-        overline: TextualContent? = nil,
-        extraLabel: TextualContent? = nil,
-        helperText: TextualContent? = nil,
+        description: OUDSTextualContent? = nil,
+        overline: OUDSTextualContent? = nil,
+        extraLabel: OUDSTextualContent? = nil,
+        helperText: OUDSTextualContent? = nil,
         textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
@@ -304,7 +304,7 @@ public struct OUDSListItemData {
     /// Creates a new list item data model with a custom SwiftUI view as label and optional textual fields.
     ///
     /// Every optional textual field (`description`, `overline`, `extraLabel`, `helperText`) accepts
-    /// either a plain `String` or a styled `AttributedString` through ``TextualContent``.
+    /// either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
     ///
     /// - Parameters:
     ///   - label: A custom SwiftUI view to use as the primary label of the list item.
@@ -323,10 +323,10 @@ public struct OUDSListItemData {
     public init(
         label: some View,
         accessibilityLabel: String,
-        description: TextualContent? = nil,
-        overline: TextualContent? = nil,
-        extraLabel: TextualContent? = nil,
-        helperText: TextualContent? = nil,
+        description: OUDSTextualContent? = nil,
+        overline: OUDSTextualContent? = nil,
+        extraLabel: OUDSTextualContent? = nil,
+        helperText: OUDSTextualContent? = nil,
         textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {
@@ -343,7 +343,7 @@ public struct OUDSListItemData {
     /// Creates a new list item data model with a localized text label and optional textual fields.
     ///
     /// Every optional textual field (`description`, `overline`, `extraLabel`, `helperText`) accepts
-    /// either a plain `String` or a styled `AttributedString` through ``TextualContent``.
+    /// either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
     ///
     /// - Parameters:
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle.
@@ -365,10 +365,10 @@ public struct OUDSListItemData {
         tableName: String? = nil,
         bundle: Bundle = .main,
         hasBoldLabel: Bool = false,
-        description: TextualContent? = nil,
-        overline: TextualContent? = nil,
-        extraLabel: TextualContent? = nil,
-        helperText: TextualContent? = nil,
+        description: OUDSTextualContent? = nil,
+        overline: OUDSTextualContent? = nil,
+        extraLabel: OUDSTextualContent? = nil,
+        helperText: OUDSTextualContent? = nil,
         textSlot: Slot? = nil,
         bottomSlot: Slot? = nil)
     {

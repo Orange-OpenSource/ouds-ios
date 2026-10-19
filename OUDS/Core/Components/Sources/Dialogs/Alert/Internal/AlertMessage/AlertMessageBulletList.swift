@@ -18,7 +18,7 @@ struct AlertMessageBulletListItem: View {
 
     // MARK: - Properties
 
-    let text: TextualContent
+    let text: OUDSTextualContent
     let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme

@@ -20,8 +20,8 @@ struct AlertMessageContent: View {
 
     let text: String
     let status: OUDSAlertStatus
-    let description: TextualContent?
-    let bulletList: [TextualContent]
+    let description: OUDSTextualContent?
+    let bulletList: [OUDSTextualContent]
     let link: OUDSAlertMessage.Link?
     let onClose: (() -> Void)?
 

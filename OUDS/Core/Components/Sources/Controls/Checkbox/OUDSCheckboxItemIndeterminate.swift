@@ -220,7 +220,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         _selection = selection
         self.action = action
 
-        let errorTextContent: TextualContent? = if let errorText {
+        let errorTextContent: OUDSTextualContent? = if let errorText {
             .raw(errorText)
         } else {
             nil

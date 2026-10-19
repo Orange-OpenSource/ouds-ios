@@ -28,7 +28,7 @@ import SwiftUI
 ///   Voice Over vocalization.
 ///
 /// The optional textual fields (`overline`, `extraLabel`, `description`) accept either a plain
-/// `String` or a styled `AttributedString` through ``TextualContent``.
+/// `String` or a styled `AttributedString` through ``OUDSTextualContent``.
 struct ListItemTextContainer: View {
 
     // MARK: Properties
