@@ -24,7 +24,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 | Read-only | `isReadOnly: true` |
 | Disabled | `.disabled(true)` — never combine with `isError` or `isReadOnly` |
 
-> `OUDSSwitchItem` `errorText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
+> `OUDSSwitchItem` and `OUDSCheckboxItem` `errorText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
 > **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning) because `AttributedString` is expressible by a string literal. Write `errorText: .raw("abc")`.
 
 > **Forbidden combinations** (fatal error at runtime): `isError` + `isReadOnly`, `isError` + `.disabled`, `isReadOnly` + `.disabled`
@@ -38,37 +38,39 @@ OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Label")
 OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Label")
 OUDSCheckboxItem("Label", isOn: $isOn)
 OUDSCheckboxItem("Label", isOn: $isOn, description: "Helper",
-                 icon: OUDSImage(asset: Image(decorative: "ic")))
+                 image: OUDSImage(asset: Image(decorative: "ic")))
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "ic")), isReversed: true)
+                 image: OUDSImage(asset: Image(decorative: "ic")), isReversed: true)
 // Raw (non-tinted) image:
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+                 image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 // Flip icon for RTL:
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
                                  flipped: layoutDirection == .rightToLeft))
 // LocalizedStringKey:
 OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "ic")))
+                 image: OUDSImage(asset: Image(decorative: "ic")))
 // Indeterminate (three states) — also accepts LocalizedStringKey:
 OUDSCheckboxItemIndeterminate("Label", selection: $selection,
-                               icon: OUDSImage(asset: Image(decorative: "ic")))
+                               image: OUDSImage(asset: Image(decorative: "ic")))
 OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module,
                                selection: $selection)
+// Error text: raw, localized or rich OUDSTextualContent
+OUDSCheckboxItem("Label", isOn: $isOn, isError: true, errorText: .rich(AttributedString(…)))
 // Error / helper / disabled → see "Common patterns" above
 ```
 
-> Parameter order: `(_ label:, isOn:, description:, icon:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
+> Parameter order: `(_ label:, isOn:, description:, image:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
 
 ```swift
 // Picker — icon is OUDSImage?
 OUDSCheckboxPicker(selections: $selections, checkboxes: [
     .init(tag: "a", label: "Option A"),
     .init(tag: "b", label: "Option B", description: "Details", isReversed: true),
-    .init(tag: "c", label: "Option C", icon: OUDSImage(asset: Image(systemName: "flame"))),
+    .init(tag: "c", label: "Option C", image: OUDSImage(asset: Image(systemName: "flame"))),
     .init(tag: "d", label: "Option D",
-          icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original)),
+          image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original)),
 ])
 OUDSCheckboxPicker(selections: $selections, checkboxes: data,
                    placement: .verticalRooted("All options", .textAndCount))

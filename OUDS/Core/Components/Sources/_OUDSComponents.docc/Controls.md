@@ -83,6 +83,12 @@ OUDSCheckboxItem("We live in a fabled world",
                  isReversed: true,
                  isError: true,
                  hasDivider: true)
+
+// An error message is an OUDSTextualContent: raw, localized or rich text
+OUDSCheckboxItem("We live in a fabled world",
+                 isOn: $isOn,
+                 isError: true,
+                 errorText: .rich(AttributedString(markdown: "You **must** accept the ToS"))) // Manage in your side errors for init
 ```
 
 #### Checkbox picker
