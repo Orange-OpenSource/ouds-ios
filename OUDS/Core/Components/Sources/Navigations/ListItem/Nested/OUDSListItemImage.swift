@@ -54,13 +54,13 @@ import SwiftUI
 ///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(itemLabel: "Information"),
+///         data: OUDSListItemData(label: .textual("Information")),
 ///         leading: .image(.init(asset: Image(decorative: "il_placeholder", size: .medium))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(itemLabel: "Warning"),
+///         data: OUDSListItemData(label: .textual("Warning")),
 ///         trailing: .image(.init(asset: Image(decorative: "il_placeholder", size: .medium))
 ///     )
 /// ```

@@ -68,7 +68,7 @@ and a localized one is `.textual(.localized("key"))`.
 ```swift
 // Replaces the initializers with `label: String` / `key: LocalizedStringKey`
 public init(
-    itemLabel: Label,
+    label: Label,
     description: OUDSTextualContent? = nil,
     overline: OUDSTextualContent? = nil,
     extraLabel: OUDSTextualContent? = nil,
@@ -78,7 +78,7 @@ public init(
 
 // Replaces the initializers with `label: some View`
 public init(
-    viewLabel: some View,
+    label: some View,
     accessibilityLabel: String,
     description: OUDSTextualContent? = nil,
     overline: OUDSTextualContent? = nil,
@@ -88,8 +88,7 @@ public init(
     bottomSlot: Slot? = nil)
 ```
 
-> The parameter names `itemLabel` / `viewLabel` will be renamed `label` and `.textual` renamed `.text`
-> in v4, when the deprecated API is removed.
+> In v4, `.textual` will be renamed `.text`, when the deprecated API is removed.
 
 ### Migration
 
@@ -97,12 +96,12 @@ public init(
 
 | Before (v3.0 — deprecated) | After (v3.2) |
 |---|---|
-| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(itemLabel: "Foo")` |
-| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(itemLabel: .textual("Foo", isBold: true))` |
-| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(itemLabel: "Foo", description: "Bar", overline: "Over")` |
-| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(itemLabel: "Foo", overline: .rich(myAttr))` |
-| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(viewLabel: myView, accessibilityLabel: "Foo")` |
-| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(itemLabel: .textual(.localized("foo.label")))` |
+| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(label: .textual("Foo"))` |
+| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .textual("Foo", isBold: true))` |
+| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | unchanged (`description` and `overline` are now `OUDSTextualContent`) |
+| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(label: "Foo", overline: .rich(myAttr))` |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | unchanged |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(label: .textual(.localized("foo.label")))` |
 | `.text("Foo", isBold: true)` (on `Label`) | `.textual("Foo", isBold: true)` |
 
 **New capability** — any textual field can now be styled or localized:
@@ -113,7 +112,7 @@ OUDSListItemData(label: "Foo", overline: myStyledOverline)
 
 // After (v3.2) — any textual field can be styled or localized
 OUDSListItemData(
-    itemLabel: .textual(.rich(myStyledLabel)),
+    label: .textual(.rich(myStyledLabel)),
     description: .rich(myStyledDescription),
     overline: .rich(myStyledOverline),
     extraLabel: .localized("extra.label.key"),
@@ -121,8 +120,8 @@ OUDSListItemData(
 ```
 
 **Required Action**:
-- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(itemLabel: "Foo", …)`
-  (string literals are enough, no need for `.text(…)`).
+- Replace `OUDSListItemData(label: "Foo")` (a label alone, or with only `textSlot` / `bottomSlot`) with `OUDSListItemData(label: .textual("Foo"))`,
+  see the note below.
 - Replace `hasBoldLabel: true` with `.textual("Foo", isBold: true)`.
 - Replace `key: LocalizedStringKey` with `.textual(.localized(key, tableName:, bundle:))`.
 - Replace `overline: myAttributedString` with `overline: .rich(myAttributedString)` and
@@ -130,10 +129,16 @@ OUDSListItemData(
   init order).
 - Replace any `Label.text(…)` usage with `.textual(…)`.
 
-> **Note on overload resolution**: as long as the deprecated `String` initializers remain
-> available, a call site such as `OUDSListItemData(label: "Foo")` still resolves to the
-> deprecated overload. Using the `itemLabel:` argument label selects the new initializer
-> and silences the warning.
+> **Note on overload resolution**: the new initializers reuse the `label:` argument label of the deprecated ones, and
+> `Label` as well as `AttributedString` are expressible by a string literal. As a consequence, two call forms may select a deprecated
+> initializer and emit a deprecation warning, even if the intent is the new API:
+> - a bare literal label with no textual field, for example `OUDSListItemData(label: "Foo")` or with only `textSlot` / `bottomSlot`.
+>   Write `label: .textual("Foo")` instead;
+> - a custom view label with a literal `overline`, for example `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")`.
+>   Write `overline: .raw("Over")` instead.
+>
+> As soon as `description`, `overline`, `extraLabel` or `helperText` is given with a literal next to a literal label
+> (`OUDSListItemData(label: "Foo", description: "Bar")`) the new initializer is selected without any warning.
 
 **Reason for Change**: Unify the API so that every textual field of a list item can carry
 rich text, not only the overline, without multiplying initializer overloads.

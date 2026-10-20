@@ -389,7 +389,7 @@ let greenText = AttributedString.from(
 ```swift
 OUDSStaticListItem(
     data: OUDSListItemData(
-        itemLabel: .textual(.rich(AttributedString.from(
+        label: .textual(.rich(AttributedString.from(
             text: "Payment problems",
             foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
             font: .body

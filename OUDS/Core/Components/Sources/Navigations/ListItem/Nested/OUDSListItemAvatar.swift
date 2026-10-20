@@ -72,13 +72,13 @@ import SwiftUI
 ///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(itemLabel: "John Doe", description: "Online"),
+///         data: OUDSListItemData(label: "John Doe", description: "Online"),
 ///         leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(itemLabel: "Contact"),
+///         data: OUDSListItemData(label: .textual("Contact")),
 ///         trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
 ///     )
 /// ```
