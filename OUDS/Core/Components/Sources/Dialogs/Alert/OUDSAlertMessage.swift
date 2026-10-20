@@ -65,6 +65,8 @@ import SwiftUI
 /// Only the alert message description and bullet list can use rich text.
 /// They are ``OUDSTextualContent`` values: a raw `String` (a string literal is enough), a localized string
 /// with `.localized(_:tableName:bundle:)` or a rich text with `.rich(_:)` and an `AttributedString`.
+/// With the initializer taking a `LocalizedStringKey`, prefer `.raw(_:)` to a bare string literal for the `description`
+/// to avoid a deprecation warning.
 ///
 /// Strong text can be used sparingly within alert messages to highlight key information.
 /// Underlined text must not be used for emphasis, as it is commonly associated with links.
@@ -216,8 +218,10 @@ public struct OUDSAlertMessage: View {
 
     /// Creates an alert message with a localized label, looking up the key in the given bundle.
     ///
-    /// The `description` and the elements of the `bulletList` are ``OUDSTextualContent`` values: a raw `String`
-    /// (a string literal is enough), a localized string or a rich `AttributedString`.
+    /// The `description` and the elements of the `bulletList` are ``OUDSTextualContent`` values: a raw `String`,
+    /// a localized string or a rich `AttributedString`.
+    /// For this initializer, prefer `.raw(_:)` to a bare string literal for the `description`, so the compiler selects without any doubt
+    /// the initializer taking an ``OUDSTextualContent`` and does not emit a deprecation warning.
     ///
     /// ```swift
     ///     OUDSAlertMessage(LocalizedStringKey("error_message"), bundle: Bundle.module, status: .negative)

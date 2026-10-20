@@ -15,14 +15,17 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 
 | Pattern | Syntax |
 |---|---|
-| Error state | `isError: true, errorText: "Message"` |
-| Rich error | `errorText: AttributedString` |
+| Error state | `isError: true, errorText: .raw("Message")` — `errorText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
+| Rich error | `errorText: .rich(AttributedString)` |
 | Plain helper | `helperText: "…"` |
 | Rich helper | `helperText: AttributedString` |
 | Error status (inputs) | `status: .error(message: "…")` |
 | Rich error status | `status: .richError(message: AttributedString)` |
 | Read-only | `isReadOnly: true` |
 | Disabled | `.disabled(true)` — never combine with `isError` or `isReadOnly` |
+
+> `OUDSSwitchItem` `errorText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
+> **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning) because `AttributedString` is expressible by a string literal. Write `errorText: .raw("abc")`.
 
 > **Forbidden combinations** (fatal error at runtime): `isError` + `isReadOnly`, `isError` + `.disabled`, `isReadOnly` + `.disabled`
 
@@ -112,17 +115,19 @@ OUDSRadioPicker(selection: $selection,
 OUDSSwitch(isOn: $isOn, accessibilityLabel: "Label")
 OUDSSwitchItem("Label", isOn: $isOn)
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "ic")))
+               image: OUDSImage(asset: Image(decorative: "ic")))
 // Raw (non-tinted) image:
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+               image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 // Flip icon for RTL:
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+               image: OUDSImage(asset: Image(systemName: "figure.handball"),
                                flipped: layoutDirection == .rightToLeft))
 // LocalizedStringKey:
 OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "ic")))
+               image: OUDSImage(asset: Image(decorative: "ic")))
+// Error text: raw, localized or rich OUDSTextualContent
+OUDSSwitchItem("Label", isOn: $isOn, isError: true, errorText: .rich(AttributedString(…)))
 // Error / helper / disabled → see "Common patterns" above
 ```
 

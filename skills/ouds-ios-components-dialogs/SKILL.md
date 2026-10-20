@@ -26,6 +26,10 @@ OUDSAlertMessage(label: "Label",
                  bulletList: ["Raw", .localized("key", bundle: Bundle.module), .rich(AttributedString(…))])
 ```
 
+> **Literal pitfall**: with the `LocalizedStringKey` initializer (`OUDSAlertMessage(LocalizedStringKey("key"), …)`), a bare `description: "abc"`
+> may select a deprecated initializer and emit a deprecation warning, because `AttributedString` is itself expressible by a string literal.
+> Write `description: .raw("abc")` in that case. With the `label:` initializer a bare literal is fine.
+
 ---
 
 ## Inline Alert

@@ -345,6 +345,12 @@ OUDSSwitchItem("We live in a fabled world",
                 image: OUDSImage(asset: Image(decorative: "il_someImage"),
                                  flipped: layoutDirection == .rightToLeft,
                                  renderingMode: .original))
+
+// An error message is an OUDSTextualContent: raw, localized or rich text
+OUDSSwitchItem("We live in a fabled world",
+               isOn: $isOn,
+               isError: true,
+               errorText: .rich(AttributedString(markdown: "You **must** enable it"))) // Manage in your side errors for init
 ```
 
 ### Chips

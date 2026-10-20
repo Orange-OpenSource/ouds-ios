@@ -208,6 +208,33 @@ String literals still work as is (`description: "Foo"`, `bulletList: ["A", "B"]`
 - Replace `bulletList: [AttributedString]` and `bulletList: [String]` variables with arrays of `.rich(…)` / `.raw(…)`;
   an array literal can also mix raw literals, `.localized(…)` and `.rich(…)`.
 
+> **Note on string literals**: with the `LocalizedStringKey` initializer, `description: "abc"` (a bare literal) may select a deprecated
+> initializer and emit a deprecation warning, because `AttributedString` is itself expressible by a string literal.
+> Write `description: .raw("abc")` to select the new initializer.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSSwitchItem` — unified initializers
+
+The four initializers of `OUDSSwitchItem` (label as `String` or `LocalizedStringKey` × `errorText` as `String` or `AttributedString`)
+are deprecated and replaced by two unified ones taking `errorText: OUDSTextualContent? = nil`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `errorText: someString` | `errorText: .raw(someString)` |
+| `errorText: "Message"` (literal) | `errorText: .raw("Message")` |
+| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
+| `errorText: nil` or no `errorText` | unchanged |
+
+> **Note on string literals**: `errorText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` is itself expressible by a string literal. Write `errorText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
+- Replace `errorText: someStringVariable` or `errorText: "Message"` with `errorText: .raw(…)`.
+
 **Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
 
 ## v2.3.0 → v3.0.0
