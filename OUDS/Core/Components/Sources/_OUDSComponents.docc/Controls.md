@@ -549,6 +549,15 @@ OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helper
 
 // Password with prefix
 OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+
+// The helper text is an OUDSTextualContent: raw (string literal), localized or rich text
+OUDSPasswordInput(label: "Password", password: $password, helperText: .localized("password_helper", bundle: Bundle.module))
+OUDSPasswordInput(label: "Password",
+                  password: $password,
+                  helperText: .rich(AttributedString(markdown: "You should use a **strong password**"))) // Manage in your side errors for init
+
+// With an error message, also an OUDSTextualContent
+OUDSPasswordInput(label: "Password", password: $password, status: .textualError(message: "The password is too weak"))
 ```
 
 ### Pin Code Input

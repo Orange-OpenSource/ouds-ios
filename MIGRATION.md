@@ -361,6 +361,30 @@ This `Status` is also the one used by `OUDSPasswordInput`.
 
 **Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads or status cases.
 
+### `OUDSPasswordInput` — unified initializers
+
+The four initializers of `OUDSPasswordInput` (label as `String` or `LocalizedStringKey` × `helperText` as `String` or `AttributedString`)
+are deprecated and replaced by two unified ones taking `helperText: OUDSTextualContent? = nil`.
+Its `status` is the `OUDSTextInput.Status`: see the `OUDSTextInput` section above for `.textualError(message:)`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `helperText: nil` or no `helperText` | unchanged |
+
+> **Note on string literals**: `helperText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` is itself expressible by a string literal. Write `helperText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someStringVariable` or `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `status: .error(message:)` and `.richError(message:)` with `.textualError(message:)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
 ## v2.3.0 → v3.0.0
 
 ### Overview

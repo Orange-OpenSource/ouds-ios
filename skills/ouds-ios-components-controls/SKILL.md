@@ -166,8 +166,16 @@ OUDSPinCodeInput($value, status: .textualError(message: .rich(AttributedString(�
 OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isHidden)
 OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isHidden,
                   placeholder: "Min. 8 chars", prefix: "🔑", lockIcon: true)
-// Helper / error status → see "Common patterns"
+// Helper text: raw (string literal), localized or rich OUDSTextualContent
+OUDSPasswordInput(label: "Password", password: $password, helperText: .raw("8 characters minimum"))
+OUDSPasswordInput(label: "Password", password: $password, helperText: .rich(AttributedString(…)))
+// Error status: .textualError(message: OUDSTextualContent), raw (literal), localized or rich
+OUDSPasswordInput(label: "Password", password: $password, status: .textualError(message: "Too weak"))
 ```
+
+> `OUDSPasswordInput` `helperText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
+> `OUDSTextInput.Status.error(message:)` and `.richError(message:)` are **deprecated** too, use `.textualError(message:)`.
+> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning). Write `helperText: .raw("abc")`.
 
 ---
 
