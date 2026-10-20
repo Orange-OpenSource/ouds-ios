@@ -24,7 +24,7 @@ struct PinCodeInputContainer: View {
     @Binding private var value: String
     /// Number of boxes / size of the code to write
     private let length: OUDSPinCodeInput.Length
-    /// Flag to hide or show the code
+    /// Flag to hide or show the written characters
     private let hiddenCharacters: Bool
     /// If there is an error context about the value of the container
     private let isError: Bool

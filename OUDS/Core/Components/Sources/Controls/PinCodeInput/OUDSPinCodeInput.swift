@@ -114,8 +114,8 @@ import SwiftUI
 ///     // The component can be used in error contexts
 ///     OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
 ///
-///     // Make code hidden
-///     OUDSPinCodeInput($pinCode, hiddenCharacters: true)
+///     // Show the written characters
+///     OUDSPinCodeInput($pinCode, hiddenCharacters: false)
 /// ```
 ///
 /// ## Design documentation
@@ -210,7 +210,7 @@ public struct OUDSPinCodeInput: View {
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the code, By default set to `true`.
+    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - helperText: A text to display below the PIN code input container, default set to *nil*
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
@@ -240,13 +240,14 @@ public struct OUDSPinCodeInput: View {
     ///
     /// ```swift
     ///     OUDSPinCodeInput($pinCode,
-    ///                      helperText: AttributedString(markdown: "Enter the **one-time code** sent to your device"))  // Manage in your side errors for init
+    ///                      // Manage in your side errors for init
+    ///                      helperText: AttributedString(markdown: "Enter the **one-time code** sent to your device"))
     /// ```
     ///
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the code, By default set to `true`.
+    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - helperText: A text to display below the PIN code input container, in rich text
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
@@ -277,7 +278,7 @@ public struct OUDSPinCodeInput: View {
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the code, By default set to `true`.
+    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
