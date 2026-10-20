@@ -206,13 +206,15 @@ struct PinCodeInputContainer: View {
         #if !os(macOS)
         // Compute at this level the typography to use to be sure environment values for size class
         // are retrieved in the suitable thread at the best moment
+        let text = displayText(for: index)
+        let isSymbol = text == OUDSPinCodeInput.placeholderCharacter || text == OUDSPinCodeInput.obfuscationCharacter
         let uiFont = Font.makeFont(
-            family: nil,
+            family: isSymbol ? nil : theme.fontFamily,
             from: theme.fonts.labelModerateLarge,
             isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
         return BackspaceDetectingTextField(
             text: $digits[index],
-            displayText: .constant(displayText(for: index)),
+            displayText: .constant(text),
             font: uiFont,
             index: index,
             a11yLabel: accessibilityLabel(for: index),
