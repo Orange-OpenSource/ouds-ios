@@ -22,6 +22,8 @@ extension View {
         switch description {
         case let .rich(attributedString):
             Text(attributedString)
+        case let .localized(key, tableName: tableName, bundle: bundle):
+            Text(key.resolved(tableName: tableName, bundle: bundle))
         case let .raw(text):
             Text(text)
         }

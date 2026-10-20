@@ -43,7 +43,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     ///
     /// - Since: 3.0.0
-    @available(*, deprecated, message: "Use init(itemLabel:Label, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
+    @available(*, deprecated, message: "Use init(itemLabel:Label, ...) with OUDSTextualContent parameters. See MIGRATION.md v3.2.0.")
     public init(
         label: String,
         hasBoldLabel: Bool = false,
@@ -55,7 +55,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
         bottomSlot: Slot? = nil)
     {
         self.init(
-            itemLabel: .text(label, isBold: hasBoldLabel),
+            itemLabel: .textual(.raw(label), isBold: hasBoldLabel),
             description: description.map { .raw($0) },
             overline: overline.map { .raw($0) },
             extraLabel: extraLabel.map { .raw($0) },
@@ -79,7 +79,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     ///
     /// - Since: 3.0.0
-    @available(*, deprecated, message: "Use init(itemLabel:Label, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
+    @available(*, deprecated, message: "Use init(itemLabel:Label, ...) with OUDSTextualContent parameters. See MIGRATION.md v3.2.0.")
     public init(
         label: String,
         overline: AttributedString,
@@ -91,7 +91,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
         bottomSlot: Slot? = nil)
     {
         self.init(
-            itemLabel: .text(label, isBold: hasBoldLabel),
+            itemLabel: .textual(.raw(label), isBold: hasBoldLabel),
             description: description.map { .raw($0) },
             overline: .rich(overline),
             extraLabel: extraLabel.map { .raw($0) },
@@ -124,7 +124,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     ///
     /// - Since: 3.0.0
-    @available(*, deprecated, message: "Use init(viewLabel:some View, accessibilityLabel:, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
+    @available(*, deprecated, message: "Use init(viewLabel:some View, accessibilityLabel:, ...) with OUDSTextualContent parameters. See MIGRATION.md v3.2.0.")
     public init(
         label: some View,
         accessibilityLabel: String,
@@ -160,7 +160,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     ///
     /// - Since: 3.0.0
-    @available(*, deprecated, message: "Use init(viewLabel:some View, accessibilityLabel:, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
+    @available(*, deprecated, message: "Use init(viewLabel:some View, accessibilityLabel:, ...) with OUDSTextualContent parameters. See MIGRATION.md v3.2.0.")
     public init(
         label: some View,
         accessibilityLabel: String,
@@ -200,7 +200,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     ///
     /// - Since: 3.0.0
-    @available(*, deprecated, message: "Use init(localized:LocalizedStringKey, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
+    @available(*, deprecated, message: "Use init(itemLabel:Label, ...) with OUDSTextualContent parameters. See MIGRATION.md v3.2.0.")
     public init(
         key: LocalizedStringKey,
         tableName: String? = nil,
@@ -214,7 +214,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
         bottomSlot: Slot? = nil)
     {
         self.init(
-            itemLabel: .text(key.resolved(tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
+            itemLabel: .textual(.localized(key, tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
             description: description.map { .raw($0) },
             overline: overline.map { .raw($0) },
             extraLabel: extraLabel.map { .raw($0) },
@@ -240,7 +240,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
     ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
     ///
     /// - Since: 3.0.0
-    @available(*, deprecated, message: "Use init(localized:LocalizedStringKey, ...) with OUDSTextualContent. See MIGRATION.md v3.2.0.")
+    @available(*, deprecated, message: "Use init(itemLabel:Label, ...) with OUDSTextualContent parameters. See MIGRATION.md v3.2.0.")
     public init(
         key: LocalizedStringKey,
         overline: AttributedString,
@@ -254,7 +254,7 @@ extension OUDSListItemData { // TODO: v4 - Remove these old inits
         bottomSlot: Slot? = nil)
     {
         self.init(
-            itemLabel: .text(key.resolved(tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
+            itemLabel: .textual(.localized(key, tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
             description: description.map { .raw($0) },
             overline: .rich(overline),
             extraLabel: extraLabel.map { .raw($0) },

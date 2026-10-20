@@ -19,16 +19,16 @@ import SwiftUI
 /// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
 ///
 /// The label area supports three modes via ``OUDSListItemData/Label``:
-/// - **`.text(String, isBold: Bool)`**: The label is rendered as a styled `Text` view.
-///   When `isBold` is `true`, a bold typography is applied.
-/// - **`.rich(AttributedString)`**: A user-styled `AttributedString` is rendered as-is inside the
-///   label area; its plain-string projection is used for Voice Over vocalization.
+/// - **`.textual(OUDSTextualContent, isBold: Bool)`**: The label is rendered as a styled `Text` view
+///   (raw, localized or user-styled `AttributedString`). When `isBold` is `true`, a bold typography is applied.
+///   For `.rich`, the plain-string projection is used for Voice Over vocalization.
+/// - **`.text(String, isBold: Bool)`**: Deprecated, same rendering as `.textual(.raw)`.
 /// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
 ///   as-is inside the label area. The provided `accessibilityLabel` is used in the combined
 ///   Voice Over vocalization.
 ///
-/// The optional textual fields (`overline`, `extraLabel`, `description`) accept either a plain
-/// `String` or a styled `AttributedString` through ``OUDSTextualContent``.
+/// The optional textual fields (`overline`, `extraLabel`, `description`) accept a raw
+/// `String`, a localized string or a styled `AttributedString` through ``OUDSTextualContent``.
 struct ListItemTextContainer: View {
 
     // MARK: Properties
@@ -62,7 +62,7 @@ struct ListItemTextContainer: View {
 
                 HStack {
                     switch data.labelContent {
-                    case let .text(labelText, isBold):
+                    case let .text(labelText, isBold): // TODO: v4 - Remove this case as manager by .textual
                         Group {
                             if isBold {
                                 Text(labelText).labelStrongLarge(theme)
@@ -71,9 +71,15 @@ struct ListItemTextContainer: View {
                             }
                         }
                         .frame(maxWidth: maxWidth, alignment: .leading)
-                    case let .rich(attributedString):
-                        Text(attributedString)
-                            .frame(maxWidth: maxWidth, alignment: .leading)
+                    case let .textual(content, isBold: isBold):
+                        Group {
+                            if isBold {
+                                textView(for: content).labelStrongLarge(theme)
+                            } else {
+                                textView(for: content).labelDefaultLarge(theme)
+                            }
+                        }
+                        .frame(maxWidth: maxWidth, alignment: .leading)
                     case let .custom(customView, _):
                         customView
                             .padding([.top, .bottom], theme.listItem.spacePaddingBlockSlotTextContainer)

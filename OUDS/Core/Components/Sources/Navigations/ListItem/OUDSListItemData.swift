@@ -17,24 +17,27 @@ import SwiftUI
 /// ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
 /// ``OUDSListItemData`` groups all the text-based information that a list item can display:
-/// a mandatory label (either a `String`, an `AttributedString` or a custom `View`) and optional
-/// description, overline, extra label and helper text. Each optional textual field accepts either
-/// a `String` or an `AttributedString` through ``OUDSTextualContent``, plus optional slots.
+/// a mandatory label (an ``OUDSTextualContent`` or a custom `View`) and optional
+/// description, overline, extra label and helper text. Every textual field accepts a raw `String`,
+/// a localized string or an `AttributedString` through ``OUDSTextualContent``, plus optional slots.
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     // Minimal: label only (string literal is implicitly converted to .text)
-///     let data = OUDSListItemData(itemLabel: .text("Label"))
+///     // Minimal: label only (string literal is implicitly converted to .textual(.raw))
+///     let data = OUDSListItemData(itemLabel: "Label")
 ///
 ///     // Label with bold style
-///     let data = OUDSListItemData(itemLabel: .text("Label", isBold: true))
+///     let data = OUDSListItemData(itemLabel: .textual("Label", isBold: true))
+///
+///     // Localized label
+///     let data = OUDSListItemData(itemLabel: .textual(.localized("label.key")))
 ///
 ///     // Styled rich label (user-controlled font, color, markdown…)
 ///     let data = OUDSListItemData(
-///         itemLabel: .rich(AttributedString.from(text: "Label",
-///                                                foregroundColor: .orange,
-///                                                font: .headline))
+///         itemLabel: .textual(.rich(AttributedString.from(text: "Label",
+///                                                         foregroundColor: .orange,
+///                                                         font: .headline)))
 ///     )
 ///
 ///     // Custom view as label with accessibility label
@@ -46,9 +49,9 @@ import SwiftUI
 ///         accessibilityLabel: "Favorite Custom Label"
 ///     )
 ///
-///     // Full content with text label (string literals auto-convert to .raw OUDSTextualContent)
+///     // Full content (string literals auto-convert to .raw OUDSTextualContent)
 ///     let data = OUDSListItemData(
-///         itemLabel: .text("Label"),
+///         itemLabel: "Label",
 ///         description: "Description",
 ///         overline: "Overline",
 ///         extraLabel: "Extra Label",
@@ -57,7 +60,7 @@ import SwiftUI
 ///
 ///     // Mixed raw / rich text per field — any textual field can be styled
 ///     let data = OUDSListItemData(
-///         itemLabel: .text("Label"),
+///         itemLabel: "Label",
 ///         description: .rich(myStyledDescription),
 ///         overline: "Plain overline",
 ///         helperText: .rich(myStyledHelper)
@@ -73,14 +76,14 @@ import SwiftUI
 ///
 ///     // With slot (displayed under texts, before helper text)
 ///     let dataWithSlot = OUDSListItemData(
-///         itemLabel: .text("Label"),
+///         itemLabel: "Label",
 ///         textSlot: OUDSListItemData.Slot { Text("Additional content") },
 ///         helperText: "Helper text"
 ///     )
 ///
 ///     // With text slot and bottom slot (bottom slot displayed under text slot, before helper text)
 ///     let dataWithBothSlots = OUDSListItemData(
-///         itemLabel: .text("Label"),
+///         itemLabel: "Label",
 ///         textSlot: OUDSListItemData.Slot { Text("Slot content") },
 ///         bottomSlot: OUDSListItemData.Slot { Text("Bottom content") },
 ///         helperText: "Helper text"
@@ -106,7 +109,7 @@ import SwiftUI
 /// ```swift
 ///     // overline, extraLabel and bottomSlot will not be displayed
 ///     OUDSStaticListItem(data: OUDSListItemData(
-///         itemLabel: .text("Label"),
+///         itemLabel: "Label",
 ///         overline: "Hidden in small",
 ///         extraLabel: "Also hidden in small"
 ///     ))
@@ -141,15 +144,15 @@ public struct OUDSListItemData {
 
     /// Represents the content of a label within a list item.
     ///
-    /// The label can be either a plain text string, a user-styled `AttributedString` (rich text)
-    /// or an arbitrary SwiftUI view.
+    /// The label can be either a textual content (raw string, localized string or user-styled
+    /// `AttributedString`) or an arbitrary SwiftUI view.
     ///
     /// ## Cases
     ///
-    /// - **`.text(String, isBold: Bool)`**: A plain text string used as the label.
+    /// - **`.textual(OUDSTextualContent, isBold: Bool)`**: A raw, localized or rich text used as the label.
     ///   The `isBold` parameter controls whether the text is rendered with a bold font weight.
-    /// - **`.rich(AttributedString)`**: A user-styled `AttributedString` used as the label.
-    ///   The styling (font, color, markdown…) is entirely controlled by the caller.
+    ///   For `.rich`, the styling (font, color, markdown…) is entirely controlled by the caller.
+    /// - **`.text(String, isBold: Bool)`**: Deprecated since 3.2.0, use `.textual` instead.
     /// - **`.custom(AnyView, accessibilityLabel: String)`**: A custom SwiftUI view used as the label,
     ///   together with an accessibility label used for Voice Over vocalization.
     ///   When using a custom view, the bold styling is not applicable since it is entirely
@@ -158,17 +161,16 @@ public struct OUDSListItemData {
     /// ## String literal convenience
     ///
     /// `Label` conforms to `ExpressibleByStringLiteral`, so a plain string literal is implicitly
-    /// converted to `.text(literal, isBold: false)` wherever a `Label` is expected.
+    /// converted to `.textual(.raw(literal), isBold: false)` wherever a `Label` is expected.
     ///
     /// ```swift
-    ///     let data = OUDSListItemData(label: "Hello") // same as .text("Hello", isBold: false)
+    ///     let data = OUDSListItemData(itemLabel: "Hello") // same as .textual(.raw("Hello"), isBold: false)
     /// ```
     ///
     /// ## Accessibility
     ///
     /// When using `.custom`, the ``stringValue`` property returns the provided `accessibilityLabel`.
-    /// For `.rich`, it returns the plain-string projection of the `AttributedString`.
-    /// For `.text`, it returns the text itself.
+    /// For `.textual`, it returns the plain-string projection of the content.
     /// This value is used by the text container to build the combined accessibility label
     /// for the list item text parts, ensuring Voice Over can vocalize the label even when it is
     /// an arbitrary view.
@@ -180,18 +182,13 @@ public struct OUDSListItemData {
         /// - Parameters:
         ///   - text: The text string to display as the label.
         ///   - isBold: When `true`, the label is rendered with a bold font weight.
+        @available(*, deprecated, message: "Use case .textual(:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case text(_: String, isBold: Bool = false)
 
-        /// A user-styled rich-text label backed by an `AttributedString`.
-        ///
-        /// Use this case when you need to control the font, color, markdown or any other
-        /// `AttributedString` attribute of the label yourself. The library will render the
-        /// provided `AttributedString` as-is in the label area.
-        ///
-        /// - Parameter attributedString: The styled text to display as the label.
+        /// A text, which can be defined from a raw string, a localized string or attributed string
         ///
         /// - Since: 3.2.0
-        case rich(_: AttributedString)
+        case textual(_: OUDSTextualContent, isBold: Bool = false) // TODO: v4 - When .case text removed, rename from "textual" to "text"
 
         /// A custom SwiftUI view used as the label, with an accessibility label for Voice Over.
         /// Paddings must be managed by the given `View` in the slot.
@@ -201,21 +198,21 @@ public struct OUDSListItemData {
         ///   - accessibilityLabel: A text used for Voice Over vocalization of the label.
         case custom(_ view: AnyView, accessibilityLabel: String)
 
-        /// Creates a ``text(_:isBold:)`` label from a string literal (`isBold: false`).
+        /// Creates a ``textual(_:isBold:)`` label from a string literal (`isBold: false`).
         public init(stringLiteral value: String) {
-            self = .text(value, isBold: false)
+            self = .textual(.raw(value), isBold: false)
         }
 
         /// Returns the string value for accessibility purposes.
-        /// For `.text`, returns the text itself.
-        /// For `.rich`, returns the plain-string projection of the `AttributedString`.
+        /// For `.text` (deprecated), returns the text itself.
+        /// For `.textual`, returns the plain-string projection.
         /// For `.custom`, returns the provided `accessibilityLabel`.
         public var stringValue: String {
             switch self {
             case let .text(string, _):
                 string
-            case let .rich(attributedString):
-                String(attributedString.characters)
+            case let .textual(content, _):
+                content.rawValue
             case let .custom(_, accessibilityLabel):
                 accessibilityLabel
             }
@@ -332,48 +329,6 @@ public struct OUDSListItemData {
     {
         self.init(
             itemLabel: .custom(AnyView(viewLabel), accessibilityLabel: accessibilityLabel),
-            description: description,
-            overline: overline,
-            extraLabel: extraLabel,
-            helperText: helperText,
-            textSlot: textSlot,
-            bottomSlot: bottomSlot)
-    }
-
-    /// Creates a new list item data model with a localized text label and optional textual fields.
-    ///
-    /// Every optional textual field (`description`, `overline`, `extraLabel`, `helperText`) accepts
-    /// either a plain `String` or a styled `AttributedString` through ``OUDSTextualContent``.
-    ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle.
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default.
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - hasBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
-    ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
-    ///   - overline: An optional text displayed above the label. Defaults to `nil`.
-    ///     **Ignored when the list item size is `.small`.**
-    ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
-    ///     **Ignored when the list item size is `.small`.**
-    ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    ///   - textSlot: An optional custom view displayed under the texts but before the helper text. Defaults to `nil`.
-    ///   - bottomSlot: An optional custom view displayed under the main content and before the helper text. Defaults to `nil`.
-    ///
-    /// - Since: 3.2.0
-    public init(
-        localized key: LocalizedStringKey, // TODO: v4 - When older inits will be removed, renamed parameter to "key" instead of "localized"
-        tableName: String? = nil,
-        bundle: Bundle = .main,
-        hasBoldLabel: Bool = false,
-        description: OUDSTextualContent? = nil,
-        overline: OUDSTextualContent? = nil,
-        extraLabel: OUDSTextualContent? = nil,
-        helperText: OUDSTextualContent? = nil,
-        textSlot: Slot? = nil,
-        bottomSlot: Slot? = nil)
-    {
-        self.init(
-            itemLabel: .text(key.resolved(tableName: tableName, bundle: bundle), isBold: hasBoldLabel),
             description: description,
             overline: overline,
             extraLabel: extraLabel,

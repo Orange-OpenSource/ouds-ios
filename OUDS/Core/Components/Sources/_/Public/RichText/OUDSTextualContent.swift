@@ -36,10 +36,13 @@ import SwiftUI
 /// - Since: 3.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen
-public enum OUDSTextualContent: Sendable, ExpressibleByStringLiteral {
+public enum OUDSTextualContent: @unchecked Sendable, ExpressibleByStringLiteral {
 
     /// The text is a raw `String` to use as is.
     case raw(String)
+
+    /// The text is loaded from localizables with a `LocalizedStringKey`, in a table with its name (default `nil`), from a `Bundle` (default `main`).
+    case localized(_: LocalizedStringKey, tableName: String? = nil, bundle: Bundle = .main)
 
     /// The text is an `AttributedString`, a rich text whose styling (font, color, markdown…) is
     /// fully controlled by the caller.
@@ -59,6 +62,8 @@ public enum OUDSTextualContent: Sendable, ExpressibleByStringLiteral {
         switch self {
         case let .raw(text):
             text
+        case let .localized(key, tableName, bundle):
+            key.resolved(tableName: tableName, bundle: bundle)
         case let .rich(text):
             String(text.characters)
         }
@@ -66,20 +71,6 @@ public enum OUDSTextualContent: Sendable, ExpressibleByStringLiteral {
 
     /// Whether the underlying text payload is empty.
     public var isEmpty: Bool {
-        switch self {
-        case let .raw(text):
-            text.isEmpty
-        case let .rich(text):
-            text.isEmpty
-        }
-    }
-}
-
-// MARK: - Attributed String
-
-extension AttributedString {
-
-    var isEmpty: Bool {
-        characters.isEmpty
+        rawValue.isEmpty
     }
 }

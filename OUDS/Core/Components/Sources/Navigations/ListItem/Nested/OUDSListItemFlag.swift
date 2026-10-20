@@ -28,13 +28,13 @@ import SwiftUI
 ///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: .text("Information")),
+///         data: OUDSListItemData(itemLabel: "Information"),
 ///         leading: .flag(.init(asset: Image(decorative: "il_flag_fr"), description: "France"))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: .text("Warning")),
+///         data: OUDSListItemData(itemLabel: "Warning"),
 ///         trailing: .flag(.init(asset: Image(decorative: "il_flag_fr"), description: "France"))
 ///     )
 /// ```

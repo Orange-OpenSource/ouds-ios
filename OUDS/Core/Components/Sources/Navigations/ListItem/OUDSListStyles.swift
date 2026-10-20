@@ -25,7 +25,7 @@ import SwiftUI
 /// ## Code sample
 ///
 /// ```swift
-///     OUDSStaticListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListItemContainerAlignment(.top)
 /// ```
 ///
@@ -68,34 +68,34 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Card style with outline only on interaction
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListCardStyle(decoration: .outlined(onInteractionOnly: true))
 ///
 ///     // Card style with an outlined border on all states
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListCardStyle(decoration: .outlined(onInteractionOnly: false))
 ///
 ///     // Card style with divider, background
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListCardStyle(decoration: .standard(divider: true, background: true))
 ///
 ///     // Card style divider and without background
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListCardStyle(decoration: .standard(divider: true, background: false))
 ///
 ///     // Item style with background and divider
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListItemStyle(divider: true, .background: true)
 ///
 ///     // Item style with divider and without background
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListItemStyle(divider: true, .background: false)
 ///
 ///     // Using global modifier
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListContentStyle(.card(.outlined))
 ///
-///     OUDSNavigationListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListContentStyle(.item(divider: true, background: false))
 /// ```
 ///
@@ -156,12 +156,12 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Standard size (default)
-///     OUDSStaticListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListItemSize(.standard)
 ///
 ///     // Small size — overline and extraLabel are hidden,
 ///     // avatars and icons use their smallest variant
-///     OUDSStaticListItem(data: OUDSListItemData(label: .text("Label")))
+///     OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Label"))
 ///         .oudsListItemSize(.small)
 /// ```
 ///
@@ -192,15 +192,15 @@ extension View {
     /// ```swift
     ///     // Set outlined card style
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 1")))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 2")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 1"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 2"))
     ///     }
     ///     .oudsListContentStyle(.card(.outlined())
     ///
     ///     // Set item style with background and divider
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 1")))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 2")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 1"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 2"))
     ///     }
     ///     .oudsListContentStyle(.item(divider: true, background: true))
     /// ```
@@ -221,8 +221,8 @@ extension View {
     ///
     /// ```swift
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 1")))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 2")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 1"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 2"))
     ///     }
     ///     .oudsListCardStyle(.outlined())
     /// ```
@@ -244,8 +244,8 @@ extension View {
     ///
     /// ```swift
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 1")))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Item 2")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 1"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Item 2"))
     ///     }
     ///     .oudsListItemStyle(divider: true, background: true)
     /// ```
@@ -269,7 +269,7 @@ extension View {
     ///
     /// ```swift
     ///     OUDSStaticListItem(
-    ///         data: OUDSListItemData(label: .text("Label")),
+    ///         data: OUDSListItemData(itemLabel: "Label"),
     ///         leading: .image(.init(asset: Image("il_placeholder"), size: .medium))
     ///     )
     ///     .oudsListItemRoundedMedia(true)
@@ -292,7 +292,7 @@ extension View {
     /// ```swift
     ///     VStack {
     ///         OUDSStaticListItem(
-    ///             data: OUDSListItemData(label: .text("Label"), description: "Description"),
+    ///             data: OUDSListItemData(itemLabel: "Label", description: "Description"),
     ///             leading: .icon(OUDSListItemIcon(type: .info, size: .medium)),
     ///             trailing: .text(.label(Text("Info")))
     ///         )
@@ -318,8 +318,8 @@ extension View {
     ///
     /// ```swift
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Compact item")))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: .text("Another compact item")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Compact item"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Another compact item"))
     ///     }
     ///     .oudsListItemSize(.small)
     /// ```

@@ -13,6 +13,7 @@
 
 import Foundation
 @testable import OUDSComponents
+import SwiftUI
 import Testing
 
 // MARK: - OUDSTextualContent Tests
@@ -148,7 +149,7 @@ struct OUDSTextualContentTests {
         switch content {
         case let .raw(text):
             extractedText = text
-        case .rich:
+        case .rich, .localized:
             extractedText = "wrong"
         }
         #expect(extractedText == "extracted")
@@ -158,10 +159,22 @@ struct OUDSTextualContentTests {
         let content = OUDSTextualContent.rich(AttributedString("extracted"))
         var extractedText = ""
         switch content {
-        case .raw:
+        case .raw, .localized:
             extractedText = "wrong"
         case let .rich(text):
             extractedText = String(text.characters)
+        }
+        #expect(extractedText == "extracted")
+    }
+
+    @Test func localized() {
+        let content = OUDSTextualContent.localized("extracted")
+        var extractedText: LocalizedStringKey = ""
+        switch content {
+        case .raw, .rich:
+            extractedText = "wrong"
+        case let .localized(text, _, _):
+            extractedText = text
         }
         #expect(extractedText == "extracted")
     }

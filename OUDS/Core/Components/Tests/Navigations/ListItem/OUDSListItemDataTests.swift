@@ -24,7 +24,7 @@ struct OUDSListItemDataTests {
     // MARK: - overline (String)
 
     @Test func `overline as String resolves to a raw overlineContent`() {
-        let data = OUDSListItemData(itemLabel: .text("Label"), overline: "Overline")
+        let data = OUDSListItemData(itemLabel: "Label", overline: "Overline")
 
         guard case let .raw(text) = data.overlineContent else {
             Issue.record("Expected .raw overlineContent")
@@ -36,7 +36,7 @@ struct OUDSListItemDataTests {
     @Test func `overline as a string literal resolves to a raw overlineContent, not an attributed one`() {
         // Ensures no ambiguity at the call site: string literals convert to `.raw` through
         // `ExpressibleByStringLiteral`, never to `.rich`.
-        let data = OUDSListItemData(itemLabel: .text("Label"), overline: "Overline")
+        let data = OUDSListItemData(itemLabel: "Label", overline: "Overline")
 
         guard case .raw = data.overlineContent else {
             Issue.record("Expected .raw overlineContent")
@@ -48,7 +48,7 @@ struct OUDSListItemDataTests {
 
     @Test func `overline as AttributedString resolves to an attributed overlineContent`() {
         let attributed = AttributedString.from(text: "Overline", foregroundColor: Color.red, font: .body)
-        let data = OUDSListItemData(itemLabel: .text("Label"), overline: .rich(attributed))
+        let data = OUDSListItemData(itemLabel: "Label", overline: .rich(attributed))
 
         guard case let .rich(text) = data.overlineContent else {
             Issue.record("Expected .rich overlineContent")
@@ -70,7 +70,7 @@ struct OUDSListItemDataTests {
 
     @Test func `overline as AttributedString with localized key label resolves to an attributed overlineContent`() {
         let attributed = AttributedString.from(text: "Overline", foregroundColor: Color.red, font: .body)
-        let data = OUDSListItemData(localized: "Label", overline: .rich(attributed))
+        let data = OUDSListItemData(itemLabel: .textual(.localized("Label")), overline: .rich(attributed))
 
         guard case let .rich(text) = data.overlineContent else {
             Issue.record("Expected .rich overlineContent")
@@ -82,7 +82,7 @@ struct OUDSListItemDataTests {
     // MARK: - Neither overline nor attributedOverline
 
     @Test func `no overline exposes a nil overlineContent`() {
-        let data = OUDSListItemData(itemLabel: .text("Label"))
+        let data = OUDSListItemData(itemLabel: .textual(.raw("Label")))
 
         #expect(data.overlineContent == nil)
     }
@@ -90,7 +90,7 @@ struct OUDSListItemDataTests {
     // MARK: - description, extraLabel, helperText as OUDSTextualContent
 
     @Test func `description accepts a raw String through OUDSTextualContent`() {
-        let data = OUDSListItemData(itemLabel: .text("Label"), description: "Hello")
+        let data = OUDSListItemData(itemLabel: .textual(.raw("Label")), description: "Hello")
 
         guard case let .raw(text) = data.descriptionContent else {
             Issue.record("Expected .raw descriptionContent")
@@ -101,7 +101,7 @@ struct OUDSListItemDataTests {
 
     @Test func `description accepts an AttributedString through OUDSTextualContent`() {
         let attributed = AttributedString.from(text: "Hello", foregroundColor: Color.red, font: .body)
-        let data = OUDSListItemData(itemLabel: .text("Label"), description: .rich(attributed))
+        let data = OUDSListItemData(itemLabel: "Label", description: .rich(attributed))
 
         guard case let .rich(text) = data.descriptionContent else {
             Issue.record("Expected .rich descriptionContent")
@@ -112,7 +112,7 @@ struct OUDSListItemDataTests {
 
     @Test func `extraLabel accepts an AttributedString through OUDSTextualContent`() {
         let attributed = AttributedString.from(text: "Extra", foregroundColor: Color.red, font: .body)
-        let data = OUDSListItemData(itemLabel: .text("Label"), extraLabel: .rich(attributed))
+        let data = OUDSListItemData(itemLabel: "Label", extraLabel: .rich(attributed))
 
         guard case let .rich(text) = data.extraLabelContent else {
             Issue.record("Expected .rich extraLabelContent")
@@ -123,7 +123,7 @@ struct OUDSListItemDataTests {
 
     @Test func `helperText accepts an AttributedString through OUDSTextualContent`() {
         let attributed = AttributedString.from(text: "Helper", foregroundColor: Color.red, font: .body)
-        let data = OUDSListItemData(itemLabel: .text("Label"), helperText: .rich(attributed))
+        let data = OUDSListItemData(itemLabel: .textual(.raw("Label")), helperText: .rich(attributed))
 
         guard case let .rich(text) = data.helperTextContent else {
             Issue.record("Expected .rich helperTextContent")
@@ -136,9 +136,11 @@ struct OUDSListItemDataTests {
 
     @Test func `label as rich AttributedString stores a rich labelContent`() {
         let attributed = AttributedString.from(text: "Rich label", foregroundColor: Color.red, font: .body)
-        let data = OUDSListItemData(itemLabel: .rich(attributed))
+        let data = OUDSListItemData(itemLabel: .textual(.rich(attributed)))
 
-        guard case let .rich(text) = data.labelContent else {
+        guard case let .textual(content, _) = data.labelContent,
+              case let .rich(text) = content
+        else {
             Issue.record("Expected .rich labelContent")
             return
         }
@@ -150,17 +152,19 @@ struct OUDSListItemDataTests {
         // unified initializer taking a Label parameter.
         let label: OUDSListItemData.Label = "Hello"
 
-        guard case let .text(text, isBold) = label else {
+        guard case let .textual(textContent, isBold) = label,
+              case let .raw(rawText) = textContent
+        else {
             Issue.record("Expected .text label from string literal")
             return
         }
-        #expect(text == "Hello")
+        #expect(rawText == "Hello")
         #expect(isBold == false)
     }
 
     @Test func `rich label stringValue returns the plain-string projection of the AttributedString`() {
         let attributed = AttributedString("Rich")
-        let label: OUDSListItemData.Label = .rich(attributed)
+        let label: OUDSListItemData.Label = .textual(.rich(attributed))
 
         #expect(label.stringValue == "Rich")
     }
