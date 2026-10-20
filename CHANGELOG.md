@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- GitHub Actions `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `build-xcframework` and `scorecard` workflows
 - GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.2 to v4.39.0 for `scorecard` workflow
 - Availability details for Apple platforms on public API (Orange-OpenSource/ouds-ios#1815) 
 - Documentation for some components with DSM hyperlinks (Orange-OpenSource/ouds-ios#1813)
