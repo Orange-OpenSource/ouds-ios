@@ -701,6 +701,18 @@ OUDSTextInput(label: "Email",
               suffix: "@orange.com",
               helperText: "The email will be automatically completed with @orange.com")
 
+// The helper text is an OUDSTextualContent: raw (string literal), localized or rich text
+OUDSTextInput(label: "Email", text: $text, helperText: .localized("email_helper", bundle: Bundle.module))
+OUDSTextInput(label: "Email",
+              text: $text,
+              helperText: .rich(AttributedString(markdown: "You should use your **corporate email**"))) // Manage in your side errors for init
+
+// With an error message, also an OUDSTextualContent
+OUDSTextInput(label: "Email", text: $text, status: .textualError(message: "Invalid email"))
+OUDSTextInput(label: "Email",
+              text: $text,
+              status: .textualError(message: .rich(AttributedString(markdown: "This email is **not valid**")))) // Manage in your side errors for init
+
 // With helper link
 @Environment(\.openURL) private var openUrl
 

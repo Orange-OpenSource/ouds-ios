@@ -43,7 +43,7 @@ struct HelperErrorTextContainer: View {
         switch status {
         case .enabled:
             theme.colors.contentMuted
-        case .error, .richError:
+        case .error, .richError, .textualError:
             theme.colors.contentStatusNegative
         case .loading: // Should not appear
             theme.colors.contentMuted
@@ -54,29 +54,20 @@ struct HelperErrorTextContainer: View {
         }
     }
 
+    // In error status, the error message replaces the helper text
+    private var content: OUDSTextualContent? {
+        status.errorMessage ?? helperText
+    }
+
     private var text: String {
-        switch status {
-        case let .error(message):
-            message
-        case let .richError(message):
-            String(message.characters)
-        case .enabled, .readOnly, .disabled, .loading:
-            helperText?.rawValue ?? ""
-        }
+        content?.rawValue ?? ""
     }
 
     private func textView() -> Text {
-        switch status {
-        case let .error(message):
-            Text(message)
-        case let .richError(message):
-            Text(message)
-        case .enabled, .readOnly, .disabled, .loading:
-            if let helperText {
-                textView(for: helperText)
-            } else {
-                Text("") // Will never happen
-            }
+        if let content {
+            textView(for: content)
+        } else {
+            Text("") // Will never happen
         }
     }
 }

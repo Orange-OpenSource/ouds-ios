@@ -110,7 +110,7 @@ struct TextInputContainer: View {
             theme.textInput.spacePaddingInlineTrailingAction
         } else {
             switch status {
-            case .error, .richError, .loading:
+            case .error, .richError, .textualError, .loading:
                 theme.textInput.spacePaddingInlineTrailingAction
             default:
                 theme.textInput.spacePaddingInlineDefault
@@ -151,6 +151,8 @@ struct TextInputContainer: View {
             "core_common_onError_a11y".localized() + ": \(message)"
         case let .richError(message):
             "core_common_onError_a11y".localized() + ": \(String(message.characters))"
+        case let .textualError(message):
+            "core_common_onError_a11y".localized() + ": \(message.rawValue)"
         case .loading:
             "core_common_loading_a11y".localized()
         case .enabled:

@@ -17,10 +17,10 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 |---|---|
 | Error state | `isError: true, errorText: .raw("Message")` — `errorText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
 | Rich error | `errorText: .rich(AttributedString)` |
-| Plain helper | `helperText: "…"` |
-| Rich helper | `helperText: AttributedString` |
-| Error status (inputs) | `status: .error(message: "…")` |
-| Rich error status | `status: .richError(message: AttributedString)` |
+| Plain helper | `helperText: .raw("…")` — `helperText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
+| Rich helper | `helperText: .rich(AttributedString)` |
+| Error status (inputs) | `status: .textualError(message: "…")` — message is an `OUDSTextualContent` |
+| Rich error status | `status: .textualError(message: .rich(AttributedString))` |
 | Read-only | `isReadOnly: true` |
 | Disabled | `.disabled(true)` — never combine with `isError` or `isReadOnly` |
 
@@ -199,18 +199,26 @@ OUDSChipPicker(title: "Title", selection: $selection, chips: [
 ```swift
 OUDSTextInput(label: "Label", text: $text)
 OUDSTextInput(label: "Label", text: $text, placeholder: "…", prefix: "Pre", suffix: "Suf")
-OUDSTextInput(label: "Label", text: $text, leadingIcon: OUDSImage(asset: Image("ic")))
+OUDSTextInput(label: "Label", text: $text, leadingImage: OUDSImage(asset: Image("ic")))
 OUDSTextInput(label: "Label", text: $text,
-              leadingIcon: OUDSImage(asset: Image("ic"), renderingMode: .original)) // raw image (not tinted)
+              leadingImage: OUDSImage(asset: Image("ic"), renderingMode: .original)) // raw image (not tinted)
 OUDSTextInput(label: "Label", text: $text,
-              leadingIcon: OUDSImage(asset: Image("ic"), flipped: layoutDirection == .rightToLeft)) // flip for RTL
+              leadingImage: OUDSImage(asset: Image("ic"), flipped: layoutDirection == .rightToLeft)) // flip for RTL
 OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(icon: OUDSImage(asset: Image("ic")), actionHint: "Hint") {})
+              trailingAction: .init(image: OUDSImage(asset: Image("ic")), actionHint: "Hint") {})
 OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(icon: OUDSImage(asset: Image("ic"), renderingMode: .original),
+              trailingAction: .init(image: OUDSImage(asset: Image("ic"), renderingMode: .original),
                                     actionHint: "Hint") {}) // raw image
-// Helper / error status → see "Common patterns"
+// Helper text: raw (string literal), localized or rich OUDSTextualContent
+OUDSTextInput(label: "Label", text: $text, helperText: .raw("Helper"))
+OUDSTextInput(label: "Label", text: $text, helperText: .rich(AttributedString(…)))
+// Error status: .textualError(message: OUDSTextualContent), raw (literal), localized or rich
+OUDSTextInput(label: "Label", text: $text, status: .textualError(message: .localized("err", bundle: Bundle.module)))
 ```
+
+> `OUDSTextInput` `helperText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
+> `OUDSTextInput.Status.error(message:)` and `.richError(message:)` are **deprecated** too, use `.textualError(message:)`.
+> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning). Write `helperText: .raw("abc")`.
 
 ---
 
