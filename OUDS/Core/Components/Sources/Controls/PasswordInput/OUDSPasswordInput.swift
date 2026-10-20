@@ -178,6 +178,8 @@ public struct OUDSPasswordInput: View {
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
     ///    - status: The current status of the password input base on `OUDSTextInput.Status`, by default to set *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(label: String,
                 password: Binding<String>,
                 isHiddenPassword: Binding<Bool> = .constant(true),
@@ -233,6 +235,8 @@ public struct OUDSPasswordInput: View {
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
     ///    - status: The current status of the password input base on `OUDSTextInput.Status`, by default to set *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,

@@ -204,6 +204,8 @@ public struct OUDSSwitchItem: View {
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
     ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///     modifier. Defaults to `false`.
+    ///
+    /// - Since: 3.2.0
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
@@ -284,6 +286,8 @@ public struct OUDSSwitchItem: View {
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
     ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///     modifier. Defaults to `false`.
+    ///
+    /// - Since: 3.2.0
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,

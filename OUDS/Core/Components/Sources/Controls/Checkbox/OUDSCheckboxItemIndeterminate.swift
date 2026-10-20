@@ -215,6 +215,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
+    ///
+    /// - Since: 3.2.0
     public init(_ label: String,
                 selection: Binding<OUDSCheckboxIndicatorState>,
                 description: String? = nil,
@@ -295,6 +297,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
+    ///
+    /// - Since: 3.2.0
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,

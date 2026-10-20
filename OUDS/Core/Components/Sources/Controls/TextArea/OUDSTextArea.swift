@@ -255,6 +255,8 @@ public struct OUDSTextArea: View {
         /// It provides immediate visual feedback, typically through a red border, an error icon, and a clear,
         /// accessible error `message` positioned below the text area.
         /// The error message is an ``OUDSTextualContent``: raw, localized or rich text.
+        ///
+        /// - Since: 3.2.0
         case textualError(message: OUDSTextualContent) // TODO: v4 - When .error and .richError removed, rename from "textualError" to "error"
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
@@ -324,6 +326,8 @@ public struct OUDSTextArea: View {
         case rich(AttributedString)
 
         /// A helper text defined by the caller, which can be a raw string, a localized string or a rich text.
+        ///
+        /// - Since: 3.2.0
         case textual(_: OUDSTextualContent) // TODO: v4 - When .plain and .rich removed, consider keeping "textual" or renaming
 
         /// The **maximum number of characters** allowed in the text area.

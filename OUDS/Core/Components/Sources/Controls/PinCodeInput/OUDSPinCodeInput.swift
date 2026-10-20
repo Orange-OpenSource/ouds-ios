@@ -218,6 +218,8 @@ public struct OUDSPinCodeInput: View {
         /// ```swift
         ///     OUDSPinCodeInput($pinCode, status: .textualError(message: .raw("The code is not correct")))
         /// ```
+        ///
+        /// - Since: 3.2.0
         case textualError(message: OUDSTextualContent) // TODO: v4 - When .error and .richError removed, rename from "textualError" to "error"
 
         // MARK: Equatable
@@ -260,6 +262,8 @@ public struct OUDSPinCodeInput: View {
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
+    ///
+    /// - Since: 3.2.0
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
                 hiddenCharacters: Bool = true,

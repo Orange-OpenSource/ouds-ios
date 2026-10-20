@@ -318,6 +318,8 @@ public struct OUDSTextInput: View {
         /// ```swift
         ///     OUDSTextInput(label: "Email", text: $text, status: .textualError(message: .raw("Invalid email")))
         /// ```
+        ///
+        /// - Since: 3.2.0
         case textualError(message: OUDSTextualContent) // TODO: v4 - When .error and .richError removed, rename from "textualError" to "error"
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
@@ -409,6 +411,8 @@ public struct OUDSTextInput: View {
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(label: String,
                 text: Binding<String>,
                 placeholder: String? = nil,
@@ -465,6 +469,8 @@ public struct OUDSTextInput: View {
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
