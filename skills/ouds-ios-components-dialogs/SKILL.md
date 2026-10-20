@@ -16,11 +16,14 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 OUDSAlertMessage(label: "Label")
 OUDSAlertMessage(label: "Label", status: .warning, description: "Details") { /* dismiss */ }
 OUDSAlertMessage(label: "Label",
-                 status: .neutral(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
+                 status: .neutral(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
                  bulletList: ["A", "B"],
                  link: .init(text: "More", position: .bottom) {},
                  onClose: {})
-// Rich description / rich bullet list: pass AttributedString instead of String
+// description and bulletList elements are OUDSTextualContent: raw (string literal), localized or rich
+OUDSAlertMessage(label: "Label",
+                 description: .rich(AttributedString(…)),
+                 bulletList: ["Raw", .localized("key", bundle: Bundle.module), .rich(AttributedString(…))])
 ```
 
 ---
@@ -32,5 +35,5 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 ```swift
 OUDSInlineAlert(label: "Label")
 OUDSInlineAlert(label: "Label", status: .warning)
-OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
+OUDSInlineAlert(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
 ```

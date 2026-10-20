@@ -24,7 +24,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
-| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(itemLabel:…)` / `init(viewLabel:accessibilityLabel:…)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. |
+| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(itemLabel:…)` / `init(viewLabel:accessibilityLabel:…)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. `OUDSAlertMessage` — 8 initializers (`String` / `AttributedString` `description`, `[String]` / `[AttributedString]` `bulletList`) deprecated; 2 new initializers (`label:` / `_ key:`) taking `description: OUDSTextualContent?` and `bulletList: [OUDSTextualContent]`. |
 
 ---
 
@@ -702,6 +702,27 @@ A string literal is converted to `.raw(…)` without any warning: `OUDSBulletLis
 - Replace `Item(myAttributedString)` with `Item(.rich(myAttributedString))`.
 - Replace `Item(someStringVariable)` with `Item(.raw(someStringVariable))`.
 - Replace `Item(LocalizedStringKey(…), tableName:, bundle:)` with `Item(.localized(…, tableName:, bundle:))`.
+
+### OUDSAlertMessage — unified initializers with `OUDSTextualContent`
+
+The eight initializers of `OUDSAlertMessage` (label `String` / `LocalizedStringKey` × `description` `String` / `AttributedString` × `bulletList` `[String]` / `[AttributedString]`) are deprecated and replaced by two:
+- `init(label: String, status:, description: OUDSTextualContent?, bulletList: [OUDSTextualContent], link:, onClose:)`
+- `init(_ key: LocalizedStringKey, tableName:, bundle:, status:, description: OUDSTextualContent?, bulletList: [OUDSTextualContent], link:, onClose:)`
+
+String literals are converted to `.raw(…)` without warning (`description: "Foo"`, `bulletList: ["A", "B"]` need no change). The deprecated initializers are `@_disfavoredOverload`: only calls passing `String` / `AttributedString` **variables** warn.
+
+| Old (deprecated) | New (v3.2) |
+|---|---|
+| `description: "Foo"`, `bulletList: ["A", "B"]` (literals) | unchanged |
+| `description: someString` | `description: .raw(someString)` |
+| `description: myAttributedString` | `description: .rich(myAttributedString)` |
+| `bulletList: someStrings` | `bulletList: someStrings.map { .raw($0) }` |
+| `bulletList: myAttributedStrings` | `bulletList: myAttributedStrings.map { .rich($0) }` |
+
+**Required action**:
+- Replace `description: myAttributedString` with `description: .rich(myAttributedString)`.
+- Replace `description: someStringVariable` with `description: .raw(someStringVariable)`.
+- Replace `bulletList` variables of `[String]` / `[AttributedString]` with arrays of `.raw(…)` / `.rich(…)`; an array literal can mix raw literals, `.localized(…)` and `.rich(…)`.
 
 ---
 

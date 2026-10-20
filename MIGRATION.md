@@ -23,8 +23,8 @@ The six former initializers (one per combination of label type × overline type)
 deprecated and replaced by two unified initializers. The `OUDSListItemData.Label.text` case is
 deprecated in favor of the new `.textual` case.
 
-The `OUDSBulletList.Item` initializers follow the same logic: the `String`, `AttributedString` and
-`LocalizedStringKey` initializers are deprecated and replaced by a single initializer taking an `OUDSTextualContent`.
+The `OUDSBulletList.Item` and `OUDSAlertMessage` initializers follow the same logic: the `String`, `AttributedString`
+(and `LocalizedStringKey` for the bullet list item) initializers are deprecated and replaced by initializers taking `OUDSTextualContent`.
 
 ### Before You Begin
 
@@ -165,6 +165,48 @@ String literals still work as is (`OUDSBulletList.Item("Label")` is `.raw("Label
 - Replace `Item(someString)` with `Item(.raw(someString))` when the value is not a literal.
 - Replace `Item(myAttributedString)` with `Item(.rich(myAttributedString))`.
 - Replace `Item(LocalizedStringKey(…), tableName:, bundle:)` with `Item(.localized(…, tableName:, bundle:))`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSAlertMessage` — unified initializers
+
+The eight initializers of `OUDSAlertMessage` (label as `String` or `LocalizedStringKey` × `description` as `String` or
+`AttributedString` × `bulletList` as `[String]` or `[AttributedString]`) are deprecated and replaced by two unified ones:
+
+```swift
+public init(label: String,
+            status: OUDSAlertStatus = .positive,
+            description: OUDSTextualContent? = nil,
+            bulletList: [OUDSTextualContent] = [],
+            link: Link? = nil,
+            onClose: (() -> Void)? = nil)
+
+public init(_ key: LocalizedStringKey,
+            tableName: String? = nil,
+            bundle: Bundle = .main,
+            status: OUDSAlertStatus = .positive,
+            description: OUDSTextualContent? = nil,
+            bulletList: [OUDSTextualContent] = [],
+            link: Link? = nil,
+            onClose: (() -> Void)? = nil)
+```
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+String literals still work as is (`description: "Foo"`, `bulletList: ["A", "B"]`), without warning.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `description: "Foo"` / `bulletList: ["A", "B"]` with literals | unchanged |
+| `description: someString` | `description: .raw(someString)` |
+| `description: myAttributedString` | `description: .rich(myAttributedString)` |
+| `bulletList: someStrings` | `bulletList: someStrings.map { .raw($0) }` |
+| `bulletList: myAttributedStrings` | `bulletList: myAttributedStrings.map { .rich($0) }` |
+
+**Required Action**:
+- Replace `description: myAttributedString` with `description: .rich(myAttributedString)`.
+- Replace `description: someStringVariable` with `description: .raw(someStringVariable)`.
+- Replace `bulletList: [AttributedString]` and `bulletList: [String]` variables with arrays of `.rich(…)` / `.raw(…)`;
+  an array literal can also mix raw literals, `.localized(…)` and `.rich(…)`.
 
 **Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
 

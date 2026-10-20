@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `alert message` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
 - `bullet list` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
 - `list item` components inits with `OUDSTextualContent` parameters for raw, lcoalized and attributed strings (Orange-OpenSource/ouds-ios#1812)
 - Flag to display full value instead of bullets in `PIN code input` component (Orange-OpenSource/ouds-ios#1762)
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+- All eight `String` / `AttributedString` initializers of `OUDSAlertMessage`; use the new unified initializers taking `OUDSTextualContent` for `description` and `bulletList`
 - `String`, `AttributedString` and `LocalizedStringKey` initializers of `OUDSBulletList.Item`; use the new unified initializer taking `OUDSTextualContent`
 - `OUDSListItemData.Label.text(_:isBold:)`; use `.textual(_:isBold:)` or a string literal instead
 - All six `String` / `AttributedString` initializers of `OUDSListItemData`; use the new unified initializers taking `OUDSListItemData.Label` + `OUDSTextualContent`
