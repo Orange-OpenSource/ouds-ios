@@ -14,8 +14,6 @@
 import OUDSFoundations
 import SwiftUI
 
-// swiftlint:disable file_length
-
 /// Radio button item is a UI element that allows to select a single option from a set of mutually exclusive choices.
 /// Radio button item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
 ///

@@ -33,37 +33,23 @@ struct PinCodeHelperErrorTextContainer: View {
     }
 
     private var color: MultipleColorSemanticToken {
-        switch status {
-        case .error, .richError:
-            theme.colors.contentStatusNegative
-        case .enabled:
-            theme.colors.contentMuted
-        }
+        status.errorMessage != nil ? theme.colors.contentStatusNegative : theme.colors.contentMuted
+    }
+
+    // In error status, the error message replaces the helper text
+    private var content: OUDSTextualContent? {
+        status.errorMessage ?? helperText
     }
 
     private var text: String {
-        switch status {
-        case let .error(message):
-            message
-        case let .richError(message):
-            String(message.characters)
-        case .enabled:
-            helperText?.rawValue ?? ""
-        }
+        content?.rawValue ?? ""
     }
 
     private func textView() -> Text {
-        switch status {
-        case let .error(message):
-            Text(message)
-        case let .richError(message):
-            Text(message)
-        case .enabled:
-            if let helperText {
-                textView(for: helperText)
-            } else {
-                Text("") // Will never happen
-            }
+        if let content {
+            textView(for: content)
+        } else {
+            Text("") // Will never happen
         }
     }
 }

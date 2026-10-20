@@ -144,9 +144,17 @@ Available lengths: `.four`, `.six` (default).
 ```swift
 OUDSPinCodeInput($value)
 OUDSPinCodeInput($value, length: .four, autofocus: true)
-OUDSPinCodeInput($value, helperText: "Enter your PIN")
-// Error status → see "Common patterns" (status: .error / .richError)
+OUDSPinCodeInput($value, helperText: .raw("Enter your PIN"))
+OUDSPinCodeInput($value, helperText: .localized("pin_helper", bundle: Bundle.module))
+OUDSPinCodeInput($value, helperText: .rich(AttributedString(…)))
+// Error status: .textualError(message: OUDSTextualContent), raw (literal), localized or rich
+OUDSPinCodeInput($value, status: .textualError(message: .rich(AttributedString(…))))
 ```
+
+> `OUDSPinCodeInput` `helperText` as `String` / `AttributedString` / `LocalizedStringKey` (`helperText key:`) is **deprecated** since v3.2.0, use `OUDSTextualContent`.
+> `Status.error(message:)` and `Status.richError(message:)` are **deprecated** too, use `Status.textualError(message:)`.
+> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning). Write `helperText: .raw("abc")`.
+> A literal in `status: .textualError(message: "abc")` is fine.
 
 ---
 

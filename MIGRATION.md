@@ -302,6 +302,36 @@ String literals, `nil` or omitted `errorText` still work as is, without warning.
 
 **Reason for Change**: Unify the API around `OUDSTextualContent` and let the error message be rich or localized like for the other checkbox, radio and switch items.
 
+### `OUDSPinCodeInput` — unified initializer and `textualError` status
+
+The three initializers of `OUDSPinCodeInput` (`helperText` as `String`, `AttributedString`, or `LocalizedStringKey` with `helperText key:`, `tableName:` and `bundle:`)
+are deprecated and replaced by a single one taking `helperText: OUDSTextualContent? = nil`.
+
+The `OUDSPinCodeInput.Status` cases `.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by
+`.textualError(message: OUDSTextualContent)`. In v4, `.textualError` will be renamed `.error`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `helperText: LocalizedStringKey("key"), tableName: t, bundle: b` | `helperText: .localized("key", tableName: t, bundle: b)` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+| `helperText: nil` or no `helperText` | unchanged |
+
+> **Note on string literals**: `helperText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` and `LocalizedStringKey` are themselves expressible by a string literal. Write `helperText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someStringVariable` or `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `helperText: LocalizedStringKey(…), tableName:, bundle:` with `helperText: .localized(…, tableName:, bundle:)`.
+- Replace `.error(message:)` and `.richError(message:)` with `.textualError(message:)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads or status cases.
+
 ## v2.3.0 → v3.0.0
 
 ### Overview

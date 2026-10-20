@@ -24,7 +24,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
-| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(itemLabel:…)` / `init(viewLabel:accessibilityLabel:…)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. `OUDSCheckboxItemIndeterminate` — 2 initializers (`errorText: String?`) deprecated; 2 new initializers taking `errorText: OUDSTextualContent?`. `OUDSSwitchItem`, `OUDSCheckboxItem` and `OUDSRadioItem` — 4 initializers each (`errorText` `String?` / `AttributedString`) deprecated; 2 new initializers each taking `errorText: OUDSTextualContent?`. `OUDSAlertMessage` — 8 initializers (`String` / `AttributedString` `description`, `[String]` / `[AttributedString]` `bulletList`) deprecated; 2 new initializers (`label:` / `_ key:`) taking `description: OUDSTextualContent?` and `bulletList: [OUDSTextualContent]`. |
+| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(itemLabel:…)` / `init(viewLabel:accessibilityLabel:…)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. `OUDSPinCodeInput` — 3 initializers (`helperText` `String?` / `AttributedString` / `helperText key: LocalizedStringKey`) deprecated; 1 new initializer taking `helperText: OUDSTextualContent?`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message: OUDSTextualContent)`. `OUDSCheckboxItemIndeterminate` — 2 initializers (`errorText: String?`) deprecated; 2 new initializers taking `errorText: OUDSTextualContent?`. `OUDSSwitchItem`, `OUDSCheckboxItem` and `OUDSRadioItem` — 4 initializers each (`errorText` `String?` / `AttributedString`) deprecated; 2 new initializers each taking `errorText: OUDSTextualContent?`. `OUDSAlertMessage` — 8 initializers (`String` / `AttributedString` `description`, `[String]` / `[AttributedString]` `bulletList`) deprecated; 2 new initializers (`label:` / `_ key:`) taking `description: OUDSTextualContent?` and `bulletList: [OUDSTextualContent]`. |
 
 ---
 
@@ -741,6 +741,27 @@ The four initializers of `OUDSSwitchItem` (label `String` / `LocalizedStringKey`
 **Required action**:
 - Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
 - Replace `errorText: someString` / `errorText: "Message"` with `errorText: .raw(…)`.
+
+### OUDSPinCodeInput — unified initializer and `textualError` status
+
+The three initializers of `OUDSPinCodeInput` (`helperText` `String?` / `AttributedString` / `helperText key: LocalizedStringKey` + `tableName:` + `bundle:`) are deprecated and replaced by one taking `helperText: OUDSTextualContent? = nil`.
+`Status.error(message: String)` and `Status.richError(message: AttributedString)` are deprecated and replaced by `Status.textualError(message: OUDSTextualContent)` (renamed `.error` in v4).
+
+| Old (deprecated) | New (v3.2) |
+|---|---|
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `helperText: LocalizedStringKey("key"), tableName: t, bundle: b` | `helperText: .localized("key", tableName: t, bundle: b)` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+
+> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning), because `AttributedString` and `LocalizedStringKey` are expressible by a string literal. Always write `helperText: .raw("abc")`.
+
+**Required action**:
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someString` / `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `helperText: LocalizedStringKey(…), tableName:, bundle:` with `helperText: .localized(…, tableName:, bundle:)`.
+- Replace `.error(message:)` / `.richError(message:)` with `.textualError(message:)`.
 
 ### OUDSCheckboxItemIndeterminate — `errorText` as `OUDSTextualContent`
 

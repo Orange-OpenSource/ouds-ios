@@ -94,6 +94,10 @@ import SwiftUI
 /// ## Rich text
 ///
 /// Rich text can be used for error and helper texts.
+/// The helper text and the error message are ``OUDSTextualContent`` values: a raw `String`, a localized string
+/// with `.localized(_:tableName:bundle:)` or a rich text with `.rich(_:)` and an `AttributedString`.
+/// Prefer `.raw(_:)` to a bare string literal for a raw helper text, so the compiler selects without any doubt the initializer
+/// taking an ``OUDSTextualContent`` and does not emit a deprecation warning.
 ///
 /// Strong text can be used sparingly to highlight key information within the content.
 /// No other text styles should be used.
@@ -112,7 +116,16 @@ import SwiftUI
 ///     OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
 ///
 ///     // The component can be used in error contexts
-///     OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+///     OUDSPinCodeInput($pinCode, length: .six, status: .textualError(message: "The OTP code you entered is not correct"))
+///
+///     // The helper text and the error message can be localized or rich texts
+///     OUDSPinCodeInput($pinCode, helperText: .localized("pin_helper", bundle: Bundle.module))
+///     OUDSPinCodeInput($pinCode,
+///                      // Manage in your side errors for init
+///                      helperText: .rich(AttributedString(markdown: "Enter the **one-time code** sent to your device")))
+///     OUDSPinCodeInput($pinCode,
+///                      // Manage in your side errors for init
+///                      status: .textualError(message: .rich(AttributedString(markdown: "The code is **not correct**"))))
 ///
 ///     // Show the written characters
 ///     OUDSPinCodeInput($pinCode, hiddenCharacters: false)
@@ -189,73 +202,68 @@ public struct OUDSPinCodeInput: View {
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides a clear accessible error `message` positioned below the input.
         /// This message must not be empty.
+        @available(*, deprecated, message: "Use case .textualError(message:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case error(message: String)
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides a clear accessible error `message` positioned below the input.
         /// This message must not be empty. The message can be a rich text.
+        @available(*, deprecated, message: "Use case .textualError(message:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case richError(message: AttributedString)
+
+        /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
+        /// It provides a clear accessible error `message` positioned below the input.
+        /// This message must not be empty. The message is an ``OUDSTextualContent``: raw, localized or rich text.
+        ///
+        /// ```swift
+        ///     OUDSPinCodeInput($pinCode, status: .textualError(message: .raw("The code is not correct")))
+        /// ```
+        case textualError(message: OUDSTextualContent) // TODO: v4 - When .error and .richError removed, rename from "textualError" to "error"
+
+        // MARK: Equatable
+
+        public static func == (lhs: Self, rhs: Self) -> Bool {
+            switch (lhs.errorMessage, rhs.errorMessage) {
+            case (nil, nil):
+                true
+            case let (lhsMessage?, rhsMessage?):
+                lhsMessage.rawValue == rhsMessage.rawValue
+            default:
+                false
+            }
+        }
     }
 
     // MARK: - Initializers
 
-    // swiftlint:disable function_default_parameter_at_end
-
     /// Defines a PIN code imput component with several boxes to fill the code
+    ///
+    /// The `helperText` is an ``OUDSTextualContent``: a raw `String`, a localized string or a rich `AttributedString`.
     ///
     /// ```swift
     ///     OUDSPinCodeInput($pinCode)
-    /// ```
     ///
-    /// - Parameters:
-    ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
-    ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
-    ///   - helperText: A text to display below the PIN code input container, default set to *nil*
-    ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
-    ///   - status: Default set to *.enabled*, defines if there is an error context or not
-    ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
-    public init(_ value: Binding<String>,
-                length: OUDSPinCodeInput.Length = .six,
-                hiddenCharacters: Bool = true,
-                helperText: String? = nil,
-                isOutlined: Bool = false,
-                status: Self.Status = .enabled,
-                autofocus: Bool = false)
-    {
-        _value = value
-        self.length = length
-        self.hiddenCharacters = hiddenCharacters
-        self.helperText = if let helperText {
-            .raw(helperText)
-        } else {
-            nil
-        }
-        self.isOutlined = isOutlined
-        self.status = status
-        self.autofocus = autofocus
-    }
-
-    /// Defines a PIN code imput component with several boxes to fill the code and an helper text in rich text
+    ///     OUDSPinCodeInput($pinCode, helperText: .raw("Enter your PIN code"))
     ///
-    /// ```swift
+    ///     OUDSPinCodeInput($pinCode, helperText: .localized("pin_helper", bundle: Bundle.module))
+    ///
     ///     OUDSPinCodeInput($pinCode,
     ///                      // Manage in your side errors for init
-    ///                      helperText: AttributedString(markdown: "Enter the **one-time code** sent to your device"))
+    ///                      helperText: .rich(AttributedString(markdown: "Enter the **one-time code** sent to your device")))
     /// ```
     ///
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
     ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
-    ///   - helperText: A text to display below the PIN code input container, in rich text
+    ///   - helperText: A text to display below the PIN code input container, raw, localized or rich text, default set to *nil*
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
                 hiddenCharacters: Bool = true,
-                helperText: AttributedString,
+                helperText: OUDSTextualContent? = nil,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled,
                 autofocus: Bool = false)
@@ -263,48 +271,11 @@ public struct OUDSPinCodeInput: View {
         _value = value
         self.length = length
         self.hiddenCharacters = hiddenCharacters
-        self.helperText = .rich(helperText)
+        self.helperText = helperText
         self.isOutlined = isOutlined
         self.status = status
         self.autofocus = autofocus
     }
-
-    /// Defines a PIN code imput component with several boxes to fill the code, and an helper text in rich text.
-    ///
-    /// ```swift
-    ///     OUDSPinCodeInput($pinCode, helperText: LocalizedStringKey("pin_helper"), bundle: Bundle.module)
-    /// ```
-    ///
-    /// - Parameters:
-    ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
-    ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
-    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
-    ///   - status: Default set to *.enabled*, defines if there is an error context or not
-    ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
-    public init(_ value: Binding<String>,
-                length: OUDSPinCodeInput.Length = .six,
-                hiddenCharacters: Bool = true,
-                helperText key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                isOutlined: Bool = false,
-                status: Self.Status = .enabled,
-                autofocus: Bool = false)
-    {
-        _value = value
-        self.length = length
-        self.hiddenCharacters = hiddenCharacters
-        helperText = .raw(key.resolved(tableName: tableName, bundle: bundle))
-        self.isOutlined = isOutlined
-        self.status = status
-        self.autofocus = autofocus
-    }
-
-    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 
@@ -326,4 +297,26 @@ public struct OUDSPinCodeInput: View {
                alignment: .leading)
     }
 }
+
+// MARK: - Status helpers
+
+// swiftlint:disable no_grouping_extension
+@available(iOS 15, visionOS 1, *)
+extension OUDSPinCodeInput.Status {
+
+    /// The error message as an ``OUDSTextualContent``, whatever the case used (`nil` if no error)
+    var errorMessage: OUDSTextualContent? {
+        switch self {
+        case .enabled:
+            nil
+        case let .error(message):
+            .raw(message)
+        case let .richError(message):
+            .rich(message)
+        case let .textualError(message):
+            message
+        }
+    }
+}
+// swiftlint:enable no_grouping_extension
 #endif

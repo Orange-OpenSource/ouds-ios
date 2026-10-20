@@ -581,7 +581,12 @@ OUDSPinCodeInput($pinCode)
 OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
 
 // The component can be used in error contexts
-OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+OUDSPinCodeInput($pinCode, length: .six, status: .textualError(message: "The OTP code you entered is not correct"))
+
+// The helper text and the error message are OUDSTextualContent values: raw, localized or rich text
+OUDSPinCodeInput($pinCode, helperText: .localized("pin_helper", bundle: Bundle.module))
+OUDSPinCodeInput($pinCode,
+                 helperText: .rich(AttributedString(markdown: "Enter the **one-time code** sent to your device"))) // Manage in your side errors for init
 ```
 
 ### Text area
