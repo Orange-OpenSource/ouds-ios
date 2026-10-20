@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: List open PRs
         id: list-prs
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           result-encoding: string
           script: |
@@ -57,7 +57,7 @@ jobs:
 
       - name: Process renovate PRs
         if: steps.list-prs.outputs.result != '[]'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           RENOVATE_PRS: ${{ steps.list-prs.outputs.result }}
         with:
