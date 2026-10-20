@@ -283,6 +283,25 @@ are deprecated and replaced by two unified ones taking `errorText: OUDSTextualCo
 
 **Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
 
+### `OUDSCheckboxItemIndeterminate` — `errorText` as `OUDSTextualContent`
+
+The two initializers of `OUDSCheckboxItemIndeterminate` (label as `String` or `LocalizedStringKey`) now take `errorText: OUDSTextualContent? = nil`
+instead of `errorText: String? = nil`. The error message can now also be a localized string or a rich `AttributedString`, which was not possible before.
+The former initializers taking `errorText: String?` are deprecated.
+
+**Impact**: Low — all existing call sites keep working; only calls passing a `String` variable emit a deprecation warning.
+String literals, `nil` or omitted `errorText` still work as is, without warning.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `errorText: someString` | `errorText: .raw(someString)` |
+| `errorText: "Message"` (literal), `nil` or omitted | unchanged |
+
+**Required Action**:
+- Replace `errorText: someStringVariable` with `errorText: .raw(someStringVariable)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` and let the error message be rich or localized like for the other checkbox, radio and switch items.
+
 ## v2.3.0 → v3.0.0
 
 ### Overview

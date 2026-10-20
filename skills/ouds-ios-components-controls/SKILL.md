@@ -24,7 +24,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 | Read-only | `isReadOnly: true` |
 | Disabled | `.disabled(true)` — never combine with `isError` or `isReadOnly` |
 
-> `OUDSSwitchItem`, `OUDSCheckboxItem` and `OUDSRadioItem` `errorText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
+> `OUDSSwitchItem`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate` and `OUDSRadioItem` `errorText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
 > **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning) because `AttributedString` is expressible by a string literal. Write `errorText: .raw("abc")`.
 
 > **Forbidden combinations** (fatal error at runtime): `isError` + `isReadOnly`, `isError` + `.disabled`, `isReadOnly` + `.disabled`
@@ -51,7 +51,7 @@ OUDSCheckboxItem("Label", isOn: $isOn,
 // LocalizedStringKey:
 OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
                  image: OUDSImage(asset: Image(decorative: "ic")))
-// Indeterminate (three states) — also accepts LocalizedStringKey:
+// Indeterminate (three states) — also accepts LocalizedStringKey and an OUDSTextualContent errorText:
 OUDSCheckboxItemIndeterminate("Label", selection: $selection,
                                image: OUDSImage(asset: Image(decorative: "ic")))
 OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module,

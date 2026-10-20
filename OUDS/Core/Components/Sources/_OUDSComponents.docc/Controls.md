@@ -74,6 +74,12 @@ OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
                               selection: $selection,
                               description: "from Outer Space II")
 
+// A three-states checkbox on error, the error message being an OUDSTextualContent (raw, localized or rich)
+OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
+                              selection: $selection,
+                              isError: true,
+                              errorText: .rich(AttributedString(markdown: "Please select **at least one** item"))) // Manage in your side errors for init
+
 // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
 // with a reversed layout, and exposing only two states through isOn binding
 OUDSCheckboxItem("We live in a fabled world",

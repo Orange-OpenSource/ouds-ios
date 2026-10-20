@@ -165,7 +165,6 @@ public struct OUDSAlertMessage: View {
     // MARK: - Initializers
 
     // For API signature consistency disable this warning
-    // swiftlint:disable function_default_parameter_at_end
 
     /// Creates an alert message.
     ///
@@ -190,8 +189,8 @@ public struct OUDSAlertMessage: View {
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
     ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
-    ///   - description: An optional supplementary text in an alert message, raw, localized or rich. Use only when additional detail or guidance is needed beyond the label. It should remain
-    ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
+    ///   - description: An optional supplementary text in an alert message, raw, localized or rich. Use only when additional detail or guidance is needed beyond the label.
+    ///   It should remain short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points, each one raw, localized or rich, to be displayed in the alert message following the label or the optional `description`.
     ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
     ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
@@ -241,8 +240,8 @@ public struct OUDSAlertMessage: View {
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
-    ///   - description: An optional supplementary text in an alert message, raw, localized or rich. Use only when additional detail or guidance is needed beyond the label. It should remain
-    ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
+    ///   - description: An optional supplementary text in an alert message, raw, localized or rich. Use only when additional detail or guidance is needed beyond the label.
+    ///   It should remain short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points, each one raw, localized or rich, to be displayed in the alert message following the label or the optional `description`.
     ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
     ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
@@ -265,8 +264,6 @@ public struct OUDSAlertMessage: View {
                   link: link,
                   onClose: onClose)
     }
-
-    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: - Body
 
