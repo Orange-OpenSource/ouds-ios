@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- GitHub Actions `actions/github-script` from v7 to v9 for `check-renovate-dependencies-prs` workflow
 - GitHub Actions `ossf/scorecard-action` from v2.4.4 to v2.5.0 for `scorecard` workflow
 - GitHub Actions `ruby/setup-ruby` action from v1.327.0 to v1.331.0 for `build-and-test` and `build-xcframework` workflows
 - GitHub Actions `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `build-xcframework` and `scorecard` workflows
