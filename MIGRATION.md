@@ -385,6 +385,32 @@ Its `status` is the `OUDSTextInput.Status`: see the `OUDSTextInput` section abov
 
 **Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
 
+### `OUDSTextArea` — `textual` helper text and `textualError` status
+
+`OUDSTextArea` has no initializer to deprecate, but its two enums changed:
+- `OUDSTextArea.HelperText.plain(String)` and `.rich(AttributedString)` are deprecated and replaced by `.textual(_: OUDSTextualContent)`.
+  `.charactersMaxCount(_:)` is unchanged.
+- `OUDSTextArea.Status.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by
+  `.textualError(message: OUDSTextualContent)`. In v4, `.textualError` will be renamed `.error`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `helperText: .plain("Message")` | `helperText: .textual("Message")` |
+| `helperText: .plain(someString)` | `helperText: .textual(.raw(someString))` |
+| `helperText: .rich(myAttributedString)` | `helperText: .textual(.rich(myAttributedString))` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+| `helperText: .charactersMaxCount(500)` | unchanged |
+
+**Required Action**:
+- Replace `.plain(…)` with `.textual(…)` (a string literal is enough, a `String` variable needs `.raw(…)`).
+- Replace `.rich(myAttributedString)` with `.textual(.rich(myAttributedString))`.
+- Replace `.error(message:)` and `.richError(message:)` with `.textualError(message:)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying enum cases.
+
 ## v2.3.0 → v3.0.0
 
 ### Overview

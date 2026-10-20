@@ -17,7 +17,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 |---|---|
 | Error state | `isError: true, errorText: .raw("Message")` — `errorText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
 | Rich error | `errorText: .rich(AttributedString)` |
-| Plain helper | `helperText: .raw("…")` — `helperText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
+| Plain helper | `helperText: .raw("…")` (`OUDSTextArea`: `helperText: .textual("…")`) — `helperText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
 | Rich helper | `helperText: .rich(AttributedString)` |
 | Error status (inputs) | `status: .textualError(message: "…")` — message is an `OUDSTextualContent` |
 | Rich error status | `status: .textualError(message: .rich(AttributedString))` |
@@ -232,19 +232,24 @@ OUDSTextInput(label: "Label", text: $text, status: .textualError(message: .local
 
 ## Text Area
 
-`helperText` type: `.plain(String)` | `.rich(AttributedString)` | `.charactersMaxCount(UInt16)`
+`helperText` type: `.textual(OUDSTextualContent)` (raw string literal, `.raw`, `.localized` or `.rich`) | `.charactersMaxCount(UInt16)`
 
 ```swift
 OUDSTextArea(label: "Label", text: $text)
 OUDSTextArea(label: "Label", text: $text, placeholder: "Describe…")
-OUDSTextArea(label: "Label", text: $text, helperText: .plain("Max 500 chars."))
+OUDSTextArea(label: "Label", text: $text, helperText: .textual("Max 500 chars."))
+OUDSTextArea(label: "Label", text: $text, helperText: .textual(.rich(AttributedString(…))))
 OUDSTextArea(label: "Label", text: $text, helperText: .charactersMaxCount(500))
 OUDSTextArea(label: "Label", text: $text,
              helperLink: .init(text: "Learn more") { openUrl(url) })
 // Fixed height — no vertical growth, scroll from first overflow line
 OUDSTextArea(label: "Label", text: $text, constrainedMaxHeight: true)
-// Error status → see "Common patterns"
+// Error status: .textualError(message: OUDSTextualContent), raw (literal), localized or rich
+OUDSTextArea(label: "Label", text: $text, status: .textualError(message: .rich(AttributedString(…))))
 ```
+
+> `OUDSTextArea.HelperText.plain(_:)` and `.rich(_:)` are **deprecated** since v3.2.0, use `.textual(_:)` with an `OUDSTextualContent`.
+> `OUDSTextArea.Status.error(message:)` and `.richError(message:)` are **deprecated** too, use `.textualError(message:)`.
 
 > Height is controlled by two component tokens on `theme.textArea`:
 > - `sizeMinHeightInput` (72 pt by default) — minimum height, always applied

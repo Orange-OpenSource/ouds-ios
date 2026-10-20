@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `text area` component `textual` helper text and `textualError` status with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
 - `password input` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText` (Orange-OpenSource/ouds-ios#1797)
 - `text input` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
 - `PIN code input` component init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
@@ -33,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+- `OUDSTextArea.HelperText` cases `.plain(_:)` and `.rich(_:)`, and `OUDSTextArea.Status` cases `.error(message:)` and `.richError(message:)`; use `.textual(_:)` and `.textualError(message:)`
 - All four `String` / `AttributedString` `helperText` initializers of `OUDSPasswordInput`; use the new unified initializers taking `OUDSTextualContent`
 - All four `String` / `AttributedString` `helperText` initializers of `OUDSTextInput`, and `OUDSTextInput.Status` cases `.error(message:)` and `.richError(message:)`; use the new unified initializers taking `OUDSTextualContent` and `.textualError(message:)`
 - All three `String` / `AttributedString` / `LocalizedStringKey` `helperText` initializers of `OUDSPinCodeInput`, and `OUDSPinCodeInput.Status` cases `.error(message:)` and `.richError(message:)`; use the new unified initializer taking `OUDSTextualContent` and `.textualError(message:)`

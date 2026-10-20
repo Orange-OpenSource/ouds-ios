@@ -44,26 +44,20 @@ struct TextAreaHelperErrorTextContainer: View {
 
     /// Returns the Text view to display, or nil when there is nothing to show.
     private var renderedText: Text? {
-        switch status {
-        case let .error(message):
-            return Text(message)
-        case let .richError(message):
-            return Text(message)
-        case .enabled, .readOnly, .loading, .disabled:
-            if isOverLimit, case .charactersMaxCount = helperText {
-                return Text(tooManyCharactersText(excess: excessCount))
-            }
-            switch helperText {
-            case let .plain(string):
-                return Text(string)
-            case let .rich(string):
-                return Text(string)
-            case .charactersMaxCount:
-                return Text(remainingCharactersText(count: remainingCount))
-            case .none:
-                return nil
-            }
+        // In error status, the error message replaces the helper text
+        if let errorMessage = status.errorMessage {
+            return textView(for: errorMessage)
         }
+
+        guard let helperText else { return nil }
+
+        if case .charactersMaxCount = helperText {
+            return isOverLimit
+                ? Text(tooManyCharactersText(excess: excessCount))
+                : Text(remainingCharactersText(count: remainingCount))
+        }
+
+        return helperText.textualContent.map { textView(for: $0) }
     }
 
     private var color: MultipleColorSemanticToken {
@@ -72,7 +66,7 @@ struct TextAreaHelperErrorTextContainer: View {
         switch status {
         case .enabled, .readOnly, .loading:
             return theme.colors.contentMuted
-        case .error, .richError:
+        case .error, .richError, .textualError:
             return theme.colors.contentStatusNegative
         case .disabled:
             return theme.colors.actionDisabled

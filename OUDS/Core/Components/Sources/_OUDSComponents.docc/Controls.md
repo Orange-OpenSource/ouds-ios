@@ -629,10 +629,14 @@ OUDSTextArea(label: "Comments", text: $text)
 // With a placeholder shown when the field is empty
 OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
 
-// With a plain helper text
+// With a helper text, an OUDSTextualContent: raw (string literal), localized or rich text
 OUDSTextArea(label: "Comments",
              text: $text,
-             helperText: .plain("Maximum 500 characters."))
+             helperText: .textual("Maximum 500 characters."))
+
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .textual(.rich(AttributedString(markdown: "Maximum **500** characters.")))) // Manage in your side errors for init
 
 // With a maximum character count — remaining count rendered bold, error style when exceeded
 OUDSTextArea(label: "Comments",
@@ -651,7 +655,12 @@ OUDSTextArea(label: "Comments", text: $text, helperLink: helperLink)
 // With error status — error message replaces the helper text
 OUDSTextArea(label: "Comments",
              text: $text,
-             status: .error(message: "This field cannot be empty."))
+             status: .textualError(message: "This field cannot be empty."))
+
+// The error message can also be localized or rich text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             status: .textualError(message: .rich(AttributedString(markdown: "This field **must be defined**.")))) // Manage in your side errors for init
 ```
 
 ### Text input
