@@ -223,6 +223,12 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
               image: OUDSImage(asset: Image(decorative: "il_someImage"),
                                flipped: layoutDirection == .rightToLeft,
                                renderingMode: .original))
+
+// An error message is an OUDSTextualContent: raw, localized or rich text
+OUDSRadioItem("Lucy in the Sky with Diamonds",
+              isOn: $isOn,
+              isError: true,
+              errorText: .rich(AttributedString(markdown: "Please select **one flavor**"))) // Manage in your side errors for init
 ```
 
 #### Radio picker

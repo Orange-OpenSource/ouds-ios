@@ -24,7 +24,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 | Read-only | `isReadOnly: true` |
 | Disabled | `.disabled(true)` — never combine with `isError` or `isReadOnly` |
 
-> `OUDSSwitchItem` and `OUDSCheckboxItem` `errorText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
+> `OUDSSwitchItem`, `OUDSCheckboxItem` and `OUDSRadioItem` `errorText` as `String` / `AttributedString` is **deprecated** since v3.2.0, use `OUDSTextualContent`.
 > **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning) because `AttributedString` is expressible by a string literal. Write `errorText: .raw("abc")`.
 
 > **Forbidden combinations** (fatal error at runtime): `isError` + `isReadOnly`, `isError` + `.disabled`, `isReadOnly` + `.disabled`
@@ -85,25 +85,27 @@ OUDSCheckboxPicker(selections: $selections, checkboxes: data,
 ```swift
 OUDSRadio(isOn: $isOn, accessibilityLabel: "Label")
 OUDSRadioItem("Label", isOn: $isOn)
-OUDSRadioItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic")))
+OUDSRadioItem("Label", isOn: $isOn, image: OUDSImage(asset: Image(decorative: "ic")))
 // Raw (non-tinted) image:
 OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+              image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 // Flip icon for RTL:
 OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(systemName: "chevron.right"),
+              image: OUDSImage(asset: Image(systemName: "chevron.right"),
                               flipped: layoutDirection == .rightToLeft))
 // LocalizedStringKey:
 OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "ic")))
+              image: OUDSImage(asset: Image(decorative: "ic")))
+// Error text: raw, localized or rich OUDSTextualContent
+OUDSRadioItem("Label", isOn: $isOn, isError: true, errorText: .rich(AttributedString(…)))
 // Error / helper / disabled → see "Common patterns" above
 OUDSRadioPicker(selection: $selection,
                 radios: [
                     .init(tag: "a", label: "Option A"),
                     .init(tag: "b", label: "Option B",
-                          icon: OUDSImage(asset: Image(systemName: "flame"))),
+                          image: OUDSImage(asset: Image(systemName: "flame"))),
                     .init(tag: "c", label: "Option C",
-                          icon: OUDSImage(asset: Image(decorative: "il_brand"),
+                          image: OUDSImage(asset: Image(decorative: "il_brand"),
                                          renderingMode: .original)),
                 ],
                 placement: .vertical)
