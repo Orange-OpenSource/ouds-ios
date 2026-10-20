@@ -544,7 +544,7 @@ SomeView()
 // Leading + trailing split — works on all supported OS versions
 SomeView()
     .toolBarBottom(leadingItems: {
-        OUDSToolBarItem(label: .text("Some label")) { /* Action to process */ }
+        OUDSToolBarItem(label: "Some label") { /* Action to process */ }
     }, trailingItems: {
         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
     })
@@ -553,7 +553,7 @@ SomeView()
 // On earlier OS versions the system splits the items into leading/trailing positions.
 SomeView()
     .toolBarBottom(groupedItems: {
-        OUDSToolBarItem(label: .text("Save")) { /* Action to process */ }
+        OUDSToolBarItem(label: "Save") { /* Action to process */ }
         OUDSToolBarItem(icon: Image(decorative: "ic_delete"), accessibilityLabel: "Delete") { /* Action to process */ }
     })
 ```

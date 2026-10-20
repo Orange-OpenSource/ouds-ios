@@ -58,7 +58,7 @@ import SwiftUI
 ///     )
 ///
 ///     // Trailing with a tag
-///     let tag = OUDSTag(label: .text("New"), size: .small)
+///     let tag = OUDSTag(label: "New", size: .small)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(itemLabel: "Feature"),
 ///         trailing: .tag(tag)

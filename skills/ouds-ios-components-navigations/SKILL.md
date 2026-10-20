@@ -98,7 +98,7 @@ ContentView()
 // Bottom — grouped (iOS 26+ only)
 ContentView()
     .toolBarBottom(groupedItems: {
-        OUDSToolBarItem(itemLabel: "Save") {}
+        OUDSToolBarItem(label: "Save") {}
         OUDSToolBarItem(icon: Image("ic_delete"), accessibilityLabel: "Delete") {}
     })
 ```
@@ -106,11 +106,11 @@ ContentView()
 **`OUDSToolBarItem` reference:**
 
 ```swift
-OUDSToolBarItem(itemLabel: "Edit") {}                              // text action
+OUDSToolBarItem(label: "Edit") {}                              // text action
 OUDSToolBarItem(icon: Image("ic"), accessibilityLabel: "X") {} // icon action
 OUDSToolBarItem(navigation: .back())                           // back — auto dismiss
-OUDSToolBarItem(navigation: .back(itemLabel: "Cancel"))            // back with label (ignored iOS 26+)
-OUDSToolBarItem(navigation: .back(itemLabel: "Back") { saveDraft() }) // back + custom action
+OUDSToolBarItem(navigation: .back(label: "Cancel"))            // back with label (ignored iOS 26+)
+OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() }) // back + custom action
 OUDSToolBarItem(navigation: .close)                            // close — NO closure, auto dismiss
 
 // Badge on icon (v2.0.0+) — icon actions only
@@ -131,9 +131,9 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 // Conditional (result-builder syntax)
 .toolBarTop("Title", principalItem: showSearch ? OUDSToolBarItem(icon: Image("ic_search"), accessibilityLabel: "Search") { showSearch = false } : nil, trailingItems: {
     if isEditing {
-        OUDSToolBarItem(itemLabel: "Done") { isEditing = false }
+        OUDSToolBarItem(label: "Done") { isEditing = false }
     } else {
-        OUDSToolBarItem(itemLabel: "Edit") { isEditing = true }
+        OUDSToolBarItem(label: "Edit") { isEditing = true }
     }
 })
 ```

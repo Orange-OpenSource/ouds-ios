@@ -16,7 +16,7 @@ import SwiftUI
 /// Deprecated initializers of ``OUDSListItemData``.
 ///
 /// All six initializers below were introduced in v3.0.0 (one per combination of label type
-/// × overline type) and are now deprecated in favor of the three unified initializers added
+/// × overline type) and are now deprecated in favor of the two unified initializers added
 /// in v3.2.0 that accept ``OUDSTextualContent`` for every optional textual field.
 ///
 /// They forward to the new unified initializers so existing call sites keep working unchanged;

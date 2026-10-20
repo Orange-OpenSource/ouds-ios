@@ -29,11 +29,6 @@ deprecated in favor of the new `.textual` case.
 
 - Use version 3.0.0 or later.
 
-#### Backward compatibility
-
-- **Fully source-compatible**: all existing call sites keep compiling. They will emit
-  deprecation warnings but still work. No public API has been removed.
-
 ### Public `OUDSTextualContent` type
 
 The previously-internal `OUDSTextualContent` enum is now **public** and `@frozen`. It represents

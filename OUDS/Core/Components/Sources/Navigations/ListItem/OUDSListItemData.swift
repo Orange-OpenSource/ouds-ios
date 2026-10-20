@@ -182,7 +182,7 @@ public struct OUDSListItemData {
         /// - Parameters:
         ///   - text: The text string to display as the label.
         ///   - isBold: When `true`, the label is rendered with a bold font weight.
-        @available(*, deprecated, message: "Use case .textual(:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
+        @available(*, deprecated, message: "Use case .textual(_:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case text(_: String, isBold: Bool = false)
 
         /// A text, which can be defined from a raw string, a localized string or attributed string
