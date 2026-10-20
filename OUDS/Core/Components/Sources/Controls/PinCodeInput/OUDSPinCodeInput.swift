@@ -113,6 +113,9 @@ import SwiftUI
 ///
 ///     // The component can be used in error contexts
 ///     OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+///
+///     // Show the written characters
+///     OUDSPinCodeInput($pinCode, hiddenCharacters: false)
 /// ```
 ///
 /// ## Design documentation
@@ -137,7 +140,7 @@ import SwiftUI
 ///
 /// ![A PIN code input component in light and dark modes with Wireframe theme](component_pinCodeInput_Wireframe)
 ///
-/// - Version: 1.3.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, visionOS 1, *)
 public struct OUDSPinCodeInput: View {
@@ -154,6 +157,7 @@ public struct OUDSPinCodeInput: View {
 
     @Binding private var value: String
     private let length: Length
+    private let hiddenCharacters: Bool
     private let helperText: TextualContent?
     private let isOutlined: Bool
     private let status: Self.Status
@@ -206,12 +210,14 @@ public struct OUDSPinCodeInput: View {
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
+    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - helperText: A text to display below the PIN code input container, default set to *nil*
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
+                hiddenCharacters: Bool = true,
                 helperText: String? = nil,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled,
@@ -219,6 +225,7 @@ public struct OUDSPinCodeInput: View {
     {
         _value = value
         self.length = length
+        self.hiddenCharacters = hiddenCharacters
         self.helperText = if let helperText {
             .raw(helperText)
         } else {
@@ -233,18 +240,21 @@ public struct OUDSPinCodeInput: View {
     ///
     /// ```swift
     ///     OUDSPinCodeInput($pinCode,
-    ///                      helperText: AttributedString(markdown: "Enter the **one-time code** sent to your device"))  // Manage in your side errors for init
+    ///                      // Manage in your side errors for init
+    ///                      helperText: AttributedString(markdown: "Enter the **one-time code** sent to your device"))
     /// ```
     ///
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
+    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - helperText: A text to display below the PIN code input container, in rich text
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
+                hiddenCharacters: Bool = true,
                 helperText: AttributedString,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled,
@@ -252,6 +262,7 @@ public struct OUDSPinCodeInput: View {
     {
         _value = value
         self.length = length
+        self.hiddenCharacters = hiddenCharacters
         self.helperText = .attributed(helperText)
         self.isOutlined = isOutlined
         self.status = status
@@ -267,6 +278,7 @@ public struct OUDSPinCodeInput: View {
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
+    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
@@ -275,6 +287,7 @@ public struct OUDSPinCodeInput: View {
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
+                hiddenCharacters: Bool = true,
                 helperText key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -284,6 +297,7 @@ public struct OUDSPinCodeInput: View {
     {
         _value = value
         self.length = length
+        self.hiddenCharacters = hiddenCharacters
         helperText = .raw(key.resolved(tableName: tableName, bundle: bundle))
         self.isOutlined = isOutlined
         self.status = status
@@ -297,7 +311,12 @@ public struct OUDSPinCodeInput: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                PinCodeInputContainer(_value, length: length, isError: status != .enabled, isOutlined: isOutlined, autofocus: autofocus)
+                PinCodeInputContainer(_value,
+                                      length: length,
+                                      hiddenCharacters: hiddenCharacters,
+                                      isError: status != .enabled,
+                                      isOutlined: isOutlined,
+                                      autofocus: autofocus)
                     .id(length)
 
                 PinCodeHelperErrorTextContainer(helperText: helperText, status: status)

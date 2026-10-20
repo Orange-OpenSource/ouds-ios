@@ -24,6 +24,8 @@ struct PinCodeInputContainer: View {
     @Binding private var value: String
     /// Number of boxes / size of the code to write
     private let length: OUDSPinCodeInput.Length
+    /// Flag to hide or show the written characters
+    private let hiddenCharacters: Bool
     /// If there is an error context about the value of the container
     private let isError: Bool
     /// If the outline layout must be applied on the container
@@ -45,12 +47,14 @@ struct PinCodeInputContainer: View {
 
     init(_ value: Binding<String>,
          length: OUDSPinCodeInput.Length,
+         hiddenCharacters: Bool,
          isError: Bool,
          isOutlined: Bool,
          autofocus: Bool)
     {
         _value = value
         self.length = length
+        self.hiddenCharacters = hiddenCharacters
         self.isError = isError
         self.isOutlined = isOutlined
         self.autofocus = autofocus
@@ -194,7 +198,7 @@ struct PinCodeInputContainer: View {
                 OUDSPinCodeInput.placeholderCharacter
             }
         } else {
-            OUDSPinCodeInput.obfuscationCharacter
+            hiddenCharacters ? OUDSPinCodeInput.obfuscationCharacter : digits[index]
         }
     }
 
@@ -202,13 +206,15 @@ struct PinCodeInputContainer: View {
         #if !os(macOS)
         // Compute at this level the typography to use to be sure environment values for size class
         // are retrieved in the suitable thread at the best moment
+        let text = displayText(for: index)
+        let isSymbol = text == OUDSPinCodeInput.placeholderCharacter || text == OUDSPinCodeInput.obfuscationCharacter
         let uiFont = Font.makeFont(
-            family: nil,
+            family: isSymbol ? nil : theme.fontFamily,
             from: theme.fonts.labelModerateLarge,
             isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
         return BackspaceDetectingTextField(
             text: $digits[index],
-            displayText: .constant(displayText(for: index)),
+            displayText: .constant(text),
             font: uiFont,
             index: index,
             a11yLabel: accessibilityLabel(for: index),
