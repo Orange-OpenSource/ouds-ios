@@ -24,7 +24,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
-| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(itemLabel:…)` / `init(viewLabel:accessibilityLabel:…)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. |
+| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(itemLabel:…)` / `init(viewLabel:accessibilityLabel:…)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. |
 
 ---
 
@@ -684,6 +684,25 @@ OUDSStaticListItem(
 
 > **Note on overload resolution**: as long as the deprecated initializers remain available, `OUDSListItemData(label: "Foo")` still resolves to the deprecated overload and warns. Using the `itemLabel:` argument label selects the new initializer.
 
+### OUDSBulletList.Item — unified initializer with `OUDSTextualContent`
+
+The three initializers of `OUDSBulletList.Item` (`String`, `AttributedString`, `LocalizedStringKey` + `tableName:` / `bundle:`) are deprecated and replaced by a single one:
+- `init(_ text: OUDSTextualContent, subListType:, subListTextStyle:, subListHasBoldText:, subItems:)`
+
+A string literal is converted to `.raw(…)` without any warning: `OUDSBulletList.Item("Foo")` needs no change. The deprecated initializers are marked `@_disfavoredOverload`, so only calls passing a `String` or `AttributedString` **variable** (or a `LocalizedStringKey`) warn.
+
+| Old (deprecated) | New (v3.2) |
+|---|---|
+| `OUDSBulletList.Item("Foo")` (literal) | unchanged |
+| `OUDSBulletList.Item(someString)` | `OUDSBulletList.Item(.raw(someString))` |
+| `OUDSBulletList.Item(myAttributedString)` | `OUDSBulletList.Item(.rich(myAttributedString))` |
+| `OUDSBulletList.Item(LocalizedStringKey("key"), tableName: t, bundle: b)` | `OUDSBulletList.Item(.localized("key", tableName: t, bundle: b))` |
+
+**Required action**:
+- Replace `Item(myAttributedString)` with `Item(.rich(myAttributedString))`.
+- Replace `Item(someStringVariable)` with `Item(.raw(someStringVariable))`.
+- Replace `Item(LocalizedStringKey(…), tableName:, bundle:)` with `Item(.localized(…, tableName:, bundle:))`.
+
 ---
 
 ## Verification checklist
@@ -713,6 +732,10 @@ grep -rn \
 grep -rnE \
   'OUDSListItemData\(\s*label:|OUDSListItemData\([^)]*hasBoldLabel:|OUDSListItemData\([^)]*key:|(itemLabel|label):\s*\.text\(' \
   --include="*.swift" .
+
+# v3.2.0 deprecated OUDSBulletList.Item String/AttributedString/LocalizedStringKey initializers.
+# Review manually, or check the build warnings mentioning `OUDSTextualContent`.
+swift build 2>&1 | grep -i "OUDSTextualContent"
 
 swift test
 ```

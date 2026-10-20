@@ -23,6 +23,9 @@ The six former initializers (one per combination of label type × overline type)
 deprecated and replaced by two unified initializers. The `OUDSListItemData.Label.text` case is
 deprecated in favor of the new `.textual` case.
 
+The `OUDSBulletList.Item` initializers follow the same logic: the `String`, `AttributedString` and
+`LocalizedStringKey` initializers are deprecated and replaced by a single initializer taking an `OUDSTextualContent`.
+
 ### Before You Begin
 
 #### Prerequisites
@@ -134,6 +137,36 @@ OUDSListItemData(
 
 **Reason for Change**: Unify the API so that every textual field of a list item can carry
 rich text, not only the overline, without multiplying initializer overloads.
+
+### `OUDSBulletList.Item` — unified initializer
+
+The three initializers of `OUDSBulletList.Item` (`String`, `AttributedString` and `LocalizedStringKey`)
+are deprecated and replaced by a single one taking an ``OUDSTextualContent``:
+
+```swift
+public init(_ text: OUDSTextualContent,
+            subListType: OUDSBulletList.Type? = nil,
+            subListTextStyle: OUDSBulletList.TextStyle? = nil,
+            subListHasBoldText: Bool? = nil,
+            @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+```
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+String literals still work as is (`OUDSBulletList.Item("Label")` is `.raw("Label")`), without warning.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `OUDSBulletList.Item("Foo")` with a literal | unchanged |
+| `OUDSBulletList.Item(someString)` | `OUDSBulletList.Item(.raw(someString))` |
+| `OUDSBulletList.Item(myAttributedString)` | `OUDSBulletList.Item(.rich(myAttributedString))` |
+| `OUDSBulletList.Item(LocalizedStringKey("key"), bundle: .module)` | `OUDSBulletList.Item(.localized("key", bundle: .module))` |
+
+**Required Action**:
+- Replace `Item(someString)` with `Item(.raw(someString))` when the value is not a literal.
+- Replace `Item(myAttributedString)` with `Item(.rich(myAttributedString))`.
+- Replace `Item(LocalizedStringKey(…), tableName:, bundle:)` with `Item(.localized(…, tableName:, bundle:))`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
 
 ## v2.3.0 → v3.0.0
 
