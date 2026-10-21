@@ -74,6 +74,12 @@ OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
                               selection: $selection,
                               description: "from Outer Space II")
 
+// A three-states checkbox on error, the error message being an OUDSTextualContent (raw, localized or rich)
+OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
+                              selection: $selection,
+                              isError: true,
+                              errorText: .rich(AttributedString(markdown: "Please select **at least one** item"))) // Manage in your side errors for init
+
 // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
 // with a reversed layout, and exposing only two states through isOn binding
 OUDSCheckboxItem("We live in a fabled world",
@@ -83,6 +89,12 @@ OUDSCheckboxItem("We live in a fabled world",
                  isReversed: true,
                  isError: true,
                  hasDivider: true)
+
+// An error message is an OUDSTextualContent: raw, localized or rich text
+OUDSCheckboxItem("We live in a fabled world",
+                 isOn: $isOn,
+                 isError: true,
+                 errorText: .rich(AttributedString(markdown: "You **must** accept the ToS"))) // Manage in your side errors for init
 ```
 
 #### Checkbox picker
@@ -217,6 +229,12 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
               image: OUDSImage(asset: Image(decorative: "il_someImage"),
                                flipped: layoutDirection == .rightToLeft,
                                renderingMode: .original))
+
+// An error message is an OUDSTextualContent: raw, localized or rich text
+OUDSRadioItem("Lucy in the Sky with Diamonds",
+              isOn: $isOn,
+              isError: true,
+              errorText: .rich(AttributedString(markdown: "Please select **one flavor**"))) // Manage in your side errors for init
 ```
 
 #### Radio picker
@@ -345,6 +363,12 @@ OUDSSwitchItem("We live in a fabled world",
                 image: OUDSImage(asset: Image(decorative: "il_someImage"),
                                  flipped: layoutDirection == .rightToLeft,
                                  renderingMode: .original))
+
+// An error message is an OUDSTextualContent: raw, localized or rich text
+OUDSSwitchItem("We live in a fabled world",
+               isOn: $isOn,
+               isError: true,
+               errorText: .rich(AttributedString(markdown: "You **must** enable it"))) // Manage in your side errors for init
 ```
 
 ### Chips
@@ -525,6 +549,15 @@ OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helper
 
 // Password with prefix
 OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+
+// The helper text is an OUDSTextualContent: raw (string literal), localized or rich text
+OUDSPasswordInput(label: "Password", password: $password, helperText: .localized("password_helper", bundle: Bundle.module))
+OUDSPasswordInput(label: "Password",
+                  password: $password,
+                  helperText: .rich(AttributedString(markdown: "You should use a **strong password**"))) // Manage in your side errors for init
+
+// With an error message, also an OUDSTextualContent
+OUDSPasswordInput(label: "Password", password: $password, status: .textualError(message: "The password is too weak"))
 ```
 
 ### Pin Code Input
@@ -557,7 +590,12 @@ OUDSPinCodeInput($pinCode)
 OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
 
 // The component can be used in error contexts
-OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+OUDSPinCodeInput($pinCode, length: .six, status: .textualError(message: "The OTP code you entered is not correct"))
+
+// The helper text and the error message are OUDSTextualContent values: raw, localized or rich text
+OUDSPinCodeInput($pinCode, helperText: .localized("pin_helper", bundle: Bundle.module))
+OUDSPinCodeInput($pinCode,
+                 helperText: .rich(AttributedString(markdown: "Enter the **one-time code** sent to your device"))) // Manage in your side errors for init
 ```
 
 ### Text area
@@ -591,10 +629,14 @@ OUDSTextArea(label: "Comments", text: $text)
 // With a placeholder shown when the field is empty
 OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
 
-// With a plain helper text
+// With a helper text, an OUDSTextualContent: raw (string literal), localized or rich text
 OUDSTextArea(label: "Comments",
              text: $text,
-             helperText: .plain("Maximum 500 characters."))
+             helperText: .textual("Maximum 500 characters."))
+
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .textual(.rich(AttributedString(markdown: "Maximum **500** characters.")))) // Manage in your side errors for init
 
 // With a maximum character count — remaining count rendered bold, error style when exceeded
 OUDSTextArea(label: "Comments",
@@ -613,7 +655,12 @@ OUDSTextArea(label: "Comments", text: $text, helperLink: helperLink)
 // With error status — error message replaces the helper text
 OUDSTextArea(label: "Comments",
              text: $text,
-             status: .error(message: "This field cannot be empty."))
+             status: .textualError(message: "This field cannot be empty."))
+
+// The error message can also be localized or rich text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             status: .textualError(message: .rich(AttributedString(markdown: "This field **must be defined**.")))) // Manage in your side errors for init
 ```
 
 ### Text input
@@ -671,6 +718,18 @@ OUDSTextInput(label: "Email",
               placeholder: "firstName.lastName",
               suffix: "@orange.com",
               helperText: "The email will be automatically completed with @orange.com")
+
+// The helper text is an OUDSTextualContent: raw (string literal), localized or rich text
+OUDSTextInput(label: "Email", text: $text, helperText: .localized("email_helper", bundle: Bundle.module))
+OUDSTextInput(label: "Email",
+              text: $text,
+              helperText: .rich(AttributedString(markdown: "You should use your **corporate email**"))) // Manage in your side errors for init
+
+// With an error message, also an OUDSTextualContent
+OUDSTextInput(label: "Email", text: $text, status: .textualError(message: "Invalid email"))
+OUDSTextInput(label: "Email",
+              text: $text,
+              status: .textualError(message: .rich(AttributedString(markdown: "This email is **not valid**")))) // Manage in your side errors for init
 
 // With helper link
 @Environment(\.openURL) private var openUrl

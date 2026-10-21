@@ -47,9 +47,7 @@ struct TextAreaTrailingContainer: View {
                 .frame(width: theme.button.sizeIconOnlyDefault + 2 * theme.button.spaceInsetIconOnlyDefault,
                        height: theme.button.sizeIconOnlyDefault)
 
-            if case .error = status {
-                errorIcon
-            } else if case .richError = status {
+            if status.errorMessage != nil {
                 errorIcon
             } else if isOverLimit {
                 errorIcon

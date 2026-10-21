@@ -23,6 +23,9 @@ The six former initializers (one per combination of label type × overline type)
 deprecated and replaced by two unified initializers. The `OUDSListItemData.Label.text` case is
 deprecated in favor of the new `.textual` case.
 
+The `OUDSBulletList.Item` and `OUDSAlertMessage` initializers follow the same logic: the `String`, `AttributedString`
+(and `LocalizedStringKey` for the bullet list item) initializers are deprecated and replaced by initializers taking `OUDSTextualContent`.
+
 ### Before You Begin
 
 #### Prerequisites
@@ -65,7 +68,7 @@ and a localized one is `.textual(.localized("key"))`.
 ```swift
 // Replaces the initializers with `label: String` / `key: LocalizedStringKey`
 public init(
-    itemLabel: Label,
+    label: Label,
     description: OUDSTextualContent? = nil,
     overline: OUDSTextualContent? = nil,
     extraLabel: OUDSTextualContent? = nil,
@@ -75,7 +78,7 @@ public init(
 
 // Replaces the initializers with `label: some View`
 public init(
-    viewLabel: some View,
+    label: some View,
     accessibilityLabel: String,
     description: OUDSTextualContent? = nil,
     overline: OUDSTextualContent? = nil,
@@ -85,8 +88,7 @@ public init(
     bottomSlot: Slot? = nil)
 ```
 
-> The parameter names `itemLabel` / `viewLabel` will be renamed `label` and `.textual` renamed `.text`
-> in v4, when the deprecated API is removed.
+> In v4, `.textual` will be renamed `.text`, when the deprecated API is removed.
 
 ### Migration
 
@@ -94,12 +96,12 @@ public init(
 
 | Before (v3.0 — deprecated) | After (v3.2) |
 |---|---|
-| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(itemLabel: "Foo")` |
-| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(itemLabel: .textual("Foo", isBold: true))` |
-| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(itemLabel: "Foo", description: "Bar", overline: "Over")` |
-| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(itemLabel: "Foo", overline: .rich(myAttr))` |
-| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | `OUDSListItemData(viewLabel: myView, accessibilityLabel: "Foo")` |
-| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(itemLabel: .textual(.localized("foo.label")))` |
+| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(label: .textual("Foo"))` |
+| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(label: .textual("Foo", isBold: true))` |
+| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | unchanged (`description` and `overline` are now `OUDSTextualContent`) |
+| `OUDSListItemData(label: "Foo", overline: myAttr)` | `OUDSListItemData(label: "Foo", overline: .rich(myAttr))` |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo")` | unchanged |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(label: .textual(.localized("foo.label")))` |
 | `.text("Foo", isBold: true)` (on `Label`) | `.textual("Foo", isBold: true)` |
 
 **New capability** — any textual field can now be styled or localized:
@@ -110,7 +112,7 @@ OUDSListItemData(label: "Foo", overline: myStyledOverline)
 
 // After (v3.2) — any textual field can be styled or localized
 OUDSListItemData(
-    itemLabel: .textual(.rich(myStyledLabel)),
+    label: .textual(.rich(myStyledLabel)),
     description: .rich(myStyledDescription),
     overline: .rich(myStyledOverline),
     extraLabel: .localized("extra.label.key"),
@@ -118,8 +120,8 @@ OUDSListItemData(
 ```
 
 **Required Action**:
-- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(itemLabel: "Foo", …)`
-  (string literals are enough, no need for `.text(…)`).
+- Replace `OUDSListItemData(label: "Foo")` (a label alone, or with only `textSlot` / `bottomSlot`) with `OUDSListItemData(label: .textual("Foo"))`,
+  see the note below.
 - Replace `hasBoldLabel: true` with `.textual("Foo", isBold: true)`.
 - Replace `key: LocalizedStringKey` with `.textual(.localized(key, tableName:, bundle:))`.
 - Replace `overline: myAttributedString` with `overline: .rich(myAttributedString)` and
@@ -127,13 +129,292 @@ OUDSListItemData(
   init order).
 - Replace any `Label.text(…)` usage with `.textual(…)`.
 
-> **Note on overload resolution**: as long as the deprecated `String` initializers remain
-> available, a call site such as `OUDSListItemData(label: "Foo")` still resolves to the
-> deprecated overload. Using the `itemLabel:` argument label selects the new initializer
-> and silences the warning.
+> **Note on overload resolution**: the new initializers reuse the `label:` argument label of the deprecated ones, and
+> `Label` as well as `AttributedString` are expressible by a string literal. As a consequence, two call forms may select a deprecated
+> initializer and emit a deprecation warning, even if the intent is the new API:
+> - a bare literal label with no textual field, for example `OUDSListItemData(label: "Foo")` or with only `textSlot` / `bottomSlot`.
+>   Write `label: .textual("Foo")` instead;
+> - a custom view label with a literal `overline`, for example `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")`.
+>   Write `overline: .raw("Over")` instead.
+>
+> As soon as `description`, `overline`, `extraLabel` or `helperText` is given with a literal next to a literal label
+> (`OUDSListItemData(label: "Foo", description: "Bar")`) the new initializer is selected without any warning.
 
 **Reason for Change**: Unify the API so that every textual field of a list item can carry
 rich text, not only the overline, without multiplying initializer overloads.
+
+### `OUDSBulletList.Item` — unified initializer
+
+The three initializers of `OUDSBulletList.Item` (`String`, `AttributedString` and `LocalizedStringKey`)
+are deprecated and replaced by a single one taking an ``OUDSTextualContent``:
+
+```swift
+public init(_ text: OUDSTextualContent,
+            subListType: OUDSBulletList.Type? = nil,
+            subListTextStyle: OUDSBulletList.TextStyle? = nil,
+            subListHasBoldText: Bool? = nil,
+            @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+```
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+String literals still work as is (`OUDSBulletList.Item("Label")` is `.raw("Label")`), without warning.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `OUDSBulletList.Item("Foo")` with a literal | unchanged |
+| `OUDSBulletList.Item(someString)` | `OUDSBulletList.Item(.raw(someString))` |
+| `OUDSBulletList.Item(myAttributedString)` | `OUDSBulletList.Item(.rich(myAttributedString))` |
+| `OUDSBulletList.Item(LocalizedStringKey("key"), bundle: .module)` | `OUDSBulletList.Item(.localized("key", bundle: .module))` |
+
+**Required Action**:
+- Replace `Item(someString)` with `Item(.raw(someString))` when the value is not a literal.
+- Replace `Item(myAttributedString)` with `Item(.rich(myAttributedString))`.
+- Replace `Item(LocalizedStringKey(…), tableName:, bundle:)` with `Item(.localized(…, tableName:, bundle:))`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSAlertMessage` — unified initializers
+
+The eight initializers of `OUDSAlertMessage` (label as `String` or `LocalizedStringKey` × `description` as `String` or
+`AttributedString` × `bulletList` as `[String]` or `[AttributedString]`) are deprecated and replaced by two unified ones:
+
+```swift
+public init(label: String,
+            status: OUDSAlertStatus = .positive,
+            description: OUDSTextualContent? = nil,
+            bulletList: [OUDSTextualContent] = [],
+            link: Link? = nil,
+            onClose: (() -> Void)? = nil)
+
+public init(_ key: LocalizedStringKey,
+            tableName: String? = nil,
+            bundle: Bundle = .main,
+            status: OUDSAlertStatus = .positive,
+            description: OUDSTextualContent? = nil,
+            bulletList: [OUDSTextualContent] = [],
+            link: Link? = nil,
+            onClose: (() -> Void)? = nil)
+```
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+String literals still work as is (`description: "Foo"`, `bulletList: ["A", "B"]`), without warning.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `description: "Foo"` / `bulletList: ["A", "B"]` with literals | unchanged |
+| `description: someString` | `description: .raw(someString)` |
+| `description: myAttributedString` | `description: .rich(myAttributedString)` |
+| `bulletList: someStrings` | `bulletList: someStrings.map { .raw($0) }` |
+| `bulletList: myAttributedStrings` | `bulletList: myAttributedStrings.map { .rich($0) }` |
+
+**Required Action**:
+- Replace `description: myAttributedString` with `description: .rich(myAttributedString)`.
+- Replace `description: someStringVariable` with `description: .raw(someStringVariable)`.
+- Replace `bulletList: [AttributedString]` and `bulletList: [String]` variables with arrays of `.rich(…)` / `.raw(…)`;
+  an array literal can also mix raw literals, `.localized(…)` and `.rich(…)`.
+
+> **Note on string literals**: with the `LocalizedStringKey` initializer, `description: "abc"` (a bare literal) may select a deprecated
+> initializer and emit a deprecation warning, because `AttributedString` is itself expressible by a string literal.
+> Write `description: .raw("abc")` to select the new initializer.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSSwitchItem` — unified initializers
+
+The four initializers of `OUDSSwitchItem` (label as `String` or `LocalizedStringKey` × `errorText` as `String` or `AttributedString`)
+are deprecated and replaced by two unified ones taking `errorText: OUDSTextualContent? = nil`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `errorText: someString` | `errorText: .raw(someString)` |
+| `errorText: "Message"` (literal) | `errorText: .raw("Message")` |
+| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
+| `errorText: nil` or no `errorText` | unchanged |
+
+> **Note on string literals**: `errorText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` is itself expressible by a string literal. Write `errorText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
+- Replace `errorText: someStringVariable` or `errorText: "Message"` with `errorText: .raw(…)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSCheckboxItem` — unified initializers
+
+The four initializers of `OUDSCheckboxItem` (label as `String` or `LocalizedStringKey` × `errorText` as `String` or `AttributedString`)
+are deprecated and replaced by two unified ones taking `errorText: OUDSTextualContent? = nil`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `errorText: someString` | `errorText: .raw(someString)` |
+| `errorText: "Message"` (literal) | `errorText: .raw("Message")` |
+| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
+| `errorText: nil` or no `errorText` | unchanged |
+
+> **Note on string literals**: `errorText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` is itself expressible by a string literal. Write `errorText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
+- Replace `errorText: someStringVariable` or `errorText: "Message"` with `errorText: .raw(…)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSRadioItem` — unified initializers
+
+The four initializers of `OUDSRadioItem` (label as `String` or `LocalizedStringKey` × `errorText` as `String` or `AttributedString`)
+are deprecated and replaced by two unified ones taking `errorText: OUDSTextualContent? = nil`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `errorText: someString` | `errorText: .raw(someString)` |
+| `errorText: "Message"` (literal) | `errorText: .raw("Message")` |
+| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
+| `errorText: nil` or no `errorText` | unchanged |
+
+> **Note on string literals**: `errorText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` is itself expressible by a string literal. Write `errorText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
+- Replace `errorText: someStringVariable` or `errorText: "Message"` with `errorText: .raw(…)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSCheckboxItemIndeterminate` — `errorText` as `OUDSTextualContent`
+
+The two initializers of `OUDSCheckboxItemIndeterminate` (label as `String` or `LocalizedStringKey`) now take `errorText: OUDSTextualContent? = nil`
+instead of `errorText: String? = nil`. The error message can now also be a localized string or a rich `AttributedString`, which was not possible before.
+The former initializers taking `errorText: String?` are deprecated.
+
+**Impact**: Low — all existing call sites keep working; only calls passing a `String` variable emit a deprecation warning.
+String literals, `nil` or omitted `errorText` still work as is, without warning.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `errorText: someString` | `errorText: .raw(someString)` |
+| `errorText: "Message"` (literal), `nil` or omitted | unchanged |
+
+**Required Action**:
+- Replace `errorText: someStringVariable` with `errorText: .raw(someStringVariable)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` and let the error message be rich or localized like for the other checkbox, radio and switch items.
+
+### `OUDSPinCodeInput` — unified initializer and `textualError` status
+
+The three initializers of `OUDSPinCodeInput` (`helperText` as `String`, `AttributedString`, or `LocalizedStringKey` with `helperText key:`, `tableName:` and `bundle:`)
+are deprecated and replaced by a single one taking `helperText: OUDSTextualContent? = nil`.
+
+The `OUDSPinCodeInput.Status` cases `.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by
+`.textualError(message: OUDSTextualContent)`. In v4, `.textualError` will be renamed `.error`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `helperText: LocalizedStringKey("key"), tableName: t, bundle: b` | `helperText: .localized("key", tableName: t, bundle: b)` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+| `helperText: nil` or no `helperText` | unchanged |
+
+> **Note on string literals**: `helperText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` and `LocalizedStringKey` are themselves expressible by a string literal. Write `helperText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someStringVariable` or `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `helperText: LocalizedStringKey(…), tableName:, bundle:` with `helperText: .localized(…, tableName:, bundle:)`.
+- Replace `.error(message:)` and `.richError(message:)` with `.textualError(message:)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads or status cases.
+
+### `OUDSTextInput` — unified initializers and `textualError` status
+
+The four initializers of `OUDSTextInput` (label as `String` or `LocalizedStringKey` × `helperText` as `String` or `AttributedString`)
+are deprecated and replaced by two unified ones taking `helperText: OUDSTextualContent? = nil`.
+
+The `OUDSTextInput.Status` cases `.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by
+`.textualError(message: OUDSTextualContent)`. In v4, `.textualError` will be renamed `.error`.
+This `Status` is also the one used by `OUDSPasswordInput`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+| `helperText: nil` or no `helperText` | unchanged |
+
+> **Note on string literals**: `helperText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` is itself expressible by a string literal. Write `helperText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someStringVariable` or `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `.error(message:)` and `.richError(message:)` with `.textualError(message:)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads or status cases.
+
+### `OUDSPasswordInput` — unified initializers
+
+The four initializers of `OUDSPasswordInput` (label as `String` or `LocalizedStringKey` × `helperText` as `String` or `AttributedString`)
+are deprecated and replaced by two unified ones taking `helperText: OUDSTextualContent? = nil`.
+Its `status` is the `OUDSTextInput.Status`: see the `OUDSTextInput` section above for `.textualError(message:)`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `helperText: nil` or no `helperText` | unchanged |
+
+> **Note on string literals**: `helperText: "abc"` (a bare literal) may select a deprecated initializer and emit a deprecation warning,
+> because `AttributedString` is itself expressible by a string literal. Write `helperText: .raw("abc")` to select the new initializer.
+
+**Required Action**:
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someStringVariable` or `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `status: .error(message:)` and `.richError(message:)` with `.textualError(message:)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying initializer overloads.
+
+### `OUDSTextArea` — `textual` helper text and `textualError` status
+
+`OUDSTextArea` has no initializer to deprecate, but its two enums changed:
+- `OUDSTextArea.HelperText.plain(String)` and `.rich(AttributedString)` are deprecated and replaced by `.textual(_: OUDSTextualContent)`.
+  `.charactersMaxCount(_:)` is unchanged.
+- `OUDSTextArea.Status.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by
+  `.textualError(message: OUDSTextualContent)`. In v4, `.textualError` will be renamed `.error`.
+
+**Impact**: Low — all existing call sites keep working; only deprecation warnings appear.
+
+| Before (deprecated) | After (v3.2) |
+|---|---|
+| `helperText: .plain("Message")` | `helperText: .textual("Message")` |
+| `helperText: .plain(someString)` | `helperText: .textual(.raw(someString))` |
+| `helperText: .rich(myAttributedString)` | `helperText: .textual(.rich(myAttributedString))` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+| `helperText: .charactersMaxCount(500)` | unchanged |
+
+**Required Action**:
+- Replace `.plain(…)` with `.textual(…)` (a string literal is enough, a `String` variable needs `.raw(…)`).
+- Replace `.rich(myAttributedString)` with `.textual(.rich(myAttributedString))`.
+- Replace `.error(message:)` and `.richError(message:)` with `.textualError(message:)`.
+
+**Reason for Change**: Unify the API around `OUDSTextualContent` without multiplying enum cases.
 
 ## v2.3.0 → v3.0.0
 

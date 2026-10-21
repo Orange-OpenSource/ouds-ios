@@ -107,9 +107,10 @@ RoundedRectangle(cornerRadius: 8)
 
 ## 6. Images in OUDS components
 
-**Never call SwiftUI modifiers on an `Image` that is passed as a parameter to an OUDS component.**
+**Never call SwiftUI modifiers on an `Image` that is wrapped in an `OUDSImage` and passed to an OUDS component.**
 
-OUDS components accept `Image` — the bare SwiftUI type. Calling any modifier on it (including `.accessibilityHidden(true)`) changes the type to `some View` and produces a compile error.
+OUDS components accept an `OUDSImage` (which wraps the bare SwiftUI `Image` with its flip flag, accessibility label and rendering mode), through parameters named `image:`.
+Calling any modifier on the `Image` (including `.accessibilityHidden(true)`) changes its type to `some View` and produces a compile error.
 
 > The component handles the accessibility of its own images internally. You must not alter them from the call site.
 
@@ -117,23 +118,24 @@ OUDS components accept `Image` — the bare SwiftUI type. Calling any modifier o
 ```swift
 OUDSButton(
     text: "Add",
-    icon: Image(systemName: "plus").accessibilityHidden(true), // ❌ compile error: Image → some View
+    image: OUDSImage(asset: Image(systemName: "plus").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
     appearance: .default) {}
 
 OUDSLink(
     text: "Back",
-    icon: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
+    image: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
     size: .default) {}
 ```
 
 **Always do this — pass a bare `Image` inside `OUDSImage`, swiftlint comment on the line before:**
 ```swift
 // swiftlint:disable:next accessibility_label_for_image
-OUDSButton(text: "Add", icon: Image(systemName: "plus"), appearance: .default) {}
+OUDSButton(text: "Add", image: OUDSImage(asset: Image(systemName: "plus")), appearance: .default) {}
 
 // swiftlint:disable:next accessibility_label_for_image
-OUDSLink(text: "Back", icon: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
+OUDSLink(text: "Back", image: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
 
+// Exception: OUDSToolBarItem still takes a bare `Image`
 // swiftlint:disable:next accessibility_label_for_image
 OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {}
 ```
@@ -389,14 +391,14 @@ let greenText = AttributedString.from(
 ```swift
 OUDSStaticListItem(
     data: OUDSListItemData(
-        itemLabel: .textual(.rich(AttributedString.from(
+        label: .textual(.rich(AttributedString.from(
             text: "Payment problems",
             foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
             font: .body
         ))),
         description: .rich(AttributedString.from(
             text: "Action required",
-        foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
+            foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
             font: .body
         )),
         overline: .rich(AttributedString.from(
@@ -413,6 +415,22 @@ OUDSStaticListItem(
     trailing: .badge(.count(OUDSBadgeCount(1, accessibilityLabel: "1", status: .negative, size: .medium)))
 )
 ```
+
+### In other components
+
+The same `OUDSTextualContent` (`"literal"` / `.raw(_:)`, `.localized(_:tableName:bundle:)`, `.rich(_:)`) is used by:
+
+| Component | Parameters |
+|---|---|
+| `OUDSListItemData` | `label` (through `.textual(_:isBold:)`), `description`, `overline`, `extraLabel`, `helperText` |
+| `OUDSBulletList.Item` | the text (first parameter) |
+| `OUDSAlertMessage` | `description`, `bulletList` (array of `OUDSTextualContent`) |
+| `OUDSSwitchItem`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSRadioItem` | `errorText` |
+| `OUDSPinCodeInput`, `OUDSTextInput`, `OUDSPasswordInput` | `helperText`, and `status: .textualError(message:)` |
+| `OUDSTextArea` | `helperText: .textual(_:)`, and `status: .textualError(message:)` |
+
+> **Literal pitfall**: `AttributedString` is itself expressible by a string literal, so a bare literal on a parameter which had an `AttributedString` overload
+> may select a deprecated initializer (warning). Prefer `.raw("…")` (or `label: .textual("…")` for `OUDSListItemData`).
 
 ---
 

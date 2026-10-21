@@ -26,7 +26,7 @@ body:
     attributes:
       label: ... I want to
       description: 
-      placeholder: perform some task, in a paticular contexte, somewhere, somehow
+      placeholder: perform some task, in a particular context, somewhere, somehow
     validations:
       required: true
   - type: textarea

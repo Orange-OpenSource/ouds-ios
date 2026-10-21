@@ -76,7 +76,7 @@ struct TextAreaInputText: View {
 
     private var placeholderColor: MultipleColorSemanticToken {
         switch status {
-        case .enabled, .error, .richError, .readOnly, .loading:
+        case .enabled, .error, .richError, .textualError, .readOnly, .loading:
             theme.colors.contentMuted
         case .disabled:
             theme.colors.actionDisabled
@@ -85,7 +85,7 @@ struct TextAreaInputText: View {
 
     private var cursorColor: MultipleColorSemanticToken {
         switch status {
-        case .error, .richError:
+        case .error, .richError, .textualError:
             theme.colors.actionNegativePressed
         default:
             theme.colors.contentDefault
@@ -94,7 +94,7 @@ struct TextAreaInputText: View {
 
     private var inputTextColor: MultipleColorSemanticToken {
         switch status {
-        case .enabled, .error, .richError, .readOnly, .loading:
+        case .enabled, .error, .richError, .textualError, .readOnly, .loading:
             theme.colors.contentDefault
         case .disabled:
             theme.colors.actionDisabled

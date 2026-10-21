@@ -79,7 +79,7 @@ import SwiftUI
 /// - **default (by default)**: Default neutral appearance, whether empty or filled.
 /// It allows users to click, focus, and type freely without restrictions.
 ///
-/// - **error**: The `error` status indicates that the user input does not meet validation rules or
+/// - **error**: The `error` status (`textualError(message:)`) indicates that the user input does not meet validation rules or
 /// expected formatting. It provides immediate visual feedback, typically through a red border,
 /// error icon, and a clear, accessible error message positioned below the input. The error messages replaces the helper text.
 ///
@@ -124,6 +124,10 @@ import SwiftUI
 /// ## Rich text
 ///
 /// Rich text can be used for error and helper texts.
+/// The helper text and the error message are ``OUDSTextualContent`` values: a raw `String`, a localized string
+/// with `.localized(_:tableName:bundle:)` or a rich text with `.rich(_:)` and an `AttributedString`.
+/// Prefer `.raw(_:)` to a bare string literal for a raw helper text, so the compiler selects without any doubt the initializer
+/// taking an ``OUDSTextualContent`` and does not emit a deprecation warning.
 ///
 /// Strong text can be used sparingly to highlight key information within the content.
 /// No other text styles should be used.
@@ -166,6 +170,18 @@ import SwiftUI
 ///                   placeholder: "firstName.lastName",
 ///                   suffix: "@orange.com",
 ///                   helperText: "The email will be automatically completed with @orange.com")
+///
+///     // With a localized or rich helper text
+///     OUDSTextInput(label: "Email", text: $text, helperText: .localized("email_helper", bundle: Bundle.module))
+///     OUDSTextInput(label: "Email",
+///                   text: $text,
+///                   helperText: .rich(AttributedString(markdown: "You should use your **corporate email**"))) // Manage in your side errors for init
+///
+///     // With an error message, raw, localized or rich
+///     OUDSTextInput(label: "Email", text: $text, status: .textualError(message: "Invalid email"))
+///     OUDSTextInput(label: "Email",
+///                   text: $text,
+///                   status: .textualError(message: .rich(AttributedString(markdown: "This email is **not valid**")))) // Manage in your side errors for init
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
@@ -284,13 +300,27 @@ public struct OUDSTextInput: View {
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
         /// accessible error `message` positioned below the input.
+        @available(*, deprecated, message: "Use case .textualError(message:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case error(message: String)
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
         /// accessible error `message` positioned below the input.
         /// The error message can be a rich text.
+        @available(*, deprecated, message: "Use case .textualError(message:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case richError(message: AttributedString)
+
+        /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
+        /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
+        /// accessible error `message` positioned below the input.
+        /// The error message is an ``OUDSTextualContent``: raw, localized or rich text.
+        ///
+        /// ```swift
+        ///     OUDSTextInput(label: "Email", text: $text, status: .textualError(message: .raw("Invalid email")))
+        /// ```
+        ///
+        /// - Since: 3.2.0
+        case textualError(message: OUDSTextualContent) // TODO: v4 - When .error and .richError removed, rename from "textualError" to "error"
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
         /// text entered. A circular progress indicator appears to inform the user that an action is in progress.
@@ -312,12 +342,13 @@ public struct OUDSTextInput: View {
                 true
             case let (.loading(lhsProgress), .loading(rhsProgress)):
                 lhsProgress == rhsProgress
-            case let (.error(lhsMessage), .error(rhsMessage)):
-                lhsMessage == rhsMessage
-            case let (.richError(lhsMessage), .richError(rhsMessage)):
-                lhsMessage == rhsMessage
             default:
-                false
+                switch (lhs.errorMessage, rhs.errorMessage) {
+                case let (lhsMessage?, rhsMessage?):
+                    lhsMessage.rawValue == rhsMessage.rawValue
+                default:
+                    false
+                }
             }
         }
     }
@@ -344,9 +375,13 @@ public struct OUDSTextInput: View {
         }
     }
 
-    // MARK: - Initializers — String label + helperText: String?
+    // MARK: - Initializers
+
+    // swiftlint:disable function_default_parameter_at_end
 
     /// Creates a text input.
+    ///
+    /// The `helperText` is an ``OUDSTextualContent``: a raw `String`, a localized string or a rich `AttributedString`.
     ///
     /// ```swift
     ///     OUDSTextInput(label: "Email", text: $text)
@@ -356,6 +391,11 @@ public struct OUDSTextInput: View {
     ///
     ///     OUDSTextInput(label: "Brand", text: $text,
     ///                   leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+    ///
+    ///     OUDSTextInput(label: "Email",
+    ///                   text: $text,
+    ///                   helperText: .rich(AttributedString(markdown: "You should use your **corporate email**")))
+    ///                   // Manage in your side errors for init for AttributedString(markdown:)
     /// ```
     ///
     /// - Parameters:
@@ -366,11 +406,13 @@ public struct OUDSTextInput: View {
     ///    - suffix: Text placed after the user's input, by default is *nil*
     ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: An optional helper text, by default is *nil*
+    ///    - helperText: An optional helper text, raw, localized or rich text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(label: String,
                 text: Binding<String>,
                 placeholder: String? = nil,
@@ -378,7 +420,7 @@ public struct OUDSTextInput: View {
                 suffix: String? = nil,
                 leadingImage: OUDSImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
-                helperText: String? = nil,
+                helperText: OUDSTextualContent? = nil,
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
@@ -386,11 +428,7 @@ public struct OUDSTextInput: View {
     {
         self.label = label
         self.text = text
-        self.helperText = if let helperText {
-            .raw(helperText)
-        } else {
-            nil
-        }
+        self.helperText = helperText
         self.placeholder = placeholder
         self.prefix = prefix
         self.suffix = suffix
@@ -402,62 +440,6 @@ public struct OUDSTextInput: View {
         self.constrainedMaxWidth = constrainedMaxWidth
     }
 
-    // MARK: - Initializers — String label + helperText: AttributedString
-
-    // swiftlint:disable function_default_parameter_at_end
-    /// Creates a text input with a rich attributed helper text.
-    ///
-    /// ```swift
-    ///     OUDSTextInput(label: "Email",
-    ///                   text: $text,
-    ///                   helperText: AttributedString(markdown: "You should use your **corporate email**"))
-    /// ```
-    ///
-    /// - Parameters:
-    ///    - label: The label displayed above the text input
-    ///    - text: The text to display and edit
-    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
-    ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: A rich `AttributedString` helper text
-    ///    - helperLink: An optional helper link, by default is *nil*
-    ///    - isOutlined: Controls the style of the text input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the text input, default set to *enabled*
-    public init(label: String,
-                text: Binding<String>,
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                suffix: String? = nil,
-                leadingImage: OUDSImage? = nil,
-                trailingAction: Self.TrailingAction? = nil,
-                helperText: AttributedString,
-                helperLink: Self.Helperlink? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: Self.Status = .enabled)
-    {
-        self.label = label
-        self.text = text
-        self.helperText = .rich(helperText)
-        self.placeholder = placeholder
-        self.prefix = prefix
-        self.suffix = suffix
-        leadingIcon = leadingImage
-        self.trailingAction = trailingAction
-        self.helperLink = helperLink
-        self.status = status
-        self.isOutlined = isOutlined
-        self.constrainedMaxWidth = constrainedMaxWidth
-    }
-
-    // swiftlint:enable function_default_parameter_at_end
-
-    // MARK: - Initializers — LocalizedStringKey + helperText: String?
-
-    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -465,64 +447,11 @@ public struct OUDSTextInput: View {
     ///
     ///     OUDSTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text,
     ///                   leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
-    /// ```
     ///
-    /// - Parameters:
-    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - text: The text to display and edit
-    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
-    ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: An optional helper text, by default is *nil*
-    ///    - helperLink: An optional helper link, by default is *nil*
-    ///    - isOutlined: Controls the style of the text input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the text input, default set to *enabled*
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                text: Binding<String>,
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                suffix: String? = nil,
-                leadingImage: OUDSImage? = nil,
-                trailingAction: Self.TrailingAction? = nil,
-                helperText: String? = nil,
-                helperLink: Self.Helperlink? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: Self.Status = .enabled)
-    {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
-                  text: text,
-                  placeholder: placeholder,
-                  prefix: prefix,
-                  suffix: suffix,
-                  leadingImage: leadingImage,
-                  trailingAction: trailingAction,
-                  helperText: helperText,
-                  helperLink: helperLink,
-                  isOutlined: isOutlined,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  status: status)
-    }
-
-    // swiftlint:enable function_default_parameter_at_end
-
-    // MARK: - Initializers — LocalizedStringKey + helperText: AttributedString
-
-    // swiftlint:disable function_default_parameter_at_end
-    /// Creates a text input with a localized label and a rich attributed helper text.
-    ///
-    /// ```swift
     ///     OUDSTextInput(LocalizedStringKey("email_label"),
     ///                   bundle: Bundle.module,
     ///                   text: $text,
-    ///                   helperText: AttributedString(markdown: "You should use your **corporate email**"))
+    ///                   helperText: .localized("email_helper", bundle: Bundle.module))
     /// ```
     ///
     /// - Parameters:
@@ -535,11 +464,13 @@ public struct OUDSTextInput: View {
     ///    - suffix: Text placed after the user's input, by default is *nil*
     ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
-    ///    - helperText: A rich `AttributedString` helper text
+    ///    - helperText: An optional helper text, raw, localized or rich text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -549,7 +480,7 @@ public struct OUDSTextInput: View {
                 suffix: String? = nil,
                 leadingImage: OUDSImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
-                helperText: AttributedString,
+                helperText: OUDSTextualContent? = nil,
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
@@ -609,4 +540,25 @@ public struct OUDSTextInput: View {
     }
 }
 
+// MARK: - Status helpers
+
+// swiftlint:disable no_grouping_extension
+@available(iOS 15, macOS 13, visionOS 1, *)
+extension OUDSTextInput.Status {
+
+    /// The error message as an ``OUDSTextualContent``, whatever the case used (`nil` if not an error status)
+    var errorMessage: OUDSTextualContent? {
+        switch self {
+        case let .error(message):
+            .raw(message)
+        case let .richError(message):
+            .rich(message)
+        case let .textualError(message):
+            message
+        case .enabled, .loading, .readOnly, .disabled:
+            nil
+        }
+    }
+}
+// swiftlint:enable no_grouping_extension
 #endif

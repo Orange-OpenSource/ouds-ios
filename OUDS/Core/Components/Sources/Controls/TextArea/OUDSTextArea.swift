@@ -43,7 +43,7 @@ import SwiftUI
 /// - **enabled (by default)**: Default neutral appearance, whether empty or filled.
 /// It allows users to click, focus, and type freely without restrictions.
 ///
-/// - **error**: The `error` status indicates that the user input does not meet validation rules or
+/// - **error**: The `error` status (`textualError(message:)`) indicates that the user input does not meet validation rules or
 /// expected formatting. It provides immediate visual feedback, typically through a red border,
 /// an error icon, and a clear, accessible error message positioned below the text area. The error message replaces the helper text.
 ///
@@ -121,6 +121,9 @@ import SwiftUI
 /// ## Rich text
 ///
 /// Rich text can be used for error and helper texts.
+/// The helper text (`HelperText.textual(_:)`) and the error message (`Status.textualError(message:)`) are ``OUDSTextualContent`` values:
+/// a raw `String` (a string literal is enough), a localized string with `.localized(_:tableName:bundle:)` or a rich text with `.rich(_:)`
+/// and an `AttributedString`.
 ///
 /// Strong text can be used sparingly to highlight key information within the content.
 /// No other text styles should be used.
@@ -138,11 +141,15 @@ import SwiftUI
 ///     // Empty text with placeholder
 ///     OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
 ///
-///     // With a plain helper text
+///     // With a helper text, raw, localized or rich
 ///     OUDSTextArea(label: "Comments",
 ///                  text: $text,
 ///                  placeholder: "Describe your issue in detail",
-///                  helperText: .plain("Maximum 500 characters."))
+///                  helperText: .textual("Maximum 500 characters."))
+///     OUDSTextArea(label: "Comments", text: $text, helperText: .textual(.localized("comments_helper", bundle: Bundle.module)))
+///     OUDSTextArea(label: "Comments",
+///                  text: $text,
+///                  helperText: .textual(.rich(AttributedString(markdown: "Maximum **500** characters.")))) // Manage in your side errors for init
 ///
 ///     // With a maximum character count — the component shows "X characters remaining" (bold)
 ///     // and switches to an error style when exceeded.
@@ -160,7 +167,7 @@ import SwiftUI
 ///     OUDSTextArea(label: "Comments", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 ///
 ///     // With error status
-///     OUDSTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
+///     OUDSTextArea(label: "Comments", text: $text, status: .textualError(message: "This field can't be empty."))
 ///
 ///     // Outlined style
 ///     OUDSTextArea(label: "Comments", text: $text, isOutlined: true)
@@ -215,11 +222,14 @@ public struct OUDSTextArea: View {
     /// Define all available status for the text area
     ///
     /// ```swift
-    ///     // Plain text error
-    ///     OUDSTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
+    ///     // Raw text error
+    ///     OUDSTextArea(label: "Comments", text: $text, status: .textualError(message: "This field can't be empty."))
+    ///
+    ///     // Localized text error
+    ///     OUDSTextArea(label: "Comments", text: $text, status: .textualError(message: .localized("comments_error", bundle: Bundle.module)))
     ///
     ///     // Rich text error
-    ///     OUDSTextArea(label: "Comments", text: $text, status: .richError(message: AttributedString(markdown: "This field **must be defined**.")))
+    ///     OUDSTextArea(label: "Comments", text: $text, status: .textualError(message: .rich(AttributedString(markdown: "This field **must be defined**."))))
     ///     // Manage parsing of AttributedString on your side
     /// ```
     ///
@@ -231,13 +241,23 @@ public struct OUDSTextArea: View {
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides immediate visual feedback, typically through a red border, an error icon, and a clear,
         /// accessible error `message` positioned below the text area.
+        @available(*, deprecated, message: "Use case .textualError(message:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case error(message: String)
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides immediate visual feedback, typically through a red border, an error icon, and a clear,
         /// accessible error `message` positioned below the text area.
         /// The error message can be rich text.
+        @available(*, deprecated, message: "Use case .textualError(message:OUDSTextualContent) instead. See MIGRATION.md v3.2.0.")
         case richError(message: AttributedString)
+
+        /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
+        /// It provides immediate visual feedback, typically through a red border, an error icon, and a clear,
+        /// accessible error `message` positioned below the text area.
+        /// The error message is an ``OUDSTextualContent``: raw, localized or rich text.
+        ///
+        /// - Since: 3.2.0
+        case textualError(message: OUDSTextualContent) // TODO: v4 - When .error and .richError removed, rename from "textualError" to "error"
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
         /// text entered. A circular progress indicator appears to inform the user that an action is in progress.
@@ -259,12 +279,13 @@ public struct OUDSTextArea: View {
                 true
             case let (.loading(lhsProgress), .loading(rhsProgress)):
                 lhsProgress == rhsProgress
-            case let (.error(lhsMessage), .error(rhsMessage)):
-                lhsMessage == rhsMessage
-            case let (.richError(lhsMessage), .richError(rhsMessage)):
-                String(describing: lhsMessage) == String(describing: rhsMessage)
             default:
-                false
+                switch (lhs.errorMessage, rhs.errorMessage) {
+                case let (lhsMessage?, rhsMessage?):
+                    lhsMessage.rawValue == rhsMessage.rawValue
+                default:
+                    false
+                }
             }
         }
     }
@@ -273,18 +294,21 @@ public struct OUDSTextArea: View {
 
     /// Describes the content of the helper text displayed below the text area.
     ///
-    /// Use `.plain(_:)` for arbitrary helper text, or `.charactersMaxCount(_:)` to let the
+    /// Use `.textual(_:)` for arbitrary helper text (raw, localized or rich), or `.charactersMaxCount(_:)` to let the
     /// component manage a character-count display automatically.
     /// Pass the **maximum allowed length** — the component computes how many characters remain
     /// and displays them in **bold**. When the user exceeds the limit the component switches
     /// to an error-style sentence showing how many characters are over the limit.
     ///
     /// ```swift
-    ///     // Plain helper text
-    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .plain("Maximum 500 characters."))
+    ///     // Raw helper text
+    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .textual("Maximum 500 characters."))
+    ///
+    ///     // Localized helper text
+    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .textual(.localized("bio_helper", bundle: Bundle.module)))
     ///
     ///     // Rich helper text
-    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .rich("Maximum **500** characters."))
+    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .textual(.rich(AttributedString(markdown: "Maximum **500** characters."))))
     ///
     ///     // Character limit: component shows "X characters remaining" (bold count),
     ///     // and switches to "You have X characters too many." when exceeded.
@@ -294,10 +318,17 @@ public struct OUDSTextArea: View {
     /// - Since: 1.4.0
     @frozen public enum HelperText {
         /// A plain helper string defined by the caller.
+        @available(*, deprecated, message: "Use case .textual(_:OUDSTextualContent) with `.raw(_:)` instead. See MIGRATION.md v3.2.0.")
         case plain(String)
 
         /// A rich helper text defined by the caller.
+        @available(*, deprecated, message: "Use case .textual(_:OUDSTextualContent) with `.rich(_:)` instead. See MIGRATION.md v3.2.0.")
         case rich(AttributedString)
+
+        /// A helper text defined by the caller, which can be a raw string, a localized string or a rich text.
+        ///
+        /// - Since: 3.2.0
+        case textual(_: OUDSTextualContent) // TODO: v4 - When .plain and .rich removed, consider keeping "textual" or renaming
 
         /// The **maximum number of characters** allowed in the text area.
         /// The component automatically computes and displays the number of characters remaining
@@ -309,12 +340,24 @@ public struct OUDSTextArea: View {
         /// enum has no access to the current text binding.
         func accessibilityDescription(remainingCount: Int) -> String {
             switch self {
-            case let .plain(string):
-                string
-            case let .rich(attributedString):
-                String(attributedString.characters)
             case .charactersMaxCount:
                 String(format: "core_textArea_charactersRemaining".localized(), remainingCount)
+            case .plain, .rich, .textual:
+                textualContent?.rawValue ?? ""
+            }
+        }
+
+        /// The helper text as an ``OUDSTextualContent`` whatever the case used (`nil` for `.charactersMaxCount`)
+        var textualContent: OUDSTextualContent? {
+            switch self {
+            case let .plain(string):
+                .raw(string)
+            case let .rich(attributedString):
+                .rich(attributedString)
+            case let .textual(content):
+                content
+            case .charactersMaxCount:
+                nil
             }
         }
     }
@@ -500,4 +543,26 @@ public struct OUDSTextArea: View {
         .skeleton()
     }
 }
+
+// MARK: - Status helpers
+
+// swiftlint:disable no_grouping_extension
+@available(iOS 15, macOS 13, visionOS 1, *)
+extension OUDSTextArea.Status {
+
+    /// The error message as an ``OUDSTextualContent``, whatever the case used (`nil` if not an error status)
+    var errorMessage: OUDSTextualContent? {
+        switch self {
+        case let .error(message):
+            .raw(message)
+        case let .richError(message):
+            .rich(message)
+        case let .textualError(message):
+            message
+        case .enabled, .loading, .readOnly, .disabled:
+            nil
+        }
+    }
+}
+// swiftlint:enable no_grouping_extension
 #endif

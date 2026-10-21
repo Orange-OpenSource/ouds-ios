@@ -130,6 +130,8 @@ struct TextAreaContainer: View {
                 "core_common_onError_a11y".localized() + ": \(message)"
             case let .richError(message):
                 "core_common_onError_a11y".localized() + ": \(String(message.characters))"
+            case let .textualError(message):
+                "core_common_onError_a11y".localized() + ": \(message.rawValue)"
             case .loading:
                 "core_common_loading_a11y".localized()
             case .enabled:
