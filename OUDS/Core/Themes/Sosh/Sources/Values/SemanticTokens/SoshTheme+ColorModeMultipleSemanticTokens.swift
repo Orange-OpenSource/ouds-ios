@@ -80,7 +80,8 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
     /// - Parameters:
     ///    - mode: The color mode token to test
     ///    - current: The current color scheme
-    /// - Returns: The color scheme to consider depending to the theme rules
+    /// - Returns: The color scheme to consider based on the theme rules.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func useColorScheme(for mode: MultipleColorModeSemanticToken,
                                _ current: ColorScheme) -> ColorScheme
     {
@@ -112,7 +113,8 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
     /// - if both light and dark versions are monochrome, returns true, otherwise false
     ///
     /// - Parameter mode: The color mode token to test
-    /// - Returns: The flag for monochrome mode depending to the theme rules
+    /// - Returns: The flag for monochrome mode based on the theme rules.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func isMonochrome(mode: MultipleColorModeSemanticToken) -> Bool {
         let lightIsMonochrome = ColorModeRawTokens.isMonochrome(mode: mode.light)
         let darkIsMonochrome = ColorModeRawTokens.isMonochrome(mode: mode.dark)
@@ -125,6 +127,7 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
     ///
     /// - Parameter mode: The color mpde token to use
     /// - Returns: The colors to apply
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func toColor(from mode: MultipleColorModeSemanticToken) -> MultipleColorSemanticToken {
         guard !mode.hasUndefinedValue() else {
             OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Orange Theme")

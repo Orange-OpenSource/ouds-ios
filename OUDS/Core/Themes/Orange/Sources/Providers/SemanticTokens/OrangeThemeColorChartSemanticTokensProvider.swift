@@ -25,13 +25,14 @@ import OUDSThemesContract
 /// If you think you need to overide some colors or have your own set of colors, start a new discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a).
 ///
 /// - Since: 0.17.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class OrangeThemeColorChartSemanticTokensProvider: AllColorChartSemanticTokensProvider {
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Intializes the provider
+    /// Initializes the provider.
     public init() {
         OL.debug("Init of OrangeThemeColorChartSemanticTokensProvider")
         #if DEBUG

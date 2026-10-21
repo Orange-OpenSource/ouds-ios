@@ -20,7 +20,7 @@ struct ListItemHelperTextContainer: View {
 
     // MARK: Properties
 
-    let text: TextualContent?
+    let text: OUDSTextualContent?
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme

@@ -28,6 +28,7 @@ extension View {
     /// }
     /// .oudsHideKeyboardOnTap()
     /// ```
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsHideKeyboardOnTap() -> some View {
         #if os(iOS) || os(iPadOS) || os(visionOS)
         modifier(DismissKeyboardOnTapModifier())

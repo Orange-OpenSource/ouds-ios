@@ -27,6 +27,7 @@ public typealias Tuning = OUDSThemeTuning
 /// Some tokens for rounded and not rounded cases can have the same values in the end (like for Wireframe theme) or not (like for Orange theme).
 ///
 /// - Since: 0.19.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSThemeTuning: @unchecked Sendable {
 
     // MARK: Tuned properties

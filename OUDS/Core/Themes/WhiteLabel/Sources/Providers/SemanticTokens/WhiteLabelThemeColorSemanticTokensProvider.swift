@@ -28,7 +28,7 @@ open class WhiteLabelThemeColorSemanticTokensProvider: WireframeThemeColorSemant
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Intializes the provider
+    /// Initializes the provider.
     override public init() {
         super.init()
         OL.debug("Init of WhiteLabelThemeColorSemanticTokensProvider")

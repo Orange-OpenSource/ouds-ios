@@ -44,7 +44,7 @@
 ///         var sizeDisplayLargeTablet: FontSizeSemanticToken { FontRawTokens.size1450 }
 ///
 ///         // The 'higher level' font semantic tokens wrapping them and exposed to users
-///         // declared (in this FontMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+FontMultipleSemanticTokens.swift)
+///         // declared (in this FontMultipleSemanticTokens.swift) and defined manually (in OUDSTheme+FontMultipleSemanticTokens.swift)
 ///         var sizeDisplayLarge: MultipleFontSizeSemanticToken { MultipleFontSizeSemanticToken(compact: sizeDisplayLargeMobile, regular: sizeDisplayLargeTablet) }
 ///
 ///         // Thus users can in their components use colorNone as defined in their design system

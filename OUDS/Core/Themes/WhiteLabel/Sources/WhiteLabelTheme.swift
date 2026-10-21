@@ -19,7 +19,7 @@ import SwiftUI
 /// This White Label theme is a specific theme. It has been designed to let users have their own theme to update like a grey label theme, or to keep as is like a white label theme.
 ///
 /// The White Label theme is based on the Wireframe theme which is dedicated to mockups and prototypes.
-/// However is is possible to override the semantic tokens of colors, change the tuning and choose the font family to apply.
+/// However, you can override the semantic color tokens, change the tuning, and choose the font family to apply.
 ///
 /// To get it:
 /// ```swift
@@ -62,7 +62,7 @@ import SwiftUI
 /// ```
 ///
 /// Note the `Tuning` only defines flags the components will read. But in the end the rounded corners are defined in tokens.
-/// Thus even if the rounded corners are enabled in `Tuning`, it the same radius values are used in the components for both rounded and not rounded
+/// Thus, even if rounded corners are enabled in `Tuning`, the same radius values are used in components for both rounded and square corners.
 /// cases the component may not change.
 ///
 /// ## Tokens versions
@@ -70,6 +70,7 @@ import SwiftUI
 /// See the tokens version from `WireframeTheme`.
 ///
 /// - Since: 3.1.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
 
     // MARK: - Initializers
@@ -81,13 +82,13 @@ public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - name: A name to give to the theme, used for debugging for example. If nil, "WhiteLabel" will be used.
-    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Default set to "SF Pro"
+    ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Default set to empty to have native system font.
     ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
     public init(colors: AllColorSemanticTokensProvider? = nil,
                 colorsCharts: AllColorChartSemanticTokensProvider? = nil,
                 colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
                 name: String? = nil,
-                fontFamily: String = "SF Pro",
+                fontFamily: String = "",
                 tuning: Tuning? = nil)
     {
         let colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

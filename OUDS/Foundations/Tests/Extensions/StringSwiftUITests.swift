@@ -43,36 +43,6 @@ struct StringSwiftUITests {
         #expect(result == "Helvetica-Bold", "Current value is '\(result)'")
     }
 
-    /// Tests the SF Pro font family values created using a font family name and a weight
-    @Test
-    func fontNameInPostScriptForSFPro() throws {
-        var result: String
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.ultraLight)")
-        #expect(result == "SFPro-Ultralight", "Current value is '\(result)'")
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.thin)")
-        #expect(result == "SFPro-Thin", "Current value is '\(result)'")
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.light)")
-        #expect(result == "SFPro-Light", "Current value is '\(result)'")
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.medium)")
-        #expect(result == "SFPro-Medium", "Current value is '\(result)'")
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.semibold)")
-        #expect(result == "SFPro-Semibold", "Current value is '\(result)'")
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.bold)")
-        #expect(result == "SFPro-Bold", "Current value is '\(result)'")
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.heavy)")
-        #expect(result == "SFPro-Heavy", "Current value is '\(result)'")
-
-        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.black)")
-        #expect(result == "SFPro-Black", "Current value is '\(result)'")
-    }
-
     /// Tests the Menlo font family values created using a font family name and a weight
     @Test
     func fontNameInPostScriptForMenlo() throws {

@@ -19,7 +19,7 @@ import SwiftUI
 // MARK: - Native fonts
 
 #if os(macOS)
-/// For OUDS a `NativeFont` on macOS is a `NSFont`
+/// For OUDS a `NativeFont` on macOS is an `NSFont`
 public typealias NativeFont = NSFont
 #else
 /// For OUDS a `NativeFont` on iOS is a `UIFont`
@@ -74,6 +74,15 @@ extension Font {
         #endif
 
         if let family {
+            // Link to the Apple restriction of "SF Mono" font usage
+            // (https://github.com/supercomputra/SF-Mono-Font/issues/3),
+            // we need to use system API instead of the font name
+            // which is not available as is in the named available system fonts.
+            if family.contains("SF Mono") {
+                return NativeFont.monospacedSystemFont(ofSize: scaledFontSize,
+                                                       weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
+            }
+
             // Can be a custom font loaded from side assets or another custom font available in the OS
             let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: adaptiveFontToken.weight))]
             if let customFont = NativeFont(name: composedFontFamily, size: scaledFontSize) {
@@ -81,8 +90,8 @@ extension Font {
             }
         }
 
-        // If no family or not loaded
-        // Apply the system font with weight, responsive to Dynamic Type
+        // If no family or family not loaded, apply the system font with weight, responsive to Dynamic Type
+        // Fallbacks of "SF Pro" case.
         return NativeFont.systemFont(ofSize: scaledFontSize, weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
     }
 }

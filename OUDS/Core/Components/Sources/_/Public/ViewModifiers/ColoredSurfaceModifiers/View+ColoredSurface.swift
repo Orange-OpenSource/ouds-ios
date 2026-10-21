@@ -20,6 +20,7 @@ extension View {
     /// Will use a surface color, i.e. a kind of configuration to apply considering monochrome mode and color scheme.
     ///
     /// - Parameter surfaceColor: The surface color applied as background on the current view
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func coloredSurface(_ surfaceColor: OUDSColoredSurface.SurfaceColor) -> some View {
         modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: surfaceColor))
     }

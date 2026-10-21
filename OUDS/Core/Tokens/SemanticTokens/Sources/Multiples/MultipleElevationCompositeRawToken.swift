@@ -27,7 +27,7 @@ import SwiftUI
 ///         let bottom_0 = ElevationCompositeRawToken(x: x0, y: y0, blur: blur0, color: ColorRawTokens.opacityBlack0)
 ///         let bottom_1_100 = ElevationCompositeRawToken(x: x0, y: y100, blur: blur200, color: ColorRawTokens.opacityBlack100)
 ///
-///         // Then the develoment team declares an "higher" level elevation semantic token
+///         // Then the development team declares a higher-level elevation semantic token
 ///         // inside ElevationCompositeSemanticTokens protocol,
 ///         // and defined inside OrangeTheme+ElevationCompositeSemanticTokens extension
 ///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationCompositeRawToken to keep same grammar as design kit
@@ -63,9 +63,10 @@ import SwiftUI
 ///
 /// The case of this `MultipleElevationCompositeRawToken` is quite particular because in fact it contains `MultipleElevationCompositeRawToken` (i.e. raw tokens) instead of semantic tokens.
 /// In fact only the *color* of the elevation effect vary depending to the color scheme,
-/// but in the *Figma* kit this is composite raw tokens which are defined for ligh and dark mode as only one token.
+/// but in the *Figma* kit these composite raw tokens are defined for light and dark modes as a single token.
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class MultipleElevationCompositeRawToken: NSObject, Sendable {
 
     /// For **light** mode scheme

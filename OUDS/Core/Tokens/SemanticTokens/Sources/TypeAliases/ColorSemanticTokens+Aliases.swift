@@ -21,6 +21,7 @@ extension ColorSemanticToken {
     /// Because some color semantic tokens can have forbidden values,
     /// this helpers returns a flag saying if its the case or not
     /// - Returns: True if forbidden color value, false otherwise
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func isForbiddenValueColor() -> Bool {
         self == "ouds-forbidden-color-value"
     }

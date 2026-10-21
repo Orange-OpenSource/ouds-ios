@@ -22,6 +22,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func foregroundStyle(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedForegroundStyle(color: color))
     }
@@ -30,6 +31,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func foregroundColor(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedForegroundColor(color: color))
     }
@@ -38,6 +40,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func background(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedBackgroundColor(color: color))
     }
@@ -46,6 +49,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func accentColor(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedAccentColor(color: color))
     }
@@ -54,6 +58,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func tint(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedTintColor(color: color))
     }

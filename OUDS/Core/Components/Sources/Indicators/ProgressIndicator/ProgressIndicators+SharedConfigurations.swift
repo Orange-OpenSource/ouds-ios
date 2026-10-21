@@ -18,6 +18,7 @@ import SwiftUI
 /// The status of the progress indicator. It determines the color of the bar.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSProgressIndicatorStatus: Sendable {
 
     /// Default status used when progress has no specific semantic meaning.
@@ -44,6 +45,7 @@ import SwiftUI
 /// The size of the gap between the progress bar and the track.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSProgressIndicatorGapSize: Sendable {
 
     /// Standard gap size
@@ -61,6 +63,7 @@ import SwiftUI
 /// vocalization.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public struct OUDSAccessibilityConfiguration: Equatable, Sendable {
 
     /// The name of the component (e.g., "progress bar", "download bar").

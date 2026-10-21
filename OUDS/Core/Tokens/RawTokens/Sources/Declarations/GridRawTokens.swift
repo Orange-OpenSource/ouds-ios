@@ -15,6 +15,7 @@
 /// ``GridRawTokens`` are tokens to use to define *grids*  using ``GridRawToken`` type.
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum GridRawTokens {
 
     // Values are defined in *GridRawTokens+Values.swift* file updated by the tokenator.

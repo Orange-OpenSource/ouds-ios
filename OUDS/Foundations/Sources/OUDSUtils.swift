@@ -16,6 +16,7 @@ import Foundation
 /// A set of utilities from OUDS library shared with love ⸜(｡˃ ᵕ ˂)⸝♡♡♡
 ///
 /// - Since: 1.2.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSUtils {
 
     // MARK: - Language detection

@@ -40,7 +40,7 @@
 ///         var iconWithHeadingXlargeSizeSmTablet: SizeSemanticToken { DimensionRawTokens._650 }
 ///
 ///         // The 'higher level' size semantic tokens wrapping them and exposed to users,
-///         // declared (in SizeMultipleSemanticTokens.swift) and defined (in OUDSTheme+SizeMultipleSemanticTokens.swift) manualy
+///         // declared (in SizeMultipleSemanticTokens.swift) and defined (in OUDSTheme+SizeMultipleSemanticTokens.swift) manually
 ///         var iconWithHeadingXlargeSizeSmall: MultipleSizeSemanticToken {
 ///             MultipleSizeSemanticToken(compact: iconWithHeadingXlargeSizeSmMobile, regular: iconWithHeadingXlargeSizeSmTablet)
 ///         }

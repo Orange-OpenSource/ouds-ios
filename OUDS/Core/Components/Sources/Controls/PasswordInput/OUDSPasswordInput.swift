@@ -64,6 +64,11 @@ import SwiftUI
 /// ## Rich text
 ///
 /// Rich text can be used for error and helper texts.
+/// The helper text and the error message are ``OUDSTextualContent`` values: a raw `String`, a localized string
+/// with `.localized(_:tableName:bundle:)` or a rich text with `.rich(_:)` and an `AttributedString`.
+/// Prefer `.raw(_:)` to a bare string literal for a raw helper text, so the compiler selects without any doubt the initializer
+/// taking an ``OUDSTextualContent`` and does not emit a deprecation warning.
+/// The error message is defined with `OUDSTextInput.Status.textualError(message:)`.
 ///
 /// Strong text can be used sparingly to highlight key information within the content.
 /// No other text styles should be used.
@@ -80,6 +85,13 @@ import SwiftUI
 ///
 ///     // Add a leading icon and helper text to more context
 ///     OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
+///
+///     // The helper text can be localized or rich, the error message too
+///     OUDSPasswordInput(label: "Password", password: $password, helperText: .localized("password_helper", bundle: Bundle.module))
+///     OUDSPasswordInput(label: "Password",
+///                       password: $password,
+///                       helperText: .rich(AttributedString(markdown: "You should use a **strong password**"))) // Manage in your side errors for init
+///     OUDSPasswordInput(label: "Password", password: $password, status: .textualError(message: "The password is too weak"))
 ///
 ///     // Password with prefix
 ///     OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
@@ -122,7 +134,7 @@ public struct OUDSPasswordInput: View {
     let placeholder: String?
     let prefix: String?
     let lockIcon: Bool
-    let helperText: TextualContent?
+    let helperText: OUDSTextualContent?
     let status: OUDSTextInput.Status
     let isOutlined: Bool
     let constrainedMaxWidth: Bool
@@ -137,97 +149,51 @@ public struct OUDSPasswordInput: View {
 
     /// Creates a password input.
     ///
+    /// The `helperText` is an ``OUDSTextualContent``: a raw `String`, a localized string or a rich `AttributedString`.
+    ///
     /// ```swift
     ///     OUDSPasswordInput(label: "Password", password: $password)
-    /// ```
     ///
-    /// - Parameters:
-    ///    - label: The label displayed above the password input.
-    ///    - password: The pasword to display and edit.
-    ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`. Be carefull it is recommanded
-    ///    to hide password by default and let user to display it with the button.
-    ///    - placeholder: The text displayed when the password input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input. A prefix is not common and is discouraged in a
-    ///    Password Input component. In very specific cases, it can provide context or format requirements
-    ///    (e.g., “DEV-” for test accounts, "admin-" as a pattern to define an admin password)
-    ///    -  lockIcon: When `true`, a lock icon is displayed at the start of the password input to visually reinforce
-    ///    the security context. Defaults to `false`.
-    ///    - helperText: An optional helper text displayed below the password input. It conveys additional, information about the input field,
-    ///    such as how it will be used, by default is *nil*. If `status` is set to `OUDSTextInput.Status.Error`, this `helperText` is ignored.
-    ///    - isOutlined: Controls the style of the pasword input. When `true`, it displays a minimalist
-    ///      password input with a transparent background and a visible stroke outlining the field, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
-    ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
-    ///      modifier. Defaults to `false`.
-    ///    - status: The current status of the password input base on ` OUDSTextInput.Status `, by default to set *enabled*
-    public init(label: String,
-                password: Binding<String>,
-                isHiddenPassword: Binding<Bool> = .constant(true),
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                lockIcon: Bool = false,
-                helperText: String? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: OUDSTextInput.Status = .enabled)
-    {
-        self.label = label
-        self.password = password
-        self.helperText = if let helperText {
-            .raw(helperText)
-        } else {
-            nil
-        }
-        self.placeholder = placeholder
-        self.prefix = prefix
-        self.lockIcon = lockIcon
-        self.status = status
-        _isHiddenPassword = isHiddenPassword
-        self.isOutlined = isOutlined
-        self.constrainedMaxWidth = constrainedMaxWidth
-    }
-
-    /// Creates a password input with a rich text as helper text
-    ///
-    /// ```swift
     ///     OUDSPasswordInput(label: "Password",
     ///                       password: $password,
-    ///                       helperText: AttributedString(markdown: "You should use a **strong password**"))  // Manage in your side errors for init)
+    ///                       helperText: .rich(AttributedString(markdown: "You should use a **strong password**")))  // Manage in your side errors for init
     /// ```
     ///
     /// - Parameters:
     ///    - label: The label displayed above the password input.
-    ///    - password: The pasword to display and edit.
+    ///    - password: The pasword to display and edit
     ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`. Be carefull it is recommanded
     ///    to hide password by default and let user to display it with the button.
     ///    - placeholder: The text displayed when the password input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input. A prefix is not common and is discouraged in a
     ///    Password Input component. In very specific cases, it can provide context or format requirements
     ///    (e.g., “DEV-” for test accounts, "admin-" as a pattern to define an admin password)
-    ///    -  lockIcon: When `true`, a lock icon is displayed at the start of the password input to visually reinforce
+    ///    - lockIcon: When `true`, a lock icon is displayed at the start of the password input to visually reinforce
     ///    the security context. Defaults to `false`.
-    ///    - helperText: An helper text displayed below the password input. It conveys additional, information about the input field,
-    ///    such as how it will be used, by default is *nil*. If `status` is set to `OUDSTextInput.Status.Error`, this `helperText` is ignored.
+    ///    - helperText: An optional helper text displayed below the password input, raw, localized or rich text. It conveys additional, information about the input field,
+    ///    such as how it will be used, by default is *nil*. If `status` is set to an error status, this `helperText` is ignored.
     ///    - isOutlined: Controls the style of the pasword input. When `true`, it displays a minimalist
     ///      password input with a transparent background and a visible stroke outlining the field, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
-    ///    - status: The current status of the password input base on ` OUDSTextInput.Status `, by default to set *enabled*
+    ///    - status: The current status of the password input base on `OUDSTextInput.Status`, by default to set *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(label: String,
                 password: Binding<String>,
                 isHiddenPassword: Binding<Bool> = .constant(true),
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 lockIcon: Bool = false,
-                helperText: AttributedString,
+                helperText: OUDSTextualContent? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
                 status: OUDSTextInput.Status = .enabled)
     {
         self.label = label
         self.password = password
-        self.helperText = .attributed(helperText)
+        self.helperText = helperText
         self.placeholder = placeholder
         self.prefix = prefix
         self.lockIcon = lockIcon
@@ -235,59 +201,17 @@ public struct OUDSPasswordInput: View {
         _isHiddenPassword = isHiddenPassword
         self.isOutlined = isOutlined
         self.constrainedMaxWidth = constrainedMaxWidth
-    }
-
-    /// Creates a password input with a localized label, looking up the key in the given bundle.
-    ///
-    /// ```swift
-    ///     OUDSPasswordInput(LocalizedStringKey("password_label"),
-    ///                       bundle: Bundle.module,
-    ///                       password: $password,
-    ///                       helperText: AttributedString(markdown: "You should use a **strong password**"))  // Manage in your side errors for init)
-    /// ```
-    ///
-    /// - Parameters:
-    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - password: The pasword to display and edit
-    ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`
-    ///    - placeholder: The text displayed when the password input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - lockIcon: When `true`, a lock icon is displayed, defaults to `false`
-    ///    - helperText: An optional helper text, by default is *nil*
-    ///    - isOutlined: Controls the style of the pasword input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the password input, default set to *enabled*
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                password: Binding<String>,
-                isHiddenPassword: Binding<Bool> = .constant(true),
-                placeholder: String? = nil,
-                prefix: String? = nil,
-                lockIcon: Bool = false,
-                helperText: String? = nil,
-                isOutlined: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                status: OUDSTextInput.Status = .enabled)
-    {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
-                  password: password,
-                  isHiddenPassword: isHiddenPassword,
-                  placeholder: placeholder,
-                  prefix: prefix,
-                  lockIcon: lockIcon,
-                  helperText: helperText,
-                  isOutlined: isOutlined,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  status: status)
     }
 
     /// Creates a password input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
     ///     OUDSPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
+    ///
+    ///     OUDSPasswordInput(LocalizedStringKey("password_label"),
+    ///                       bundle: Bundle.module,
+    ///                       password: $password,
+    ///                       helperText: .localized("password_helper", bundle: Bundle.module))
     /// ```
     ///
     /// - Parameters:
@@ -295,14 +219,24 @@ public struct OUDSPasswordInput: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - password: The pasword to display and edit
-    ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`
+    ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`. Be carefull it is recommanded
+    ///    to hide password by default and let user to display it with the button.
     ///    - placeholder: The text displayed when the password input is empty, by default is *nil*
-    ///    - prefix: Text placed before the user's input, by default is *nil*
-    ///    - lockIcon: When `true`, a lock icon is displayed, defaults to `false`
-    ///    - helperText: An  helper text in rich text
-    ///    - isOutlined: Controls the style of the pasword input, by default is *false*
-    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
-    ///    - status: The current status of the password input, default set to *enabled*
+    ///    - prefix: Text placed before the user's input. A prefix is not common and is discouraged in a
+    ///    Password Input component. In very specific cases, it can provide context or format requirements
+    ///    (e.g., “DEV-” for test accounts, "admin-" as a pattern to define an admin password)
+    ///    - lockIcon: When `true`, a lock icon is displayed at the start of the password input to visually reinforce
+    ///    the security context. Defaults to `false`.
+    ///    - helperText: An optional helper text displayed below the password input, raw, localized or rich text. It conveys additional, information about the input field,
+    ///    such as how it will be used, by default is *nil*. If `status` is set to an error status, this `helperText` is ignored.
+    ///    - isOutlined: Controls the style of the pasword input. When `true`, it displays a minimalist
+    ///      password input with a transparent background and a visible stroke outlining the field, by default is *false*
+    ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
+    ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///      modifier. Defaults to `false`.
+    ///    - status: The current status of the password input base on `OUDSTextInput.Status`, by default to set *enabled*
+    ///
+    /// - Since: 3.2.0
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -311,7 +245,7 @@ public struct OUDSPasswordInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 lockIcon: Bool = false,
-                helperText: AttributedString,
+                helperText: OUDSTextualContent? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
                 status: OUDSTextInput.Status = .enabled)
@@ -333,44 +267,18 @@ public struct OUDSPasswordInput: View {
     // MARK: Body
 
     public var body: some View {
-        switch helperText {
-        case let .raw(rawHelperText):
-            OUDSTextInput(label: label,
-                          text: password,
-                          placeholder: placeholder,
-                          prefix: prefix,
-                          leadingImage: leadingIcon,
-                          trailingAction: trailingAction,
-                          helperText: rawHelperText,
-                          isOutlined: isOutlined,
-                          constrainedMaxWidth: constrainedMaxWidth,
-                          status: status)
-                .environment(\.textInputAsSecureField, isHiddenPassword)
-        case let .attributed(richHelperText):
-            OUDSTextInput(label: label,
-                          text: password,
-                          placeholder: placeholder,
-                          prefix: prefix,
-                          leadingImage: leadingIcon,
-                          trailingAction: trailingAction,
-                          helperText: richHelperText,
-                          isOutlined: isOutlined,
-                          constrainedMaxWidth: constrainedMaxWidth,
-                          status: status)
-                .environment(\.textInputAsSecureField, isHiddenPassword)
-        default:
-            OUDSTextInput(label: label,
-                          text: password,
-                          placeholder: placeholder,
-                          prefix: prefix,
-                          leadingImage: leadingIcon,
-                          trailingAction: trailingAction,
-                          helperText: nil,
-                          isOutlined: isOutlined,
-                          constrainedMaxWidth: constrainedMaxWidth,
-                          status: status)
-                .environment(\.textInputAsSecureField, isHiddenPassword)
-        }
+        OUDSTextInput(label: label,
+                      text: password,
+                      placeholder: placeholder,
+                      prefix: prefix,
+                      leadingImage: leadingIcon,
+                      trailingAction: trailingAction,
+                      helperText: helperText,
+                      isOutlined: isOutlined,
+                      constrainedMaxWidth: constrainedMaxWidth,
+                      status: status)
+            .environment(\.textInputAsSecureField, isHiddenPassword)
+            .skeleton()
     }
 
     // MARK: - Helpers

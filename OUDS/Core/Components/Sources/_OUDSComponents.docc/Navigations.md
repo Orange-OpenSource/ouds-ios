@@ -75,12 +75,11 @@ Use ``OUDSStaticListItem`` when the row is display-only and should not trigger a
 
 ```swift
 // Simple list item with a label only
-OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
 
 // List item with full textual content
 OUDSStaticListItem(data: OUDSListItemData(
-    label: "Label",
-    hasBoldLabel: true,
+    label: .textual("Label", isBold: true),
     description: "Description",
     overline: "Overline",
     extraLabel: "Extra label",
@@ -91,20 +90,20 @@ OUDSStaticListItem(data: OUDSListItemData(
 let icon = OUDSListItemIcon(status: .info, description: "", size: .medium)
 
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Notifications"),
+    data: OUDSListItemData(label: .textual("Notifications")),
     leading: .icon(icon),
     trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 )
 
 // List item with a leading image (static asset)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Product"),
+    data: OUDSListItemData(label: .textual("Product")),
     leading: .image(OUDSListItemImage(asset: Image("product_thumb"), size: .medium))
 )
 
 // List item with a leading async image (from URL)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Remote Product"),
+    data: OUDSListItemData(label: .textual("Remote Product")),
     leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
 )
 
@@ -116,13 +115,13 @@ let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com
 }
 
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Loading Product"),
+    data: OUDSListItemData(label: .textual("Loading Product")),
     leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
 )
 
 // List item with a trailing image
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Status"),
+    data: OUDSListItemData(label: .textual("Status")),
     trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
 )
 
@@ -155,6 +154,37 @@ OUDSStaticListItem(
 )
 ```
 
+##### Rich text content
+
+Every textual field (`label`, `description`, `overline`, `extraLabel`, `helperText`) accepts
+a raw `String`, a localized string or an `AttributedString`. The optional fields use ``OUDSTextualContent``
+(`.raw` / `.localized` / `.rich`) while the label uses ``OUDSListItemData/Label``
+(`.textual` / `.custom`, the `.text` case being deprecated since 3.2.0).
+
+String literals are accepted thanks to `ExpressibleByStringLiteral` on both types, so plain
+text call sites remain concise: `label: "Label", description: "Description"`.
+
+> Note: a bare literal label with no textual field (`OUDSListItemData(label: "Label")`, or with only `textSlot` / `bottomSlot`) may select a
+> deprecated initializer and emit a deprecation warning. Write `label: .textual("Label")` in that case.
+
+```swift
+// Fully styled label and overline (user controls fonts, colors, markdown…)
+let styledLabel = AttributedString.from(text: "Premium",
+                                        foregroundColor: .orange,
+                                        font: .headline)
+let styledOverline = AttributedString.from(text: "FEATURED",
+                                           foregroundColor: .purple,
+                                           font: .caption)
+
+OUDSStaticListItem(data: OUDSListItemData(
+    label: .textual(.rich(styledLabel)),
+    description: "Plain description via string literal",
+    overline: .rich(styledOverline),
+    extraLabel: .localized("extra.label.key"),
+    helperText: .rich(AttributedString("A rich helper"))
+))
+```
+
 #### Navigable list item
 
 Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemIndicatorType`` defines the visual indicator shown:
@@ -177,14 +207,14 @@ Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. Th
 ```swift
 // Forward navigation (default)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Next screen")
+    data: OUDSListItemData(label: .textual("Next screen"))
 ) {
     // Navigate to next screen
 }
 
 // External navigation
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Open website"),
+    data: OUDSListItemData(label: .textual("Open website")),
     indicatorType: .external
 ) {
     openURL(url)
@@ -192,7 +222,7 @@ OUDSNavigationListItem(
 
 // Backward navigation
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Go back"),
+    data: OUDSListItemData(label: .textual("Go back")),
     indicatorType: .previous
 ) {
     // Navigate back
@@ -257,8 +287,8 @@ OUDSNavigationListItem(
 OUDSNavigationListItem(
     data: OUDSListItemData(
         label: "Settings",
-        textSlot: { Text("Slot content") },
-        bottomSlot: { Text("Bottom content") },
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
 ) {

@@ -35,65 +35,65 @@ import SwiftUI
 /// ```swift
 ///     // Trailing with a default label text
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .textual("Label")),
 ///         trailing: .text(.label("Info"))
 ///     )
 ///
 ///     // Trailing with a muted label
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .textual("Label")),
 ///         trailing: .text(.labelMuted("Secondary"))
 ///     )
 ///
 ///     // Trailing with label and extra label
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .textual("Label")),
 ///         trailing: .text(.labelAndExtraLabel("Label", "Extra"))
 ///     )
 ///
 ///     // Trailing with a badge according to type
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Notifications"),
+///         data: OUDSListItemData(label: .textual("Notifications")),
 ///         trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 ///     )
 ///
 ///     // Trailing with a tag
 ///     let tag = OUDSTag(label: "New", size: .small)
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Feature"),
+///         data: OUDSListItemData(label: .textual("Feature")),
 ///         trailing: .tag(tag)
 ///     )
 ///
 ///     // Trailing with an icon
 ///     let icon = OUDSListItemIcon(type: .info, size: .medium)
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .textual("Label")),
 ///         trailing: .icon(icon)
 ///     )
 ///
 ///     // Trailing with an image
 ///     let image = OUDSListItemImage(asset: Image("il_placeholder"), size: .medium)
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .textual("Label")),
 ///         trailing: .image(image)
 ///     )
 ///
 ///     // Trailing with a country flag
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "France"),
+///         data: OUDSListItemData(label: .textual("France")),
 ///         trailing: .flag(.init(asset: Image("il_flag_fr"), description: "France"))
 ///     )
 ///
 ///     // Trailing with an avatar
 ///     let avatar = OUDSListItemAvatar(type: .initials("AB"), size: .medium)
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Contact"),
+///         data: OUDSListItemData(label: .textual("Contact")),
 ///         trailing: .avatar(avatar)
 ///     )
 ///
 ///     // Trailing with a custom view, e.g. a gauge showing a remaining SMS credit
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "SMS credit"),
+///         data: OUDSListItemData(label: .textual("SMS credit")),
 ///         trailing: .custom {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
@@ -208,6 +208,8 @@ import SwiftUI
     /// The custom view is responsible for its own accessibility: unlike `.flag` and `.avatar`,
     /// it is **not** automatically hidden from assistive technologies.
     ///
+    /// Paddings must be managed by the given `View` in the slot.
+    ///
     /// **Note:** Not displayed when the list item is in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``),
     /// since its layout cannot be adapted automatically to the reduced space.
     case slot(AnyView)
@@ -216,7 +218,7 @@ import SwiftUI
     ///
     /// ```swift
     ///     OUDSStaticListItem(
-    ///         data: OUDSListItemData(label: "SMS credit"),
+    ///         data: OUDSListItemData(label: .textual("SMS credit")),
     ///         trailing: .slot {
     ///             OUDSCircularProgressIndicator(progress: 0.75)
     ///         }

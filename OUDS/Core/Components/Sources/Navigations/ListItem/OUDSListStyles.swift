@@ -25,7 +25,7 @@ import SwiftUI
 /// ## Code sample
 ///
 /// ```swift
-///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListItemContainerAlignment(.top)
 /// ```
 ///
@@ -68,34 +68,34 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Card style with outline only on interaction
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListCardStyle(decoration: .outlined(onInteractionOnly: true))
 ///
 ///     // Card style with an outlined border on all states
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListCardStyle(decoration: .outlined(onInteractionOnly: false))
 ///
 ///     // Card style with divider, background
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListCardStyle(decoration: .standard(divider: true, background: true))
 ///
 ///     // Card style divider and without background
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListCardStyle(decoration: .standard(divider: true, background: false))
 ///
 ///     // Item style with background and divider
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListItemStyle(divider: true, .background: true)
 ///
 ///     // Item style with divider and without background
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListItemStyle(divider: true, .background: false)
 ///
 ///     // Using global modifier
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListContentStyle(.card(.outlined))
 ///
-///     OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListContentStyle(.item(divider: true, background: false))
 /// ```
 ///
@@ -156,12 +156,12 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Standard size (default)
-///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListItemSize(.standard)
 ///
 ///     // Small size — overline and extraLabel are hidden,
 ///     // avatars and icons use their smallest variant
-///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListItemSize(.small)
 /// ```
 ///
@@ -192,15 +192,15 @@ extension View {
     /// ```swift
     ///     // Set outlined card style
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 1")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 2")))
     ///     }
     ///     .oudsListContentStyle(.card(.outlined())
     ///
     ///     // Set item style with background and divider
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 1")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 2")))
     ///     }
     ///     .oudsListContentStyle(.item(divider: true, background: true))
     /// ```
@@ -208,6 +208,7 @@ extension View {
     /// - Parameter style: The ``OUDSListItemContentStyle``  style to apply on items.
     ///
     /// - Returns: A view with the style applied to its list items.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListContentStyle(_ style: OUDSListItemContentStyle) -> some View {
         environment(\.oudsListItemContentStyle, style)
     }
@@ -220,8 +221,8 @@ extension View {
     ///
     /// ```swift
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 1")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 2")))
     ///     }
     ///     .oudsListCardStyle(.outlined())
     /// ```
@@ -230,6 +231,7 @@ extension View {
     ///   Defaults to `.standard(divider: true, background: true)`.
     ///
     /// - Returns: A view with the card style applied to its list items, default set to `.standard(divider: true, background: true)`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListCardStyle(_ decoration: OUDSListItemContentStyle.CardDecoration = .standard(divider: true, background: true)) -> some View {
         environment(\.oudsListItemContentStyle, .card(decoration))
     }
@@ -242,8 +244,8 @@ extension View {
     ///
     /// ```swift
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 1")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Item 2")))
     ///     }
     ///     .oudsListItemStyle(divider: true, background: true)
     /// ```
@@ -254,6 +256,7 @@ extension View {
     ///     on interaction states (pressed on focussed)
     ///
     /// - Returns: A view with the item style applied to its list items, default set to `.item(divider: true, background: false)`
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListItemStyle(divider: Bool = true, background: Bool = false) -> some View {
         environment(\.oudsListItemContentStyle, .item(divider: divider, background: background))
     }
@@ -266,7 +269,7 @@ extension View {
     ///
     /// ```swift
     ///     OUDSStaticListItem(
-    ///         data: OUDSListItemData(label: "Label"),
+    ///         data: OUDSListItemData(label: .textual("Label")),
     ///         leading: .image(.init(asset: Image("il_placeholder"), size: .medium))
     ///     )
     ///     .oudsListItemRoundedMedia(true)
@@ -276,6 +279,7 @@ extension View {
     ///   When `false` (default), media elements are displayed with square corners.
     ///
     /// - Returns: A view with the rounded media setting applied to its list items, default set to *false*
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListItemRoundedMedia(_ rounded: Bool = false) -> some View {
         environment(\.oudsListItemRoundedMedia, rounded)
     }
@@ -301,6 +305,7 @@ extension View {
     ///   to the top of the row.
     ///
     /// - Returns: A view with the specified containers alignment applied to its list items.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListItemContainerAlignment(_ alignment: OUDSListItemContainersAlignment = .center) -> some View {
         environment(\.oudsListItemContainersAlignment, alignment)
     }
@@ -313,8 +318,8 @@ extension View {
     ///
     /// ```swift
     ///     VStack {
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Compact item"))
-    ///         OUDSStaticListItem(data: OUDSListItemData(label: "Another compact item"))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Compact item")))
+    ///         OUDSStaticListItem(data: OUDSListItemData(label: .textual("Another compact item")))
     ///     }
     ///     .oudsListItemSize(.small)
     /// ```
@@ -323,6 +328,7 @@ extension View {
     ///   Use `.standard` (default) for normal sizing, or `.small` for a compact layout.
     ///
     /// - Returns: A view with the specified size applied to its list items.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListItemSize(_ size: OUDSListItemSize) -> some View {
         environment(\.oudsListItemSize, size)
     }

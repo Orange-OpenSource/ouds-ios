@@ -18,6 +18,7 @@ import SwiftUI
 /// Each property in this ``OUDSCheckboxPickerData`` is used to define the suitable ``OUDSCheckboxItem``.
 ///
 /// - Since: 0.14.0
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
 
     /// The identifier, supposed to be unique, to discriminate the element.

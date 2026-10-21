@@ -17,6 +17,7 @@ import Foundation
 /// Enumerates the types of layouts a ``OUDSCheckboxPicker`` can have
 ///
 /// - Since: 0.14.0
+@available(iOS 15, macOS 13, visionOS 1, *)
 @frozen public enum OUDSCheckboxPickerPlacement {
 
     /// A `RootLabel` is in the end a String

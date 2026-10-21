@@ -14,6 +14,7 @@
 /// A checkbox indicator has three available states: `selected`, `unselected` and `indeterminate`
 ///
 /// - Since: 0.12.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSCheckboxIndicatorState {
     /// The checkbox indicator is filled, a tick is inside, the user selected it
     case selected

@@ -16,7 +16,7 @@ import OUDSTokensSemantic
 
 // MARK: - OUDS Theme
 
-/// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
+/// This is the base theme that all themes must inherit from.
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
 /// to implement all tokens.
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
@@ -155,7 +155,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to select input components like `OUDSSelectInput`
     public let selectInput: AllSelectInputComponentTokensProvider
 
-    /// All components tokens related to skeleto components
+    /// All components tokens related to skeleton components
     public let skeleton: AllSkeletonComponentTokensProvider
 
     /// All components tokens related to switch / toggle components like `OUDSSwitch`

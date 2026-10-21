@@ -78,7 +78,7 @@ import SwiftUI
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Contact"),
+///         data: OUDSListItemData(label: .textual("Contact")),
 ///         trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
 ///     )
 /// ```

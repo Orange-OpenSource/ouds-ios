@@ -4,6 +4,62 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
+
+### Added
+
+- Flag for `alert message` and `inline alert` components to disable Voice Over announcements (Orange-OpenSource/ouds-ios#1827)
+- `text area` component `textual` helper text and `textualError` status with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
+- `password input` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText` (Orange-OpenSource/ouds-ios#1797)
+- `text input` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
+- `PIN code input` component init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
+- `checkbox item indeterminate` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- `radio item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- `checkbox item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- `switch item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- `alert message` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
+- `bullet list` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
+- `list item` components inits with `OUDSTextualContent` parameters for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1812)
+- Flag to display full value instead of bullets in `PIN code input` component (Orange-OpenSource/ouds-ios#1762)
+- `Tuning` parameter for Orange, Orange Compact, Wireframe and White Label themes Xcode previews (Orange-OpenSource/ouds-ios#1793)
+- Tool to detect public API breakings (Orange-OpenSource/ouds-ios#1800)
+- `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
+- `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
+
+### Changed
+
+- Ruby Gem `fastlane` from v2.240.1 to v2.241.1
+- `excon` transitive RubyGem from v1.7.2 to v1.7.3
+- Swift Package `SwiftFormat` from v0.63.1 to v0.64.0
+- GitHub Actions `actions/github-script` from v7 to v9 for `check-renovate-dependencies-prs` workflow
+- GitHub Actions `ossf/scorecard-action` from v2.4.4 to v2.5.0 for `scorecard` workflow
+- GitHub Actions `ruby/setup-ruby` action from v1.327.0 to v1.331.0 for `build-and-test` and `build-xcframework` workflows
+- GitHub Actions `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `build-xcframework` and `scorecard` workflows
+- GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.2 to v4.39.0 for `scorecard` workflow
+- Availability details for Apple platforms on public API (Orange-OpenSource/ouds-ios#1815) 
+- Documentation for some components with DSM hyperlinks (Orange-OpenSource/ouds-ios#1813)
+- `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
+- `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
+
+### Deprecated
+
+- `OUDSTextArea.HelperText` cases `.plain(_:)` and `.rich(_:)`, and `OUDSTextArea.Status` cases `.error(message:)` and `.richError(message:)`; use `.textual(_:)` and `.textualError(message:)`
+- All four `String` / `AttributedString` `helperText` initializers of `OUDSPasswordInput`; use the new unified initializers taking `OUDSTextualContent`
+- All four `String` / `AttributedString` `helperText` initializers of `OUDSTextInput`, and `OUDSTextInput.Status` cases `.error(message:)` and `.richError(message:)`; use the new unified initializers taking `OUDSTextualContent` and `.textualError(message:)`
+- All three `String` / `AttributedString` / `LocalizedStringKey` `helperText` initializers of `OUDSPinCodeInput`, and `OUDSPinCodeInput.Status` cases `.error(message:)` and `.richError(message:)`; use the new unified initializer taking `OUDSTextualContent` and `.textualError(message:)`
+- Both `String` `errorText` initializers of `OUDSCheckboxItemIndeterminate`; use the new unified initializers taking `OUDSTextualContent`
+- All four `String` / `AttributedString` `errorText` initializers of `OUDSRadioItem`; use the new unified initializers taking `OUDSTextualContent`
+- All four `String` / `AttributedString` `errorText` initializers of `OUDSCheckboxItem`; use the new unified initializers taking `OUDSTextualContent`
+- All four `String` / `AttributedString` `errorText` initializers of `OUDSSwitchItem`; use the new unified initializers taking `OUDSTextualContent`
+- All eight `String` / `AttributedString` initializers of `OUDSAlertMessage`; use the new unified initializers taking `OUDSTextualContent` for `description` and `bulletList`
+- `String`, `AttributedString` and `LocalizedStringKey` initializers of `OUDSBulletList.Item`; use the new unified initializer taking `OUDSTextualContent`
+- `OUDSListItemData.Label.text(_:isBold:)`; use `.textual(_:isBold:)` or a string literal instead
+- All six `String` / `AttributedString` initializers of `OUDSListItemData`; use the new unified initializers taking `OUDSListItemData.Label` + `OUDSTextualContent`
+
+### Fixed
+
+- Use of `Menlo` font family for `code` typography through update of `familyCode` font semantic token (Orange-OpenSource/ouds-ios#1799)
+
 ## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
 
 ### Added
@@ -15,7 +71,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Swift Package `SwiftFormat` from v0.63.0 to v0.63.1
 - Ruby Gem `fastlane` from v2.240.0 to v2.240.1
 - `excon` transitive RubyGem from v1.7.1 to v1.7.2b (CVE-2026-54171)
-- `Ruby` version from v4.0.6 to v4.0.7 for `build-and-test` andg `build-xcframework` workflows
+- `Ruby` version from v4.0.6 to v4.0.7 for `build-and-test` and `build-xcframework` workflows
 - GitHub Actions `actions/upload-artifact` action from v4.6.2 to v7.0.1 for `build-xcframework` workflow
 - GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.0 to v4.38.2 for `scorecard` workflow
 - GitHub Actions `ruby/setup-ruby` action from v1.321.0 to v1.327.0 for `build-and-test` and `build-xcframework` workflows
@@ -72,7 +128,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
 - GitHub Actions `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
 - GitHub Actions `github/codeql-action/upload-sarif` from v4.37.0 to v4.38.0 for `scorecard` workflow
-- GitHub Action `ruby/setup-ruby` from v1.316.0 toq v1.321.0 for `build-and-test` workflow
+- GitHub Action `ruby/setup-ruby` from v1.316.0 to v1.321.0 for `build-and-test` workflow
 - Core `grid` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - Core `effect` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - Core `dimension` raw tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)

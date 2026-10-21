@@ -42,14 +42,14 @@ import SwiftUI
 /// ```swift
 ///     // Simple navigable list item with forward navigation
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Next screen")
+///         data: OUDSListItemData(label: .textual("Next screen"))
 ///     ) {
 ///         // Navigate to next screen
 ///     }
 ///
 ///     // List item with external navigation
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Open website"),
+///         data: OUDSListItemData(label: .textual("Open website")),
 ///         indicatorType: .external
 ///     ) {
 ///         openURL(url)
@@ -57,7 +57,7 @@ import SwiftUI
 ///
 ///     // List item with backward navigation
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Go back"),
+///         data: OUDSListItemData(label: .textual("Go back")),
 ///         indicatorType: .previous
 ///     ) {
 ///         // Navigate back
@@ -76,7 +76,7 @@ import SwiftUI
 ///
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "SMS credit"),
+///         data: OUDSListItemData(label: .textual("SMS credit")),
 ///         trailing: .custom {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
@@ -88,7 +88,7 @@ import SwiftUI
 ///     OUDSNavigationListItem(
 ///         data: OUDSListItemData(
 ///             label: "Settings",
-///             textSlot: { Text("Configure options") },
+///             textSlot: .init { Text("Configure options") },
 ///             helperText: "Helper text"
 ///         )
 ///     ) {
@@ -99,7 +99,7 @@ import SwiftUI
 ///     OUDSNavigationListItem(
 ///         data: OUDSListItemData(
 ///             label: "Profile",
-///             bottomSlot: { Text("Additional info") },
+///             bottomSlot: .init { Text("Additional info") },
 ///             helperText: "Helper text"
 ///         )
 ///     ) {
@@ -144,7 +144,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Settings"),
+///         data: OUDSListItemData(label: .textual("Settings")),
 ///         indicatorType: .next
 ///     ) {
 ///         // Navigate to settings
@@ -165,7 +165,8 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
+/// - [Navigation list item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-navigation-list-item)
+/// - [Navigation card item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-navigation-card-item)
 ///
 /// ## Themes rendering
 ///

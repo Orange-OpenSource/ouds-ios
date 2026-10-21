@@ -18,6 +18,7 @@ import SwiftUI
 /// and let system applies theme colors on navigation bar appearance.
 ///
 /// - Since: 1.4.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSNavigationStack<Content: View>: View {
 
     // MARK: - Properties
@@ -72,6 +73,7 @@ extension View {
     /// If needed, it is possible to remove the label of the back button (associated to previous chevron).
     ///
     /// - Parameter hideBackButtonLabel: Flag to say if the label in back button should be hidden. `false` by default
+    @available(iOS 15, macOS 13, visionOS 1, *)
     public func oudsNavigationBarAppearance(hideBackButtonLabel: Bool = false) -> some View {
         modifier(NavigationStackRefresher(hideBackButtonLabel: hideBackButtonLabel))
     }

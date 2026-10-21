@@ -289,7 +289,9 @@ public struct OUDSLink: View {
                 case .textOnly:
                     LinkTextAndIconView(text: text, icon: nil, size: size, layout: layout, interactionState: state)
                 }
-            }.modifier(LinkFrameModifier(size: size, density: density, isFullWidth: isFullWidth))
+            }
+            .modifier(LinkFrameModifier(size: size, density: density, isFullWidth: isFullWidth))
+            .skeleton()
         }
         .accessibilityLabel(Text(LocalizedStringKey(text)))
         .accessibilityRemoveTraits(.isButton)

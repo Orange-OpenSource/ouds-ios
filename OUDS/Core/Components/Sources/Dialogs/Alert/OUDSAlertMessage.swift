@@ -29,7 +29,16 @@ import SwiftUI
 ///
 ///         // With a rich text for the description (e.g. markdown here, do not forget to manage the errors)
 ///         let richDescription = AttributedString(markdown: "You **must read this text**")
-///         OUDSAlertMessage(label: "Label", description: richDescription)
+///         OUDSAlertMessage(label: "Label", description: .rich(richDescription))
+///
+///         // With a localized description and a bullet list mixing raw, localized and rich texts
+///         OUDSAlertMessage(label: "Label",
+///                          description: .localized("description_wording", bundle: Bundle.module),
+///                          bulletList: [
+///                             "First thing", // Same as .raw("First thing")
+///                             .localized("second_thing_wording", bundle: Bundle.module),
+///                             .rich(AttributedString(markdown: "One **more thing**")), // Manage in your side errors for init
+///                          ])
 ///
 ///         // A more complex alert message for warning status with a description and a close action
 ///         // to dismiss the message.
@@ -54,6 +63,10 @@ import SwiftUI
 /// ## Rich text
 ///
 /// Only the alert message description and bullet list can use rich text.
+/// They are ``OUDSTextualContent`` values: a raw `String` (a string literal is enough), a localized string
+/// with `.localized(_:tableName:bundle:)` or a rich text with `.rich(_:)` and an `AttributedString`.
+/// With the initializer taking a `LocalizedStringKey`, prefer `.raw(_:)` to a bare string literal for the `description`
+/// to avoid a deprecation warning.
 ///
 /// Strong text can be used sparingly within alert messages to highlight key information.
 /// Underlined text must not be used for emphasis, as it is commonly associated with links.
@@ -87,7 +100,7 @@ import SwiftUI
 ///
 /// ![An alert message component in light and dark modes with Wireframe theme](component_alertMessage_Wireframe)
 ///
-/// - Version: 1.1.1 (Figma component design version)
+/// - Version: 1.2.0 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
 public struct OUDSAlertMessage: View {
@@ -96,9 +109,10 @@ public struct OUDSAlertMessage: View {
 
     private let text: String
     private let status: OUDSAlertStatus
-    private let description: TextualContent?
-    private let bulletList: [TextualContent]
+    private let description: OUDSTextualContent?
+    private let bulletList: [OUDSTextualContent]
     private let link: Self.Link?
+    private let disableVoiceOverAnnouncement: Bool
     private let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -152,117 +166,47 @@ public struct OUDSAlertMessage: View {
     // MARK: - Initializers
 
     // For API signature consistency disable this warning
-    // swiftlint:disable function_default_parameter_at_end
 
     /// Creates an alert message.
     ///
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
+    /// The `description` and the elements of the `bulletList` are ``OUDSTextualContent`` values: a raw `String`
+    /// (a string literal is enough), a localized string or a rich `AttributedString`.
+    ///
     /// ```swift
     ///     OUDSAlertMessage(label: "Success! Your form was submitted.", status: .positive)
-    /// ```
     ///
-    /// - Parameters:
-    ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
-    ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
-    ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
-    ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.
-    ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
-    ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
-    ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
-    ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
-    ///   user is aware of important information; others can be closed to reduce visual clutter.
-    public init(label: String,
-                status: OUDSAlertStatus = .positive,
-                description: String? = nil,
-                bulletList: [String] = [],
-                link: Self.Link? = nil,
-                onClose: (() -> Void)? = nil)
-    {
-        text = label
-        if text.isEmpty {
-            OL.warning("The label for the OUDSAlertMessage must not be empty!")
-        }
-        self.status = status
-        self.description = if let description {
-            .raw(description)
-        } else {
-            nil
-        }
-        self.link = link
-        self.onClose = onClose
-        self.bulletList = bulletList.map { .raw($0) }
-    }
-
-    /// Creates an alert message with a rich text for the `description`.
-    ///
-    /// Use the `View/disabled(_:)` method to have component in disabled state.
-    ///
-    /// ```swift
     ///     OUDSAlertMessage(label: "Success! Your form was submitted.",
     ///                      status: .positive,
-    ///                      description: AttributedString(markdown: "This is **an important notice**")) // Manage in your side errors for init
-    /// ```
-    ///
-    /// - Parameters:
-    ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
-    ///   - description: A supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
-    ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
-    ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.
-    ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
-    ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
-    ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
-    ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
-    ///   user is aware of important information; others can be closed to reduce visual clutter.
-    public init(label: String,
-                status: OUDSAlertStatus = .positive,
-                description: AttributedString,
-                bulletList: [String] = [],
-                link: Self.Link? = nil,
-                onClose: (() -> Void)? = nil)
-    {
-        text = label
-        if text.isEmpty {
-            OL.warning("The label for the OUDSAlertMessage must not be empty!")
-        }
-        self.status = status
-        self.description = .attributed(description)
-        self.link = link
-        self.onClose = onClose
-        self.bulletList = bulletList.map { .raw($0) }
-    }
-
-    /// Creates an alert message with bullet list containing rich text.
-    ///
-    /// Use the `View/disabled(_:)` method to have component in disabled state.
-    ///
-    /// ```swift
-    ///     OUDSAlertMessage(label: "Success! Your form was submitted.",
-    ///                      status: .positive,
+    ///                      description: .rich(AttributedString(markdown: "This is **an important notice**")), // Manage in your side errors for init
     ///                      bulletList: [
-    ///                         AttributedString("First thing"),
-    ///                         AttributedString(markdown: "One **more thing**"), // Manage in your side errors for init
+    ///                         "First thing",
+    ///                         .localized("second_thing_wording", bundle: Bundle.module),
+    ///                         .rich(AttributedString(markdown: "One **more thing**")), // Manage in your side errors for init
     ///                      ])
     /// ```
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
     ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
-    ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
-    ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
-    ///   - bulletList: An list of bullet points to be displayed in the alert message following the label or the optional `description`.
+    ///   - description: An optional supplementary text in an alert message, raw, localized or rich. Use only when additional detail or guidance is needed beyond the label.
+    ///   It should remain short, clear and scannable, helping the user to understand what happened and what he can do next.
+    ///   - bulletList: An optional list of bullet points, each one raw, localized or rich, to be displayed in the alert message following the label or the optional `description`.
     ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
+    ///   - disableVoiceOverAnnouncement: Disables the automatic VoiceOver announcement of the alert message when it appears. Default is `false`.
     ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
     ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
+    ///
+    /// - Since: 3.2.0
     public init(label: String,
                 status: OUDSAlertStatus = .positive,
-                description: String? = nil,
-                bulletList: [AttributedString],
+                description: OUDSTextualContent? = nil,
+                bulletList: [OUDSTextualContent] = [],
                 link: Self.Link? = nil,
+                disableVoiceOverAnnouncement: Bool = false,
                 onClose: (() -> Void)? = nil)
     {
         text = label
@@ -270,136 +214,30 @@ public struct OUDSAlertMessage: View {
             OL.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
-        self.description = if let description {
-            .raw(description)
-        } else {
-            nil
-        }
+        self.description = description
         self.link = link
+        self.disableVoiceOverAnnouncement = disableVoiceOverAnnouncement
         self.onClose = onClose
-        self.bulletList = bulletList.map { .attributed($0) }
-    }
-
-    /// Creates an alert message with description and bullet list containing rich texts.
-    ///
-    /// Use the `View/disabled(_:)` method to have component in disabled state.
-    ///
-    /// ```swift
-    ///     OUDSAlertMessage(label: "Success! Your form was submitted.",
-    ///                      status: .positive,
-    ///                      description: AttributedString(markdown: "This is **an important notice**") // Manage in your side errors for init
-    ///                      bulletList: [
-    ///                         AttributedString("First thing"),
-    ///                         AttributedString(markdown: "One **more thing**"), // Manage in your side errors for init
-    ///                      ])
-    /// ```
-    ///
-    /// - Parameters:
-    ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
-    ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
-    ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
-    ///   - bulletList: An list of bullet points to be displayed in the alert message following the label or the optional `description`.
-    ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
-    ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
-    ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
-    ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
-    ///   user is aware of important information; others can be closed to reduce visual clutter.
-    public init(label: String,
-                status: OUDSAlertStatus = .positive,
-                description: AttributedString,
-                bulletList: [AttributedString],
-                link: Self.Link? = nil,
-                onClose: (() -> Void)? = nil)
-    {
-        text = label
-        if text.isEmpty {
-            OL.warning("The label for the OUDSAlertMessage must not be empty!")
-        }
-        self.status = status
-        self.description = .attributed(description)
-        self.link = link
-        self.onClose = onClose
-        self.bulletList = bulletList.map { .attributed($0) }
+        self.bulletList = bulletList
     }
 
     /// Creates an alert message with a localized label, looking up the key in the given bundle.
     ///
+    /// The `description` and the elements of the `bulletList` are ``OUDSTextualContent`` values: a raw `String`,
+    /// a localized string or a rich `AttributedString`.
+    /// For this initializer, prefer `.raw(_:)` to a bare string literal for the `description`, so the compiler selects without any doubt
+    /// the initializer taking an ``OUDSTextualContent`` and does not emit a deprecation warning.
+    ///
     /// ```swift
     ///     OUDSAlertMessage(LocalizedStringKey("error_message"), bundle: Bundle.module, status: .negative)
-    /// ```
     ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - status: The status of the alert message, default set to *positive*
-    ///   - description: An optional supplementary text, default set to *nil*
-    ///   - bulletList: An optional list of bullet points, default set to empty array
-    ///   - link: An optional link to be displayed in the alert message, default set to *nil*
-    ///   - onClose: An optional callback invoked when the close button is clicked, default set to *nil*
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
-                description: String? = nil,
-                bulletList: [String] = [],
-                link: Self.Link? = nil,
-                onClose: (() -> Void)? = nil)
-    {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
-                  status: status,
-                  description: description,
-                  bulletList: bulletList,
-                  link: link,
-                  onClose: onClose)
-    }
-
-    /// Creates an alert message with a localized label, looking up the key in the given bundle, and a rich text description.
-    ///
-    /// ```swift
     ///     OUDSAlertMessage(LocalizedStringKey("error_message"),
     ///                      bundle: Bundle.module,
     ///                      status: .negative,
-    ///                      description: AttributedString(markdown: "This is **an important notice**")) // Manage in your side errors for init
-    /// ```
-    ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - status: The status of the alert message, default set to *positive*
-    ///   - description: A supplementary text for the description as rich text
-    ///   - bulletList: An optional list of bullet points, default set to empty array
-    ///   - link: An optional link to be displayed in the alert message, default set to *nil*
-    ///   - onClose: An optional callback invoked when the close button is clicked, default set to *nil*
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
-                description: AttributedString,
-                bulletList: [String] = [],
-                link: Self.Link? = nil,
-                onClose: (() -> Void)? = nil)
-    {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
-                  status: status,
-                  description: description,
-                  bulletList: bulletList,
-                  link: link,
-                  onClose: onClose)
-    }
-
-    /// Creates an alert message with a localized label, looking up the key in the given bundle, and a rich text description.
-    /// Uses rich text for the bullet list.
-    ///
-    /// ```swift
-    ///     OUDSAlertMessage(LocalizedStringKey("error_message"),
-    ///                      bundle: Bundle.module,
-    ///                      status: .negative,
+    ///                      description: .rich(AttributedString(markdown: "This is **an important notice**")), // Manage in your side errors for init
     ///                      bulletList: [
-    ///                         AttributedString("First thing"),
-    ///                         AttributedString(markdown: "One **more thing**"), // Manage in your side errors for init
+    ///                         "First thing",
+    ///                         .rich(AttributedString(markdown: "One **more thing**")), // Manage in your side errors for init
     ///                      ])
     /// ```
     ///
@@ -407,18 +245,26 @@ public struct OUDSAlertMessage: View {
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - status: The status of the alert message, default set to *positive*
-    ///   - description: A supplementary text for the description as rich text
-    ///   - bulletList: An optional list of bullet points, default set to empty array
-    ///   - link: An optional link to be displayed in the alert message, default set to *nil*
-    ///   - onClose: An optional callback invoked when the close button is clicked, default set to *nil*
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
+    ///   - description: An optional supplementary text in an alert message, raw, localized or rich. Use only when additional detail or guidance is needed beyond the label.
+    ///   It should remain short, clear and scannable, helping the user to understand what happened and what he can do next.
+    ///   - bulletList: An optional list of bullet points, each one raw, localized or rich, to be displayed in the alert message following the label or the optional `description`.
+    ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
+    ///   - disableVoiceOverAnnouncement: Disables the automatic VoiceOver announcement of the alert message when it appears. Default is `false`.
+    ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
+    ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
+    ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
+    ///   user is aware of important information; others can be closed to reduce visual clutter.
+    ///
+    /// - Since: 3.2.0
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 status: OUDSAlertStatus = .positive,
-                description: String? = nil,
-                bulletList: [AttributedString],
+                description: OUDSTextualContent? = nil,
+                bulletList: [OUDSTextualContent] = [],
                 link: Self.Link? = nil,
+                disableVoiceOverAnnouncement: Bool = false,
                 onClose: (() -> Void)? = nil)
     {
         self.init(label: key.resolved(tableName: tableName, bundle: bundle),
@@ -426,58 +272,23 @@ public struct OUDSAlertMessage: View {
                   description: description,
                   bulletList: bulletList,
                   link: link,
+                  disableVoiceOverAnnouncement: disableVoiceOverAnnouncement,
                   onClose: onClose)
     }
-
-    /// Creates an alert message with a localized label, looking up the key in the given bundle, and a rich text description.
-    /// Uses rich text for the bullet list.
-    ///
-    /// ```swift
-    ///     OUDSAlertMessage(LocalizedStringKey("error_message"),
-    ///                      bundle: Bundle.module,
-    ///                      status: .negative,
-    ///                      description: AttributedString(markdown: "This is **an important notice**"), // Manage in your side errors for init
-    ///                      bulletList: [
-    ///                         AttributedString("First thing"),
-    ///                         AttributedString(markdown: "One **more thing**"), // Manage in your side errors for init
-    ///                      ])
-    /// ```
-    ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - status: The status of the alert message, default set to *positive*
-    ///   - description: A supplementary text for the description as rich text
-    ///   - bulletList: An optional list of bullet points, default set to empty array
-    ///   - link: An optional link to be displayed in the alert message, default set to *nil*
-    ///   - onClose: An optional callback invoked when the close button is clicked, default set to *nil*
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
-                description: AttributedString,
-                bulletList: [AttributedString],
-                link: Self.Link? = nil,
-                onClose: (() -> Void)? = nil)
-    {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
-                  status: status,
-                  description: description,
-                  bulletList: bulletList,
-                  link: link,
-                  onClose: onClose)
-    }
-
-    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: - Body
 
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertLeadingIcon(status: status)
-                .padding(.top, theme.alert.spacePaddingBlock)
-            AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link, onClose: onClose)
+                .padding(.vertical, theme.alert.spacePaddingBlock)
+            AlertMessageContent(text: text,
+                                status: status,
+                                description: description,
+                                bulletList: bulletList,
+                                link: link,
+                                disableVoiceOverAnnouncement: disableVoiceOverAnnouncement,
+                                onClose: onClose)
             AlertMessageAction(link: link, onClose: onClose)
         }
         .padding(.leading, theme.alert.spacePaddingInline)
@@ -486,6 +297,7 @@ public struct OUDSAlertMessage: View {
         .modifier(AlertMessageBackgroundModifier(status: status))
         .modifier(AlertMessageBorderModifier(status: status))
         .accessibilityElement(children: .contain)
+        .skeleton()
     }
 
     private var minHeight: SizeSemanticToken {

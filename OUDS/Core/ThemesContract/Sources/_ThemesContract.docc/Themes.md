@@ -231,7 +231,7 @@ class YourAppTheme: OrangeTheme {
 }
 ```
 
-Finaly for your app root view:
+Finally, for your app's root view:
 
 ```swift
 struct MyAppRootView: View {

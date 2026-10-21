@@ -19,9 +19,9 @@ import SwiftUI
 
 // MARK: - ToolBar Item Action Style Modifier (Top/Bottom)
 
-/// Applies styling to toolbar (top/bottom) action items depending depending to OS versions:
-/// - For iOS 26+ / Liquid Glass, action button in toolbar top have colored background
-/// - For iOS lower than 26 / not Liquid Glass, action button in toolbar top do not have colored background but foreground color instead
+/// Applies styling to top and bottom toolbar action items based on the OS version:
+/// - On iOS 26+ with Liquid Glass, top toolbar action buttons have a colored background.
+/// - On earlier iOS versions without Liquid Glass, top toolbar action buttons use a foreground color instead of a colored background.
 ///
 /// The tokens of colors are applied as best as the API allows; some button styles are also applied to force the rendering.
 /// However things cannot be customized that much for Liquid Glass.

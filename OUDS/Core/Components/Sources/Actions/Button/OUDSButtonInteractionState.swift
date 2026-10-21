@@ -50,6 +50,7 @@
 /// ```
 ///
 /// - Since: 2.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSButtonInteractionState {
 
     /// User can interact with the component

@@ -62,3 +62,18 @@ OUDSBulletList(type: .ordered) {
     OUDSBulletList.Item("Label 3")
 }
 ```
+
+The text of each item is an ``OUDSTextualContent``: a raw `String` (a string literal is enough), a localized string or a rich text.
+
+```swift
+OUDSBulletList {
+    // Raw text, same as .raw("Raw text")
+    OUDSBulletList.Item("Raw text")
+
+    // Localized text
+    OUDSBulletList.Item(.localized("item_label", bundle: Bundle.module))
+
+    // Rich text
+    OUDSBulletList.Item(.rich(AttributedString(markdown: "A **rich** text"))) // Manage in your side errors for init
+}
+```

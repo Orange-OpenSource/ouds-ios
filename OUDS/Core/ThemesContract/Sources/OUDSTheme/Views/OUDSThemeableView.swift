@@ -22,7 +22,7 @@ import UIKit
 
 extension EnvironmentValues {
 
-    /// The `OUDSTheme` instance exposed as en environment values across the library.
+    /// The `OUDSTheme` instance exposed through the environment across the library.
     /// Because at the level of the package we don't have any existing theme, this instance is optional
     @Entry public var _theme: OUDSTheme?
 
@@ -64,6 +64,7 @@ extension EnvironmentValues {
 /// ```
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSThemeableView<Content: View>: View {
 
     private let theme: OUDSTheme

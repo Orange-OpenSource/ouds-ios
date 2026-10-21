@@ -15,7 +15,7 @@ import SwiftUI
 
 // MARK: - Fixed Icon
 
-/// Defines an image based on ``OUDSImage`` with with a fixed size
+/// Defines an image based on ``OUDSImage`` with a fixed size.
 ///
 /// ## Code samples
 ///
@@ -24,6 +24,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 2.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSFixedIcon: View {
 
     let image: OUDSImage
@@ -42,7 +43,7 @@ public struct OUDSFixedIcon: View {
 
 // MARK: - Scaled icon
 
-/// Defines an image based on ``OUDSImage`` with with a dynamic size depending to `ScaledMetric`
+/// Defines an image based on ``OUDSImage`` with a dynamic size based on `ScaledMetric`.
 ///
 /// ## Code samples
 ///
@@ -51,6 +52,7 @@ public struct OUDSFixedIcon: View {
 /// ```
 ///
 /// - Since: 2.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSScaledIcon: View {
 
     let image: OUDSImage

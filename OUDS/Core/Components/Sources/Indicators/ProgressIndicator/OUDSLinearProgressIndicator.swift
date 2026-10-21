@@ -181,7 +181,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-linear-progress-indicator)
 ///
 /// ## Themes rendering
 ///
@@ -204,7 +204,7 @@ import SwiftUI
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink to documentation when ready
+public struct OUDSLinearProgressIndicator: View {
 
     // MARK: - Properties
 

@@ -27,7 +27,7 @@
 /// This `FontCompositeSemanticToken` is not managed by tokenator yet as it is composed by several properties.
 ///
 /// This ``FontCompositeSemanticTokens`` protocol contains a set of ``MultipleFontCompositeSemanticToken``.
-/// They can be applied to views and components using the helpers provided through `View`, loading four the the font famoly to use:
+/// They can be applied to views and components using the `View` helpers, which load the font family to use:
 ///
 /// ```swift
 ///      @Environment(\.theme) var theme

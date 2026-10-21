@@ -25,12 +25,13 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 /// This is for example the case for France with the [Référentiel Général d'Amélioration de l'Accessibilité](https://accessibilite.numerique.gouv.fr),
 /// also named "RGAA".
 /// The WCAG specifications, for AA level, defines a contrast ratio of 4.5:1 for textual elements (i.e. texts), and 3:1 for non-textual elements (i.e. link's chevron).
-/// However it is higly recommended for mobile devices to reach AAA level because of the screen sizes and luminosity issues, i.e. 7:1 for textual
+/// However, a AAA level is highly recommended for mobile devices because of screen size and luminosity issues; this means a 7:1 ratio for text.
 /// and 4.5:1 for non-textual elements.
 /// This utility helps to define whether a set of contrast ratio matches AA and AAA or not.
 /// See for example [the following guidelines](https://system.design.orange.com/0c1af118d/p/2531b9-accessibility-compliance)
 ///
 /// - Since: 0.15.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public struct OUDSWCAG21Ratio {
 
     // MARK: - Stored properties
@@ -64,7 +65,7 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 
     /// WCAG 2.1 requirement for AAA level needs to have textual component matching 7:1 contrast ratio
     /// and non textual component matching 4.5:1 contrast ratio.
-    /// This is recommended for mobiles devices projects (because of screen sizes and luminosity issues).
+    /// This is recommended for mobile device projects because of screen size and luminosity issues.
     @inlinable public var requirementsAAA: WCAG21Requirements {
         (textual: meets7to1, nonTextual: meets4_5to1)
     }

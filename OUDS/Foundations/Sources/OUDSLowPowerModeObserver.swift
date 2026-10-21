@@ -27,7 +27,7 @@ actor LowPowerModeActor {
 
 // MARK: - OUDS Low Power Mode Observer
 
-/// An `ObservableObject` providing through a published state a flag saying if the device  is in low pover mode or not.
+/// An `ObservableObject` that exposes a published state indicating whether the device is in low power mode.
 /// This object is exposed as *environment object* through the `OUDSThemeableView`, and can be used in any view
 /// inside it to apply a specific behavior when the device is in low power mode.
 ///
@@ -41,6 +41,7 @@ actor LowPowerModeActor {
 ///
 /// - Since: 0.16.0
 @MainActor
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public final class OUDSLowPowerModeObserver: ObservableObject {
 
     /// The published property saying if device is in low power mode (true) or not (false)

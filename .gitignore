@@ -50,3 +50,6 @@
 /build/
 /dist/
 *.xcarchive
+
+# Other files not needed to be versioned
+SBOM.json

@@ -51,6 +51,7 @@ extension View {
     ///
     /// - Parameter trait: The `AccessibilityTraits` value to add.
     /// - Returns: A view that sets the given trait on the inner text editor.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsAccessibilityAddTraits(_ trait: AccessibilityTraits) -> some View {
         modifier(OUDSComponentAccessibilityTraitsModifier(traits: trait))
     }
@@ -64,6 +65,7 @@ extension View {
     ///
     /// - Parameter traits: An array of `AccessibilityTraits` values to add.
     /// - Returns: A view that sets the union of the given traits on the inner text editor.
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsAccessibilityAddTraits(_ traits: [AccessibilityTraits]) -> some View {
         modifier(OUDSComponentAccessibilityTraitsModifier(traits: traits.reduce(into: AccessibilityTraits()) { $0.formUnion($1) }))
     }

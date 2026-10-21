@@ -27,9 +27,9 @@ private struct iPhoneDeviceEnvironmentKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    /// The `iPhoneDevice` in use, defined depending to screen dimensions.
-    /// No need to get more details (at least for privacy concerns), just to know why group of devices it is part of.
-    /// Can be useful to compute some lements like indicators of tab bars.
+    /// The iPhone model in use, determined by screen dimensions.
+    /// There is no need to identify the exact model; for privacy, it is enough to know which device group it belongs to.
+    /// This can be useful when computing elements such as tab bar indicators.
     public var iPhoneInUse: iPhoneDevice {
         get {
             self[iPhoneDeviceEnvironmentKey.self]
@@ -46,10 +46,11 @@ extension EnvironmentValues {
 /// Helps to define some metrics like tab bar heights.
 ///
 /// - Since: 1.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public enum iPhoneDevice: CustomStringConvertible, Sendable {
 
     /*
-     Following iPhones not suppsoed to support iOS 15:
+     The following iPhones are not expected to support iOS 15:
      - iPhones 6, 6 Plus
      - iPhones 5s, 5c, 5
      - iPhone 4, 4s
@@ -93,7 +94,7 @@ public enum iPhoneDevice: CustomStringConvertible, Sendable {
     /// iPhone 17 series
     case air, regular17, pro17, proMax17
 
-    /// Returns a flag saying if the devic emodel has the home button, i.e. Touch ID, i.e. no safe area
+    /// Returns a flag indicating whether the device model has a Home button (Touch ID) and no safe area.
     public var hasHomeButton: Bool {
         switch self {
         case .se1, .se2, .se3, .regular7, .regular8, .plus6s, .plus7, .plus8:

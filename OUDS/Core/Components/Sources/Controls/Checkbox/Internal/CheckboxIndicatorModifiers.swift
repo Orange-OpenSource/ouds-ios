@@ -234,7 +234,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
                     theme.colors.actionSelected
                 }
             case .unselected:
-                theme.colors.actionEnabled
+                theme.colors.borderEmphasized
             }
         }
     }

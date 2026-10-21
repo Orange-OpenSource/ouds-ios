@@ -40,6 +40,7 @@ extension Shape {
     ///   - color: The token from which the fill color must be extracted
     ///   - style: The style options for filling the shape (default: `FillStyle()`)
     /// - Returns: A view with the shape filled with the resolved color
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func fill(_ color: MultipleColorSemanticToken, style: FillStyle = FillStyle()) -> some View {
         ColorSchemeBasedShapeFill(shape: self, color: color, style: style)
     }

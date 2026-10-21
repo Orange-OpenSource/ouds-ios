@@ -19,6 +19,7 @@ import OUDSTokensSemantic
 /// List of colors available for dividers (i.e. `OUDSHorizontalDivider` or `OUDSVerticalDivider`)
 ///
 /// - Since: 0.14.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum OUDSDividerColor {
     case `default`
     case muted
@@ -31,7 +32,7 @@ import OUDSTokensSemantic
     case alwaysOnWhite
     // swiftlint:enable missing_docs
 
-    /// Provides the color sementic token in theme associated to the divider color
+    /// Provides the semantic color token associated with the divider color in the theme.
     ///
     /// - Parameter theme: The theme that defines the token color
     public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticToken {

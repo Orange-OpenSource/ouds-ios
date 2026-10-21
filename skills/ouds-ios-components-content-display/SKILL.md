@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-components-content-display
-description: Usage and code examples for OUDS iOS Content Display components — OUDSBulletList (unordered, ordered, nested items, AttributedString labels). Load the ouds-ios-framework-usage skill first for imports, themes, and shared rules.
+description: Usage and code examples for OUDS iOS Content Display components — OUDSBulletList (unordered, ordered, nested items, raw / localized / rich `OUDSTextualContent` texts). Load the ouds-ios-framework-usage skill first for imports, themes, and shared rules.
 license: MIT
 ---
 
@@ -20,5 +20,10 @@ OUDSBulletList(type: .ordered) {
     OUDSBulletList.Item("Label 1") { OUDSBulletList.Item("Label 1.1") }
 }
 
-OUDSBulletList { OUDSBulletList.Item(AttributedString(…)) }
+// Item text is an OUDSTextualContent: raw (string literal), localized or rich
+OUDSBulletList {
+    OUDSBulletList.Item("Raw text")
+    OUDSBulletList.Item(.localized("item_label", bundle: Bundle.module))
+    OUDSBulletList.Item(.rich(AttributedString(…)))
+}
 ```

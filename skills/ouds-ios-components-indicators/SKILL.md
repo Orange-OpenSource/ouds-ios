@@ -16,7 +16,7 @@ Count parameter must be of type `UInt8`.
 ```swift
 OUDSBadgeStandard(accessibilityLabel: "Some label", status: .neutral, size: .medium)
 OUDSBadgeCount(3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
-OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
+OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image("ic"))), accessibilityLabel: "Label", size: .medium)
 ```
 
 ---
@@ -25,12 +25,14 @@ OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", 
 
 ```swift
 OUDSTag(label: "Label")
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic"))))
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic"), flipped: true))) // flipped for RTL
-OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic"))))
-OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"))))
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"), flipped: true))) // flipped for RTL
+OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic"))))
+OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
 OUDSTag(label: "Label", status: .neutral(bullet: true))
+// Loading tag (progress is optional, indeterminate by default)
+OUDSTag(loadingLabel: "Loading", progress: 0.5)
 ```
 
 ---
@@ -38,8 +40,29 @@ OUDSTag(label: "Label", status: .neutral(bullet: true))
 ## Input Tag
 
 ```swift
-OUDSInputTag("Label") { /* remove action */ }
+OUDSInputTag(label: "Label") { /* remove action */ }
 ```
+
+---
+
+## Categorical Tag
+
+Categories: `category1` to `category5` — each maps to a theme-defined background color (for example, emerald, sky, amber, amethyst, and pink in Orange themes). Supported themes are Orange, Orange Compact, and Wireframe; Sosh is not supported.
+
+```swift
+OUDSCategoricalTag(label: "Label")
+OUDSCategoricalTag(label: "Label", category: .category2)
+OUDSCategoricalTag(label: "Label", category: .category3, leading: .bullet)
+OUDSCategoricalTag(label: "Label", category: .category4, leading: .icon(OUDSImage(asset: Image(decorative: "ic_heart"))))
+OUDSCategoricalTag(label: "Label", category: .category5, shape: .square, size: .small)
+```
+
+Notes:
+- Always emphasized (no muted appearance unlike OUDSTag)
+- Uses `theme.categoricalTag.colorBgCategoryX` for background and `theme.categoricalTag.colorContent` for text/icon color
+- Supports bullet and custom icon (same as OUDSTag)
+- Shape: `.rounded` (default) or `.square`
+- Size: `.default` (default) or `.small`
 
 ---
 

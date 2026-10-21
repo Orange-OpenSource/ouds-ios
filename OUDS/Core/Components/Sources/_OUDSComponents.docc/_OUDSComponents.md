@@ -29,15 +29,15 @@ You can get more details about them in the categories below:
 
 ### Apply a specific shadow effect (elevation tokens)
 
-The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
-Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
+The unified design system implemented by the OUDS iOS library allows you to apply *elevation effects* to a `View`, such as a shadow beneath a component.
+Because the design tool in use, _Figma_, defines shadows with _blur_ and _spread_ radii, while _SwiftUI_ uses only its own _radius_ value, a `View` extension lets users apply effects using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library with the `shadow(elevation: ElevationCompositeSemanticToken)` method.
 
 ```swift
 // For example, apply the elevation effect "drag" from your theme:
 myView.shadow(theme.elevations.drag)
 ```
 
-In details how it works:
+How it works:
 ```swift
 // In the theme this "drag" has been defined for example like:
 @objc open var drag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
@@ -52,7 +52,7 @@ public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. whether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositesemantictoken) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDS, typography depends on the size class—that is, whether the application is in _compact mode_ or _regular mode_—and is defined with a [`MultipleFontCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositesemantictoken) in [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
 The _theme_ contains lots of `MultipleFontCompositeSemanticToken` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*.
 
@@ -75,7 +75,7 @@ myView.font(theme.fonts.labelStrongXLarge)
 // Etc.
 ```
 
-The font object can be also forged from tokens to be applied elsewhere:
+The font object can also be created from tokens and applied elsewhere:
 ```swift
 @Environment(\.theme) private var theme
 @Environment(\.verticalSizeClass) private var verticalSizeClass
@@ -166,11 +166,10 @@ RoundedRectangle(cornerRadius: 8)
 
 ## Flip images according to layouts
 
-Images bring meanings, and are used in components. But sometimes, depending to your layouts (right to left (RTL) or left to right (LTR)), if the whole layout
-of your app changes, the images in use can loose meanings or have another one (except if they are asymetric).
-Even if some assets can be defined in a project with specific RTL/LTR variants, images can be loaded outside and in some case, in the end, must not be mirrored.
+Images convey meaning and are used in components. However, depending on your layout direction (right to left (RTL) or left to right (LTR)), changing your app's layout can cause images to lose their meaning or take on a different one (unless they are asymmetric).
+Even if some assets can be defined in a project with specific RTL/LTR variants, images can be loaded from elsewhere and may sometimes need to remain unmirrored.
 
-If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want.
+If your application supports languages with RTL and LTR layouts, here is a simple way to flip icons based on the layout direction when needed.
 The `flipped` property of ``OUDSImage`` can be used when passing an icon to a component.
 
 ```swift
@@ -195,17 +194,17 @@ However, this font family manages latin alphabet and not arabic alphabet.
 Nevertheless a trick can be done to use the suitable *Helvetica Neue* font family according to the language.
 
 ```swift
-/// Returns the Helvetica Neue font family to use depending to the preferred language or locale
+/// Returns the Helvetica Neue font family to use based on the preferred language or locale.
 func localizedHelveticaFont() -> String {
     return (OUDSUtils.isArabicLanguageInUse() ? "Helvetica Neue Arabic" : "Helvetica Neue")
 }
 
-/// Instanciate your Orange theme using the font family.
-/// Thus when the user will change the app language the app will be restarted, repainted and the theme updated
+/// Instantiate your Orange theme using the font family.
+/// When the user changes the app language, the app will restart, redraw, and update the theme.
 let localizedOrangeTheme: OUDSTheme = OrangeTheme(fontFamily: localizedHelveticaFont())
 ```
 
-> Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic nore Helvetica Neue assets. You will have to get them and register the fonts files in your app
+> Caution: For legal reasons, OUDS does not provide the Helvetica Neue Arabic or Helvetica Neue assets. You will need to obtain the font files and register them in your app.
 
 > Note: For cyrillic alphabet the Orange Brand does not provide *Helvetica Neue* variant, you can use *Arial* instead
 
@@ -245,7 +244,9 @@ The full map is readable at any time via `kApplePostScriptFontNames`. Unregister
 > Hyperlinks may be not accessible for Voice Over, Full Keyboard Access and Switch Control.
 > Prefer use other components like `Text` from SwiftUI.
 
-You may need to add *rich text* to some components which support `AttributedString` type parameters.
+You may need to add *rich text* to some components which support `AttributedString` through ``OUDSTextualContent`` parameters.
+Wrap your `AttributedString` with `.rich(_:)`, for example `OUDSBulletList.Item(.rich(myAttributedString))`.
+A raw `String` can be given directly as a string literal (or with `.raw(_:)`), and a localized string with `.localized(_:tableName:bundle:)`.
 For example you may want to display a text with clickable hyperlinks inside, and a style for the hyperlink.
 
 Font tokens like `theme.fonts.bodyDefaultMedium` are `MultipleFontCompositeSemanticToken` values, not SwiftUI `Font`.
@@ -270,7 +271,7 @@ let richTextHelperMessage = AttributedString.from(text: "You must read our priva
                                                   font: themeBodyFont,
                                                   urlConfigurations: urlConfigurations)
                                                   
-OUDSPasswordInput("Enter your password", password: $password, helperText: richTextHelperMessage)
+OUDSPasswordInput("Enter your password", password: $password, helperText: .rich(richTextHelperMessage))
 ```
 
 If you handle Markdown data, you can define your own styles for the hyperlinks:
@@ -298,3 +299,9 @@ let simpleText = AttributedString.from(text: "Some plain text",
 let simpleMarkdown = AttributedString.from(markdown: someMarkdown,
                                            foregroundColor: theme.colors.contentDefault.color(for: colorScheme))
 ```
+
+<!--
+NOTE: This is the landing page of the OUDSComponents products.
+It should contain high-level API and other topics which cannot be placed elsewhere.
+For components, prefer to update the suitable catalog.
+-->

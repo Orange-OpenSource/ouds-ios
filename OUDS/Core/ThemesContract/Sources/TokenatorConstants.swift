@@ -16,6 +16,7 @@
 // swiftlint:disable identifier_name
 
 /// Gathers the components and themes versions exposed through Tokenator based on Figma tokens
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public enum OUDSVersions {
 
     // MARK: - Themes versions
@@ -80,8 +81,8 @@ public enum OUDSVersions {
     public static let componentPasswordInputVersion = "1.3.1"
     /// Version of the Figma specifications for the component phone number input (1.3.1)
     public static let componentPhoneNumberInputVersion = "1.3.1"
-    /// Version of the Figma specifications for the component pin code input (1.3.0)
-    public static let componentPinCodeInputVersion = "1.3.0"
+    /// Version of the Figma specifications for the component pin code input (1.4.0)
+    public static let componentPinCodeInputVersion = "1.4.0"
     /// Version of the Figma specifications for the component quantity input (1.3.1)
     public static let componentQuantityInputVersion = "1.3.1"
     /// Version of the Figma specifications for the component quantity input (1.2.0)
@@ -105,8 +106,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Dialog
 
-    /// Version of the Figma specifications for the component alert (alert message) (1.1.1)
-    public static let componentAlertMessageVersion = "1.1.1"
+    /// Version of the Figma specifications for the component alert (alert message) (1.2.0)
+    public static let componentAlertMessageVersion = "1.2.0"
     /// Version of the Figma specifications for the component alert (inline alert) (1.0.0)
     public static let componentInlineAlertVersion = "1.0.0"
     /// Version of the Figma specifications for the component alert (alert bannet) (1.0.0)
@@ -116,8 +117,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Foundations
 
-    /// Version of the Figma specifications for the component typgography) (1.0.0)
-    public static let componentTypographyVersion = "1.0.0"
+    /// Version of the Figma specifications for the component typgography (1.1.0)
+    public static let componentTypographyVersion = "1.1.0"
 
     // MARK: - Components versions - Indicator
 

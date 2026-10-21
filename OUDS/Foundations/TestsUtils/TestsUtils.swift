@@ -18,6 +18,7 @@ import Testing
 // swiftlint:disable force_unwrapping
 
 /// Provides methods for assertions using *Swift Testing* library
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 @frozen public enum TestsUtils {
 
     /// Checks if `value` is between `min` and `max`

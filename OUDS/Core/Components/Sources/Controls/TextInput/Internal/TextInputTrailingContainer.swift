@@ -34,7 +34,7 @@ struct TextInputTrailingContainer: View {
                 trailingButton(for: trailingAction)
                     .disabled(status == .readOnly || status == .disabled)
             }
-        case .error, .richError:
+        case .error, .richError, .textualError:
             HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapTrailingErrorAction) {
                 Image(decorative: "Component-alert-important-fill", bundle: theme.resourcesBundle)
                     .resizable()

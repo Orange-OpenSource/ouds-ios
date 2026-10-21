@@ -27,7 +27,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Simple list item with a label only
-///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
 ///
 ///     // List item with more textual content
 ///     let data = OUDSListItemData(
@@ -40,7 +40,7 @@ import SwiftUI
 ///
 ///     // List item with leading icon and trailing badge
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Label"),
+///         data: OUDSListItemData(label: .textual("Label")),
 ///         leading: .icon(.init(type: .info, size: .medium)),
 ///         trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 ///     )
@@ -54,7 +54,7 @@ import SwiftUI
 ///
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
 ///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "SMS credit"),
+///         data: OUDSListItemData(label: .textual("SMS credit")),
 ///         trailing: .custom {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
@@ -64,7 +64,7 @@ import SwiftUI
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(
 ///             label: "Label",
-///             textSlot: { Text("Additional content") },
+///             textSlot: .init { Text("Additional content") },
 ///             helperText: "Helper text"
 ///         )
 ///     )
@@ -73,7 +73,7 @@ import SwiftUI
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(
 ///             label: "Label",
-///             bottomSlot: { Text("Bottom content") },
+///             bottomSlot: .init { Text("Bottom content") },
 ///             helperText: "Helper text"
 ///         )
 ///     )
@@ -115,7 +115,7 @@ import SwiftUI
 /// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images) should be displayed with rounded corners.
 ///
 /// ```swift
-///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+///     OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
 ///         .oudsListItemSize(.small)
 ///         .oudsListItemContainerAlignment(.top)
 ///         .oudsListCardStyle(.outlined())
@@ -130,7 +130,8 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
+/// - [Static list item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-static-list-item )
+/// - [Static card item (unified-design-system.orange.com)](https://r.orange.fr/r/S-ouds-doc-static-card-item )
 ///
 /// ## Themes rendering
 ///

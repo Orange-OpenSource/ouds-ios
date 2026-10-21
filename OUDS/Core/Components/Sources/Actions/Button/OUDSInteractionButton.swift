@@ -36,14 +36,16 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 2.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSInteractionButton<Content>: View where Content: View {
 
     // MARK: Properties
 
     private let isReadOnly: Bool
     private let action: () -> Void
-
     @ViewBuilder private let content: (OUDSButtonInteractionState) -> Content
+
+    @Environment(\.skeletonState) private var skeletonState
 
     // MARK: Initializer
 
@@ -64,7 +66,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 
     public var body: some View {
         Button("") {
-            if !isReadOnly {
+            if !isReadOnly, skeletonState == nil {
                 action()
             }
         }
@@ -112,6 +114,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 /// ```
 ///
 /// - Since: 2.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSInteractionButtonStyle<Content>: ButtonStyle where Content: View {
 
     // MARK: Properties

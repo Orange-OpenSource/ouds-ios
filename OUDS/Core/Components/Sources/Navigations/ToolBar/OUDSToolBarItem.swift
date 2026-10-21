@@ -135,7 +135,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// - Since: 1.4.0
     @frozen public enum NavigationType {
 
-        /// The back button that can be added manualy if need. According to our design system, in could be the case for a sheet.
+        /// The back button that can be added manually if need. According to our design system, in could be the case for a sheet.
         /// In a navigation, by default the system's one is displayed (without text). If preferred, this one can be added but the system one must be hidden
         /// using `View.navigationBarBackButtonHidden()`
         ///

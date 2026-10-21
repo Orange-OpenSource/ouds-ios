@@ -89,6 +89,11 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         uiView.onTextInserted = onTextInserted
         context.coordinator.onFocusChanged = onFocusChanged
 
+        // The font depends on the displayed content (symbols vs digits), so it must follow re-renders
+        if uiView.font != font {
+            uiView.font = font
+        }
+
         // Only update the displayed text if it actually changed, to avoid unnecessary UIKit updates
         if uiView.text != displayText {
             uiView.text = displayText

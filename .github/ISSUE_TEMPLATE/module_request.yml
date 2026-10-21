@@ -1,34 +1,69 @@
 name: Module Request
 description: Please fill out the following details for your module creation / update request.
-title: "For / Add module ..."
+title: "In library, add module X / For module X, ..."
 labels: ["🧰 library", "🎇 module", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
+type: Enhancement
+projects: ["Orange-OpenSource/40"]
 body:
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Describe your need in details
+      description: Describe your needs in details. Which services should be queried? What are the features?
     validations:
       required: true      
   - type: textarea
     id: motivation_context
     attributes:
-      label: Motivation & Context
-      description: Why is this evolution required? What problem does it solve?
+      label: Motivation and Context
+      description: Why is this evolution required? What problem does it solve? Does it need third party elements?
   - type: checkboxes
     attributes:
-      label: Types of change
-      description: Please fill the suitable items in the list
+      label: Types of Change
+      description: Please select the suitable item in the list
       options:
         - label: Add new module
         - label: Update existing module  
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false        
   - type: checkboxes
     attributes:
-      label: Checklist for Core Team
-      description: Some points to check before any merge
+      label: Core Team - Definition of Done (Swift Package)
+      description: For core team only, elements to fill for the Swift Package product to be able to ship the evolutions
       options:
-        - label: Documentations have been updated
-        - label: Tests have been updated if needed
-        - label: Demo app has been updated if needed
+        - label: Module is implemented / updated
+        - label: Update module catalog with code samples (optional)
+        - label: Check if web documentation can be generated without issues ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#generation))
+        - label: Update GenAI usage skill files if needed (optional)
+        - label: Update unit tests (optional)
+        - label: Update changelog
+        - label: Accessibility has been considered with Voice Over navigation
+        - label: Accessibility has been considered with Full Keyboard Access navigation
+        - label: Accessibility has been considered with Switch Control navigation
+        - label: Accessibility has been considered with reduced animations
+        - label: Accessibility has been considered with Dynamic Types usages
+        - label: Ecodesign has been considered with low power mode
+        - label: Retrocompatibility / API break has been checked, or broken API have been flagged as deprecated with a workaround ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#check-api-breakings))
+  - type: checkboxes
+    attributes:
+      label: Core Team - Definition of Done (Design System Toolbox)
+      description: For core team only, elements to fill for the Design System Toolbox app to be able to ship the evolutions
+      options:
+        - label: Showcase of module
+        - label: Integration of module if relevant (optional)
+        - label: Update of unit tests if needed (optional)
+        - label: Update of changelog
+        - label: Test evolutions on iOS
+        - label: Test evolutions on iPadOS
+        - label: Test evolutions on tvOS
+        - label: Test evolutions on macOS
+        - label: Test evolutions on visionOS
+        - label: Test evolutions on watchOS
         - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround
