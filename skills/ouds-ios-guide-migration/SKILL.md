@@ -746,59 +746,49 @@ The four initializers of `OUDSSwitchItem` (label `String` / `LocalizedStringKey`
 - Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
 - Replace `errorText: someString` / `errorText: "Message"` with `errorText: .raw(…)`.
 
-### OUDSTextArea — `textual` helper text and `textualError` status
+### OUDSCheckboxItem — unified initializers with `OUDSTextualContent`
 
-`OUDSTextArea` has no initializer to deprecate, but its enums changed:
-- `HelperText.plain(String)` and `.rich(AttributedString)` are deprecated and replaced by `HelperText.textual(OUDSTextualContent)` (`.charactersMaxCount(_:)` is unchanged).
-- `Status.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by `Status.textualError(message: OUDSTextualContent)` (renamed `.error` in v4).
+The four initializers of `OUDSCheckboxItem` (label `String` / `LocalizedStringKey` × `errorText` `String?` / `AttributedString`) are deprecated and replaced by two taking `errorText: OUDSTextualContent? = nil`.
 
 | Old (deprecated) | New (v3.2) |
 |---|---|
-| `helperText: .plain("Message")` | `helperText: .textual("Message")` |
-| `helperText: .plain(someString)` | `helperText: .textual(.raw(someString))` |
-| `helperText: .rich(myAttributedString)` | `helperText: .textual(.rich(myAttributedString))` |
-| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
-| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+| `errorText: someString` or `errorText: "Message"` | `errorText: .raw(…)` |
+| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
+| `errorText: nil` / omitted | unchanged |
+
+> **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `errorText: .raw("abc")`.
 
 **Required action**:
-- Replace `.plain(…)` with `.textual(…)` (a literal is enough, a `String` variable needs `.raw(…)`).
-- Replace `.rich(myAttributedString)` with `.textual(.rich(myAttributedString))`.
-- Replace `.error(message:)` / `.richError(message:)` with `.textualError(message:)`.
+- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
+- Replace `errorText: someString` / `errorText: "Message"` with `errorText: .raw(…)`.
 
-### OUDSPasswordInput — unified initializers with `OUDSTextualContent`
+### OUDSRadioItem — unified initializers with `OUDSTextualContent`
 
-The four initializers of `OUDSPasswordInput` (label `String` / `LocalizedStringKey` × `helperText` `String?` / `AttributedString`) are deprecated and replaced by two taking `helperText: OUDSTextualContent? = nil`.
-Its `status` is `OUDSTextInput.Status`: use `.textualError(message:)` (see the `OUDSTextInput` section).
+The four initializers of `OUDSRadioItem` (label `String` / `LocalizedStringKey` × `errorText` `String?` / `AttributedString`) are deprecated and replaced by two taking `errorText: OUDSTextualContent? = nil`.
 
 | Old (deprecated) | New (v3.2) |
 |---|---|
-| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
-| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `errorText: someString` or `errorText: "Message"` | `errorText: .raw(…)` |
+| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
+| `errorText: nil` / omitted | unchanged |
 
-> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `helperText: .raw("abc")`.
+> **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `errorText: .raw("abc")`.
 
 **Required action**:
-- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
-- Replace `helperText: someString` / `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
+- Replace `errorText: someString` / `errorText: "Message"` with `errorText: .raw(…)`.
 
-### OUDSTextInput — unified initializers and `textualError` status
+### OUDSCheckboxItemIndeterminate — `errorText` as `OUDSTextualContent`
 
-The four initializers of `OUDSTextInput` (label `String` / `LocalizedStringKey` × `helperText` `String?` / `AttributedString`) are deprecated and replaced by two taking `helperText: OUDSTextualContent? = nil`.
-`OUDSTextInput.Status.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by `.textualError(message: OUDSTextualContent)` (renamed `.error` in v4). This `Status` is also used by `OUDSPasswordInput`.
+The two initializers of `OUDSCheckboxItemIndeterminate` (label `String` / `LocalizedStringKey`) now take `errorText: OUDSTextualContent? = nil` instead of `errorText: String? = nil`; the former ones are deprecated. The error can now also be localized or rich.
 
 | Old (deprecated) | New (v3.2) |
 |---|---|
-| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
-| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
-| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
-| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
-
-> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `helperText: .raw("abc")`.
+| `errorText: someString` | `errorText: .raw(someString)` |
+| `errorText: "Message"` (literal), `nil` / omitted | unchanged (no warning, there is no `AttributedString` initializer to compete) |
 
 **Required action**:
-- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
-- Replace `helperText: someString` / `helperText: "Message"` with `helperText: .raw(…)`.
-- Replace `.error(message:)` / `.richError(message:)` with `.textualError(message:)`.
+- Replace `errorText: someStringVariable` with `errorText: .raw(someStringVariable)`.
 
 ### OUDSPinCodeInput — unified initializer and `textualError` status
 
@@ -821,49 +811,59 @@ The three initializers of `OUDSPinCodeInput` (`helperText` `String?` / `Attribut
 - Replace `helperText: LocalizedStringKey(…), tableName:, bundle:` with `helperText: .localized(…, tableName:, bundle:)`.
 - Replace `.error(message:)` / `.richError(message:)` with `.textualError(message:)`.
 
-### OUDSCheckboxItemIndeterminate — `errorText` as `OUDSTextualContent`
+### OUDSTextInput — unified initializers and `textualError` status
 
-The two initializers of `OUDSCheckboxItemIndeterminate` (label `String` / `LocalizedStringKey`) now take `errorText: OUDSTextualContent? = nil` instead of `errorText: String? = nil`; the former ones are deprecated. The error can now also be localized or rich.
-
-| Old (deprecated) | New (v3.2) |
-|---|---|
-| `errorText: someString` | `errorText: .raw(someString)` |
-| `errorText: "Message"` (literal), `nil` / omitted | unchanged (no warning, there is no `AttributedString` initializer to compete) |
-
-**Required action**:
-- Replace `errorText: someStringVariable` with `errorText: .raw(someStringVariable)`.
-
-### OUDSRadioItem — unified initializers with `OUDSTextualContent`
-
-The four initializers of `OUDSRadioItem` (label `String` / `LocalizedStringKey` × `errorText` `String?` / `AttributedString`) are deprecated and replaced by two taking `errorText: OUDSTextualContent? = nil`.
+The four initializers of `OUDSTextInput` (label `String` / `LocalizedStringKey` × `helperText` `String?` / `AttributedString`) are deprecated and replaced by two taking `helperText: OUDSTextualContent? = nil`.
+`OUDSTextInput.Status.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by `.textualError(message: OUDSTextualContent)` (renamed `.error` in v4). This `Status` is also used by `OUDSPasswordInput`.
 
 | Old (deprecated) | New (v3.2) |
 |---|---|
-| `errorText: someString` or `errorText: "Message"` | `errorText: .raw(…)` |
-| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
-| `errorText: nil` / omitted | unchanged |
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
 
-> **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `errorText: .raw("abc")`.
+> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `helperText: .raw("abc")`.
 
 **Required action**:
-- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
-- Replace `errorText: someString` / `errorText: "Message"` with `errorText: .raw(…)`.
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someString` / `helperText: "Message"` with `helperText: .raw(…)`.
+- Replace `.error(message:)` / `.richError(message:)` with `.textualError(message:)`.
 
-### OUDSCheckboxItem — unified initializers with `OUDSTextualContent`
+### OUDSPasswordInput — unified initializers with `OUDSTextualContent`
 
-The four initializers of `OUDSCheckboxItem` (label `String` / `LocalizedStringKey` × `errorText` `String?` / `AttributedString`) are deprecated and replaced by two taking `errorText: OUDSTextualContent? = nil`.
+The four initializers of `OUDSPasswordInput` (label `String` / `LocalizedStringKey` × `helperText` `String?` / `AttributedString`) are deprecated and replaced by two taking `helperText: OUDSTextualContent? = nil`.
+Its `status` is `OUDSTextInput.Status`: use `.textualError(message:)` (see the `OUDSTextInput` section).
 
 | Old (deprecated) | New (v3.2) |
 |---|---|
-| `errorText: someString` or `errorText: "Message"` | `errorText: .raw(…)` |
-| `errorText: myAttributedString` | `errorText: .rich(myAttributedString)` |
-| `errorText: nil` / omitted | unchanged |
+| `helperText: someString` or `helperText: "Message"` | `helperText: .raw(…)` |
+| `helperText: myAttributedString` | `helperText: .rich(myAttributedString)` |
 
-> **Literal pitfall**: a bare `errorText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `errorText: .raw("abc")`.
+> **Literal pitfall**: a bare `helperText: "abc"` may select a deprecated initializer (warning), because `AttributedString` is expressible by a string literal. Always write `helperText: .raw("abc")`.
 
 **Required action**:
-- Replace `errorText: myAttributedString` with `errorText: .rich(myAttributedString)`.
-- Replace `errorText: someString` / `errorText: "Message"` with `errorText: .raw(…)`.
+- Replace `helperText: myAttributedString` with `helperText: .rich(myAttributedString)`.
+- Replace `helperText: someString` / `helperText: "Message"` with `helperText: .raw(…)`.
+
+### OUDSTextArea — `textual` helper text and `textualError` status
+
+`OUDSTextArea` has no initializer to deprecate, but its enums changed:
+- `HelperText.plain(String)` and `.rich(AttributedString)` are deprecated and replaced by `HelperText.textual(OUDSTextualContent)` (`.charactersMaxCount(_:)` is unchanged).
+- `Status.error(message: String)` and `.richError(message: AttributedString)` are deprecated and replaced by `Status.textualError(message: OUDSTextualContent)` (renamed `.error` in v4).
+
+| Old (deprecated) | New (v3.2) |
+|---|---|
+| `helperText: .plain("Message")` | `helperText: .textual("Message")` |
+| `helperText: .plain(someString)` | `helperText: .textual(.raw(someString))` |
+| `helperText: .rich(myAttributedString)` | `helperText: .textual(.rich(myAttributedString))` |
+| `status: .error(message: "Message")` | `status: .textualError(message: "Message")` |
+| `status: .richError(message: myAttributedString)` | `status: .textualError(message: .rich(myAttributedString))` |
+
+**Required action**:
+- Replace `.plain(…)` with `.textual(…)` (a literal is enough, a `String` variable needs `.raw(…)`).
+- Replace `.rich(myAttributedString)` with `.textual(.rich(myAttributedString))`.
+- Replace `.error(message:)` / `.richError(message:)` with `.textualError(message:)`.
 
 ---
 

@@ -10,7 +10,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: Describe your needs in details. Whici services should be queried? What are the features?
+      description: Describe your needs in details. Which services should be queried? What are the features?
     validations:
       required: true      
   - type: textarea

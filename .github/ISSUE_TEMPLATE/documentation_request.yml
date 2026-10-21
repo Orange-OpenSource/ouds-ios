@@ -17,7 +17,7 @@ body:
     id: what-happened
     attributes:
       label: Current issue
-      description: A description of what is currently in the doc. Add anotated screenshots if possible.
+      description: A description of what is currently in the doc. Add annotated screenshots if possible.
     validations:
       required: true
   - type: textarea

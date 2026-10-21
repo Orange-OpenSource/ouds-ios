@@ -14,8 +14,8 @@ license: MIT
 ```swift
 OUDSLink(text: "Text", size: .default) {}
 OUDSLink(text: "Text", indicator: .previous, size: .default) {}
-OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic")), size: .default) {}
-OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
+OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic")), size: .default) {}
+OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
 ```
 
 ---
@@ -138,7 +138,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 })
 ```
 
-> Badge rendering: iOS ≤ 25 → `OUDSBadge`; iOS 26+ top → native system badge; iOS 26+ bottom → `OUDSBadge` forced.
+> Badge rendering: iOS ≤ 25 → `OUDSBadgeStandard` / `OUDSBadgeCount`; iOS 26+ top → native system badge; iOS 26+ bottom → `OUDSBadgeStandard` / `OUDSBadgeCount` forced.
 
 ---
 

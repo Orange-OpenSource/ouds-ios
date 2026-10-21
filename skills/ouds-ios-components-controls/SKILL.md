@@ -18,7 +18,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 | Error state | `isError: true, errorText: .raw("Message")` — `errorText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
 | Rich error | `errorText: .rich(AttributedString)` |
 | Plain helper | `helperText: .raw("…")` (`OUDSTextArea`: `helperText: .textual("…")`) — `helperText` is an `OUDSTextualContent` (`.raw`, `.localized`, `.rich`); prefer `.raw("…")` to a bare literal to avoid a deprecation warning |
-| Rich helper | `helperText: .rich(AttributedString)` |
+| Rich helper | `helperText: .rich(AttributedString)` (`OUDSTextArea`: `helperText: .textual(.rich(AttributedString))`) |
 | Error status (inputs) | `status: .textualError(message: "…")` — message is an `OUDSTextualContent` |
 | Rich error status | `status: .textualError(message: .rich(AttributedString))` |
 | Read-only | `isReadOnly: true` |
@@ -64,7 +64,7 @@ OUDSCheckboxItem("Label", isOn: $isOn, isError: true, errorText: .rich(Attribute
 > Parameter order: `(_ label:, isOn:, description:, image:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
 
 ```swift
-// Picker — icon is OUDSImage?
+// Picker — image is OUDSImage?
 OUDSCheckboxPicker(selections: $selections, checkboxes: [
     .init(tag: "a", label: "Option A"),
     .init(tag: "b", label: "Option B", description: "Details", isReversed: true),
@@ -139,7 +139,7 @@ OUDSSwitchItem("Label", isOn: $isOn, isError: true, errorText: .rich(AttributedS
 
 ## Pin Code Input
 
-Available lengths: `.four`, `.six` (default).
+Available lengths: `.four`, `.six` (default), `.eight`.
 
 ```swift
 OUDSPinCodeInput($value)
@@ -183,15 +183,15 @@ OUDSPasswordInput(label: "Password", password: $password, status: .textualError(
 
 ```swift
 OUDSSuggestionChip(text: "Label") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic")), text: "Label") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic")), text: "Label") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
 OUDSFilterChip(text: "Label") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic")), text: "Label") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
+OUDSFilterChip(image: OUDSImage(asset: Image("ic")), text: "Label") {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
+OUDSFilterChip(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
 OUDSChipPicker(title: "Title", selection: $selection, chips: [
     .init(tag: .value1, layout: .textAndIcon("Label", image: OUDSImage(asset: Image("ic")))),
     .init(tag: .value2, layout: .textAndIcon("Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))), // raw image

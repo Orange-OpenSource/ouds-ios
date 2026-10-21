@@ -33,7 +33,6 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - helperText: A text to display below the PIN code input container, default set to *nil*
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
@@ -42,7 +41,6 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     @_disfavoredOverload
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
-                hiddenCharacters: Bool = true,
                 helperText: String? = nil,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled,
@@ -50,7 +48,7 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     {
         self.init(value,
                   length: length,
-                  hiddenCharacters: hiddenCharacters,
+                  hiddenCharacters: true,
                   helperText: helperText.map { .raw($0) },
                   isOutlined: isOutlined,
                   status: status,
@@ -62,7 +60,6 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - helperText: A text to display below the PIN code input container, in rich text
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
@@ -71,7 +68,6 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     @_disfavoredOverload
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
-                hiddenCharacters: Bool = true,
                 helperText: AttributedString,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled,
@@ -79,7 +75,7 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     {
         self.init(value,
                   length: length,
-                  hiddenCharacters: hiddenCharacters,
+                  hiddenCharacters: true,
                   helperText: .rich(helperText),
                   isOutlined: isOutlined,
                   status: status,
@@ -91,7 +87,6 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
-    ///   - hiddenCharacters: Flag to hide or show the characters, by default set to `true`.
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
@@ -102,7 +97,6 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     @_disfavoredOverload
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
-                hiddenCharacters: Bool = true,
                 helperText key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -112,7 +106,7 @@ extension OUDSPinCodeInput { // TODO: v4 - Remove these old inits
     {
         self.init(value,
                   length: length,
-                  hiddenCharacters: hiddenCharacters,
+                  hiddenCharacters: true,
                   helperText: .localized(key, tableName: tableName, bundle: bundle),
                   isOutlined: isOutlined,
                   status: status,

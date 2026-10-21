@@ -228,8 +228,12 @@ public struct OUDSPinCodeInput: View {
             switch (lhs.errorMessage, rhs.errorMessage) {
             case (nil, nil):
                 true
-            case let (lhsMessage?, rhsMessage?):
-                lhsMessage.rawValue == rhsMessage.rawValue
+            case let (.raw(lhsText)?, .raw(rhsText)?):
+                lhsText == rhsText
+            case let (.rich(lhsText)?, .rich(rhsText)?):
+                lhsText == rhsText
+            case let (.localized(lhsKey, lhsTable, lhsBundle)?, .localized(rhsKey, rhsTable, rhsBundle)?):
+                lhsKey == rhsKey && lhsTable == rhsTable && lhsBundle == rhsBundle
             default:
                 false
             }

@@ -14,6 +14,9 @@ license: MIT
 ```swift
 OUDSButton(text: "Label", appearance: .default) {}
 OUDSButton(text: "Label", appearance: .default, style: .loading()) {}
-OUDSButton(text: "Label", icon: Image("ic"), appearance: .default, size: .small) {}
-OUDSButton(icon: Image("ic"), accessibilityLabel: "Label", size: .small) {}
+OUDSButton(text: "Label", image: OUDSImage(asset: Image("ic")), appearance: .default, size: .small) {}
+// Icon only: the accessibility label is given to the OUDSImage
+OUDSButton(image: OUDSImage(asset: Image("ic"), accessibilityLabel: "Label"), size: .small) {}
+// LocalizedStringKey:
+OUDSButton(LocalizedStringKey("button_label"), bundle: Bundle.module, appearance: .default) {}
 ```
