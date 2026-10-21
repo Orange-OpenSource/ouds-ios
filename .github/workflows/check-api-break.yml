@@ -113,7 +113,14 @@ jobs:
                   echo "No API break detected."
                   ;;
               2)
-                  echo "::warning title=Public API break::API breaks detected between ${{ steps.refs.outputs.old }} and ${{ steps.refs.outputs.new }} (may be false positives). Check the logs."
+                  echo "::warning title=API BREAK DETECTED (exit code 2)::Public API breaks were detected between ${{ steps.refs.outputs.old }} and ${{ steps.refs.outputs.new }}. This may be a false positive: review the job logs, and run scripts/check-API-break.sh locally to confirm. The job is not failed."
+                  {
+                      echo "## ⚠️ Public API break detected"
+                      echo ""
+                      echo "\`scripts/check-API-break.sh\` exited with code 2 when comparing \`${{ steps.refs.outputs.old }}\` to \`${{ steps.refs.outputs.new }}\`."
+                      echo ""
+                      echo "This can be a false positive. Review the logs of this step and run the script locally to confirm. The job is kept successful on purpose."
+                  } >> "$GITHUB_STEP_SUMMARY"
                   ;;
               1)
                   echo "::error::The API break check script failed (exit code 1)."
