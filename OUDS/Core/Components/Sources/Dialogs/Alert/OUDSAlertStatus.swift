@@ -16,6 +16,7 @@ import SwiftUI
 /// The status of the alerts.
 /// ``OUDSAlertMessage`` background color and its icon color are based on this status.
 /// ``OUDSInlineAlert`` icon and text color are based on this status.
+/// ``OUDSAlertBanner`` background color and its icon color are based on this status.
 ///
 /// There are two types of statuses:
 ///  - Non-functional statuses used for informational or decorative alert messages.
