@@ -39,7 +39,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-typography-label)
 ///
 /// ## Themes rendering
 ///
@@ -62,7 +62,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSLabel: View { // TODO: #1580 - Add reference to documentation when available
+public struct OUDSLabel: View {
 
     // MARK: Properties
 
