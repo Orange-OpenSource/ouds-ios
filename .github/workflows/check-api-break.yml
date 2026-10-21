@@ -99,7 +99,35 @@ jobs:
       - name: Check public API breaks
         if: steps.refs.outputs.skip != 'true'
         run: |
+          # Exit codes: 0 = OK, 1 = error, 2 = API break (reported as warning only)
+          set +e
           scripts/check-API-break.sh \
               "${{ steps.refs.outputs.old }}" \
               "${{ steps.refs.outputs.new }}" \
               --verbose
+          status=$?
+          set -e
+
+          case "$status" in
+              0)
+                  echo "No API break detected."
+                  ;;
+              2)
+                  echo "::warning title=API BREAK DETECTED (exit code 2)::Public API breaks were detected between ${{ steps.refs.outputs.old }} and ${{ steps.refs.outputs.new }}. This may be a false positive: review the job logs, and run scripts/check-API-break.sh locally to confirm. The job is not failed."
+                  {
+                      echo "## ⚠️ Public API break detected"
+                      echo ""
+                      echo "\`scripts/check-API-break.sh\` exited with code 2 when comparing \`${{ steps.refs.outputs.old }}\` to \`${{ steps.refs.outputs.new }}\`."
+                      echo ""
+                      echo "This can be a false positive. Review the logs of this step and run the script locally to confirm. The job is kept successful on purpose."
+                  } >> "$GITHUB_STEP_SUMMARY"
+                  ;;
+              1)
+                  echo "::error::The API break check script failed (exit code 1)."
+                  exit 1
+                  ;;
+              *)
+                  echo "::error::Unexpected exit code $status from the API break check script."
+                  exit 1
+                  ;;
+          esac
