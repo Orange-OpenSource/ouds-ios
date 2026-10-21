@@ -41,6 +41,8 @@ public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - On Background
 
+    var onBgInverseHigh: MultipleColorModeSemanticToken { get }
+    var onBgInverseLow: MultipleColorModeSemanticToken { get }
     var onBgPrimary: MultipleColorModeSemanticToken { get }
     var onBgSecondary: MultipleColorModeSemanticToken { get }
     var onBgTertiary: MultipleColorModeSemanticToken { get }
@@ -69,6 +71,14 @@ public protocol ColorModeMultipleSemanticTokens {
     var onOverlayModal: MultipleColorModeSemanticToken { get }
     var onOverlayDropdown: MultipleColorModeSemanticToken { get }
     var onOverlayTooltip: MultipleColorModeSemanticToken { get }
+
+    // MARK: - On Surface
+
+    var onSurfaceInverseHigh: MultipleColorModeSemanticToken { get }
+    var onSurfaceInverseLow: MultipleColorModeSemanticToken { get }
+    var onSurfacePrimary: MultipleColorModeSemanticToken { get }
+    var onSurfaceSecondary: MultipleColorModeSemanticToken { get }
+    var onSurfaceTertiary: MultipleColorModeSemanticToken { get }
 
     // MARK: - Navigation
 

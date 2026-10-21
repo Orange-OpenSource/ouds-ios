@@ -28,6 +28,10 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
 
     // MARK: - Multiple tokens
 
+    @objc public final var onBgInverseHigh: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseHigh", light: onBgInverseHighLight, dark: onBgInverseHighDark) }
+
+    @objc public final var onBgInverseLow: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseLow", light: onBgInverseLowLight, dark: onBgInverseLowDark) }
+
     @objc public final var onBgPrimary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgPrimary", light: onBgPrimaryLight, dark: onBgPrimaryDark) }
 
     @objc public final var onBgSecondary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgSecondary", light: onBgSecondaryLight, dark: onBgSecondaryDark) }
@@ -65,6 +69,16 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
     @objc public final var onStatusWarningEmphasized: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onStatusWarningEmphasized", light: onStatusWarningEmphasizedLight, dark: onStatusWarningEmphasizedDark) }
 
     @objc public final var onStatusWarningMuted: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onStatusWarningMuted", light: onStatusWarningMutedLight, dark: onStatusWarningMutedDark) }
+
+    @objc public final var onSurfaceInverseHigh: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceInverseHigh", light: onSurfaceInverseHighLight, dark: onSurfaceInverseHighDark) }
+
+    @objc public final var onSurfaceInverseLow: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceInverseLow", light: onSurfaceInverseLowLight, dark: onSurfaceInverseLowDark) }
+
+    @objc public final var onSurfacePrimary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfacePrimary", light: onSurfacePrimaryLight, dark: onSurfacePrimaryDark) }
+
+    @objc public final var onSurfaceSecondary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceSecondary", light: onSurfaceSecondaryLight, dark: onSurfaceSecondaryDark) }
+
+    @objc public final var onSurfaceTertiary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceTertiary", light: onSurfaceTertiaryLight, dark: onSurfaceTertiaryDark) }
 
     @objc public final var navigationBar: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("navigationBarDark", light: navigationBarLight, dark: navigationBarDark) }
 
@@ -133,6 +147,8 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
             OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Wireframe Theme")
         }
         // List here all cases where light and dark modes values are NOT undefined
+        if mode.isEqual(onBgInverseHigh) { return colors.bgInverseHigh }
+        if mode.isEqual(onBgInverseLow) { return colors.bgInverseLow }
         if mode.isEqual(onBgPrimary) { return colors.bgPrimary }
         if mode.isEqual(onBgSecondary) { return colors.bgSecondary }
         if mode.isEqual(onBgTertiary) { return colors.bgTertiary }
@@ -152,6 +168,11 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
         if mode.isEqual(onStatusWarningMuted) { return colors.surfaceStatusWarningMuted }
         if mode.isEqual(onOverlayDropdown) { return colors.overlayDropdown }
         if mode.isEqual(onOverlayTooltip) { return colors.overlayModalSheet } // FIXME: Not sure of this value
+        if mode.isEqual(onSurfaceInverseHigh) { return colors.surfaceInverseHigh }
+        if mode.isEqual(onSurfaceInverseLow) { return colors.surfaceInverseLow }
+        if mode.isEqual(onSurfacePrimary) { return colors.surfacePrimary }
+        if mode.isEqual(onSurfaceSecondary) { return colors.surfaceSecondary }
+        if mode.isEqual(onSurfaceTertiary) { return colors.surfaceTertiary }
         if mode.isEqual(navigationBar) { return colors.overlayModalSheet } // FIXME: Not sure of this value
         OL.fatal("The color mode '\(mode.name)' for Wireframe Theme is not managed and must be.")
     }
