@@ -27,7 +27,7 @@ struct TextInputContainer: View {
     let trailingAction: OUDSTextInput.TrailingAction?
     let isOutlined: Bool
     let status: OUDSTextInput.Status
-    let accessibilityHint: TextualContent?
+    let accessibilityHint: OUDSTextualContent?
     @State var hover: Bool = false
 
     @FocusState private var focused: Bool

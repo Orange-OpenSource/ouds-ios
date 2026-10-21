@@ -35,7 +35,7 @@ struct TagLabelStyle: LabelStyle {
             configuration.title
         }
         .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
-        .modifier(TagAspectModifier(appearance: appearance, shape: shape, size: size, type: type))
+        .modifier(TagAspectModifier(appearance: appearance, shape: shape, type: type))
     }
 
     // MARK: Helpers

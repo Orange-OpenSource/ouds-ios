@@ -1,12 +1,12 @@
 ---
 name: ouds-ios-guide-migration
-description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to the current version (3.0.0 or higher), or when deprecated or removed OUDS APIs are detected in the codebase
+description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to the current version (3.2.0 or higher), or when deprecated or removed OUDS APIs are detected in the codebase
 license: MIT
 ---
 
 # Skill: ouds-ios-guide-migration
 
-Migration guide from **v1.0.0** to **v3.0.0** (current). Covers all breaking changes and deprecated symbols.
+Migration guide from **v1.0.0** to **v3.2.0** (current). Covers all breaking changes and deprecated symbols.
 For full before/after examples, refer to `MIGRATION.md` in the project root.
 
 ---
@@ -24,6 +24,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
+| v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(itemLabel:…)` / `init(viewLabel:accessibilityLabel:…)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. |
 
 ---
 
@@ -590,6 +591,101 @@ OUDSLink(text: "Back", indicator: .previous, size: .default) { }
 
 ---
 
+## v3.0.0 → v3.2.0
+
+**Backward compatibility**: Fully source-compatible. All v3.0.0 call sites keep compiling; they produce deprecation warnings but still work. No API has been removed.
+
+### OUDSListItemData — unified initializers with `OUDSTextualContent` and `.textual` label
+
+The six initializers of `OUDSListItemData` (one per combination of `String` / `some View` / `LocalizedStringKey` label × raw / `AttributedString` overline) are deprecated and replaced by two unified initializers:
+- `init(itemLabel: Label, description:, overline:, extraLabel:, helperText:, textSlot:, bottomSlot:)`
+- `init(viewLabel: some View, accessibilityLabel:, description:, overline:, extraLabel:, helperText:, textSlot:, bottomSlot:)`
+
+They accept:
+- a `OUDSListItemData.Label` for the label, with cases `.textual(OUDSTextualContent, isBold:)`, `.custom(AnyView, accessibilityLabel:)` and the **deprecated** `.text(String, isBold:)`;
+- a `OUDSTextualContent?` (public, `@frozen` enum with `.raw(String)`, `.localized(LocalizedStringKey, tableName:, bundle:)` and `.rich(AttributedString)`) for each of `description`, `overline`, `extraLabel`, `helperText`.
+
+Both `OUDSTextualContent` and `Label` conform to `ExpressibleByStringLiteral`: `itemLabel: "Foo"` is `.textual(.raw("Foo"), isBold: false)` and `description: "Bar"` is `.raw("Bar")`. **Never use `.text(…)` on a `Label` in new code.** In v4, `.textual` will be renamed `.text`, and `itemLabel` / `viewLabel` renamed `label`.
+
+| Old (v3.0 — deprecated) | New (v3.2) |
+|---|---|
+| `OUDSListItemData(label: "Foo")` | `OUDSListItemData(itemLabel: "Foo")` |
+| `OUDSListItemData(label: "Foo", hasBoldLabel: true)` | `OUDSListItemData(itemLabel: .textual("Foo", isBold: true))` |
+| `OUDSListItemData(label: "Foo", description: "Bar", overline: "Over")` | `OUDSListItemData(itemLabel: "Foo", description: "Bar", overline: "Over")` |
+| `OUDSListItemData(label: "Foo", overline: myAttributedString)` | `OUDSListItemData(itemLabel: "Foo", overline: .rich(myAttributedString))` |
+| `OUDSListItemData(label: myView, accessibilityLabel: "Foo", overline: "Over")` | `OUDSListItemData(viewLabel: myView, accessibilityLabel: "Foo", overline: "Over")` |
+| `OUDSListItemData(key: "foo.label")` | `OUDSListItemData(itemLabel: .textual(.localized("foo.label")))` |
+| `Label.text("Foo", isBold: true)` | `Label.textual("Foo", isBold: true)` |
+
+**New capability (v3.2)**: every textual field can now be a styled `AttributedString` or a localized string, not just `overline`:
+
+```swift
+// Before (v3.0) — only `overline` could be styled
+OUDSListItemData(label: "Foo", overline: myStyledOverline)
+
+// After (v3.2) — any textual field can be styled or localized
+OUDSListItemData(
+    itemLabel: .textual(.rich(myStyledLabel)),
+    description: .rich(myStyledDescription),
+    overline: .rich(myStyledOverline),
+    extraLabel: .localized("extra.label.key"),
+    helperText: "Plain string literal")
+```
+
+**Concrete example with colors:**
+
+```swift
+import OUDSSwiftUI
+import SwiftUI
+
+// Colored label (red)
+let redLabel = AttributedString.from(
+    text: "Payment problems",
+    foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
+    font: .body
+)
+
+// Colored overline (green)
+let greenOverline = AttributedString.from(
+    text: "Services activated",
+    foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityPositiveMedium),
+    font: .body
+)
+
+// Colored extraLabel (orange)
+let orangeExtra = AttributedString.from(
+    text: "offers available",
+    foregroundColor: .orange,
+    font: .body
+)
+
+// Full example
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        itemLabel: .textual(.rich(redLabel)),
+        description: .rich(AttributedString.from(
+            text: "Action required",
+            foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityWarningMedium),
+            font: .body
+        )),
+        overline: .rich(greenOverline),
+        extraLabel: .rich(orangeExtra)
+    ),
+    trailing: .badge(.count(OUDSBadgeCount(3, accessibilityLabel: "3", status: .negative, size: .medium)))
+)
+```
+
+**Required action**:
+- Replace `OUDSListItemData(label: "Foo", …)` with `OUDSListItemData(itemLabel: "Foo", …)` (string literal, no `.text(…)`).
+- Replace `hasBoldLabel: true` with `.textual("Foo", isBold: true)`.
+- Replace `key: LocalizedStringKey` with `.textual(.localized(key, tableName:, bundle:))`.
+- Replace `overline: myAttributedString` with `overline: .rich(myAttributedString)` and move the `overline:` parameter to its canonical position (after `description:` in the new init order).
+- Replace any `Label.text(…)` with `.textual(…)`.
+
+> **Note on overload resolution**: as long as the deprecated initializers remain available, `OUDSListItemData(label: "Foo")` still resolves to the deprecated overload and warns. Using the `itemLabel:` argument label selects the new initializer.
+
+---
+
 ## Verification checklist
 
 ```bash
@@ -610,6 +706,12 @@ grep -rn \
 # v2.3.0 init label disambiguation — must return nothing
 grep -rn \
   "icon: OUDSImage\|leadingIcon: OUDSImage" \
+  --include="*.swift" .
+
+# v3.2.0 deprecated OUDSListItemData String/AttributedString initializers and Label.text.
+# A warning-free call site uses `itemLabel: "…"` / `.textual(…)` and OUDSTextualContent for other fields.
+grep -rnE \
+  'OUDSListItemData\(\s*label:|OUDSListItemData\([^)]*hasBoldLabel:|OUDSListItemData\([^)]*key:|(itemLabel|label):\s*\.text\(' \
   --include="*.swift" .
 
 swift test

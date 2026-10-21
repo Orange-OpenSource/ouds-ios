@@ -151,11 +151,18 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 | Type | Purpose |
 |------|---------|
 | `OUDSListItemData` | Textual data: label, description, overline, extraLabel, helperText, textSlot, bottomSlot |
+| `OUDSListItemData.Label` | Label content: `.textual(OUDSTextualContent, isBold:)`, `.custom(AnyView, accessibilityLabel:)` (`.text` is deprecated); string-literal convertible |
+| `OUDSTextualContent` | Shared text payload for `description` / `overline` / `extraLabel` / `helperText`: `.raw(String)`, `.localized(LocalizedStringKey, tableName:, bundle:)` or `.rich(AttributedString)`; string-literal convertible |
 | `OUDSListItemLeading` | Leading element: icon, image, flag, avatar, custom view |
 | `OUDSListItemTrailing` | Trailing element: text, badge, tag, icon, image, flag, avatar, custom view |
 
 > `.custom { ... }` accepts any `@ViewBuilder` content (e.g. `OUDSCircularProgressIndicator`, custom control). Unlike `.flag`/`.avatar`,
 > it is **not** auto-hidden from accessibility — the custom view must carry its own accessibility label/value.
+
+> **Rich text**: every textual field (label, description, overline, extraLabel, helperText) accepts
+> a raw `String`, a localized string or a styled `AttributedString`. Pass string literals directly
+> (`itemLabel: "Label"`, `description: "Desc"`), or use `.textual(.rich(...))` for the label and
+> `.rich(...)` / `.localized(...)` for the other fields. Never use the deprecated `Label.text`.
 
 **Shared view modifiers:**
 
@@ -173,70 +180,92 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 
 ```swift
 // Minimal
-OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+OUDSStaticListItem(data: OUDSListItemData(itemLabel: "Label"))
 
-// Full textual content
+// Full textual content (string literals auto-convert to .raw OUDSTextualContent)
 OUDSStaticListItem(data: OUDSListItemData(
-    label: "Label",
+    itemLabel: "Label",
     description: "Description",
     overline: "Overline",
     extraLabel: "Extra"
 ))
 
+// Rich text content for any textual field
+OUDSStaticListItem(data: OUDSListItemData(
+    itemLabel: .textual(.rich(AttributedString.from(text: "Premium", foregroundColor: .orange, font: .headline))),
+    description: .rich(myStyledDescription),
+    overline: "Plain overline",
+    helperText: .rich(AttributedString.from(text: "A rich helper", foregroundColor: .gray, font: .caption))
+))
+
+// Alternative: using theme colors
+OUDSStaticListItem(data: OUDSListItemData(
+    itemLabel: .textual(.rich(AttributedString.from(
+        text: "Important",
+        foregroundColor: Color(hexadecimalCode: theme.colors.repositoryNegativeHigh),
+        font: .body
+    ))),
+    description: .rich(AttributedString.from(
+        text: "Warning",
+        foregroundColor: Color(hexadecimalCode: theme.colors.repositoryOpacityWarningMedium),
+        font: .body
+    ))
+))
+
 // With leading icon
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Info"),
+    data: OUDSListItemData(itemLabel: "Info"),
     leading: .icon(OUDSListItemIcon(status: .info, description: "", size: .medium))
 )
 
 // With trailing badge
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Notifications"),
+    data: OUDSListItemData(itemLabel: "Notifications"),
     trailing: .badge(.count(.init(3, accessibilityLabel: "3", status: .negative, size: .medium)))
 )
 
 // With avatar + tag
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Profile"),
+    data: OUDSListItemData(itemLabel: "Profile"),
     leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium, accessibilityLabel: "")),
     trailing: .tag(OUDSTag(label: "New", size: .small))
 )
 
 // With trailing text
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Status"),
+    data: OUDSListItemData(itemLabel: "Status"),
     trailing: .text(.labelMuted("Active"))
 )
 
 // With flag
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "Country"),
+    data: OUDSListItemData(itemLabel: "Country"),
     leading: .flag(OUDSListItemFlag(asset: Image("flag_fr"), description: "France"))
 )
 
 // With slot (view under texts, before helper text)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "With slot", textSlot: .init { Text("Additional content") })
+    data: OUDSListItemData(itemLabel: "With slot", textSlot: .init { Text("Additional content") })
 )
 
 // With bottomSlot (view under main content, before helper text)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "With bottom slot", bottomSlot: .init { Text("Bottom content") })
+    data: OUDSListItemData(itemLabel: "With bottom slot", bottomSlot: .init { Text("Bottom content") })
 )
 
 // With both slot and bottomSlot
 OUDSStaticListItem(
     data: OUDSListItemData(
-        label: "Label",
-        textSlot: { Text("Slot content") },
-        bottomSlot: { Text("Bottom content") },
+        itemLabel: "Label",
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
 )
 
 // With a custom view in leading/trailing (e.g. a gauge for a remaining SMS credit)
 OUDSStaticListItem(
-    data: OUDSListItemData(label: "SMS credit"),
+    data: OUDSListItemData(itemLabel: "SMS credit"),
     trailing: .custom {
         OUDSCircularProgressIndicator(progress: 0.75)
     }
@@ -249,23 +278,23 @@ OUDSStaticListItem(
 
 ```swift
 // Forward navigation (default)
-OUDSNavigationListItem(data: OUDSListItemData(label: "Next")) {
+OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Next")) {
     // action
 }
 
 // Backward navigation
-OUDSNavigationListItem(data: OUDSListItemData(label: "Back"), indicatorType: .previous) {
+OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Back"), indicatorType: .previous) {
     // action
 }
 
 // External navigation
-OUDSNavigationListItem(data: OUDSListItemData(label: "Website"), indicatorType: .external) {
+OUDSNavigationListItem(data: OUDSListItemData(itemLabel: "Website"), indicatorType: .external) {
     openURL(url)
 }
 
 // With leading/trailing
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Profile", description: "View details"),
+    data: OUDSListItemData(itemLabel: "Profile", description: "View details"),
     leading: .avatar(OUDSListItemAvatar(type: .initials("JD"), size: .medium)),
     trailing: .text(.labelMuted("Details"))
 ) {
@@ -274,14 +303,14 @@ OUDSNavigationListItem(
 
 // With slot (view under texts, before helper text)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Settings", textSlot: .init { Text("Configure options") })
+    data: OUDSListItemData(itemLabel: "Settings", textSlot: .init { Text("Configure options") })
 ) {
     // navigate
 }
 
 // With bottomSlot (view under main content, before helper text)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Profile", bottomSlot: .init { Text("Additional info") })
+    data: OUDSListItemData(itemLabel: "Profile", bottomSlot: .init { Text("Additional info") })
 ) {
     // navigate
 }
@@ -289,7 +318,7 @@ OUDSNavigationListItem(
 // With both slot and bottomSlot
 OUDSNavigationListItem(
     data: OUDSListItemData(
-        label: "Settings",
+        itemLabel: "Settings",
         textSlot: .init { Text("Slot content") },
         bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
@@ -300,7 +329,7 @@ OUDSNavigationListItem(
 
 // With a custom view in leading/trailing (e.g. a gauge for a remaining SMS credit)
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "SMS credit"),
+    data: OUDSListItemData(itemLabel: "SMS credit"),
     trailing: .custom {
         OUDSCircularProgressIndicator(progress: 0.75)
     }
@@ -310,7 +339,7 @@ OUDSNavigationListItem(
 
 // With external link + badge
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Documentation"),
+    data: OUDSListItemData(itemLabel: "Documentation"),
     indicatorType: .external,
     trailing: .badge(.standard(.init(accessibilityLabel: "New", status: .accent, size: .small)))
 ) {

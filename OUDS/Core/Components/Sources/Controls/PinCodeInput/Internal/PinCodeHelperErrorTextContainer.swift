@@ -17,7 +17,7 @@ import SwiftUI
 
 struct PinCodeHelperErrorTextContainer: View {
 
-    let helperText: TextualContent?
+    let helperText: OUDSTextualContent?
     let status: OUDSPinCodeInput.Status
 
     @Environment(\.theme) private var theme
