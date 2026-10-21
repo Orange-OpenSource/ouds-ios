@@ -112,6 +112,7 @@ public struct OUDSAlertMessage: View {
     private let description: OUDSTextualContent?
     private let bulletList: [OUDSTextualContent]
     private let link: Self.Link?
+    private let disableVoiceOverAnnouncement: Bool
     private let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -193,6 +194,7 @@ public struct OUDSAlertMessage: View {
     ///   It should remain short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points, each one raw, localized or rich, to be displayed in the alert message following the label or the optional `description`.
     ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
+    ///   - disableVoiceOverAnnouncement: Disables the automatic VoiceOver announcement of the alert message when it appears. Default is `false`.
     ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
     ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
@@ -204,6 +206,7 @@ public struct OUDSAlertMessage: View {
                 description: OUDSTextualContent? = nil,
                 bulletList: [OUDSTextualContent] = [],
                 link: Self.Link? = nil,
+                disableVoiceOverAnnouncement: Bool = false,
                 onClose: (() -> Void)? = nil)
     {
         text = label
@@ -213,6 +216,7 @@ public struct OUDSAlertMessage: View {
         self.status = status
         self.description = description
         self.link = link
+        self.disableVoiceOverAnnouncement = disableVoiceOverAnnouncement
         self.onClose = onClose
         self.bulletList = bulletList
     }
@@ -246,6 +250,7 @@ public struct OUDSAlertMessage: View {
     ///   It should remain short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points, each one raw, localized or rich, to be displayed in the alert message following the label or the optional `description`.
     ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
+    ///   - disableVoiceOverAnnouncement: Disables the automatic VoiceOver announcement of the alert message when it appears. Default is `false`.
     ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
     ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
@@ -259,6 +264,7 @@ public struct OUDSAlertMessage: View {
                 description: OUDSTextualContent? = nil,
                 bulletList: [OUDSTextualContent] = [],
                 link: Self.Link? = nil,
+                disableVoiceOverAnnouncement: Bool = false,
                 onClose: (() -> Void)? = nil)
     {
         self.init(label: key.resolved(tableName: tableName, bundle: bundle),
@@ -266,6 +272,7 @@ public struct OUDSAlertMessage: View {
                   description: description,
                   bulletList: bulletList,
                   link: link,
+                  disableVoiceOverAnnouncement: disableVoiceOverAnnouncement,
                   onClose: onClose)
     }
 
@@ -275,7 +282,13 @@ public struct OUDSAlertMessage: View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertLeadingIcon(status: status)
                 .padding(.vertical, theme.alert.spacePaddingBlock)
-            AlertMessageContent(text: text, status: status, description: description, bulletList: bulletList, link: link, onClose: onClose)
+            AlertMessageContent(text: text,
+                                status: status,
+                                description: description,
+                                bulletList: bulletList,
+                                link: link,
+                                disableVoiceOverAnnouncement: disableVoiceOverAnnouncement,
+                                onClose: onClose)
             AlertMessageAction(link: link, onClose: onClose)
         }
         .padding(.leading, theme.alert.spacePaddingInline)

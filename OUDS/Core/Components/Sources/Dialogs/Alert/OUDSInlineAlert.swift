@@ -66,6 +66,7 @@ public struct OUDSInlineAlert: View {
 
     private let text: String
     private let status: OUDSAlertStatus
+    private let disableVoiceOverAnnouncement: Bool
 
     @Environment(\.theme) private var theme
 
@@ -82,12 +83,14 @@ public struct OUDSInlineAlert: View {
     /// - Parameters:
     ///   - label: Label displayed in the inline alert. Main message that should be short, clear, and readable at a glance.
     ///   - status: The status of the inline alert. Its text and its icon color are based on this status. Default set to *neutral* without icon.
-    public init(label: String, status: OUDSAlertStatus = .neutral()) {
+    ///   - disableVoiceOverAnnouncement: Disables the automatic VoiceOver announcement of the inline alert when it appears. Default is `false`.
+    public init(label: String, status: OUDSAlertStatus = .neutral(), disableVoiceOverAnnouncement: Bool = false) {
         text = label
         if text.isEmpty {
             OL.warning("The label for the OUDSInlineAlert must not be empty!")
         }
         self.status = status
+        self.disableVoiceOverAnnouncement = disableVoiceOverAnnouncement
     }
 
     /// Creates an inline alert with a localized label, looking up the key in the given bundle.
@@ -101,12 +104,16 @@ public struct OUDSInlineAlert: View {
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - status: The status of the inline alert, default set to *neutral* without icon
+    ///   - disableVoiceOverAnnouncement: Disables the automatic VoiceOver announcement of the inline alert when it appears. Default is `false`.
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSAlertStatus = .neutral())
+                status: OUDSAlertStatus = .neutral(),
+                disableVoiceOverAnnouncement: Bool = false)
     {
-        self.init(label: key.resolved(tableName: tableName, bundle: bundle), status: status)
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
+                  status: status,
+                  disableVoiceOverAnnouncement: disableVoiceOverAnnouncement)
     }
 
     // MARK: - Body
@@ -114,7 +121,7 @@ public struct OUDSInlineAlert: View {
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertLeadingIcon(status: status)
-            InlineAlertLabel(text: text, status: status)
+            InlineAlertLabel(text: text, status: status, disableVoiceOverAnnouncement: disableVoiceOverAnnouncement)
         }
         .skeleton(securityMargin: true)
     }

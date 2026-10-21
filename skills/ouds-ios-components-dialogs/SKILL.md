@@ -19,6 +19,7 @@ OUDSAlertMessage(label: "Label",
                  status: .neutral(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
                  bulletList: ["A", "B"],
                  link: .init(text: "More", position: .bottom) {},
+                 disableVoiceOverAnnouncement: true, // default false: VoiceOver announces the alert on appear
                  onClose: {})
 // description and bulletList elements are OUDSTextualContent: raw (string literal), localized or rich
 OUDSAlertMessage(label: "Label",
@@ -40,4 +41,5 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 OUDSInlineAlert(label: "Label")
 OUDSInlineAlert(label: "Label", status: .warning)
 OUDSInlineAlert(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
+OUDSInlineAlert(label: "Label", status: .info, disableVoiceOverAnnouncement: true) // default false: VoiceOver announces the alert on appear
 ```
