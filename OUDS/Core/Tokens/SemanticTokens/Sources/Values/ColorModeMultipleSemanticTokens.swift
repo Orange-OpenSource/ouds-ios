@@ -39,6 +39,8 @@ public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - On Background
 
+    var onBgInverseHigh: MultipleColorModeSemanticToken { get }
+    var onBgInverseLow: MultipleColorModeSemanticToken { get }
     var onBgPrimary: MultipleColorModeSemanticToken { get }
     var onBgSecondary: MultipleColorModeSemanticToken { get }
     var onBgTertiary: MultipleColorModeSemanticToken { get }
