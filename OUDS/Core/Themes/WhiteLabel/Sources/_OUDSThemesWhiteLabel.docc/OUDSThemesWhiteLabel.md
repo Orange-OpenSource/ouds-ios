@@ -15,7 +15,7 @@ This White Label theme is a specific theme. It has been designed to let users ha
 ## Overview
 
 The White Label theme is based on the Wireframe theme (which is dedicated to mockups and prototypes).
-However it is possible to override the semantic tokens of colors, change the tuning and choose the font family to apply.
+However it is possible to override the semantic tokens of colors, change the default border radius and choose the font family to apply.
 
 > Important: The White Label theme, as a child of Wireframe theme does not embed by default charts colors nor decorative colors yet, but they can be defined.
 
@@ -59,24 +59,6 @@ struct SomeView: View {
     }
 }
 ```
-
-## How to tune the theme
-
-By default the White Label theme uses the tuning of Wireframe.
-
-```swift
-// Define your theme tuning, here everything rounded
-let tuning = Tuning(hasRoundedButtons: true,
-                    hasRoundedTextInputs: true,
-                    hasRoundedAlertMessages: true,
-                    hasRoundedProgressIndicators: true,
-                    hasRoundedListItems: true)
-
-// Apply it to your theme
-let theme = WhiteLabelTheme(tuning: tuning)
-```
-
-> Important: But beware, these are only flags using inside components definitions to chose the token to apply. Some tokens for rounded and not rounded cases can have the same values in the end (like for Wireframe theme) or not (like for Orange theme).
 
 ## Typography
 
@@ -145,16 +127,16 @@ Then build and run the app and enjoy!
 ## Example
 
 ```swift
-// MARK: - Name, tuning
 
-let kDesignToolboxWhiteLabelName = "White Label Theme Example"
+// MARK: - Borders
 
-let kDesignToolboxWhiteLabelTuning = Tuning(hasRoundedButtons: true,
-                                            hasRoundedTextInputs: true,
-                                            hasRoundedAlertMessages: true,
-                                            hasRoundedProgressIndicators: true,
-                                            hasRoundedListItems: true)
+class DesignToolboxBorderSemanticTokensProvider: WhiteLabelThemeBorderSemanticTokensProvider {
+    
+    override open var radiusDefault: BorderRadiusSemanticToken { BorderRawTokens.radius300 }
+}
 
+let kDesignToolboxWhiteLabelBorders = DesignToolboxBorderSemanticTokensProvider()
+    
 // MARK: - Fonts
 
 let kDesignToolboxWhiteLabelFontFamily = "Winky Rough"
@@ -233,10 +215,10 @@ let kDesignToolboxWhiteLabelColors = DesignToolboxColorSemanticTokensProvider()
 
 // MARK: - Theme instanciation
 
-let myDesignToolboxWhiteLabelTheme = WhiteLabelTheme(colors: kDesignToolboxWhiteLabelColors,
+let myDesignToolboxWhiteLabelTheme = WhiteLabelTheme(borders: kDesignToolboxWhiteLabelBorders,
+                                                     colors: kDesignToolboxWhiteLabelColors,
                                                      name: kDesignToolboxWhiteLabelName,
-                                                     fontFamily: kDesignToolboxWhiteLabelFontFamily,
-                                                     tuning: kDesignToolboxWhiteLabelTuning)
+                                                     fontFamily: kDesignToolboxWhiteLabelFontFamily)
 
 // MARK: - Inject the theme
 
@@ -246,6 +228,7 @@ var body: some View {
     }
 }
 ```
+
 ## Topics
 
 ### Group

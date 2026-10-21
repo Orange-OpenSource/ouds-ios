@@ -50,28 +50,24 @@ struct WhiteLabelTests {
     @Test func customWhiteLabelTheme() {
 
         // Given
+        let customBorders: AllBorderSemanticTokensProvider = WhiteLabelThemeBorderSemanticTokensProvider()
         let customColors: AllColorSemanticTokensProvider = WhiteLabelThemeColorSemanticTokensProvider()
         let customName = "Test-Name"
         let customFontFamily = "Test-Font-Family"
-        let customTuning = Tuning(hasRoundedButtons: true,
-                                  hasRoundedTextInputs: true,
-                                  hasRoundedAlertMessages: false,
-                                  hasRoundedProgressIndicators: false,
-                                  hasRoundedListItems: true)
 
         // When
-        let customWhiteLabelTheme = WhiteLabelTheme(colors: customColors,
+        let customWhiteLabelTheme = WhiteLabelTheme(borders: customBorders,
+                                                    colors: customColors,
                                                     name: customName,
-                                                    fontFamily: customFontFamily,
-                                                    tuning: customTuning)
+                                                    fontFamily: customFontFamily)
 
         // Then
+        #expect(customWhiteLabelTheme.borders is WhiteLabelThemeBorderSemanticTokensProvider)
         #expect(customWhiteLabelTheme.colors is WhiteLabelThemeColorSemanticTokensProvider)
         #expect(customWhiteLabelTheme.colorsCharts == nil)
         #expect(customWhiteLabelTheme.colorsDecorative == nil)
         #expect(customWhiteLabelTheme.name == customName)
         #expect(customWhiteLabelTheme.fontFamily == customFontFamily)
-        #expect(customWhiteLabelTheme.tuning == customTuning)
     }
 
     // MARK: - Tests - Semantic tokens providers

@@ -21,14 +21,14 @@ import OUDSThemesContract
 /// all tokens to the users.
 ///
 /// - Since: 0.17.0
-final class WireframeThemeBorderSemanticTokensProvider: AllBorderSemanticTokensProvider {
+open class WireframeThemeBorderSemanticTokensProvider: AllBorderSemanticTokensProvider {
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Initializes the provider.
-    init() {
+    public init() {
         OL.debug("Init of WireframeThemeBorderSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
