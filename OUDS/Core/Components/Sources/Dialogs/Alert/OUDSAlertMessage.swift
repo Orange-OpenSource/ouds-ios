@@ -96,8 +96,8 @@ public struct OUDSAlertMessage: View {
 
     private let text: String
     private let status: OUDSAlertStatus
-    private let description: TextualContent?
-    private let bulletList: [TextualContent]
+    private let description: OUDSTextualContent?
+    private let bulletList: [OUDSTextualContent]
     private let link: Self.Link?
     private let onClose: (() -> Void)?
 
@@ -228,7 +228,7 @@ public struct OUDSAlertMessage: View {
             OL.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
-        self.description = .attributed(description)
+        self.description = .rich(description)
         self.link = link
         self.onClose = onClose
         self.bulletList = bulletList.map { .raw($0) }
@@ -277,7 +277,7 @@ public struct OUDSAlertMessage: View {
         }
         self.link = link
         self.onClose = onClose
-        self.bulletList = bulletList.map { .attributed($0) }
+        self.bulletList = bulletList.map { .rich($0) }
     }
 
     /// Creates an alert message with description and bullet list containing rich texts.
@@ -317,10 +317,10 @@ public struct OUDSAlertMessage: View {
             OL.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
-        self.description = .attributed(description)
+        self.description = .rich(description)
         self.link = link
         self.onClose = onClose
-        self.bulletList = bulletList.map { .attributed($0) }
+        self.bulletList = bulletList.map { .rich($0) }
     }
 
     /// Creates an alert message with a localized label, looking up the key in the given bundle.

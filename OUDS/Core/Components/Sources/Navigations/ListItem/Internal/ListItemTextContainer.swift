@@ -18,12 +18,17 @@ import SwiftUI
 
 /// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
 ///
-/// The label area supports two modes via ``OUDSListItemData/Label``:
-/// - **`.text(String, isBold: Bool)`**: The label is rendered as a styled `Text` view.
-///   When `isBold` is `true`, a bold typography is applied.
+/// The label area supports three modes via ``OUDSListItemData/Label``:
+/// - **`.textual(OUDSTextualContent, isBold: Bool)`**: The label is rendered as a styled `Text` view
+///   (raw, localized or user-styled `AttributedString`). When `isBold` is `true`, a bold typography is applied.
+///   For `.rich`, the plain-string projection is used for Voice Over vocalization.
+/// - **`.text(String, isBold: Bool)`**: Deprecated, same rendering as `.textual(.raw)`.
 /// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
 ///   as-is inside the label area. The provided `accessibilityLabel` is used in the combined
 ///   Voice Over vocalization.
+///
+/// The optional textual fields (`overline`, `extraLabel`, `description`) accept a raw
+/// `String`, a localized string or a styled `AttributedString` through ``OUDSTextualContent``.
 struct ListItemTextContainer: View {
 
     // MARK: Properties
@@ -57,12 +62,21 @@ struct ListItemTextContainer: View {
 
                 HStack {
                     switch data.labelContent {
-                    case let .text(labelText, isBold):
+                    case let .text(labelText, isBold): // TODO: v4 - Remove this case as manager by .textual
                         Group {
                             if isBold {
                                 Text(labelText).labelStrongLarge(theme)
                             } else {
                                 Text(labelText).labelDefaultLarge(theme)
+                            }
+                        }
+                        .frame(maxWidth: maxWidth, alignment: .leading)
+                    case let .textual(content, isBold: isBold):
+                        Group {
+                            if isBold {
+                                textView(for: content).labelStrongLarge(theme)
+                            } else {
+                                textView(for: content).labelDefaultLarge(theme)
                             }
                         }
                         .frame(maxWidth: maxWidth, alignment: .leading)
@@ -74,19 +88,19 @@ struct ListItemTextContainer: View {
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelsColor)
 
-                if let extraLabel = data.extraLabel,
-                   !extraLabel.isEmpty,
+                if let extraLabelContent = data.extraLabelContent,
+                   !extraLabelContent.isEmpty,
                    itemSize == .default
                 {
-                    Text(extraLabel)
+                    textView(for: extraLabelContent)
                         .labelStrongMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(labelsColor)
                         .frame(maxWidth: maxWidth, alignment: .leading)
                 }
 
-                if let description = data.description, !description.isEmpty {
-                    Text(description)
+                if let descriptionContent = data.descriptionContent, !descriptionContent.isEmpty {
+                    textView(for: descriptionContent)
                         .labelDefaultMedium(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
@@ -178,12 +192,12 @@ struct ListItemTextContainer: View {
             parts.append(labelString)
         }
 
-        if itemSize != .small, let extraLabel = data.extraLabel {
-            parts.append(extraLabel)
+        if itemSize != .small, let extraLabelContent = data.extraLabelContent {
+            parts.append(extraLabelContent.rawValue)
         }
 
-        if let description = data.description {
-            parts.append(description)
+        if let descriptionContent = data.descriptionContent {
+            parts.append(descriptionContent.rawValue)
         }
 
         return parts.joined(separator: ", ")

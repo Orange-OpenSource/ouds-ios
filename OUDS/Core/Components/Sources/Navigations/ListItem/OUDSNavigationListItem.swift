@@ -42,14 +42,14 @@ import SwiftUI
 /// ```swift
 ///     // Simple navigable list item with forward navigation
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Next screen")
+///         data: OUDSListItemData(itemLabel: "Next screen")
 ///     ) {
 ///         // Navigate to next screen
 ///     }
 ///
 ///     // List item with external navigation
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Open website"),
+///         data: OUDSListItemData(itemLabel: "Open website"),
 ///         indicatorType: .external
 ///     ) {
 ///         openURL(url)
@@ -57,7 +57,7 @@ import SwiftUI
 ///
 ///     // List item with backward navigation
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Go back"),
+///         data: OUDSListItemData(itemLabel: "Go back"),
 ///         indicatorType: .previous
 ///     ) {
 ///         // Navigate back
@@ -67,7 +67,7 @@ import SwiftUI
 ///     let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
 ///
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Profile", description: "View your profile"),
+///         data: OUDSListItemData(itemLabel: "Profile", description: "View your profile"),
 ///         leading: .avatar(avatar),
 ///         trailing: .text(.labelMuted(Text("Details")))
 ///     ) {
@@ -76,7 +76,7 @@ import SwiftUI
 ///
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "SMS credit"),
+///         data: OUDSListItemData(itemLabel: "SMS credit"),
 ///         trailing: .custom {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
@@ -87,8 +87,8 @@ import SwiftUI
 ///     // List item with slot (displayed under texts, before helper text)
 ///     OUDSNavigationListItem(
 ///         data: OUDSListItemData(
-///             label: "Settings",
-///             textSlot: { Text("Configure options") },
+///             itemLabel: "Settings",
+///             textSlot: .init { Text("Configure options") },
 ///             helperText: "Helper text"
 ///         )
 ///     ) {
@@ -98,8 +98,8 @@ import SwiftUI
 ///     // List item with bottomSlot (displayed under main content, before helper text)
 ///     OUDSNavigationListItem(
 ///         data: OUDSListItemData(
-///             label: "Profile",
-///             bottomSlot: { Text("Additional info") },
+///             itemLabel: "Profile",
+///             bottomSlot: .init { Text("Additional info") },
 ///             helperText: "Helper text"
 ///         )
 ///     ) {
@@ -144,7 +144,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Settings"),
+///         data: OUDSListItemData(itemLabel: "Settings"),
 ///         indicatorType: .next
 ///     ) {
 ///         // Navigate to settings

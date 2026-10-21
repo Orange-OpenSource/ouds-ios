@@ -221,7 +221,7 @@ public struct OUDSTextInput: View {
     let suffix: String?
     let leadingIcon: OUDSImage?
     let trailingAction: TrailingAction?
-    let helperText: TextualContent?
+    let helperText: OUDSTextualContent?
     let helperLink: Helperlink?
     let status: Self.Status
     let isOutlined: Bool
@@ -441,7 +441,7 @@ public struct OUDSTextInput: View {
     {
         self.label = label
         self.text = text
-        self.helperText = .attributed(helperText)
+        self.helperText = .rich(helperText)
         self.placeholder = placeholder
         self.prefix = prefix
         self.suffix = suffix

@@ -37,7 +37,7 @@ struct ControlItemLabel: View {
         let icon: OUDSImage?
         let isOutlined: Bool
         let isError: Bool
-        let errorText: TextualContent?
+        let errorText: OUDSTextualContent?
         let isReadOnly: Bool
         let hasDivider: Bool
         let constrainedMaxWidth: Bool

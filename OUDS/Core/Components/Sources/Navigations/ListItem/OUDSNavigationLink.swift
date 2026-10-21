@@ -106,7 +106,9 @@ public struct OUDSNavigationLink<Destination: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        OUDSNavigationListItem(data: .init(label: title, hasBoldLabel: hasBoldLabel), indicatorType: indicatorType) {
+        OUDSNavigationListItem(data: .init(itemLabel: .textual(.raw(title), isBold: hasBoldLabel)),
+                               indicatorType: indicatorType)
+        {
             isActive = true
         }
         .oudsListContentStyle(style)
