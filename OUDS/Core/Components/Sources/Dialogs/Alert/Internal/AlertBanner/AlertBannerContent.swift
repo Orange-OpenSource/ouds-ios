@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -20,7 +21,7 @@ struct AlertBannerContent: View {
 
     let text: String
     let status: OUDSAlertStatus
-    let description: TextualContent?
+    let description: OUDSTextualContent?
     let link: OUDSAlertBanner.Link?
     let onClose: (() -> Void)?
 
