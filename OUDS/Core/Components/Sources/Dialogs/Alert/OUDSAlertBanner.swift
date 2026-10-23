@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -46,7 +47,7 @@ public struct OUDSAlertBanner: View {
 
     private let text: String
     private let status: OUDSAlertStatus
-    private let description: TextualContent?
+    private let description: OUDSTextualContent?
     private let link: Self.Link?
     private let onClose: (() -> Void)?
 
@@ -146,7 +147,7 @@ public struct OUDSAlertBanner: View {
     // TODO: Add alignemnt
     public init(label: String,
                 status: OUDSAlertStatus = .positive,
-                description: TextualContent? = nil,
+                description: OUDSTextualContent? = nil,
                 link: Self.Link? = nil,
                 onClose: (() -> Void)? = nil)
     {
@@ -169,7 +170,9 @@ public struct OUDSAlertBanner: View {
             AlertBannerLeadingIcon(status: status)
                 .padding(.vertical, theme.alert.spacePaddingBlock)
             AlertBannerContent(text: text, status: status, description: description, link: link, onClose: onClose)
-            AlertBannerActionContainer(link: link, onClose: onClose)
+            OUDSColoredSurface(color: color) {
+                AlertBannerActionContainer(link: link, onClose: onClose)
+            }
         }
         .gridMargin(.horizontal)
         .frame(minWidth: theme.alert.sizeMinWidth, minHeight: minHeight, alignment: .leading)
@@ -180,5 +183,22 @@ public struct OUDSAlertBanner: View {
 
     private var minHeight: SizeSemanticToken {
         link?.position == .bottom ? theme.alert.sizeMinHeightBottomAction : theme.alert.sizeMinHeight
+    }
+
+    private var color: MultipleColorModeSemanticToken {
+        switch status {
+        case .neutral:
+            theme.colorModes.onBgInverseHigh
+        case .accent:
+            theme.colorModes.onStatusAccentEmphasized
+        case .positive:
+            theme.colorModes.onStatusPositiveEmphasized
+        case .warning:
+            theme.colorModes.onStatusWarningEmphasized
+        case .negative:
+            theme.colorModes.onStatusNegativeEmphasized
+        case .info:
+            theme.colorModes.onStatusInfoEmphasized
+        }
     }
 }
