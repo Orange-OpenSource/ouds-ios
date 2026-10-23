@@ -22,11 +22,13 @@ struct AlertBannerBackgroundModifier: ViewModifier {
     let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.background(color)
+        content
+            .background(color)
     }
 
     // MARK: - Helpers
