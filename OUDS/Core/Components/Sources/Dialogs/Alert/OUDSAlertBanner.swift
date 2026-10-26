@@ -45,11 +45,31 @@ public struct OUDSAlertBanner: View {
 
     // MARK: Stored properties
 
+    private let layout: Layout
     private let text: String
     private let status: OUDSAlertStatus
     private let description: OUDSTextualContent?
-    private let link: Self.Link?
+    private let actionLink: Self.ActionLink?
+    private let alignment: Self.Alignment
     private let onClose: (() -> Void)?
+
+    // TODO: 1 .Use this layout in init
+    // TODO: 2. voir pour deinir dans ouds un typealias poiur action avec label et handler, ici et partout
+    // TODO: 3 faire le que le composant soit présenté edge to edge dans l'app de démo
+    // TODO: 4 mettre a jour la doc et tests snapshots
+    enum LayoutV2 {
+        case center(text: String, status: OUDSAlertStatus, action: (label: String, handler: () -> Void))
+        case start(text: String,
+                   status: OUDSAlertStatus,
+                   description: OUDSTextualContent? = nil,
+                   actionLink: OUDSAlertBanner.ActionLink? = nil,
+                   alignment: OUDSAlertBanner.Alignment = .top,
+                   onClose: (() -> Void)? = nil)
+    }
+
+    enum Layout {
+        case start, center
+    }
 
     @Environment(\.theme) private var theme
 
@@ -59,13 +79,25 @@ public struct OUDSAlertBanner: View {
     static let actionLinkAccessibilityPriority = 200.0
     static let closeButtonAccessibilityPriority = 100.0
 
-    // MARK: - Link
+    /// Defines the vertical alignment of the leading, trailing, and text containers
+    /// within the banner.
+    @frozen public enum Alignment {
+        /// Containers are aligned to the top of the banner.
+        /// Best suited when the text has multiple lines and
+        /// leading/trailing elements should stay anchored at the top.
+        case top
+
+        /// Containers are vertically centered within the banner.
+        case center
+    }
+
+    // MARK: - Action
 
     // swiftlint:disable nesting
-    /// Used to describe the link display in the `OUDSAlertBanner`
-    @frozen public struct Link {
+    /// Used to describe the action link display in the `OUDSAlertBanner`
+    @frozen public struct ActionLink {
 
-        /// The position of an `OUDSAlertBanner.Link`in the alert banner.
+        /// The position of an `OUDSAlertBanner.ActionLink`in the alert banner.
         @frozen public enum Position {
             /// The link is displayed at the bottom of the alert banner below the main message content.
             case bottom
@@ -78,15 +110,15 @@ public struct OUDSAlertBanner: View {
         let position: Position
         let action: () -> Void
 
-        /// Creates a link with text and associated action.
+        /// Creates an action link with text and associated action in a desired position.
         ///
         /// - Parameters:
         ///   - text: The text (could be the url)
-        ///   - position: `OUDSAlertBanner.Link.Position` of the link within the alert banner.
+        ///   - position: `OUDSAlertBanner.ActionLink.Position` of the link within the alert banner.
         ///   - action: The action to process when clicked
         public init(text: String, position: Position = .bottom, action: @escaping () -> Void) {
             if text.isEmpty {
-                OL.warning("The link text for the OUDSAlertBanner is empty, avoid using it in that case.")
+                OL.warning("The action link text for the OUDSAlertBanner is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action
@@ -106,7 +138,8 @@ public struct OUDSAlertBanner: View {
     ///   - action: An optional action to be displayed at traling of the alert banner. It can be used to trigger an action.
     public init(label: String,
                 status: OUDSAlertStatus = .positive,
-                action: (label: String, onClick: () -> Void)? = nil) {
+                action: (label: String, onClick: () -> Void)?) {
+        layout = .center
         text = label
         if text.isEmpty {
             OL.warning("The label for the OUDSAlertBanner must not be empty!")
@@ -115,11 +148,12 @@ public struct OUDSAlertBanner: View {
         self.description = nil
 
         if let action {
-            self.link = Self.Link.init(text: action.label, position: .topTrailing, action: action.onClick)
+            self.actionLink = Self.ActionLink.init(text: action.label, position: .topTrailing, action: action.onClick)
         }else {
-            self.link = nil
+            self.actionLink = nil
         }
 
+        self.alignment = .center
         self.onClose = nil
     }
 
@@ -139,25 +173,28 @@ public struct OUDSAlertBanner: View {
     ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
     ///   - description: An optional supplementary text in an alert banner. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
-    ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
+    ///   - actionLink: An optional action link to be displayed in the alert message. It can be used to trigger an action.
+    ///   - alignment: The current vertical alignment of icon, text and action containers.
     ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
     ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
-    // TODO: Add alignemnt
     public init(label: String,
-                status: OUDSAlertStatus = .positive,
+                status: OUDSAlertStatus,
                 description: OUDSTextualContent? = nil,
-                link: Self.Link? = nil,
+                actionLink: Self.ActionLink? = nil,
+                alignment: Self.Alignment = .top,
                 onClose: (() -> Void)? = nil)
     {
+        layout = .start
         text = label
         if text.isEmpty {
             OL.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
         self.description = description 
-        self.link = link
+        self.actionLink = actionLink
+        self.alignment = alignment
         self.onClose = onClose
     }
 
@@ -166,27 +203,47 @@ public struct OUDSAlertBanner: View {
     // MARK: - Body
 
     public var body: some View {
-        HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
+        HStack(alignment: verticalAlignment, spacing: theme.alert.spaceColumnGap) {
             AlertBannerLeadingIcon(status: status)
                 .padding(.vertical, theme.alert.spacePaddingBlock)
-            AlertBannerContent(text: text, status: status, description: description, link: link, onClose: onClose)
-            OUDSColoredSurface(color: color) {
-                AlertBannerActionContainer(link: link, onClose: onClose)
+            AlertBannerContent(layout: layout, text: text, status: status, description: description, actionLink: actionLink, onClose: onClose)
+            OUDSColoredSurface(color: status.bannerBackgroungColor(for: theme)) {
+                AlertBannerActionContainer(actionLink: actionLink, onClose: onClose)
             }
         }
         .gridMargin(.horizontal)
-        .frame(minWidth: theme.alert.sizeMinWidth, minHeight: minHeight, alignment: .leading)
+        .frame(minWidth: theme.alert.sizeMinWidth, maxWidth: .infinity, minHeight: minHeight, alignment: horizontaAlignment)
         .modifier(AlertBannerBackgroundModifier(status: status))
         .accessibilityElement(children: .contain)
         .skeleton()
     }
 
     private var minHeight: SizeSemanticToken {
-        link?.position == .bottom ? theme.alert.sizeMinHeightBottomAction : theme.alert.sizeMinHeight
+        actionLink?.position == .bottom ? theme.alert.sizeMinHeightBottomAction : theme.alert.sizeMinHeight
     }
 
-    private var color: MultipleColorModeSemanticToken {
-        switch status {
+    private var horizontaAlignment: SwiftUI.Alignment {
+        switch layout {
+        case .start:
+            .leading
+        case .center:
+            .center
+        }
+    }
+
+    private var verticalAlignment: VerticalAlignment {
+        switch alignment {
+        case .top:
+            .top
+        case .center:
+            .center
+        }
+    }
+}
+
+extension OUDSAlertStatus {
+    func bannerBackgroungColor(for theme: OUDSTheme) -> MultipleColorModeSemanticToken {
+        switch self {
         case .neutral:
             theme.colorModes.onBgInverseHigh
         case .accent:

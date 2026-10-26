@@ -19,7 +19,7 @@ struct AlertBannerActionContainer: View {
 
     // MARK: - Properties
 
-    let link: OUDSAlertBanner.Link?
+    let actionLink: OUDSAlertBanner.ActionLink?
     let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -28,8 +28,8 @@ struct AlertBannerActionContainer: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.alert.spaceColumnGapAction) {
-            if let link, self.link?.position == .topTrailing {
-                OUDSLink(text: link.text, size: .default, density: .default, action: link.action)
+            if let actionLink, self.actionLink?.position == .topTrailing {
+                OUDSLink(text: actionLink.text, size: .default, density: .default, action: actionLink.action)
                     .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
             }
 
