@@ -19,10 +19,11 @@ struct AlertBannerContent: View {
 
     // MARK: - Properties
 
+    let layout: OUDSAlertBanner.Layout
     let text: String
     let status: OUDSAlertStatus
     let description: OUDSTextualContent?
-    let link: OUDSAlertBanner.Link?
+    let actionLink: OUDSAlertBanner.ActionLink?
     let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -31,34 +32,23 @@ struct AlertBannerContent: View {
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
-                Text(text)
-                    .labelModerateLarge(theme)
-                    .foregroundColor(foregroundColor)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: maxWidthText, alignment: .leading)
-
-                if let description, !description.isEmpty {
-                    textView(for: description)
-                        .labelDefaultMedium(theme)
-                        .foregroundColor(foregroundColor)
-                        .frame(maxWidth: maxWidthText, alignment: .leading)
-                        .padding(.bottom, theme.alert.spacePaddingBlockBottomContent)
+        VStack(alignment: horizontalAlignment, spacing: theme.spaces.fixedNone) {
+            if layout == .center {
+                if #available(iOS 16.0, *) {
+                    texts.limitedWidth(minWidth: 0, maxWidth: maxWidthText, minHeight: 0)
+                } else {
+                    texts.frame(maxWidth: maxWidthText, alignment: .leading)
                 }
+            } else {
+                texts.frame(maxWidth: maxWidthText, alignment: .leading)
             }
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel(accessibilityLabel)
-            .accessibilitySortPriority(OUDSAlertMessage.textsAccessibilityPriority)
-            // Todo: Mutualize
-//            #if canImport(UIKit)
-//                .modifier(AlertMessageFKACustomActionsModifier(link: link, onClose: onClose))
-//            #endif
 
             // Action
-            if let link, self.link?.position == .bottom {
-                OUDSLink(text: link.text, size: .default, density: .compact, action: link.action)
-                    .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
+            if let actionLink, self.actionLink?.position == .bottom {
+                OUDSColoredSurface(color: status.bannerBackgroungColor(for: theme)) {
+                    OUDSLink(text: actionLink.text, size: .default, density: .compact, action: actionLink.action)
+                        .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
+                }
             }
         }
         .padding(.vertical, theme.alert.spacePaddingBlock)
@@ -69,6 +59,28 @@ struct AlertBannerContent: View {
     }
 
     // MARK: - Helpers
+
+    private var texts: some View {
+        VStack(alignment: horizontalAlignment, spacing: theme.alert.spaceRowGap) {
+            Text(text)
+                .labelModerateLarge(theme)
+                .foregroundColor(foregroundColor)
+                .multilineTextAlignment(.leading)
+
+            if let description, !description.isEmpty {
+                textView(for: description)
+                    .labelDefaultMedium(theme)
+                    .foregroundColor(foregroundColor)
+                    .padding(.bottom, theme.alert.spacePaddingBlockBottomContent)
+            }
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilitySortPriority(OUDSAlertMessage.textsAccessibilityPriority)
+#if canImport(UIKit)
+        .modifier(AlertBannerFKACustomActionsModifier(actionLink: actionLink, onClose: onClose))
+#endif
+    }
 
     private var maxWidthText: CGFloat {
         theme.sizes.maxWidthBoxedText.dimension(for: horizontalSizeClass ?? .regular)
@@ -98,7 +110,7 @@ struct AlertBannerContent: View {
         case .negative:
             "core_shared_negative_a11y".localized() + ","
         case .info:
-            "core_alertMessage_info_a11y".localized() + ","
+            "core_shared_info_a11y".localized() + ","
         default:
             ""
         }
@@ -111,5 +123,14 @@ struct AlertBannerContent: View {
             parts.append(description.rawValue)
         }
         return parts.joined(separator: ", ")
+    }
+
+    private var horizontalAlignment: HorizontalAlignment {
+        switch layout {
+        case .start:
+            .leading
+        case .center:
+            .center
+        }
     }
 }
