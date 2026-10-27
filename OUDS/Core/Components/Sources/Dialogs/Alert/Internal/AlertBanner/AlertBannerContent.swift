@@ -15,11 +15,13 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Alert Banner Content
+
 struct AlertBannerContent: View {
 
     // MARK: - Properties
 
-    let layout: OUDSAlertBanner.Layout
+    let isCenterLayout: Bool
     let text: String
     let status: OUDSAlertStatus
     let description: OUDSTextualContent?
@@ -33,7 +35,7 @@ struct AlertBannerContent: View {
 
     var body: some View {
         VStack(alignment: horizontalAlignment, spacing: theme.spaces.fixedNone) {
-            if layout == .center {
+            if isCenterLayout {
                 if #available(iOS 16.0, *) {
                     texts.limitedWidth(minWidth: 0, maxWidth: maxWidthText, minHeight: 0)
                 } else {
@@ -43,7 +45,6 @@ struct AlertBannerContent: View {
                 texts.frame(maxWidth: maxWidthText, alignment: .leading)
             }
 
-            // Action
             if let actionLink, self.actionLink?.position == .bottom {
                 OUDSColoredSurface(color: status.bannerBackgroungColor(for: theme)) {
                     OUDSLink(text: actionLink.text, size: .default, density: .compact, action: actionLink.action)
@@ -126,11 +127,28 @@ struct AlertBannerContent: View {
     }
 
     private var horizontalAlignment: HorizontalAlignment {
-        switch layout {
-        case .start:
-            .leading
-        case .center:
-            .center
+        isCenterLayout ? .center : .leading
+    }
+}
+
+// MARK: - Alert Banner Status
+
+extension OUDSAlertStatus {
+    func bannerBackgroungColor(for theme: OUDSTheme) -> MultipleColorModeSemanticToken {
+        switch self {
+        case .neutral:
+            theme.colorModes.onBgInverseHigh
+        case .accent:
+            theme.colorModes.onStatusAccentEmphasized
+        case .positive:
+            theme.colorModes.onStatusPositiveEmphasized
+        case .warning:
+            theme.colorModes.onStatusWarningEmphasized
+        case .negative:
+            theme.colorModes.onStatusNegativeEmphasized
+        case .info:
+            theme.colorModes.onStatusInfoEmphasized
         }
     }
 }
+
