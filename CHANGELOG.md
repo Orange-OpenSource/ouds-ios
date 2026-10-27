@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `contained tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - `card` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
  
+- `Alert banner` component (Orange-OpenSource/ouds-ios#1665)
+
 ### Changed
 
 - `font` raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
@@ -140,8 +142,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
-- `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
-- Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - `subtitle` on `toolbar top` for iOS < 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
 - Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
