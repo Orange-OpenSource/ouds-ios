@@ -16,8 +16,9 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Alert banner is a messaging component used to communicate important information, system states, or service updates across an interface. It supports multiple
-/// semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products and platforms.
+/// Alert banner is a messaging component used to communicate important information, system states, or service updates across an interface.
+/// It supports multiple semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products
+/// and platforms.
 /// It includes functional icon and semantic colour, and may include as well a close button and/or action link.
 ///
 /// ## Layouts
@@ -28,8 +29,8 @@ import SwiftUI
 ///  The basic layout with label and optional action as link. The content of the banner is centerted into the screen.
 ///
 /// - **start **
-/// The banner with mode information with label, description, close button and additional action link. The content of the banner is at leading and action link
-/// can be placed at trailing or at the bottom of banner.
+/// The banner with mode information with label, description, close button and additional action link.
+/// The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
 ///
 /// Both propose a status to inforce information displayed in the banner by applying background colors.
 ///
