@@ -28,7 +28,7 @@ import SwiftUI
 /// - **center**
 ///  The basic layout with label and optional action as link. The content of the banner is centerted into the screen.
 ///
-/// - **start **
+/// - **start**
 /// The banner with mode information with label, description, close button and additional action link.
 /// The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
 ///
@@ -129,8 +129,21 @@ public struct OUDSAlertBanner: View {
     static let closeButtonAccessibilityPriority = 100.0
 
     // TODO: 1. voir pour definir dans ouds un typealias pour action avec label et onClick, ici et partout
+
+    /// Used to crate banner with conent according to the two types of layouts:
+    ///
+    /// - **center**
+    ///  The basic layout with label and optional action as link. The content of the banner is centerted into the screen.
+    ///
+    /// - **start**
+    /// The banner with mode information with label, description, close button and additional action link.
+    /// The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
     @frozen public enum Layout {
         /// Used to create an Alert banner with center layout.
+        ///
+        /// ```swift
+        ///     OUDSAlertMessage(layout: .center(label: "Success! Your form was submitted.", status: .positive))
+        /// ```
         ///
         /// - Parameters:
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
@@ -140,10 +153,10 @@ public struct OUDSAlertBanner: View {
 
         /// Used to create an alert banner in start layout.
         ///
-        /// Use the `View/disabled(_:)` method to have component in disabled state.
-        ///
         /// ```swift
-        ///     OUDSAlertMessage(label: "Success! Your form was submitted.", status: .positive)
+        ///     OUDSAlertMessage(layout: .start(label: "Mobile network unavailable",
+        ///                                     description: "Calls and mobile data may not work. Try again in a few minutes."
+        ///                                     status: .warning))
         /// ```
         ///
         /// - Parameters:
@@ -218,7 +231,7 @@ public struct OUDSAlertBanner: View {
     /// Create an Alert banner with a dedicated layout.
     ///
     /// - Parameters:
-    ///   - layout: The ``OUDSAlertBanner.Layout``descibe the content of the banner.
+    ///   - layout: The ``OUDSAlertBanner.Layout`` descibes the content of the banner.
     public init(layout: OUDSAlertBanner.Layout) {
         self.isCenterLayout = layout.isCentered
         self.label = layout.label
@@ -238,7 +251,6 @@ public struct OUDSAlertBanner: View {
     public var body: some View {
         HStack(alignment: verticalAlignment, spacing: theme.alert.spaceColumnGap) {
             AlertBannerLeadingIcon(status: status)
-                .padding(.vertical, theme.alert.spacePaddingBlock)
 
             AlertBannerContent(isCenterLayout: isCenterLayout,
                                label: label,
