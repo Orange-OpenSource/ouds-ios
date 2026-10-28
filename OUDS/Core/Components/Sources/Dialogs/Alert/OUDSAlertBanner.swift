@@ -229,7 +229,7 @@ public struct OUDSAlertBanner: View {
     /// Create an Alert banner with a dedicated layout.
     ///
     /// - Parameters:
-    ///   - layout: The ``OUDSAlertBanner.Layout`` descibes the content of the banner.
+    ///   - layout: The `OUDSAlertBanner.Layout` descibes the content of the banner.
     public init(layout: OUDSAlertBanner.Layout) {
         self.isCenterLayout = layout.isCentered
         self.label = layout.label
