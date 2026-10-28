@@ -150,6 +150,8 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
         if mode.isEqual(onBgPrimary) { return colors.bgPrimary }
         if mode.isEqual(onBgSecondary) { return colors.bgSecondary }
         if mode.isEqual(onBgTertiary) { return colors.bgTertiary }
+        if mode.isEqual(onBgInverseHigh) { return colors.bgInverseHigh }
+        if mode.isEqual(onBgInverseLow) { return colors.bgInverseLow }
         if mode.isEqual(onBrandPrimary) { return colors.surfaceBrandPrimary }
         if mode.isEqual(onBrandSecondary) { return colors.surfaceBrandSecondary }
         if mode.isEqual(onBrandTertiary) { return colors.surfaceBrandTertiary }
@@ -164,8 +166,6 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
         if mode.isEqual(onStatusPositiveMuted) { return colors.surfaceStatusPositiveMuted }
         if mode.isEqual(onStatusWarningEmphasized) { return colors.surfaceStatusWarningEmphasized }
         if mode.isEqual(onStatusWarningMuted) { return colors.surfaceStatusWarningMuted }
-        if mode.isEqual(onBgInverseHigh) { return colors.bgInverseHigh }
-        if mode.isEqual(onBgInverseLow) { return colors.bgInverseLow }
         if mode.isEqual(onSurfacePrimary) { return colors.surfacePrimary }
         if mode.isEqual(onSurfaceSecondary) { return colors.surfaceSecondary }
         if mode.isEqual(onSurfaceTertiary) { return colors.surfaceTertiary }

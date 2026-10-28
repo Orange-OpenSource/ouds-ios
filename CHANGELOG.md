@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...develop)
 
+### Added
+
+- `Alert banner` component (Orange-OpenSource/ouds-ios#1665)
+
 ### Changed
 
 - **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
@@ -105,7 +109,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - `toast` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - `alert message` component tokens (tokens library v2.7.0) (Orange-OpenSource/ouds-ios#1652)
-- `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
+- `subtitle` on `toolbar top` for iOS < 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
 - Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)

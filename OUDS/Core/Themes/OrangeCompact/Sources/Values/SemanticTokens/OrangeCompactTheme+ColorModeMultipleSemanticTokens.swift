@@ -28,6 +28,10 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
 
     // MARK: - Multiple tokens
 
+    @objc public final var onBgInverseHigh: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseHigh", light: onBgInverseHighLight, dark: onBgInverseHighDark) }
+
+    @objc public final var onBgInverseLow: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseLow", light: onBgInverseLowLight, dark: onBgInverseLowDark) }
+
     @objc public final var onBgPrimary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgPrimary", light: onBgPrimaryLight, dark: onBgPrimaryDark) }
 
     @objc public final var onBgSecondary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgSecondary", light: onBgSecondaryLight, dark: onBgSecondaryDark) }
@@ -65,10 +69,6 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
     @objc public final var onStatusWarningEmphasized: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onStatusWarningEmphasized", light: onStatusWarningEmphasizedLight, dark: onStatusWarningEmphasizedDark) }
 
     @objc public final var onStatusWarningMuted: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onStatusWarningMuted", light: onStatusWarningMutedLight, dark: onStatusWarningMutedDark) }
-
-    @objc public final var onBgInverseHigh: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseHigh", light: onBgInverseHighLight, dark: onBgInverseHighDark) }
-
-    @objc public final var onBgInverseLow: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseLow", light: onBgInverseLowLight, dark: onBgInverseLowDark) }
 
     @objc public final var onSurfacePrimary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfacePrimary", light: onSurfacePrimaryLight, dark: onSurfacePrimaryDark) }
 
@@ -150,6 +150,8 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
         if mode.isEqual(onBgPrimary) { return colors.bgPrimary }
         if mode.isEqual(onBgSecondary) { return colors.bgSecondary }
         if mode.isEqual(onBgTertiary) { return colors.bgTertiary }
+        if mode.isEqual(onBgInverseHigh) { return colors.bgInverseHigh }
+        if mode.isEqual(onBgInverseLow) { return colors.bgInverseLow }
         if mode.isEqual(onBrandPrimary) { return colors.surfaceBrandPrimary }
         if mode.isEqual(onBrandSecondary) { return colors.surfaceBrandSecondary }
         if mode.isEqual(onBrandTertiary) { return colors.surfaceBrandTertiary }
@@ -164,8 +166,6 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
         if mode.isEqual(onStatusPositiveMuted) { return colors.surfaceStatusPositiveMuted }
         if mode.isEqual(onStatusWarningEmphasized) { return colors.surfaceStatusWarningEmphasized }
         if mode.isEqual(onStatusWarningMuted) { return colors.surfaceStatusWarningMuted }
-        if mode.isEqual(onBgInverseHigh) { return colors.bgInverseHigh }
-        if mode.isEqual(onBgInverseLow) { return colors.bgInverseLow }
         if mode.isEqual(onSurfacePrimary) { return colors.surfacePrimary }
         if mode.isEqual(onSurfaceSecondary) { return colors.surfaceSecondary }
         if mode.isEqual(onSurfaceTertiary) { return colors.surfaceTertiary }
