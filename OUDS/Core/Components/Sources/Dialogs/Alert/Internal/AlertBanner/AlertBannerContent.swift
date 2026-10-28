@@ -22,7 +22,7 @@ struct AlertBannerContent: View {
     // MARK: - Properties
 
     let isCenterLayout: Bool
-    let text: String
+    let label: OUDSTextualContent
     let status: OUDSAlertStatus
     let description: OUDSTextualContent?
     let actionLink: OUDSAlertBanner.ActionLink?
@@ -63,7 +63,7 @@ struct AlertBannerContent: View {
 
     private var texts: some View {
         VStack(alignment: horizontalAlignment, spacing: theme.alert.spaceRowGap) {
-            Text(text)
+            textView(for: label)
                 .labelModerateLarge(theme)
                 .foregroundColor(foregroundColor)
                 .multilineTextAlignment(.leading)
@@ -119,7 +119,7 @@ struct AlertBannerContent: View {
     }
 
     private var alertText: String {
-        var parts: [String] = [text]
+        var parts: [String] = [label.rawValue]
         if let description, !description.isEmpty {
             parts.append(description.rawValue)
         }

@@ -113,7 +113,7 @@ public struct OUDSAlertBanner: View {
     // MARK: Stored properties
 
     private let isCenterLayout: Bool
-    private let text: String
+    private let label: OUDSTextualContent
     private let status: OUDSAlertStatus
     private let description: OUDSTextualContent?
     private let actionLink: Self.ActionLink?
@@ -129,8 +129,6 @@ public struct OUDSAlertBanner: View {
     static let closeButtonAccessibilityPriority = 100.0
 
     // TODO: 1. voir pour definir dans ouds un typealias pour action avec label et onClick, ici et partout
-    // TODO: 2. faire que le composant soit présenté edge to edge dans l'app de démo
-    // TODO: 3. mettre a jour la doc et tests snapshots
     @frozen public enum Layout {
         /// Used to create an Alert banner with center layout.
         ///
@@ -138,7 +136,7 @@ public struct OUDSAlertBanner: View {
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
         ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
         ///   - action: An optional action to be displayed at traling of the alert banner. It can be used to trigger an action.
-        case center(label: String, status: OUDSAlertStatus, action: (label: String, onClick: () -> Void)? = nil)
+        case center(label: OUDSTextualContent, status: OUDSAlertStatus, action: (label: String, onClick: () -> Void)? = nil)
 
         /// Used to create an alert banner in start layout.
         ///
@@ -159,7 +157,7 @@ public struct OUDSAlertBanner: View {
         ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
         ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
         ///   user is aware of important information; others can be closed to reduce visual clutter.
-        case start(label: String,
+        case start(label: OUDSTextualContent,
                    status: OUDSAlertStatus,
                    description: OUDSTextualContent? = nil,
                    actionLink: OUDSAlertBanner.ActionLink? = nil,
@@ -223,7 +221,7 @@ public struct OUDSAlertBanner: View {
     ///   - layout: The ``OUDSAlertBanner.Layout``descibe the content of the banner.
     public init(layout: OUDSAlertBanner.Layout) {
         self.isCenterLayout = layout.isCentered
-        self.text = layout.label
+        self.label = layout.label
         self.description = layout.description
         self.alignment = layout.alignment
         self.status = layout.status
@@ -243,7 +241,7 @@ public struct OUDSAlertBanner: View {
                 .padding(.vertical, theme.alert.spacePaddingBlock)
 
             AlertBannerContent(isCenterLayout: isCenterLayout,
-                               text: text,
+                               label: label,
                                status: status,
                                description: description,
                                actionLink: actionLink,
