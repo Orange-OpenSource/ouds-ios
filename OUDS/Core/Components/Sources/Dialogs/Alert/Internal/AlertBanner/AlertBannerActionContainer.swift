@@ -31,15 +31,15 @@ struct AlertBannerActionContainer: View {
         HStack(alignment: .center, spacing: theme.alert.spaceColumnGapAction) {
             if let actionLink, self.actionLink?.position == .topTrailing {
                 OUDSLink(text: actionLink.text, size: .default, density: .default, action: actionLink.action)
-                    .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
+                    .accessibilitySortPriority(OUDSAlertBanner.actionLinkAccessibilityPriority)
             }
 
             if let onClose {
                 OUDSButton(image: OUDSImage(asset: Image(decorative: "Component-button-expurge", bundle: theme.resourcesBundle),
-                                            accessibilityLabel: "core_alertMessage_close_a11y".localized()),
+                                            accessibilityLabel: "core_alert_close_a11y".localized()),
                            appearance: .minimal,
                            action: onClose)
-                    .accessibilitySortPriority(OUDSAlertMessage.closeButtonAccessibilityPriority)
+                    .accessibilitySortPriority(OUDSAlertBanner.closeButtonAccessibilityPriority)
             }
         }
     }

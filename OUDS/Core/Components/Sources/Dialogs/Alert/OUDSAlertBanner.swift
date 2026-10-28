@@ -128,8 +128,6 @@ public struct OUDSAlertBanner: View {
     static let actionLinkAccessibilityPriority = 200.0
     static let closeButtonAccessibilityPriority = 100.0
 
-    // TODO: 1. voir pour definir dans ouds un typealias pour action avec label et onClick, ici et partout
-
     /// Used to crate banner with conent according to the two types of layouts:
     ///
     /// - **center**
@@ -257,7 +255,7 @@ public struct OUDSAlertBanner: View {
                                status: status,
                                description: description,
                                actionLink: actionLink,
-                               onClose:onClose)
+                               onClose: onClose)
 
             OUDSColoredSurface(color: status.bannerBackgroungColor(for: theme)) {
                 AlertBannerActionContainer(actionLink: actionLink, onClose: onClose)

@@ -48,7 +48,7 @@ struct AlertBannerContent: View {
             if let actionLink, self.actionLink?.position == .bottom {
                 OUDSColoredSurface(color: status.bannerBackgroungColor(for: theme)) {
                     OUDSLink(text: actionLink.text, size: .default, density: .compact, action: actionLink.action)
-                        .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
+                        .accessibilitySortPriority(OUDSAlertBanner.actionLinkAccessibilityPriority)
                 }
             }
         }
@@ -151,4 +151,3 @@ extension OUDSAlertStatus {
         }
     }
 }
-

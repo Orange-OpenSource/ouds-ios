@@ -52,8 +52,8 @@
             }
         }
     },
-    "core_alertMessage_close_a11y" : {
-      "comment" : "Component - Alert Message",
+    "core_alert_close_a11y" : {
+      "comment" : "Component - Alert",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -65,13 +65,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Close alert message"
+            "value" : "Close alert"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fermer le message d'alerte"
+            "value" : "Fermer l'alerte"
           }
         }
       }
