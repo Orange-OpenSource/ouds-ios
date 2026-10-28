@@ -15,7 +15,7 @@ extension OUDSAlertBanner.Layout {
 
     var label: OUDSTextualContent {
         switch self {
-        case .center(let label, _,  _),
+        case .center(let label, _, _),
                 .start(let label, _, _, _, _, _):
             return label
         }
