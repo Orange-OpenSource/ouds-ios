@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)
 - **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
 - **BREAKING**: No more `tuning` possible for `White Label` and `Wireframe` themes (Orange-OpenSource/ouds-ios#1829)
 
