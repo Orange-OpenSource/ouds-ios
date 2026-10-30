@@ -6,7 +6,7 @@
         @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
     }
 
-    @XcodeRequirement(title: "Xcode 26.5", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 27.1", destination: "https://developer.apple.com/download/")
 
     @Section(title: "Defining tuning for local theme") {
 

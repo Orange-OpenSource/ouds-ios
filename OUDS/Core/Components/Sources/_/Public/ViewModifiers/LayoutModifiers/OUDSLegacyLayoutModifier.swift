@@ -60,5 +60,5 @@ public struct OUDSLegacyLayoutModifier: ViewModifier {
 extension EnvironmentValues {
 
     /// A flag indicating the OUDS tab bar must have the legacy layout.
-    @Entry public var forceOUDSLegacyLayout: Bool = false
+    @Entry public var forceOUDSLegacyLayout: Bool = false // TODO: v4 - Rename to oudsForceLegacyLayout
 }

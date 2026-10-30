@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import SwiftUI
 
 // MARK: - OUDS Input Tag

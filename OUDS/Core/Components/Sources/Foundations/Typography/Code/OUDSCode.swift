@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import SwiftUI
 
 /// Text component used to render *code snippets* and technical values using a monospaced typography.

@@ -342,24 +342,24 @@ extension EnvironmentValues {
     ///
     /// Defaults to ``OUDSListItemContainersAlignment/center``.
     /// Set via ``SwiftUICore/View/oudsListItemContainerAlignment(_:)``.
-    @Entry var oudsListItemContainersAlignment: OUDSListItemContainersAlignment = .center
+    @Entry var oudsListItemContainersAlignment: OUDSListItemContainersAlignment = .center // TODO: v4 - Rename to listItemContrainersAlignment
 
     /// The current content style of list items.
     ///
     /// Defaults to `.item(divider: true, background: false)`.
     /// Set via ``SwiftUICore/View/oudsListItemStyle(divider:background:)`` or
     /// ``SwiftUICore/View/oudsListCardStyle(_:)``.
-    @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .item(divider: true, background: false)
+    @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .item(divider: true, background: false) // TODO: v4 - Rename to listItemContentStyle
 
     /// Whether media elements (images) in list items should be displayed with rounded corners.
     ///
     /// Defaults to `false` (square corners).
     /// Set via ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``.
-    @Entry var oudsListItemRoundedMedia: Bool = false
+    @Entry var oudsListItemRoundedMedia: Bool = false // TODO: v4 - Rename to listItemRoundedMedia
 
     /// The current size of list items.
     ///
     /// Defaults to ``OUDSListItemSize/standard``.
     /// Set via ``SwiftUICore/View/oudsListItemSize(_:)``.
-    @Entry var oudsListItemSize: OUDSListItemSize = .default
+    @Entry var oudsListItemSize: OUDSListItemSize = .default // TODO: v4 - Rename to listItemSize
 }

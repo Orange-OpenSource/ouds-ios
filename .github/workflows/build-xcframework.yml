@@ -53,7 +53,7 @@ concurrency:
 
 jobs:
   build-xcframework:
-    runs-on: macos-26
+    runs-on: macos-27
     timeout-minutes: 60
     steps:
       - name: Checkout code
@@ -61,9 +61,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Xcode 26.4.1
+      - name: Set up Xcode 27.1.0
         run: |
-          sudo xcode-select -s /Applications/Xcode_26.4.1.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_27.1.0.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@824c0e29fdfc7d689c191c27acc969d2d04b7dd8 # v1.331.0, https://github.com/ruby/setup-ruby

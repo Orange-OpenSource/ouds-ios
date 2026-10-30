@@ -15,7 +15,7 @@
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-import CoreGraphics // Needed for XCFramework generation
+import CoreGraphics // Needed for XCFramework generation and API breaks checks
 
 // swiftlint:disable missing_docs
 
