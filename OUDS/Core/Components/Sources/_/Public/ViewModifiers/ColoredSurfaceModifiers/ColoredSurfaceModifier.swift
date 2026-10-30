@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -23,6 +24,7 @@ public struct OUDSColoredSurfaceModifier: ViewModifier {
     // MARK: - Stored properties
 
     let backgroundSurfaceColor: OUDSColoredSurface.SurfaceColor
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 

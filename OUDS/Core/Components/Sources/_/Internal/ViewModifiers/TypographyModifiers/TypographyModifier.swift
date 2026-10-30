@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/943)
+import OUDSThemesContract
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI

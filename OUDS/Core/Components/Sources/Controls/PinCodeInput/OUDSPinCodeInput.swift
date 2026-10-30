@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSThemesContract
 import SwiftUI
 
 // MARK: - OUDS PIN Code Input

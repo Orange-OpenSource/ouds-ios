@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSThemesContract
 import SwiftUI
 
 struct TextInputContainer: View {

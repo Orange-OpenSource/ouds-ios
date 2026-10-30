@@ -13,6 +13,7 @@
 
 #if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensRaw
 import SwiftUI
 #if canImport(UIKit)
