@@ -40,7 +40,7 @@ extension EnvironmentValues {
     /// on iOS versions earlier than 26 or when the app enables *UIDesignRequiresCompatibility* in the
     /// *main Bundle* `Info.plist` if Xcode 26.
     /// For Xcode 27, will be always `false` as Apple forces Liquid Glass.
-    @Entry public var isLiquidGlassDisabled: Bool = false
+    @Entry public var isLiquidGlassDisabled: Bool = false // TODO: v4 - Rename to oudsLiquidGlassIsDisabled
 }
 
 // MARK: - Themeable View
