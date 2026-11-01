@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
 - **BREAKING**: No more `tuning` possible for `White Label` and `Wireframe` themes (Orange-OpenSource/ouds-ios#1829)
 
+### Fixed
+
+- Anchor and width of `bullet list` items to not avoid extra spacing between text and bullets in some layouts
+
 ## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
 
 ### Added

@@ -15,17 +15,13 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: Bullet List Label
+// MARK: - Bullet List Label
 
 struct BulletListLabel: View {
-
-    // MARK: Properties
 
     let label: OUDSTextualContent
     let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
-
-    // MARK: - Body
 
     var body: some View {
         textView(for: label)
@@ -38,14 +34,10 @@ struct BulletListLabel: View {
 
 struct BulletTextModifier: ViewModifier {
 
-    // MARK: Properties
-
     let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
 
     @Environment(\.theme) private var theme
-
-    // MARK: Body
 
     func body(content: Content) -> some View {
         switch textStyle {
@@ -65,6 +57,8 @@ struct BulletTextModifier: ViewModifier {
     }
 }
 
+// MARK: - Frame Modifier
+
 struct FrameModifier: ViewModifier {
 
     let textStyle: OUDSBulletList.TextStyle
@@ -77,7 +71,8 @@ struct FrameModifier: ViewModifier {
             content
                 .limitedWidth(minWidth: 0,
                               maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular),
-                              minHeight: 0)
+                              minHeight: 0,
+                              anchor: .leading)
         } else {
             content
                 .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
