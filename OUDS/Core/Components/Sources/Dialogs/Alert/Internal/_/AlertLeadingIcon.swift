@@ -16,6 +16,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Alert Leading Icon
+
 struct AlertLeadingIcon: View {
 
     // MARK: Properties
@@ -25,7 +26,7 @@ struct AlertLeadingIcon: View {
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
-    // MARK: Initilizer
+    // MARK: Initializer
 
     init?(status: OUDSAlertStatus) {
         if status.hasIcon {
