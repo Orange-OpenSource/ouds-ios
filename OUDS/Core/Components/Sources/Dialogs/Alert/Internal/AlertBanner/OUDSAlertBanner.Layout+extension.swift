@@ -15,48 +15,48 @@ extension OUDSAlertBanner.Layout {
 
     var label: OUDSTextualContent {
         switch self {
-        case .center(let label, _, _),
-                .start(let label, _, _, _, _, _):
-            return label
+        case let .center(label, _, _),
+             let .start(label, _, _, _, _, _):
+            label
         }
     }
 
     var status: OUDSAlertStatus {
         switch self {
-        case .center(_, let status, _),
-                .start(_, let status, _, _, _, _):
-            return status
+        case let .center(_, status, _),
+             let .start(_, status, _, _, _, _):
+            status
         }
     }
 
     var actionLink: OUDSAlertBanner.ActionLink? {
         switch self {
-        case .center(_, _, let action):
+        case let .center(_, _, action):
             if let action {
-                return OUDSAlertBanner.ActionLink(text: action.label, position: .topTrailing, action: action.onClick)
+                OUDSAlertBanner.ActionLink(text: action.label, position: .topTrailing, action: action.onClick)
             } else {
-                return nil
+                nil
             }
 
-        case .start(_, _, _, let actionLink, _, _):
-            return actionLink
+        case let .start(_, _, _, actionLink, _, _):
+            actionLink
         }
     }
 
     var description: OUDSTextualContent? {
         switch self {
         case .center:
-            return nil
-        case .start(_, _, let description, _, _, _):
-            return description
+            nil
+        case let .start(_, _, description, _, _, _):
+            description
         }
     }
 
     var alignment: OUDSAlertBanner.Alignment {
         switch self {
         case .center:
-                .top
-        case .start(_, _, _, _, let alignment, _):
+            .top
+        case let .start(_, _, _, _, alignment, _):
             alignment
         }
     }
@@ -64,18 +64,18 @@ extension OUDSAlertBanner.Layout {
     var onClose: (() -> Void)? {
         switch self {
         case .center:
-            return nil
-        case .start(_, _, _, _, _, let onClose):
-            return onClose
+            nil
+        case let .start(_, _, _, _, _, onClose):
+            onClose
         }
     }
 
     var isCentered: Bool {
         switch self {
         case .center:
-            return true
+            true
         case .start:
-            return false
+            false
         }
     }
 }
