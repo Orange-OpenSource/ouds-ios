@@ -53,7 +53,7 @@ concurrency:
 
 jobs:
   build-xcframework:
-    runs-on: macos-27
+    runs-on: xcode-27
     timeout-minutes: 60
     steps:
       - name: Checkout code

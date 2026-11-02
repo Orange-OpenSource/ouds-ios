@@ -51,7 +51,7 @@ concurrency:
 
 jobs:
   check-api-break:
-    runs-on: macos-27
+    runs-on: xcode-27
     timeout-minutes: 90
     steps:
       - name: Checkout code
