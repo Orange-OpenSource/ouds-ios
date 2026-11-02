@@ -19,7 +19,7 @@ import SwiftUI
 
 struct AlertBannerContent: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let isCenterLayout: Bool
     let label: OUDSTextualContent
@@ -31,7 +31,7 @@ struct AlertBannerContent: View {
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: horizontalAlignment, spacing: theme.spaces.fixedNone) {
@@ -59,7 +59,7 @@ struct AlertBannerContent: View {
         }
     }
 
-    // MARK: - Helpers
+    // MARK: Helpers
 
     private var texts: some View {
         VStack(alignment: horizontalAlignment, spacing: theme.alert.spaceRowGap) {
@@ -77,10 +77,10 @@ struct AlertBannerContent: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(accessibilityLabel)
-        .accessibilitySortPriority(OUDSAlertMessage.textsAccessibilityPriority)
-#if canImport(UIKit)
-        .modifier(AlertBannerFKACustomActionsModifier(actionLink: actionLink, onClose: onClose))
-#endif
+        .accessibilitySortPriority(OUDSAlertBanner.textsAccessibilityPriority)
+        #if canImport(UIKit)
+            .modifier(AlertBannerFKACustomActionsModifier(actionLink: actionLink, onClose: onClose))
+        #endif
     }
 
     private var maxWidthText: CGFloat {
