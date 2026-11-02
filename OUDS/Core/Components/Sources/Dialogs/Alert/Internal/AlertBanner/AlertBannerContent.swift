@@ -26,6 +26,7 @@ struct AlertBannerContent: View {
     let status: OUDSAlertStatus
     let description: OUDSTextualContent?
     let actionLink: OUDSAlertBanner.ActionLink?
+    let disableVoiceOverAnnouncement: Bool
     let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -81,6 +82,11 @@ struct AlertBannerContent: View {
         #if canImport(UIKit)
             .modifier(AlertBannerFKACustomActionsModifier(actionLink: actionLink, onClose: onClose))
         #endif
+            .onAppear {
+                if !disableVoiceOverAnnouncement {
+                    VoiceOverUtils.announce(accessibilityLabel)
+                }
+            }
     }
 
     private var maxWidthText: CGFloat {
