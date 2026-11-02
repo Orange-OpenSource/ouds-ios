@@ -15,7 +15,7 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: Mutualize with AlertMessageAction 
+// TODO: Mutualize with AlertMessageAction
 struct AlertBannerActionContainer: View {
 
     // MARK: - Properties

@@ -16,7 +16,7 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Alert banner is a messaging component used to communicate important information, system states, or service updates across an interface.
+/// Alert banner is a component used to communicate important information, system states, or service updates across an interface.
 /// It supports multiple semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products
 /// and platforms.
 /// It includes functional icon and semantic colour, and may include as well a close button and/or action link.
@@ -25,11 +25,9 @@ import SwiftUI
 ///
 /// Two layouts are available for a banner content:
 ///
-/// - **center**
-///  The basic layout with label and optional action as link. The content of the banner is centerted into the screen.
+/// - **center**: The basic layout with label and optional action as link. The content of the banner is centered into the screen.
 ///
-/// - **start**
-/// The banner with mode information with label, description, close button and additional action link.
+/// - **start**: The banner with mode information with label, description, close button and additional action link.
 /// The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
 ///
 /// Both propose a status to inforce information displayed in the banner by applying background colors.
@@ -40,7 +38,7 @@ import SwiftUI
 ///         // A banner with center layout in a positive status
 ///         OUDSAlertBanner(layout: .center(label: "Label", status: .positive))
 ///
-///         // A banner with center layout in a positive status with action (i.e Link)
+///         // A banner with center layout in a negative status with action (i.e Link)
 ///         OUDSAlertBanner(layout: .center(label: "Label",
 ///                                         status: .negative,
 ///                                         action: (label: "Action", onClick: { // do something }))
@@ -52,7 +50,7 @@ import SwiftUI
 ///                                        description: "Some details about the warning",
 ///                                        onClose: {
 ///                                           // Do some stuff here to dismiss the alert banner when clicked
-///                                         })
+///                                        })
 ///
 ///         // Add a custom action (i.e Link) at bottom (could also at top trailing position)
 ///         @Environment(\.openURL) private var openUrl
@@ -70,8 +68,6 @@ import SwiftUI
 /// All texts in the alert banner (label and description) can use rich text.
 /// They are ``OUDSTextualContent`` values: a raw `String` (a string literal is enough), a localized string
 /// with `.localized(_:tableName:bundle:)` or a rich text with `.rich(_:)` and an `AttributedString`.
-/// With the initializer taking a `LocalizedStringKey`, prefer `.raw(_:)` to a bare string literal for the `description`
-/// to avoid a deprecation warning.
 ///
 /// Strong text can be used sparingly within alert banner to highlight key information.
 /// Underlined text must not be used for emphasis, as it is commonly associated with links.
@@ -106,11 +102,11 @@ import SwiftUI
 /// ![An alert banner component in light and dark modes with Wireframe theme](component_alertBanner_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 3.2.0
+/// - Since: 3.3.0
 @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
 public struct OUDSAlertBanner: View {
 
-    // MARK: Stored properties
+    // MARK: - Properties
 
     private let isCenterLayout: Bool
     private let label: OUDSTextualContent
@@ -128,46 +124,47 @@ public struct OUDSAlertBanner: View {
     static let actionLinkAccessibilityPriority = 200.0
     static let closeButtonAccessibilityPriority = 100.0
 
-    /// Used to crate banner with conent according to the two types of layouts:
+    // MARK: - Enums
+
+    /// Used to create banner with content according to the two types of layouts:
     ///
-    /// - **center**
-    ///  The basic layout with label and optional action as link. The content of the banner is centerted into the screen.
+    /// - **center**: The basic layout with label and optional action as link. The content of the banner is centerted into the screen.
     ///
-    /// - **start**
-    /// The banner with mode information with label, description, close button and additional action link.
+    /// - **start**: The banner with mode information with label, description, close button and additional action link.
     /// The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
+    ///
+    /// - Since: 3.3.0
+    @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
     @frozen public enum Layout {
-        /// Used to create an Alert banner with center layout.
+
+        /// Used to create an alert banner with center layout.
         ///
         /// ```swift
-        ///     OUDSAlertMessage(layout: .center(label: "Success! Your form was submitted.", status: .positive))
+        ///     OUDSAlertBanner(layout: .center(label: "Success! Your form was submitted.", status: .positive))
         /// ```
         ///
         /// - Parameters:
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
-        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
-        ///   - action: An optional action to be displayed at traling of the alert banner. It can be used to trigger an action.
+        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status.
+        ///   - action: An optional action to be displayed at trailing of the alert banner. It can be used to trigger an action.
         case center(label: OUDSTextualContent, status: OUDSAlertStatus, action: (label: String, onClick: () -> Void)? = nil)
 
         /// Used to create an alert banner in start layout.
         ///
         /// ```swift
-        ///     OUDSAlertMessage(layout: .start(label: "Mobile network unavailable",
-        ///                                     description: "Calls and mobile data may not work. Try again in a few minutes."
-        ///                                     status: .warning))
+        ///     OUDSAlertBanner(layout: .start(label: "Mobile network unavailable",
+        ///                                    description: "Calls and mobile data may not work. Try again in a few minutes."
+        ///                                    status: .warning))
         /// ```
         ///
         /// - Parameters:
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
-        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
+        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status.
         ///   - description: An optional supplementary text in an alert banner. Use only when additional detail or guidance is needed beyond the label. It should remain
         ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
         ///   - actionLink: An optional action link to be displayed in the alert message. It can be used to trigger an action.
         ///   - alignment: The current vertical alignment of icon, text and action containers.
-        ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
-        ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
-        ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
-        ///   user is aware of important information; others can be closed to reduce visual clutter.
+        ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed .
         case start(label: OUDSTextualContent,
                    status: OUDSAlertStatus,
                    description: OUDSTextualContent? = nil,
@@ -177,6 +174,8 @@ public struct OUDSAlertBanner: View {
     }
 
     /// Defines the vertical alignment of the leading, trailing, and text containers within the banner.
+    /// - Since: 3.3.0
+    @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
     @frozen public enum Alignment {
         /// Containers are aligned to the top of the banner.
         /// Best suited when the text has multiple lines and
@@ -191,6 +190,8 @@ public struct OUDSAlertBanner: View {
 
     // swiftlint:disable nesting
     /// Used to describe the action link display in the `OUDSAlertBanner`
+    /// - Since: 3.3.0
+    @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
     @frozen public struct ActionLink {
 
         /// The position of an `OUDSAlertBanner.ActionLink`in the alert banner.
@@ -209,7 +210,7 @@ public struct OUDSAlertBanner: View {
         /// Creates an action link with text and associated action in a desired position.
         ///
         /// - Parameters:
-        ///   - text: The text (could be the url)
+        ///   - text: The text (could be the URL)
         ///   - position: `OUDSAlertBanner.ActionLink.Position` of the link within the alert banner.
         ///   - action: The action to process when clicked
         public init(text: String, position: Position = .bottom, action: @escaping () -> Void) {
@@ -228,16 +229,15 @@ public struct OUDSAlertBanner: View {
 
     /// Create an Alert banner with a dedicated layout.
     ///
-    /// - Parameters:
-    ///   - layout: The `OUDSAlertBanner.Layout` descibes the content of the banner.
+    /// - Parameter layout: The `OUDSAlertBanner.Layout` describing the content of the banner.
     public init(layout: OUDSAlertBanner.Layout) {
-        self.isCenterLayout = layout.isCentered
-        self.label = layout.label
-        self.description = layout.description
-        self.alignment = layout.alignment
-        self.status = layout.status
-        self.onClose = layout.onClose
-        self.actionLink = layout.actionLink
+        isCenterLayout = layout.isCentered
+        label = layout.label
+        description = layout.description
+        alignment = layout.alignment
+        status = layout.status
+        onClose = layout.onClose
+        actionLink = layout.actionLink
 
         if layout.label.isEmpty {
             OL.warning("The label for the OUDSAlertBanner must not be empty!")

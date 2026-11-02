@@ -15,13 +15,14 @@
 import OUDSFoundations
 import SwiftUI
 
-// TODO: Voir a mutulaiser avec AlertMesaageFKACustomActionsModifier
+// TODO: Mutualize with AlertMessageFKACustomActionsModifier
 
 /// Adds accessibility custom actions for the action link and the close button onto the combined text element.
 /// Trick to let `OUDSAlertBanner` action link and close button elements be focusable in *Full Keyboard Access*.
 /// Otherwise these elements can be reached from outside the component from elements in the same Y axis (duh!), and navigation order won't be acceptable.
 /// If *Voice Over* enabled, do not add the actions because link and close button are already focusable with *Voice Over* and actions are not usable.
 struct AlertBannerFKACustomActionsModifier: ViewModifier {
+
     // NOTE: This is very hacky
     // People needing both Full Keyboard Access and Voice Over will have "Voice Over enabled" behavior.
     // See original https://github.com/Orange-OpenSource/ouds-ios/issues/1564
