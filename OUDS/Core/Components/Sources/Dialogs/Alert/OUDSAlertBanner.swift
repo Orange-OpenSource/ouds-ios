@@ -60,7 +60,7 @@ import SwiftUI
 ///         OUDSAlertBanner(layout: .start(label: "Label", actionLink: actionLink))
 ///
 ///         // Adjust containers alignment (icon, action link, close button)
-///         OUDSAlertBanner(layout: .start(label: "Label", status: .warning, actionLink: actionLink, alignment: .top)
+///         OUDSAlertBanner(layout: .start(label: "Label", status: .warning, actionLink: actionLink, alignment: .top))
 /// ```
 ///
 /// ## Rich text
@@ -153,7 +153,7 @@ public struct OUDSAlertBanner: View {
         ///
         /// ```swift
         ///     OUDSAlertBanner(layout: .start(label: "Mobile network unavailable",
-        ///                                    description: "Calls and mobile data may not work. Try again in a few minutes."
+        ///                                    description: "Calls and mobile data may not work. Try again in a few minutes.",Dia
         ///                                    status: .warning))
         /// ```
         ///
@@ -257,7 +257,7 @@ public struct OUDSAlertBanner: View {
                                actionLink: actionLink,
                                onClose: onClose)
 
-            OUDSColoredSurface(color: status.bannerBackgroungColor(for: theme)) {
+            OUDSColoredSurface(color: status.bannerBackgroundColor(for: theme)) {
                 AlertBannerActionContainer(actionLink: actionLink, onClose: onClose)
             }
         }
