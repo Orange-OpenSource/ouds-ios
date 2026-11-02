@@ -114,6 +114,7 @@ public struct OUDSAlertBanner: View {
     private let description: OUDSTextualContent?
     private let actionLink: Self.ActionLink?
     private let alignment: Self.Alignment
+    private let disableVoiceOverAnnouncement: Bool
     private let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -229,15 +230,18 @@ public struct OUDSAlertBanner: View {
 
     /// Create an Alert banner with a dedicated layout.
     ///
-    /// - Parameter layout: The `OUDSAlertBanner.Layout` describing the content of the banner.
-    public init(layout: OUDSAlertBanner.Layout) {
+    /// - Parameters:
+    ///    - layout: The `OUDSAlertBanner.Layout` describing the content of the banner.
+    ///    - disableVoiceOverAnnouncement: Disables the automatic VoiceOver announcement of the alert message when it appears. Default is `false`.
+    public init(layout: OUDSAlertBanner.Layout, disableVoiceOverAnnouncement: Bool = false) {
         isCenterLayout = layout.isCentered
         label = layout.label
-        description = layout.description
-        alignment = layout.alignment
         status = layout.status
-        onClose = layout.onClose
+        description = layout.description
         actionLink = layout.actionLink
+        alignment = layout.alignment
+        self.disableVoiceOverAnnouncement = disableVoiceOverAnnouncement
+        onClose = layout.onClose
 
         if layout.label.isEmpty {
             OL.warning("The label for the OUDSAlertBanner must not be empty!")
@@ -255,6 +259,7 @@ public struct OUDSAlertBanner: View {
                                status: status,
                                description: description,
                                actionLink: actionLink,
+                               disableVoiceOverAnnouncement: disableVoiceOverAnnouncement,
                                onClose: onClose)
 
             OUDSColoredSurface(color: status.bannerBackgroundColor(for: theme)) {
