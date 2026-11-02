@@ -46,7 +46,7 @@ struct AlertBannerContent: View {
             }
 
             if let actionLink, self.actionLink?.position == .bottom {
-                OUDSColoredSurface(color: status.bannerBackgroungColor(for: theme)) {
+                OUDSColoredSurface(color: status.bannerBackgroundColor(for: theme)) {
                     OUDSLink(text: actionLink.text, size: .default, density: .compact, action: actionLink.action)
                         .accessibilitySortPriority(OUDSAlertBanner.actionLinkAccessibilityPriority)
                 }
@@ -134,7 +134,7 @@ struct AlertBannerContent: View {
 // MARK: - Alert Banner Status
 
 extension OUDSAlertStatus {
-    func bannerBackgroungColor(for theme: OUDSTheme) -> MultipleColorModeSemanticToken {
+    func bannerBackgroundColor(for theme: OUDSTheme) -> MultipleColorModeSemanticToken {
         switch self {
         case .neutral:
             theme.colorModes.onBgInverseHigh
