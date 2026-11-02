@@ -243,6 +243,10 @@ You cannot derivate the *Orange Compact* theme.
 
 ### Dialogs
 
+#### Alert banner
+
+![An alert banner component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertBanner_OrangeCompact.png)
+
 #### Alert message
 
 ![An alert message component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_OrangeCompact.png)

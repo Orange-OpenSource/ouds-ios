@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...develop)
 
+### Added
+
+- `Alert banner` component (Orange-OpenSource/ouds-ios#1665)
+
 ### Changed
 
 - Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)

@@ -39,13 +39,13 @@ struct AlertMessageFKACustomActionsModifier: ViewModifier {
             if let onClose {
                 content
                     .accessibilityAction(named: Text(link.text), link.action)
-                    .accessibilityAction(named: Text("core_alertMessage_close_a11y".localized()), onClose)
+                    .accessibilityAction(named: Text("core_alert_close_a11y".localized()), onClose)
             } else {
                 content
                     .accessibilityAction(named: Text(link.text), link.action)
             }
         } else if let onClose {
-            content.accessibilityAction(named: Text("core_alertMessage_close_a11y".localized()), onClose)
+            content.accessibilityAction(named: Text("core_alert_close_a11y".localized()), onClose)
         } else {
             content
         }
