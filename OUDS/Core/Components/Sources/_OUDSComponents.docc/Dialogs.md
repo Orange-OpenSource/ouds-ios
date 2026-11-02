@@ -122,7 +122,7 @@ Both propose a status to inforce information displayed in the banner by applying
     // A banner with center layout in a positive status
     OUDSAlertBanner(layout: .center(label: "Label", status: .positive))
 
-    // A banner with center layout in a positive status with action (i.e Link)
+    // A banner with center layout in a negative status with action (i.e Link)
     OUDSAlertBanner(layout: .center(label: "Label",
                                     status: .negative,
                                     action: (label: "Action", onClick: { // do something }))
@@ -143,5 +143,5 @@ Both propose a status to inforce information displayed in the banner by applying
        openUrl.callAsFunction(url)
     }
 
-    OUDSAlertBanner(layout: .start(label: "Label", actionLink: actionLink))
+    OUDSAlertBanner(layout: .start(label: "Label", status: .info, actionLink: actionLink))
 ```

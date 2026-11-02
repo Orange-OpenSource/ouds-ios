@@ -171,8 +171,10 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
         if mode.isEqual(onSurfaceTertiary) { return colors.surfaceTertiary }
         if mode.isEqual(onSurfaceInverseHigh) { return colors.surfaceInverseHigh }
         if mode.isEqual(onSurfaceInverseLow) { return colors.surfaceInverseLow }
+        if mode.isEqual(onOverlayDropdown) { return colors.overlayDropdown } // FIXME: Not sure of this value
+        if mode.isEqual(onOverlayTooltip) { return colors.overlayModalSheet } // FIXME: Not sure of this value
         if mode.isEqual(navigationBar) { return colors.overlayModalSheet } // FIXME: Not sure of this value
-        OL.fatal("The color mode '\(mode.name)' for Wireframe Theme is not managed and must be.")
+        OL.fatal("The color mode '\(mode.name)' for Wireframe theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity
 }
