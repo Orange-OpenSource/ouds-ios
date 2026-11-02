@@ -103,7 +103,7 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.3.0
-@available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSAlertBanner: View {
 
     // MARK: - Properties
@@ -134,7 +134,7 @@ public struct OUDSAlertBanner: View {
     /// The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
     ///
     /// - Since: 3.3.0
-    @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     @frozen public enum Layout {
 
         /// Used to create an alert banner with center layout.
@@ -175,7 +175,7 @@ public struct OUDSAlertBanner: View {
 
     /// Defines the vertical alignment of the leading, trailing, and text containers within the banner.
     /// - Since: 3.3.0
-    @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     @frozen public enum Alignment {
         /// Containers are aligned to the top of the banner.
         /// Best suited when the text has multiple lines and
@@ -191,7 +191,7 @@ public struct OUDSAlertBanner: View {
     // swiftlint:disable nesting
     /// Used to describe the action link display in the `OUDSAlertBanner`
     /// - Since: 3.3.0
-    @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     @frozen public struct ActionLink {
 
         /// The position of an `OUDSAlertBanner.ActionLink`in the alert banner.
