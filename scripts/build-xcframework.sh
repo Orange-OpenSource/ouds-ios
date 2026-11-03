@@ -55,6 +55,10 @@ set -euo pipefail
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
+# shellcheck source=lib/logging.sh
+source "${SCRIPT_DIR}/lib/logging.sh"
+log_init
+
 # Products to build (umbrella SPM products that re-export atomic libraries).
 readonly PRODUCTS=(
     "OUDSSwiftUIOrange"
@@ -96,9 +100,7 @@ readonly DIST_DIR="${REPO_ROOT}/dist"
 # Helpers
 # -------
 
-info()  { printf "\033[1;34m==>\033[0m %s\n" "$*"; }
-warn()  { printf "\033[1;33m!!\033[0m  %s\n" "$*" >&2; }
-error() { printf "\033[1;31mXX\033[0m  %s\n" "$*" >&2; exit 1; }
+error() { log_error "$*"; exit 1; }
 
 resolve_version() {
     local version="${1:-${VERSION:-}}"
@@ -119,7 +121,9 @@ resolve_version() {
 }
 
 clean() {
-    info "Cleaning ${BUILD_DIR} and ${DIST_DIR}"
+    log_step "Cleaning build and distribution directories"
+    log_detail "Build" "${BUILD_DIR}"
+    log_detail "Distribution" "${DIST_DIR}"
     rm -rf "${BUILD_DIR}" "${DIST_DIR}"
     mkdir -p "${BUILD_DIR}" "${DIST_DIR}"
 }
@@ -139,7 +143,7 @@ archive_slice() {
     local archive_path="$3"
     local sdk_label="$4"
 
-    info "Archiving ${product_name} for ${sdk_label}"
+    log_step "Archiving ${product_name} for ${sdk_label}"
 
     # Run xcodebuild from REPO_ROOT so it auto-detects the Package.swift
     # located there. Do NOT pass `-workspace "${REPO_ROOT}"` — that flag
@@ -237,7 +241,7 @@ inject_swift_modules() {
     local framework_path="$2"
     local derived_data="$3"
 
-    info "Injecting umbrella Swift module into ${framework_path}"
+    log_info "Injecting umbrella Swift module into ${framework_path}"
 
     local build_products_dir
     build_products_dir="$(find "${derived_data}/Build/Intermediates.noindex/ArchiveIntermediates" \
@@ -247,7 +251,7 @@ inject_swift_modules() {
         error "Could not locate BuildProductsPath/Release-* under ${derived_data}"
     fi
 
-    info "  Sourcing umbrella swiftmodule from ${build_products_dir}"
+    log_detail "Module source" "${build_products_dir}"
 
     local modules_dir="${framework_path}/Modules"
     mkdir -p "${modules_dir}"
@@ -272,7 +276,7 @@ framework module ${product_name} {
 }
 EOF
 
-    info "  Injected ${product_name}.swiftmodule + module.modulemap"
+    log_success "Injected ${product_name}.swiftmodule + module.modulemap"
 }
 
 # ------------------------------------------------------------------------------
@@ -298,7 +302,7 @@ build_atomic_frameworks() {
     local dest_dir="$3"
     local build_products_dir="$4"
 
-    info "Building atomic frameworks for ${product_name} (${sdk_label})"
+    log_step "Building atomic frameworks for ${product_name} (${sdk_label})"
 
     mkdir -p "${dest_dir}"
 
@@ -399,7 +403,7 @@ EOF
         # the umbrella dylib at runtime.
         xcrun --sdk "${sdk}" libtool -static -o "${fw}/${module}" "${stub_objects[@]}"
 
-        info "  Built ${module}.framework (stub, ${#archs[@]} arch)"
+        log_success "Built ${module}.framework (stub, ${#archs[@]} arch)"
     done
 
     # Clean up the temporary .o files; keep only the frameworks.
@@ -454,7 +458,7 @@ inject_resource_bundles() {
     local archive_path="$3"
     local derived_data="$4"
 
-    info "Injecting SPM resource bundles into ${framework_path}"
+    log_info "Injecting SPM resource bundles into ${framework_path}"
 
     # Get resource targets for this product
     local -a resource_targets
@@ -467,11 +471,11 @@ inject_resource_bundles() {
         found_bundle="$(find "${archive_path}" "${derived_data}" -type d -name "${bundle_name}" -print -quit 2>/dev/null || true)"
 
         if [[ -z "${found_bundle}" || ! -d "${found_bundle}" ]]; then
-            warn "Bundle ${bundle_name} not found in archive nor derived data. Runtime resource loading for target ${target} may fail."
+            log_warn "Bundle ${bundle_name} not found in archive nor derived data. Runtime resource loading for target ${target} may fail."
             continue
         fi
 
-        info "  Copying ${bundle_name} from ${found_bundle}"
+        log_detail "Copying bundle" "${bundle_name} from ${found_bundle}"
         rm -rf "${framework_path}/${bundle_name}"
         cp -R "${found_bundle}" "${framework_path}/"
     done
@@ -490,7 +494,8 @@ verify_framework() {
     local framework_path="$2"
     local label="$3"
 
-    info "Verifying umbrella framework (${label}): ${framework_path}"
+    log_step "Verifying umbrella framework (${label})"
+    log_detail "Framework" "${framework_path}"
 
     local binary_path="${framework_path}/${product_name}"
     if [[ ! -f "${binary_path}" ]]; then
@@ -516,10 +521,10 @@ verify_framework() {
         error "module.modulemap missing in ${modules_dir}"
     fi
 
-    info "  file             : ${file_output}"
-    info "  lipo             : $(lipo -info "${binary_path}" 2>/dev/null || echo 'lipo not available')"
-    info "  umbrella module  : present"
-    info "  modulemap        : present"
+    log_detail "File" "${file_output}"
+    log_detail "Architectures" "$(lipo -info "${binary_path}" 2>/dev/null || echo 'lipo not available')"
+    log_detail "Umbrella module" "present"
+    log_detail "Modulemap" "present"
 }
 
 # ------------------------------------------------------------------------------
@@ -552,7 +557,8 @@ create_xcframework() {
     # module: the umbrella + atomic ones. The consumer drag-and-drops the
     # xcframeworks into Xcode and sets only the umbrella to "Embed & Sign".
 
-    info "Creating umbrella XCFramework at ${xcframework_path}"
+    log_step "Creating umbrella XCFramework"
+    log_detail "Output" "${xcframework_path}"
     rm -rf "${xcframework_path}"
     xcodebuild -create-xcframework \
         -framework "${device_umbrella}" \
@@ -569,7 +575,7 @@ create_xcframework() {
         local device_fw="${device_atomic_dir}/${module}.framework"
         local simulator_fw="${simulator_atomic_dir}/${module}.framework"
 
-        info "Creating atomic XCFramework ${module}.xcframework"
+        log_info "Creating atomic XCFramework ${module}.xcframework"
         rm -rf "${xcf}"
         xcodebuild -create-xcframework \
             -framework "${device_fw}" \
@@ -605,7 +611,8 @@ package_xcframework() {
 
     # Bundle the umbrella xcframework and the atomic ones together in a
     # single zip so that consumers only have to download and unzip one asset.
-    info "Zipping umbrella + atomic xcframeworks -> ${zip_path}"
+    log_step "Packaging umbrella and atomic XCFrameworks"
+    log_detail "Archive" "${zip_path}"
     local -a xcf_names=("${product_name}.xcframework")
     local module
     for module in "${atomic_modules[@]}"; do
@@ -629,7 +636,7 @@ package_xcframework() {
     (cd "${DIST_DIR}" && ditto -c -k --sequesterRsrc --keepParent "${wrap_name}" "${zip_name}")
     rm -rf "${wrap_dir}"
 
-    info "Computing SHA-256"
+    log_info "Computing SHA-256"
     (cd "${DIST_DIR}" && shasum -a 256 "${zip_name}" | tee "${sha_path}")
 
     local sha_value
@@ -641,7 +648,7 @@ package_xcframework() {
         atomic_list="${atomic_list}\n- \`${module}.xcframework\`"
     done
 
-    info "Writing release notes to ${notes_path}"
+    log_info "Writing release notes to ${notes_path}"
     cat > "${notes_path}" <<EOF
 # OUDS ${product_name} XCFramework ${version}
 
@@ -701,7 +708,7 @@ EOF
     # Remove the individual .xcframework directories now that they are all
     # packaged inside the zip. Keeps dist/ clean with only the distributable
     # artefacts: the zip, its checksum, and the release notes.
-    info "Cleaning up individual .xcframework directories (already in the zip)"
+    log_info "Cleaning up individual .xcframework directories (already in the ZIP)"
     local name
     for name in "${xcf_names[@]}"; do
         rm -rf "${DIST_DIR}/${name}"
@@ -719,7 +726,7 @@ build_product() {
     local product_name="$1"
     local version="$2"
 
-    info "Building ${product_name}.xcframework version ${version}"
+    log_step "Building ${product_name}.xcframework version ${version}"
 
     local device_archive_path="${BUILD_DIR}/${product_name}-iphoneos.xcarchive"
     local simulator_archive_path="${BUILD_DIR}/${product_name}-iphonesimulator.xcarchive"
@@ -798,7 +805,7 @@ build_product() {
     # ---- Package ----
     package_xcframework "${product_name}" "${version}"
 
-    info "Successfully built ${product_name}.xcframework ${version}"
+    log_success "Built ${product_name}.xcframework ${version}"
 }
 
 # ------------------------------------------------------------------------------
@@ -809,7 +816,9 @@ main() {
     local version
     version="$(resolve_version "${1:-}")"
 
-    info "Building XCFrameworks for products: ${PRODUCTS[*]}"
+    log_header "Build XCFrameworks"
+    log_detail "Version" "${version}"
+    log_detail "Products" "${PRODUCTS[*]}"
 
     clean
 
@@ -817,7 +826,8 @@ main() {
         build_product "${product_name}" "${version}"
     done
 
-    info "Done. Artefacts under ${DIST_DIR}:"
+    log_finish "XCFramework build completed"
+    log_detail "Artefacts" "${DIST_DIR}"
     ls -lh "${DIST_DIR}"
 }
 

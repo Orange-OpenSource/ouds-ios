@@ -145,8 +145,8 @@ To build the OUDS package:
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
 Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
-The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
-the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+The `generate-web-documentation..sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
+the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in [a dedicated repositoy](https://github.com/Orange-OpenSource/ouds-ios-documentation).
 
 ### Illustrations
 

@@ -50,6 +50,13 @@ set -euo pipefail
 
 SECONDS=0
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# shellcheck source=lib/logging.sh
+source "$SCRIPT_DIR/lib/logging.sh"
+log_init
+
 # Exit codes
 # ----------
 
@@ -63,22 +70,20 @@ EXIT_EMPTY_SOURCE=4
 # ---------
 
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 <path-to-icons.zip>"
+    printf 'Usage: %s <path-to-icons.zip>\n' "$0" >&2
+    log_error "Expected one ZIP archive argument"
     exit $EXIT_BAD_PARAMETERS
 fi
 
 ZIP_PATH="$1"
 
 if [ ! -f "$ZIP_PATH" ]; then
-    echo "error: file not found: $ZIP_PATH"
+    log_error "File not found: $ZIP_PATH"
     exit $EXIT_NOT_ZIP_FILE
 fi
 
 # Configuration, logs and errors
 # ------------------------------
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 THEMES_ROOT="$REPO_ROOT/OUDS/Core/Themes"
 LOGS_ROOT="$SCRIPT_DIR/.icon-import-logs"
@@ -93,7 +98,7 @@ if command -v shasum >/dev/null 2>&1; then
 elif command -v sha256sum >/dev/null 2>&1; then
     sha256_of() { sha256sum "$1" | awk '{print $1}'; }
 else
-    echo "error: neither 'shasum' nor 'sha256sum' is available on this system."
+    log_error "Neither 'shasum' nor 'sha256sum' is available on this system."
     exit $EXIT_CANNOT_COMPARE
 fi
 
@@ -130,12 +135,12 @@ sync_theme() {
     src_dir="$(find "$TMP_DIR" -type d -iname "$theme_name" -not -path "*/__MACOSX/*" | head -1)"
 
     if [ -z "$src_dir" ]; then
-        echo "warning: no '$theme_name' folder found in the zip, skipping."
+        log_warn "No '$theme_name' folder found in the ZIP, skipping."
         return
     fi
 
     if [ ! -d "$icons_group_dir" ]; then
-        echo "warning: destination not found: $icons_group_dir, skipping."
+        log_warn "Destination not found: $icons_group_dir, skipping."
         return
     fi
 
@@ -144,14 +149,13 @@ sync_theme() {
     local src_svg_count
     src_svg_count=$(find "$src_dir" -type f -iname "*.svg" | wc -l | tr -d ' ')
     if [ "$src_svg_count" -eq 0 ]; then
-        echo "error: source folder '$src_dir' contains no .svg file, aborting for theme '$theme_name' (destination left untouched)."
+        log_error "Source folder '$src_dir' contains no .svg file, aborting for theme '$theme_name' (destination left untouched)."
         exit $EXIT_EMPTY_SOURCE
     fi
 
-    echo ""
-    echo "=== Syncing theme '$theme_name' ==="
-    echo "Source:      $src_dir"
-    echo "Destination: $icons_group_dir"
+    log_step "Synchronizing $theme_name icons"
+    log_detail "Source" "$src_dir"
+    log_detail "Destination" "$icons_group_dir"
 
     # 1. Build a lookup table "flattened-name<TAB>svg-path" from every svg found in the zip
     local zip_map
@@ -218,24 +222,28 @@ sync_theme() {
         echo "$name" >> "$updated_file"
     done < <(find "$icons_group_dir" -type d -iname "*.imageset" -print0)
 
-    echo "Updated:        $updated_count"
-    echo "Unchanged:      $unchanged_count"
-    echo "Missing in zip: $missing_count (kept as-is in the project — check with the design team)"
-    echo "Detailed report: $report_dir"
+    log_success "$updated_count icons updated"
+    log_info "$unchanged_count icons unchanged"
+    if [ "$missing_count" -gt 0 ]; then
+        log_warn "$missing_count icons missing in ZIP (kept unchanged — check with the design team)"
+    else
+        log_info "No icons missing in ZIP"
+    fi
+    log_detail "Detailed report" "$report_dir"
 }
 
 # Service
 # --------
 
-echo "Unzipping '$ZIP_PATH'..."
+log_header "Import icons"
+log_detail "Archive" "$ZIP_PATH"
+log_step "Extracting ZIP archive"
 unzip -q "$ZIP_PATH" -d "$TMP_DIR"
 
 sync_theme "orange" "$THEMES_ROOT/Orange/Sources/Resources/Icons.xcassets"
 sync_theme "sosh" "$THEMES_ROOT/Sosh/Sources/Resources/Icons.xcassets"
 sync_theme "wireframe" "$THEMES_ROOT/Wireframe/Sources/Resources/Icons.xcassets"
 
-echo ""
-echo "Done. Note: OrangeCompact reuses Orange's Icons.xcassets and was not processed."
-
-ELAPSED=$SECONDS
-printf "Elapsed time: %dm%02ds\n" $((ELAPSED / 60)) $((ELAPSED % 60))
+log_info "OrangeCompact reuses Orange's Icons.xcassets and was not processed."
+log_finish "Icon import completed"
+log_detail "Reports" "$LOGS_ROOT"

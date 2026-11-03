@@ -14,6 +14,12 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# shellcheck source=lib/logging.sh
+source "$SCRIPT_DIR/lib/logging.sh"
+log_init
+
 # Configuration
 # -------------
 
@@ -53,7 +59,7 @@ function display_help {
 
 function test_existence_of_file {
     if [ ! -e "$1" ]; then
-        echo "❌ Error: Cannot find file '$1' to process"
+        log_error "Cannot find file '$1' to process"
         exit $EXIT_MISSING_FILE
     fi
 }
@@ -66,7 +72,7 @@ function extract_version {
     result=$(grep "$versionSymbol" "$versionFile" | sed -E 's/.*= \"([^\"]*)\".*/\1/')
 
     if [ -z "$result" ]; then
-        echo "❌ Error: No version found for '$versionSymbol' in '$versionFile'" >&2
+        log_error "No version found for '$versionSymbol' in '$versionFile'"
         exit $EXIT_MISSING_VERSION
     else
         echo "$result"
@@ -80,7 +86,7 @@ function udpate_value_at_pattern_in_file {
 
     # Find the patern with the semver version, repalce by value for given file
     sed -i '' -E "s/(${patternToSearch})([0-9]+\.[0-9]+\.[0-9]+)/\1${valueForUpdate}/" "$fileToProcess"
-    echo "✔️ Updated file '$fileToProcess' with value '$valueForUpdate'"
+    log_success "Updated '$fileToProcess' with version '$valueForUpdate'"
 }
 
 # Service
@@ -90,16 +96,20 @@ function udpate_value_at_pattern_in_file {
 
 if [[ "$#" -ne 0 ]]; then
     display_help
-    echo "❌ Error: Too many arguments"
+    log_error "Too many arguments"
     exit $EXIT_ERROR_BAD_PARAMETER_COUNT
 fi
 
 # Check prerequisites
 
+log_header "Update library version references"
+log_step "Checking version source"
+log_detail "Source" "$OUDS_VERSION_SWIFT_FILE"
 test_existence_of_file "$OUDS_VERSION_SWIFT_FILE"
 
 # Get themes versions
 
+log_step "Reading versions"
 themeCoreOudsVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeCoreVersion)
 themeCoreOrangeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeCoreVersion)
 themeCoreSoshVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeSoshCoreVersion)
@@ -117,6 +127,7 @@ themeBrandWireframeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeWiref
 
 # README
 
+log_step "Updating README"
 test_existence_of_file "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeCoreOrangeVersion "- Core Orange version: " "$OUDS_README_FILE"
@@ -129,6 +140,7 @@ udpate_value_at_pattern_in_file $themeBrandWireframeVersion "- Brand Wireframe v
 
 # Markdown files
 
+log_step "Updating documentation"
 test_existence_of_file "$RAW_TOKENS_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeCoreOudsVersion "🧬 Core version: " "$RAW_TOKENS_MARKDOWN_FILE"
 
@@ -155,6 +167,7 @@ udpate_value_at_pattern_in_file $themeBrandWireframeVersion "🧬 Theme version:
 
 # Swift files
 
+log_step "Updating Swift file documentation"
 test_existence_of_file "$ORANGE_THEME_SWIFT_FILE"
 udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$ORANGE_THEME_SWIFT_FILE"
 udpate_value_at_pattern_in_file $themeCoreOrangeVersion "- Core Orange version: " "$ORANGE_THEME_SWIFT_FILE"
@@ -175,5 +188,5 @@ udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$
 udpate_value_at_pattern_in_file $themeCoreWireframeVersion "- Core Wireframe version: " "$WIREFRAME_THEME_SWIFT_FILE"
 udpate_value_at_pattern_in_file $themeBrandWireframeVersion "- Brand Wireframe version: " "$WIREFRAME_THEME_SWIFT_FILE"
 
-echo "👋 Bye!"
+log_finish "Library version references updated"
 exit $EXIT_OK

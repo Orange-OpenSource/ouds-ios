@@ -242,7 +242,7 @@ bundle exec fastlane test_unit
 To build the documentation:
 ```shell
 cd scripts
-yes | ./generateWebDocumentation.sh --libversion=none --nozip
+yes | ./generate-web-documentation.sh --libversion=none --nozip
 ```
 
 ### 8.4 Check dead code
