@@ -28,6 +28,26 @@ struct ControlItemBordersModifier: ViewModifier {
     let layoutData: ControlItemLabel.LayoutData
     let isOn: Bool
 
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        content
+            .modifier(ControlItemBorderPaddingModifier(isOutlined: layoutData.isOutlined,
+                                                       hasDivider: layoutData.hasDivider))
+            .modifier(ControlItemInternalBordersModifier(interactionState: interactionState,
+                                                         layoutData: layoutData, isOn: isOn))
+    }
+}
+
+
+private struct ControlItemInternalBordersModifier: ViewModifier {
+
+    // MARK: Properties
+
+    let interactionState: OUDSButtonInteractionState
+    let layoutData: ControlItemLabel.LayoutData
+    let isOn: Bool
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
@@ -101,5 +121,30 @@ struct ControlItemBordersModifier: ViewModifier {
         interactionState == .readOnly ?
             theme.listItem.borderRadiusItemOnly :
             theme.listItem.borderRadiusDefault
+    }
+}
+
+private struct ControlItemBorderPaddingModifier: ViewModifier {
+
+    // MARK: Properties
+
+    let isOutlined: Bool
+    let hasDivider: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        if isOutlined {
+            content.padding(.horizontal, theme.listItem.spacePaddingInline)
+        } else {
+            if hasDivider && !edgeToEdge {
+                content.padding(.horizontal, theme.listItem.spacePaddingInline)
+            } else {
+                content
+            }
+        }
     }
 }

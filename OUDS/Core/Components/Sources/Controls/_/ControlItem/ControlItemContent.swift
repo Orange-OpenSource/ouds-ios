@@ -12,6 +12,7 @@
 //
 
 import OUDSThemesContract
+import OUDSTokensSemantic
 import SwiftUI
 
 /// The content for the ``ControlItem`` component according to the interaction state ``OUDSButtonInteractionState``.
@@ -50,17 +51,12 @@ struct ControlItemContent: View {
                 }
             }
             .padding(.vertical, theme.listItem.spacePaddingBlockDefault)
-            .padding(.horizontal, theme.listItem.spacePaddingInline)
-            .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+            .modifier(ControlItemContentMarginModifier(isOutlined: layoutData.isOutlined, hasDivider: layoutData.hasDivider))
+            .modifier(ControlItemBackgroundModifier(interactionState: interactionState, isOutlined: layoutData.isOutlined, hasDivider: layoutData.hasDivider))
+            .modifier(OutlinedExtraMarginModifier(isOutlined: layoutData.isOutlined))
 
-            if layoutData.isError, let errorText = layoutData.errorText, !errorText.isEmpty {
-                textView(for: errorText)
-                    .labelDefaultMedium(theme)
-                    .foregroundColor(theme.colors.contentStatusNegative)
-                    .padding(.top, theme.listItem.spacePaddingBlockTopHelperText)
-                    .padding(.horizontal, theme.listItem.spacePaddingInline)
-            }
+            ControlItemErrorContainer(layoutData: layoutData)
         }
         .frame(minWidth: theme.listItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.listItem.sizeMinHeightDefault, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
@@ -97,5 +93,63 @@ struct ControlItemContent: View {
 
     private var maxWidth: CGFloat {
         layoutData.constrainedMaxWidth ? theme.listItem.sizeMaxWidth : .infinity
+    }
+}
+
+// MARK: - Extra outlined Margin
+
+struct OutlinedExtraMarginModifier: ViewModifier {
+
+    // MARK: Properties
+
+    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+    let isOutlined: Bool
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        // Add grid margin if edge to edge and oulined
+        // because we need to avoid to display the outlined
+        // border into the margin
+        if edgeToEdge && isOutlined {
+            content.gridMargin(.horizontal)
+        } else {
+            content
+        }
+    }
+}
+
+// - MARK: Content Margin before add background
+
+struct ControlItemContentMarginModifier: ViewModifier {
+
+    // MARK: Properties
+
+    let isOutlined: Bool
+    let hasDivider: Bool
+    @Environment(\.theme) private var theme
+    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        // Before add background, apply margins:
+        // - if edget to edge add grid margin only if not oulined because we need to avoid to display the
+        //   outlined border into the margin
+        // - if not edge to edge and if there is no divider add item padding.
+        // No need to add padding in other cases because already added by ControlItemBordersModifier before.
+        if edgeToEdge {
+            if !isOutlined {
+                content.gridMargin(.horizontal)
+            } else {
+                content
+            }
+        } else {
+            if !hasDivider && !isOutlined {
+                content.padding(.horizontal, theme.listItem.spacePaddingInline)
+            } else {
+                content
+            }
+        }
     }
 }
