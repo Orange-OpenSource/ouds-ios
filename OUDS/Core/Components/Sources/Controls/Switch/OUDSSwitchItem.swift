@@ -26,6 +26,12 @@ import SwiftUI
 /// - **default**: the component has a leading indicator, a label and optional texts, and an optional trailing decorative icon
 /// - **inverse**: like the *default* layout but with a trailing switch indicator and a leading optional decorative icon
 ///
+/// ## Edge To Edge Control
+///
+/// The item can be used as edge to edge, means it is designed to span the full width of the screen so a default horizontal padding equal to margin is added.
+/// In other case it is adapted for use within constrained layouts or containers with their own padding.
+/// To control the edge to eage usage, call ``SwiftUICore/View/oudsUseEdgeToEdge(flag:)`` on top of view contains items.
+///
 /// ## Indicator states
 ///
 /// The switch indicator has two available states set as a boolean property that determines whether the toggle is on or off.
