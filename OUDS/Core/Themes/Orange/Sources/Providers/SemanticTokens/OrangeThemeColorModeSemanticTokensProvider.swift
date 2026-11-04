@@ -58,6 +58,7 @@ import OUDSThemesContract
 /// ```
 ///
 /// - Since: 0.13.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeColorModeSemanticTokensProvider: AllColorModeSemanticTokensProvider {
 
     /// Provider of color semantic tokens to use for depending to some color modes

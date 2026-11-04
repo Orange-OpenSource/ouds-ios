@@ -34,6 +34,7 @@ import OUDSThemesContract
 /// ```
 ///
 /// - Since: 3.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeCardComponentTokensProvider: AllCardComponentTokensProvider {
 
     /// Provider of border semantic tokens to use for card borders

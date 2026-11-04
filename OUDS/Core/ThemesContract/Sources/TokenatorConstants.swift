@@ -16,6 +16,7 @@
 // swiftlint:disable identifier_name
 
 /// Gathers the components and themes versions exposed through Tokenator based on Figma tokens
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public enum OUDSVersions {
 
     // MARK: - Themes versions
@@ -93,14 +94,14 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component quantity input (1.3.1)
     public static let componentQuantityInputVersion = "1.3.1"
 
-    /// Version of the Figma specifications for the component static list item input (1.3.0)
-    public static let componentStaticListItemVersion = "1.3.0"
-    /// Version of the Figma specifications for the component static card item (1.3.0)
-    public static let componentStaticCardItemVersion = "1.3.0"
-    /// Version of the Figma specifications for the component navigation list item (1.3.0)
-    public static let componentNavigationListItemVersion = "1.3.0"
-    /// Version of the Figma specifications for the component naivgation card item (1.3.0)
-    public static let componentNavigationCardItemVersion = "1.3.0"
+    /// Version of the Figma specifications for the component static list item input (1.2.0)
+    public static let componentStaticListItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component static card item (1.2.0)
+    public static let componentStaticCardItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component navigation list item (1.2.0)
+    public static let componentNavigationListItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component naivgation card item (1.2.0)
+    public static let componentNavigationCardItemVersion = "1.2.0"
 
     /// Version of the Figma specifications for the component select input (1.3.1)
     public static let componentSelectInputVersion = "1.3.1"
@@ -120,7 +121,7 @@ public enum OUDSVersions {
     public static let componentAlertMessageVersion = "1.2.0"
     /// Version of the Figma specifications for the component alert (inline alert) (1.0.0)
     public static let componentInlineAlertVersion = "1.0.0"
-    
+
     /// Version of the Figma specifications for the component toast (1.0.0)
     public static let componentToastVersion = "1.0.0"
 
@@ -136,7 +137,7 @@ public enum OUDSVersions {
     public static let componentTypographyHeadingVersion = "1.1.0"
     /// Version of the Figma specifications for the component typography label (1.0.0)
     public static let componentTypographyLabelVersion = "1.0.0"
-  
+
     // MARK: - Components versions - Indicator
 
     /// Version of the Figma specifications for the component circular progress indicator (1.2.0)
@@ -170,12 +171,12 @@ public enum OUDSVersions {
     public static let componentToolBarBottomVersion = "1.0.0"
     /// Version of the Figma specifications for the toolbar top components (1.1.0)
     public static let componentToolBarTopVersion = "1.1.0"
-  
+
     /// Version of the Figma specifications for the line tabs components (1.0.0)
     public static let componentLineTabsVersion = "1.0.0"
     /// Version of the Figma specifications for the contained tabs top components (1.0.0)
     public static let componentContainedTabsVersion = "1.0.0"
-  
+
     // MARK: - Components versions - Tag
 
     /// Version of the Figma specifications for the component badge (1.2.0)

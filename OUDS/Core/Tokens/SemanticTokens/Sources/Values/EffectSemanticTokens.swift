@@ -24,6 +24,7 @@ import CoreGraphics // Needed for XCFramework generation and API breaks checks
 /// Any effect semantic token must be declared there.
 ///
 /// - Since: 0.22.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol EffectSemanticTokens {
 
     var blurBackdrop: EffectSemanticToken { get }

@@ -27,6 +27,7 @@ import CoreGraphics // Needed for XCFramework generation and API breaks checks
 /// Any elevation semantic token must be declared there (except ``ElevationCompositeSemanticTokens``)
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - X

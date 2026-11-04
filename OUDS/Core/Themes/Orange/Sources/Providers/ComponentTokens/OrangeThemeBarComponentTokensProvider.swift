@@ -84,6 +84,7 @@ import OUDSThemesContract
 /// ```
 ///
 /// - Since: 0.22.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeBarComponentTokensProvider: AllBarComponentTokensProvider {
 
     /// Provider of sizes semantic tokens to use for bar sizes

@@ -229,12 +229,6 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentToastVersion, regexp: Self.oudsVersionsFormat)
     }
 
-    // MARK: - Tests - Component versions - Foundations
-
-    @Test func componentTypographyVersionMustBeConform() throws {
-        TestsUtils.assertMatches(OUDSVersions.componentTypographyVersion, regexp: Self.oudsVersionsFormat)
-    }
-
     // MARK: - Tests - Component versions - Indicator
 
     @Test func componentCircularProgressIndicatorVersionMustBeConform() throws {

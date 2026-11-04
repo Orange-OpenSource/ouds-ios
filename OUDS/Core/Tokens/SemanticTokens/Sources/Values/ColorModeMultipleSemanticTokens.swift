@@ -35,6 +35,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 0.13.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - On Background

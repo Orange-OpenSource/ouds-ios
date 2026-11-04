@@ -79,6 +79,7 @@ import OUDSThemesContract
 /// ```
 ///
 /// - Since: 1.2.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeAlertComponentTokensProvider: AllAlertComponentTokensProvider {
 
     /// Provider of sizes semantic tokens to use for alert sizes

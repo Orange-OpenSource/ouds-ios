@@ -89,6 +89,7 @@ import OUDSThemesContract
 /// ```
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeListItemComponentTokensProvider: AllListItemComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for list item sizes

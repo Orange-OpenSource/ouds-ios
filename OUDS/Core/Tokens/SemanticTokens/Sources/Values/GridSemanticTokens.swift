@@ -22,6 +22,7 @@
 /// Any grid semantic token must be declared there.
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Extra compact
