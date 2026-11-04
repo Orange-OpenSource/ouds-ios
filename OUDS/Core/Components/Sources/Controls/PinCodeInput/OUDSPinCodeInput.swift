@@ -294,7 +294,7 @@ public struct OUDSPinCodeInput: View {
                 PinCodeInputContainer(_value,
                                       length: length,
                                       hiddenCharacters: hiddenCharacters,
-                                      isError: status != .enabled,
+                                      status: status,
                                       isOutlined: isOutlined,
                                       autofocus: autofocus)
                     .id(length)
