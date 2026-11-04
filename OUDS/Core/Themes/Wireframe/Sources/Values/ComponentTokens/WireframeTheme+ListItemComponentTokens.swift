@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import CoreGraphics // Needed for XCFramework generation and API breaks checks
 import Foundation
 import OUDSTokensComponent
 import OUDSTokensRaw
@@ -139,12 +140,6 @@ extension WireframeThemeListItemComponentTokensProvider: ListItemComponentTokens
     @objc public final var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
     /// Has for value token spaces.rowGapNone (= 0)
     @objc public final var spaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
-
-    // MARK: - Deprecated (since tokens library v2.8)
-
-    // TODO: v4 - Remove this old token
-    /// Use instead `colorBadgeSafetyArea`
-    @objc public final var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea }
 }
 
 // swiftlint:enable identifier_name

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import CoreGraphics
 import OUDSTokensRaw
 
 // 🧬 Tokens version: 1.2.0 (Core Orange)
