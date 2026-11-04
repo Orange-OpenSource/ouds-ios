@@ -106,7 +106,7 @@ public protocol ListItemComponentTokens {
 
     // MARK: - Deprecated (since tokens library v2.8)
 
-    @available(*, deprecated, message: "Use instead token named colorBadgeSafetyArea. See MIGRATION.md v3.3.0.")
+    @available(*, deprecated, renamed: "colorBadgeSafetyArea", message: "See MIGRATION.md v3.3.0.")
     var colorBgBadgeSafetyArea: MultipleColorSemanticToken { get }
 }
 

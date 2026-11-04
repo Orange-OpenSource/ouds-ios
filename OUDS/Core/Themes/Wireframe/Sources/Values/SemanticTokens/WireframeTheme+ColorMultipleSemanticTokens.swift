@@ -208,18 +208,6 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc open var overlaySticky: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayStickyLight, dark: overlayStickyDark) }
 
-    /// Deprecated alias for ``overlaySticky``.
-    @available(*, deprecated, renamed: "overlaySticky", message: "See MIGRATION.md v3.3.0.")
-    @objc open var overlayFloating: MultipleColorSemanticToken { overlaySticky }
-
-    /// Deprecated alias for ``overlayStickyLight``.
-    @available(*, deprecated, renamed: "overlayStickyLight", message: "See MIGRATION.md v3.3.0.")
-    @objc open var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
-
-    /// Deprecated alias for ``overlayStickyDark``.
-    @available(*, deprecated, renamed: "overlayStickyDark", message: "See MIGRATION.md v3.3.0.")
-    @objc open var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
-
     // MARK: - Color - Surface
 
     @objc open var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandPrimaryLight, dark: surfaceBrandPrimaryDark) }
@@ -267,6 +255,12 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
     @objc open var colorAiTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiTertiaryLight, dark: colorAiTertiaryDark) }
 
     @objc open var colorAiQuaternary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiQuaternaryLight, dark: colorAiQuaternaryDark) }
+
+    // MARK: - Deprecated
+
+    // TODO: v4 - Remove these tokens
+
+    @objc open var overlayFloating: MultipleColorSemanticToken { overlaySticky }
 }
 
 // swiftlint:enable line_length

@@ -68,9 +68,9 @@ public protocol TextInputComponentTokens {
     // MARK: - Deprecated (since tokens library v2.8)
 
     // TODO: v4 - Remove these tokens
-    @available(*, deprecated, message: "Use instead token named spacePaddingBlockHelperText. See MIGRATION.md v3.3.0.")
+    @available(*, deprecated, renamed: "spacePaddingBlockHelperText", message: "See MIGRATION.md v3.3.0.")
     var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
-    @available(*, deprecated, message: "Use instead token named spacePaddingInlineLeadingTrailingAction. See MIGRATION.md v3.3.0.")
+    @available(*, deprecated, renamed: "spacePaddingInlineLeadingTrailingAction", message: "See MIGRATION.md v3.3.0.")
     var spacePaddingInlineTrailingAction: SpaceSemanticToken { get }
 }
 

@@ -681,4 +681,11 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var surfaceTertiaryDark: ColorSemanticToken { repositoryOpacityAccentMedium }
     /// Has for value token repositoryOpacityAccentLow (= "#DB234514")
     @objc open var surfaceTertiaryLight: ColorSemanticToken { repositoryOpacityAccentLow }
+
+    // MARK: - Deprecated
+
+    // TODO: v4 - Remove these tokens
+
+    @objc open var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
+    @objc open var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
 }

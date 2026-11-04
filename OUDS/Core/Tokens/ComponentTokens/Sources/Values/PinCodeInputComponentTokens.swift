@@ -32,9 +32,9 @@ public protocol PinCodeInputComponentTokens {
 
     // MARK: - Deprecated (since tokens library v2.8)
 
-    @available(*, deprecated, message: "Use instead token named sizeMinWidthDigitInput. See MIGRATION.md v3.3.0.")
+    @available(*, deprecated, renamed: "sizeMinWidthDigitInput", message: "See MIGRATION.md v3.3.0.")
     var sizeMinWidth: SizeSemanticToken { get }
-    @available(*, deprecated, message: "Use instead token named sizeMaxWidthDigitInput. See MIGRATION.md v3.3.0.")
+    @available(*, deprecated, renamed: "sizeMaxWidthDigitInput", message: "See MIGRATION.md v3.3.0.")
     var sizeMaxWidth: SizeSemanticToken { get }
 }
 
