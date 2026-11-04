@@ -40,8 +40,6 @@ extension OrangeThemeListItemComponentTokensProvider: ListItemComponentTokens {
     @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token colors.bgPrimary (= light: "#FFFFFFFF" / dark: "#141414FF")
     @objc open var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
-    /// Use instead `colorBadgeSafetyArea`
-    @objc open var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea } // NOTE: Deprecated since tokens v2.8
     /// Has for value token colors.actionSupportDisabled (= light: "#0000000A" / dark: "#FFFFFF0A")
     @objc open var colorBgCurrentDisabled: MultipleColorSemanticToken { colors.actionSupportDisabled }
     /// Has for value token MultipleColorSemanticToken(light: colors.actionSupportEnabledLight, dark: colors.actionSupportHoverDark) (= light: "#0000000A" / dark: "#FFFFFF14")
@@ -140,6 +138,12 @@ extension OrangeThemeListItemComponentTokensProvider: ListItemComponentTokens {
     @objc open var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
     /// Has for value token spaces.rowGapNone (= 0)
     @objc open var spaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove this old token
+    /// Use instead `colorBadgeSafetyArea`
+    @objc open var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea }
 }
 
 // swiftlint:enable identifier_name

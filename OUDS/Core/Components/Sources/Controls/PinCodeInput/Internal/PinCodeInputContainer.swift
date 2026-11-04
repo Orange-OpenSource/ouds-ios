@@ -87,8 +87,8 @@ struct PinCodeInputContainer: View {
             ForEach(0 ..< length.rawValue, id: \.self) { index in
                 digitField(at: index)
                     .frame(
-                        minWidth: theme.pinCodeInput.sizeMinWidth,
-                        maxWidth: theme.pinCodeInput.sizeMaxWidth,
+                        minWidth: theme.pinCodeInput.sizeMinWidthDigitInput,
+                        maxWidth: theme.pinCodeInput.sizeMaxWidthDigitInput,
                         minHeight: theme.textInput.sizeMinHeight,
                         maxHeight: theme.textInput.sizeMinHeight) // FIXME: Mandatory but not in specs of #998, otherwise no limits
                     .background(

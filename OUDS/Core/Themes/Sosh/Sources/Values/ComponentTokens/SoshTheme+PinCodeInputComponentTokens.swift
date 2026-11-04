@@ -25,4 +25,12 @@ extension SoshThemePinCodeInputComponentTokensProvider: PinCodeInputComponentTok
     @objc public final var sizeMinWidthDigitInput: SizeSemanticToken { dimensions._large }
     /// Has for value token spaces.columnGapMedium (= 12)
     @objc public final var spaceColumnGapDigitInput: SpaceSemanticToken { spaces.columnGapMedium }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove these old tokens
+    /// Use instead `sizeMaxWidthDigitInput`
+    @objc public final var sizeMaxWidth: SizeSemanticToken { sizeMaxWidthDigitInput }
+    /// Use instead `sizeMinWidthDigitInput`
+    @objc public final var sizeMinWidth: SizeSemanticToken { sizeMinWidthDigitInput }
 }

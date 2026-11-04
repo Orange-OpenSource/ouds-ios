@@ -40,8 +40,6 @@ extension SoshThemeListItemComponentTokensProvider: ListItemComponentTokens {
     @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthThin }
     /// Has for value token colors.bgPrimary (= light: "#FFFFFFFF" / dark: "#001524FF")
     @objc public final var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
-    /// Use instead `colorBadgeSafetyArea`
-    @objc public final var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea } // NOTE: Deprecated since tokens v2.8
     /// Has for value token colors.actionSupportDisabled (= light: "#000F190A" / dark: "#EDF6FC0A")
     @objc public final var colorBgCurrentDisabled: MultipleColorSemanticToken { colors.actionSupportDisabled }
     /// Has for value token colors.actionSupportEnabled (= light: "#000F190A" / dark: "#EDF6FC0A")
@@ -140,6 +138,12 @@ extension SoshThemeListItemComponentTokensProvider: ListItemComponentTokens {
     @objc public final var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
     /// Has for value token spaces.rowGapNone (= 0)
     @objc public final var spaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove this old token
+    /// Use instead `colorBadgeSafetyArea`
+    @objc public final var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea }
 }
 
 // swiftlint:enable identifier_name

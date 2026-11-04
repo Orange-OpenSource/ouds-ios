@@ -27,7 +27,14 @@ import OUDSTokensSemantic
 public protocol PinCodeInputComponentTokens {
 
     var spaceColumnGapDigitInput: SpaceSemanticToken { get }
+    var sizeMinWidthDigitInput: SizeSemanticToken { get }
+    var sizeMaxWidthDigitInput: SizeSemanticToken { get }
+
+    // MARK: - Deprecated (since v2.8.0)
+
+    @available(*, deprecated, message: "Use instead token named sizeMinWidthDigitInput. See MIGRATION.md v3.3.0.")
     var sizeMinWidth: SizeSemanticToken { get }
+    @available(*, deprecated, message: "Use instead token named sizeMaxWidthDigitInput. See MIGRATION.md v3.3.0.")
     var sizeMaxWidth: SizeSemanticToken { get }
 }
 

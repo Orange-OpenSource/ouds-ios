@@ -38,6 +38,30 @@ so overriding only the deprecated property no longer customizes the value used b
 
 **Required action**: Rename `colorBgBadgeSafetyArea` to `colorBadgeSafetyArea`
 
+### PIN code input tokens — digit input width names
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.pinCodeInput.sizeMinWidth` | `theme.pinCodeInput.sizeMinWidthDigitInput` |
+| `theme.pinCodeInput.sizeMaxWidth` | `theme.pinCodeInput.sizeMaxWidthDigitInput` |
+
+```swift
+// Before (v3.2)
+theme.pinCodeInput.sizeMinWidth
+theme.pinCodeInput.sizeMaxWidth
+
+// After (v3.3)
+theme.pinCodeInput.sizeMinWidthDigitInput
+theme.pinCodeInput.sizeMaxWidthDigitInput
+```
+
+The former names remain available as deprecated aliases forwarding to the new tokens.
+
+**Required action**: Rename these tokens in PIN code input usages, custom provider declarations,
+overrides and associated tests. Components now read the new tokens, so custom providers must
+override the new properties to customize their rendering. Do not rename `sizeMinWidth` or
+`sizeMaxWidth` globally: other components can still use those names.
+
 ### Removed icon tokens — inverse warning shapes
 
 The following tokens have been removed from `IconComponentTokens` and are now internal to Figma.

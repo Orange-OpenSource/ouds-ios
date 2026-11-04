@@ -41,8 +41,6 @@ extension WireframeThemeListItemComponentTokensProvider: ListItemComponentTokens
     @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token colors.bgPrimary (= light: "#FFFFFFFF" / dark: "#101319FF")
     @objc public final var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
-    /// Use instead `colorBadgeSafetyArea`
-    @objc public final var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea } // NOTE: Deprecated since tokens v2.8
     /// Has for value token colors.actionDisabled (= light: "#05052E33" / dark: "#EFF5FF33")
     @objc public final var colorBgCurrentDisabled: MultipleColorSemanticToken { colors.actionDisabled }
     /// Has for value token colors.actionSelected (= light: "#2055E5FF" / dark: "#96C1FAFF")
@@ -141,6 +139,12 @@ extension WireframeThemeListItemComponentTokensProvider: ListItemComponentTokens
     @objc public final var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
     /// Has for value token spaces.rowGapNone (= 0)
     @objc public final var spaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove this old token
+    /// Use instead `colorBadgeSafetyArea`
+    @objc public final var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea }
 }
 
 // swiftlint:enable identifier_name
