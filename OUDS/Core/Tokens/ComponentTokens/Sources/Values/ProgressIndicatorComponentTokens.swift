@@ -23,6 +23,7 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemeProgressIndicatorComponentTokensProvider`.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ProgressIndicatorComponentTokens {
 
     // MARK: - Colors

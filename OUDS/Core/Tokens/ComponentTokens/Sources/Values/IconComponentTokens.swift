@@ -24,6 +24,7 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemeIconComponentTokensProvider`.
 ///
 /// - Since: 0.20.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol IconComponentTokens {
 
     var colorContentStatusWarningExternalShape: MultipleColorSemanticToken { get }

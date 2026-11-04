@@ -23,6 +23,7 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemeCardComponentTokensProvider`.
 ///
 /// - Since: 3.3.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol CardComponentTokens { // TODO: #533 - Add name of components in documentation
 
     var borderRadiusDefault: BorderRadiusSemanticToken { get }

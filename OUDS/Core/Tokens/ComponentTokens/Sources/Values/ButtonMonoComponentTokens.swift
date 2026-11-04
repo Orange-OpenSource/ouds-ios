@@ -23,6 +23,7 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemeButtonComponentTokensProvider`.
 ///
 /// - Since: 0.16.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ButtonMonoComponentTokens {
 
     // NOTE: Tokens prefixed by "mono" even id redundant with tokens provider and protocol names
