@@ -30,7 +30,7 @@ public protocol ListItemComponentTokens {
 
     // MARK: - Colors
 
-    var colorBgBadgeSafetyArea: MultipleColorSemanticToken { get }
+    var colorBadgeSafetyArea: MultipleColorSemanticToken { get }
     var colorBgCurrentEnabled: MultipleColorSemanticToken { get }
     var colorBgCurrentHover: MultipleColorSemanticToken { get }
     var colorBgCurrentPressed: MultipleColorSemanticToken { get }
@@ -103,6 +103,11 @@ public protocol ListItemComponentTokens {
     var sizeErrorIcon: SizeSemanticToken { get }
     var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
     var sizeIcon: SizeSemanticToken { get }
+
+    // MARK: - Deprecated (since v2.8.0)
+
+    @available(*, deprecated, message: "Use instead token named colorBadgeSafetyArea. See MIGRATION.md v3.3.0.")
+    var colorBgBadgeSafetyArea: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

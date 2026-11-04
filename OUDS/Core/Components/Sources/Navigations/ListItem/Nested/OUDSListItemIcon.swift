@@ -181,7 +181,7 @@ public struct OUDSListItemIcon: View {
                             .border(style: theme.borders.styleDefault,
                                     width: theme.borders.widthThin,
                                     radius: theme.borders.radiusPill,
-                                    color: theme.listItem.colorBgBadgeSafetyArea)
+                                    color: theme.listItem.colorBadgeSafetyArea)
                     }
                 }
 

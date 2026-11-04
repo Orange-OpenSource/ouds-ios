@@ -23,9 +23,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - For PIN code component, the error description should be grouped with the input (Orange-OpenSource/ouds-ios#1847)
 - Anchor and width of `bullet list` items to not avoid extra spacing between text and bullets in some layouts
 
+### Deprecated
+
+- `colorBgBadgeSafetyArea` component token of `list item` (Orange-OpenSource/ouds-ios#1829)
+
 ### Removed
 
 - **BREAKING**: `colorContentStatusWarningInverse*Shape` component tokens of `icon` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+
 ## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
 
 ### Added

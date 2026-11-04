@@ -41,6 +41,8 @@ extension WireframeThemeListItemComponentTokensProvider: ListItemComponentTokens
     @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token colors.bgPrimary (= light: "#FFFFFFFF" / dark: "#101319FF")
     @objc public final var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
+    /// Use instead `colorBadgeSafetyArea`
+    @objc public final var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea } // NOTE: Deprecated since tokens v2.8
     /// Has for value token colors.actionDisabled (= light: "#05052E33" / dark: "#EFF5FF33")
     @objc public final var colorBgCurrentDisabled: MultipleColorSemanticToken { colors.actionDisabled }
     /// Has for value token colors.actionSelected (= light: "#2055E5FF" / dark: "#96C1FAFF")

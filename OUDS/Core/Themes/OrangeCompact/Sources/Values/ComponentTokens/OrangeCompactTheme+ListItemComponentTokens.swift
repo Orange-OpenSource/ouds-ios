@@ -40,6 +40,8 @@ extension OrangeCompactThemeListItemComponentTokensProvider: ListItemComponentTo
     @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token colors.bgPrimary (= light: "#FFFFFFFF" / dark: "#141414FF")
     @objc public final var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
+    /// Use instead `colorBadgeSafetyArea`
+    @objc public final var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea } // NOTE: Deprecated since tokens v2.8
     /// Has for value token colors.actionSupportDisabled (= light: "#0000000A" / dark: "#FFFFFF0A")
     @objc public final var colorBgCurrentDisabled: MultipleColorSemanticToken { colors.actionSupportDisabled }
     /// Has for value token colors.actionSupportEnabled (= light: "#0000000A" / dark: "#FFFFFF0A")

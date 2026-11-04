@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v3.2.0 → v3.3.0 (upcoming)](#v320--v330)
 - [v3.0.0 → v3.2.0](#v300--v320)
 - [v2.3.0 → v3.0.0](#v230--v300)
 - [v2.2.0 → v2.3.0](#v220--v230)
@@ -10,6 +11,40 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v3.2.0 → v3.3.0
+
+### Overview
+
+The version 3.3.0 embeds tokens library v2.8.0 with several changes.
+
+### List item token — `colorBgBadgeSafetyArea` → `colorBadgeSafetyArea`
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.listItem.colorBgBadgeSafetyArea` | `theme.listItem.colorBadgeSafetyArea` |
+
+```swift
+// Before (v3.2)
+theme.listItem.colorBgBadgeSafetyArea
+
+// After (v3.3)
+theme.listItem.colorBadgeSafetyArea
+```
+
+The former token remains available as a deprecated alias forwarding to `colorBadgeSafetyArea`.
+Update call sites and custom providers, including overrides: components now use the new token,
+so overriding only the deprecated property no longer customizes the value used by those components.
+
+**Required action**: Rename `colorBgBadgeSafetyArea` to `colorBadgeSafetyArea`
+
+### Removed icon tokens — inverse warning shapes
+
+The following tokens have been removed from `IconComponentTokens` and are now internal to Figma.
+- `theme.icon.colorContentStatusWarningInverseInternalShape`
+- `theme.icon.colorContentStatusWarningInverseExternalShape`
+
+**Required action**: Remove them.
 
 ## v3.0.0 → v3.2.0
 

@@ -29,9 +29,9 @@ struct ThemeOverrideOfListItemComponentTokensTests {
 
     // MARK: - Colors
 
-    @Test func inheritedThemeCanOverrideListItemComponentTokenColorBgBadgeSafetyArea() throws {
-        #expect(inheritedTheme.listItem.colorBgBadgeSafetyArea != abstractTheme.listItem.colorBgBadgeSafetyArea)
-        #expect(inheritedTheme.listItem.colorBgBadgeSafetyArea == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenColorBadgeSafetyArea() throws {
+        #expect(inheritedTheme.listItem.colorBadgeSafetyArea != abstractTheme.listItem.colorBadgeSafetyArea)
+        #expect(inheritedTheme.listItem.colorBadgeSafetyArea == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
     }
 
     @Test func inheritedThemeCanOverrideListItemComponentTokenColorBgCurrentEnabled() throws {

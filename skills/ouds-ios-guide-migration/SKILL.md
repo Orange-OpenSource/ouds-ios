@@ -1,12 +1,13 @@
 ---
 name: ouds-ios-guide-migration
-description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to the current version (3.2.0 or higher), or when deprecated or removed OUDS APIs are detected in the codebase
+description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to v3.2.0 (current) or prepare for v3.3.0 (upcoming), or when deprecated or removed OUDS APIs are detected in the codebase
 license: MIT
 ---
 
 # Skill: ouds-ios-guide-migration
 
-Migration guide from **v1.0.0** to **v3.2.0** (current). Covers all breaking changes and deprecated symbols.
+Migration guide from **v1.0.0** to **v3.2.0** (current), including preparation for **v3.3.0** (upcoming).
+Covers breaking changes and deprecated symbols; do not describe v3.3.0 as already released.
 For full before/after examples, refer to `MIGRATION.md` in the project root.
 
 ---
@@ -25,6 +26,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
 | v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(label: Label, …)` / `init(label: some View, accessibilityLabel:, …)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. `OUDSTextArea` — `HelperText.plain` / `.rich` deprecated in favor of `.textual(OUDSTextualContent)`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message: OUDSTextualContent)`. `OUDSPasswordInput` — 4 initializers (`helperText` `String?` / `AttributedString`) deprecated; 2 new initializers taking `helperText: OUDSTextualContent?`. `OUDSTextInput` — 4 initializers (`helperText` `String?` / `AttributedString`) deprecated; 2 new initializers taking `helperText: OUDSTextualContent?`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message:)` (also used by `OUDSPasswordInput`). `OUDSPinCodeInput` — 3 initializers (`helperText` `String?` / `AttributedString` / `helperText key: LocalizedStringKey`) deprecated; 1 new initializer taking `helperText: OUDSTextualContent?`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message: OUDSTextualContent)`. `OUDSCheckboxItemIndeterminate` — 2 initializers (`errorText: String?`) deprecated; 2 new initializers taking `errorText: OUDSTextualContent?`. `OUDSSwitchItem`, `OUDSCheckboxItem` and `OUDSRadioItem` — 4 initializers each (`errorText` `String?` / `AttributedString`) deprecated; 2 new initializers each taking `errorText: OUDSTextualContent?`. `OUDSAlertMessage` — 8 initializers (`String` / `AttributedString` `description`, `[String]` / `[AttributedString]` `bulletList`) deprecated; 2 new initializers (`label:` / `_ key:`) taking `description: OUDSTextualContent?` and `bulletList: [OUDSTextualContent]`. |
+| v3.2.0 → v3.3.0 (upcoming) | Medium | List item `colorBgBadgeSafetyArea` → `colorBadgeSafetyArea` (deprecated alias retained; update custom overrides). Icon `colorContentStatusWarningInverseInternalShape` and `colorContentStatusWarningInverseExternalShape` removed; no automatic replacement. |
 
 ---
 
@@ -41,6 +43,12 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 ## Detection grep commands
 
 ```bash
+# Token rename and removals (v3.3.0 — upcoming).
+# Search consuming application sources, not the OUDS library's deprecated alias declarations.
+grep -rnE \
+  'colorBgBadgeSafetyArea|colorContentStatusWarningInverseInternalShape|colorContentStatusWarningInverseExternalShape' \
+  --include="*.swift" .
+
 # Breaking changes (v3.0.0)
 grep -rn \
   "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|indicator: \.back\b\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier\|hasLoader:" \
@@ -867,12 +875,43 @@ Its `status` is `OUDSTextInput.Status`: use `.textualError(message:)` (see the `
 
 ---
 
+## v3.2.0 → v3.3.0
+
+### List item token — renamed with a deprecated alias
+
+| Old (v3.2 — deprecated in v3.3) | New (v3.3) |
+|---|---|
+| `theme.listItem.colorBgBadgeSafetyArea` | `theme.listItem.colorBadgeSafetyArea` |
+
+The old property remains available as a deprecated alias forwarding to the new token. It is **not removed**.
+
+**Required action**:
+- Rename `colorBgBadgeSafetyArea` to `colorBadgeSafetyArea` in list item token usages.
+- Rename custom provider declarations and overrides, including `OrangeThemeListItemComponentTokensProvider` subclasses.
+- Update associated tests.
+
+### Icon tokens — inverse warning shapes removed
+
+Remove usages, custom provider declarations and overrides of:
+- `theme.icon.colorContentStatusWarningInverseInternalShape`
+- `theme.icon.colorContentStatusWarningInverseExternalShape`
+
+**Do not invent an automatic replacement**, including a mechanical mapping to non-inverse warning shape tokens.
+
+---
+
 ## Verification checklist
 
 ```bash
 swift build
 
 swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|foundation"
+
+# v3.3.0 token rename and removals — must return nothing in migrated application sources.
+# The OUDS library itself still declares the deprecated list item alias.
+grep -rnE \
+  'colorBgBadgeSafetyArea|colorContentStatusWarningInverseInternalShape|colorContentStatusWarningInverseExternalShape' \
+  --include="*.swift" .
 
 # v3.0 breaking changes — must return nothing
 grep -rn \
