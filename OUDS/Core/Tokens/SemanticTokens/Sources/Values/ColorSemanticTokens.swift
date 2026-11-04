@@ -40,9 +40,6 @@ public protocol ColorSemanticTokens {
     var opacityTransparentLight: ColorSemanticToken { get }
     var opacityTransparentDark: ColorSemanticToken { get }
 
-    var opacityTransparentInverseLight: ColorSemanticToken { get }
-    var opacityTransparentInverseDark: ColorSemanticToken { get }
-
     // MARK: - Color - Action
 
     var actionDisabledLight: ColorSemanticToken { get }
@@ -289,18 +286,6 @@ public protocol ColorSemanticTokens {
     var contentInverseLight: ColorSemanticToken { get }
     var contentInverseDark: ColorSemanticToken { get }
 
-    var contentStatusInversePositiveLight: ColorSemanticToken { get }
-    var contentStatusInversePositiveDark: ColorSemanticToken { get }
-
-    var contentStatusInverseInfoLight: ColorSemanticToken { get }
-    var contentStatusInverseInfoDark: ColorSemanticToken { get }
-
-    var contentStatusInverseWarningLight: ColorSemanticToken { get }
-    var contentStatusInverseWarningDark: ColorSemanticToken { get }
-
-    var contentStatusInverseNegativeLight: ColorSemanticToken { get }
-    var contentStatusInverseNegativeDark: ColorSemanticToken { get }
-
     // MARK: - Color - Overlay
 
     var overlayDropdownLight: ColorSemanticToken { get }
@@ -318,8 +303,8 @@ public protocol ColorSemanticTokens {
     var overlayBackdropLight: ColorSemanticToken { get }
     var overlayBackdropDark: ColorSemanticToken { get }
 
-    var overlayFloatingLight: ColorSemanticToken { get }
-    var overlayFloatingDark: ColorSemanticToken { get }
+    var overlayStickyLight: ColorSemanticToken { get }
+    var overlayStickyDark: ColorSemanticToken { get }
 
     // MARK: - Color - Surface
 
@@ -507,6 +492,13 @@ public protocol ColorSemanticTokens {
     var colorAiTertiaryDark: ColorSemanticToken { get }
     var colorAiQuaternaryLight: ColorSemanticToken { get }
     var colorAiQuaternaryDark: ColorSemanticToken { get }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    @available(*, deprecated, renamed: "overlayStickyLight", message: "See MIGRATION.md v3.3.0.")
+    var overlayFloatingLight: ColorSemanticToken { get }
+    @available(*, deprecated, renamed: "overlayStickyDark", message: "See MIGRATION.md v3.3.0.")
+    var overlayFloatingDark: ColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

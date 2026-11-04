@@ -86,6 +86,62 @@ overrides and associated tests. Components now read the new tokens, so custom pr
 override the new properties to customize their rendering. Scope these renames to text input
 tokens rather than replacing similarly named properties of other components.
 
+### Semantic color tokens — `overlayFloating*` → `overlaySticky*`
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.colors.overlayFloating` | `theme.colors.overlaySticky` |
+| `theme.colors.overlayFloatingLight` | `theme.colors.overlayStickyLight` |
+| `theme.colors.overlayFloatingDark` | `theme.colors.overlayStickyDark` |
+
+```swift
+// Before (v3.2)
+theme.colors.overlayFloating
+theme.colors.overlayFloatingLight
+theme.colors.overlayFloatingDark
+
+// After (v3.3)
+theme.colors.overlaySticky
+theme.colors.overlayStickyLight
+theme.colors.overlayStickyDark
+```
+
+The former names remain available as deprecated aliases forwarding to the new tokens in all four themes.
+`overlaySticky` combines `overlayStickyLight` and `overlayStickyDark` without changing the theme's values.
+
+**Required action**: Rename usages, custom color provider overrides and associated tests.
+Custom implementations of `ColorSemanticTokens` and `ColorMultipleSemanticTokens` must implement
+the new requirements. Override the new names to customize the values consumed by updated code;
+overriding only a deprecated alias does not customize the new token.
+
+### Removed semantic color tokens — inverse status and transparent inverse
+
+The following semantic tokens are now internal to Figma and have been removed from the Swift protocols:
+
+- `contentStatusInversePositiveLight` and `contentStatusInversePositiveDark`
+- `contentStatusInverseInfoLight` and `contentStatusInverseInfoDark`
+- `contentStatusInverseWarningLight` and `contentStatusInverseWarningDark`
+- `contentStatusInverseNegativeLight` and `contentStatusInverseNegativeDark`
+- `opacityTransparentInverseLight` and `opacityTransparentInverseDark`
+- `opacityTransparentInverse` (the light/dark composite token)
+
+**Required action**: Remove their usages, declarations and overrides from custom color providers,
+and adapt associated tests. There is no automatic replacement: review the visual context before
+choosing another supported token. Internal to Figma does not mean these tokens remain accessible
+through a Swift `internal` API.
+
+**Unchanged**: `opacityTransparent`, `opacityTransparentLight` and `opacityTransparentDark`
+remain available. Do not remove or rename these non-inverse tokens.
+
+To detect the removed families and deprecated overlay names in application sources, including
+custom provider declarations:
+
+```bash
+grep -rnE \
+  'contentStatusInverse|opacityTransparentInverse|overlayFloating' \
+  --include="*.swift" .
+```
+
 ### Removed icon tokens — inverse warning shapes
 
 The following tokens have been removed from `IconComponentTokens` and are now internal to Figma.

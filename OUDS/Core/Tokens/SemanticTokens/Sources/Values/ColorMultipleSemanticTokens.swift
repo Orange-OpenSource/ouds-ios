@@ -58,8 +58,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var opacityTransparent: MultipleColorSemanticToken { get }
 
-    var opacityTransparentInverse: MultipleColorSemanticToken { get }
-
     // MARK: - Color - Action
 
     var actionDisabled: MultipleColorSemanticToken { get }
@@ -234,7 +232,7 @@ public protocol ColorMultipleSemanticTokens {
 
     var overlayBackdrop: MultipleColorSemanticToken { get }
 
-    var overlayFloating: MultipleColorSemanticToken { get }
+    var overlaySticky: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Surface
 
@@ -283,6 +281,11 @@ public protocol ColorMultipleSemanticTokens {
     var colorAiTertiary: MultipleColorSemanticToken { get }
 
     var colorAiQuaternary: MultipleColorSemanticToken { get }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    @available(*, deprecated, renamed: "overlaySticky", message: "See MIGRATION.md v3.3.0.")
+    var overlayFloating: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

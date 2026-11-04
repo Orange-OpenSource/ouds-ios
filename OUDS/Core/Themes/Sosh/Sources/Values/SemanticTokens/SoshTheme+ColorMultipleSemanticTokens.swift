@@ -32,8 +32,6 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
-    @objc public final var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
-
     // MARK: - Color - Action
 
     @objc public final var actionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionDisabledLight, dark: actionDisabledDark) }
@@ -208,7 +206,19 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
-    @objc public final var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
+    @objc public final var overlaySticky: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayStickyLight, dark: overlayStickyDark) }
+
+    /// Deprecated alias for ``overlaySticky``.
+    @available(*, deprecated, renamed: "overlaySticky", message: "See MIGRATION.md v3.3.0.")
+    @objc public final var overlayFloating: MultipleColorSemanticToken { overlaySticky }
+
+    /// Deprecated alias for ``overlayStickyLight``.
+    @available(*, deprecated, renamed: "overlayStickyLight", message: "See MIGRATION.md v3.3.0.")
+    @objc public final var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
+
+    /// Deprecated alias for ``overlayStickyDark``.
+    @available(*, deprecated, renamed: "overlayStickyDark", message: "See MIGRATION.md v3.3.0.")
+    @objc public final var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
 
     // MARK: - Color - Surface
 

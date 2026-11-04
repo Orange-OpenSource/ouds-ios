@@ -35,8 +35,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
-    @objc open var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
-
     // MARK: - Color - Action
 
     @objc open var actionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionDisabledLight, dark: actionDisabledDark) }
@@ -211,7 +209,19 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
-    @objc open var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
+    @objc open var overlaySticky: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayStickyLight, dark: overlayStickyDark) }
+
+    /// Deprecated alias for ``overlaySticky``.
+    @available(*, deprecated, renamed: "overlaySticky", message: "See MIGRATION.md v3.3.0.")
+    @objc open var overlayFloating: MultipleColorSemanticToken { overlaySticky }
+
+    /// Deprecated alias for ``overlayStickyLight``.
+    @available(*, deprecated, renamed: "overlayStickyLight", message: "See MIGRATION.md v3.3.0.")
+    @objc open var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
+
+    /// Deprecated alias for ``overlayStickyDark``.
+    @available(*, deprecated, renamed: "overlayStickyDark", message: "See MIGRATION.md v3.3.0.")
+    @objc open var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
 
     // MARK: - Color - Surface
 
