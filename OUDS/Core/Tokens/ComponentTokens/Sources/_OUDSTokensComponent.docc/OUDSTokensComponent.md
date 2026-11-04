@@ -145,8 +145,8 @@ typography                     | For textual components like `OUDSText`
 - ``AccordionFaqComponentTokens``
 - ``AlertComponentTokens``
 - ``AlertMessageComponentTokens``
-- ``BarComponentTokens``
 - ``BadgeComponentTokens``
+- ``BarComponentTokens``
 - ``BulletListComponentTokens``
 - ``ButtonComponentTokens``
 - ``ButtonMonoComponentTokens``
@@ -155,6 +155,7 @@ typography                     | For textual components like `OUDSText`
 - ``ChipComponentTokens``
 - ``DividerComponentTokens``
 - ``IconComponentTokens``
+- ``InputTagComponentTokens``
 - ``LinkComponentTokens``
 - ``LinkMonoComponentTokens``
 - ``ListItemComponentTokens``
@@ -166,8 +167,7 @@ typography                     | For textual components like `OUDSText`
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
-- ``ToastComponentTokens``
-- ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``
+- ``ToastComponentTokens``
 - ``TypographyComponentTokens``
