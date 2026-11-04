@@ -150,6 +150,14 @@ The following tokens have been removed from `IconComponentTokens` and are now in
 
 **Required action**: Remove them.
 
+### Removed raw font token — `familyMonospaceMonaco`
+
+`FontRawTokens.familyMonospaceMonaco` has been **removed**, not deprecated, in v3.3.0
+(tokens library v2.8.0).
+
+There is no automatic replacement. Choose a remaining font family according to your needs;
+do not assume that Menlo or another font is an equivalent replacement for Monaco.
+
 ## v3.0.0 → v3.2.0
 
 ### Overview
