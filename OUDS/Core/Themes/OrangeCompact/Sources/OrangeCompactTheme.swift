@@ -154,6 +154,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let categoricalTag = OrangeCompactThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = OrangeCompactThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = OrangeCompactThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let containedTabs = OrangeCompactThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let divider = OrangeCompactThemeDividerComponentTokensProvider(borders: borders)
         let icon = OrangeCompactThemeIconComponentTokensProvider(colors: colors)
         let link = OrangeCompactThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
@@ -195,6 +196,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
+                   containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
                    link: link,

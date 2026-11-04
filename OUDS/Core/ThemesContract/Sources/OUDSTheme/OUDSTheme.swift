@@ -130,6 +130,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to chip components like `OUDSFilterChip` and `OUDSSuggestionChip`
     public let chip: AllChipComponentTokensProvider
 
+    /// All component tokens related to contained tabs components
+    public let containedTabs: AllContainedTabsComponentTokensProvider
+
     /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     public let divider: AllDividerComponentTokensProvider
 
@@ -202,7 +205,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
-    // swiftlint:disable function_default_parameter_at_end
+    // swiftlint:disable function_default_parameter_at_end function_body_length
     /// Defines the theme to apply everywhere.
     ///
     /// - Parameters:
@@ -230,6 +233,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
+    ///    - containedTabs: All component tokens for contained tabs
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
@@ -275,6 +279,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 categoricalTag: AllCategoricalTagComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
                 chip: AllChipComponentTokensProvider,
+                containedTabs: AllContainedTabsComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
                 icon: AllIconComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
@@ -324,6 +329,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.categoricalTag = categoricalTag
         self.checkbox = checkbox
         self.chip = chip
+        self.containedTabs = containedTabs
         self.divider = divider
         self.icon = icon
         self.link = link
@@ -355,7 +361,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         }
     }
 
-    // swiftlint:enable function_default_parameter_at_end
+    // swiftlint:enable function_default_parameter_at_end function_body_length
 
     deinit {}
 

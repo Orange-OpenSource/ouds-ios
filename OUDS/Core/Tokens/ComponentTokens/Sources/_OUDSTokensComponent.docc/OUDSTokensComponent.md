@@ -119,8 +119,10 @@ bar                            | For bars components like bottom and navigation 
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `OUDSButton` 
 bulletList                     | For list of elements with bullets like `OUDSBulletList`
+card                           | For card container components
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
+containedTabs                  | For contained tabs components
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`
 link                           | For links like `OUDSLink` 
@@ -150,9 +152,11 @@ typography                     | For textual components like `OUDSText`
 - ``BulletListComponentTokens``
 - ``ButtonComponentTokens``
 - ``ButtonMonoComponentTokens``
+- ``CardComponentTokens``
 - ``CategoricalTagComponentTokens``
 - ``CheckboxComponentTokens``
 - ``ChipComponentTokens``
+- ``ContainedTabsComponentTokens``
 - ``DividerComponentTokens``
 - ``IconComponentTokens``
 - ``InputTagComponentTokens``

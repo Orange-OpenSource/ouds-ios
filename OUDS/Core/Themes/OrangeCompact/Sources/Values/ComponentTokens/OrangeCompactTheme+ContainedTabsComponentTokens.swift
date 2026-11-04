@@ -27,8 +27,8 @@ extension OrangeCompactThemeContainedTabsComponentTokensProvider: ContainedTabsC
     @objc public final var borderWidthDivider: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthSelectedBottomTab: BorderWidthSemanticToken { borders.widthNone }
-    /// Has for value token borders.spaces.borderWidthDivider (= 1)
-    @objc public final var borderWidthSelectedStartEndTab: BorderWidthSemanticToken { borders.spaces.borderWidthDivider }
+    /// Has for value token borderWidthDivider (= 1)
+    @objc public final var borderWidthSelectedStartEndTab: BorderWidthSemanticToken { borderWidthDivider }
     /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthSelectedTopTab: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone (= 0)
@@ -67,16 +67,16 @@ extension OrangeCompactThemeContainedTabsComponentTokensProvider: ContainedTabsC
     @objc public final var colorBorderDividerDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedHigh, dark: colors.repositoryNeutralEmphasizedLower) }
     /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedHigh, dark: colors.repositoryNeutralEmphasizedLower) (= light: "#CCCCCCFF" / dark: "#444444FF")
     @objc public final var colorBorderDividerEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedHigh, dark: colors.repositoryNeutralEmphasizedLower) }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
-    @objc public final var colorBorderSelectedDisabled: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
-    @objc public final var colorBorderSelectedEnabled: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
-    @objc public final var colorBorderSelectedFocus: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
-    @objc public final var colorBorderSelectedHover: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
-    @objc public final var colorBorderSelectedPressed: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
+    @objc public final var colorBorderSelectedDisabled: MultipleColorSemanticToken { colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
+    @objc public final var colorBorderSelectedEnabled: MultipleColorSemanticToken { colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
+    @objc public final var colorBorderSelectedFocus: MultipleColorSemanticToken { colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
+    @objc public final var colorBorderSelectedHover: MultipleColorSemanticToken { colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#CCCCCCFF" / dark: "#444444FF")
+    @objc public final var colorBorderSelectedPressed: MultipleColorSemanticToken { colorBorderDividerEnabled }
     /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
     @objc public final var colorBorderUnselectedDisabled: MultipleColorSemanticToken { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")

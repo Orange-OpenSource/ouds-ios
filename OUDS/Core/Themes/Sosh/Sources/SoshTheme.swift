@@ -93,6 +93,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let categoricalTag = SoshThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let containedTabs = SoshThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let icon = SoshThemeIconComponentTokensProvider(colors: colors)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
@@ -132,6 +133,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
+                   containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
                    link: link,

@@ -106,6 +106,9 @@ public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComp
 /// Something which provides all component tokens of chip
 public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens {}
 
+/// Something which provides all component tokens of contained tabs
+public protocol AllContainedTabsComponentTokensProvider: TokensProvider, ContainedTabsComponentTokens {}
+
 /// Something which provides all component tokens of divider
 public protocol AllDividerComponentTokensProvider: TokensProvider, DividerComponentTokens {}
 

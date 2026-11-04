@@ -106,6 +106,7 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let categoricalTag = WireframeThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let containedTabs = WireframeThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
@@ -149,6 +150,7 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
+                   containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
                    link: link,

@@ -27,22 +27,22 @@ extension SoshThemeContainedTabsComponentTokensProvider: ContainedTabsComponentT
     @objc public final var borderWidthDivider: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthSelectedBottomTab: BorderWidthSemanticToken { borders.widthNone }
-    /// Has for value token borders.spaces.borderWidthDivider (= 2)
-    @objc public final var borderWidthSelectedStartEndTab: BorderWidthSemanticToken { borders.spaces.borderWidthDivider }
-    /// Has for value token borders.spaces.borderWidthDivider (= 2)
-    @objc public final var borderWidthSelectedTopTab: BorderWidthSemanticToken { borders.spaces.borderWidthDivider }
+    /// Has for value token borderWidthDivider (= 2)
+    @objc public final var borderWidthSelectedStartEndTab: BorderWidthSemanticToken { borderWidthDivider }
+    /// Has for value token borderWidthDivider (= 2)
+    @objc public final var borderWidthSelectedTopTab: BorderWidthSemanticToken { borderWidthDivider }
     /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthUnselectedBottomTab: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthUnselectedBottomTabInteraction: BorderWidthSemanticToken { borders.widthNone }
-    /// Has for value token borders.spaces.borderWidthDivider (= 2)
-    @objc public final var borderWidthUnselectedStartEndInteraction: BorderWidthSemanticToken { borders.spaces.borderWidthDivider }
+    /// Has for value token borderWidthDivider (= 2)
+    @objc public final var borderWidthUnselectedStartEndInteraction: BorderWidthSemanticToken { borderWidthDivider }
     /// Has for value token borders.widthThin (= 1)
     @objc public final var borderWidthUnselectedStartEndTab: BorderWidthSemanticToken { borders.widthThin }
     /// Has for value token borders.widthThin (= 1)
     @objc public final var borderWidthUnselectedTopTab: BorderWidthSemanticToken { borders.widthThin }
-    /// Has for value token borders.spaces.borderWidthDivider (= 2)
-    @objc public final var borderWidthUnselectedTopTabInteraction: BorderWidthSemanticToken { borders.spaces.borderWidthDivider }
+    /// Has for value token borderWidthDivider (= 2)
+    @objc public final var borderWidthUnselectedTopTabInteraction: BorderWidthSemanticToken { borderWidthDivider }
     /// Has for value token colors.opacityTransparent (= light: "#000F1900" / dark: "#EDF6FC00")
     @objc public final var colorBgSelectedDisabled: MultipleColorSemanticToken { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent (= light: "#000F1900" / dark: "#EDF6FC00")
@@ -67,16 +67,16 @@ extension SoshThemeContainedTabsComponentTokensProvider: ContainedTabsComponentT
     @objc public final var colorBorderDividerDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedHigh, dark: colors.repositoryNeutralEmphasizedLower) }
     /// Has for value token colors.actionSelected (= light: "#DE034BFF" / dark: "#5DBCFEFF")
     @objc public final var colorBorderDividerEnabled: MultipleColorSemanticToken { colors.actionSelected }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerDisabled (= light: "#C0CED8FF" / dark: "#374B58FF")
-    @objc public final var colorBorderSelectedDisabled: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerDisabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
-    @objc public final var colorBorderSelectedEnabled: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
-    @objc public final var colorBorderSelectedFocus: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
-    @objc public final var colorBorderSelectedHover: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
-    /// Has for value token colors.{ouds1f4a0_colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
-    @objc public final var colorBorderSelectedPressed: MultipleColorSemanticToken { colors.{ouds1f4a0_colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerDisabled (= light: "#C0CED8FF" / dark: "#374B58FF")
+    @objc public final var colorBorderSelectedDisabled: MultipleColorSemanticToken { colorBorderDividerDisabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
+    @objc public final var colorBorderSelectedEnabled: MultipleColorSemanticToken { colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
+    @objc public final var colorBorderSelectedFocus: MultipleColorSemanticToken { colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
+    @objc public final var colorBorderSelectedHover: MultipleColorSemanticToken { colorBorderDividerEnabled }
+    /// Has for value token colorBorderDividerEnabled (= light: "#DE034BFF" / dark: "#5DBCFEFF")
+    @objc public final var colorBorderSelectedPressed: MultipleColorSemanticToken { colorBorderDividerEnabled }
     /// Has for value token colors.actionDisabled (= light: "#000F1933" / dark: "#EDF6FC33")
     @objc public final var colorBorderUnselectedDisabled: MultipleColorSemanticToken { colors.actionDisabled }
     /// Has for value token colors.borderDefault (= light: "#000F1933" / dark: "#EDF6FC33")

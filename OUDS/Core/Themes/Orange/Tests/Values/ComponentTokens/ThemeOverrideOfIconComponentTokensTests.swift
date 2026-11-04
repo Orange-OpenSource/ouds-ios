@@ -36,14 +36,4 @@ struct ThemeOverrideOfIconComponentTokensTests {
         #expect(inheritedTheme.icon.colorContentStatusWarningInternalShape != abstractTheme.icon.colorContentStatusWarningInternalShape)
         #expect(inheritedTheme.icon.colorContentStatusWarningInternalShape == MockThemeIconComponentTokenProvider.mockThemeIconColor)
     }
-
-    @Test func inheritedThemeCanOverrideIconComponentTokenIconColorContentStatusWarningInverseExternalShape() throws {
-        #expect(inheritedTheme.icon.colorContentStatusWarningInverseExternalShape != abstractTheme.icon.colorContentStatusWarningInverseExternalShape)
-        #expect(inheritedTheme.icon.colorContentStatusWarningInverseExternalShape == MockThemeIconComponentTokenProvider.mockThemeIconColor)
-    }
-
-    @Test func inheritedThemeCanOverrideIconComponentTokenIconColorContentStatusWarningInverseInternalShape() throws {
-        #expect(inheritedTheme.icon.colorContentStatusWarningInverseInternalShape != abstractTheme.icon.colorContentStatusWarningInverseInternalShape)
-        #expect(inheritedTheme.icon.colorContentStatusWarningInverseInternalShape == MockThemeIconComponentTokenProvider.mockThemeIconColor)
-    }
 }
