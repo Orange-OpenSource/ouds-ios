@@ -121,6 +121,8 @@ public protocol SpaceSemanticTokens { // 👾
     var columnGapLarge: SpaceSemanticToken { get }
     var columnGapXlarge: SpaceSemanticToken { get }
     var columnGap2xlarge: SpaceSemanticToken { get }
+    var columnGap3xlarge: SpaceSemanticToken { get }
+    var columnGap4xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Row Gap
 

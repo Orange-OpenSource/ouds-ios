@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  
 ### Changed
 
+- **BREAKING**: New semantic tokens of spaces (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - Icons pack v2.4
 - Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)
 - **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
