@@ -27,8 +27,8 @@ struct PinCodeInputContainer: View {
     private let length: OUDSPinCodeInput.Length
     /// Flag to hide or show the written characters
     private let hiddenCharacters: Bool
-    /// If there is an error context about the value of the container
-    private let isError: Bool
+    /// The status associated to the component, managing error cases
+    private let status: OUDSPinCodeInput.Status
     /// If the outline layout must be applied on the container
     private let isOutlined: Bool
     /// If true, automatically focuses the first available field on appear
@@ -49,14 +49,14 @@ struct PinCodeInputContainer: View {
     init(_ value: Binding<String>,
          length: OUDSPinCodeInput.Length,
          hiddenCharacters: Bool,
-         isError: Bool,
+         status: OUDSPinCodeInput.Status,
          isOutlined: Bool,
          autofocus: Bool)
     {
         _value = value
         self.length = length
         self.hiddenCharacters = hiddenCharacters
-        self.isError = isError
+        self.status = status
         self.isOutlined = isOutlined
         self.autofocus = autofocus
 
@@ -129,6 +129,12 @@ struct PinCodeInputContainer: View {
         }
     }
 
+    // MARK: - Helpers
+
+    private var isError: Bool {
+        status != .enabled
+    }
+
     // MARK: - Colors
 
     private var foregroundColor: MultipleColorSemanticToken {
@@ -155,6 +161,8 @@ struct PinCodeInputContainer: View {
         }
     }
 
+    // MARK: - A11Y
+
     private func accessibilityValue(for index: Int) -> String {
         let value = digits[index]
         if value.isEmpty {
@@ -179,7 +187,23 @@ struct PinCodeInputContainer: View {
     /// e.g. "Enter the 6-digit code" (localized, driven by the component's `length`).
     /// - Returns: String
     private var groupAccessibilityLabel: String {
-        "core_pinCodeInput_groupLabel_a11y" <- length.rawValue
+        let groupLabel = "core_pinCodeInput_groupLabel_a11y" <- length.rawValue
+        let errorDescription = switch status {
+        case .enabled:
+            ""
+        case let .error(message):
+            ", " + message
+        case let .richError(richMessage):
+            ", " + richMessage.description
+        case let .textualError(textualContent):
+            ", " + textualContent.rawValue
+        }
+        return groupLabel + errorDescription
+    }
+
+    private func announceFocusChanged(forInputAt index: Int) {
+        let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
+        VoiceOverUtils.announce(message)
     }
 
     // MARK: - Digits fields
@@ -309,11 +333,6 @@ struct PinCodeInputContainer: View {
         let activeDigits = digits.prefix(length)
         guard activeDigits.count == length, activeDigits.allSatisfy({ !$0.isEmpty }) else { return nil }
         return activeDigits.joined()
-    }
-
-    private func announceFocusChanged(forInputAt index: Int) {
-        let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
-        VoiceOverUtils.announce(message)
     }
 }
 
