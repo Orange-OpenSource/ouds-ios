@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 extension WireframeThemeBorderSemanticTokensProvider: BorderSemanticTokens {
     /// Has for value token BorderRawTokens.radius150 (= 6)
-    @objc public final var radiusDefault: BorderRadiusSemanticToken { BorderRawTokens.radius150 }
+    @objc open var radiusDefault: BorderRadiusSemanticToken { BorderRawTokens.radius150 }
     /// Has for value token BorderRawTokens.radius300 (= 12)
     @objc public final var radiusLarge: BorderRadiusSemanticToken { BorderRawTokens.radius300 }
     /// Has for value token BorderRawTokens.radius200 (= 8)

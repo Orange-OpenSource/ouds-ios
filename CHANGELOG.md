@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  
 ### Changed
 
+- `dimension` raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `border` semantic tokens for Wireframe theme (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `button` component tokens for Wireframe theme (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - **BREAKING**: Semantic tokens of colors (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - **BREAKING**: New semantic tokens of spaces (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - Icons pack v2.4
