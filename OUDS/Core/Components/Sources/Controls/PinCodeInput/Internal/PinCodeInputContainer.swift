@@ -194,7 +194,7 @@ struct PinCodeInputContainer: View {
         case let .error(message):
             ", " + message
         case let .richError(richMessage):
-            ", " + richMessage.description
+            ", " + String(richMessage.characters)
         case let .textualError(textualContent):
             ", " + textualContent.rawValue
         }

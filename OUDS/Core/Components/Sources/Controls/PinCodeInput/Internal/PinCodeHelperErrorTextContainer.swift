@@ -30,6 +30,7 @@ struct PinCodeHelperErrorTextContainer: View {
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
                 .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                .accessibilityHidden(status != .enabled)
         }
     }
 
