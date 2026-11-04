@@ -49,9 +49,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.11.0
+/// - Core OUDS version: 1.12.0
 /// - Core Wireframe version: 1.5.0
-/// - Brand Wireframe version: 2.7.0
+/// - Brand Wireframe version: 2.8.0
 ///
 /// - Since: 0.17.0
 open class WireframeTheme: OUDSTheme, @unchecked Sendable {

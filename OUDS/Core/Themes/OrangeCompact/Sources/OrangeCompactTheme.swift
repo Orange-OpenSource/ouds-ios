@@ -108,9 +108,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.11.0
+/// - Core OUDS version: 1.12.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange Compact version: 2.7.0
+/// - Brand Orange Compact version: 2.8.0
 ///
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
