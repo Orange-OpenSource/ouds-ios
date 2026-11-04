@@ -30,7 +30,7 @@ public protocol PinCodeInputComponentTokens {
     var sizeMinWidthDigitInput: SizeSemanticToken { get }
     var sizeMaxWidthDigitInput: SizeSemanticToken { get }
 
-    // MARK: - Deprecated (since v2.8.0)
+    // MARK: - Deprecated (since tokens library v2.8)
 
     @available(*, deprecated, message: "Use instead token named sizeMinWidthDigitInput. See MIGRATION.md v3.3.0.")
     var sizeMinWidth: SizeSemanticToken { get }

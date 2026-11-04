@@ -26,7 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-- `colorBgBadgeSafetyArea` component token of `list item` (Orange-OpenSource/ouds-ios#1829)
+- `spacePaddingBlockTopHelperText` and `spacePaddingInlineTrailingAction` component tokens of `text input` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1829)
+- `sizeMinWidth` and `sizeMaxWidth` component tokens of `PIN code input` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1829)
+- `colorBgBadgeSafetyArea` component token of `list item` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1829)
 
 ### Removed
 

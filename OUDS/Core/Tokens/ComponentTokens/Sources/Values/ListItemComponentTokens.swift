@@ -104,7 +104,7 @@ public protocol ListItemComponentTokens {
     var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
     var sizeIcon: SizeSemanticToken { get }
 
-    // MARK: - Deprecated (since v2.8.0)
+    // MARK: - Deprecated (since tokens library v2.8)
 
     @available(*, deprecated, message: "Use instead token named colorBadgeSafetyArea. See MIGRATION.md v3.3.0.")
     var colorBgBadgeSafetyArea: MultipleColorSemanticToken { get }

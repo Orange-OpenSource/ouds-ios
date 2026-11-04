@@ -110,9 +110,9 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
         #expect(inheritedTheme.textInput.spacePaddingInlineDefault == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTextInputSpacePaddingInlineTrailingAction() throws {
-        #expect(inheritedTheme.textInput.spacePaddingInlineTrailingAction != abstractTheme.textInput.spacePaddingInlineTrailingAction)
-        #expect(inheritedTheme.textInput.spacePaddingInlineTrailingAction == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
+    @Test func inheritedThemeCanOverrideTextInputSpacePaddingInlineLeadingTrailingAction() throws {
+        #expect(inheritedTheme.textInput.spacePaddingInlineLeadingTrailingAction != abstractTheme.textInput.spacePaddingInlineLeadingTrailingAction)
+        #expect(inheritedTheme.textInput.spacePaddingInlineLeadingTrailingAction == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideTextInputSpacePaddingInlineCountrySelectorStart() throws {
@@ -130,9 +130,9 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
         #expect(inheritedTheme.textInput.spacePaddingBlockDefault == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTextInputSpacePaddingBlockTopHelperText() throws {
-        #expect(inheritedTheme.textInput.spacePaddingBlockTopHelperText != abstractTheme.textInput.spacePaddingBlockTopHelperText)
-        #expect(inheritedTheme.textInput.spacePaddingBlockTopHelperText == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
+    @Test func inheritedThemeCanOverrideTextInputSpacePaddingBlockHelperText() throws {
+        #expect(inheritedTheme.textInput.spacePaddingBlockHelperText != abstractTheme.textInput.spacePaddingBlockHelperText)
+        #expect(inheritedTheme.textInput.spacePaddingBlockHelperText == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideTextInputSpaceColumnGapDefault() throws {

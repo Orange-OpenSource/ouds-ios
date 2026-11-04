@@ -62,6 +62,30 @@ overrides and associated tests. Components now read the new tokens, so custom pr
 override the new properties to customize their rendering. Do not rename `sizeMinWidth` or
 `sizeMaxWidth` globally: other components can still use those names.
 
+### Text input tokens — helper text and action spacing names
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.textInput.spacePaddingBlockTopHelperText` | `theme.textInput.spacePaddingBlockHelperText` |
+| `theme.textInput.spacePaddingInlineTrailingAction` | `theme.textInput.spacePaddingInlineLeadingTrailingAction` |
+
+```swift
+// Before (v3.2)
+theme.textInput.spacePaddingBlockTopHelperText
+theme.textInput.spacePaddingInlineTrailingAction
+
+// After (v3.3)
+theme.textInput.spacePaddingBlockHelperText
+theme.textInput.spacePaddingInlineLeadingTrailingAction
+```
+
+The former names are deprecated in `TextInputComponentTokens`, not removed from the protocol.
+
+**Required action**: Rename these tokens in text input usages, custom provider declarations,
+overrides and associated tests. Components now read the new tokens, so custom providers must
+override the new properties to customize their rendering. Scope these renames to text input
+tokens rather than replacing similarly named properties of other components.
+
 ### Removed icon tokens — inverse warning shapes
 
 The following tokens have been removed from `IconComponentTokens` and are now internal to Figma.
