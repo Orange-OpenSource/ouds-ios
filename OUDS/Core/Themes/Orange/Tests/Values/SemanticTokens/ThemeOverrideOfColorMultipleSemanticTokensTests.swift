@@ -549,16 +549,20 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
 
     // MARK: - Color - Overlay (new)
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayFloating() throws {
-        #expect(inheritedTheme.colors.overlayFloating != abstractTheme.colors.overlayFloating)
-        #expect(inheritedTheme.colors.overlayFloating == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorOverlaySticky() throws {
+        #expect(inheritedTheme.colors.overlaySticky != abstractTheme.colors.overlaySticky)
+        #expect(inheritedTheme.colors.overlaySticky == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
     }
 
-    // MARK: - Color - Opacity (new)
+    @Test func overlayStickyCombinesLightAndDarkTokens() throws {
+        #expect(abstractTheme.colors.overlaySticky.light == abstractTheme.colors.overlayStickyLight)
+        #expect(abstractTheme.colors.overlaySticky.dark == abstractTheme.colors.overlayStickyDark)
+    }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorOpacityTransparentInverse() throws {
-        #expect(inheritedTheme.colors.opacityTransparentInverse != abstractTheme.colors.opacityTransparentInverse)
-        #expect(inheritedTheme.colors.opacityTransparentInverse == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
+    @available(*, deprecated, message: "Tests the deprecated overlayFloating compatibility alias.")
+    @Test func deprecatedOverlayFloatingForwardsToOverlaySticky() throws {
+        #expect(abstractTheme.colors.overlayFloating == abstractTheme.colors.overlaySticky)
+        #expect(inheritedTheme.colors.overlayFloating == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
     }
 
     // MARK: - Color - AI

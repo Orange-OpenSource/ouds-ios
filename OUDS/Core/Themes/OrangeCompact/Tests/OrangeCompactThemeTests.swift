@@ -120,6 +120,10 @@ struct OrangeCompactThemeTests {
         #expect(theme.button is OrangeCompactThemeButtonComponentTokensProvider)
     }
 
+    @Test func defaultCardComponentTokensProvider() throws {
+        #expect(theme.card is OrangeCompactThemeCardComponentTokensProvider)
+    }
+
     @Test func defaultCheckboxComponentTokensProvider() throws {
         #expect(theme.checkbox is OrangeCompactThemeCheckboxComponentTokensProvider)
     }
@@ -128,12 +132,20 @@ struct OrangeCompactThemeTests {
         #expect(theme.chip is OrangeCompactThemeChipComponentTokensProvider)
     }
 
+    @Test func defaultContainedTabsComponentTokensProvider() throws {
+        #expect(theme.containedTabs is OrangeCompactThemeContainedTabsComponentTokensProvider)
+    }
+
     @Test func defaultDividerComponentTokensProvider() throws {
         #expect(theme.divider is OrangeCompactThemeDividerComponentTokensProvider)
     }
 
     @Test func defaultIconComponentTokensProvider() throws {
         #expect(theme.icon is OrangeCompactThemeIconComponentTokensProvider)
+    }
+
+    @Test func defaultLineTabsComponentTokensProvider() throws {
+        #expect(theme.lineTabs is OrangeCompactThemeLineTabsComponentTokensProvider)
     }
 
     @Test func defaultLinkComponentTokensProvider() throws {

@@ -151,12 +151,20 @@ struct WhiteLabelTests {
         #expect(theme.button is WireframeThemeButtonComponentTokensProvider)
     }
 
+    @Test func defaultCardComponentTokensProvider() {
+        #expect(theme.card is WireframeThemeCardComponentTokensProvider)
+    }
+
     @Test func defaultCheckboxComponentTokensProvider() {
         #expect(theme.checkbox is WireframeThemeCheckboxComponentTokensProvider)
     }
 
     @Test func defaultChipComponentTokensProvider() {
         #expect(theme.chip is WireframeThemeChipComponentTokensProvider)
+    }
+
+    @Test func defaultContainedTabsComponentTokensProvider() {
+        #expect(theme.containedTabs is WireframeThemeContainedTabsComponentTokensProvider)
     }
 
     @Test func defaultDividerComponentTokensProvider() {
@@ -169,6 +177,10 @@ struct WhiteLabelTests {
 
     @Test func defaultIconComponentTokensProvider() {
         #expect(theme.icon is WireframeThemeIconComponentTokensProvider)
+    }
+
+    @Test func defaultLineTabsComponentTokensProvider() {
+        #expect(theme.lineTabs is WireframeThemeLineTabsComponentTokensProvider)
     }
 
     @Test func defaultLinkComponentTokensProvider() {

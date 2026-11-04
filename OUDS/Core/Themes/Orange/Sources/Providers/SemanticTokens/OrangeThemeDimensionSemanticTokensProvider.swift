@@ -40,6 +40,7 @@ import OUDSThemesContract
 /// and library. The tokens are not hidden from developers.
 ///
 /// - Since: 0.16.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
 
     #if DEBUG

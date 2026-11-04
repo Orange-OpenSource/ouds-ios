@@ -23,6 +23,7 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemeTextInputComponentTokensProvider`.
 ///
 /// - Since: 0.17.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol TextInputComponentTokens {
 
     // MARK: - Sizes
@@ -52,17 +53,25 @@ public protocol TextInputComponentTokens {
     // MARK: - Spaces
 
     var spacePaddingInlineDefault: SpaceSemanticToken { get }
-    var spacePaddingInlineTrailingAction: SpaceSemanticToken { get }
+    var spacePaddingInlineLeadingTrailingAction: SpaceSemanticToken { get }
     var spacePaddingInlineCountrySelectorStart: SpaceSemanticToken { get }
     var spacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { get }
     var spacePaddingBlockDefault: SpaceSemanticToken { get }
-    var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
+    var spacePaddingBlockHelperText: SpaceSemanticToken { get }
     var spaceColumnGapDefault: SpaceSemanticToken { get }
     var spaceColumnGapInlineText: SpaceSemanticToken { get }
     var spaceColumnGapTrailingErrorAction: SpaceSemanticToken { get }
     var spaceColumnGapLabelAsterisk: SpaceSemanticToken { get }
     var spaceColumnGapLabelSmallAsterisk: SpaceSemanticToken { get }
     var spaceRowGapLabelInput: SpaceSemanticToken { get }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove these tokens
+    @available(*, deprecated, renamed: "spacePaddingBlockHelperText", message: "See MIGRATION.md v3.3.0.")
+    var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
+    @available(*, deprecated, renamed: "spacePaddingInlineLeadingTrailingAction", message: "See MIGRATION.md v3.3.0.")
+    var spacePaddingInlineTrailingAction: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

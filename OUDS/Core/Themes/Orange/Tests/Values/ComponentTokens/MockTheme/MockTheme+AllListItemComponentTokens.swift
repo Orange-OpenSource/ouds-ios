@@ -46,7 +46,7 @@ final class MockThemeListItemComponentTokenProvider: OrangeThemeListItemComponen
 
     // MARK: - ListItem component tokens - Colors
 
-    override var colorBgBadgeSafetyArea: MultipleColorSemanticToken { Self.mockThemeListItemColor }
+    override var colorBadgeSafetyArea: MultipleColorSemanticToken { Self.mockThemeListItemColor }
     override var colorBgCurrentEnabled: MultipleColorSemanticToken { Self.mockThemeListItemColor }
     override var colorBgCurrentHover: MultipleColorSemanticToken { Self.mockThemeListItemColor }
     override var colorBgCurrentPressed: MultipleColorSemanticToken { Self.mockThemeListItemColor }

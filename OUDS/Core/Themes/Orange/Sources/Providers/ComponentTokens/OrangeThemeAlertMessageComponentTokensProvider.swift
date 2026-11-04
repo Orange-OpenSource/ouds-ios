@@ -77,6 +77,7 @@ import OUDSThemesContract
 /// ```
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeAlertMessageComponentTokensProvider: AllAlertMessageComponentTokensProvider {
 
     /// Provider of borders semantic tokens to use for alert borders

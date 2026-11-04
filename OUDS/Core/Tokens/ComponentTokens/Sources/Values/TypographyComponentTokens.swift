@@ -24,6 +24,7 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemeTypographyComponentTokensProvider`.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol TypographyComponentTokens {
 
     var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { get }

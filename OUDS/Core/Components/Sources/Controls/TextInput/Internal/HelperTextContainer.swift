@@ -33,7 +33,7 @@ struct HelperErrorTextContainer: View {
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
-                .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                .padding(.top, theme.textInput.spacePaddingBlockHelperText)
                 .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
         }
     }

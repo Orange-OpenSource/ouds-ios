@@ -25,11 +25,12 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemeListItemComponentTokensProvider`.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ListItemComponentTokens {
 
     // MARK: - Colors
 
-    var colorBgBadgeSafetyArea: MultipleColorSemanticToken { get }
+    var colorBadgeSafetyArea: MultipleColorSemanticToken { get }
     var colorBgCurrentEnabled: MultipleColorSemanticToken { get }
     var colorBgCurrentHover: MultipleColorSemanticToken { get }
     var colorBgCurrentPressed: MultipleColorSemanticToken { get }
@@ -102,6 +103,11 @@ public protocol ListItemComponentTokens {
     var sizeErrorIcon: SizeSemanticToken { get }
     var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
     var sizeIcon: SizeSemanticToken { get }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    @available(*, deprecated, renamed: "colorBadgeSafetyArea", message: "See MIGRATION.md v3.3.0.")
+    var colorBgBadgeSafetyArea: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

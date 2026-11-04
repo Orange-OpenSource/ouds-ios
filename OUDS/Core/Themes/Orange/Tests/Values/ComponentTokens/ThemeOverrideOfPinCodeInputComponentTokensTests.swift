@@ -36,14 +36,14 @@ struct ThemeOverrideOfPinCodeInputComponentTokensTests {
 
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverridePinCodeInputComponentTokenPinCodeInputSizeMinWidth() throws {
-        #expect(inheritedTheme.pinCodeInput.sizeMinWidth != abstractTheme.pinCodeInput.sizeMinWidth)
-        #expect(inheritedTheme.pinCodeInput.sizeMinWidth == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
+    @Test func inheritedThemeCanOverridePinCodeInputComponentTokenPinCodeInputSizeMinWidthDigitInput() throws {
+        #expect(inheritedTheme.pinCodeInput.sizeMinWidthDigitInput != abstractTheme.pinCodeInput.sizeMinWidthDigitInput)
+        #expect(inheritedTheme.pinCodeInput.sizeMinWidthDigitInput == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
     }
 
-    @Test func inheritedThemeCanOverridePinCodeInputComponentTokenPinCodeInputSizeMaxWidth() throws {
-        #expect(inheritedTheme.pinCodeInput.sizeMaxWidth != abstractTheme.pinCodeInput.sizeMaxWidth)
-        #expect(inheritedTheme.pinCodeInput.sizeMaxWidth == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
+    @Test func inheritedThemeCanOverridePinCodeInputComponentTokenPinCodeInputSizeMaxWidthDigitInput() throws {
+        #expect(inheritedTheme.pinCodeInput.sizeMaxWidthDigitInput != abstractTheme.pinCodeInput.sizeMaxWidthDigitInput)
+        #expect(inheritedTheme.pinCodeInput.sizeMaxWidthDigitInput == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
     }
 }
 

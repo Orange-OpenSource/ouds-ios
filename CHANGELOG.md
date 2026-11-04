@@ -6,8 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...develop)
 
+### Added
+
+- `line tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `contained tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `card` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+ 
 ### Changed
 
+- `font` raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `dimension` raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `border` semantic tokens for Wireframe theme (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `button` component tokens for Wireframe theme (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- **BREAKING**: Semantic tokens of colors (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- **BREAKING**: New semantic tokens of spaces (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - Icons pack v2.4
 - Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)
 - **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
@@ -17,6 +29,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - For PIN code component, the error description should be grouped with the input (Orange-OpenSource/ouds-ios#1847)
 - Anchor and width of `bullet list` items to not avoid extra spacing between text and bullets in some layouts
+
+### Deprecated
+
+- `overlayFloating*` semantic tokens of colors (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- `spacePaddingBlockTopHelperText` and `spacePaddingInlineTrailingAction` component tokens of `text input` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1829)
+- `sizeMinWidth` and `sizeMaxWidth` component tokens of `PIN code input` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1829)
+- `colorBgBadgeSafetyArea` component token of `list item` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1829)
+
+### Removed
+
+- **BREAKING**: `familyMonospaceMonaco` fint raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- **BREAKING**: `contentStatusInverse*` and `opacityTransparentInverse*` semantic tokens of colors (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- **BREAKING**: `colorContentStatusWarningInverse*Shape` component tokens of `icon` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 
 ## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
 

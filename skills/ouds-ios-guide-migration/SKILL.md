@@ -1,12 +1,13 @@
 ---
 name: ouds-ios-guide-migration
-description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to the current version (3.2.0 or higher), or when deprecated or removed OUDS APIs are detected in the codebase
+description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to v3.2.0 (current) or prepare for v3.3.0 (upcoming), or when deprecated or removed OUDS APIs are detected in the codebase
 license: MIT
 ---
 
 # Skill: ouds-ios-guide-migration
 
-Migration guide from **v1.0.0** to **v3.2.0** (current). Covers all breaking changes and deprecated symbols.
+Migration guide from **v1.0.0** to **v3.2.0** (current), including preparation for **v3.3.0** (upcoming).
+Covers breaking changes and deprecated symbols; do not describe v3.3.0 as already released.
 For full before/after examples, refer to `MIGRATION.md` in the project root.
 
 ---
@@ -25,6 +26,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
 | v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(label: Label, …)` / `init(label: some View, accessibilityLabel:, …)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. `OUDSTextArea` — `HelperText.plain` / `.rich` deprecated in favor of `.textual(OUDSTextualContent)`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message: OUDSTextualContent)`. `OUDSPasswordInput` — 4 initializers (`helperText` `String?` / `AttributedString`) deprecated; 2 new initializers taking `helperText: OUDSTextualContent?`. `OUDSTextInput` — 4 initializers (`helperText` `String?` / `AttributedString`) deprecated; 2 new initializers taking `helperText: OUDSTextualContent?`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message:)` (also used by `OUDSPasswordInput`). `OUDSPinCodeInput` — 3 initializers (`helperText` `String?` / `AttributedString` / `helperText key: LocalizedStringKey`) deprecated; 1 new initializer taking `helperText: OUDSTextualContent?`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message: OUDSTextualContent)`. `OUDSCheckboxItemIndeterminate` — 2 initializers (`errorText: String?`) deprecated; 2 new initializers taking `errorText: OUDSTextualContent?`. `OUDSSwitchItem`, `OUDSCheckboxItem` and `OUDSRadioItem` — 4 initializers each (`errorText` `String?` / `AttributedString`) deprecated; 2 new initializers each taking `errorText: OUDSTextualContent?`. `OUDSAlertMessage` — 8 initializers (`String` / `AttributedString` `description`, `[String]` / `[AttributedString]` `bulletList`) deprecated; 2 new initializers (`label:` / `_ key:`) taking `description: OUDSTextualContent?` and `bulletList: [OUDSTextualContent]`. |
+| v3.2.0 → v3.3.0 (upcoming) | Medium | Semantic colors: `contentStatusInverse*` and `opacityTransparentInverse*` removed (internal to Figma); non-inverse `opacityTransparent*` unchanged; `overlayFloating*` → `overlaySticky*` with deprecated aliases. List item `colorBgBadgeSafetyArea` → `colorBadgeSafetyArea`. PIN code input `sizeMinWidth` → `sizeMinWidthDigitInput`, `sizeMaxWidth` → `sizeMaxWidthDigitInput` (deprecated aliases retained; update custom overrides). Text input `spacePaddingBlockTopHelperText` → `spacePaddingBlockHelperText`, `spacePaddingInlineTrailingAction` → `spacePaddingInlineLeadingTrailingAction` (old names deprecated in the protocol). Icon `colorContentStatusWarningInverseInternalShape` and `colorContentStatusWarningInverseExternalShape` removed; no automatic replacement. Raw font `FontRawTokens.familyMonospaceMonaco` removed, not deprecated; no automatic replacement. |
 
 ---
 
@@ -41,6 +43,33 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 ## Detection grep commands
 
 ```bash
+# Token rename and removals (v3.3.0 — upcoming).
+# Search consuming application sources, not the OUDS library's deprecated alias declarations.
+grep -rnE \
+  'colorBgBadgeSafetyArea|colorContentStatusWarningInverseInternalShape|colorContentStatusWarningInverseExternalShape' \
+  --include="*.swift" .
+
+# PIN code input width renames (v3.3.0) — exclude the new names and other components.
+grep -rnE \
+  'pinCodeInput[.]size(Min|Max)Width([^[:alnum:]_]|$)' \
+  --include="*.swift" .
+# Also review custom PIN code token providers for declarations/overrides of the old names.
+
+# Text input spacing renames (v3.3.0) — exclude similarly named tokens of other components.
+grep -rnE \
+  'textInput[.](spacePaddingBlockTopHelperText|spacePaddingInlineTrailingAction)([^[:alnum:]_]|$)' \
+  --include="*.swift" .
+# Also review custom text input token providers for declarations/overrides of the old names.
+
+# Semantic color removals and overlay renames (v3.3.0).
+# This deliberately excludes opacityTransparent / opacityTransparentLight / opacityTransparentDark.
+grep -rnE \
+  'contentStatusInverse|opacityTransparentInverse|overlayFloating' \
+  --include="*.swift" .
+
+# Removed raw font token (v3.3.0).
+grep -rnF 'familyMonospaceMonaco' --include="*.swift" .
+
 # Breaking changes (v3.0.0)
 grep -rn \
   "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|indicator: \.back\b\|forceOUDSLegacyTabBar\|OUDSLegacyTabBarModifier\|hasLoader:" \
@@ -867,12 +896,151 @@ Its `status` is `OUDSTextInput.Status`: use `.textualError(message:)` (see the `
 
 ---
 
+## v3.2.0 → v3.3.0
+
+### List item token — renamed with a deprecated alias
+
+| Old (v3.2 — deprecated in v3.3) | New (v3.3) |
+|---|---|
+| `theme.listItem.colorBgBadgeSafetyArea` | `theme.listItem.colorBadgeSafetyArea` |
+
+The old property remains available as a deprecated alias forwarding to the new token. It is **not removed**.
+
+**Required action**:
+- Rename `colorBgBadgeSafetyArea` to `colorBadgeSafetyArea` in list item token usages.
+- Rename custom provider declarations and overrides, including `OrangeThemeListItemComponentTokensProvider` subclasses.
+- Update associated tests.
+
+### PIN code input tokens — digit input width names
+
+| Old (v3.2 — deprecated in v3.3) | New (v3.3) |
+|---|---|
+| `theme.pinCodeInput.sizeMinWidth` | `theme.pinCodeInput.sizeMinWidthDigitInput` |
+| `theme.pinCodeInput.sizeMaxWidth` | `theme.pinCodeInput.sizeMaxWidthDigitInput` |
+
+The old names remain available as deprecated aliases forwarding to the new tokens. They are **not removed**.
+
+```swift
+// Before (v3.2)
+theme.pinCodeInput.sizeMinWidth
+theme.pinCodeInput.sizeMaxWidth
+
+// After (v3.3)
+theme.pinCodeInput.sizeMinWidthDigitInput
+theme.pinCodeInput.sizeMaxWidthDigitInput
+```
+
+**Required action**:
+- Rename both tokens in PIN code input usages and custom provider declarations/overrides, including `OrangeThemePinCodeInputComponentTokensProvider` subclasses.
+- Update associated tests. Components now read the new tokens, so overriding only the deprecated properties does not customize their rendering.
+- Scope the rename to PIN code input tokens. Do not globally replace `sizeMinWidth` or `sizeMaxWidth`: other components still use these names.
+
+### Text input tokens — helper text and action spacing names
+
+| Old (v3.2 — deprecated in v3.3) | New (v3.3) |
+|---|---|
+| `theme.textInput.spacePaddingBlockTopHelperText` | `theme.textInput.spacePaddingBlockHelperText` |
+| `theme.textInput.spacePaddingInlineTrailingAction` | `theme.textInput.spacePaddingInlineLeadingTrailingAction` |
+
+The old names remain deprecated requirements in `TextInputComponentTokens`. They are **not removed from the protocol**.
+
+```swift
+// Before (v3.2)
+theme.textInput.spacePaddingBlockTopHelperText
+theme.textInput.spacePaddingInlineTrailingAction
+
+// After (v3.3)
+theme.textInput.spacePaddingBlockHelperText
+theme.textInput.spacePaddingInlineLeadingTrailingAction
+```
+
+**Required action**:
+- Rename both tokens in text input usages and custom provider declarations/overrides, including `OrangeThemeTextInputComponentTokensProvider` subclasses.
+- Update associated tests. Components now read the new tokens, so overriding only the deprecated properties does not customize their rendering.
+- Scope the rename to text input tokens; do not blindly replace similarly named properties of other components.
+
+### Semantic color tokens — overlays renamed
+
+| Old (v3.2 — deprecated in v3.3) | New (v3.3) |
+|---|---|
+| `theme.colors.overlayFloating` | `theme.colors.overlaySticky` |
+| `theme.colors.overlayFloatingLight` | `theme.colors.overlayStickyLight` |
+| `theme.colors.overlayFloatingDark` | `theme.colors.overlayStickyDark` |
+
+All four themes retain the old names as deprecated aliases forwarding to the new tokens.
+`overlaySticky` combines `overlayStickyLight` and `overlayStickyDark`, preserving each theme's values.
+
+**Required action**:
+- Rename usages, custom color provider declarations/overrides and associated tests.
+- Implement the new requirements in custom `ColorSemanticTokens` / `ColorMultipleSemanticTokens` conformances.
+- Override the new names, not just the deprecated aliases, to customize values consumed by updated code.
+
+### Semantic color tokens — inverse status and transparent inverse removed
+
+Remove usages, custom provider declarations/overrides and tests for:
+- `contentStatusInversePositiveLight` / `contentStatusInversePositiveDark`
+- `contentStatusInverseInfoLight` / `contentStatusInverseInfoDark`
+- `contentStatusInverseWarningLight` / `contentStatusInverseWarningDark`
+- `contentStatusInverseNegativeLight` / `contentStatusInverseNegativeDark`
+- `opacityTransparentInverseLight` / `opacityTransparentInverseDark`
+- `opacityTransparentInverse` (light/dark composite)
+
+These tokens are **removed**, not deprecated: they are internal to Figma, not a Swift `internal` API.
+Do not invent an automatic replacement or mechanically map them to non-inverse status/transparent tokens.
+
+**Preserve** `opacityTransparent`, `opacityTransparentLight` and `opacityTransparentDark`.
+Only the **inverse** transparent family is removed. Never match `opacityTransparent*` broadly when deleting tokens.
+
+### Icon tokens — inverse warning shapes removed
+
+Remove usages, custom provider declarations and overrides of:
+- `theme.icon.colorContentStatusWarningInverseInternalShape`
+- `theme.icon.colorContentStatusWarningInverseExternalShape`
+
+**Do not invent an automatic replacement**, including a mechanical mapping to non-inverse warning shape tokens.
+
+### Raw font token — `familyMonospaceMonaco` removed
+
+`FontRawTokens.familyMonospaceMonaco` is **removed**, not deprecated, in v3.3.0 (tokens library v2.8.0).
+There is no automatic replacement. Choose a remaining font family according to the application's needs;
+do not mechanically substitute Menlo or another font as if it were equivalent to Monaco.
+
+---
+
 ## Verification checklist
 
 ```bash
 swift build
 
 swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|foundation"
+
+# v3.3.0 token rename and removals — must return nothing in migrated application sources.
+# The OUDS library itself still declares the deprecated list item alias.
+grep -rnE \
+  'colorBgBadgeSafetyArea|colorContentStatusWarningInverseInternalShape|colorContentStatusWarningInverseExternalShape' \
+  --include="*.swift" .
+
+# v3.3.0 PIN code input width renames — must return nothing in migrated application sources.
+grep -rnE \
+  'pinCodeInput[.]size(Min|Max)Width([^[:alnum:]_]|$)' \
+  --include="*.swift" .
+# Also inspect custom PIN code token providers: accessor-based grep does not detect their overrides.
+
+# v3.3.0 text input spacing renames — must return nothing in migrated application sources.
+grep -rnE \
+  'textInput[.](spacePaddingBlockTopHelperText|spacePaddingInlineTrailingAction)([^[:alnum:]_]|$)' \
+  --include="*.swift" .
+# Also inspect custom text input token providers: accessor-based grep does not detect their overrides.
+
+# v3.3.0 semantic colors — must return nothing in migrated application sources.
+# The OUDS library intentionally retains deprecated overlayFloating* aliases.
+# Non-inverse opacityTransparent* tokens remain valid and must not be deleted.
+grep -rnE \
+  'contentStatusInverse|opacityTransparentInverse|overlayFloating' \
+  --include="*.swift" .
+
+# v3.3.0 removed raw font token — must return nothing in migrated application sources.
+grep -rnF 'familyMonospaceMonaco' --include="*.swift" .
 
 # v3.0 breaking changes — must return nothing
 grep -rn \

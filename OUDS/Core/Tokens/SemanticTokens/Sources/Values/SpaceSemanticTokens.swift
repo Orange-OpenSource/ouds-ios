@@ -22,6 +22,7 @@
 /// Any space semantic token must be declared there.
 ///
 /// - Since: 0.8.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol SpaceSemanticTokens { // 👾
 
     // MARK: Semantic token - Spacing - Scaled
@@ -121,6 +122,8 @@ public protocol SpaceSemanticTokens { // 👾
     var columnGapLarge: SpaceSemanticToken { get }
     var columnGapXlarge: SpaceSemanticToken { get }
     var columnGap2xlarge: SpaceSemanticToken { get }
+    var columnGap3xlarge: SpaceSemanticToken { get }
+    var columnGap4xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Row Gap
 

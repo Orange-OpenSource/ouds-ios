@@ -22,6 +22,7 @@ import OUDSTokensSemantic
 /// Used for tokens providers like `OrangeThemeAlertComponentTokensProvider` etc.
 ///
 /// - Since:1.2.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol AlertComponentTokens {
 
     // MARK: - Borders

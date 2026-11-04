@@ -80,7 +80,7 @@ struct TextAreaContainer: View {
         .padding(.top, paddingTop)
         .padding(.bottom, paddingBottom)
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
-        .padding(.trailing, theme.textInput.spacePaddingInlineTrailingAction)
+        .padding(.trailing, theme.textInput.spacePaddingInlineLeadingTrailingAction)
         .modifier(TextAreaBackgroundModifier(status: status,
                                              interactionState: interactionState,
                                              isOverLimit: isOverLimit,

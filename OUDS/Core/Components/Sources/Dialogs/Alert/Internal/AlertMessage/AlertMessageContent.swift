@@ -33,7 +33,6 @@ struct AlertMessageContent: View {
     // MARK: - Body
 
     var body: some View {
-        // TODO: #1659 - Remove token alert.spaceRowGapAction from codebase
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
                 Text(text)

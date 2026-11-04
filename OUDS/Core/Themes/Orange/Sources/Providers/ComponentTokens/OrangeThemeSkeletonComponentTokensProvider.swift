@@ -74,6 +74,7 @@ import OUDSThemesContract
 /// ```
 ///
 /// - Since: 0.9.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentTokensProvider {
 
     /// Provider of color semantic tokens to use for link colors

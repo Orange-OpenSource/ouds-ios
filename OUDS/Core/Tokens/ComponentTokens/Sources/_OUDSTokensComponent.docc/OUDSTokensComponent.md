@@ -17,7 +17,7 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.11.0
+🧬 Core version: 1.12.0
 ```
 
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
@@ -119,10 +119,13 @@ bar                            | For bars components like bottom and navigation 
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `OUDSButton` 
 bulletList                     | For list of elements with bullets like `OUDSBulletList`
+card                           | For card container components
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
+containedTabs                  | For contained tabs components
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`
+lineTabs                       | For line tabs components
 link                           | For links like `OUDSLink` 
 listItem                       | Shared and used for switch, checkbox, radio items and list items layouts
 pinCodeInput                   |  
@@ -145,16 +148,20 @@ typography                     | For textual components like `OUDSText`
 - ``AccordionFaqComponentTokens``
 - ``AlertComponentTokens``
 - ``AlertMessageComponentTokens``
-- ``BarComponentTokens``
 - ``BadgeComponentTokens``
+- ``BarComponentTokens``
 - ``BulletListComponentTokens``
 - ``ButtonComponentTokens``
 - ``ButtonMonoComponentTokens``
+- ``CardComponentTokens``
 - ``CategoricalTagComponentTokens``
 - ``CheckboxComponentTokens``
 - ``ChipComponentTokens``
+- ``ContainedTabsComponentTokens``
 - ``DividerComponentTokens``
 - ``IconComponentTokens``
+- ``InputTagComponentTokens``
+- ``LineTabsComponentTokens``
 - ``LinkComponentTokens``
 - ``LinkMonoComponentTokens``
 - ``ListItemComponentTokens``
@@ -166,8 +173,7 @@ typography                     | For textual components like `OUDSText`
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
-- ``ToastComponentTokens``
-- ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``
+- ``ToastComponentTokens``
 - ``TypographyComponentTokens``

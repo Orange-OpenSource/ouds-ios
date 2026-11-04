@@ -445,6 +445,16 @@ struct ThemeOverrideOfSpaceSemanticTokensTests {
         #expect(inheritedTheme.spaces.columnGap2xlarge == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenSpaceColumnGap3Xl() throws {
+        #expect(inheritedTheme.spaces.columnGap3xlarge != abstractTheme.spaces.columnGap3xlarge)
+        #expect(inheritedTheme.spaces.columnGap3xlarge == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSpaceColumnGap4Xl() throws {
+        #expect(inheritedTheme.spaces.columnGap4xlarge != abstractTheme.spaces.columnGap4xlarge)
+        #expect(inheritedTheme.spaces.columnGap4xlarge == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    }
+
     // MARK: - Semantic token - Spacing - Padding - Row Gap
 
     @Test func inheritedThemeCanOverrideSemanticTokenSpaceRowGapNone() throws {

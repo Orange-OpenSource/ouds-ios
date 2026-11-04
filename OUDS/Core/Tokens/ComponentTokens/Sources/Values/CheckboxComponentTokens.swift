@@ -23,6 +23,7 @@ import OUDSTokensSemantic
 /// Used for tokens providers like `OrangeThemeCheckboxComponentTokensProvider`.
 ///
 /// - Since: 0.10.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol CheckboxComponentTokens {
 
     // MARK: - Sizes
