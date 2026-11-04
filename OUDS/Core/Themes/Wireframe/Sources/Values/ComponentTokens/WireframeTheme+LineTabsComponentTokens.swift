@@ -13,6 +13,7 @@
 
 import Foundation
 import OUDSTokensComponent
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // 🧬 Tokens version: 2.8.0 (Wireframe brand)
@@ -29,20 +30,48 @@ extension WireframeThemeLineTabsComponentTokensProvider: LineTabsComponentTokens
     @objc public final var borderRadiusTopTab: BorderRadiusSemanticToken { borders.radiusLarge }
     /// Has for value token colors.actionSupportDisabled (= light: "#05052E0A" / dark: "#EFF5FF0A")
     @objc public final var colorBgSelectedDisabled: MultipleColorSemanticToken { colors.actionSupportDisabled }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLowest, dark: colors.repositoryOpacityPrimaryMedium) (= light: "#2055E514" / dark: "#2055E566")
-    @objc public final var colorBgSelectedEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLowest, dark: colors.repositoryOpacityPrimaryMedium) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) (= light: "#2055E533" / dark: "#2055E58F")
-    @objc public final var colorBgSelectedFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) (= light: "#2055E533" / dark: "#2055E58F")
-    @objc public final var colorBgSelectedHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher) (= light: "#2055E55C" / dark: "#2055E5AD")
-    @objc public final var colorBgSelectedPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) (= light: "#2055E533" / dark: "#2055E58F")
-    @objc public final var colorBgUnselectedFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) (= light: "#2055E533" / dark: "#2055E58F")
-    @objc public final var colorBgUnselectedHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher) (= light: "#2055E55C" / dark: "#2055E5AD")
-    @objc public final var colorBgUnselectedPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLowest, dark: colors.repositoryOpacityPrimaryMedium)
+    /// (= light: "#2055E514" / dark: "#2055E566")
+    @objc public final var colorBgSelectedEnabled: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLowest, dark: colors.repositoryOpacityPrimaryMedium)
+    }
+
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    /// (= light: "#2055E533" / dark: "#2055E58F")
+    @objc public final var colorBgSelectedFocus: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    }
+
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    /// (= light: "#2055E533" / dark: "#2055E58F")
+    @objc public final var colorBgSelectedHover: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    }
+
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher)
+    /// (= light: "#2055E55C" / dark: "#2055E5AD")
+    @objc public final var colorBgSelectedPressed: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher)
+    }
+
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    /// (= light: "#2055E533" / dark: "#2055E58F")
+    @objc public final var colorBgUnselectedFocus: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    }
+
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    /// (= light: "#2055E533" / dark: "#2055E58F")
+    @objc public final var colorBgUnselectedHover: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLower, dark: colors.repositoryOpacityPrimaryHigh)
+    }
+
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher)
+    /// (= light: "#2055E55C" / dark: "#2055E5AD")
+    @objc public final var colorBgUnselectedPressed: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: colors.repositoryOpacityPrimaryLow, dark: colors.repositoryOpacityPrimaryHigher)
+    }
+
     /// Has for value token colors.actionSelected (= light: "#2055E5FF" / dark: "#96C1FAFF")
     @objc public final var colorContentSelectedEnabled: MultipleColorSemanticToken { colors.actionSelected }
     /// Has for value token colors.actionFocus (= light: "#223CABFF" / dark: "#C1D8FCFF")
@@ -63,6 +92,7 @@ extension WireframeThemeLineTabsComponentTokensProvider: LineTabsComponentTokens
     @objc public final var opacityCurrentIndicatorUnselected: OpacitySemanticToken { opacities.invisible }
     /// Has for value token dimensions._11xsmall (= 2)
     @objc public final var sizeHeightCurrentIndicator: SizeSemanticToken { dimensions._11xsmall }
+    // swiftlint:disable identifier_name
     /// Has for value token dimensions._12xsmall (= 1)
     @objc public final var spaceColumnGapTabsContainerJustified: SpaceSemanticToken { dimensions._12xsmall }
     /// Has for value token dimensions._12xsmall (= 1)
@@ -91,4 +121,5 @@ extension WireframeThemeLineTabsComponentTokensProvider: LineTabsComponentTokens
     @objc public final var spacePaddingInlineTabVerticalTablet: SpaceSemanticToken { spaces.paddingInline2xlarge }
     /// Has for value token DimensionRawTokens.outOfSystemN50 (= -2)
     @objc public final var spaceRowGapCurrentIndicator: SpaceSemanticToken { DimensionRawTokens.outOfSystemN50 }
+    // swiftlint:enable identifier_name
 }

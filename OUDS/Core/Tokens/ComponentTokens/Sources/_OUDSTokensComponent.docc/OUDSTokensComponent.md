@@ -125,6 +125,7 @@ chip                           | For chips like `OUDSSuggestionChip` and `OUDSFi
 containedTabs                  | For contained tabs components
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`
+lineTabs                       | For line tabs components
 link                           | For links like `OUDSLink` 
 listItem                       | Shared and used for switch, checkbox, radio items and list items layouts
 pinCodeInput                   |  
@@ -160,6 +161,7 @@ typography                     | For textual components like `OUDSText`
 - ``DividerComponentTokens``
 - ``IconComponentTokens``
 - ``InputTagComponentTokens``
+- ``LineTabsComponentTokens``
 - ``LinkComponentTokens``
 - ``LinkMonoComponentTokens``
 - ``ListItemComponentTokens``

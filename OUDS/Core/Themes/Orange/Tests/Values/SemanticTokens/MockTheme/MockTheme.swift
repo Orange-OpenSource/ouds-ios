@@ -74,6 +74,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    containedTabs: MockThemeContainedTabsComponentTokenProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces),
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
                    icon: MockThemeIconComponentTokenProvider(colors: colors),
+                   lineTabs: MockThemeLineTabsComponentTokenProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces),
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions),
                    listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions),
                    pinCodeInput: MockThemePinCodeInputComponentTokenProvider(spaces: spaces, dimensions: nil),

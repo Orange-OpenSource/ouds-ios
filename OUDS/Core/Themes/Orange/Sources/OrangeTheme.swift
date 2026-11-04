@@ -170,12 +170,14 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
+    ///    - card: All component tokens for card
     ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
     ///    - containedTabs: All component tokens for contained tabs
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
+    ///    - lineTabs: All component tokens for line tabs
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
@@ -215,12 +217,14 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          bar: AllBarComponentTokensProvider? = nil,
                          bulletList: AllBulletListComponentTokensProvider? = nil,
                          button: AllButtonComponentTokensProvider? = nil,
+                         card: AllCardComponentTokensProvider? = nil,
                          categoricalTag: AllCategoricalTagComponentTokensProvider? = nil,
                          checkbox: AllCheckboxComponentTokensProvider? = nil,
                          chip: AllChipComponentTokensProvider? = nil,
                          containedTabs: AllContainedTabsComponentTokensProvider? = nil,
                          divider: AllDividerComponentTokensProvider? = nil,
                          icon: AllIconComponentTokensProvider? = nil,
+                         lineTabs: AllLineTabsComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
                          listItem: AllListItemComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
@@ -263,12 +267,14 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
+        let card = (card ?? OrangeThemeCardComponentTokensProvider(borders: borders))
         let categoricalTag = (categoricalTag ?? OrangeThemeCategoricalTagComponentTokensProvider(colors: colors))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let containedTabs = (containedTabs ?? OrangeThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
+        let lineTabs = (lineTabs ?? OrangeThemeLineTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions))
         let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
@@ -305,12 +311,14 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   card: card,
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
+                   lineTabs: lineTabs,
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,

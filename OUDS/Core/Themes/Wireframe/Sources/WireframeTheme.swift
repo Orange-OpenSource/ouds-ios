@@ -103,12 +103,14 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
+        let card = WireframeThemeCardComponentTokensProvider(borders: borders)
         let categoricalTag = WireframeThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let containedTabs = WireframeThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
+        let lineTabs = WireframeThemeLineTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
         let listItem = WireframeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
@@ -147,12 +149,14 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   card: card,
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
+                   lineTabs: lineTabs,
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,

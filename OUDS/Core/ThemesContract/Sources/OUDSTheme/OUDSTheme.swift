@@ -139,6 +139,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to icons components
     public let icon: AllIconComponentTokensProvider
 
+    /// All component tokens related to line tabs components
+    public let lineTabs: AllLineTabsComponentTokensProvider
+
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
@@ -236,6 +239,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - containedTabs: All component tokens for contained tabs
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
+    ///    - lineTabs: All component tokens for line tabs
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
@@ -282,6 +286,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 containedTabs: AllContainedTabsComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
                 icon: AllIconComponentTokensProvider,
+                lineTabs: AllLineTabsComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
                 listItem: AllListItemComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
@@ -332,6 +337,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.containedTabs = containedTabs
         self.divider = divider
         self.icon = icon
+        self.lineTabs = lineTabs
         self.link = link
         self.listItem = listItem
         self.pinCodeInput = pinCodeInput

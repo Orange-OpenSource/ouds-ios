@@ -90,12 +90,14 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
+        let card = SoshThemeCardComponentTokensProvider(borders: borders)
         let categoricalTag = SoshThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let containedTabs = SoshThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let icon = SoshThemeIconComponentTokensProvider(colors: colors)
+        let lineTabs = SoshThemeLineTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
         let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
@@ -130,12 +132,14 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   card: card,
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
                    containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
+                   lineTabs: lineTabs,
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,

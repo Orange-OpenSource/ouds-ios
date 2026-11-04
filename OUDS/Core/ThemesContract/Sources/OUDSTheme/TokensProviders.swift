@@ -121,6 +121,9 @@ public protocol AllProgressIndicatorComponentTokensProvider: TokensProvider, Pro
 /// Something which provides all components tokens for icons
 public protocol AllIconComponentTokensProvider: TokensProvider, IconComponentTokens {}
 
+/// Something which provides all component tokens of line tabs
+public protocol AllLineTabsComponentTokensProvider: TokensProvider, LineTabsComponentTokens {}
+
 /// Something which provides all component tokens of link
 public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
 
