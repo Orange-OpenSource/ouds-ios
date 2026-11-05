@@ -94,7 +94,7 @@ import SwiftUI
 ///     // Trailing with a custom view, e.g. a gauge showing a remaining SMS credit
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: .textual("SMS credit")),
-///         trailing: .custom {
+///         trailing: .slot {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
 ///     )

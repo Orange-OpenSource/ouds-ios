@@ -296,6 +296,30 @@ OUDSNavigationListItem(
 }
 ```
 
+#### Navigation link
+
+Use ``OUDSNavigationLink`` to get a ``OUDSNavigationListItem`` backed by a `NavigationLink` which displays a destination view when tapped.
+It accepts the same content as ``OUDSNavigationListItem``: an ``OUDSListItemData`` and optional leading and trailing elements.
+The label of the data is also used as navigation title of the destination.
+
+```swift
+// Simple navigation link
+OUDSNavigationLink(data: OUDSListItemData(label: .textual("Profile"))) {
+    MyProfileView()
+}
+
+// With description, leading avatar and trailing text
+OUDSNavigationLink(
+    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    trailing: .text(.labelMuted("Details"))
+) {
+    MyProfileView()
+}
+```
+
+> Note: The initializers of ``OUDSNavigationLink`` taking a `title` or a `LocalizedStringKey` are deprecated since 3.3.0, use the one taking an ``OUDSListItemData`` instead. See the migration guide.
+
 ### Tab bars
 
 @TabNavigator {

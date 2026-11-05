@@ -55,7 +55,7 @@ import SwiftUI
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: .textual("SMS credit")),
-///         trailing: .custom {
+///         trailing: .slot {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
 ///     )
