@@ -31,7 +31,7 @@ import SwiftUI
 ///     OUDSNavigationLink(
 ///         data: OUDSListItemData(label: "Profile", description: "View your profile"),
 ///         leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
-///         trailing: .text(.labelMuted(Text("Details")))
+///         trailing: .text(.labelMuted("Details"))
 ///     ) {
 ///         MyProfileView()
 ///     }
@@ -70,7 +70,7 @@ public struct OUDSNavigationLink<Destination: View>: View {
     // MARK: - Initializers
 
     /// Defines an ``OUDSNavigationListItem`` backed by a `NavigationLink`
-    /// with a `Destination` ``SwiftUICore/View``  to display whe the user taps,
+    /// with a `Destination` ``SwiftUICore/View``  to display when the user taps,
     /// with the same content options as ``OUDSNavigationListItem``.
     ///
     /// The label of `data` is used as navigation title of the destination.

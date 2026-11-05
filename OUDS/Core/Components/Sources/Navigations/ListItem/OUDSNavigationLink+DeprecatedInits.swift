@@ -29,7 +29,7 @@ import SwiftUI
 extension OUDSNavigationLink { // TODO: v4 - Remove these old inits
 
     /// Defines an ``OUDSNavigationListItem`` backed by a `NavigationLink`
-    /// with a `Destination` ``SwiftUICore/View``  to display whe the user taps.
+    /// with a `Destination` ``SwiftUICore/View``  to display when the user taps.
     ///
     /// - Parameters:
     ///    - title: The label for the ``OUDSNavigationListItem``

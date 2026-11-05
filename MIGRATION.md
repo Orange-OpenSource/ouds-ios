@@ -181,7 +181,7 @@ OUDSNavigationLink(title: "Profile", indicatorType: .next) {
 OUDSNavigationLink(
     data: OUDSListItemData(label: .textual("Profile"), description: "View your profile"),
     leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
-    trailing: .text(.labelMuted(Text("Details")))
+    trailing: .text(.labelMuted("Details"))
 ) {
     MyProfileView()
 }
