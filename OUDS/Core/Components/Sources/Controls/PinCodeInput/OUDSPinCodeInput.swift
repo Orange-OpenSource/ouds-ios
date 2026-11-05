@@ -178,6 +178,7 @@ public struct OUDSPinCodeInput: View {
     private let autofocus: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.skeletonState) private var skeletonState
 
     // MARK: - Length
 
@@ -299,7 +300,9 @@ public struct OUDSPinCodeInput: View {
                                       autofocus: autofocus)
                     .id(length)
 
-                PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
+                if skeletonState == nil {
+                    PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
+                }
             }
         }
         .frame(minHeight: theme.textInput.sizeMinHeight,

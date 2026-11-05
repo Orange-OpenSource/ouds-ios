@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- skeleton state for `pin code input` component (Orange-OpenSource/ouds-ios#1857)
 - `line tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - `contained tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - `card` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
