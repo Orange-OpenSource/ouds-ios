@@ -41,6 +41,7 @@ struct PinCodeInputContainer: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.skeletonState) private var skeletonState
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
@@ -82,7 +83,31 @@ struct PinCodeInputContainer: View {
 
     // MARK: - Body
 
+    @ViewBuilder
     var body: some View {
+        // Skeleton state: no UITextField (no focus, no keyboard, no VoiceOver) for eco-design
+        if skeletonState != nil {
+            skeletonRow
+        } else {
+            inputRow
+        }
+    }
+
+    /// One skeleton box per digit, with the same layout as the real fields
+    private var skeletonRow: some View {
+        HStack(spacing: theme.pinCodeInput.spaceColumnGapDigitInput) {
+            ForEach(0 ..< length.rawValue, id: \.self) { _ in
+                OUDSSkeleton(shape: RoundedRectangle(cornerRadius: borderRadius))
+                    .frame(
+                        minWidth: theme.pinCodeInput.sizeMinWidthDigitInput,
+                        maxWidth: theme.pinCodeInput.sizeMaxWidthDigitInput,
+                        minHeight: theme.textInput.sizeMinHeight,
+                        maxHeight: theme.textInput.sizeMinHeight)
+            }
+        }
+    }
+
+    private var inputRow: some View {
         HStack(spacing: theme.pinCodeInput.spaceColumnGapDigitInput) {
             ForEach(0 ..< length.rawValue, id: \.self) { index in
                 digitField(at: index)
