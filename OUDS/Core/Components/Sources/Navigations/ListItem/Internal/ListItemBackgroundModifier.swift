@@ -24,6 +24,7 @@ struct ListItemBackgroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
+    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
 
     // MARK: Body
 
@@ -65,3 +66,4 @@ struct ListItemBackgroundModifier: ViewModifier {
         }
     }
 }
+

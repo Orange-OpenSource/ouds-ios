@@ -27,6 +27,7 @@ struct ListItemBordersModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
 
     // MARK: Body
 
@@ -78,12 +79,13 @@ struct ListItemBordersModifier: ViewModifier {
 
         if let color {
             content
+                .padding(.horizontal, theme.listItem.spacePaddingInline)
                 .border(style: theme.borders.styleDefault,
                         width: theme.listItem.borderWidthDefault,
                         radius: radius,
                         color: color)
         } else {
-            content
+            content.padding(.horizontal, theme.listItem.spacePaddingInline)
         }
     }
 
@@ -91,7 +93,7 @@ struct ListItemBordersModifier: ViewModifier {
     private func divider(content: Content, with divider: Bool) -> some View {
         if divider {
             ZStack(alignment: .bottomLeading) {
-                content
+                content.padding(.horizontal, edgeToEdge ? theme.spaces.fixedNone : theme.listItem.spacePaddingInline)
                 Divider()
                     .horizontal()
                     .overlay(theme.colors.borderMuted.color(for: colorScheme))
