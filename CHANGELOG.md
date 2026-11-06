@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  
 ### Changed
 
+- Swift Package `SwiftFormat` from v0.64.0 to v0.64.6
 - `Ruby` version from v4.0.7 to v4.0.9 for `build-and-test` and `build-xcframework` workflows
 - GitHub Actions `ruby/setup-ruby` action from v1.331.0 to v1.338.0 for `build-and-test` and `build-xcframework` workflows
 - GitHub Actions `github/codeql-action/upload-sarif` action from v4.39.0 to v4.39.3 for `scorecard` workflow
