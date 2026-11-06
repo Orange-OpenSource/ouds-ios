@@ -29,7 +29,7 @@ Components:
 - **`ouds-ios-components-foundations`** — Typography (OUDSDisplay, OUDSHeading, OUDSBody, OUDSLabel, OUDSCode)
 - **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator
 - **`ouds-ios-components-layouts`** — OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider
-- **`ouds-ios-components-navigations`** — OUDSLink, OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
+- **`ouds-ios-components-navigations`** — OUDSLink, list items (OUDSStaticListItem, OUDSNavigationListItem, OUDSNavigationLink), OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
 
 Guides:
 - **`ouds-ios-guide-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)

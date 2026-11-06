@@ -158,6 +158,40 @@ The following tokens have been removed from `IconComponentTokens` and are now in
 There is no automatic replacement. Choose a remaining font family according to your needs;
 do not assume that Menlo or another font is an equivalent replacement for Monaco.
 
+### `OUDSNavigationLink` — unified initializer
+
+`OUDSNavigationLink` now accepts the same content as `OUDSNavigationListItem`: an `OUDSListItemData`
+(label, description, overline, extra label, helper text, slots) and optional `leading` / `trailing` elements.
+The two former initializers (`title: String` and `LocalizedStringKey`) are **deprecated**; they forward to the new one,
+so existing call sites keep working and only emit a warning.
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `OUDSNavigationLink(title: "T") { … }` | `OUDSNavigationLink(data: .init(label: .textual("T"))) { … }` |
+| `OUDSNavigationLink(title: "T", hasBoldLabel: true) { … }` | `OUDSNavigationLink(data: .init(label: .textual("T", isBold: true))) { … }` |
+| `OUDSNavigationLink("key", tableName:, bundle:) { … }` | `OUDSNavigationLink(data: .init(label: .textual(.localized("key", tableName:, bundle:)))) { … }` |
+
+```swift
+// Before (v3.2)
+OUDSNavigationLink(title: "Profile", indicatorType: .next) {
+    MyProfileView()
+}
+
+// After (v3.3)
+OUDSNavigationLink(
+    data: OUDSListItemData(label: .textual("Profile"), description: "View your profile"),
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    trailing: .text(.labelMuted("Details"))
+) {
+    MyProfileView()
+}
+```
+
+The navigation title of the destination is the label of `data`.
+With `indicatorType: .previous`, the `leading` element is ignored.
+
+**Required action**: Replace `OUDSNavigationLink(title:…)` and `OUDSNavigationLink(_ key:…)` by `OUDSNavigationLink(data:…)`
+
 ## v3.0.0 → v3.2.0
 
 ### Overview

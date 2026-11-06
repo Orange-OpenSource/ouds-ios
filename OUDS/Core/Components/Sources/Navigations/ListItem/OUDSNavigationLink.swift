@@ -21,12 +21,24 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Title will be used both for OUDSNavigationListItem label and navigation title
-///     OUDSNavigationLink(title: "Title of my destination view") {
+///     // The label of data will be used both for OUDSNavigationListItem label and navigation title
+///     OUDSNavigationLink(data: OUDSListItemData(label: .textual("Title of my destination view"))) {
 ///         // The view to display when the user taps on the item
 ///         MyDestinationView()
 ///     }
+///
+///     // Same content options as OUDSNavigationListItem: data, leading and trailing
+///     OUDSNavigationLink(
+///         data: OUDSListItemData(label: "Profile", description: "View your profile"),
+///         leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+///         trailing: .text(.labelMuted("Details"))
+///     ) {
+///         MyProfileView()
+///     }
 /// ```
+///
+/// The initializers taking a `title` or a `LocalizedStringKey` are deprecated since 3.3.0,
+/// see `MIGRATION.md` section `v3.2.0 → v3.3.0`.
 ///
 /// - Since: 3.0.0
 @available(iOS 15, *)
@@ -34,11 +46,14 @@ public struct OUDSNavigationLink<Destination: View>: View {
 
     // MARK: - Properties
 
-    /// The label of the ``OUDSNavigationListItem``, used then as navigation title
-    private let title: String
+    /// The data of the ``OUDSNavigationListItem``, its label being used as navigation title
+    private let data: OUDSListItemData
 
-    /// Set to `true`  if the label must be bold, false otherwise
-    private let hasBoldLabel: Bool
+    /// An optional element displayed at the leading position (before the texts)
+    private let leading: OUDSListItemLeading?
+
+    /// An optional element displayed at the trailing position (after the texts)
+    private let trailing: OUDSListItemTrailing?
 
     /// The type of indicator for the ``OUDSNavigationListItem``, e.g. `.next` or `.previous` to define the chevron.
     private let indicatorType: OUDSNavigationListItemIndicatorType
@@ -55,65 +70,50 @@ public struct OUDSNavigationLink<Destination: View>: View {
     // MARK: - Initializers
 
     /// Defines an ``OUDSNavigationListItem`` backed by a `NavigationLink`
-    /// with a `Destination` ``SwiftUICore/View``  to display whe the user taps.
+    /// with a `Destination` ``SwiftUICore/View``  to display when the user taps,
+    /// with the same content options as ``OUDSNavigationListItem``.
+    ///
+    /// The label of `data` is used as navigation title of the destination.
     ///
     /// - Parameters:
-    ///    - title: The label for the ``OUDSNavigationListItem``
-    ///    - hasBoldLabel: Flag to rise if title must be bold or not, default set to *false*
+    ///    - data: The data of the item, including label, description, overline, extra label, slots and helper text.
     ///    - indicatorType: The type of link to apply, default set to `.next`
-    ///    - style: The type of style to apply, default set to `.item(divider: false, background: false)`
+    ///    - leading: An optional element displayed at the leading position (before the texts).
+    ///      **Note:** Ignored when `indicatorType` is `.previous`.
+    ///    - trailing: An optional element displayed at the trailing position (after the texts).
+    ///    - style: The type of style to apply, default set to `.item(divider: true, background: false)`
     ///    - destination: A closure providing the view to display when the user taps the item.
-    public init(title: String,
-                hasBoldLabel: Bool = false,
+    ///
+    /// - Since: 3.3.0
+    public init(data: OUDSListItemData,
                 indicatorType: OUDSNavigationListItemIndicatorType = .next,
+                leading: OUDSListItemLeading? = nil,
+                trailing: OUDSListItemTrailing? = nil,
                 style: OUDSListItemContentStyle = .item(divider: true, background: false),
                 destination: @escaping () -> Destination)
     {
-        self.title = title
-        self.hasBoldLabel = hasBoldLabel
+        self.data = data
         self.indicatorType = indicatorType
+        self.leading = leading
+        self.trailing = trailing
         self.style = style
         self.destination = destination
         isActive = false
     }
 
-    /// Defines an ``OUDSNavigationListItem`` backed by a `NavigationLink`
-    /// with a `Destination` ``SwiftUICore/View``  to display whe the user taps.
-    ///
-    /// - Parameters:
-    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - hasBoldLabel: Flag to rise if title must be bold or not, default set to *false*
-    ///    - indicatorType: The type of link to apply, default set to `.next`
-    ///    - style: The type of style to apply, default set to `.item(divider: true, background: false)`
-    ///    - destination: A closure providing the view to display when the user taps the item.
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                hasBoldLabel: Bool = false,
-                indicatorType: OUDSNavigationListItemIndicatorType = .next,
-                style: OUDSListItemContentStyle = .item(divider: true, background: false),
-                destination: @escaping () -> Destination)
-    {
-        self.init(title: key.resolved(tableName: tableName, bundle: bundle),
-                  hasBoldLabel: hasBoldLabel,
-                  indicatorType: indicatorType,
-                  style: style,
-                  destination: destination)
-    }
-
     // MARK: - Body
 
     public var body: some View {
-        OUDSNavigationListItem(data: .init(label: .textual(.raw(title), isBold: hasBoldLabel)),
-                               indicatorType: indicatorType)
+        OUDSNavigationListItem(data: data,
+                               indicatorType: indicatorType,
+                               leading: leading,
+                               trailing: trailing)
         {
             isActive = true
         }
         .oudsListContentStyle(style)
         .background {
-            NavigationLink(destination: destination().navigationTitle(title), isActive: $isActive) {
+            NavigationLink(destination: destination().navigationTitle(data.labelContent.stringValue), isActive: $isActive) {
                 EmptyView()
             }
             .hidden()
