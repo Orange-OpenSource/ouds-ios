@@ -20,7 +20,7 @@ extension EnvironmentValues {
     /// Flag to define if OUDS components (`ControlItem`, `ListItem`) are used in edgeToEdge context.
     /// Means component is full screen width, so an interal horizontal margin padding is added to align content to other
     /// elements in screen.
-    /// Set via ``SwiftUICore/View/oudsUseEdgeToEdge(flag:)``
+    /// Set via ``SwiftUICore/View/oudsUseEdgeToEdge(_:)``
     @Entry var oudsEdgeToEdge: Bool = true
 }
 
