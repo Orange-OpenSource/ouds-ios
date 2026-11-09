@@ -125,7 +125,7 @@ public struct OUDSBadgeIcon: View {
     ///    - size: The size of this badge, default set to *medium*
     public init(status: OUDSBadgeIcon.Status,
                 accessibilityLabel: String,
-                size: OUDSBadgeStandard.Size = .medium)
+                size: OUDSBadgeStandard.Size = .medium) // TODO: v4 - Use .xsmall value instead (#1876)
     {
         self.init(size: size, status: status, accessibilityLabel: accessibilityLabel)
     }
@@ -151,7 +151,7 @@ public struct OUDSBadgeIcon: View {
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                size: OUDSBadgeStandard.Size = .medium)
+                size: OUDSBadgeStandard.Size = .medium) // TODO: v4 - Use .xsmall value instead (#1876)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
         self.init(size: size, status: status, accessibilityLabel: resolvedText)

@@ -115,7 +115,7 @@ public struct OUDSBody: View {
     ///    - text: The text to display.
     ///    - size: The body size, default set to `.medium`.
     ///    - weight: The body weight, default set to `.default`.
-    public init(text: String, size: Size = .medium, weight: Weight = .default) {
+    public init(text: String, size: Size = .medium, weight: Weight = .default) { // TODO: v4 - Must be .large size instead of .medium (#1881)
         self.text = text
         self.size = size
         self.weight = weight
@@ -132,7 +132,7 @@ public struct OUDSBody: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                size: Size = .medium,
+                size: Size = .medium, // TODO: v4 - Must be .large size instead of .medium (#1881)
                 weight: Weight = .default)
     {
         self.init(text: key.resolved(tableName: tableName, bundle: bundle), size: size, weight: weight)

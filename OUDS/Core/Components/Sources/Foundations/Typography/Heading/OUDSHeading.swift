@@ -138,7 +138,7 @@ public struct OUDSHeading: View {
     ///    - size: The heading size, default set to `.large`.
     ///    - hasMarker: Whether to draw the brand marker below the text. Only honored when `size == .large`
     ///     **and** the current theme supports it. Default set to `false`.
-    public init(text: String, size: Size = .large, hasMarker: Bool = false) {
+    public init(text: String, size: Size = .large, hasMarker: Bool = false) { // TODO: v4 - hasMarker must be true if .large size (#1881)
         self.text = text
         coloredText = nil
         self.size = size

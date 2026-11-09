@@ -117,7 +117,7 @@ public struct OUDSLabel: View {
     ///    - text: The text to display.
     ///    - size: The label size, default set to `.medium`.
     ///    - weight: The label weight, default set to `.default`.
-    public init(text: String, size: Size = .medium, weight: Weight = .default) {
+    public init(text: String, size: Size = .medium, weight: Weight = .default) { // TODO: v4 - Must be .xlarge size instead of .medium (#1881)
         self.text = text
         self.size = size
         self.weight = weight

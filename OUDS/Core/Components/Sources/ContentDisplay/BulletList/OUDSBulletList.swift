@@ -326,7 +326,7 @@ public struct OUDSBulletList: View {
     ///    - textStyle: The typography style for the list items. See `OUDSBulletList.TextStyle`, defaults `.bodyLarge`
     ///    - isBold: Whether the list item text should be bold. This can be overridden for sub-lists. Defaults to `true`
     ///    - items: Defines the list items
-    public init(type: Self.`Type` = .unordered(asset: .bullet, isBranded: false),
+    public init(type: Self.`Type` = .unordered(asset: .bullet, isBranded: false), // TODO: v4 - Change to isBranded: true (#1876)
                 textStyle: Self.TextStyle = .bodyLarge,
                 isBold: Bool = true,
                 @OUDSBulletListItemBuilder items: () -> [OUDSBulletList.Item])

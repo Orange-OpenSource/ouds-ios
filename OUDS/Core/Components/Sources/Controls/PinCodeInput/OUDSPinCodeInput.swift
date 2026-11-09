@@ -271,7 +271,7 @@ public struct OUDSPinCodeInput: View {
     ///
     /// - Since: 3.2.0
     public init(_ value: Binding<String>,
-                length: OUDSPinCodeInput.Length = .six,
+                length: OUDSPinCodeInput.Length = .six, // TODO: v4 - Move to length of .four instead of .six (#1878)
                 hiddenCharacters: Bool = true,
                 helperText: OUDSTextualContent? = nil,
                 isOutlined: Bool = false,
