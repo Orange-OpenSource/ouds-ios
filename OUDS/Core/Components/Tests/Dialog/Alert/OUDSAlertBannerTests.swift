@@ -23,7 +23,63 @@ struct OUDSAlertBannerTests {
     @Test
     func `alert banner action link position by default must be bottom`() {
         let actionLink = OUDSAlertBanner.ActionLink(text: "Action") {}
+        #expect(actionLink.position == .topTrailing)
+    }
+
+    @Test
+    func `alert banner action link keeps text and default position`() {
+        let actionLink = OUDSAlertBanner.ActionLink(text: "Action") {}
+        #expect(actionLink.text == "Action")
+        #expect(actionLink.position == .topTrailing)
+    }
+
+    @Test
+    func `alert banner action link keeps bottom position when set`() {
+        let actionLink = OUDSAlertBanner.ActionLink(text: "Action", position: .bottom) {}
         #expect(actionLink.position == .bottom)
+    }
+
+    @Test
+    func `alert banner center layout action link is top trailing and triggers action`() {
+        var clicked = false
+        let layout = OUDSAlertBanner.Layout.center(label: "Label", action: (label: "Action", onClick: { clicked = true }))
+        let actionLink = layout.actionLink
+        #expect(actionLink?.text == "Action")
+        #expect(actionLink?.position == .topTrailing)
+        actionLink?.action()
+        #expect(clicked)
+    }
+
+    // MARK: - Layout Default Values Tests
+
+    @Test
+    func `alert banner center layout default values`() {
+        let layout = OUDSAlertBanner.Layout.center(label: "Label")
+        if case let .neutral(image) = layout.status {
+            #expect(image == nil, "Image must be nil for default neutral status")
+        } else {
+            Issue.record("Default status should be neutral")
+        }
+        #expect(layout.actionLink == nil)
+        #expect(layout.description == nil)
+        #expect(layout.onClose == nil)
+        #expect(layout.alignment == .top)
+        #expect(layout.isCentered)
+    }
+
+    @Test
+    func `alert banner start layout default values`() {
+        let layout = OUDSAlertBanner.Layout.start(label: "Label")
+        if case let .neutral(image) = layout.status {
+            #expect(image == nil, "Image must be nil for default neutral status")
+        } else {
+            Issue.record("Default status should be neutral")
+        }
+        #expect(layout.description == nil)
+        #expect(layout.actionLink == nil)
+        #expect(layout.onClose == nil)
+        #expect(layout.alignment == .top)
+        #expect(!layout.isCentered)
     }
 
     // MARK: - Alignment Tests
