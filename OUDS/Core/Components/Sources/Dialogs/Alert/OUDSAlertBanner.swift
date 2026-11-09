@@ -146,28 +146,28 @@ public struct OUDSAlertBanner: View {
         ///
         /// - Parameters:
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
-        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status.
+        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. Defaults to `neutral`.
         ///   - action: An optional action to be displayed at trailing of the alert banner. It can be used to trigger an action.
-        case center(label: OUDSTextualContent, status: OUDSAlertStatus, action: (label: String, onClick: () -> Void)? = nil)
+        case center(label: OUDSTextualContent, status: OUDSAlertStatus = .neutral(image: nil), action: (label: String, onClick: () -> Void)? = nil)
 
         /// Used to create an alert banner in start layout.
         ///
         /// ```swift
         ///     OUDSAlertBanner(layout: .start(label: "Mobile network unavailable",
-        ///                                    description: "Calls and mobile data may not work. Try again in a few minutes.",Dia
+        ///                                    description: "Calls and mobile data may not work. Try again in a few minutes.",
         ///                                    status: .warning))
         /// ```
         ///
         /// - Parameters:
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
-        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status.
+        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. Defaults to `neutral`.
         ///   - description: An optional supplementary text in an alert banner. Use only when additional detail or guidance is needed beyond the label. It should remain
         ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
         ///   - actionLink: An optional action link to be displayed in the alert message. It can be used to trigger an action.
         ///   - alignment: The current vertical alignment of icon, text and action containers.
         ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed .
         case start(label: OUDSTextualContent,
-                   status: OUDSAlertStatus,
+                   status: OUDSAlertStatus = .neutral(image: nil),
                    description: OUDSTextualContent? = nil,
                    actionLink: OUDSAlertBanner.ActionLink? = nil,
                    alignment: OUDSAlertBanner.Alignment = .top,
@@ -212,9 +212,9 @@ public struct OUDSAlertBanner: View {
         ///
         /// - Parameters:
         ///   - text: The text (could be the URL)
-        ///   - position: `OUDSAlertBanner.ActionLink.Position` of the link within the alert banner.
+        ///   - position: `OUDSAlertBanner.ActionLink.Position` of the link within the alert banner, defaults to `.topTrailing`.
         ///   - action: The action to process when clicked
-        public init(text: String, position: Position = .bottom, action: @escaping () -> Void) {
+        public init(text: String, position: Position = .topTrailing, action: @escaping () -> Void) {
             if text.isEmpty {
                 OL.warning("The action link text for the OUDSAlertBanner is empty, avoid using it in that case.")
             }

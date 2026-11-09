@@ -25,7 +25,7 @@ struct AlertBannerLeadingIcon: View {
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
-    // MARK: Initilizer
+    // MARK: Initializer
 
     init?(status: OUDSAlertStatus) {
         if status.hasIcon {

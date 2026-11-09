@@ -100,22 +100,22 @@ Inline alert does not disappear and remains visible.
         ![An alert banner component in light and dark modes with Orange theme](component_alertBanner_Orange)
     }
     @Tab("Orange Compact") {
-        ![An alert message component in light and dark modes with Orange Compact theme](component_alertBanner_OrangeCompact)
+        ![An alert banner component in light and dark modes with Orange Compact theme](component_alertBanner_OrangeCompact)
     }
     @Tab("Sosh") {
-        ![An alert message component in light and dark modes with Sosh theme](component_alertBanner_Sosh)
+        ![An alert banner component in light and dark modes with Sosh theme](component_alertBanner_Sosh)
     }
     @Tab("Wireframe") {
-        ![An alert message component in light and dark modes with Wireframe theme](component_alertBanner_Wireframe)
+        ![An alert banner component in light and dark modes with Wireframe theme](component_alertBanner_Wireframe)
     }
 }
 
 ``OUDSAlertBanner`` is a component used to communicate important information, system states, or service updates across an interface. It supports multiple semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products and platforms.
 
 Two layouts are available for a banner content:
-- **center**: the basic layout with label and optional action as link. The content of the banner is centerted into the screen.
-- **start **: the banner with more information with label, description, close button and additional action link. The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
-Both propose a status to inforce information displayed in the banner by applying background colors.
+- **center**: the basic layout with label and optional action as link. The content of the banner is centered into the screen.
+- **start**: the banner with more information with label, description, close button and additional action link. The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
+Both propose a status to enforce information displayed in the banner by applying background colors.
 
 
 ```swift
