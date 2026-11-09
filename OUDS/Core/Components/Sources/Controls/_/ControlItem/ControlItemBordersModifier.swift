@@ -32,13 +32,10 @@ struct ControlItemBordersModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .modifier(ControlItemBorderPaddingModifier(isOutlined: layoutData.isOutlined,
-                                                       hasDivider: layoutData.hasDivider))
-            .modifier(ControlItemInternalBordersModifier(interactionState: interactionState,
-                                                         layoutData: layoutData, isOn: isOn))
+            .modifier(ControlItemBorderPaddingModifier(isOutlined: layoutData.isOutlined, hasDivider: layoutData.hasDivider))
+            .modifier(ControlItemInternalBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
     }
 }
-
 
 private struct ControlItemInternalBordersModifier: ViewModifier {
 

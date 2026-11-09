@@ -56,4 +56,3 @@ extension View {
         modifier(OUDSComponentEdgeToEdgeModifier(useEdgeToEdge: flag))
     }
 }
-

@@ -46,4 +46,3 @@ struct ListItemHelperTextContainer: View {
         interactionState == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 }
-
