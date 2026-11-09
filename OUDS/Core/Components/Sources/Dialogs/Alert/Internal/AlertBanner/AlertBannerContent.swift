@@ -56,7 +56,9 @@ struct AlertBannerContent: View {
         .padding(.vertical, theme.alert.spacePaddingBlock)
         .fixedSize(horizontal: false, vertical: true)
         .onAppear {
-            VoiceOverUtils.announce(accessibilityLabel)
+            if !disableVoiceOverAnnouncement {
+                VoiceOverUtils.announce(accessibilityLabel)
+            }
         }
     }
 
@@ -82,11 +84,6 @@ struct AlertBannerContent: View {
         #if canImport(UIKit)
             .modifier(AlertBannerFKACustomActionsModifier(actionLink: actionLink, onClose: onClose))
         #endif
-            .onAppear {
-                if !disableVoiceOverAnnouncement {
-                    VoiceOverUtils.announce(accessibilityLabel)
-                }
-            }
     }
 
     private var maxWidthText: CGFloat {
