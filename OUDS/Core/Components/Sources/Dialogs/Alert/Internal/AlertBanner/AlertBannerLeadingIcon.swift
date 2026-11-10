@@ -16,7 +16,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Alert Leading Icon
-struct AlertLeadingIcon: View {
+struct AlertBannerLeadingIcon: View {
 
     // MARK: Properties
 
@@ -25,7 +25,7 @@ struct AlertLeadingIcon: View {
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
-    // MARK: Initilizer
+    // MARK: Initializer
 
     init?(status: OUDSAlertStatus) {
         if status.hasIcon {
@@ -41,39 +41,27 @@ struct AlertLeadingIcon: View {
         HStack {
             switch status {
             case let .accent(icon):
-                icon?.update(with: theme.colors.contentStatusAccent)
+                icon?.update(with: theme.colors.contentOnStatusAccentEmphasized)
             case let .neutral(icon):
-                icon?.update(with: theme.colors.contentDefault)
+                icon?.update(with: theme.colors.contentInverse)
             case .negative:
-                OUDSImage(name: "Component-alert-important-fill", color: theme.colors.contentStatusNegative)
+                OUDSImage(name: "Component-alert-important-fill", color: theme.colors.contentOnStatusNegativeEmphasized)
             case .positive:
-                OUDSImage(name: "Component-alert-tick-confirmation-fill", color: theme.colors.contentStatusPositive)
+                OUDSImage(name: "Component-alert-tick-confirmation-fill", color: theme.colors.contentOnStatusPositiveEmphasized)
             case .info:
-                OUDSImage(name: "Component-alert-info-fill", color: theme.colors.contentStatusInfo)
+                OUDSImage(name: "Component-alert-info-fill", color: theme.colors.contentOnStatusInfoEmphasized)
             case .warning:
                 ZStack {
-                    OUDSImage(name: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                    OUDSImage(name: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                    OUDSImage(name: "Component-alert-warning-external-shape", color: theme.colors.contentOnStatusWarningEmphasized)
+                    OUDSImage(name: "Component-alert-warning-internal-shape", color: theme.colors.surfaceStatusWarningEmphasized)
                 }
             }
         }
         .frame(width: size, height: size)
+        .padding(.vertical, theme.alert.spacePaddingBlock)
     }
 
     private var size: CGFloat {
         theme.alert.sizeAsset * dynamicTypeSize.percentageRate / 100
-    }
-}
-
-// MARK: - Extension of OUDS Alert Status
-
-extension OUDSAlertStatus {
-    var hasIcon: Bool {
-        switch self {
-        case let .neutral(icon), let .accent(icon):
-            icon != nil
-        default:
-            true
-        }
     }
 }

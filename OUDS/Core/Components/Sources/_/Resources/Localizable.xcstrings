@@ -28,8 +28,32 @@
       },
       "shouldTranslate" : false
     },
-    "core_alertMessage_close_a11y" : {
-      "comment" : "Component - Alert Message",
+    "core_alertBanner_close_a11y" : {
+        "comment" : "Component - Alert Banner",
+        "extractionState" : "manual",
+        "localizations" : {
+            "ar" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "إغلاق شريط التنبيه"
+                }
+            },
+            "en" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Close alert banner"
+                }
+            },
+            "fr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Fermer la bannière d'alerte"
+                }
+            }
+        }
+    },
+    "core_alert_close_a11y" : {
+      "comment" : "Component - Alert",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -41,37 +65,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Close alert message"
+            "value" : "Close alert"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fermer le message d'alerte"
-          }
-        }
-      }
-    },
-    "core_alertMessage_info_a11y" : {
-      "comment" : "Component - Alerts",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "معلومة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Information"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Information"
+            "value" : "Fermer l'alerte"
           }
         }
       }
@@ -1185,6 +1185,30 @@
           }
         }
       }
+    },
+    "core_shared_info_a11y" : {
+        "comment" : "Shared (alert message, alert banner)",
+        "extractionState" : "manual",
+        "localizations" : {
+            "ar" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "معلومة"
+                }
+            },
+            "en" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Information"
+                }
+            },
+            "fr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Information"
+                }
+            }
+        }
     },
     "core_switch_hint_a11y" : {
       "comment" : "Component - Switch",

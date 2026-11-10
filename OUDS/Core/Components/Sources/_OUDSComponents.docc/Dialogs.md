@@ -92,3 +92,56 @@ Inline alert does not disappear and remains visible.
     OUDSInlineAlert(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
     OUDSInlineAlert(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_heart"))))
 ```
+
+### Alert Banner
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An alert banner component in light and dark modes with Orange theme](component_alertBanner_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![An alert banner component in light and dark modes with Orange Compact theme](component_alertBanner_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![An alert banner component in light and dark modes with Sosh theme](component_alertBanner_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An alert banner component in light and dark modes with Wireframe theme](component_alertBanner_Wireframe)
+    }
+}
+
+``OUDSAlertBanner`` is a component used to communicate important information, system states, or service updates across an interface. It supports multiple semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products and platforms.
+
+Two layouts are available for a banner content:
+- **center**: the basic layout with label and optional action as link. The content of the banner is centered into the screen.
+- **start**: the banner with more information with label, description, close button and additional action link. The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
+Both propose a status to enforce information displayed in the banner by applying background colors.
+
+
+```swift
+    // A banner with center layout in a positive status
+    OUDSAlertBanner(layout: .center(label: "Label", status: .positive))
+
+    // A banner with center layout in a negative status with action (i.e Link)
+    OUDSAlertBanner(layout: .center(label: "Label",
+                                    status: .negative,
+                                    action: (label: "Action", onClick: { // do something }))
+        
+
+    // A more complex alert banner for warning status with a description and a close action
+    // to dismiss the banner.
+    OUDSAlertBanner(layout: .start(label: "Warning",
+                                   status: .warning,
+                                   description: "Some details about the warning",
+                                   onClose: {
+                                      // Do some stuff here to dismiss the alert banner when clicked
+                                    })
+
+    // Add a custom action (i.e Link) at bottom (could also at top trailing position)
+    @Environment(\.openURL) private var openUrl
+    let actionLink = OUDSAlertBanner.ActionLink(text: "Action", position: .bottom) {
+       openUrl.callAsFunction(url)
+    }
+
+    OUDSAlertBanner(layout: .start(label: "Label", status: .info, actionLink: actionLink))
+```
