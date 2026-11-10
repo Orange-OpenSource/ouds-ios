@@ -434,7 +434,33 @@ The same `OUDSTextualContent` (`"literal"` / `.raw(_:)`, `.localized(_:tableName
 
 ---
 
-## 13. Component skills
+## 13. Edge to edge (items)
+
+Item components can be used *edge to edge*: they span the full width of the screen, and a horizontal padding equal to the grid margin is added so the content stays aligned with the other elements of the screen.
+
+Concerned components: `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSRadioItem`, `OUDSSwitchItem`, `OUDSStaticListItem`, `OUDSNavigationListItem`, `OUDSNavigationLink`.
+
+Control it with `.isEdgeToEdge(_:)` (available since 3.3.0, default is `true`). The value is propagated through the environment, so it can be set on a container to apply to all the items inside.
+
+```swift
+// On a single item
+OUDSSwitchItem(label: "Title", isOn: $isOn)
+    .isEdgeToEdge(true)
+
+// On a container: applies to every item inside
+VStack(spacing: 0) {
+    OUDSCheckboxItem(label: "Option 1", isOn: $isOption1On)
+    OUDSCheckboxItem(label: "Option 2", isOn: $isOption2On)
+}
+.isEdgeToEdge(false) // e.g. container already provides its own horizontal margins
+```
+
+- `true` (default): the item is full width, the grid margin is added as horizontal padding.
+- `false`: the item padding is used instead of the grid margin (and a divider may be displayed). Use it when the item is inside a container that already has horizontal margins.
+
+---
+
+## 14. Component skills
 
 Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
 

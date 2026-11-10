@@ -35,7 +35,7 @@ struct ListItemHelperTextContainer: View {
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
                 .padding(.top, theme.listItem.spacePaddingBlockTopHelperText)
-                .padding(.horizontal, theme.listItem.spacePaddingInline)
+                .modifier(ListItemContentMarginModifier())
                 .frame(maxWidth: .infinity, alignment: .topLeading)
         }
     }

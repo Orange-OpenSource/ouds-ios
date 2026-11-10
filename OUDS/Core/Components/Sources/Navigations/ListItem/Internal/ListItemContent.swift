@@ -64,10 +64,11 @@ struct ListItemContent: View {
             .accessibilityElement(children: .combine)
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
-            .padding(.horizontal, theme.listItem.spacePaddingInline)
             .frame(minHeight: minHeight, alignment: textFrameAlignment)
-            .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
+            .modifier(ListItemContentMarginModifier())
+            .modifier(ListItemBackgroundModifier(interactionState: interactionState))
+            .modifier(ListItemOutlinedExtraMarginModifier())
 
             if let helperTextContent = data.helperTextContent {
                 ListItemHelperTextContainer(text: helperTextContent, interactionState: interactionState)

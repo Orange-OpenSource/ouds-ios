@@ -108,10 +108,10 @@ import SwiftUI
     /// - Since: 3.0.0
     public enum CardDecoration {
 
-        /// The oulined decoration of a card. A permanent border is drawn around the card. This border can be drawn only
+        /// The outlined decoration of a card. A permanent border is drawn around the card. This border can be drawn only
         /// for interaction states (e.g. pressed or hover).
         ///
-        /// - Parameter onlyOnInteraction: Used only for `OUDSNavigationListItem` to activate oulined style when
+        /// - Parameter onlyOnInteraction: Used only for `OUDSNavigationListItem` to activate outlined style when
         /// card is pressed or hovered. By default, `false` so outlined available on all states of the card.
         case outlined(onlyOnInteraction: Bool = false)
 

@@ -20,6 +20,7 @@ struct ControlItemBackgroundModifier: ViewModifier {
     // MARK: Stored properties
 
     let interactionState: OUDSButtonInteractionState
+
     @Environment(\.theme) private var theme
 
     // MARK: Body

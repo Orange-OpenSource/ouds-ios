@@ -23,6 +23,10 @@ import SwiftUI
 /// The picker will expose choosen values through this "tag".
 /// It has also some configuration elements which will override the one applied to nested ``OUDSFilterChip``.
 ///
+/// ## Edge To Edge
+///
+/// As all chips collection is horizontally scrollable, the component must be edge to edge to avoid chips to be cropped by the margin.
+///
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component.
@@ -290,19 +294,21 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
                 Text(title)
                     .bodyStrongLarge(theme)
                     .accessibilityAddTraits(.isHeader)
+                    .gridMargin(.horizontal)
             }
 
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
+                HStack(spacing: itemsSpacing) {
                     ForEach(chips, id: \.tag) { chipData in
                         filterChip(from: chipData) {
                             toggle(tag: chipData.tag)
                         }
                     }
                 }
+                .gridMargin(.horizontal)
             }
         }
-        .padding(itemsSpacing)
+        .padding(.vertical, theme.spaces.fixedSmall)
     }
 
     // MARK: - Helpers

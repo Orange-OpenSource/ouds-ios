@@ -69,6 +69,13 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 - Class must be marked `final`
 - Small functions when possible must be marked `@inlinable`
 
+### 2.3 Naming conventions
+
+- Every top-level public `struct`, `class`, `enum` and `protocol` must be prefixed with `OUDS` (e.g. `OUDSButton`, `OUDSTheme`)
+- Public View modifiers must be prefixed with `OUDS`
+- Public environment variables (`EnvironmentValues` keys) and public functions are prefixed with `OUDS` only if there is an ambiguity with the SwiftUI API or another API (e.g. `toolBarTop` does not need the prefix)
+- Internal, private and nested types are not concerned by the prefix rule
+
 ## 3. Build verification process ⚠️ CRITICAL
 
 **IMPORTANT**: When editing code, you MUST:
