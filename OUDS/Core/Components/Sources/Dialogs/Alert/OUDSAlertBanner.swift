@@ -262,9 +262,7 @@ public struct OUDSAlertBanner: View {
                                disableVoiceOverAnnouncement: disableVoiceOverAnnouncement,
                                onClose: onClose)
 
-            OUDSColoredSurface(color: status.bannerBackgroundColor(for: theme)) {
-                AlertBannerActionContainer(actionLink: actionLink, onClose: onClose)
-            }
+            AlertBannerActionContainer(actionLink: actionLink, onClose: onClose, status: status)
         }
         .gridMargin(.horizontal)
         .frame(minWidth: theme.alert.sizeMinWidth, maxWidth: .infinity, minHeight: minHeight, alignment: horizontaAlignment)

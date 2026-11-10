@@ -22,24 +22,29 @@ struct AlertBannerActionContainer: View {
 
     let actionLink: OUDSAlertBanner.ActionLink?
     let onClose: (() -> Void)?
+    let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.alert.spaceColumnGapAction) {
-            if let actionLink, self.actionLink?.position == .topTrailing {
-                OUDSLink(text: actionLink.text, size: .default, density: .default, action: actionLink.action)
-                    .accessibilitySortPriority(OUDSAlertBanner.actionLinkAccessibilityPriority)
-            }
+        OUDSColoredSurface(color: status.bannerBackgroundColor(for: theme)) {
+            if onClose != nil, actionLink?.position == .topTrailing {
+                HStack(alignment: .center, spacing: theme.alert.spaceColumnGapAction) {
+                    if let actionLink, self.actionLink?.position == .topTrailing {
+                        OUDSLink(text: actionLink.text, size: .default, density: .default, action: actionLink.action)
+                            .accessibilitySortPriority(OUDSAlertBanner.actionLinkAccessibilityPriority)
+                    }
 
-            if let onClose {
-                OUDSButton(image: OUDSImage(asset: Image(decorative: "Component-button-expurge", bundle: theme.resourcesBundle),
-                                            accessibilityLabel: "core_alert_close_a11y".localized()),
-                           appearance: .minimal,
-                           action: onClose)
-                    .accessibilitySortPriority(OUDSAlertBanner.closeButtonAccessibilityPriority)
+                    if let onClose {
+                        OUDSButton(image: OUDSImage(asset: Image(decorative: "Component-button-expurge", bundle: theme.resourcesBundle),
+                                                    accessibilityLabel: "core_alert_close_a11y".localized()),
+                                   appearance: .minimal,
+                                   action: onClose)
+                            .accessibilitySortPriority(OUDSAlertBanner.closeButtonAccessibilityPriority)
+                    }
+                }
             }
         }
     }
