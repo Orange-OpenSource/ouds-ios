@@ -20,7 +20,7 @@ extension EnvironmentValues {
     /// Flag to define if OUDS components (`ControlItem`, `ListItem`) are used in edge-to-edge context.
     /// Means component is full screen width, so an internal horizontal margin padding is added to align content to other
     /// elements in screen.
-    /// Set via ``SwiftUICore/View/oudIsEdgeToEdge(_:)``
+    /// Set via ``SwiftUICore/View/isEdgeToEdge(_:)``
     @Entry var isEdgeToEdge: Bool = true
 }
 
@@ -42,18 +42,18 @@ extension View {
 
     /// Flag to display components in full width of screen (edge to edge).
     /// Means component is full screen width, so an internal horizontal margin padding is added to
-    /// align verticaly content to other elements in screen.
+    /// align vertically content to other elements in screen.
     ///
     /// ```swift
     /// OUDSSwitchItem(label: "Title", isOn: $isOn)
-    ///     .oudIsEdgeToEdge(true)
+    ///     .isEdgeToEdge(true)
     /// ```
     ///
     /// - Parameter isEdgeToEdge: True if component must be edge-to-edge, false otherwise.
     /// - Returns: A view that sets the component edge to edge.
     /// - Since: 3.3.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func oudIsEdgeToEdge(_ isEdgeToEdge: Bool) -> some View {
+    public func isEdgeToEdge(_ isEdgeToEdge: Bool) -> some View {
         modifier(EdgeToEdgeComponentModifier(useEdgeToEdge: isEdgeToEdge))
     }
 }

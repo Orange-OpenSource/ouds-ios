@@ -440,19 +440,19 @@ Item components can be used *edge to edge*: they span the full width of the scre
 
 Concerned components: `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSRadioItem`, `OUDSSwitchItem`, `OUDSStaticListItem`, `OUDSNavigationListItem`, `OUDSNavigationLink`.
 
-Control it with `.oudIsEdgeToEdge(_:)` (available since 3.3.0, default is `true`). The value is propagated through the environment, so it can be set on a container to apply to all the items inside.
+Control it with `.isEdgeToEdge(_:)` (available since 3.3.0, default is `true`). The value is propagated through the environment, so it can be set on a container to apply to all the items inside.
 
 ```swift
 // On a single item
 OUDSSwitchItem(label: "Title", isOn: $isOn)
-    .oudIsEdgeToEdge(true)
+    .isEdgeToEdge(true)
 
 // On a container: applies to every item inside
 VStack(spacing: 0) {
     OUDSCheckboxItem(label: "Option 1", isOn: $isOption1On)
     OUDSCheckboxItem(label: "Option 2", isOn: $isOption2On)
 }
-.oudIsEdgeToEdge(false) // e.g. container already provides its own horizontal margins
+.isEdgeToEdge(false) // e.g. container already provides its own horizontal margins
 ```
 
 - `true` (default): the item is full width, the grid margin is added as horizontal padding.

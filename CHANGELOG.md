@@ -43,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- **BREAKING**: `familyMonospaceMonaco` fint raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
+- **BREAKING**: `familyMonospaceMonaco` font raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - **BREAKING**: `contentStatusInverse*` and `opacityTransparentInverse*` semantic tokens of colors (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - **BREAKING**: `colorContentStatusWarningInverse*Shape` component tokens of `icon` (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 

@@ -25,7 +25,7 @@ import SwiftUI
 ///
 /// ## Edge To Edge
 ///
-/// As all chips collection is horizontally scrolable, the component must be edge to edge to avoid chips to be cropped by the margin.
+/// As all chips collection is horizontally scrollable, the component must be edge to edge to avoid chips to be cropped by the margin.
 ///
 /// ## Accessibility considerations
 ///

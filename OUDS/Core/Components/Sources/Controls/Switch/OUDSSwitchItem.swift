@@ -30,7 +30,7 @@ import SwiftUI
 ///
 /// The item can be used as edge to edge, means it is designed to span the full width of the screen so a default horizontal padding equal to margin is added.
 /// In other case it is adapted for use within constrained layouts or containers with their own padding.
-/// To control the edge to edge usage, call ``SwiftUICore/View/oudIsEdgeToEdge(_:)`` on top of view containing the items.
+/// To control the edge to edge usage, call ``SwiftUICore/View/isEdgeToEdge(_:)`` on top of view containing the items.
 ///
 /// ## Indicator states
 ///

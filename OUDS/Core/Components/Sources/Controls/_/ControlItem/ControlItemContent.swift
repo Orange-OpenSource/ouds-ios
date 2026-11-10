@@ -109,7 +109,7 @@ struct OutlinedExtraMarginModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        // Add grid margin if edge to edge and oulined
+        // Add grid margin if edge to edge and outlined
         // because we need to avoid to display the outlined
         // border into the margin
         if edgeToEdge, isOutlined {
