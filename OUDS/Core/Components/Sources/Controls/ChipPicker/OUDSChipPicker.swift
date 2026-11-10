@@ -25,8 +25,7 @@ import SwiftUI
 ///
 /// ## Edge To Edge
 ///
-/// As all chips collection is horizontally scrolable, the component must be edeg to edge to avoid
-/// chips to cropped by the margin.
+/// As all chips collection is horizontally scrolable, the component must be edge to edge to avoid chips to be cropped by the margin.
 ///
 /// ## Accessibility considerations
 ///
@@ -292,7 +291,9 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedSmall) {
             if let title, !title.isEmpty {
-                OUDSHeading(text: title, size: .small)
+                Text(title)
+                    .bodyStrongLarge(theme)
+                    .accessibilityAddTraits(.isHeader)
                     .gridMargin(.horizontal)
             }
 

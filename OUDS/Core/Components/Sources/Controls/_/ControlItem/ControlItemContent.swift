@@ -12,8 +12,9 @@
 //
 
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
+
+// MARK: - Control Item Content
 
 /// The content for the ``ControlItem`` component according to the interaction state ``OUDSButtonInteractionState``.
 ///
@@ -25,7 +26,7 @@ import SwiftUI
 /// - the outlined modifier
 struct ControlItemContent: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let interactionState: OUDSButtonInteractionState
     let indicatorType: ControlItem.IndicatorType
@@ -53,7 +54,7 @@ struct ControlItemContent: View {
             .padding(.vertical, theme.listItem.spacePaddingBlockDefault)
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
             .modifier(ControlItemContentMarginModifier(isOutlined: layoutData.isOutlined, hasDivider: layoutData.hasDivider))
-            .modifier(ControlItemBackgroundModifier(interactionState: interactionState, isOutlined: layoutData.isOutlined, hasDivider: layoutData.hasDivider))
+            .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
             .modifier(OutlinedExtraMarginModifier(isOutlined: layoutData.isOutlined))
 
             ControlItemErrorContainer(layoutData: layoutData)
@@ -96,13 +97,13 @@ struct ControlItemContent: View {
     }
 }
 
-// MARK: - Extra outlined Margin
+// MARK: - Outlined Extra Margin View Modifier
 
 struct OutlinedExtraMarginModifier: ViewModifier {
 
     // MARK: Properties
 
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
     let isOutlined: Bool
 
     // MARK: Body
@@ -111,7 +112,7 @@ struct OutlinedExtraMarginModifier: ViewModifier {
         // Add grid margin if edge to edge and oulined
         // because we need to avoid to display the outlined
         // border into the margin
-        if edgeToEdge && isOutlined {
+        if edgeToEdge, isOutlined {
             content.gridMargin(.horizontal)
         } else {
             content
@@ -119,7 +120,7 @@ struct OutlinedExtraMarginModifier: ViewModifier {
     }
 }
 
-// - MARK: Content Margin before add background
+// MARK: - Control Item Content Margin View Modifier
 
 struct ControlItemContentMarginModifier: ViewModifier {
 
@@ -127,16 +128,17 @@ struct ControlItemContentMarginModifier: ViewModifier {
 
     let isOutlined: Bool
     let hasDivider: Bool
+
     @Environment(\.theme) private var theme
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
 
     // MARK: Body
 
     func body(content: Content) -> some View {
         // Before add background, apply margins:
-        // - if edget to edge add grid margin only if not oulined because we need to avoid to display the
+        // - if edge to edge, add grid margin only if not outlined because we need to avoid to display the
         //   outlined border into the margin
-        // - if not edge to edge and if there is no divider add item padding.
+        // - if not edge to edge, and if there is no divider, add item padding.
         // No need to add padding in other cases because already added by ControlItemBordersModifier before.
         if edgeToEdge {
             if !isOutlined {
@@ -145,7 +147,7 @@ struct ControlItemContentMarginModifier: ViewModifier {
                 content
             }
         } else {
-            if !hasDivider && !isOutlined {
+            if !hasDivider, !isOutlined {
                 content.padding(.horizontal, theme.listItem.spacePaddingInline)
             } else {
                 content

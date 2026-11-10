@@ -19,17 +19,17 @@ struct ListItemContentMarginModifier: ViewModifier {
 
     // MARK: - Properties
 
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
-    @Environment(\.oudsListItemContentStyle) private var style
     @Environment(\.theme) private var theme
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
+    @Environment(\.oudsListItemContentStyle) private var style
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
         // Before add background, apply margins:
-        // - if edget to edge add grid margin only if not oulined because we need to avoid to display the
+        // - if edge to edge, add grid margin only if not outlined because we need to avoid to display the
         //   outlined border into the margin
-        // - if not edge to edge and if there is no divider add item padding.
+        // - if not edge to edge, and if there is no divider, add item padding.
         // No need to add padding in other cases because already added by ListItemBordersModifier before.
         if edgeToEdge {
             if !style.isOutlined {
@@ -38,7 +38,7 @@ struct ListItemContentMarginModifier: ViewModifier {
                 content
             }
         } else {
-            if !style.hasDivider && !style.isOutlined {
+            if !style.hasDivider, !style.isOutlined {
                 content.padding(.horizontal, theme.listItem.spacePaddingInline)
             } else {
                 content

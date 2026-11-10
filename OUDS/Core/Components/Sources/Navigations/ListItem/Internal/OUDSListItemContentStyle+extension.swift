@@ -13,17 +13,17 @@
 
 extension OUDSListItemContentStyle {
 
-    /// Define if it's a outlined style
+    /// Define if it is an outlined style
     var isOutlined: Bool {
         switch self {
         case .item:
-            return false
-        case .card(let decoration):
+            false
+        case let .card(decoration):
             switch decoration {
             case .outlined:
-                return true
+                true
             case .standard:
-                return false
+                false
             }
         }
     }
@@ -31,14 +31,14 @@ extension OUDSListItemContentStyle {
     /// Define if style has a divider
     var hasDivider: Bool {
         switch self {
-        case .item(let divider, _):
-            return divider
-        case .card(let decoration):
+        case let .item(divider, _):
+            divider
+        case let .card(decoration):
             switch decoration {
-            case .standard(let divider, _):
-                return divider
+            case let .standard(divider, _):
+                divider
             case .outlined:
-                return false
+                false
             }
         }
     }

@@ -25,9 +25,9 @@ struct ListItemBordersModifier: ViewModifier {
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemContentStyle) private var style
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
+    @Environment(\.oudsListItemContentStyle) private var style
 
     // MARK: Body
 

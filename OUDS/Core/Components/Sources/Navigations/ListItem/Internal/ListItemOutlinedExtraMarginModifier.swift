@@ -19,16 +19,16 @@ struct ListItemOutlinedExtraMarginModifier: ViewModifier {
 
     // MARK: Properties
 
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
     @Environment(\.oudsListItemContentStyle) private var style
 
     // MARK: Body
 
     func body(content: Content) -> some View {
-        // Add grid margin if edge to edge and oulined
+        // Add grid margin if edge to edge and outlined
         // because we need to avoid to display the outlined
         // border into the margin
-        if edgeToEdge && style.isOutlined {
+        if edgeToEdge, style.isOutlined {
             content.gridMargin(.horizontal)
         } else {
             content

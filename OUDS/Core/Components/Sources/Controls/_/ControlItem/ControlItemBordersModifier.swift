@@ -16,6 +16,8 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Control Item Borders Modifier
+
 /// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
 /// As they are not supposed to be displayed at the same time, even if it is requested the divider is not displayed if the outline effect is active.
 /// If this view modifier is used to draw an outline in an error context for a disabled component, a *fatal error* will happen because this behaviour is forbidden by design.
@@ -36,6 +38,8 @@ struct ControlItemBordersModifier: ViewModifier {
             .modifier(ControlItemInternalBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
     }
 }
+
+// MARK: - Control Item Internal Borders Modifier
 
 private struct ControlItemInternalBordersModifier: ViewModifier {
 
@@ -121,6 +125,8 @@ private struct ControlItemInternalBordersModifier: ViewModifier {
     }
 }
 
+// MARK: - Control Item Border Padding Modifier
+
 private struct ControlItemBorderPaddingModifier: ViewModifier {
 
     // MARK: Properties
@@ -129,7 +135,7 @@ private struct ControlItemBorderPaddingModifier: ViewModifier {
     let hasDivider: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
 
     // MARK: Body
 
@@ -137,7 +143,7 @@ private struct ControlItemBorderPaddingModifier: ViewModifier {
         if isOutlined {
             content.padding(.horizontal, theme.listItem.spacePaddingInline)
         } else {
-            if hasDivider && !edgeToEdge {
+            if hasDivider, !edgeToEdge {
                 content.padding(.horizontal, theme.listItem.spacePaddingInline)
             } else {
                 content

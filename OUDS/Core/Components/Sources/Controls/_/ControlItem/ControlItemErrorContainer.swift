@@ -14,9 +14,12 @@
 import OUDSThemesContract
 import SwiftUI
 
+// MARK: - Control Item Error Container
+
 struct ControlItemErrorContainer: View {
 
     let layoutData: ControlItemLabel.LayoutData
+
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -30,10 +33,12 @@ struct ControlItemErrorContainer: View {
     }
 }
 
+// MARK: - Control Item Error Margin Modifier
+
 private struct ControlItemErrorMarginModifier: ViewModifier {
 
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
     @Environment(\.theme) private var theme
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
 
     func body(content: Content) -> some View {
         if edgeToEdge {

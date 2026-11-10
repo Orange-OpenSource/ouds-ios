@@ -17,22 +17,22 @@ import SwiftUI
 
 extension EnvironmentValues {
 
-    /// Flag to define if OUDS components (`ControlItem`, `ListItem`) are used in edgeToEdge context.
-    /// Means component is full screen width, so an interal horizontal margin padding is added to align content to other
+    /// Flag to define if OUDS components (`ControlItem`, `ListItem`) are used in edge-to-edge context.
+    /// Means component is full screen width, so an internal horizontal margin padding is added to align content to other
     /// elements in screen.
-    /// Set via ``SwiftUICore/View/oudsUseEdgeToEdge(_:)``
-    @Entry var oudsEdgeToEdge: Bool = true
+    /// Set via ``SwiftUICore/View/oudIsEdgeToEdge(_:)``
+    @Entry var isEdgeToEdge: Bool = true
 }
 
-// MARK: - OUDS Component edge to edge usage
+// MARK: - Edge to Edge View Modifier
 
 /// `ViewModifier` that propagates flag down the environment.
-struct OUDSComponentEdgeToEdgeModifier: ViewModifier {
+struct EdgeToEdgeComponentModifier: ViewModifier {
 
     let useEdgeToEdge: Bool
 
     func body(content: Content) -> some View {
-        content.environment(\.oudsEdgeToEdge, useEdgeToEdge)
+        content.environment(\.isEdgeToEdge, useEdgeToEdge)
     }
 }
 
@@ -41,18 +41,19 @@ struct OUDSComponentEdgeToEdgeModifier: ViewModifier {
 extension View {
 
     /// Flag to display components in full width of screen (edge to edge).
-    /// Means component is full screen width, so an interal horizontal margin padding is added to
+    /// Means component is full screen width, so an internal horizontal margin padding is added to
     /// align verticaly content to other elements in screen.
     ///
     /// ```swift
     /// OUDSSwitchItem(label: "Title", isOn: $isOn)
-    ///     .oudsUseEdgeToEdge(true)
+    ///     .oudIsEdgeToEdge(true)
     /// ```
     ///
-    /// - Parameter flag: The flag value.
+    /// - Parameter isEdgeToEdge: True if component must be edge-to-edge, false otherwise.
     /// - Returns: A view that sets the component edge to edge.
+    /// - Since: 3.3.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func oudsUseEdgeToEdge(_ flag: Bool) -> some View {
-        modifier(OUDSComponentEdgeToEdgeModifier(useEdgeToEdge: flag))
+    public func oudIsEdgeToEdge(_ isEdgeToEdge: Bool) -> some View {
+        modifier(EdgeToEdgeComponentModifier(useEdgeToEdge: isEdgeToEdge))
     }
 }

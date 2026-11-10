@@ -20,10 +20,9 @@ struct ControlItemBackgroundModifier: ViewModifier {
     // MARK: Stored properties
 
     let interactionState: OUDSButtonInteractionState
-    let isOutlined: Bool
-    let hasDivider: Bool
+
     @Environment(\.theme) private var theme
-    @Environment(\.oudsEdgeToEdge) private var edgeToEdge
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
 
     // MARK: Body
 
