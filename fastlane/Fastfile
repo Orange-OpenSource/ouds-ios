@@ -28,7 +28,7 @@ platform :ios do
         puts "👉 Check dead code with Periphery"
 
         # Command must run at root where Package.swift is
-        sh "cd .. && periphery scan --relative-results --format xcode"
+        sh "cd .. && periphery scan --relative-results --format xcode --clean-build -- --build-system native"
     end
 
     # ------------------------------------------------------------
