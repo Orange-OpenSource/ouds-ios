@@ -22,7 +22,6 @@ struct ControlItemBackgroundModifier: ViewModifier {
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.isEdgeToEdge) private var edgeToEdge
 
     // MARK: Body
 
