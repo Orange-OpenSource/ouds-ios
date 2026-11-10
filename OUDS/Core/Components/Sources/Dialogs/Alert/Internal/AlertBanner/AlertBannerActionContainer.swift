@@ -29,8 +29,8 @@ struct AlertBannerActionContainer: View {
     // MARK: - Body
 
     var body: some View {
-        OUDSColoredSurface(color: status.bannerBackgroundColor(for: theme)) {
-            if onClose != nil, actionLink?.position == .topTrailing {
+        if onClose != nil || actionLink?.position == .topTrailing {
+            OUDSColoredSurface(color: status.bannerBackgroundColor(for: theme)) {
                 HStack(alignment: .center, spacing: theme.alert.spaceColumnGapAction) {
                     if let actionLink, self.actionLink?.position == .topTrailing {
                         OUDSLink(text: actionLink.text, size: .default, density: .default, action: actionLink.action)
