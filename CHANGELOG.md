@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  
 ### Changed
 
+- `Ruby` version from v4.0.7 to v4.0.9 for `build-and-test` and `build-xcframework` workflows
 - GitHub Actions `ruby/setup-ruby` action from v1.331.0 to v1.338.0 for `build-and-test` and `build-xcframework` workflows
 - GitHub Actions `github/codeql-action/upload-sarif` action from v4.39.0 to v4.39.3 for `scorecard` workflow
 - `font` raw tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
