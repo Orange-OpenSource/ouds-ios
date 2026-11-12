@@ -79,7 +79,7 @@ platform :ios do
 
         Dir.chdir ".." do
             # Run the command to generate SBOM
-            sh "syft . -o #{sbomFormat} > SBOM.json"
+            sh "syft . --exclude './.opencode/**' -o #{sbomFormat} > SBOM.json"
 
             # Process the SBOM
             sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"
