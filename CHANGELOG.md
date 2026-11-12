@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  
 ### Changed
 
+- OS specificities for `navigation link` and `link` components
 - Ruby Gem `fastlane` from v2.241.1 to v2.241.2
 - `excon` transitive RubyGem from v1.7.3 to v1.12.0
 - Swift Package `SwiftFormat` from v0.64.0 to v0.64.6

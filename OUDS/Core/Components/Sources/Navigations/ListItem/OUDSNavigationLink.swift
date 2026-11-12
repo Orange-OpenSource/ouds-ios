@@ -112,12 +112,18 @@ public struct OUDSNavigationLink<Destination: View>: View {
             isActive = true
         }
         .oudsListContentStyle(style)
-        .background {
-            NavigationLink(destination: destination().navigationTitle(data.labelContent.stringValue), isActive: $isActive) {
-                EmptyView()
+        #if os(macOS)
+            .navigationDestination(isPresented: $isActive) {
+                destination().navigationTitle(data.labelContent.stringValue)
             }
-            .hidden()
-        }
+        #else
+            .background {
+                NavigationLink(destination: destination().navigationTitle(data.labelContent.stringValue), isActive: $isActive) {
+                    EmptyView()
+                }
+                .hidden()
+            }
+        #endif
     }
 }
 #endif
