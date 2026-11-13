@@ -44,11 +44,11 @@ public struct OUDSTabBarViewModifier: ViewModifier {
 
     // MARK: Properties
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.theme) private var theme // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.colorScheme) private var colorScheme // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.verticalSizeClass) private var verticalSizeClass // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled // NOTE: Seen as unused by Periphery, but is not
 
     // MARK: Init
 

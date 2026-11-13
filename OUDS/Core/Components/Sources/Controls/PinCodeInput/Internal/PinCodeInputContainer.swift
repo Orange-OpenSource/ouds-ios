@@ -42,8 +42,8 @@ struct PinCodeInputContainer: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.skeletonState) private var skeletonState
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass // NOTE: Seen as unused by Periphery, but is not
 
     // MARK: - Initializer
 
@@ -188,7 +188,7 @@ struct PinCodeInputContainer: View {
 
     // MARK: - A11Y
 
-    private func accessibilityValue(for index: Int) -> String {
+    private func accessibilityValue(for index: Int) -> String { // NOTE: Seen as unused by Periphery, but is not
         let value = digits[index]
         if value.isEmpty {
             return "core_pinCodeInput_empty_a11y".localized()
@@ -204,7 +204,7 @@ struct PinCodeInputContainer: View {
     ///
     /// - Parameter index: The 0-based index of the digit field
     /// - Returns: The localized positional label
-    private func accessibilityLabel(for index: Int) -> String {
+    private func accessibilityLabel(for index: Int) -> String { // NOTE: Seen as unused by Periphery, but is not
         "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
     }
 
@@ -240,7 +240,7 @@ struct PinCodeInputContainer: View {
     ///
     /// - Parameter index: The index of the field
     /// - Returns: The character to display in the field
-    private func displayText(for index: Int) -> String {
+    private func displayText(for index: Int) -> String { // NOTE: Seen as unused by Periphery, but is not
         if digits[index].isEmpty {
             if focusedIndex == index {
                 ""
@@ -290,7 +290,7 @@ struct PinCodeInputContainer: View {
         #endif
     }
 
-    private func handleFocusChange(_ isFocused: Bool, at index: Int) {
+    private func handleFocusChange(_ isFocused: Bool, at index: Int) { // NOTE: Seen as unused by Periphery, but is not
         if isFocused {
             focusedIndex = index
         } else if focusedIndex == index {
@@ -309,7 +309,7 @@ struct PinCodeInputContainer: View {
     /// UIKit's deleteBackward() which happens during the view update cycle.
     ///
     /// - Parameter index: The index of the field
-    private func handleBackspace(at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
+    private func handleBackspace(at index: Int) { // NOTE: Seen as unused by Periphery, but is not
         let wasEmpty = digits[index].isEmpty
 
         DispatchQueue.main.async {
@@ -328,14 +328,14 @@ struct PinCodeInputContainer: View {
                 announceFocusChanged(forInputAt: index)
             }
         }
-    }
+    } //  \("˚☐˚)/ ⊹₊⟡⋆
 
     /// Manages any text insertion: one digit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
     ///
     /// - Parameters:
     ///   - text: The chain of digits inserted (filtered, only figures)
     ///   - index: Index of the field which got the insertion
-    private func handleTextInserted(_ text: String, at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
+    private func handleTextInserted(_ text: String, at index: Int) { // NOTE: Seen as unused by Periphery, but is not
         let available = length.rawValue - index
         let toDistribute = text.prefix(available)
 
@@ -352,9 +352,9 @@ struct PinCodeInputContainer: View {
             focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
             announceFocusChanged(forInputAt: focusedIndex ?? nextIndex)
         }
-    }
+    } //  \("˚☐˚)/ ⊹₊⟡⋆
 
-    static func completedValue(from digits: [String], length: Int) -> String? {
+    static func completedValue(from digits: [String], length: Int) -> String? { // NOTE: Seen as unused by Periphery, but is not
         let activeDigits = digits.prefix(length)
         guard activeDigits.count == length, activeDigits.allSatisfy({ !$0.isEmpty }) else { return nil }
         return activeDigits.joined()

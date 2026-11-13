@@ -200,7 +200,7 @@ public struct OUDSTabBar<Content: View>: View {
     // MARK: Properties
 
     /// The current number of tabs in the `OUDSTabBar` to compute the selected tab indicator for iOS without Liquid Glass
-    private let tabCount: Int
+    private let tabCount: Int // NOTE: Seen as unused by Periphery, but is not
 
     /// Binding to the currently selected tab index.
     /// When the user selects a tab, this binding is updated so the parent view can react.
@@ -211,7 +211,7 @@ public struct OUDSTabBar<Content: View>: View {
     @ViewBuilder private let content: () -> Content
 
     /// Track orientation changes to trigger view refresh
-    @State private var isLandscape: Bool
+    @State private var isLandscape: Bool // NOTE: Seen as unused by Periphery, but is not
 
     #if os(iOS)
     /// Single source of truth for tab bar visibility.
@@ -221,8 +221,8 @@ public struct OUDSTabBar<Content: View>: View {
     @State private var isTabBarHidden: Bool = false
     #endif
 
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled // NOTE: Seen as unused by Periphery, but is not
 
     // MARK: Initializers
 

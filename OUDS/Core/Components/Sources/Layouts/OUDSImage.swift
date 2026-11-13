@@ -141,12 +141,6 @@ public struct OUDSImage: View {
             .update(with: color)
             .accessibility(label: Text(accessibilityLabel ?? ""))
     }
-
-    // MARK: Helpers
-
-    private func update(with color: MultipleColorSemanticToken) -> some View {
-        foregroundColor(color)
-    }
 }
 
 // MARK: - Extension of View

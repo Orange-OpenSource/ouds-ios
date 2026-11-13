@@ -25,7 +25,7 @@ struct AlertMessageContent: View {
     let bulletList: [OUDSTextualContent]
     let link: OUDSAlertMessage.Link?
     let disableVoiceOverAnnouncement: Bool
-    let onClose: (() -> Void)?
+    let onClose: (() -> Void)? // NOTE: Seen as unused by Periphery, but is not
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
