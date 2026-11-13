@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import SwiftUI
 #if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
@@ -27,16 +28,16 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
     let subtitle: String?
-    let hasLargeTitle: Bool
+    let hasLargeTitle: Bool // NOTE: Seen as unused by Periphery, but is not
 
     #if canImport(UIKit)
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
     let deadline: DispatchTime
     #endif
 
-    @Environment(\.theme) private var theme
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.theme) private var theme // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled // NOTE: Seen as unused by Periphery, but is not
 
     // MARK: Body
 
@@ -89,7 +90,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
     // MARK: Font helpers
 
-    private var fonts: (title: Font, subtitle: Font)? {
+    private var fonts: (title: Font, subtitle: Font)? { // NOTE: Seen as unused by Periphery, but is not
         guard let fontFamily = theme.fontFamily else {
             return nil
         }

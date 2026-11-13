@@ -108,9 +108,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.11.0
+/// - Core OUDS version: 1.12.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange Compact version: 2.7.0
+/// - Brand Orange Compact version: 2.8.0
 ///
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -151,11 +151,14 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let bar = OrangeCompactThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = OrangeCompactThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeCompactThemeBulletListComponentTokensProvider(spaces: spaces)
+        let card = OrangeCompactThemeCardComponentTokensProvider(borders: borders)
         let categoricalTag = OrangeCompactThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = OrangeCompactThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = OrangeCompactThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let containedTabs = OrangeCompactThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let divider = OrangeCompactThemeDividerComponentTokensProvider(borders: borders)
         let icon = OrangeCompactThemeIconComponentTokensProvider(colors: colors)
+        let lineTabs = OrangeCompactThemeLineTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let link = OrangeCompactThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
         let listItem = OrangeCompactThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = OrangeCompactThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
@@ -192,11 +195,14 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   card: card,
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
+                   containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
+                   lineTabs: lineTabs,
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,

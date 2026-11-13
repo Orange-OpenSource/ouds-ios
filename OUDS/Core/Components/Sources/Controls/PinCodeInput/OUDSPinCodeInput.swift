@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSThemesContract
 import SwiftUI
 
 // MARK: - OUDS PIN Code Input
@@ -177,6 +178,7 @@ public struct OUDSPinCodeInput: View {
     private let autofocus: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.skeletonState) private var skeletonState
 
     // MARK: - Length
 
@@ -269,7 +271,7 @@ public struct OUDSPinCodeInput: View {
     ///
     /// - Since: 3.2.0
     public init(_ value: Binding<String>,
-                length: OUDSPinCodeInput.Length = .six,
+                length: OUDSPinCodeInput.Length = .six, // TODO: v4 - Move to length of .four instead of .six (#1878)
                 hiddenCharacters: Bool = true,
                 helperText: OUDSTextualContent? = nil,
                 isOutlined: Bool = false,
@@ -293,12 +295,14 @@ public struct OUDSPinCodeInput: View {
                 PinCodeInputContainer(_value,
                                       length: length,
                                       hiddenCharacters: hiddenCharacters,
-                                      isError: status != .enabled,
+                                      status: status,
                                       isOutlined: isOutlined,
                                       autofocus: autofocus)
                     .id(length)
 
-                PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
+                if skeletonState == nil {
+                    PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
+                }
             }
         }
         .frame(minHeight: theme.textInput.sizeMinHeight,

@@ -22,6 +22,7 @@ import Foundation
 /// This is a group of semantic tokens for **color charts**.
 ///
 /// - Since: 0.17.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ColorChartSemanticTokens {
 
     var gridlinesLight: ColorSemanticToken { get }

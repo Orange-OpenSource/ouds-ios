@@ -69,6 +69,15 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 - Class must be marked `final`
 - Small functions when possible must be marked `@inlinable`
 
+### 2.3 Naming conventions
+
+- Every top-level public `struct`, `class`, `enum` and some `protocol` (not tokens providers) must be prefixed with `OUDS` (e.g. `OUDSButton`, `OUDSTheme`)
+- Public View modifiers must be prefixed with `OUDS`
+- Public environment variables (`EnvironmentValues` keys) and public functions are prefixed with `OUDS` only if there is an ambiguity with the SwiftUI API or another API (e.g. `toolBarTop` does not need the prefix)
+- If the naming of a function improves the developer experience, keep it (e.g. `foregroundColor` from OUDS has the same name as the `foregroundColor` of SwiftUI, bu it's ok because differs from the parameter)
+- Tokens and tokens providers are not concerned by the prefix rule
+- Internal, private and nested types are not concerned by the prefix rule
+
 ## 3. Build verification process ⚠️ CRITICAL
 
 **IMPORTANT**: When editing code, you MUST:
@@ -242,7 +251,7 @@ bundle exec fastlane test_unit
 To build the documentation:
 ```shell
 cd scripts
-yes | ./generateWebDocumentation.sh --libversion=none --nozip
+yes | ./generate-web-documentation.sh --libversion=none --nozip
 ```
 
 ### 8.4 Check dead code

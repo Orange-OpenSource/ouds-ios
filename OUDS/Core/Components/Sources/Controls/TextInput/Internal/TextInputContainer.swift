@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSThemesContract
 import SwiftUI
 
 struct TextInputContainer: View {
@@ -107,11 +108,11 @@ struct TextInputContainer: View {
 
     private var trailingPadding: CGFloat {
         if trailingAction != nil {
-            theme.textInput.spacePaddingInlineTrailingAction
+            theme.textInput.spacePaddingInlineLeadingTrailingAction
         } else {
             switch status {
             case .error, .richError, .textualError, .loading:
-                theme.textInput.spacePaddingInlineTrailingAction
+                theme.textInput.spacePaddingInlineLeadingTrailingAction
             default:
                 theme.textInput.spacePaddingInlineDefault
             }

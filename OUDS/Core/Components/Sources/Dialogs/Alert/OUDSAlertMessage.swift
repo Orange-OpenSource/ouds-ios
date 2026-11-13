@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -202,7 +203,7 @@ public struct OUDSAlertMessage: View {
     ///
     /// - Since: 3.2.0
     public init(label: String,
-                status: OUDSAlertStatus = .positive,
+                status: OUDSAlertStatus = .positive, // TODO: v4 - Use neutral(nil) instead of positive (#1875)
                 description: OUDSTextualContent? = nil,
                 bulletList: [OUDSTextualContent] = [],
                 link: Self.Link? = nil,
@@ -260,7 +261,7 @@ public struct OUDSAlertMessage: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
+                status: OUDSAlertStatus = .positive, // TODO: v4 - Use neutral(nil) instead of positive (#1875)
                 description: OUDSTextualContent? = nil,
                 bulletList: [OUDSTextualContent] = [],
                 link: Self.Link? = nil,

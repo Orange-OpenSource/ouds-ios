@@ -40,7 +40,7 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
 
     @objc open var onBrandTertiary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBrandTertiary", light: onBrandTertiaryLight, dark: onBrandTertiaryDark) }
 
-    @objc open var onOverlayModal: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onModalOverlay", light: onOverlayModalLight, dark: onOverlayModalDark) }
+    @objc open var onOverlayModal: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onOverlayModal", light: onOverlayModalLight, dark: onOverlayModalDark) }
 
     @objc open var onOverlayDropdown: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onOverlayDropdown", light: onOverlayDropdownLight, dark: onOverlayDropdownDark) }
 
@@ -65,6 +65,20 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
     @objc open var onStatusWarningEmphasized: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onStatusWarningEmphasized", light: onStatusWarningEmphasizedLight, dark: onStatusWarningEmphasizedDark) }
 
     @objc open var onStatusWarningMuted: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onStatusWarningMuted", light: onStatusWarningMutedLight, dark: onStatusWarningMutedDark) }
+
+    @objc open var onBgInverseHigh: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseHigh", light: onBgInverseHighLight, dark: onBgInverseHighDark) }
+
+    @objc open var onBgInverseLow: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onBgInverseLow", light: onBgInverseLowLight, dark: onBgInverseLowDark) }
+
+    @objc open var onSurfacePrimary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfacePrimary", light: onSurfacePrimaryLight, dark: onSurfacePrimaryDark) }
+
+    @objc open var onSurfaceSecondary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceSecondary", light: onSurfaceSecondaryLight, dark: onSurfaceSecondaryDark) }
+
+    @objc open var onSurfaceTertiary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceTertiary", light: onSurfaceTertiaryLight, dark: onSurfaceTertiaryDark) }
+
+    @objc open var onSurfaceInverseHigh: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceInverseHigh", light: onSurfaceInverseHighLight, dark: onSurfaceInverseHighDark) }
+
+    @objc open var onSurfaceInverseLow: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("onSurfaceInverseLow", light: onSurfaceInverseLowLight, dark: onSurfaceInverseLowDark) }
 
     @objc open var navigationBar: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken("navigationBarDark", light: navigationBarLight, dark: navigationBarDark) }
 
@@ -150,6 +164,13 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
         if mode.isEqual(onStatusPositiveMuted) { return colors.surfaceStatusPositiveMuted }
         if mode.isEqual(onStatusWarningEmphasized) { return colors.surfaceStatusWarningEmphasized }
         if mode.isEqual(onStatusWarningMuted) { return colors.surfaceStatusWarningMuted }
+        if mode.isEqual(onBgInverseHigh) { return colors.bgInverseHigh }
+        if mode.isEqual(onBgInverseLow) { return colors.bgInverseLow }
+        if mode.isEqual(onSurfacePrimary) { return colors.surfacePrimary }
+        if mode.isEqual(onSurfaceSecondary) { return colors.surfaceSecondary }
+        if mode.isEqual(onSurfaceTertiary) { return colors.surfaceTertiary }
+        if mode.isEqual(onSurfaceInverseHigh) { return colors.surfaceInverseHigh }
+        if mode.isEqual(onSurfaceInverseLow) { return colors.surfaceInverseLow }
         if mode.isEqual(onOverlayDropdown) { return colors.overlayDropdown }
         if mode.isEqual(onOverlayTooltip) { return colors.overlayModalSheet } // FIXME: Not sure of this value
         if mode.isEqual(navigationBar) { return colors.overlayModalSheet } // FIXME: Not sure of this value

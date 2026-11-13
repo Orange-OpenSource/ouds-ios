@@ -77,7 +77,7 @@ import SwiftUI
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
 ///     OUDSNavigationListItem(
 ///         data: OUDSListItemData(label: .textual("SMS credit")),
-///         trailing: .custom {
+///         trailing: .slot {
 ///             OUDSCircularProgressIndicator(progress: 0.75)
 ///         }
 ///     ) {
@@ -114,7 +114,7 @@ import SwiftUI
 ///  - `.image(OUDSListItemImage)`: A static image asset
 ///  - `.flag(OUDSListItemFlag)`: A country flag image
 ///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
-///  - `.custom { ... }`: Any custom SwiftUI view (e.g. a gauge)
+///  - `.slot { ... }`: Any custom SwiftUI view (e.g. a gauge)
 ///
 /// ## Trailing elements
 ///
@@ -130,7 +130,7 @@ import SwiftUI
 /// - `.image(OUDSListItemImage)`:  A static image asset
 /// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
-/// - `.custom { ... }`: Any custom SwiftUI view
+/// - `.slot { ... }`: Any custom SwiftUI view
 ///
 /// ## View modifiers
 ///

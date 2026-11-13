@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 

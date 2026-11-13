@@ -24,7 +24,7 @@ private struct ColoredSurfaceUseMonochromeKey: EnvironmentKey {
 extension EnvironmentValues {
 
     /// Updated by the ``OUDSColoredSurface``, the value tells that component (or `View`) needs to switch to monochrome.
-    public var oudsUseMonochrome: Bool {
+    public var oudsUseMonochrome: Bool { // TODO: v4 - Rename to useMonochrome
         get {
             self[ColoredSurfaceUseMonochromeKey.self]
         }

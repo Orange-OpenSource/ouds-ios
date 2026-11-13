@@ -23,10 +23,10 @@ struct NavigationStackRefresher: ViewModifier {
 
     private let hideBackButtonLabel: Bool
 
-    @Environment(\.theme) private var theme: OUDSTheme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.theme) private var theme: OUDSTheme // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.colorScheme) private var colorScheme // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled // NOTE: Seen as unused by Periphery, but is not
 
     // MARK: - Initializer
 

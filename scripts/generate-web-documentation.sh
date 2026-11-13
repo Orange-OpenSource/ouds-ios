@@ -15,6 +15,12 @@
 # Controls on script
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# shellcheck source=lib/logging.sh
+source "$SCRIPT_DIR/lib/logging.sh"
+log_init
+
 # Configuration
 # -------------
 
@@ -80,9 +86,9 @@ EXIT_CANNOT_PROCESS=4
 on_error_signal() {
     local exit_code=$?
     local line_number=${BASH_LINENO[0]}
-    _ "❌  An error occurred with command '$BASH_COMMAND' at line $line_number (exit code: $exit_code). Exits. ($EXIT_ERROR_SIG)" true
+    log_error "Command '$BASH_COMMAND' failed at line $line_number (exit code: $exit_code). Exiting ($EXIT_ERROR_SIG)."
     if [[ ${use_git:-0} -eq 1 && -d "$DOCUMENTATION_REPO_LOCATION" ]]; then
-        _ "🧹 Removing temporary documentation repository clone at '$DOCUMENTATION_REPO_LOCATION'"
+        log_info "Removing temporary documentation repository clone at '$DOCUMENTATION_REPO_LOCATION'"
         rm -rf "$DOCUMENTATION_REPO_LOCATION"
     fi
     exit $EXIT_ERROR_SIG
@@ -96,18 +102,6 @@ trap 'on_error_signal' SIGABRT
 # Functions
 # ---------
 
-_() {
-    local message="$1"
-    local is_error="${2:-false}"
-    local prefix="🍊 "
-    
-    if [[ "$is_error" == "true" ]]; then
-        echo "${prefix}❌ ERROR: $message" >&2
-    else
-        echo "${prefix}$message"
-    fi
-}
-
 clean_directory() {
     if [ -d "$1" ]; then rm -rf "$1"; fi
 }
@@ -115,7 +109,7 @@ clean_directory() {
 show_help() {
     echo "This script will generate web files (HTML, CSS, JSON, JavaScript) for online documentation for OUDS iOS Swift Package"
     echo "It can also publish the documentation to the dedicated GitHub repository Orange-OpenSource/ouds-ios-documentation (branch main)."
-    echo -e "Usage: $0 [--help] --libversion=VERSION [--usegit | --nozip]\n"
+    printf 'Usage: %s [--help] --libversion=VERSION [--usegit | --nozip]\n\n' "$0"
     echo "Options:"
     echo "  --help                Shows this help message."
     echo "  --libversion=VERSION  Specifies the library version to include in HTML page (mandatory)."
@@ -140,7 +134,6 @@ for arg in "$@"; do
             ;;
         --libversion=*)
             lib_version="${arg#*=}"
-            _ "✔️ OK, library version to know is '$lib_version'"
             ;;
         --usegit)
             use_git=1
@@ -149,7 +142,7 @@ for arg in "$@"; do
             no_zip=1
             ;;          
         *)
-            _ "Unknown parameter: $arg. Exits. ($EXIT_BAD_PARAMETER)" true
+            log_error "Unknown parameter: $arg. Exiting ($EXIT_BAD_PARAMETER)."
             exit $EXIT_BAD_PARAMETER
             ;;
     esac
@@ -157,51 +150,57 @@ done
 
 # Get the version of the library to add in commit messages
 if [[ -z "$lib_version" ]]; then
-    _ "Parameter --libversion is mandatory. Exits. ($EXIT_BAD_PARAMETER)" true
+    log_error "Parameter --libversion is mandatory. Exiting ($EXIT_BAD_PARAMETER)."
     exit $EXIT_BAD_PARAMETER
 fi
 
 # Upload to Git repository or not.
+log_header "Generate web documentation"
+log_detail "Library version" "$lib_version"
+
 if [[ $use_git -eq 1 ]]; then
-    _ "✔️ OK, Git will be used"
+    log_detail "Publication" "$DOCUMENTATION_REPO_URL ($DOCUMENTATION_REPO_BRANCH)"
 else
-    _ "✔️ OK, Git will NOT be used"
+    log_detail "Publication" "Local only"
 fi
 
 # Keep ZIP or not.
 if [[ $no_zip -eq 1 ]]; then
-    _ "✔️ OK, no ZIP archive will be done"
+    log_detail "ZIP archive" "Disabled"
 else
-    _ "✔️ OK, a ZIP archive will be created"
+    log_detail "ZIP archive" "$DOCUMENTATION_ZIP_LOCATION"
 fi       
 
 if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 ]]; then
-    _ "🥴 WARNING: What do you use this script for? You should at least save the doc in Git repository or in ZIP file"
+    log_warn "Neither publication nor ZIP archiving is enabled; generated files will only be kept locally."
 fi
 
 # Ask the user if he/she wants to go further (updating documentation updates the production website).
-read -p "🍊 ❓ Do you want to update the documentation? (yes/YES/Y/y): " answer
+log_prompt "Do you want to update the documentation? (yes/YES/Y/y):"
+read -r answer
+if [[ ! -t 0 ]]; then
+    printf '\n' >&2
+fi
 if [[ ! "$answer" =~ ^(yes|YES|Y|y)$ ]]; then
-    _ "👋 Bye!"
+    log_info "Documentation generation cancelled."
     exit $EXIT_OK
 else
-    _ "👍 Ok, let's go! Keep in mind it can need between 15 and 20 minutes!"
+    log_info "Starting documentation generation; this can take 15 to 20 minutes."
 fi
-
-start_time=$(date +%s)
 
 # Step 1 - Git setup (if relevant)
 # --------------------------------
 
 if [[ $use_git -eq 1 ]]; then
-    _ "✅ Documentation will be pushed to '$DOCUMENTATION_REPO_URL' on branch '$DOCUMENTATION_REPO_BRANCH'"
-    _ "🔐 Please ensure the credentials you need are ready (SSH, GPG, etc.) to push to this repository"
+    log_info "Documentation will be pushed to '$DOCUMENTATION_REPO_URL' on branch '$DOCUMENTATION_REPO_BRANCH'"
+    log_info "Please ensure your credentials (SSH, GPG, etc.) are ready to push to this repository."
 fi
 
 # Step 2 - Generate the documentation
 # -----------------------------------
 
-_ "👉 Generating web documentation at '$DOCUMENTATION_HTML_LOCATION'"
+log_step "Generating web documentation"
+log_detail "Output" "$DOCUMENTATION_HTML_LOCATION"
 
 swift package \
     --allow-writing-to-directory "$DOCUMENTATION_HTML_LOCATION" \
@@ -227,16 +226,16 @@ swift package \
 
 files_count=`find $DOCUMENTATION_HTML_LOCATION -type f | wc -l | xargs`
 
-_ "👍 Generated '$files_count' files!"
+log_success "Generated $files_count files"
 
 # Step 3 - Add custom assets
 # --------------------------
 
 # CNAME for GitHub Pages etc.
 if [[ $use_git -eq 1 ]]; then
-    _ "👉 Updating CNAME file"
+    log_info "Updating CNAME file"
     echo "$SERVICE_PAGES_DOMAIN" > "$DOCUMENTATION_HTML_LOCATION/CNAME"
-    _ "👍 Updated!"
+    log_success "CNAME updated"
 fi
 
 # Step 4 - Add hard-coded redirect URL
@@ -254,14 +253,16 @@ echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= htt
 # then committed and pushed on branch $DOCUMENTATION_REPO_BRANCH.
 
 if [[ $use_git -eq 1 ]]; then
-    _ "👉 Cloning dedicated documentation repository '$DOCUMENTATION_REPO_URL' (branch '$DOCUMENTATION_REPO_BRANCH')..."
+    log_step "Cloning documentation repository"
+    log_detail "Repository" "$DOCUMENTATION_REPO_URL"
+    log_detail "Branch" "$DOCUMENTATION_REPO_BRANCH"
 
     clean_directory "$DOCUMENTATION_REPO_LOCATION"
 
     git clone --depth 1 --branch "$DOCUMENTATION_REPO_BRANCH" \
         "$DOCUMENTATION_REPO_URL" "$DOCUMENTATION_REPO_LOCATION"
 
-    _ "✅ Cloned into '$DOCUMENTATION_REPO_LOCATION'"
+    log_success "Cloned into '$DOCUMENTATION_REPO_LOCATION'"
 
     # Git memory boost, applied to the clone (documentation repository can grow large)
     git -C "$DOCUMENTATION_REPO_LOCATION" config pack.windowMemory "100m"
@@ -276,13 +277,13 @@ if [[ $use_git -eq 1 ]]; then
     # Clean before all to free memory
     git -C "$DOCUMENTATION_REPO_LOCATION" gc --auto
 
-    _ "🔨 Applying changes"
+    log_step "Applying generated documentation"
 
     # Ensure we have only updated files on destination branch.
     # Supposing all assets are in the branch in root level (/)
     # Do not remove .ico and .sg files ; keep the ones already existing in the branch
     # Do not remove theme-settings.json
-    _ "🔨 Cleaning old documentation files"
+    log_info "Cleaning old documentation files"
 
     # One-line deletion command
     find "$DOCS_DIRECTORY" -mindepth 1 \
@@ -302,28 +303,28 @@ if [[ $use_git -eq 1 ]]; then
         \( -name "*.jpg" -o -name "*.html" -o -name "CNAME" \) \
         -type f -delete 2>/dev/null || true
 
-    _ "✅ Cleanup completed"
+    log_success "Cleanup completed"
 
     # Copy all files from temporary folder to branch (with progress)
-    _ "🔨 Copying documentation files (this may take several minutes)..."
+    log_info "Copying documentation files (this may take several minutes)..."
 
     # If available use rsync command
     # Otherwise fallback to cp command
     if command -v rsync &> /dev/null; then    
         rsync -a --info=progress2 "$DOCUMENTATION_HTML_LOCATION/" "$DOCS_DIRECTORY/" || {
-            _ "rsync failed, falling back to cp" true
+            log_warn "rsync failed, falling back to cp"
             cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY"
         }
     else
         if ! cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY" 2>&1; then
-            _ "Copy failed (exit code: $?)" true
-            _ "   Source: $DOCUMENTATION_HTML_LOCATION" true
-            _ "   Destination: $DOCS_DIRECTORY" true
+            log_error "Copy failed (exit code: $?)"
+            log_detail "Source" "$DOCUMENTATION_HTML_LOCATION"
+            log_detail "Destination" "$DOCS_DIRECTORY"
             exit $EXIT_CANNOT_PROCESS
         fi
     fi
 
-    _ "✅ Files copied successfully"
+    log_success "Files copied successfully"
 
 
     # It seems there is an issue with references of images
@@ -346,7 +347,7 @@ if [[ $use_git -eq 1 ]]; then
     cp "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" "$DOCS_DIRECTORY/images"
     
-    _ "🔨 Staging changes (~ $files_count files, this may take time)..."
+    log_step "Preparing changes (~ $files_count files, this may take time)"
 
     # Move into the clone so that glob patterns (*.jpg, *.json, *.html) are expanded
     # relative to the documentation repository, not the caller's working directory.
@@ -355,16 +356,16 @@ if [[ $use_git -eq 1 ]]; then
     # Protect files that must keep their versioned content (see PROTECTED_FILES).
     # - If the file is tracked in the doc repo -> restore it from HEAD (undo any overwrite)
     # - If the file is not tracked but was produced by DocC -> delete the generated copy
-    _ "🛡️  Protecting files that must not be overwritten by generated content"
+    log_info "Protecting files that must not be overwritten by generated content"
     for f in "${PROTECTED_FILES[@]}"; do
         if git ls-files --error-unmatch -- "$f" > /dev/null 2>&1; then
             git checkout HEAD -- "$f"
-            _ "   ✅ Restored '$f' from HEAD"
+            log_success "Restored '$f' from HEAD"
         elif [[ -e "$f" ]]; then
             rm -f "$f"
-            _ "   🗑️  Removed generated (untracked) '$f'"
+            log_info "Removed generated (untracked) '$f'"
         else
-            _ "   ℹ️  '$f' not present, nothing to do"
+            log_info "'$f' not present, nothing to do"
         fi
     done
 
@@ -379,31 +380,33 @@ if [[ $use_git -eq 1 ]]; then
     # Use --verbose so the user sees the progress (each file must be hashed by Git);
     # do NOT redirect stderr to /dev/null and do NOT swallow errors, otherwise a failing
     # 'git add' would result in an empty index and a misleading "No changes to commit".
-    _ "   ⏳ Running 'git add -A --verbose' — for ~$files_count files this can take several minutes."
-    _ "   Each file must be hashed by Git; progress will scroll below."
+    log_info "Running 'git add -A --verbose' — for ~$files_count files this can take several minutes."
+    log_info "Each file must be hashed by Git; progress will scroll below."
     git add -A --verbose
-    _ "✅ Staging done"
+    log_success "Staging completed"
 
     # Check if changes
     if git diff --cached --quiet; then
-        _ "⚠️  No changes to commit"
+        log_warn "No changes to commit"
     else
         changes_count=$(git diff --cached --numstat | wc -l)
-        _ "✅ Staged $changes_count changes"
+        log_success "Staged $changes_count changes"
     fi
 
-    _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
+    log_step "Committing documentation (credentials may be requested)"
     commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation website for version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
     # git commit -m "$commit_message" --no-gpg-sign
     git commit -m "$commit_message"
 
-    _ "🔨 Pushing things to '$DOCUMENTATION_REPO_URL' on branch '$DOCUMENTATION_REPO_BRANCH'"
+    log_step "Pushing documentation"
+    log_detail "Repository" "$DOCUMENTATION_REPO_URL"
+    log_detail "Branch" "$DOCUMENTATION_REPO_BRANCH"
     git push origin "$DOCUMENTATION_REPO_BRANCH"
 
     popd > /dev/null
 
 else
-    _ "👍 Ok, just keep documentation here"
+    log_info "Generated documentation will be kept locally."
 fi
 
 # Step 6 - Compress ZIP (if relevant)
@@ -411,10 +414,9 @@ fi
 
 # ZIP action must be done before reseting the Git workspace (otherwise everything will be wiped out).
 if [[ $no_zip -eq 0 ]]; then
-    _ "👉 Zipping documentation folder"
+    log_step "Creating documentation ZIP archive"
     zip -r "$DOCUMENTATION_ZIP_LOCATION" "$DOCUMENTATION_HTML_LOCATION"/*
-    size_in_byte=`du "$DOCUMENTATION_ZIP_LOCATION" | cut -f1`
-    _ "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
+    log_success "Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION"
 fi
 
 # Step 6b - Cleanup temporary documentation repository clone (if relevant)
@@ -422,21 +424,19 @@ fi
 
 if [[ $use_git -eq 1 ]]; then
     commit_hash=$(git -C "$DOCUMENTATION_REPO_LOCATION" rev-parse HEAD)
-    _ "👍 Pushed with commit '$commit_hash' on branch '$DOCUMENTATION_REPO_BRANCH' of '$DOCUMENTATION_REPO_URL'"
-    _ "🧹 Removing temporary documentation repository clone at '$DOCUMENTATION_REPO_LOCATION'"
+    log_success "Pushed commit '$commit_hash' to '$DOCUMENTATION_REPO_URL' ($DOCUMENTATION_REPO_BRANCH)"
+    log_info "Removing temporary documentation repository clone at '$DOCUMENTATION_REPO_LOCATION'"
     clean_directory "$DOCUMENTATION_REPO_LOCATION"
 fi
 
 # Step 7 - Metrics and conclusion
 # -------------------------------
 
-end_time=$(date +%s)
-elapsed_time=$(( end_time - start_time ))
-elapsed_time_minutes=$(( elapsed_time / 60 ))
-elapsed_time_seconds=$(( elapsed_time % 60 ))
-
-_ "⌛ Elapsed time: ${elapsed_time_minutes} minutes and ${elapsed_time_seconds} seconds"
-_ "🚀 There were about $files_count files to process!"
-_ "👋 Bye!"
+log_finish "Web documentation generation completed"
+log_detail "Files processed" "$files_count"
+log_detail "Documentation" "$DOCUMENTATION_HTML_LOCATION"
+if [[ $no_zip -eq 0 ]]; then
+    log_detail "ZIP archive" "$DOCUMENTATION_ZIP_LOCATION"
+fi
 
 exit $EXIT_OK

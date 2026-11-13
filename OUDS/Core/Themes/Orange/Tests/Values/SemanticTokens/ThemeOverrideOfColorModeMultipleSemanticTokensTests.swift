@@ -138,6 +138,45 @@ struct ThemeOverrideOfColorModeMultipleSemanticTokensTests {
         #expect(inheritedTheme.colorModes.onOverlayTooltip != abstractTheme.colorModes.onOverlayTooltip)
         #expect(inheritedTheme.colorModes.onOverlayTooltip == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
+
+    // MARK: - On Surface
+
+    @Test func inheritedThemeCanOverrideModeOnSurfacePrimary() throws {
+        #expect(inheritedTheme.colorModes.onSurfacePrimary != abstractTheme.colorModes.onSurfacePrimary)
+        #expect(inheritedTheme.colorModes.onSurfacePrimary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
+    }
+
+    @Test func inheritedThemeCanOverrideModeOnSurfaceSecondary() throws {
+        #expect(inheritedTheme.colorModes.onSurfaceSecondary != abstractTheme.colorModes.onSurfaceSecondary)
+        #expect(inheritedTheme.colorModes.onSurfaceSecondary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
+    }
+
+    @Test func inheritedThemeCanOverrideModeOnSurfaceTertiary() throws {
+        #expect(inheritedTheme.colorModes.onSurfaceTertiary != abstractTheme.colorModes.onSurfaceTertiary)
+        #expect(inheritedTheme.colorModes.onSurfaceTertiary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
+    }
+
+    @Test func inheritedThemeCanOverrideModeOnSurfaceInverseHigh() throws {
+        #expect(inheritedTheme.colorModes.onSurfaceInverseHigh != abstractTheme.colorModes.onSurfaceInverseHigh)
+        #expect(inheritedTheme.colorModes.onSurfaceInverseHigh == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
+    }
+
+    @Test func inheritedThemeCanOverrideModeOnSurfaceInverseLow() throws {
+        #expect(inheritedTheme.colorModes.onSurfaceInverseLow != abstractTheme.colorModes.onSurfaceInverseLow)
+        #expect(inheritedTheme.colorModes.onSurfaceInverseLow == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
+    }
+
+    // MARK: - On Background Inverse
+
+    @Test func inheritedThemeCanOverrideModeOnBgInverseHigh() throws {
+        #expect(inheritedTheme.colorModes.onBgInverseHigh != abstractTheme.colorModes.onBgInverseHigh)
+        #expect(inheritedTheme.colorModes.onBgInverseHigh == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
+    }
+
+    @Test func inheritedThemeCanOverrideModeOnBgInverseLow() throws {
+        #expect(inheritedTheme.colorModes.onBgInverseLow != abstractTheme.colorModes.onBgInverseLow)
+        #expect(inheritedTheme.colorModes.onBgInverseLow == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
+    }
 }
 
 // swiftlint:enable type_name

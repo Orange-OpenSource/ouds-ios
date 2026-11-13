@@ -15,7 +15,7 @@
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-import CoreGraphics // Needed for XCFramework generation
+import CoreGraphics // Needed for XCFramework generation and API breaks checks
 
 // swiftlint:disable missing_docs
 
@@ -24,6 +24,7 @@ import CoreGraphics // Needed for XCFramework generation
 /// Any effect semantic token must be declared there.
 ///
 /// - Since: 0.22.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol EffectSemanticTokens {
 
     var blurBackdrop: EffectSemanticToken { get }

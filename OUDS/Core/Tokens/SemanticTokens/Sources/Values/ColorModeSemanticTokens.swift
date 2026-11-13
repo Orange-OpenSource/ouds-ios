@@ -22,6 +22,7 @@
 /// These tokens are then gathered inside ``MultipleColorModeSemanticToken`` defined in ``ColorModeMultipleSemanticTokens``.
 ///
 /// - Since: 0.13.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ColorModeSemanticTokens {
 
     // MARK: - On Background

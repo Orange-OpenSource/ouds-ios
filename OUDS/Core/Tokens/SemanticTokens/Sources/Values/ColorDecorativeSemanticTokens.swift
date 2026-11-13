@@ -22,6 +22,7 @@ import Foundation
 /// This is a group of semantic tokens for **color decorative**.
 ///
 /// - Since: 2.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ColorDecorativeSemanticTokens {
 
     var brandPrimary: ColorSemanticToken { get }

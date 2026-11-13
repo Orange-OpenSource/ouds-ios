@@ -62,7 +62,7 @@
 ![tvOS 16](https://img.shields.io/badge/tvOS-16-FF1AB2?style=for-the-badge)
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
-[![Xcode 26.4](https://img.shields.io/badge/Xcode-26.4-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_4-release-notes)
+[![Xcode 27.1](https://img.shields.io/badge/Xcode-27.1-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes)
 
 [![Open Hub](https://img.shields.io/badge/open%20hub-5A2A82?style=for-the-badge)](https://openhub.net/p/ouds-ios)
 
@@ -196,14 +196,14 @@ This distribution is intended to solve the duplication / symbol-conflict problem
 > This Swift package embeds specific versions of themes / tokens libraries.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core OUDS version: 1.11.0
+- Core OUDS version: 1.12.0
 - Core Orange version: 1.2.0
-- Brand Orange version: 2.7.0
+- Brand Orange version: 2.8.0
 - Core Sosh version: 1.4.0
-- Brand Sosh version: 2.7.0
+- Brand Sosh version: 2.8.0
 - Core Wireframe version: 1.5.0
-- Brand Wireframe version: 2.7.0
-- Brand Orange Compact version: 2.7.0
+- Brand Wireframe version: 2.8.0
+- Brand Orange Compact version: 2.8.0
 
 ## 🪲 Bugs, feature requests and discussions
 

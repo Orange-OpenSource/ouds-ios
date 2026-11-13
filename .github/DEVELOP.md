@@ -30,7 +30,7 @@
 
 > [!IMPORTANT]
 > You must have an iOS-ready environment to contribute to the project or at least build it.
-> Thus macOS is mandatory and Xcode 26.4.
+> Thus macOS is mandatory and Xcode 27.1.
 
 > [!IMPORTANT]
 > You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
@@ -118,10 +118,10 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.4**, we suggest you use this version or newer if you want (but not recommended).
+We use also for our GitLab CI runners **Xcode 27.1**, we suggest you use this version or newer if you want (but not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.4 and Swift 6.3 are used for this project. You must use this configuration.
+> Xcode 27.1 and Swift 6.3 are used for this project. You must use this configuration.
 > No retrocompatibility is planned.
 > If needed, contact us and open a discussino on GitHub Orange-OpenSource/ouds-ios
 
@@ -145,8 +145,8 @@ To build the OUDS package:
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
 Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
-The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
-the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+The `generate-web-documentation..sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
+the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in [a dedicated repositoy](https://github.com/Orange-OpenSource/ouds-ios-documentation).
 
 ### Illustrations
 

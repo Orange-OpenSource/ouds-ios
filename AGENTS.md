@@ -29,7 +29,7 @@ Components:
 - **`ouds-ios-components-foundations`** — Typography (OUDSDisplay, OUDSHeading, OUDSBody, OUDSLabel, OUDSCode)
 - **`ouds-ios-components-indicators`** — OUDSBadge, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator
 - **`ouds-ios-components-layouts`** — OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider
-- **`ouds-ios-components-navigations`** — OUDSLink, OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
+- **`ouds-ios-components-navigations`** — OUDSLink, list items (OUDSStaticListItem, OUDSNavigationListItem, OUDSNavigationLink), OUDSTabBar, Toolbars (OUDSToolBarItem, `toolBarTop`, `toolBarBottom`)
 
 Guides:
 - **`ouds-ios-guide-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)
@@ -56,6 +56,7 @@ For pull request reviews and before commit:
 - Always load the **`ouds-ios-guide-migration`** skill when the user wants to migrate OUDS code or when deprecated OUDS API usages are detected.
 - Always load the **`ouds-ios-guide-create-theme`** skill when the user wants to create a custom OUDS theme or brand theme.
 - Before committing: format → build → fix errors → run tests → lint (see `.github/copilot-instructions.md` §3).
+- Naming: top-level public types and View modifiers are prefixed with `OUDS`; public environment variables and functions only if ambiguous with SwiftUI or other APIs (see `.github/copilot-instructions.md` §2.3).
 - Use `#available` for iOS 26 SDK APIs (min deployment is iOS 15).
 - Use `#if os(…)` for platform-specific code.
 - Never use UIKit unless strictly required for an accessibility API.

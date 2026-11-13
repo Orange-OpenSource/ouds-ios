@@ -35,15 +35,16 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 0.13.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol ColorModeMultipleSemanticTokens {
-
-    // MARK: - Multiple tokens
 
     // MARK: - On Background
 
     var onBgPrimary: MultipleColorModeSemanticToken { get }
     var onBgSecondary: MultipleColorModeSemanticToken { get }
     var onBgTertiary: MultipleColorModeSemanticToken { get }
+    var onBgInverseHigh: MultipleColorModeSemanticToken { get }
+    var onBgInverseLow: MultipleColorModeSemanticToken { get }
 
     // MARK: - On Brand
 
@@ -69,6 +70,14 @@ public protocol ColorModeMultipleSemanticTokens {
     var onOverlayModal: MultipleColorModeSemanticToken { get }
     var onOverlayDropdown: MultipleColorModeSemanticToken { get }
     var onOverlayTooltip: MultipleColorModeSemanticToken { get }
+
+    // MARK: - On Surface
+
+    var onSurfacePrimary: MultipleColorModeSemanticToken { get }
+    var onSurfaceSecondary: MultipleColorModeSemanticToken { get }
+    var onSurfaceTertiary: MultipleColorModeSemanticToken { get }
+    var onSurfaceInverseHigh: MultipleColorModeSemanticToken { get }
+    var onSurfaceInverseLow: MultipleColorModeSemanticToken { get }
 
     // MARK: - Navigation
 

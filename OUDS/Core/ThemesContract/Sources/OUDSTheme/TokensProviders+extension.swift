@@ -25,7 +25,7 @@ extension TokensProvider {
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func checkInstances(count: Int, for providerName: String) {
         guard count > 1 else { return }
-        OL.debug("🧮 Nore there are \(count) instances of \(providerName), but it should be unique in most of cases. If this warning does not occur during tests, feel free to submit a bug: https://github.com/Orange-OpenSource/ouds-ios/issues")
+        OL.debug("🧮 There are \(count) instances of \(providerName), but it should be unique in most of cases. If this warning does not occur during tests, feel free to submit a bug: https://github.com/Orange-OpenSource/ouds-ios/issues")
     }
     // swiftlint:enable line_length
 }

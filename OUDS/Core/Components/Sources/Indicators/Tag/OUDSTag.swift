@@ -363,7 +363,7 @@ public struct OUDSTag: View {
     ///    - size: The size of the tag. Default set to *default*.
     public init(label: String,
                 status: Status = .neutral(),
-                appearance: Appearance = .emphasized,
+                appearance: Appearance = .emphasized, // TODO: v4 - Must be .muted instead of .emphasized (#1880)
                 shape: Shape = .rounded,
                 size: Size = .default)
     {
@@ -391,7 +391,7 @@ public struct OUDSTag: View {
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 status: Status = .neutral(),
-                appearance: Appearance = .emphasized,
+                appearance: Appearance = .emphasized, // TODO: v4 - Must be .muted instead of .emphasized (#1880)
                 shape: Shape = .rounded,
                 size: Size = .default)
     {

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -38,7 +39,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-typography-body)
 ///
 /// ## Themes rendering
 ///
@@ -61,7 +62,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSBody: View { // TODO: #1580 - Add reference to documentation when available
+public struct OUDSBody: View {
 
     // TODO: #1580 - Add illustrations
 
@@ -114,7 +115,7 @@ public struct OUDSBody: View { // TODO: #1580 - Add reference to documentation w
     ///    - text: The text to display.
     ///    - size: The body size, default set to `.medium`.
     ///    - weight: The body weight, default set to `.default`.
-    public init(text: String, size: Size = .medium, weight: Weight = .default) {
+    public init(text: String, size: Size = .medium, weight: Weight = .default) { // TODO: v4 - Must be .large size instead of .medium (#1881)
         self.text = text
         self.size = size
         self.weight = weight
@@ -131,7 +132,7 @@ public struct OUDSBody: View { // TODO: #1580 - Add reference to documentation w
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                size: Size = .medium,
+                size: Size = .medium, // TODO: v4 - Must be .large size instead of .medium (#1881)
                 weight: Weight = .default)
     {
         self.init(text: key.resolved(tableName: tableName, bundle: bundle), size: size, weight: weight)

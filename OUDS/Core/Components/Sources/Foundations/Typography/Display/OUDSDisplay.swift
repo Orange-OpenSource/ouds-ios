@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -46,7 +47,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-typography-display)
 ///
 /// ## Themes rendering
 ///
@@ -69,7 +70,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSDisplay: View { // TODO: #1580 - Add reference to documentation when available
+public struct OUDSDisplay: View {
 
     // MARK: Properties
 

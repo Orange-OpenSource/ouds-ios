@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -35,7 +36,7 @@ struct TextAreaHelperErrorTextContainer: View {
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
-                .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                .padding(.top, theme.textInput.spacePaddingBlockHelperText)
                 .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
         }
     }

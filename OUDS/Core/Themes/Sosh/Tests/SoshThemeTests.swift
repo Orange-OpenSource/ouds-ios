@@ -123,12 +123,20 @@ struct SoshThemeTests {
         #expect(theme.button is SoshThemeButtonComponentTokensProvider)
     }
 
+    @Test func defaultCardComponentTokensProvider() {
+        #expect(theme.card is SoshThemeCardComponentTokensProvider)
+    }
+
     @Test func defaultCheckboxComponentTokensProvider() {
         #expect(theme.checkbox is SoshThemeCheckboxComponentTokensProvider)
     }
 
     @Test func defaultChipComponentTokensProvider() {
         #expect(theme.chip is SoshThemeChipComponentTokensProvider)
+    }
+
+    @Test func defaultContainedTabsComponentTokensProvider() {
+        #expect(theme.containedTabs is SoshThemeContainedTabsComponentTokensProvider)
     }
 
     @Test func defaultDividerComponentTokensProvider() {
@@ -141,6 +149,10 @@ struct SoshThemeTests {
 
     @Test func defaultIconComponentTokensProvider() {
         #expect(theme.icon is SoshThemeIconComponentTokensProvider)
+    }
+
+    @Test func defaultLineTabsComponentTokensProvider() {
+        #expect(theme.lineTabs is SoshThemeLineTabsComponentTokensProvider)
     }
 
     @Test func defaultLinkComponentTokensProvider() {

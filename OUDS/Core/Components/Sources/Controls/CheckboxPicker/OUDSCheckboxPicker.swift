@@ -13,6 +13,7 @@
 
 #if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -125,9 +126,9 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Environment variables
 
+    @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.layoutDirection) private var layoutDirection
-    @Environment(\.theme) private var theme
 
     // MARK: - Init
 

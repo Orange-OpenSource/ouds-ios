@@ -287,7 +287,7 @@ enum LinkInlineIndicatorImage {
 
         // Create a canvas with width equal to icon size + spacing and heigh is layout height
         let canvasSize = CGSize(width: metrics.iconSize + metrics.spacing, height: metrics.layoutHeight)
-        let format = UIGraphicsImageRendererFormat.default()
+        let format = UIGraphicsImageRendererFormat.preferred()
         format.opaque = false
         let renderer = UIGraphicsImageRenderer(size: canvasSize, format: format)
 

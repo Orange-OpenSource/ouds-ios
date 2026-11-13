@@ -23,6 +23,7 @@ import OUDSTokensSemantic
 /// Used for tokens providers like `OrangeThemeTextAreaComponentTokensProvider`.
 ///
 /// - Since: 0.17.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol TextAreaComponentTokens {
 
     var spacePaddingBlock: SpaceSemanticToken { get }

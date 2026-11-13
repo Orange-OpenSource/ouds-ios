@@ -50,28 +50,24 @@ struct WhiteLabelTests {
     @Test func customWhiteLabelTheme() {
 
         // Given
+        let customBorders: AllBorderSemanticTokensProvider = WhiteLabelThemeBorderSemanticTokensProvider()
         let customColors: AllColorSemanticTokensProvider = WhiteLabelThemeColorSemanticTokensProvider()
         let customName = "Test-Name"
         let customFontFamily = "Test-Font-Family"
-        let customTuning = Tuning(hasRoundedButtons: true,
-                                  hasRoundedTextInputs: true,
-                                  hasRoundedAlertMessages: false,
-                                  hasRoundedProgressIndicators: false,
-                                  hasRoundedListItems: true)
 
         // When
-        let customWhiteLabelTheme = WhiteLabelTheme(colors: customColors,
+        let customWhiteLabelTheme = WhiteLabelTheme(borders: customBorders,
+                                                    colors: customColors,
                                                     name: customName,
-                                                    fontFamily: customFontFamily,
-                                                    tuning: customTuning)
+                                                    fontFamily: customFontFamily)
 
         // Then
+        #expect(customWhiteLabelTheme.borders is WhiteLabelThemeBorderSemanticTokensProvider)
         #expect(customWhiteLabelTheme.colors is WhiteLabelThemeColorSemanticTokensProvider)
         #expect(customWhiteLabelTheme.colorsCharts == nil)
         #expect(customWhiteLabelTheme.colorsDecorative == nil)
         #expect(customWhiteLabelTheme.name == customName)
         #expect(customWhiteLabelTheme.fontFamily == customFontFamily)
-        #expect(customWhiteLabelTheme.tuning == customTuning)
     }
 
     // MARK: - Tests - Semantic tokens providers
@@ -155,12 +151,20 @@ struct WhiteLabelTests {
         #expect(theme.button is WireframeThemeButtonComponentTokensProvider)
     }
 
+    @Test func defaultCardComponentTokensProvider() {
+        #expect(theme.card is WireframeThemeCardComponentTokensProvider)
+    }
+
     @Test func defaultCheckboxComponentTokensProvider() {
         #expect(theme.checkbox is WireframeThemeCheckboxComponentTokensProvider)
     }
 
     @Test func defaultChipComponentTokensProvider() {
         #expect(theme.chip is WireframeThemeChipComponentTokensProvider)
+    }
+
+    @Test func defaultContainedTabsComponentTokensProvider() {
+        #expect(theme.containedTabs is WireframeThemeContainedTabsComponentTokensProvider)
     }
 
     @Test func defaultDividerComponentTokensProvider() {
@@ -173,6 +177,10 @@ struct WhiteLabelTests {
 
     @Test func defaultIconComponentTokensProvider() {
         #expect(theme.icon is WireframeThemeIconComponentTokensProvider)
+    }
+
+    @Test func defaultLineTabsComponentTokensProvider() {
+        #expect(theme.lineTabs is WireframeThemeLineTabsComponentTokensProvider)
     }
 
     @Test func defaultLinkComponentTokensProvider() {

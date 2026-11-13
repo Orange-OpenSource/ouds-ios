@@ -65,11 +65,11 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
     // MARK: - Spaces
 
     override var spacePaddingInlineDefault: SpaceSemanticToken { Self.mockThemeTextInputSpace }
-    override var spacePaddingInlineTrailingAction: SpaceSemanticToken { Self.mockThemeTextInputSpace }
+    override var spacePaddingInlineLeadingTrailingAction: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override var spacePaddingInlineCountrySelectorStart: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override var spacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override var spacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeTextInputSpace }
-    override var spacePaddingBlockTopHelperText: SpaceSemanticToken { Self.mockThemeTextInputSpace }
+    override var spacePaddingBlockHelperText: SpaceSemanticToken { Self.mockThemeTextInputSpace }
 
     override var spaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override var spaceColumnGapInlineText: SpaceSemanticToken { Self.mockThemeTextInputSpace }

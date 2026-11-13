@@ -32,8 +32,6 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
-    @objc public final var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
-
     // MARK: - Color - Action
 
     @objc public final var actionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionDisabledLight, dark: actionDisabledDark) }
@@ -208,7 +206,7 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
-    @objc public final var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
+    @objc public final var overlaySticky: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayStickyLight, dark: overlayStickyDark) }
 
     // MARK: - Color - Surface
 
@@ -257,6 +255,12 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc public final var colorAiTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiTertiaryLight, dark: colorAiTertiaryDark) }
 
     @objc public final var colorAiQuaternary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiQuaternaryLight, dark: colorAiQuaternaryDark) }
+
+    // MARK: - Deprecated
+
+    // TODO: v4 - Remove these tokens
+
+    @objc public final var overlayFloating: MultipleColorSemanticToken { overlaySticky }
 }
 
 // swiftlint:enable line_length

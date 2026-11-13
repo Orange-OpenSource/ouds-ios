@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import SwiftUI
 
 /// Internal decorative marker displayed below a large ``OUDSHeading`` when the current theme supports it.

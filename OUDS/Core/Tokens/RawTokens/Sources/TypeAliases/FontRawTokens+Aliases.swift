@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import CoreGraphics // Needed for XCFramework generation
+import CoreGraphics // Needed for XCFramework generation and API breaks checks
 import Foundation
 
 /// In the global design system tool, *font family* raw tokens are basically `String` values, to keep grammar clean and clear with design system grammar.

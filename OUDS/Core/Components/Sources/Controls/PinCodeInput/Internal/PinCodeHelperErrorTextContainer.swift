@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -28,7 +29,8 @@ struct PinCodeHelperErrorTextContainer: View {
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
-                .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                .padding(.top, theme.textInput.spacePaddingBlockHelperText)
+                .accessibilityHidden(status != .enabled)
         }
     }
 

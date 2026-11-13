@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-components-navigations
-description: Usage and code examples for OUDS iOS Navigations components — OUDSLink (text, indicator, icon, size), OUDSTabBar (iOS 15–25 and iOS 26+ APIs) and Toolbars (toolBarTop / toolBarBottom + OUDSToolBarItem with back / close / icon / label / badge / prominent style). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
+description: Usage and code examples for OUDS iOS Navigations components — OUDSLink (text, indicator, icon, size), list items (OUDSStaticListItem, OUDSNavigationListItem, OUDSNavigationLink), OUDSTabBar (iOS 15–25 and iOS 26+ APIs) and Toolbars (toolBarTop / toolBarBottom + OUDSToolBarItem with back / close / icon / label / badge / prominent style). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
 license: MIT
 ---
 
@@ -156,7 +156,7 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 | `OUDSListItemLeading` | Leading element: icon, image, flag, avatar, custom view |
 | `OUDSListItemTrailing` | Trailing element: text, badge, tag, icon, image, flag, avatar, custom view |
 
-> `.custom { ... }` accepts any `@ViewBuilder` content (e.g. `OUDSCircularProgressIndicator`, custom control). Unlike `.flag`/`.avatar`,
+> `.slot { ... }` accepts any `@ViewBuilder` content (e.g. `OUDSCircularProgressIndicator`, custom control). Unlike `.flag`/`.avatar`,
 > it is **not** auto-hidden from accessibility — the custom view must carry its own accessibility label/value.
 
 > **Rich text**: every textual field (label, description, overline, extraLabel, helperText) accepts
@@ -268,7 +268,7 @@ OUDSStaticListItem(
 // With a custom view in leading/trailing (e.g. a gauge for a remaining SMS credit)
 OUDSStaticListItem(
     data: OUDSListItemData(label: .textual("SMS credit")),
-    trailing: .custom {
+    trailing: .slot {
         OUDSCircularProgressIndicator(progress: 0.75)
     }
 )
@@ -332,7 +332,7 @@ OUDSNavigationListItem(
 // With a custom view in leading/trailing (e.g. a gauge for a remaining SMS credit)
 OUDSNavigationListItem(
     data: OUDSListItemData(label: .textual("SMS credit")),
-    trailing: .custom {
+    trailing: .slot {
         OUDSCircularProgressIndicator(progress: 0.75)
     }
 ) {
@@ -348,6 +348,43 @@ OUDSNavigationListItem(
     openURL(url)
 }
 ```
+
+---
+
+### Navigation Link
+
+`OUDSNavigationLink` is an `OUDSNavigationListItem` backed by a `NavigationLink`: it displays a destination view when tapped.
+It accepts the same `data`, `indicatorType`, `leading` and `trailing` as `OUDSNavigationListItem`, plus `style` and `destination`.
+The label of `data` is used as navigation title of the destination. With `.previous`, `leading` is ignored.
+
+```swift
+// Simple navigation link
+OUDSNavigationLink(data: OUDSListItemData(label: .textual("Profile"))) {
+    MyProfileView()
+}
+
+// Bold label
+OUDSNavigationLink(data: OUDSListItemData(label: .textual("Profile", isBold: true))) {
+    MyProfileView()
+}
+
+// Localized label
+OUDSNavigationLink(data: OUDSListItemData(label: .textual(.localized("profile.title")))) {
+    MyProfileView()
+}
+
+// With description, leading and trailing
+OUDSNavigationLink(
+    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    trailing: .text(.labelMuted("Details"))
+) {
+    MyProfileView()
+}
+```
+
+> **Deprecated since v3.3.0:** `OUDSNavigationLink(title:hasBoldLabel:…)` and `OUDSNavigationLink(_ key: LocalizedStringKey, …)`.
+> Use `init(data:…)` instead. See `MIGRATION.md` v3.3.0.
 
 ---
 

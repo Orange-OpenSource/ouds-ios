@@ -134,6 +134,8 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     override var columnGapLarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override var columnGapXlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override var columnGap2xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override var columnGap3xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override var columnGap4xlarge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Row Gap
 

@@ -22,6 +22,7 @@ import OUDSTokensSemantic
 /// Used for tokens providers like `OrangeThemeCategoricalTagComponentTokensProvider` etc.
 ///
 /// - Since: 3.0.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol CategoricalTagComponentTokens {
 
     var colorBgCategory1: MultipleColorSemanticToken { get }

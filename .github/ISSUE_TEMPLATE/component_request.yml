@@ -1,7 +1,7 @@
 name: Component Request
 description: Please fill out the following details for your component creation / update request.
 title: "In library, add component X / For component X, update ..."
-labels: ["🧰 library", "⚛️ component", "🔍 triage"]
+labels: ["🧰 library", "💠 component", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
 type: Enhancement
 projects: ["Orange-OpenSource/40"]

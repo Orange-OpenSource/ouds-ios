@@ -13,6 +13,7 @@
 
 #if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -26,8 +27,8 @@ struct PinCodeInputContainer: View {
     private let length: OUDSPinCodeInput.Length
     /// Flag to hide or show the written characters
     private let hiddenCharacters: Bool
-    /// If there is an error context about the value of the container
-    private let isError: Bool
+    /// The status associated to the component, managing error cases
+    private let status: OUDSPinCodeInput.Status
     /// If the outline layout must be applied on the container
     private let isOutlined: Bool
     /// If true, automatically focuses the first available field on appear
@@ -40,22 +41,23 @@ struct PinCodeInputContainer: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.skeletonState) private var skeletonState
+    @Environment(\.verticalSizeClass) private var verticalSizeClass // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass // NOTE: Seen as unused by Periphery, but is not
 
     // MARK: - Initializer
 
     init(_ value: Binding<String>,
          length: OUDSPinCodeInput.Length,
          hiddenCharacters: Bool,
-         isError: Bool,
+         status: OUDSPinCodeInput.Status,
          isOutlined: Bool,
          autofocus: Bool)
     {
         _value = value
         self.length = length
         self.hiddenCharacters = hiddenCharacters
-        self.isError = isError
+        self.status = status
         self.isOutlined = isOutlined
         self.autofocus = autofocus
 
@@ -81,13 +83,37 @@ struct PinCodeInputContainer: View {
 
     // MARK: - Body
 
+    @ViewBuilder
     var body: some View {
+        // Skeleton state: no UITextField (no focus, no keyboard, no VoiceOver) for eco-design
+        if skeletonState != nil {
+            skeletonRow
+        } else {
+            inputRow
+        }
+    }
+
+    /// One skeleton box per digit, with the same layout as the real fields
+    private var skeletonRow: some View {
+        HStack(spacing: theme.pinCodeInput.spaceColumnGapDigitInput) {
+            ForEach(0 ..< length.rawValue, id: \.self) { _ in
+                OUDSSkeleton(shape: RoundedRectangle(cornerRadius: borderRadius))
+                    .frame(
+                        minWidth: theme.pinCodeInput.sizeMinWidthDigitInput,
+                        maxWidth: theme.pinCodeInput.sizeMaxWidthDigitInput,
+                        minHeight: theme.textInput.sizeMinHeight,
+                        maxHeight: theme.textInput.sizeMinHeight)
+            }
+        }
+    }
+
+    private var inputRow: some View {
         HStack(spacing: theme.pinCodeInput.spaceColumnGapDigitInput) {
             ForEach(0 ..< length.rawValue, id: \.self) { index in
                 digitField(at: index)
                     .frame(
-                        minWidth: theme.pinCodeInput.sizeMinWidth,
-                        maxWidth: theme.pinCodeInput.sizeMaxWidth,
+                        minWidth: theme.pinCodeInput.sizeMinWidthDigitInput,
+                        maxWidth: theme.pinCodeInput.sizeMaxWidthDigitInput,
                         minHeight: theme.textInput.sizeMinHeight,
                         maxHeight: theme.textInput.sizeMinHeight) // FIXME: Mandatory but not in specs of #998, otherwise no limits
                     .background(
@@ -128,6 +154,12 @@ struct PinCodeInputContainer: View {
         }
     }
 
+    // MARK: - Helpers
+
+    private var isError: Bool {
+        status != .enabled
+    }
+
     // MARK: - Colors
 
     private var foregroundColor: MultipleColorSemanticToken {
@@ -154,7 +186,9 @@ struct PinCodeInputContainer: View {
         }
     }
 
-    private func accessibilityValue(for index: Int) -> String {
+    // MARK: - A11Y
+
+    private func accessibilityValue(for index: Int) -> String { // NOTE: Seen as unused by Periphery, but is not
         let value = digits[index]
         if value.isEmpty {
             return "core_pinCodeInput_empty_a11y".localized()
@@ -170,7 +204,7 @@ struct PinCodeInputContainer: View {
     ///
     /// - Parameter index: The 0-based index of the digit field
     /// - Returns: The localized positional label
-    private func accessibilityLabel(for index: Int) -> String {
+    private func accessibilityLabel(for index: Int) -> String { // NOTE: Seen as unused by Periphery, but is not
         "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
     }
 
@@ -178,7 +212,23 @@ struct PinCodeInputContainer: View {
     /// e.g. "Enter the 6-digit code" (localized, driven by the component's `length`).
     /// - Returns: String
     private var groupAccessibilityLabel: String {
-        "core_pinCodeInput_groupLabel_a11y" <- length.rawValue
+        let groupLabel = "core_pinCodeInput_groupLabel_a11y" <- length.rawValue
+        let errorDescription = switch status {
+        case .enabled:
+            ""
+        case let .error(message):
+            ", " + message
+        case let .richError(richMessage):
+            ", " + String(richMessage.characters)
+        case let .textualError(textualContent):
+            ", " + textualContent.rawValue
+        }
+        return groupLabel + errorDescription
+    }
+
+    private func announceFocusChanged(forInputAt index: Int) {
+        let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
+        VoiceOverUtils.announce(message)
     }
 
     // MARK: - Digits fields
@@ -190,7 +240,7 @@ struct PinCodeInputContainer: View {
     ///
     /// - Parameter index: The index of the field
     /// - Returns: The character to display in the field
-    private func displayText(for index: Int) -> String {
+    private func displayText(for index: Int) -> String { // NOTE: Seen as unused by Periphery, but is not
         if digits[index].isEmpty {
             if focusedIndex == index {
                 ""
@@ -240,7 +290,7 @@ struct PinCodeInputContainer: View {
         #endif
     }
 
-    private func handleFocusChange(_ isFocused: Bool, at index: Int) {
+    private func handleFocusChange(_ isFocused: Bool, at index: Int) { // NOTE: Seen as unused by Periphery, but is not
         if isFocused {
             focusedIndex = index
         } else if focusedIndex == index {
@@ -259,7 +309,7 @@ struct PinCodeInputContainer: View {
     /// UIKit's deleteBackward() which happens during the view update cycle.
     ///
     /// - Parameter index: The index of the field
-    private func handleBackspace(at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
+    private func handleBackspace(at index: Int) { // NOTE: Seen as unused by Periphery, but is not
         let wasEmpty = digits[index].isEmpty
 
         DispatchQueue.main.async {
@@ -278,14 +328,14 @@ struct PinCodeInputContainer: View {
                 announceFocusChanged(forInputAt: index)
             }
         }
-    }
+    } //  \("˚☐˚)/ ⊹₊⟡⋆
 
     /// Manages any text insertion: one digit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
     ///
     /// - Parameters:
     ///   - text: The chain of digits inserted (filtered, only figures)
     ///   - index: Index of the field which got the insertion
-    private func handleTextInserted(_ text: String, at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
+    private func handleTextInserted(_ text: String, at index: Int) { // NOTE: Seen as unused by Periphery, but is not
         let available = length.rawValue - index
         let toDistribute = text.prefix(available)
 
@@ -302,17 +352,12 @@ struct PinCodeInputContainer: View {
             focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
             announceFocusChanged(forInputAt: focusedIndex ?? nextIndex)
         }
-    }
+    } //  \("˚☐˚)/ ⊹₊⟡⋆
 
-    static func completedValue(from digits: [String], length: Int) -> String? {
+    static func completedValue(from digits: [String], length: Int) -> String? { // NOTE: Seen as unused by Periphery, but is not
         let activeDigits = digits.prefix(length)
         guard activeDigits.count == length, activeDigits.allSatisfy({ !$0.isEmpty }) else { return nil }
         return activeDigits.joined()
-    }
-
-    private func announceFocusChanged(forInputAt index: Int) {
-        let message = "core_pinCodeInput_digitLabel_a11y_\(index + 1)".localized()
-        VoiceOverUtils.announce(message)
     }
 }
 

@@ -86,7 +86,7 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
     // MARK: - Properties
 
     /// To compute the location of the selected tab indicator if Liquid Glass missing
-    private let tabCount: Int
+    private let tabCount: Int // NOTE: Seen as unused by Periphery, but is not
 
     /// To send to user the selected tab index and to compute the location of the selected tab indicator if Liquid Glass missing
     @Binding private var selectedTab: Int
@@ -245,8 +245,8 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
     @State private var isTabBarHidden: Bool = false
     #endif
 
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled // NOTE: Seen as unused by Periphery, but is not
 
     var body: some View {
         #if os(iOS)
@@ -289,7 +289,7 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
         #endif
     }
 
-    private var shouldShowTabIndicator: Bool {
+    private var shouldShowTabIndicator: Bool { // NOTE: Seen as unused by Periphery, but is not
         #if canImport(UIKit) && !os(watchOS)
         if forceOUDSLegacyLayout { return tabCount > 0 }
         guard tabCount > 0 else { return false }
@@ -301,7 +301,7 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
         #endif
     }
 
-    private var hasLegacyLayout: Bool {
+    private var hasLegacyLayout: Bool { // NOTE: Seen as unused by Periphery, but is not
         #if canImport(UIKit) && !os(watchOS)
         if forceOUDSLegacyLayout { return true }
         if isLiquidGlassDisabled {

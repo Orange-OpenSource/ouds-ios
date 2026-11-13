@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -39,7 +40,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-typography-label)
 ///
 /// ## Themes rendering
 ///
@@ -62,7 +63,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSLabel: View { // TODO: #1580 - Add reference to documentation when available
+public struct OUDSLabel: View {
 
     // MARK: Properties
 
@@ -116,7 +117,7 @@ public struct OUDSLabel: View { // TODO: #1580 - Add reference to documentation 
     ///    - text: The text to display.
     ///    - size: The label size, default set to `.medium`.
     ///    - weight: The label weight, default set to `.default`.
-    public init(text: String, size: Size = .medium, weight: Weight = .default) {
+    public init(text: String, size: Size = .medium, weight: Weight = .default) { // TODO: v4 - Must be .xlarge size instead of .medium (#1881)
         self.text = text
         self.size = size
         self.weight = weight

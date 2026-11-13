@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -95,7 +96,7 @@ extension Divider {
     ///
     /// - Parameter color: The color to force for the divider
     @MainActor
-    func vertical(force color: MultipleColorSemanticToken) -> some View {
+    func vertical(force color: MultipleColorSemanticToken) -> some View { // NOTE: Seen as unused by Periphery, but we should keep it
         modifier(DividerModifier(orientation: .vertical, forceColor: color))
     }
 

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -34,7 +35,7 @@ struct ListItemHelperTextContainer: View {
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
                 .padding(.top, theme.listItem.spacePaddingBlockTopHelperText)
-                .padding(.horizontal, theme.listItem.spacePaddingInline)
+                .modifier(ListItemContentMarginModifier())
                 .frame(maxWidth: .infinity, alignment: .topLeading)
         }
     }

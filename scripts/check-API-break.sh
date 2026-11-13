@@ -87,14 +87,16 @@ EXIT_BREAKING=2
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+# shellcheck source=lib/logging.sh
+source "${REPO_ROOT}/scripts/lib/logging.sh"
+log_init
+
 # Logging
 # -------
 
 VERBOSE=0
-log()  { printf '[check-API-break] %s\n' "$*" >&2; }
-vlog() { [ "$VERBOSE" -eq 1 ] && printf '[check-API-break] %s\n' "$*" >&2 || true; }
-err()  { printf '[check-API-break][ERROR] %s\n' "$*" >&2; }
-die()  { err "$*"; exit $EXIT_ERROR; }
+vlog() { if [ "$VERBOSE" -eq 1 ]; then log_info "$*"; fi; }
+die()  { log_error "$*"; exit $EXIT_ERROR; }
 
 usage() { sed -n '14,39p' "$0"; }
 
@@ -195,7 +197,7 @@ prepare_worktree() {
     local path="$WORK_DIR/worktrees/$slug"
     mkdir -p "$WORK_DIR/worktrees"
     git -C "$REPO_ROOT" worktree prune >/dev/null 2>&1 || true
-    log "Creating worktree for $ref"
+    log_info "Creating worktree for $ref"
     git -C "$REPO_ROOT" worktree add --detach --force "$path" "$ref" >/dev/null \
         || die "git worktree add failed for $ref"
 }
@@ -210,7 +212,7 @@ build_for_platform() {
     local build_log="$build_path/xcodebuild.log"
     mkdir -p "$build_path"
 
-    log "  xcodebuild -scheme $UMBRELLA_PRODUCT -destination '$destination'"
+    log_detail "Build command" "xcodebuild -scheme $UMBRELLA_PRODUCT -destination '$destination'"
     (
         cd "$worktree"
         xcodebuild \
@@ -226,7 +228,7 @@ build_for_platform() {
             build \
             >"$build_log" 2>&1
     ) || {
-        err "xcodebuild failed for $platform. Last 40 lines of log:"
+        log_error "xcodebuild failed for $platform. Last 40 lines of log:"
         tail -n 40 "$build_log" >&2 || true
         return $EXIT_ERROR
     }
@@ -253,7 +255,7 @@ dump_module() {
         [ -n "$dir" ] && i_flags+=(-I "$dir")
     done < <(collect_module_search_paths "$build_path")
 
-    [ ${#i_flags[@]} -gt 0 ] || { err "No .swiftmodule under $build_path"; return 1; }
+    [ ${#i_flags[@]} -gt 0 ] || { log_error "No .swiftmodule under $build_path"; return 1; }
 
     mkdir -p "$(dirname "$out_json")"
     # out_json is .../dumps/<slug>/<platform>/<Module>.json
@@ -265,7 +267,7 @@ dump_module() {
         -sdk "$sdk_path" \
         "${i_flags[@]}" \
         -o "$out_json" 2>"${out_json}.log" || {
-            err "Dump failed for $module/$platform. Log:"
+            log_error "Dump failed for $module/$platform. Log:"
             tail -n 20 "${out_json}.log" >&2 || true
             return $EXIT_ERROR
         }
@@ -283,9 +285,10 @@ diagnose_module() {
 # Orchestration
 # -------------
 
-log "Comparing public API: $OLD_REF -> $NEW_REF"
-log "Platforms: ${PLATFORMS[*]}"
-log "Modules  : ${MODULES[*]}"
+log_header "Check public API compatibility"
+log_detail "Comparison" "$OLD_REF -> $NEW_REF"
+log_detail "Platforms" "${PLATFORMS[*]}"
+log_detail "Modules" "${MODULES[*]}"
 
 prepare_worktree "$OLD_REF" "$OLD_SLUG"
 prepare_worktree "$NEW_REF" "$NEW_SLUG"
@@ -295,11 +298,11 @@ NEW_WT="$WORK_DIR/worktrees/$NEW_SLUG"
 
 # Build each ref for each platform.
 for platform in "${PLATFORMS[@]}"; do
-    log "=== Platform: $platform ==="
-    log "Building $OLD_REF for $platform"
+    log_step "Platform: $platform"
+    log_info "Building $OLD_REF for $platform"
     OLD_BUILD="$(build_for_platform "$OLD_WT" "$platform")" \
         || die "Build error ($OLD_REF/$platform)"
-    log "Building $NEW_REF for $platform"
+    log_info "Building $NEW_REF for $platform"
     NEW_BUILD="$(build_for_platform "$NEW_WT" "$platform")" \
         || die "Build error ($NEW_REF/$platform)"
 
@@ -321,7 +324,7 @@ done
 # -------
 
 HAS_BREAKAGE=0
-printf '\n=== Summary ===\n' >&2
+log_step "Compatibility summary"
 
 # swift-api-digester groups breakings under section headers like:
 #   /* Removed Decls */
@@ -354,24 +357,21 @@ for platform in "${PLATFORMS[@]}"; do
 
         if [ "$breaking_count" -gt 0 ]; then
             HAS_BREAKAGE=1
-            printf '%s / %-28s : ❌ %d breaking change(s)\n' \
-                "$platform" "$module" "$breaking_count" >&2
+            log_error "$platform / $module: $breaking_count breaking change(s)"
             awk '
                 /^\/\*/            { in_section=1; next }
                 in_section && NF>0 { print "    - " $0 }
             ' "$out_txt" >&2
         else
-            printf '%s / %-28s : ✅\n' "$platform" "$module" >&2
+            log_success "$platform / $module: no breaking change"
         fi
     done
 done
 
-printf '\n' >&2
-
 if [ "$HAS_BREAKAGE" -eq 1 ]; then
-    err "Breaking API change(s) detected."
+    log_error "Breaking API change(s) detected."
     exit $EXIT_BREAKING
 fi
 
-log "No breaking API change detected."
+log_finish "No breaking API change detected"
 exit $EXIT_OK

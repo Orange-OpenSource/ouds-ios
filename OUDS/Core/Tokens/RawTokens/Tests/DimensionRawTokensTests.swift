@@ -27,11 +27,41 @@ import TestsUtils
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 ///
 /// Here are some rules to follow:
-/// - dimension must not be negative value
+/// - dimensions must not be negative, except for explicit negative tokens (`dimensionN50` and `outOfSystemN50`)
 /// - dimension value must be a factor of `DimensionRawTokens.base`
 /// - dimension values must be all different
 /// - the "bigger" the dimension token is, the higher the value is
 struct DimensionRawTokensTests {
+
+    @Test
+    func dimensionRawTokenN50NegativeValue() throws {
+        #expect(DimensionRawTokens.dimensionN50 < 0)
+    }
+
+    @Test
+    func dimensionRawTokenN50OppositeOfBase() throws {
+        #expect(DimensionRawTokens.dimensionN50 == -DimensionRawTokens.base)
+    }
+
+    @Test
+    func dimensionRawTokenN50LessThanOutOfSystemN50() throws {
+        #expect(DimensionRawTokens.dimensionN50 < DimensionRawTokens.outOfSystemN50)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystemN50NegativeValue() throws {
+        #expect(DimensionRawTokens.outOfSystemN50 < 0)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystemN50OppositeOfOutOfSystem50() throws {
+        #expect(DimensionRawTokens.outOfSystemN50 == -DimensionRawTokens.outOfSystem50)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystemN50LessThan0() throws {
+        #expect(DimensionRawTokens.outOfSystemN50 < DimensionRawTokens._0)
+    }
 
     @Test
     func dimensionRawToken0NotNegativeValue() throws {

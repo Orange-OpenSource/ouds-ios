@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensComponent
 import SwiftUI
 
@@ -72,8 +73,8 @@ public struct OUDSSwitch: View {
     private let accessibilityLabel: String
     private let isReadOnly: Bool
 
-    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     // MARK: - Initializers

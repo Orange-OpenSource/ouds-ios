@@ -28,7 +28,7 @@ platform :ios do
         puts "👉 Check dead code with Periphery"
 
         # Command must run at root where Package.swift is
-        sh "cd .. && periphery scan --relative-results --format xcode"
+        sh "cd .. && periphery scan --relative-results --format xcode --clean-build -- --build-system native"
     end
 
     # ------------------------------------------------------------
@@ -79,7 +79,7 @@ platform :ios do
 
         Dir.chdir ".." do
             # Run the command to generate SBOM
-            sh "syft . -o #{sbomFormat} > SBOM.json"
+            sh "syft . --exclude './.opencode/**' --exclude './.build/**' --exclude './build/**' -o #{sbomFormat} > SBOM.json"
 
             # Process the SBOM
             sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"

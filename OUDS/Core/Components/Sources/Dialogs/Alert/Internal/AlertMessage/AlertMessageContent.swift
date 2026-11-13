@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -24,7 +25,7 @@ struct AlertMessageContent: View {
     let bulletList: [OUDSTextualContent]
     let link: OUDSAlertMessage.Link?
     let disableVoiceOverAnnouncement: Bool
-    let onClose: (() -> Void)?
+    let onClose: (() -> Void)? // NOTE: Seen as unused by Periphery, but is not
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -32,7 +33,6 @@ struct AlertMessageContent: View {
     // MARK: - Body
 
     var body: some View {
-        // TODO: #1659 - Remove token alert.spaceRowGapAction from codebase
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
                 Text(text)

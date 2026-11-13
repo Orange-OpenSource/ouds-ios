@@ -30,12 +30,12 @@ gem 'json', '2.21.2'
 
 # Embeded in Fastlane RubyGem it seems
 # Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/security/dependabot/1)
-gem 'excon', '1.7.3'
+gem 'excon', '1.12.0'
 
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.241.1'
+gem 'fastlane', '2.241.2'
 
 # Magic
 

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -325,7 +326,7 @@ public struct OUDSListItemAvatar: View {
         .border(style: theme.borders.styleDefault,
                 width: theme.borders.widthThin,
                 radius: theme.borders.radiusPill,
-                color: theme.listItem.colorBgBadgeSafetyArea)
+                color: theme.listItem.colorBadgeSafetyArea)
     }
 
     private var badgeSize: OUDSBadgeStandard.Size {

@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v3.2.0 → v3.3.0](#v320--v330)
 - [v3.0.0 → v3.2.0](#v300--v320)
 - [v2.3.0 → v3.0.0](#v230--v300)
 - [v2.2.0 → v2.3.0](#v220--v230)
@@ -10,6 +11,186 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v3.2.0 → v3.3.0
+
+### Overview
+
+The version 3.3.0 embeds tokens library v2.8.0 with several changes.
+
+### List item token — `colorBgBadgeSafetyArea` → `colorBadgeSafetyArea`
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.listItem.colorBgBadgeSafetyArea` | `theme.listItem.colorBadgeSafetyArea` |
+
+```swift
+// Before (v3.2)
+theme.listItem.colorBgBadgeSafetyArea
+
+// After (v3.3)
+theme.listItem.colorBadgeSafetyArea
+```
+
+The former token remains available as a deprecated alias forwarding to `colorBadgeSafetyArea`.
+Update call sites and custom providers, including overrides: components now use the new token,
+so overriding only the deprecated property no longer customizes the value used by those components.
+
+**Required action**: Rename `colorBgBadgeSafetyArea` to `colorBadgeSafetyArea`
+
+### PIN code input tokens — digit input width names
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.pinCodeInput.sizeMinWidth` | `theme.pinCodeInput.sizeMinWidthDigitInput` |
+| `theme.pinCodeInput.sizeMaxWidth` | `theme.pinCodeInput.sizeMaxWidthDigitInput` |
+
+```swift
+// Before (v3.2)
+theme.pinCodeInput.sizeMinWidth
+theme.pinCodeInput.sizeMaxWidth
+
+// After (v3.3)
+theme.pinCodeInput.sizeMinWidthDigitInput
+theme.pinCodeInput.sizeMaxWidthDigitInput
+```
+
+The former names remain available as deprecated aliases forwarding to the new tokens.
+
+**Required action**: Rename these tokens in PIN code input usages, custom provider declarations,
+overrides and associated tests. Components now read the new tokens, so custom providers must
+override the new properties to customize their rendering. Do not rename `sizeMinWidth` or
+`sizeMaxWidth` globally: other components can still use those names.
+
+### Text input tokens — helper text and action spacing names
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.textInput.spacePaddingBlockTopHelperText` | `theme.textInput.spacePaddingBlockHelperText` |
+| `theme.textInput.spacePaddingInlineTrailingAction` | `theme.textInput.spacePaddingInlineLeadingTrailingAction` |
+
+```swift
+// Before (v3.2)
+theme.textInput.spacePaddingBlockTopHelperText
+theme.textInput.spacePaddingInlineTrailingAction
+
+// After (v3.3)
+theme.textInput.spacePaddingBlockHelperText
+theme.textInput.spacePaddingInlineLeadingTrailingAction
+```
+
+The former names are deprecated in `TextInputComponentTokens`, not removed from the protocol.
+
+**Required action**: Rename these tokens in text input usages, custom provider declarations,
+overrides and associated tests. Components now read the new tokens, so custom providers must
+override the new properties to customize their rendering. Scope these renames to text input
+tokens rather than replacing similarly named properties of other components.
+
+### Semantic color tokens — `overlayFloating*` → `overlaySticky*`
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `theme.colors.overlayFloating` | `theme.colors.overlaySticky` |
+| `theme.colors.overlayFloatingLight` | `theme.colors.overlayStickyLight` |
+| `theme.colors.overlayFloatingDark` | `theme.colors.overlayStickyDark` |
+
+```swift
+// Before (v3.2)
+theme.colors.overlayFloating
+theme.colors.overlayFloatingLight
+theme.colors.overlayFloatingDark
+
+// After (v3.3)
+theme.colors.overlaySticky
+theme.colors.overlayStickyLight
+theme.colors.overlayStickyDark
+```
+
+The former names remain available as deprecated aliases forwarding to the new tokens in all four themes.
+`overlaySticky` combines `overlayStickyLight` and `overlayStickyDark` without changing the theme's values.
+
+**Required action**: Rename usages, custom color provider overrides and associated tests.
+Custom implementations of `ColorSemanticTokens` and `ColorMultipleSemanticTokens` must implement
+the new requirements. Override the new names to customize the values consumed by updated code;
+overriding only a deprecated alias does not customize the new token.
+
+### Removed semantic color tokens — inverse status and transparent inverse
+
+The following semantic tokens are now internal to Figma and have been removed from the Swift protocols:
+
+- `contentStatusInversePositiveLight` and `contentStatusInversePositiveDark`
+- `contentStatusInverseInfoLight` and `contentStatusInverseInfoDark`
+- `contentStatusInverseWarningLight` and `contentStatusInverseWarningDark`
+- `contentStatusInverseNegativeLight` and `contentStatusInverseNegativeDark`
+- `opacityTransparentInverseLight` and `opacityTransparentInverseDark`
+- `opacityTransparentInverse` (the light/dark composite token)
+
+**Required action**: Remove their usages, declarations and overrides from custom color providers,
+and adapt associated tests. There is no automatic replacement: review the visual context before
+choosing another supported token. Internal to Figma does not mean these tokens remain accessible
+through a Swift `internal` API.
+
+**Unchanged**: `opacityTransparent`, `opacityTransparentLight` and `opacityTransparentDark`
+remain available. Do not remove or rename these non-inverse tokens.
+
+To detect the removed families and deprecated overlay names in application sources, including
+custom provider declarations:
+
+```bash
+grep -rnE \
+  'contentStatusInverse|opacityTransparentInverse|overlayFloating' \
+  --include="*.swift" .
+```
+
+### Removed icon tokens — inverse warning shapes
+
+The following tokens have been removed from `IconComponentTokens` and are now internal to Figma.
+- `theme.icon.colorContentStatusWarningInverseInternalShape`
+- `theme.icon.colorContentStatusWarningInverseExternalShape`
+
+**Required action**: Remove them.
+
+### Removed raw font token — `familyMonospaceMonaco`
+
+`FontRawTokens.familyMonospaceMonaco` has been **removed**, not deprecated, in v3.3.0
+(tokens library v2.8.0).
+
+There is no automatic replacement. Choose a remaining font family according to your needs;
+do not assume that Menlo or another font is an equivalent replacement for Monaco.
+
+### `OUDSNavigationLink` — unified initializer
+
+`OUDSNavigationLink` now accepts the same content as `OUDSNavigationListItem`: an `OUDSListItemData`
+(label, description, overline, extra label, helper text, slots) and optional `leading` / `trailing` elements.
+The two former initializers (`title: String` and `LocalizedStringKey`) are **deprecated**; they forward to the new one,
+so existing call sites keep working and only emit a warning.
+
+| Before (v3.2 — deprecated in v3.3) | After (v3.3) |
+|---|---|
+| `OUDSNavigationLink(title: "T") { … }` | `OUDSNavigationLink(data: .init(label: .textual("T"))) { … }` |
+| `OUDSNavigationLink(title: "T", hasBoldLabel: true) { … }` | `OUDSNavigationLink(data: .init(label: .textual("T", isBold: true))) { … }` |
+| `OUDSNavigationLink("key", tableName:, bundle:) { … }` | `OUDSNavigationLink(data: .init(label: .textual(.localized("key", tableName:, bundle:)))) { … }` |
+
+```swift
+// Before (v3.2)
+OUDSNavigationLink(title: "Profile", indicatorType: .next) {
+    MyProfileView()
+}
+
+// After (v3.3)
+OUDSNavigationLink(
+    data: OUDSListItemData(label: .textual("Profile"), description: "View your profile"),
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    trailing: .text(.labelMuted("Details"))
+) {
+    MyProfileView()
+}
+```
+
+The navigation title of the destination is the label of `data`.
+With `indicatorType: .previous`, the `leading` element is ignored.
+
+**Required action**: Replace `OUDSNavigationLink(title:…)` and `OUDSNavigationLink(_ key:…)` by `OUDSNavigationLink(data:…)`
 
 ## v3.0.0 → v3.2.0
 

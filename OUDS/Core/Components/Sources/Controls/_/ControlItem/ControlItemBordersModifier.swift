@@ -16,11 +16,32 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Control Item Borders Modifier
+
 /// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
 /// As they are not supposed to be displayed at the same time, even if it is requested the divider is not displayed if the outline effect is active.
 /// If this view modifier is used to draw an outline in an error context for a disabled component, a *fatal error* will happen because this behaviour is forbidden by design.
 /// This `ViewModifier` manages also the high contrast mode in light color scheme so as to use a dedicated color for borders.
 struct ControlItemBordersModifier: ViewModifier {
+
+    // MARK: Properties
+
+    let interactionState: OUDSButtonInteractionState
+    let layoutData: ControlItemLabel.LayoutData
+    let isOn: Bool
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        content
+            .modifier(ControlItemBorderPaddingModifier(isOutlined: layoutData.isOutlined, hasDivider: layoutData.hasDivider))
+            .modifier(ControlItemInternalBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+    }
+}
+
+// MARK: - Control Item Internal Borders Modifier
+
+private struct ControlItemInternalBordersModifier: ViewModifier {
 
     // MARK: Properties
 
@@ -101,5 +122,32 @@ struct ControlItemBordersModifier: ViewModifier {
         interactionState == .readOnly ?
             theme.listItem.borderRadiusItemOnly :
             theme.listItem.borderRadiusDefault
+    }
+}
+
+// MARK: - Control Item Border Padding Modifier
+
+private struct ControlItemBorderPaddingModifier: ViewModifier {
+
+    // MARK: Properties
+
+    let isOutlined: Bool
+    let hasDivider: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.isEdgeToEdge) private var edgeToEdge
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        if isOutlined {
+            content.padding(.horizontal, theme.listItem.spacePaddingInline)
+        } else {
+            if hasDivider, !edgeToEdge {
+                content.padding(.horizontal, theme.listItem.spacePaddingInline)
+            } else {
+                content
+            }
+        }
     }
 }

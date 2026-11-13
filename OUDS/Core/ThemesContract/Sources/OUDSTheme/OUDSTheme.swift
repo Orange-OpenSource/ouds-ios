@@ -118,6 +118,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokensProvider
 
+    /// All components tokens related to card
+    public let card: AllCardComponentTokensProvider // TODO: #533 - Add name of components in documentation
+
     /// All components tokens related to categorical tag like `OUDSCategoricalTag`
     public let categoricalTag: AllCategoricalTagComponentTokensProvider
 
@@ -127,11 +130,17 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to chip components like `OUDSFilterChip` and `OUDSSuggestionChip`
     public let chip: AllChipComponentTokensProvider
 
+    /// All component tokens related to contained tabs components
+    public let containedTabs: AllContainedTabsComponentTokensProvider
+
     /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     public let divider: AllDividerComponentTokensProvider
 
     /// All components tokens related to icons components
     public let icon: AllIconComponentTokensProvider
+
+    /// All component tokens related to line tabs components
+    public let lineTabs: AllLineTabsComponentTokensProvider
 
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
@@ -199,7 +208,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
-    // swiftlint:disable function_default_parameter_at_end
+    // swiftlint:disable function_default_parameter_at_end function_body_length
     /// Defines the theme to apply everywhere.
     ///
     /// - Parameters:
@@ -223,11 +232,14 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
+    ///    - card: All component tokens for card
     ///    - categoricalTag: All components tokens for categorical tag
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
+    ///    - containedTabs: All component tokens for contained tabs
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
+    ///    - lineTabs: All component tokens for line tabs
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
@@ -267,11 +279,14 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
                 button: AllButtonComponentTokensProvider,
+                card: AllCardComponentTokensProvider,
                 categoricalTag: AllCategoricalTagComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
                 chip: AllChipComponentTokensProvider,
+                containedTabs: AllContainedTabsComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
                 icon: AllIconComponentTokensProvider,
+                lineTabs: AllLineTabsComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
                 listItem: AllListItemComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
@@ -315,11 +330,14 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.bar = bar
         self.button = button
         self.bulletList = bulletList
+        self.card = card
         self.categoricalTag = categoricalTag
         self.checkbox = checkbox
         self.chip = chip
+        self.containedTabs = containedTabs
         self.divider = divider
         self.icon = icon
+        self.lineTabs = lineTabs
         self.link = link
         self.listItem = listItem
         self.pinCodeInput = pinCodeInput
@@ -349,7 +367,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         }
     }
 
-    // swiftlint:enable function_default_parameter_at_end
+    // swiftlint:enable function_default_parameter_at_end function_body_length
 
     deinit {}
 

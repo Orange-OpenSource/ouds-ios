@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -139,12 +140,6 @@ public struct OUDSImage: View {
             .toFlip(flipped)
             .update(with: color)
             .accessibility(label: Text(accessibilityLabel ?? ""))
-    }
-
-    // MARK: Helpers
-
-    private func update(with color: MultipleColorSemanticToken) -> some View {
-        foregroundColor(color)
     }
 }
 

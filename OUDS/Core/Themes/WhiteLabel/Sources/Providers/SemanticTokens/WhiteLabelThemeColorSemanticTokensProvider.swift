@@ -22,6 +22,7 @@ import OUDSThemesWireframe
 /// all tokens to the users.
 ///
 /// - Since: 3.1.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 open class WhiteLabelThemeColorSemanticTokensProvider: WireframeThemeColorSemanticTokensProvider {
 
     #if DEBUG

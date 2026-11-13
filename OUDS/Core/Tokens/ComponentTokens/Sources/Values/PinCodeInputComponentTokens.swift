@@ -23,10 +23,18 @@ import OUDSTokensSemantic
 /// Use for tokens providers like `OrangeThemePinCodeInputComponentTokensProvider`.
 ///
 /// - Since: 0.17.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol PinCodeInputComponentTokens {
 
     var spaceColumnGapDigitInput: SpaceSemanticToken { get }
+    var sizeMinWidthDigitInput: SizeSemanticToken { get }
+    var sizeMaxWidthDigitInput: SizeSemanticToken { get }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    @available(*, deprecated, renamed: "sizeMinWidthDigitInput", message: "See MIGRATION.md v3.3.0.")
     var sizeMinWidth: SizeSemanticToken { get }
+    @available(*, deprecated, renamed: "sizeMaxWidthDigitInput", message: "See MIGRATION.md v3.3.0.")
     var sizeMaxWidth: SizeSemanticToken { get }
 }
 

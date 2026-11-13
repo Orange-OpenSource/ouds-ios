@@ -49,9 +49,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.11.0
+/// - Core OUDS version: 1.12.0
 /// - Core Wireframe version: 1.5.0
-/// - Brand Wireframe version: 2.7.0
+/// - Brand Wireframe version: 2.8.0
 ///
 /// - Since: 0.17.0
 open class WireframeTheme: OUDSTheme, @unchecked Sendable {
@@ -67,23 +67,24 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
     /// Constructor of the `Wireframe` theme with its own providers of tokens.
     ///
     /// - Parameters:
+    ///    - borders: All tokens of borders to apply. If nil, `WireframeThemeBorderSemanticTokensProvider` will be used
     ///    - colors: All tokens of colors to apply. If nil, `WireframeThemeColorSemanticTokensProvider` will be used
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - fonts: All tokens of fonts. Default set to nil. If so, `WireframeThemeFontSemanticTokensProvider` will be used instead.
     ///    - name: A name to give to the theme. If nil, `WireframeTheme.name` will be used.
     ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Prefer `WireframeBrandFontRawTokens.familyDefault`.
-    ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
-    public init(colors: AllColorSemanticTokensProvider? = nil,
-                colorsCharts: AllColorChartSemanticTokensProvider? = nil,
-                colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
-                fonts: AllFontSemanticTokensProvider? = nil,
-                name: String? = nil,
-                fontFamily: String = WireframeBrandFontRawTokens.familyDefault,
-                tuning: Tuning? = nil)
+    public init(
+        borders: AllBorderSemanticTokensProvider? = nil,
+        colors: AllColorSemanticTokensProvider? = nil,
+        colorsCharts: AllColorChartSemanticTokensProvider? = nil,
+        colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
+        fonts: AllFontSemanticTokensProvider? = nil,
+        name: String? = nil,
+        fontFamily: String = WireframeBrandFontRawTokens.familyDefault)
     {
 
-        let borders = WireframeThemeBorderSemanticTokensProvider()
+        let borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         let colorModes = WireframeThemeColorModeSemanticTokensProvider(colors: colors)
         let effects = WireframeThemeEffectSemanticTokensProvider()
@@ -102,11 +103,14 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
+        let card = WireframeThemeCardComponentTokensProvider(borders: borders)
         let categoricalTag = WireframeThemeCategoricalTagComponentTokensProvider(colors: colors)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let containedTabs = WireframeThemeContainedTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
+        let lineTabs = WireframeThemeLineTabsComponentTokensProvider(borders: borders, colors: colors, opacities: opacities, dimensions: dimensions, spaces: spaces)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
         let listItem = WireframeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
@@ -124,7 +128,6 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let typography = WireframeThemeTypographyComponentTokensProvider(spaces: spaces)
 
         let name = (name ?? WireframeTheme.name)
-        let tuning = (tuning ?? Tuning.Wireframe)
 
         super.init(borders: borders,
                    colors: colors,
@@ -146,11 +149,14 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    bar: bar,
                    bulletList: bulletList,
                    button: button,
+                   card: card,
                    categoricalTag: categoricalTag,
                    checkbox: checkbox,
                    chip: chip,
+                   containedTabs: containedTabs,
                    divider: divider,
                    icon: icon,
+                   lineTabs: lineTabs,
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,
@@ -169,7 +175,7 @@ open class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    resourcesBundle: Bundle.WireframeTheme,
                    name: name,
                    fontFamily: fontFamily,
-                   tuning: tuning)
+                   tuning: Tuning.Wireframe)
 
         registerFonts()
     }

@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensComponent
 import SwiftUI
 
@@ -98,10 +99,10 @@ public struct OUDSCheckbox: View {
     private let isError: Bool
     private let isReadOnly: Bool
 
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.theme) private var theme
-
     @Binding var isOn: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Initializers
 

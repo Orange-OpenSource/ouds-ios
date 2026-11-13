@@ -32,8 +32,6 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc open var opacityTransparent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
-    @objc open var opacityTransparentInverse: MultipleColorSemanticToken { MultipleColorSemanticToken(light: opacityTransparentInverseLight, dark: opacityTransparentInverseDark) }
-
     // MARK: - Color - Action
 
     @objc open var actionDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionDisabledLight, dark: actionDisabledDark) }
@@ -208,7 +206,7 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc open var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
-    @objc open var overlayFloating: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayFloatingLight, dark: overlayFloatingDark) }
+    @objc open var overlaySticky: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayStickyLight, dark: overlayStickyDark) }
 
     // MARK: - Color - Surface
 
@@ -257,6 +255,12 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
     @objc open var colorAiTertiary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiTertiaryLight, dark: colorAiTertiaryDark) }
 
     @objc open var colorAiQuaternary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colorAiQuaternaryLight, dark: colorAiQuaternaryDark) }
+
+    // MARK: - Deprecated
+
+    // TODO: v4 - Remove these tokens
+
+    @objc open var overlayFloating: MultipleColorSemanticToken { overlaySticky }
 }
 
 // swiftlint:enable line_length

@@ -63,6 +63,9 @@ private struct LimitedWidthLayout: Layout {
     /// The minimum height the layout should use.
     let minHeight: CGFloat
 
+    /// The anchor used to position the subview within the layout's bounds.
+    let anchor: UnitPoint
+
     // MARK: - Size
 
     /// Calculates the size required by the layout for the given proposal.
@@ -101,7 +104,8 @@ private struct LimitedWidthLayout: Layout {
 
     /// Places the layout's subview inside the calculated bounds.
     ///
-    /// The subview is centered both horizontally and vertically.
+    /// The subview is positioned using the configured anchor. A leading anchor keeps
+    /// wrapped text next to its bullet even when its measured width is smaller than the layout's width.
     ///
     /// - Parameters:
     ///   - bounds: The bounds assigned to the layout.
@@ -113,8 +117,9 @@ private struct LimitedWidthLayout: Layout {
             return
         }
 
-        subview.place(at: CGPoint(x: bounds.midX, y: bounds.midY),
-                      anchor: .center,
+        subview.place(at: CGPoint(x: bounds.minX + bounds.width * anchor.x,
+                                  y: bounds.minY + bounds.height * anchor.y),
+                      anchor: anchor,
                       proposal: ProposedViewSize(width: bounds.width, height: bounds.height))
     }
 }
@@ -158,11 +163,13 @@ extension View {
     ///   - minWidth: The minimum width allowed for the view.
     ///   - maxWidth: The maximum width allowed for the view.
     ///   - minHeight: The minimum height allowed for the view.
+    ///   - anchor: The placement anchor within the constrained bounds. Defaults to `.center` for buttons;
+    ///     use `.leading` for bullet list labels.
     ///
     /// - Returns: A view whose width and height are constrained
     ///   according to the specified limits.
-    func limitedWidth(minWidth: CGFloat, maxWidth: CGFloat, minHeight: CGFloat) -> some View {
-        LimitedWidthLayout(maxWidth: maxWidth, minWidth: minWidth, minHeight: minHeight) {
+    func limitedWidth(minWidth: CGFloat, maxWidth: CGFloat, minHeight: CGFloat, anchor: UnitPoint = .center) -> some View {
+        LimitedWidthLayout(maxWidth: maxWidth, minWidth: minWidth, minHeight: minHeight, anchor: anchor) {
             self
         }
     }

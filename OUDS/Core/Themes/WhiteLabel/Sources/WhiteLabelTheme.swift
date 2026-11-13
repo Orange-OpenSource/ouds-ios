@@ -19,7 +19,7 @@ import SwiftUI
 /// This White Label theme is a specific theme. It has been designed to let users have their own theme to update like a grey label theme, or to keep as is like a white label theme.
 ///
 /// The White Label theme is based on the Wireframe theme which is dedicated to mockups and prototypes.
-/// However, you can override the semantic color tokens, change the tuning, and choose the font family to apply.
+/// However, you can override the semantic color tokens, the default border radius, and choose the font family to apply.
 ///
 /// To get it:
 /// ```swift
@@ -45,25 +45,7 @@ import SwiftUI
 ///
 /// # Theme tuning
 ///
-/// By default the theme uses `Tuning.Wireframe`, but it can be changed.
-///
-/// To apply the tuning:
-///
-/// ```swift
-///     // Define your theme tuning, here everything rounded
-///     let tuning = Tuning(hasRoundedButtons: true,
-///                         hasRoundedTextInputs: true,
-///                         hasRoundedAlertMessages: true,
-///                         hasRoundedProgressIndicators: true,
-///                         hasRoundedListItems: true)
-///
-///     // Apply it to your theme
-///     let theme = WhiteLabelTheme(tuning: tuning)
-/// ```
-///
-/// Note the `Tuning` only defines flags the components will read. But in the end the rounded corners are defined in tokens.
-/// Thus, even if rounded corners are enabled in `Tuning`, the same radius values are used in components for both rounded and square corners.
-/// cases the component may not change.
+/// No theme tuning is available for this theme.
 ///
 /// ## Tokens versions
 ///
@@ -78,31 +60,32 @@ public final class WhiteLabelTheme: WireframeTheme, @unchecked Sendable {
     /// Constructor of the `WhiteLabelTheme` theme, based on `WireframeTheme` but with small flexibilities.
     ///
     /// - Parameters:
+    ///    - borders: All tokens of borders to apply. If nil, `WireframeThemeBorderSemanticTokensProvider` will be used
     ///    - colors: The provider of tokens of colors, where some tokens can be overriden. If nil, `WireframeThemeColorSemanticTokensProvider` will be used.
     ///    - colorsCharts: All tokens of colors to apply for charts and dataviz. Default set to `nil`.
     ///    - colorsDecorative: All tokens of decorative colors. Default set to `nil`.
     ///    - name: A name to give to the theme, used for debugging for example. If nil, "WhiteLabel" will be used.
     ///    - fontFamily: The font family to apply for this theme. If empty, the system will use instead the one from the device. Default set to empty to have native system font.
-    ///    - tuning: The `Tuning` to apply to the theme, e.g. to define rounded corners. If nil, `Tuning.Wireframe` will be used.
-    public init(colors: AllColorSemanticTokensProvider? = nil,
-                colorsCharts: AllColorChartSemanticTokensProvider? = nil,
-                colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
-                name: String? = nil,
-                fontFamily: String = "",
-                tuning: Tuning? = nil)
+    public init(
+        borders: AllBorderSemanticTokensProvider? = nil,
+        colors: AllColorSemanticTokensProvider? = nil,
+        colorsCharts: AllColorChartSemanticTokensProvider? = nil,
+        colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
+        name: String? = nil,
+        fontFamily: String = "")
     {
+        let borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         let name = (name ?? "WhiteLabel")
-        let tuning = (tuning ?? Tuning.Wireframe)
-
         let fonts = WhiteLabelThemeFontSemanticTokensProvider(fontFamily: fontFamily)
-        super.init(colors: colors,
+
+        super.init(borders: borders,
+                   colors: colors,
                    colorsCharts: colorsCharts,
                    colorsDecorative: colorsDecorative,
                    fonts: fonts,
                    name: name,
-                   fontFamily: fontFamily,
-                   tuning: tuning)
+                   fontFamily: fontFamily)
     }
 
     deinit {}

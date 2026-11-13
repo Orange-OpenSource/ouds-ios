@@ -26,6 +26,7 @@
 /// and library. The tokens are not hidden from developers.
 ///
 /// - Since: 0.16.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol DimensionSemanticTokens {
 
     // NOTE: To keep consistency in variable snames, start all of them by '_'
