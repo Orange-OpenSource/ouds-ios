@@ -204,35 +204,33 @@ We try to cover several devices types and OS max version according to [iosref.co
 
 #### iPhone / iOS
 
-- iPhone 17 Pro (iOS 26.2)
-- iPhone 14 Pro (iOS 17.5)
-- iPhone Xs Max (iOS 18.6)
-- iPhone 8 Plus (iOS 16.4)
-- iPhone SE Gen 1 (iOS 15.5)
+- iPhone Duo (iOS 27.1)
+- iPhone 18 Pro (iOS 27.0)
+- iPhone 14 (iOS 26.5)
+- iPhone XS (iOS 18.6)
+- iPhone SE Gen 2 (iOS 17.5)
 
 #### iPad / iPadOS
 
-- iPad (A16) (iPadOS 26.1)
-- iPad (A16) (iPadOS 18.6)
-- iPad Pro 11" (3rd generation) (iPadOS 17.5)
-- iPad Air (5th generation) (iPadOS 16.4)
-- iPad Air (3rd generation) (iPadOS 15.5)
+- iPad Pro (13 inch) (M5) (16 GB) (iOS 27.0)
+- iPad mini A17 Pro (iPadOS 18.6)
+- iPad Pro (12.9 inch) (2nd gen.) (iPadOS 17.5)
 
 #### Vision Pro / visionOS
 
-- Apple Vision Pro (visionOS 26.0)
+- Apple Vision Pro (visionOS 27.0)
 
 #### Apple TV / tvOS
 
-- Apple TV 4K (3rd generation) (tvOS 26.0)
+- Apple TV 4K (3rd generation) (tvOS 27.0)
 
 #### Apple Watch / watchOS
 
-- Appel Watch Series 11 (46mm) (watchOS 26.0)
+- Apple Watch Series 12 (46mm) (watchOS 27.0)
 
 #### Mac / macOS
 
-- macOS Tahoe 26.1
+- macOS Tahoe 26.7
 
 ## Developer Certificate of Origin
 
