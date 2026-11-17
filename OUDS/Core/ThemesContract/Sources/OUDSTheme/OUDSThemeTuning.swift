@@ -33,78 +33,68 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     // MARK: Tuned properties
 
     /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
-    @available(*, deprecated, renamed: "hasRoundedAlert", message: "See MIGRATION.md v3.4.0.")
-    public let hasRoundedAlertMessages: Bool // TODO: v4 - Rename to hasRoundedAlert
+    @available(*, deprecated, renamed: "hasRoundedAlerts", message: "See MIGRATION.md v3.4.0.")
+    public let hasRoundedAlertMessages: Bool // TODO: v4 - Rename to hasRoundedAlerts
 
     /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
-    public let hasRoundedAlert: Bool
+    public let hasRoundedAlerts: Bool
 
     /// If components like button (`OUDSButton`) must have always rounded corners or not
-    @available(*, deprecated, renamed: "hasRoundedButton", message: "See MIGRATION.md v3.4.0.")
-    public let hasRoundedButtons: Bool // TODO: v4 - Remove
-
-    /// If components like button (`OUDSButton`) must have always rounded corners or not
-    public let hasRoundedButton: Bool
+    public let hasRoundedButtons: Bool
 
     /// If components like list item (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
-    @available(*, deprecated, renamed: "hasRoundedCardItem", message: "See MIGRATION.md v3.4.0.")
+    @available(*, deprecated, renamed: "hasRoundedCardItems", message: "See MIGRATION.md v3.4.0.")
     public let hasRoundedListItems: Bool // TODO: v4 - Remove
 
     /// If components like card item based components like `OUDSNavigationListItem` and `OUDSStaticListItem`  with card styles must have always rounded corners or not
-    public let hasRoundedCardItem: Bool
+    public let hasRoundedCardItems: Bool
 
     /// If components like chat input components (classic and assistant) must have always rounded corners or not
-    public let hasRoundedChatInput: Bool // TODO: #1869, #1790 - Update documentation above with components name
+    public let hasRoundedChatInputs: Bool // TODO: #1869, #1790 - Update documentation above with components name
 
     /// If text input components (e.g. `OUDSTextInput`, `OUDSPinCodeInput`, `OUDSPasswordInput` and `OUDSTextArea`)
     /// must have always rounded corners or not
-    @available(*, deprecated, renamed: "hasRoundedInput", message: "See MIGRATION.md v3.4.0.")
+    @available(*, deprecated, renamed: "hasRoundedInputs", message: "See MIGRATION.md v3.4.0.")
     public let hasRoundedTextInputs: Bool // TODO: v4 - Remove
 
     /// If text input components (e.g. `OUDSTextInput`, `OUDSPinCodeInput`, `OUDSPasswordInput` and `OUDSTextArea`)
     /// must have always rounded corners or not
-    public let hasRoundedInput: Bool
+    public let hasRoundedInputs: Bool
 
     /// If components like modal must have always rounded corners or not
-    public let hasRoundedModal: Bool // TODO: #1582 - Update documentation above with components name
+    public let hasRoundedModals: Bool // TODO: #1582 - Update documentation above with components name
 
     /// If components like progress indicators (e.g. `OUDSCircularProgressIndicator` or `OUDSLinearProgressIndicator`) must have always rounded corners or not
-    @available(*, deprecated, renamed: "hasRoundedProgressIndicator", message: "See MIGRATION.md v3.4.0.")
-    public let hasRoundedProgressIndicators: Bool // TODO: v4 - Remove
-
-    /// If components like progress indicators (e.g. `OUDSCircularProgressIndicator` or `OUDSLinearProgressIndicator`) must have always rounded corners or not
-    public let hasRoundedProgressIndicator: Bool
+    public let hasRoundedProgressIndicators: Bool
 
     /// Defines the tuning for a theme
     ///
     /// - Parameters:
     ///    - hasRoundedButtons: If button component must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedChatInput: If chat input component must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedChatInputs: If chat input component must have rounded corners or not (default set to *false*)
     ///    - hasRoundedTextInputs: If text-based inputs component must have rounded corners or not (default set to *false*)
     ///    - hasRoundedAlertMessages: If alert components must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedModal: If modal-based components must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedModals: If modal-based components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedProgressIndicators: If progress indicators component must have rounded corners or not (default set to *false*)
     ///    - hasRoundedListItems: If list and card items based components must have rounded corners or not (default set to *false*)
-    public init(hasRoundedButtons: Bool = false, // TODO: v4 - Rename to hasRoundedButton
-                hasRoundedChatInput: Bool = false,
-                hasRoundedTextInputs: Bool = false, // TODO: v4 - Rename to hasRoundedInput
-                hasRoundedAlertMessages: Bool = false, // TODO: v4 - Rename to hasRoundedAlert, and sort alphabetically
-                hasRoundedModal: Bool = false,
-                hasRoundedProgressIndicators: Bool = false, // TODO: v4 - Rename to hasRoundedProgressIndicator
-                hasRoundedListItems: Bool = false) // TODO: v4 - Rename to hasRoundedCardItem, and sort alphabetically
+    public init(hasRoundedButtons: Bool = false,
+                hasRoundedChatInputs: Bool = false,
+                hasRoundedTextInputs: Bool = false, // TODO: v4 - Rename to hasRoundedInputs
+                hasRoundedAlertMessages: Bool = false, // TODO: v4 - Rename to hasRoundedAlerts, and sort alphabetically
+                hasRoundedModals: Bool = false,
+                hasRoundedProgressIndicators: Bool = false,
+                hasRoundedListItems: Bool = false) // TODO: v4 - Rename to hasRoundedCardItems, and sort alphabetically
     {
         self.hasRoundedAlertMessages = hasRoundedAlertMessages
-        hasRoundedAlert = hasRoundedAlertMessages
+        hasRoundedAlerts = hasRoundedAlertMessages
         self.hasRoundedButtons = hasRoundedButtons
-        hasRoundedButton = hasRoundedButtons
         self.hasRoundedListItems = hasRoundedListItems
-        hasRoundedCardItem = hasRoundedListItems
-        self.hasRoundedChatInput = hasRoundedChatInput
+        hasRoundedCardItems = hasRoundedListItems
+        self.hasRoundedChatInputs = hasRoundedChatInputs
         self.hasRoundedTextInputs = hasRoundedTextInputs
-        hasRoundedInput = hasRoundedTextInputs
-        self.hasRoundedModal = hasRoundedModal
+        hasRoundedInputs = hasRoundedTextInputs
+        self.hasRoundedModals = hasRoundedModals
         self.hasRoundedProgressIndicators = hasRoundedProgressIndicators
-        hasRoundedProgressIndicator = hasRoundedProgressIndicators
     }
 }
 
@@ -119,17 +109,15 @@ extension Tuning: Equatable {
     ///    - rhs: One of the tuning to test
     public static func == (lhs: Tuning, rhs: Tuning) -> Bool {
         (lhs.hasRoundedAlertMessages == rhs.hasRoundedAlertMessages)
-            && (lhs.hasRoundedAlert == rhs.hasRoundedAlert)
+            && (lhs.hasRoundedAlerts == rhs.hasRoundedAlerts)
             && (lhs.hasRoundedButtons == rhs.hasRoundedButtons)
-            && (lhs.hasRoundedButton == rhs.hasRoundedButton)
             && (lhs.hasRoundedListItems == rhs.hasRoundedListItems)
-            && (lhs.hasRoundedCardItem == rhs.hasRoundedCardItem)
-            && (lhs.hasRoundedChatInput == rhs.hasRoundedChatInput)
+            && (lhs.hasRoundedCardItems == rhs.hasRoundedCardItems)
+            && (lhs.hasRoundedChatInputs == rhs.hasRoundedChatInputs)
             && (lhs.hasRoundedTextInputs == rhs.hasRoundedTextInputs)
-            && (lhs.hasRoundedInput == rhs.hasRoundedInput)
-            && (lhs.hasRoundedModal == rhs.hasRoundedModal)
+            && (lhs.hasRoundedInputs == rhs.hasRoundedInputs)
+            && (lhs.hasRoundedModals == rhs.hasRoundedModals)
             && (lhs.hasRoundedProgressIndicators == rhs.hasRoundedProgressIndicators)
-            && (lhs.hasRoundedProgressIndicator == rhs.hasRoundedProgressIndicator)
     }
 }
 
@@ -142,10 +130,10 @@ extension Tuning {
 
     /// The theme tuning for *Orange France* has nothing rounded but *chat input* based components.
     public static let OrangeFrance = Tuning(hasRoundedButtons: false,
-                                            hasRoundedChatInput: true,
+                                            hasRoundedChatInputs: true,
                                             hasRoundedTextInputs: false,
                                             hasRoundedAlertMessages: false,
-                                            hasRoundedModal: false,
+                                            hasRoundedModals: false,
                                             hasRoundedProgressIndicators: false,
                                             hasRoundedListItems: false)
 
@@ -157,19 +145,19 @@ extension Tuning {
 
     /// Predefined tuning making everything rounded.
     public static let allRounded = Tuning(hasRoundedButtons: true,
-                                          hasRoundedChatInput: true,
+                                          hasRoundedChatInputs: true,
                                           hasRoundedTextInputs: true,
                                           hasRoundedAlertMessages: true,
-                                          hasRoundedModal: true,
+                                          hasRoundedModals: true,
                                           hasRoundedProgressIndicators: true,
                                           hasRoundedListItems: true)
 
     /// Predefined tuning making everything not rounded.
     public static let nothingRounded = Tuning(hasRoundedButtons: false,
-                                              hasRoundedChatInput: false,
+                                              hasRoundedChatInputs: false,
                                               hasRoundedTextInputs: false,
                                               hasRoundedAlertMessages: false,
-                                              hasRoundedModal: false,
+                                              hasRoundedModals: false,
                                               hasRoundedProgressIndicators: false,
                                               hasRoundedListItems: false)
 }

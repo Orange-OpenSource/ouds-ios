@@ -103,7 +103,7 @@ struct CircularProgressIndicatorView: View {
     }
 
     private var strokeCap: CGLineCap {
-        let effectiveRadius = theme.tuning.hasRoundedProgressIndicator
+        let effectiveRadius = theme.tuning.hasRoundedProgressIndicators
             ? theme.progressIndicator.borderRadiusRounded
             : theme.progressIndicator.borderRadiusDefault
         return (effectiveRadius > 0) ? .round : .butt

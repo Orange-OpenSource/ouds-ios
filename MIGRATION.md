@@ -22,33 +22,31 @@ Nothing is removed: old properties are deprecated (warning) and will be removed 
 
 ### `Tuning` — renamed properties
 
-Read tuning values with the new names. The `Tuning.init` parameter labels are **unchanged** until v4.
+Read tuning values with the new names. `hasRoundedButtons` and `hasRoundedProgressIndicators` are **unchanged**. The `Tuning.init` parameter labels are **unchanged** until v4.
 
 | Deprecated (≤ 3.3.0) | New (3.4.0) |
 |---|---|
-| `hasRoundedButtons` | `hasRoundedButton` |
-| `hasRoundedTextInputs` | `hasRoundedInput` |
-| `hasRoundedAlertMessages` | `hasRoundedAlert` |
-| `hasRoundedProgressIndicators` | `hasRoundedProgressIndicator` |
-| `hasRoundedListItems` | `hasRoundedCardItem` |
+| `hasRoundedTextInputs` | `hasRoundedInputs` |
+| `hasRoundedAlertMessages` | `hasRoundedAlerts` |
+| `hasRoundedListItems` | `hasRoundedCardItems` |
 
 ```swift
 // Before
-if theme.tuning.hasRoundedButtons { … }
+if theme.tuning.hasRoundedTextInputs { … }
 
 // After
-if theme.tuning.hasRoundedButton { … }
+if theme.tuning.hasRoundedInputs { … }
 ```
 
 ### `Tuning` — new properties
 
-- `hasRoundedChatInput`: chat input components (default `false`)
-- `hasRoundedModal`: modal components (default `false`)
+- `hasRoundedChatInputs`: chat input components (default `false`)
+- `hasRoundedModals`: modal components (default `false`)
 
-They are also new `Tuning.init` parameters with the same labels, inserted after `hasRoundedButtons` and `hasRoundedAlertMessages`. Calls using labels are source compatible; positional order does not matter as long as labels are used.
+They are also new `Tuning.init` parameters with the same (plural) labels, inserted after `hasRoundedButtons` and `hasRoundedAlertMessages`. Calls using labels are source compatible.
 
 ```swift
-let tuning = Tuning(hasRoundedButtons: true, hasRoundedChatInput: true, hasRoundedModal: true)
+let tuning = Tuning(hasRoundedButtons: true, hasRoundedChatInputs: true, hasRoundedModals: true)
 ```
 
 ### Predefined tunings — changed values

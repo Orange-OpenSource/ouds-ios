@@ -84,8 +84,8 @@ let tuning = Tuning(hasRoundedButtons: true,
                     hasRoundedAlertMessages: true, 
                     hasRoundedProgressIndicators: true,
                     hasRoundedListItems: true,
-                        hasRoundedChatInput: true,
-                        hasRoundedModal: true)
+                    hasRoundedChatInputs: true,
+                    hasRoundedModals: true)
 
 // Apply it to your theme
 let theme = OrangeCompactTheme(tuning: tuning)

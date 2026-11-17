@@ -38,7 +38,7 @@ struct AlertMessageBorderModifier: ViewModifier {
     // MARK: - Helpers
 
     private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedAlert ? theme.alert.borderRadiusRounded : theme.alert.borderRadiusDefault
+        theme.tuning.hasRoundedAlerts ? theme.alert.borderRadiusRounded : theme.alert.borderRadiusDefault
     }
 
     private var color: MultipleColorSemanticToken {

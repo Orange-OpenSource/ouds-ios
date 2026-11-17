@@ -465,13 +465,13 @@ Tuning controls brand-level UI decisions for corner rounding. Only `OrangeTheme`
 >
 > | Deprecated property (read) | New property (read) | `init` label (unchanged until v4) |
 > |---|---|---|
-> | `hasRoundedButtons` | `hasRoundedButton` | `hasRoundedButtons` |
-> | `hasRoundedTextInputs` | `hasRoundedInput` | `hasRoundedTextInputs` |
-> | `hasRoundedAlertMessages` | `hasRoundedAlert` | `hasRoundedAlertMessages` |
-> | `hasRoundedProgressIndicators` | `hasRoundedProgressIndicator` | `hasRoundedProgressIndicators` |
-> | `hasRoundedListItems` | `hasRoundedCardItem` | `hasRoundedListItems` |
-> | — | `hasRoundedChatInput` (new) | `hasRoundedChatInput` |
-> | — | `hasRoundedModal` (new) | `hasRoundedModal` |
+> | `hasRoundedTextInputs` | `hasRoundedInputs` | `hasRoundedTextInputs` |
+> | `hasRoundedAlertMessages` | `hasRoundedAlerts` | `hasRoundedAlertMessages` |
+> | `hasRoundedListItems` | `hasRoundedCardItems` | `hasRoundedListItems` |
+> | — | `hasRoundedChatInputs` (new) | `hasRoundedChatInputs` |
+> | — | `hasRoundedModals` (new) | `hasRoundedModals` |
+>
+> `hasRoundedButtons` and `hasRoundedProgressIndicators` are unchanged.
 
 ```swift
 // Custom tuning:
@@ -479,11 +479,11 @@ let tuning = Tuning(
     hasRoundedButtons:       true,   // rounded corners on buttons
     hasRoundedTextInputs:    true,   // rounded corners on text / PIN / password / text area inputs
     hasRoundedAlertMessages: false,  // rounded corners on alert messages
-    hasRoundedChatInput:     true,   // rounded corners on chat inputs
-    hasRoundedModal:         false)  // rounded corners on modals
+    hasRoundedChatInputs:    true,   // rounded corners on chat inputs
+    hasRoundedModals:        false)  // rounded corners on modals
 
 // Read it with the new names
-tuning.hasRoundedButton / hasRoundedInput / hasRoundedAlert / hasRoundedChatInput / hasRoundedModal
+tuning.hasRoundedButtons / hasRoundedInputs / hasRoundedAlerts / hasRoundedChatInputs / hasRoundedModals
 
 let theme = OrangeTheme(tuning: tuning)
 // or: YourTheme(tuning: tuning) if your init forwards the parameter

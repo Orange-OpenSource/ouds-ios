@@ -62,7 +62,7 @@ struct TextInputBorderModifier: ViewModifier {
     // MARK: - Helpers
 
     private var cornerRadius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedInput ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
+        theme.tuning.hasRoundedInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 
     private var size: BorderWidthSemanticToken {

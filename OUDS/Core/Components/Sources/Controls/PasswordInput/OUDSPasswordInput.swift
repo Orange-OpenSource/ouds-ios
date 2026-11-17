@@ -48,7 +48,7 @@ import SwiftUI
 ///
 /// ### Rounded layout
 ///
-/// As the` OUDSTextInput`, rounded corners can be enabled or disabled using the `hasRoundedInput` values of the `Tuning` object
+/// As the` OUDSTextInput`, rounded corners can be enabled or disabled using the `hasRoundedInputs` values of the `Tuning` object
 /// in your theme configuration.
 ///
 /// ## Status

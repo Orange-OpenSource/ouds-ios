@@ -50,7 +50,7 @@ struct ListItemBordersModifier: ViewModifier {
     private var roundedCorners: Bool {
         switch style {
         case .card:
-            theme.tuning.hasRoundedCardItem
+            theme.tuning.hasRoundedCardItems
         case .item:
             false
         }
