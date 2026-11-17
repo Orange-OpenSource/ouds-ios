@@ -92,7 +92,7 @@ OUDSCircularProgressIndicator(progress: 0.6)
 
 Notes:
 - Default size is `48pt` and scales with Dynamic Type.
-- Rounded stroke caps follow the theme tuning: `Tuning.hasRoundedProgressIndicators` picks between the default (butt) and the rounded cap, exactly like `hasRoundedButtons` does for buttons. The gap is auto-compensated so the visible spacing between the foreground arc and the track stays constant regardless of the cap.
+- Rounded stroke caps follow the theme tuning: `Tuning.hasRoundedProgressIndicator` picks between the default (butt) and the rounded cap, exactly like `hasRoundedButton` does for buttons. The gap is auto-compensated so the visible spacing between the foreground arc and the track stays constant regardless of the cap.
 - On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
 - Determinate animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on or when Low Power Mode is enabled — the arc is then shown instantly at its target value. The `animated: false` flag has the same effect on demand.
 - Indeterminate rotation is paused in the same conditions (Reduce Motion / Low Power Mode) and falls back to a static arc.
@@ -152,7 +152,7 @@ OUDSLinearProgressIndicator(progress: 0.6)
 Notes:
 - Default bar height is `4pt` (theme token `sizeLinearIndicatorHeight`) and scales with Dynamic Type.
 - The bar fills the horizontal space of its container (`.frame(maxWidth: .infinity)`). Constrain its width with `.frame(width:)` if needed.
-- Rounded stroke caps follow the theme tuning: `Tuning.hasRoundedProgressIndicators`. The gap is auto-compensated so the visible spacing between the foreground bar and the track stays constant regardless of the cap.
+- Rounded stroke caps follow the theme tuning: `Tuning.hasRoundedProgressIndicator`. The gap is auto-compensated so the visible spacing between the foreground bar and the track stays constant regardless of the cap.
 - On `OUDSColoredSurface`, the indicator switches to a monochrome rendering: `status` is ignored and the surface content color is used.
 - **Determinate** animations (reveal + updates) are disabled when `accessibilityReduceMotion` is on, when Low Power Mode is enabled, or when `animated: false` is passed — the bar is then shown instantly at its target value.
 - **Indeterminate** animation is intrinsic to the mode: there is no `animated` parameter on this initializer. Motion is disabled automatically when `accessibilityReduceMotion` is on or when Low Power Mode is enabled, and a static bar at 70% is displayed instead.

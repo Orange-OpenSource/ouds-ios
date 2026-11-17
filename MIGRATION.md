@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v3.3.0 → v3.4.0](#v330--v340)
 - [v3.2.0 → v3.3.0](#v320--v330)
 - [v3.0.0 → v3.2.0](#v300--v320)
 - [v2.3.0 → v3.0.0](#v230--v300)
@@ -11,6 +12,59 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v3.3.0 → v3.4.0
+
+### Overview
+
+The version 3.4.0 renames the `Tuning` properties in preparation for v4, adds new ones and changes the predefined tunings.
+Nothing is removed: old properties are deprecated (warning) and will be removed in v4.
+
+### `Tuning` — renamed properties
+
+Read tuning values with the new names. The `Tuning.init` parameter labels are **unchanged** until v4.
+
+| Deprecated (≤ 3.3.0) | New (3.4.0) |
+|---|---|
+| `hasRoundedButtons` | `hasRoundedButton` |
+| `hasRoundedTextInputs` | `hasRoundedInput` |
+| `hasRoundedAlertMessages` | `hasRoundedAlert` |
+| `hasRoundedProgressIndicators` | `hasRoundedProgressIndicator` |
+| `hasRoundedListItems` | `hasRoundedCardItem` |
+
+```swift
+// Before
+if theme.tuning.hasRoundedButtons { … }
+
+// After
+if theme.tuning.hasRoundedButton { … }
+```
+
+### `Tuning` — new properties
+
+- `hasRoundedChatInput`: chat input components (default `false`)
+- `hasRoundedModal`: modal components (default `false`)
+
+They are also new `Tuning.init` parameters with the same labels, inserted after `hasRoundedButtons` and `hasRoundedAlertMessages`. Calls using labels are source compatible; positional order does not matter as long as labels are used.
+
+```swift
+let tuning = Tuning(hasRoundedButtons: true, hasRoundedChatInput: true, hasRoundedModal: true)
+```
+
+### Predefined tunings — changed values
+
+| Tuning | Before | Now |
+|---|---|---|
+| `Tuning.OrangeFrance` | nothing rounded (`== Tuning.default`) | nothing rounded but chat input (`!= Tuning.default`) |
+| `Tuning.OrangeBusiness` | only text inputs rounded | everything rounded (`allRounded`) |
+| `Tuning.Sosh` | square buttons, inputs and list items | everything rounded (`allRounded`) |
+| `Tuning.Wireframe` | square buttons, inputs and list items | everything rounded (`allRounded`) |
+| `Tuning.MaxIt`, `allRounded`, `nothingRounded`, `default` | — | unchanged (new properties follow the same values) |
+
+### Default tuning of Orange themes
+
+`OrangeTheme` and `OrangeCompactTheme` now use `Tuning.OrangeFrance` by default instead of `Tuning.default`.
+Pass `tuning: Tuning.default` explicitly to keep the previous behavior.
 
 ## v3.2.0 → v3.3.0
 
