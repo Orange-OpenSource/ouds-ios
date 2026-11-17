@@ -36,10 +36,14 @@ struct SoshThemeTests {
 
     @Test func defaultTuningOfSoshTheme() {
         let tuning = theme.tuning
-        #expect(tuning.hasRoundedButtons == false)
-        #expect(tuning.hasRoundedTextInputs == false)
-        #expect(tuning.hasRoundedAlertMessages == true)
-        #expect(tuning.hasRoundedListItems == false)
+        #expect(tuning == Tuning.allRounded)
+        #expect(tuning.hasRoundedButton == true)
+        #expect(tuning.hasRoundedInput == true)
+        #expect(tuning.hasRoundedAlert == true)
+        #expect(tuning.hasRoundedProgressIndicator == true)
+        #expect(tuning.hasRoundedCardItem == true)
+        #expect(tuning.hasRoundedChatInput == true)
+        #expect(tuning.hasRoundedModal == true)
     }
 
     // MARK: - Tests - Semantic tokens providers

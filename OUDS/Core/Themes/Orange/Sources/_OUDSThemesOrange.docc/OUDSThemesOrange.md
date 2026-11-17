@@ -78,7 +78,9 @@ Some tuning object exists.
                         hasRoundedTextInputs: true,
                         hasRoundedAlertMessages: true,
                         hasRoundedProgressIndicators: true,
-                        hasRoundedListItems: true)
+                        hasRoundedListItems: true,
+                        hasRoundedChatInput: true,
+                        hasRoundedModal: true)
 
     // Apply it to your theme
     let theme = OrangeTheme(tuning: tuning)
@@ -91,7 +93,7 @@ Some tuning object exists.
 
 ### "Orange France" tuning
 
-A predefined tuning configuration is also available for Orange France, which is also the default tuning:
+A predefined tuning configuration is also available for Orange France, which is also the default tuning of the Orange themes (nothing rounded but chat input based components):
 
 ```swift
 let theme = OrangeTheme(tuning: Tuning.OrangeFrance)

@@ -36,7 +36,9 @@ struct OrangeThemeTests {
 
     @Test func defaultTuningOfOrangeTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning == Tuning.default)
+        #expect(tuning == Tuning.OrangeFrance)
+        #expect(tuning.hasRoundedChatInput == true)
+        #expect(tuning.hasRoundedButton == false)
     }
 
     // MARK: - Tests - Semantic tokens providers

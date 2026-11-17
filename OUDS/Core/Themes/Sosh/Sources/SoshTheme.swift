@@ -179,14 +179,9 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
 extension Tuning {
 
-    /// The theme tuning for *Sosh* contains **square corners for buttons**,
-    /// **square corners for text / PIN code / password / text area inputs** and **list items**;
-    /// and **rounded corners for alert messages** and **progress indicators**.
-    public static let Sosh = Tuning(hasRoundedButtons: false,
-                                    hasRoundedTextInputs: false,
-                                    hasRoundedAlertMessages: true,
-                                    hasRoundedProgressIndicators: true,
-                                    hasRoundedListItems: false)
+    /// The *Sosh* theme does not have *stricto sensu* such tuning, because the values for the tokens used in border radius
+    /// are the expected ones and the same for defaults and rounded for example.
+    public static let Sosh = Tuning.allRounded
 }
 
 // swiftlint:enable function_body_length
