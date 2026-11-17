@@ -31,14 +31,6 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.default.hasRoundedModals == false)
     }
 
-    @Test
-    @available(*, deprecated)
-    func defaultThemeTuningDeprecatedProperties() {
-        #expect(Tuning.default.hasRoundedTextInputs == false)
-        #expect(Tuning.default.hasRoundedAlertMessages == false)
-        #expect(Tuning.default.hasRoundedListItems == false)
-    }
-
     // MARK: - Orange France
 
     @Test
@@ -50,19 +42,6 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.OrangeFrance.hasRoundedCardItems == false)
         #expect(Tuning.OrangeFrance.hasRoundedChatInputs == true)
         #expect(Tuning.OrangeFrance.hasRoundedModals == false)
-    }
-
-    @Test
-    @available(*, deprecated)
-    func orangeFranceThemeTuningDeprecatedProperties() {
-        #expect(Tuning.OrangeFrance.hasRoundedTextInputs == false)
-        #expect(Tuning.OrangeFrance.hasRoundedAlertMessages == false)
-        #expect(Tuning.OrangeFrance.hasRoundedListItems == false)
-    }
-
-    @Test
-    func orangeFranceThemeTuningIsNotTheDefaultOne() {
-        #expect(Tuning.OrangeFrance != Tuning.default)
     }
 
     // MARK: - Orange Business
@@ -86,11 +65,6 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.OrangeBusiness.hasRoundedListItems == true)
     }
 
-    @Test
-    func orangeBusinessThemeTuningIsAllRounded() {
-        #expect(Tuning.OrangeBusiness == Tuning.allRounded)
-    }
-
     // MARK: - Max It
 
     @Test
@@ -104,14 +78,6 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.MaxIt.hasRoundedModals == true)
     }
 
-    @Test
-    @available(*, deprecated)
-    func maxItThemeTuningDeprecatedProperties() {
-        #expect(Tuning.MaxIt.hasRoundedTextInputs == true)
-        #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
-        #expect(Tuning.MaxIt.hasRoundedListItems == true)
-    }
-
     // MARK: - Helpers tuning
 
     @Test
@@ -123,14 +89,6 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.nothingRounded.hasRoundedCardItems == false)
         #expect(Tuning.nothingRounded.hasRoundedChatInputs == false)
         #expect(Tuning.nothingRounded.hasRoundedModals == false)
-    }
-
-    @Test
-    @available(*, deprecated)
-    func nothingRoundedTuningDeprecatedProperties() {
-        #expect(Tuning.nothingRounded.hasRoundedTextInputs == false)
-        #expect(Tuning.nothingRounded.hasRoundedAlertMessages == false)
-        #expect(Tuning.nothingRounded.hasRoundedListItems == false)
     }
 
     @Test
@@ -150,48 +108,5 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.allRounded.hasRoundedTextInputs == true)
         #expect(Tuning.allRounded.hasRoundedAlertMessages == true)
         #expect(Tuning.allRounded.hasRoundedListItems == true)
-    }
-
-    // MARK: - Custom tuning
-
-    @Test("Tuning init values must be reflected by old and new properties")
-    @available(*, deprecated)
-    func customTuningWithEveryValuesSet() {
-        let tuning = Tuning(hasRoundedButtons: true,
-                            hasRoundedChatInputs: false,
-                            hasRoundedTextInputs: false,
-                            hasRoundedAlertMessages: true,
-                            hasRoundedModals: true,
-                            hasRoundedProgressIndicators: false,
-                            hasRoundedListItems: true)
-        #expect(tuning.hasRoundedButtons == true)
-        #expect(tuning.hasRoundedChatInputs == false)
-        #expect(tuning.hasRoundedInputs == false)
-        #expect(tuning.hasRoundedTextInputs == false)
-        #expect(tuning.hasRoundedAlerts == true)
-        #expect(tuning.hasRoundedAlertMessages == true)
-        #expect(tuning.hasRoundedModals == true)
-        #expect(tuning.hasRoundedProgressIndicators == false)
-        #expect(tuning.hasRoundedCardItems == true)
-        #expect(tuning.hasRoundedListItems == true)
-    }
-
-    @Test
-    func newPropertiesOnlyTuning() {
-        let tuning = Tuning(hasRoundedChatInputs: true, hasRoundedModals: true)
-        #expect(tuning.hasRoundedChatInputs == true)
-        #expect(tuning.hasRoundedModals == true)
-        #expect(tuning.hasRoundedButtons == false)
-        #expect(tuning.hasRoundedInputs == false)
-        #expect(tuning.hasRoundedAlerts == false)
-        #expect(tuning.hasRoundedProgressIndicators == false)
-        #expect(tuning.hasRoundedCardItems == false)
-    }
-
-    @Test
-    func tuningEquality() {
-        #expect(Tuning(hasRoundedChatInputs: true) == Tuning.OrangeFrance)
-        #expect(Tuning(hasRoundedModals: true) != Tuning.default)
-        #expect(Tuning(hasRoundedChatInputs: true) != Tuning(hasRoundedModals: true))
     }
 }

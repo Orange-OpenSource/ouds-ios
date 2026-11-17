@@ -100,11 +100,13 @@ A default tuning is applied for this theme:
 
 Tunable elements                    | Default values                          
 ----------------------------------- | ------------------------------------- 
-rounded corners buttons             | ❌ false  
-rounded corners text inputs         | ❌ false
-rounded corners alert messages      | ❌ false
-rounded corners progress indicators | ❌ false
-rounded corners list items          | ❌ false
+rounded corners alerts              | ✅ true
+rounded corners buttons             | ✅ true
+rounded corners cards               | ✅ true
+rounded corners chat inputs         | ❌ false
+rounded corners inputs              | ✅ true
+rounded corners modals              | ✅ true
+rounded corners progress indicators | ✅ true
 
 ## Typography
 

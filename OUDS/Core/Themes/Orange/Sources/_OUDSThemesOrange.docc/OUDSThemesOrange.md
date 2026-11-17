@@ -103,11 +103,14 @@ It applies the following settings:
 
 Tunable elements                    | Default values                          
 ----------------------------------- | ------------------------------------- 
-rounded corners buttons             | ❌ false  
-rounded corners text inputs         | ❌ false  
-rounded corners alert messages      | ❌ false
+rounded corners alerts              | ❌ false
+rounded corners buttons             | ❌ false
+rounded corners cards               | ❌ false
+rounded corners chat inputs         | ✅ true
+rounded corners inputs              | ❌ false
+rounded corners modals              | ❌ false
 rounded corners progress indicators | ❌ false
-rounded corners list items          | ❌ false
+
 
 ### "Orange Business" tuning
 
@@ -121,11 +124,13 @@ It applies the following settings:
 
 Tunable elements                    | Default values                          
 ----------------------------------- | ------------------------------------- 
-rounded corners buttons             | ❌ false  
-rounded corners text inputs         | ✅ true 
-rounded corners alert messages      | ❌ false 
-rounded corners progress indicators | ❌ false
-rounded corners list items          | ❌ false
+rounded corners alerts              | ✅ true
+rounded corners buttons             | ✅ true
+rounded corners cards               | ✅ true
+rounded corners chat inputs         | ✅ true
+rounded corners inputs              | ✅ true
+rounded corners modals              | ✅ true
+rounded corners progress indicators | ✅ true
 
 ### "Max it" tuning
 
@@ -139,11 +144,13 @@ It applies the following settings:
 
 Tunable elements                    | Default values                          
 ----------------------------------- | ------------------------------------- 
-rounded corners buttons             | ✅ true  
-rounded corners text inputs         | ✅ true  
-rounded corners alert messages      | ✅ true
+rounded corners alerts              | ✅ true
+rounded corners buttons             | ✅ true
+rounded corners cards               | ✅ true
+rounded corners chat inputs         | ✅ true
+rounded corners inputs              | ✅ true
+rounded corners modals              | ✅ true
 rounded corners progress indicators | ✅ true
-rounded corners list items          | ✅ true
 
 ## Typography
 

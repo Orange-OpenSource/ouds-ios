@@ -459,19 +459,7 @@ class YourTheme: OrangeTheme {
 ## 5. Tuning & Flags
 
 Tuning controls brand-level UI decisions for corner rounding. Only `OrangeTheme` (and its subclasses) support tuning.
-`OrangeTheme` and `OrangeCompactTheme` use `Tuning.OrangeFrance` by default since v3.4.0 (`Tuning.default` before).
-
-> **Naming (v3.4.0)**: the `Tuning` **properties** have new names (old ones are deprecated, removed in v4), but the `Tuning.init` parameters keep the old labels until v4.
->
-> | Deprecated property (read) | New property (read) | `init` label (unchanged until v4) |
-> |---|---|---|
-> | `hasRoundedTextInputs` | `hasRoundedInputs` | `hasRoundedTextInputs` |
-> | `hasRoundedAlertMessages` | `hasRoundedAlerts` | `hasRoundedAlertMessages` |
-> | `hasRoundedListItems` | `hasRoundedCardItems` | `hasRoundedListItems` |
-> | — | `hasRoundedChatInputs` (new) | `hasRoundedChatInputs` |
-> | — | `hasRoundedModals` (new) | `hasRoundedModals` |
->
-> `hasRoundedButtons` and `hasRoundedProgressIndicators` are unchanged.
+`OrangeTheme` and `OrangeCompactTheme` use `Tuning.OrangeFrance`.
 
 ```swift
 // Custom tuning:
