@@ -171,7 +171,7 @@ struct PinCodeInputContainer: View {
     }
 
     private var borderRadius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedTextInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
+        theme.tuning.hasRoundedInput ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 
     private func backgroundColor(focused: Bool) -> Color {

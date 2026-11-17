@@ -96,7 +96,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
     }
 
     private var strokeCap: CGLineCap {
-        let effectiveRadius = theme.tuning.hasRoundedProgressIndicators
+        let effectiveRadius = theme.tuning.hasRoundedProgressIndicator
             ? theme.progressIndicator.borderRadiusRounded
             : theme.progressIndicator.borderRadiusDefault
         return (effectiveRadius > 0) ? .round : .butt

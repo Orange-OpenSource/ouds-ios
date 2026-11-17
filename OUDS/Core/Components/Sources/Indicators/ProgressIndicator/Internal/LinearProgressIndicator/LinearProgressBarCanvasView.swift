@@ -97,7 +97,7 @@ struct LinearProgressBarCanvasView: View {
     /// Color of the track. When `hasTrack` is `false`, the track segments are not drawn.
     let trackColor: Color
 
-    /// Rounded caps (`.round`) or square caps (`.butt`). Follows `Tuning.hasRoundedProgressIndicators`.
+    /// Rounded caps (`.round`) or square caps (`.butt`). Follows `Tuning.hasRoundedProgressIndicator`.
     let strokeCap: CGLineCap
 
     /// Whether the track is displayed at all.
