@@ -15,7 +15,7 @@ body:
       required: true
   - type: checkboxes
     attributes:
-      label: Core Team - Definition of Done (Design System Toolbox)
+      label: Core Team only - Definition of Done (Design System Toolbox)
       description: For core team only, elements to fill for the Design System Toolbox app to be able to ship the evolutions
       options:
         - label: Add the asked evolutions

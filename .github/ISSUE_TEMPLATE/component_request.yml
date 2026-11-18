@@ -35,14 +35,14 @@ body:
       required: false        
   - type: checkboxes
     attributes:
-      label: Core Team - Definition of Ready
+      label: Core Team only - Definition of Ready
       description: For core team only, prerequisites to fill to implement the evolution
       options:
         - label: Design specifications are available (i.e. reviewed and validated)
         - label: Tokens to use are available (i.e. integrated in the code base)
   - type: checkboxes
     attributes:
-      label: Core Team - Definition of Done (Swift Package)
+      label: Core Tea only - Definition of Done (Swift Package)
       description: For core team only, elements to fill for the Swift Package product to be able to ship the evolutions
       options:
         - label: Component is implemented / updated
@@ -62,7 +62,7 @@ body:
         - label: Retrocompatibility / API break has been checked, or broken API have been flagged as deprecated with a workaround ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#check-api-breakings))
   - type: checkboxes
     attributes:
-      label: Core Team - Definition of Done (Design System Toolbox)
+      label: Core Team only - Definition of Done (Design System Toolbox)
       description: For core team only, elements to fill for the Design System Toolbox app to be able to ship the evolutions
       options:
         - label: Showcase of components
