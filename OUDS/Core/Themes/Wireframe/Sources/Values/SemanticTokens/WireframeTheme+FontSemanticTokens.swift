@@ -21,23 +21,23 @@ import OUDSTokensSemantic
 
 extension WireframeThemeFontSemanticTokensProvider: FontSemanticTokens {
     /// Semantic token used to define the font family applied to iOS body text styles, specifying the typeface used to render body text.
-    /// The value inherits from the iOS system font family token and is intended to be used with body text styles.
+    /// The value is intended to be used with body text styles.
     /// Has for value token familySystem (= "Shantell Sans")
     @objc open var familyBody: FontFamilySemanticToken { familySystem }
     /// Semantic token used to define the font family applied to iOS code text styles, specifying the typeface used to render code text.
-    /// The value inherits from the iOS system font family token and is intended to be used with code text styles.
+    /// The value is intended to be used with code text styles.
     /// Has for value token FontRawTokens.familyMonospaceMenlo (= "Menlo")
     @objc open var familyCode: FontFamilySemanticToken { FontRawTokens.familyMonospaceMenlo }
     /// Semantic token used to define the font family applied to iOS display text styles, specifying the typeface used to render display text.
-    /// The value inherits from the iOS system font family token and is intended to be used with display text styles.
+    /// The value is intended to be used with display text styles.
     /// Has for value token familySystem (= "Shantell Sans")
     @objc open var familyDisplay: FontFamilySemanticToken { familySystem }
     /// Semantic token used to define the font family applied to iOS heading text styles, specifying the typeface used to render heading text.
-    /// The value inherits from the iOS system font family token and is intended to be used with heading text styles.
+    /// The value is intended to be used with heading text styles.
     /// Has for value token familySystem (= "Shantell Sans")
     @objc open var familyHeading: FontFamilySemanticToken { familySystem }
     /// Semantic token used to define the font family applied to iOS label text styles, specifying the typeface used to render label text.
-    /// The value inherits from the iOS system font family token and is intended to be used with label text styles.
+    /// The value is intended to be used with label text styles.
     /// Has for value token familySystem (= "Shantell Sans")
     @objc open var familyLabel: FontFamilySemanticToken { familySystem }
     /// Internal token used as a centralization layer.
