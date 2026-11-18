@@ -73,7 +73,6 @@ public struct OUDSCard<Content: View>: View {
 
     private let style: OUDSCardStyle
     private let content: Content
-    @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Initializer
@@ -93,18 +92,11 @@ public struct OUDSCard<Content: View>: View {
     public var body: some View {
         content
             .modifier(CardBackgroundModifier(style: style, interactionState: interactionState))
-            .modifier(CardBordersModifier(style: style, interactionState: interactionState))
-            .clipShape(RoundedRectangle(cornerRadius: radius))
-            .skeleton(shape: RoundedRectangle(cornerRadius: radius))
     }
 
     // MARK: Helpers
 
     private var interactionState: OUDSButtonInteractionState {
         isEnabled ? .enabled : .disabled
-    }
-
-    private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedCard ? theme.card.borderRadiusRounded : theme.card.borderRadiusDefault
     }
 }

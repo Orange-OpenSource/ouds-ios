@@ -36,14 +36,13 @@ struct CardBordersModifier: ViewModifier {
         case .outlined:
             outlined(content: content)
         case .elevated:
-            content.shadow(theme.elevations.drag)
+            content
+                .background {
+                    RoundedRectangle(cornerRadius: theme.cardRadius)
+                        .fill(theme.colors.surfacePrimary)
+                        .shadow(theme.elevations.raised)
+                }
         }
-    }
-
-    // MARK: Rounded corners
-
-    private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedCard ? theme.card.borderRadiusRounded : theme.card.borderRadiusDefault
     }
 
     // MARK: Border modifiers
@@ -66,7 +65,7 @@ struct CardBordersModifier: ViewModifier {
         content
             .border(style: theme.borders.styleDefault,
                     width: theme.borders.widthDefault,
-                    radius: radius,
+                    radius: theme.cardRadius,
                     color: color)
     }
 
@@ -79,9 +78,9 @@ struct CardBordersModifier: ViewModifier {
                     .frame(height: theme.borders.widthDefault)
                     .overlay(theme.colors.borderMuted.color(for: colorScheme))
             }
-            .clipShape(RoundedRectangle(cornerRadius: radius))
+            .clipShape(RoundedRectangle(cornerRadius: theme.cardRadius))
         } else {
-            content.clipShape(RoundedRectangle(cornerRadius: radius))
+            content.clipShape(RoundedRectangle(cornerRadius: theme.cardRadius))
         }
     }
 }

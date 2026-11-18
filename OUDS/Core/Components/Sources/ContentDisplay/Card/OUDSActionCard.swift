@@ -122,15 +122,6 @@ public struct OUDSActionCard<Content: View>: View {
         OUDSInteractionButton(action: action) { interactionState in
             content(interactionState)
                 .modifier(CardBackgroundModifier(style: style, interactionState: interactionState))
-                .clipShape(RoundedRectangle(cornerRadius: radius))
-                .modifier(CardBordersModifier(style: style, interactionState: interactionState))
-                .skeleton(shape: RoundedRectangle(cornerRadius: radius))
         }
-    }
-
-    // MARK: Helpers
-
-    private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedCard ? theme.card.borderRadiusRounded : theme.card.borderRadiusDefault
     }
 }
