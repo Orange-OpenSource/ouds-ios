@@ -835,553 +835,553 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// This token is used in the light mode.
     /// Has for value token repositoryNeutralEmphasizedHigh (= "#1F2632FF")
     @objc open var overlayTooltipLight: ColorSemanticToken { repositoryNeutralEmphasizedHigh }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryAccentHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed900 (= "#681229FF")
     @objc open var repositoryAccentHigher: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed900 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed1000 (= "#380513FF")
     @objc open var repositoryAccentHighest: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed1000 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed300 (= "#FA9EA6FF")
     @objc open var repositoryAccentLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryAccentLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed50 (= "#FFF1F1FF")
     @objc open var repositoryAccentLowest: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed50 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed600 (= "#DB2345FF")
     @objc open var repositoryAccentMedium: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed600 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalDodgerBlue700 (= "#0073B2FF")
     @objc open var repositoryInfoHigh: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue700 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryInfoHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryInfoHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalDodgerBlue300 (= "#8AD5FFFF")
     @objc open var repositoryInfoLow: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryInfoLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryInfoLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryInfoMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet700 (= "#B20002FF")
     @objc open var repositoryNegativeHigh: ColorSemanticToken { ColorRawTokens.functionalScarlet700 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet800 (= "#800001FF")
     @objc open var repositoryNegativeHigher: ColorSemanticToken { ColorRawTokens.functionalScarlet800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryNegativeHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet300 (= "#FF8081FF")
     @objc open var repositoryNegativeLow: ColorSemanticToken { ColorRawTokens.functionalScarlet300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet200 (= "#FFB2B3FF")
     @objc open var repositoryNegativeLower: ColorSemanticToken { ColorRawTokens.functionalScarlet200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet100 (= "#FFE5E6FF")
     @objc open var repositoryNegativeLowest: ColorSemanticToken { ColorRawTokens.functionalScarlet100 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet600 (= "#DB0002FF")
     @objc open var repositoryNegativeMedium: ColorSemanticToken { ColorRawTokens.functionalScarlet600 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark960 (= "#08090DFF")
     @objc open var repositoryNeutralEmphasizedBlack: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark960 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark720 (= "#1F2632FF")
     @objc open var repositoryNeutralEmphasizedHigh: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark720 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark800 (= "#181C26FF")
     @objc open var repositoryNeutralEmphasizedHigher: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark880 (= "#101319FF")
     @objc open var repositoryNeutralEmphasizedHighest: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark880 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark560 (= "#2F384BFF")
     @objc open var repositoryNeutralEmphasizedLow: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark560 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark480 (= "#374258FF")
     @objc open var repositoryNeutralEmphasizedLower: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark480 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryNeutralEmphasizedLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark640 (= "#272F3FFF")
     @objc open var repositoryNeutralEmphasizedMedium: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayLight400 (= "#C0C8D8FF")
     @objc open var repositoryNeutralMutedHigh: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayLight400 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryNeutralMutedHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryNeutralMutedHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayLight240 (= "#D9DEE7FF")
     @objc open var repositoryNeutralMutedLow: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayLight240 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayLight160 (= "#E9ECF1FF")
     @objc open var repositoryNeutralMutedLower: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayLight160 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayLight80 (= "#F7F8FAFF")
     @objc open var repositoryNeutralMutedLowest: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayLight80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryNeutralMutedMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalWhite (= "#FFFFFFFF")
     @objc open var repositoryNeutralMutedWhite: ColorSemanticToken { ColorRawTokens.functionalWhite }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRustyRed80 (= "#DB234514")
     @objc open var repositoryOpacityAccentLow: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRustyRed80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRustyRed680 (= "#8E1532AD")
     @objc open var repositoryOpacityAccentMedium: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRustyRed680 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack520 (= "#05052E85")
     @objc open var repositoryOpacityBlackHigh: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack520 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack680 (= "#05052EAD")
     @objc open var repositoryOpacityBlackHigher: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack680 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack920 (= "#05052EEB")
     @objc open var repositoryOpacityBlackHighest: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack920 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack120 (= "#05052E1F")
     @objc open var repositoryOpacityBlackLow: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack120 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack80 (= "#05052E14")
     @objc open var repositoryOpacityBlackLower: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack40 (= "#05052E0A")
     @objc open var repositoryOpacityBlackLowest: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack40 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack280 (= "#05052E47")
     @objc open var repositoryOpacityBlackMedium: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack280 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack440 (= "#05052E70")
     @objc open var repositoryOpacityBlackMediumHigh: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack440 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack200 (= "#05052E33")
     @objc open var repositoryOpacityBlackMediumLow: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityBlack0 (= "#05052E00")
     @objc open var repositoryOpacityBlackTransparent: ColorSemanticToken { WireframeBrandColorRawTokens.opacityBlack0 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.dodgerBlue80 (= "#26B2FF14")
     @objc open var repositoryOpacityInfoLow: ColorSemanticToken { ColorRawTokens.dodgerBlue80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.dodgerBlue520 (= "#00598A85")
     @objc open var repositoryOpacityInfoMedium: ColorSemanticToken { ColorRawTokens.dodgerBlue520 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.scarlet80 (= "#DB000214")
     @objc open var repositoryOpacityNegativeLow: ColorSemanticToken { ColorRawTokens.scarlet80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.scarlet320 (= "#DB000252")
     @objc open var repositoryOpacityNegativeMedium: ColorSemanticToken { ColorRawTokens.scarlet320 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.malachite120 (= "#3DE35A1F")
     @objc open var repositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.malachite120 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.malachite640 (= "#0E621DA3")
     @objc open var repositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.malachite640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue560 (= "#2055E58F")
     @objc open var repositoryOpacityPrimaryHigh: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue560 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue680 (= "#2055E5AD")
     @objc open var repositoryOpacityPrimaryHigher: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue680 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryOpacityPrimaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue360 (= "#2055E55C")
     @objc open var repositoryOpacityPrimaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue360 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue200 (= "#2055E533")
     @objc open var repositoryOpacityPrimaryLower: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue80 (= "#2055E514")
     @objc open var repositoryOpacityPrimaryLowest: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue400 (= "#2055E566")
     @objc open var repositoryOpacityPrimaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue400 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryOpacityPrimaryTransparent: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.sun160 (= "#FFD00029")
     @objc open var repositoryOpacityWarningLow: ColorSemanticToken { ColorRawTokens.sun160 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.sun480 (= "#6651007A")
     @objc open var repositoryOpacityWarningMedium: ColorSemanticToken { ColorRawTokens.sun480 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white640 (= "#EFF5FFA3")
     @objc open var repositoryOpacityWhiteHigh: ColorSemanticToken { WireframeBrandColorRawTokens.white640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white800 (= "#EFF5FFCC")
     @objc open var repositoryOpacityWhiteHigher: ColorSemanticToken { WireframeBrandColorRawTokens.white800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white920 (= "#EFF5FFEB")
     @objc open var repositoryOpacityWhiteHighest: ColorSemanticToken { WireframeBrandColorRawTokens.white920 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white120 (= "#EFF5FF1F")
     @objc open var repositoryOpacityWhiteLow: ColorSemanticToken { WireframeBrandColorRawTokens.white120 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white80 (= "#EFF5FF14")
     @objc open var repositoryOpacityWhiteLower: ColorSemanticToken { WireframeBrandColorRawTokens.white80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white40 (= "#EFF5FF0A")
     @objc open var repositoryOpacityWhiteLowest: ColorSemanticToken { WireframeBrandColorRawTokens.white40 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white440 (= "#EFF5FF70")
     @objc open var repositoryOpacityWhiteMedium: ColorSemanticToken { WireframeBrandColorRawTokens.white440 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white200 (= "#EFF5FF33")
     @objc open var repositoryOpacityWhiteMediumLow: ColorSemanticToken { WireframeBrandColorRawTokens.white200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.white0 (= "#EFF5FF00")
     @objc open var repositoryOpacityWhiteTransparent: ColorSemanticToken { WireframeBrandColorRawTokens.white0 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite700 (= "#17A02FFF")
     @objc open var repositoryPositiveHigh: ColorSemanticToken { ColorRawTokens.functionalMalachite700 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite750 (= "#138126FF")
     @objc open var repositoryPositiveHigher: ColorSemanticToken { ColorRawTokens.functionalMalachite750 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryPositiveHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite300 (= "#94F0A4FF")
     @objc open var repositoryPositiveLow: ColorSemanticToken { ColorRawTokens.functionalMalachite300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryPositiveLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryPositiveLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite600 (= "#1ECD3CFF")
     @objc open var repositoryPositiveMedium: ColorSemanticToken { ColorRawTokens.functionalMalachite600 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.royalBlue800 (= "#223CABFF")
     @objc open var repositoryPrimaryHigh: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.royalBlue900 (= "#213787FF")
     @objc open var repositoryPrimaryHigher: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue900 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.royalBlue950 (= "#1F2D6BFF")
     @objc open var repositoryPrimaryHighest: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue950 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.royalBlue300 (= "#96C1FAFF")
     @objc open var repositoryPrimaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.royalBlue200 (= "#C1D8FCFF")
     @objc open var repositoryPrimaryLower: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.royalBlue100 (= "#DCE9FDFF")
     @objc open var repositoryPrimaryLowest: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue100 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.royalBlue600 (= "#2055E5FF")
     @objc open var repositoryPrimaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue600 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed700 (= "#B81839FF")
     @objc open var repositorySecondaryHigh: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed700 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed800 (= "#8E1532FF")
     @objc open var repositorySecondaryHigherHigh: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed800 (= "#8E1532FF")
     @objc open var repositorySecondaryHigherLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositorySecondaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed400 (= "#F66F7DFF")
     @objc open var repositorySecondaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed400 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed300 (= "#FA9EA6FF")
     @objc open var repositorySecondaryLower: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed200 (= "#FCCFD2FF")
     @objc open var repositorySecondaryLowest: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token WireframeBrandColorRawTokens.rustyRed600 (= "#DB2345FF")
     @objc open var repositorySecondaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed600 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryTertiaryHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryTertiaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryTertiaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryTertiaryLow: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryTertiaryLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryTertiaryLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryTertiaryMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalSun750 (= "#856A00FF")
     @objc open var repositoryWarningHigh: ColorSemanticToken { ColorRawTokens.functionalSun750 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryWarningHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryWarningHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalSun300 (= "#FFE270FF")
     @objc open var repositoryWarningLow: ColorSemanticToken { ColorRawTokens.functionalSun300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryWarningLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc open var repositoryWarningLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalSun500 (= "#FFD000FF")
     @objc open var repositoryWarningMedium: ColorSemanticToken { ColorRawTokens.functionalSun500 }

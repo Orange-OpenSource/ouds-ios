@@ -835,553 +835,553 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// This token is used in the light mode.
     /// Has for value token repositoryNeutralEmphasizedHigh (= "#1F2B32FF")
     @objc public final var overlayTooltipLight: ColorSemanticToken { repositoryNeutralEmphasizedHigh }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryAccentHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryAccentHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorRaspberry800 (= "#640222FF")
     @objc public final var repositoryAccentHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorRaspberry300 (= "#FC6999FF")
     @objc public final var repositoryAccentLow: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryAccentLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorRaspberry50 (= "#FFE6EEFF")
     @objc public final var repositoryAccentLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry50 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorRaspberry500 (= "#DE034BFF")
     @objc public final var repositoryAccentMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry500 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark240 (= "#0173C1FF")
     @objc public final var repositoryInfoHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark240 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight400 (= "#99D5FFFF")
     @objc public final var repositoryInfoLow: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraLight400 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet700 (= "#B20002FF")
     @objc public final var repositoryNegativeHigh: ColorSemanticToken { ColorRawTokens.functionalScarlet700 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet800 (= "#800001FF")
     @objc public final var repositoryNegativeHigher: ColorSemanticToken { ColorRawTokens.functionalScarlet800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNegativeHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet300 (= "#FF8081FF")
     @objc public final var repositoryNegativeLow: ColorSemanticToken { ColorRawTokens.functionalScarlet300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet200 (= "#FFB2B3FF")
     @objc public final var repositoryNegativeLower: ColorSemanticToken { ColorRawTokens.functionalScarlet200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet100 (= "#FFE5E6FF")
     @objc public final var repositoryNegativeLowest: ColorSemanticToken { ColorRawTokens.functionalScarlet100 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalScarlet600 (= "#DB0002FF")
     @objc public final var repositoryNegativeMedium: ColorSemanticToken { ColorRawTokens.functionalScarlet600 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalBlack (= "#000000FF")
     @objc public final var repositoryNeutralEmphasizedBlack: ColorSemanticToken { ColorRawTokens.functionalBlack }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayDark720 (= "#1F2B32FF")
     @objc public final var repositoryNeutralEmphasizedHigh: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark720 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayDark800 (= "#182026FF")
     @objc public final var repositoryNeutralEmphasizedHigher: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayDark880 (= "#101519FF")
     @objc public final var repositoryNeutralEmphasizedHighest: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark880 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayDark560 (= "#2F404BFF")
     @objc public final var repositoryNeutralEmphasizedLow: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark560 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayDark480 (= "#374B58FF")
     @objc public final var repositoryNeutralEmphasizedLower: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark480 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNeutralEmphasizedLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayDark640 (= "#27353FFF")
     @objc public final var repositoryNeutralEmphasizedMedium: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayLight400 (= "#C0CED8FF")
     @objc public final var repositoryNeutralMutedHigh: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayLight400 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNeutralMutedHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNeutralMutedHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayLight240 (= "#D9E2E7FF")
     @objc public final var repositoryNeutralMutedLow: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayLight240 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayLight160 (= "#E9EEF1FF")
     @objc public final var repositoryNeutralMutedLower: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayLight160 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.functionalGrayLight80 (= "#F7F9FAFF")
     @objc public final var repositoryNeutralMutedLowest: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayLight80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNeutralMutedMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalWhite (= "#FFFFFFFF")
     @objc public final var repositoryNeutralMutedWhite: ColorSemanticToken { ColorRawTokens.functionalWhite }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityRaspberry100 (= "#FC69991A")
     @objc public final var repositoryOpacityAccentLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityRaspberry100 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityRaspberry640 (= "#960333A3")
     @objc public final var repositoryOpacityAccentMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityRaspberry640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack520 (= "#000F1985")
     @objc public final var repositoryOpacityBlackHigh: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack520 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack720 (= "#000F19B8")
     @objc public final var repositoryOpacityBlackHigher: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack720 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack920 (= "#000F19EB")
     @objc public final var repositoryOpacityBlackHighest: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack920 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack120 (= "#000F191F")
     @objc public final var repositoryOpacityBlackLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack120 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack80 (= "#000F1914")
     @objc public final var repositoryOpacityBlackLower: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack40 (= "#000F190A")
     @objc public final var repositoryOpacityBlackLowest: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack40 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack280 (= "#000F1947")
     @objc public final var repositoryOpacityBlackMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack280 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack440 (= "#000F1970")
     @objc public final var repositoryOpacityBlackMediumHigh: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack440 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack200 (= "#000F1933")
     @objc public final var repositoryOpacityBlackMediumLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityBlack0 (= "#000F1900")
     @objc public final var repositoryOpacityBlackTransparent: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack0 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityLochmaraLight80080 (= "#34ACFE14")
     @objc public final var repositoryOpacityInfoLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityLochmaraLight80080 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityLochmaraDark880520 (= "#01558E85")
     @objc public final var repositoryOpacityInfoMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityLochmaraDark880520 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.scarlet80 (= "#DB000214")
     @objc public final var repositoryOpacityNegativeLow: ColorSemanticToken { ColorRawTokens.scarlet80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.scarlet320 (= "#DB000252")
     @objc public final var repositoryOpacityNegativeMedium: ColorSemanticToken { ColorRawTokens.scarlet320 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.malachite120 (= "#3DE35A1F")
     @objc public final var repositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.malachite120 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.malachite640 (= "#0E621DA3")
     @objc public final var repositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.malachite640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryLow: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryTransparent: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityTurbo160 (= "#FFE50029")
     @objc public final var repositoryOpacityWarningLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityTurbo160 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.opacityTurbo480 (= "#665C007A")
     @objc public final var repositoryOpacityWarningMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityTurbo480 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white640 (= "#EDF6FCA3")
     @objc public final var repositoryOpacityWhiteHigh: ColorSemanticToken { SoshBrandColorRawTokens.white640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white800 (= "#EDF6FCCC")
     @objc public final var repositoryOpacityWhiteHigher: ColorSemanticToken { SoshBrandColorRawTokens.white800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white920 (= "#EDF6FCEB")
     @objc public final var repositoryOpacityWhiteHighest: ColorSemanticToken { SoshBrandColorRawTokens.white920 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white120 (= "#EDF6FC1F")
     @objc public final var repositoryOpacityWhiteLow: ColorSemanticToken { SoshBrandColorRawTokens.white120 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white80 (= "#EDF6FC14")
     @objc public final var repositoryOpacityWhiteLower: ColorSemanticToken { SoshBrandColorRawTokens.white80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white40 (= "#EDF6FC0A")
     @objc public final var repositoryOpacityWhiteLowest: ColorSemanticToken { SoshBrandColorRawTokens.white40 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white440 (= "#EDF6FC70")
     @objc public final var repositoryOpacityWhiteMedium: ColorSemanticToken { SoshBrandColorRawTokens.white440 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white200 (= "#EDF6FC33")
     @objc public final var repositoryOpacityWhiteMediumLow: ColorSemanticToken { SoshBrandColorRawTokens.white200 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.white0 (= "#EDF6FC00")
     @objc public final var repositoryOpacityWhiteTransparent: ColorSemanticToken { SoshBrandColorRawTokens.white0 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite700 (= "#17A02FFF")
     @objc public final var repositoryPositiveHigh: ColorSemanticToken { ColorRawTokens.functionalMalachite700 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite750 (= "#138126FF")
     @objc public final var repositoryPositiveHigher: ColorSemanticToken { ColorRawTokens.functionalMalachite750 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPositiveHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite300 (= "#94F0A4FF")
     @objc public final var repositoryPositiveLow: ColorSemanticToken { ColorRawTokens.functionalMalachite300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPositiveLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPositiveLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token ColorRawTokens.functionalMalachite600 (= "#1ECD3CFF")
     @objc public final var repositoryPositiveMedium: ColorSemanticToken { ColorRawTokens.functionalMalachite600 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorRaspberry300 (= "#FC6999FF")
     @objc public final var repositoryPrimaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorRaspberry500 (= "#DE034BFF")
     @objc public final var repositoryPrimaryMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry500 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark720 (= "#003051FF")
     @objc public final var repositorySecondaryHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark720 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark880 (= "#002138FF")
     @objc public final var repositorySecondaryHigherHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark880 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark800 (= "#002742FF")
     @objc public final var repositorySecondaryHigherLow: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark800 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark960 (= "#001524FF")
     @objc public final var repositorySecondaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark960 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark240 (= "#0173C1FF")
     @objc public final var repositorySecondaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark240 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight640 (= "#5DBCFEFF")
     @objc public final var repositorySecondaryLower: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraLight640 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight80 (= "#EDF6FDFF")
     @objc public final var repositorySecondaryLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraLight80 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark480 (= "#01558EFF")
     @objc public final var repositorySecondaryMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark480 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryTertiaryHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryTertiaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorTurbo950 (= "#221F02FF")
     @objc public final var repositoryTertiaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo950 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorTurbo300 (= "#FFEF66FF")
     @objc public final var repositoryTertiaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryTertiaryLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorTurbo50 (= "#FCFAE8FF")
     @objc public final var repositoryTertiaryLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo50 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorTurbo500 (= "#FFE500FF")
     @objc public final var repositoryTertiaryMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo500 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorTurbo750 (= "#7A6E00FF")
     @objc public final var repositoryWarningHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo750 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryWarningHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryWarningHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorTurbo300 (= "#FFEF66FF")
     @objc public final var repositoryWarningLow: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo300 }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryWarningLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryWarningLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
+    /// This token is not overridable.
     /// It constitutes the first level of centralization for color tokens and serve as the foundation for all public semantic color tokens, as well as for the automatic pre-configuration of color tokens for multi-brand management.
     /// Has for value token SoshBrandColorRawTokens.colorTurbo500 (= "#FFE500FF")
     @objc public final var repositoryWarningMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo500 }

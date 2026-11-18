@@ -40,8 +40,7 @@ extension OrangeThemeFontSemanticTokensProvider: FontSemanticTokens {
     /// The value is intended to be used with label text styles.
     /// Has for value token familySystem (= "Helvetica Neue")
     @objc open var familyLabel: FontFamilySemanticToken { familySystem }
-    /// Internal token used as a centralization layer.
-    /// This token is not public.
+    /// Token used as a centralization layer
     /// It constitutes the first level of centralization for iOS font family tokens and serves for the automatic pre-configuration of the typeface used to render text in iOS typographic references.
     /// Has for value token OrangeBrandFontRawTokens.familyBrandDefault (= "Helvetica Neue")
     @objc open var familySystem: FontFamilySemanticToken { OrangeBrandFontRawTokens.familyBrandDefault }
