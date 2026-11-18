@@ -46,9 +46,6 @@ extension OrangeThemeAlertComponentTokensProvider: AlertComponentTokens {
     @objc open var spacePaddingInline: SpaceSemanticToken { spaces.paddingInlineLarge }
     /// Has for value token spaces.rowGap2xsmall (= 4)
     @objc open var spaceRowGap: SpaceSemanticToken { spaces.rowGap2xsmall }
-
-    // MARK: - Deprecated (since v2.7)
-
     /// Has for value token spaces.rowGap2xsmall (= 4)
     @objc open var spaceRowGapAction: SpaceSemanticToken { spaces.rowGap2xsmall }
 }

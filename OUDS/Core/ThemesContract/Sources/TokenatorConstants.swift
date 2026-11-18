@@ -94,14 +94,14 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component quantity input (1.3.1)
     public static let componentQuantityInputVersion = "1.3.1"
 
-    /// Version of the Figma specifications for the component static list item input (1.2.0)
-    public static let componentStaticListItemVersion = "1.2.0"
-    /// Version of the Figma specifications for the component static card item (1.2.0)
-    public static let componentStaticCardItemVersion = "1.2.0"
-    /// Version of the Figma specifications for the component navigation list item (1.2.0)
-    public static let componentNavigationListItemVersion = "1.2.0"
-    /// Version of the Figma specifications for the component naivgation card item (1.2.0)
-    public static let componentNavigationCardItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component static list item input (1.3.0)
+    public static let componentStaticListItemVersion = "1.3.0"
+    /// Version of the Figma specifications for the component static card item (1.3.0)
+    public static let componentStaticCardItemVersion = "1.3.0"
+    /// Version of the Figma specifications for the component navigation list item (1.3.0)
+    public static let componentNavigationListItemVersion = "1.3.0"
+    /// Version of the Figma specifications for the component naivgation card item (1.3.0)
+    public static let componentNavigationCardItemVersion = "1.3.0"
 
     /// Version of the Figma specifications for the component select input (1.3.1)
     public static let componentSelectInputVersion = "1.3.1"
