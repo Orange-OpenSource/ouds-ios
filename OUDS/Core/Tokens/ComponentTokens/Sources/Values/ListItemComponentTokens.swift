@@ -95,9 +95,7 @@ public protocol ListItemComponentTokens {
     var sizeAssetMedium: SizeSemanticToken { get }
     var sizeAssetLarge: SizeSemanticToken { get }
     var sizeAssetXlarge: SizeSemanticToken { get }
-    var sizeFlagHeight: SizeSemanticToken { get }
     var sizeCurrentIndicatorWidth: SizeSemanticToken { get }
-    var sizeIcon: SizeSemanticToken { get }
 
     // MARK: - Deprecated (since tokens library v2.8)
 
@@ -111,6 +109,12 @@ public protocol ListItemComponentTokens {
 
     @available(*, deprecated, message: "This token should not be used anymore")
     var sizeErrorIcon: SizeSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var sizeFlagHeight: SizeSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var sizeIcon: SizeSemanticToken { get }
 
     @available(*, deprecated, message: "This token should not be used anymore")
     var sizeLoader: SizeSemanticToken { get }
