@@ -1561,8 +1561,8 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
     // TODO: v4 - Remove these tokens
 
-    @objc public final var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
-    @objc public final var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
+    @objc open var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
+    @objc open var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
 }
 
 // swiftlint:enable line_length
