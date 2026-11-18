@@ -22,157 +22,157 @@ import OUDSTokensSemantic
 extension SoshThemeElevationSemanticTokensProvider: ElevationSemanticTokens {
     /// Semantic token defining the blur of an element while it is being dragged, creating a sense of movement and depth.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.blur400 (= 4)
     @objc public final var blurDrag: ElevationBlurSemanticToken { ElevationRawTokens.blur400 }
     /// Semantic token defining the blur of an elevated element, typically used for components such as dropdowns.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.blur300 (= 3)
     @objc public final var blurElevated: ElevationBlurSemanticToken { ElevationRawTokens.blur300 }
     /// Semantic token defining the blur of an emphasized element, typically used for components such as modals.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.blur600 (= 12)
     @objc public final var blurEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.blur600 }
     /// Semantic token defining the blur of an element with no elevation.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.blur0 (= 0)
     @objc public final var blurNone: ElevationBlurSemanticToken { ElevationRawTokens.blur0 }
     /// Semantic token defining the blur of a raised element, typically used for components such as tooltips and cards.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.blur200 (= 2)
     @objc public final var blurRaised: ElevationBlurSemanticToken { ElevationRawTokens.blur200 }
     /// Semantic token defining the blur of a sticky element, creating visual separation from the content beneath it.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.blur400 (= 4)
     @objc public final var blurSticky: ElevationBlurSemanticToken { ElevationRawTokens.blur400 }
     /// Semantic token defining the shadow color of an element while it is being dragged, creating a sense of movement and depth.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the dark mode.
     /// Has for value token ColorRawTokens.opacityBlack320 (= "#00000052")
     @objc public final var colorDragDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack320 }
     /// Semantic token defining the shadow color of an element while it is being dragged, creating a sense of movement and depth.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the light mode.
     /// Has for value token ColorRawTokens.opacityBlack240 (= "#0000003D")
     @objc public final var colorDragLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Semantic token defining the shadow color of an elevated element, typically used for components such as dropdowns.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the dark mode.
     /// Has for value token ColorRawTokens.opacityBlack240 (= "#0000003D")
     @objc public final var colorElevatedDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Semantic token defining the shadow color of an elevated element, typically used for components such as dropdowns.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the light mode.
     /// Has for value token ColorRawTokens.opacityBlack240 (= "#0000003D")
     @objc public final var colorElevatedLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Semantic token defining the shadow color of an emphasized element, typically used for components such as modals.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the dark mode.
     /// Has for value token ColorRawTokens.opacityBlack160 (= "#00000029")
     @objc public final var colorEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
     /// Semantic token defining the shadow color of an emphasized element, typically used for components such as modals.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the light mode.
     /// Has for value token ColorRawTokens.opacityBlack160 (= "#00000029")
     @objc public final var colorEmphasizedLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
     /// Semantic token defining the shadow color of an element with no elevation.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ColorRawTokens.opacityBlack0 (= "#00000000")
     @objc public final var colorNone: ElevationColorSemanticToken { ColorRawTokens.opacityBlack0 }
     /// Semantic token defining the shadow color of a raised element, typically used for components such as tooltips and cards.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the dark mode.
     /// Has for value token ColorRawTokens.opacityBlack320 (= "#00000052")
     @objc public final var colorRaisedDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack320 }
     /// Semantic token defining the shadow color of a raised element, typically used for components such as tooltips and cards.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the light mode.
     /// Has for value token ColorRawTokens.opacityBlack240 (= "#0000003D")
     @objc public final var colorRaisedLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Semantic token defining the shadow color of a sticky element, creating visual separation from the content beneath it.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the dark mode.
     /// Has for value token ColorRawTokens.opacityBlack160 (= "#00000029")
     @objc public final var colorStickyDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
     /// Semantic token defining the shadow color of a sticky element, creating visual separation from the content beneath it.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// This token is used in the light mode.
     /// Has for value token ColorRawTokens.opacityBlack160 (= "#00000029")
     @objc public final var colorStickyLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
     /// Semantic token defining the horizontal offset of an element while it is being dragged, creating a sense of movement and depth.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.x0 (= 0)
     @objc public final var xDrag: ElevationXSemanticToken { ElevationRawTokens.x0 }
     /// Semantic token defining the horizontal offset of an elevated element, typically used for components such as dropdowns.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.x0 (= 0)
     @objc public final var xElevated: ElevationXSemanticToken { ElevationRawTokens.x0 }
     /// Semantic token defining the horizontal offset of an emphasized element, typically used for components such as modals.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.x0 (= 0)
     @objc public final var xEmphasized: ElevationXSemanticToken { ElevationRawTokens.x0 }
     /// Semantic token defining the horizontal offset of an element with no elevation.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.x0 (= 0)
     @objc public final var xNone: ElevationXSemanticToken { ElevationRawTokens.x0 }
     /// Semantic token defining the horizontal offset of a raised element, typically used for components such as tooltips and cards.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.x0 (= 0)
     @objc public final var xRaised: ElevationXSemanticToken { ElevationRawTokens.x0 }
     /// Semantic token defining the horizontal offset of a sticky element, creating visual separation from the content beneath it.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.x0 (= 0)
     @objc public final var xSticky: ElevationXSemanticToken { ElevationRawTokens.x0 }
     /// Semantic token defining the vertical offset of an element while it is being dragged, creating a sense of movement and depth.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.y300 (= 4)
     @objc public final var yDrag: ElevationYSemanticToken { ElevationRawTokens.y300 }
     /// Semantic token defining the vertical offset of an elevated element, typically used for components such as dropdowns.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.y200 (= 2)
     @objc public final var yElevated: ElevationYSemanticToken { ElevationRawTokens.y200 }
     /// Semantic token defining the vertical offset of an emphasized element, typically used for components such as modals.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.y500 (= 12)
     @objc public final var yEmphasized: ElevationYSemanticToken { ElevationRawTokens.y500 }
     /// Semantic token defining the vertical offset of an element with no elevation.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.y0 (= 0)
     @objc public final var yNone: ElevationYSemanticToken { ElevationRawTokens.y0 }
     /// Semantic token defining the vertical offset of a raised element, typically used for components such as tooltips and cards.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.y100 (= 1)
     @objc public final var yRaised: ElevationYSemanticToken { ElevationRawTokens.y100 }
     /// Semantic token defining the vertical offset of a sticky element, creating visual separation from the content beneath it.
     /// Each elevation effect must be built using tokens from the same elevation level (x, y, blur and color).
-    /// Do not mix tokens from different elevation levels or omit any of the five tokens.
+    /// Do not mix tokens from different elevation levels or omit any of the four tokens.
     /// Has for value token ElevationRawTokens.y300 (= 4)
     @objc public final var ySticky: ElevationYSemanticToken { ElevationRawTokens.y300 }
 }
