@@ -67,18 +67,24 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like progress indicators (e.g. `OUDSCircularProgressIndicator` or `OUDSLinearProgressIndicator`) must have always rounded corners or not
     public let hasRoundedProgressIndicators: Bool
 
+    /// If components like card (`OUDSCard`) must have always rounded corners or not
+    public let hasRoundedCard: Bool
+
     /// Defines the tuning for a theme
     ///
     /// - Parameters:
     ///    - hasRoundedButtons: If button component must have rounded corners or not (default set to *false*)
     ///    - hasRoundedChatInputs: If chat input component must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedCard: If card components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedTextInputs: If text-based inputs component must have rounded corners or not (default set to *false*)
     ///    - hasRoundedAlertMessages: If alert components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedModals: If modal-based components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedProgressIndicators: If progress indicators component must have rounded corners or not (default set to *false*)
     ///    - hasRoundedListItems: If list and card items based components must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedCard: If card components must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedChatInputs: Bool = false,
+                hasRoundedCard: Bool = false,
                 hasRoundedTextInputs: Bool = false, // TODO: v4 - Rename to hasRoundedInputs
                 hasRoundedAlertMessages: Bool = false, // TODO: v4 - Rename to hasRoundedAlerts, and sort alphabetically
                 hasRoundedModals: Bool = false,
@@ -90,6 +96,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
         self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedListItems = hasRoundedListItems
         hasRoundedCardItems = hasRoundedListItems
+        self.hasRoundedCard = hasRoundedCard        
         self.hasRoundedChatInputs = hasRoundedChatInputs
         self.hasRoundedTextInputs = hasRoundedTextInputs
         hasRoundedInputs = hasRoundedTextInputs
@@ -112,6 +119,7 @@ extension Tuning: Equatable {
             && (lhs.hasRoundedAlerts == rhs.hasRoundedAlerts)
             && (lhs.hasRoundedButtons == rhs.hasRoundedButtons)
             && (lhs.hasRoundedListItems == rhs.hasRoundedListItems)
+            && (lhs.hasRoundedCard == rhs.hasRoundedCard)            
             && (lhs.hasRoundedCardItems == rhs.hasRoundedCardItems)
             && (lhs.hasRoundedChatInputs == rhs.hasRoundedChatInputs)
             && (lhs.hasRoundedTextInputs == rhs.hasRoundedTextInputs)
@@ -150,7 +158,8 @@ extension Tuning {
                                           hasRoundedAlertMessages: true,
                                           hasRoundedModals: true,
                                           hasRoundedProgressIndicators: true,
-                                          hasRoundedListItems: true)
+                                          hasRoundedListItems: true,
+                                          hasRoundedCard: true)
 
     /// Predefined tuning making everything not rounded.
     public static let nothingRounded = Tuning(hasRoundedButtons: false,
@@ -159,5 +168,6 @@ extension Tuning {
                                               hasRoundedAlertMessages: false,
                                               hasRoundedModals: false,
                                               hasRoundedProgressIndicators: false,
-                                              hasRoundedListItems: false)
+                                              hasRoundedListItems: false,
+                                              hasRoundedCard: false)
 }

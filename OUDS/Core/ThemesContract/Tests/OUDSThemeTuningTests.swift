@@ -29,6 +29,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.default.hasRoundedCardItems == false)
         #expect(Tuning.default.hasRoundedChatInputs == false)
         #expect(Tuning.default.hasRoundedModals == false)
+        #expect(Tuning.default.hasRoundedCard == false)
     }
 
     // MARK: - Orange France
@@ -42,6 +43,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.OrangeFrance.hasRoundedCardItems == false)
         #expect(Tuning.OrangeFrance.hasRoundedChatInputs == true)
         #expect(Tuning.OrangeFrance.hasRoundedModals == false)
+        #expect(Tuning.OrangeFrance.hasRoundedCard == false)
     }
 
     // MARK: - Orange Business
@@ -55,6 +57,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.OrangeBusiness.hasRoundedCardItems == true)
         #expect(Tuning.OrangeBusiness.hasRoundedChatInputs == true)
         #expect(Tuning.OrangeBusiness.hasRoundedModals == true)
+        #expect(Tuning.OrangeBusiness.hasRoundedCard == false)
     }
 
     @Test
@@ -76,6 +79,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.MaxIt.hasRoundedCardItems == true)
         #expect(Tuning.MaxIt.hasRoundedChatInputs == true)
         #expect(Tuning.MaxIt.hasRoundedModals == true)
+        #expect(Tuning.Maxit.hasRoundedCard == true)
     }
 
     // MARK: - Helpers tuning
@@ -89,6 +93,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.nothingRounded.hasRoundedCardItems == false)
         #expect(Tuning.nothingRounded.hasRoundedChatInputs == false)
         #expect(Tuning.nothingRounded.hasRoundedModals == false)
+        #expect(Tuning.nothingRounded.hasRoundedCard == false)
     }
 
     @Test
@@ -100,6 +105,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.allRounded.hasRoundedCardItems == true)
         #expect(Tuning.allRounded.hasRoundedChatInputs == true)
         #expect(Tuning.allRounded.hasRoundedModals == true)
+        #expect(Tuning.allRounded.hasRoundedCard == false)
     }
 
     @Test

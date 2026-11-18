@@ -86,6 +86,6 @@ public struct OUDSCode: View {
     public var body: some View {
         Text(text)
             .codeMedium(theme)
-            .foregroundColor(theme.colors.contentDefault)
+            .modifier(TypographyColorModifier())
     }
 }

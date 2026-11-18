@@ -105,6 +105,7 @@ public struct OUDSHeading: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Size
 
@@ -229,7 +230,7 @@ public struct OUDSHeading: View {
         if mustDisplayMarker {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 styledText
-                    .foregroundColor(theme.colors.contentDefault)
+                    .modifier(TypographyColorModifier())
                     .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
                 HeadingMarker()
             }
@@ -237,7 +238,7 @@ public struct OUDSHeading: View {
             .accessibilityAddTraits(.isHeader)
         } else {
             styledText
-                .foregroundColor(theme.colors.contentDefault)
+                .modifier(TypographyColorModifier())
                 .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
                 .accessibilityAddTraits(.isHeader)
         }
