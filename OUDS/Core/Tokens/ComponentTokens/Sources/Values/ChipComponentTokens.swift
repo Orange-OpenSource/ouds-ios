@@ -60,12 +60,10 @@ public protocol ChipComponentTokens {
     var colorContentSelectedHover: MultipleColorSemanticToken { get }
     var colorContentSelectedDisabled: MultipleColorSemanticToken { get }
     var colorContentSelectedFocus: MultipleColorSemanticToken { get }
-    var colorContentSelectedBorderAsset: MultipleColorSemanticToken { get }
     var colorContentUnselectedEnabled: MultipleColorSemanticToken { get }
     var colorContentUnselectedHover: MultipleColorSemanticToken { get }
     var colorContentUnselectedPressed: MultipleColorSemanticToken { get }
     var colorContentUnselectedDisabled: MultipleColorSemanticToken { get }
-    var colorContentUnselectedBorderAsset: MultipleColorSemanticToken { get }
     var colorBorderSelectedEnabled: MultipleColorSemanticToken { get }
     var colorBorderSelectedHover: MultipleColorSemanticToken { get }
     var colorBorderSelectedPressed: MultipleColorSemanticToken { get }

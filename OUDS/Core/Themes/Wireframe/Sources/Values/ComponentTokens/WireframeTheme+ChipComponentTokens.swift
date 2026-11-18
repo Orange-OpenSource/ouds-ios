@@ -71,8 +71,6 @@ extension WireframeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var colorBorderUnselectedHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed (= light: "#213787FF" / dark: "#DCE9FDFF")
     @objc public final var colorBorderUnselectedPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.borderOnBrandPrimary (= light: "#FFFFFFFF" / dark: "#08090DFF")
-    @objc public final var colorContentSelectedBorderAsset: MultipleColorSemanticToken { colors.borderOnBrandPrimary }
     /// Has for value token colors.contentOnActionDisabled (= light: "#FFFFFFFF" / dark: "#08090DFF")
     @objc public final var colorContentSelectedDisabled: MultipleColorSemanticToken { colors.contentOnActionDisabled }
     /// Has for value token colors.contentOnActionEnabled (= light: "#FFFFFFFF" / dark: "#08090DFF")
@@ -85,8 +83,6 @@ extension WireframeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var colorContentSelectedPressed: MultipleColorSemanticToken { colors.contentOnActionPressed }
     /// Has for value token colors.contentOnActionSelected (= light: "#FFFFFFFF" / dark: "#08090DFF")
     @objc public final var colorContentSelectedTickEnabled: MultipleColorSemanticToken { colors.contentOnActionSelected }
-    /// Has for value token colors.borderMuted (= light: "#05052E1F" / dark: "#EFF5FF1F")
-    @objc public final var colorContentUnselectedBorderAsset: MultipleColorSemanticToken { colors.borderMuted }
     /// Has for value token colors.actionDisabled (= light: "#05052E33" / dark: "#EFF5FF33")
     @objc public final var colorContentUnselectedDisabled: MultipleColorSemanticToken { colors.actionDisabled }
     /// Has for value token colors.actionEnabled (= light: "#2055E5FF" / dark: "#96C1FAFF")
