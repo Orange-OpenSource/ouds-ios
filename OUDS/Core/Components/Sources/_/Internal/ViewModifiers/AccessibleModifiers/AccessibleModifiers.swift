@@ -13,6 +13,7 @@
 
 import OUDSFoundations
 import OUDSThemesContract
+import OUDSTokensSemantic
 import SwiftUI
 #if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
@@ -25,9 +26,9 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
     // MARK: Properties
 
-    /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
     let subtitle: String?
+    let accessibilityLabel: String?
     let hasLargeTitle: Bool // NOTE: Seen as unused by Periphery, but is not
 
     #if canImport(UIKit)
@@ -48,7 +49,9 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
             .oudsNavigationSubtitle(subtitle)
         #else
         Group {
-            if let subtitle {
+            if let accessibilityLabel, !accessibilityLabel.isEmpty, !hasLargeTitle {
+                contentWithAccessibleTitle(content, accessibilityLabel: accessibilityLabel)
+            } else if let subtitle {
                 if #available(iOS 26.0, *), !(forceOUDSLegacyLayout || isLiquidGlassDisabled) {
                     content
                         .navigationTitle(LocalizedStringKey(title))
@@ -81,12 +84,38 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         .onAppear {
             #if canImport(UIKit) && !os(watchOS)
             DispatchQueue.main.asyncAfter(deadline: deadline) {
-                UIAccessibility.post(notification: .screenChanged, argument: title)
+                UIAccessibility.post(notification: .screenChanged, argument: accessibilityLabel ?? title)
             }
             #endif
         }
         #endif
     }
+
+    // MARK: Helpers
+
+    #if !os(macOS) && !os(watchOS) && !os(tvOS)
+    @ViewBuilder
+    private func contentWithAccessibleTitle(_ content: Content, accessibilityLabel: String) -> some View {
+        if #available(iOS 26.0, visionOS 26.0, *) {
+            content
+                .navigationTitle(LocalizedStringKey(title))
+                .toolbar { AccessibleTitleNoGlassToolbarContent(titleView: accessibleTitleView(accessibilityLabel)) }
+        } else {
+            content
+                .navigationTitle(LocalizedStringKey(title))
+                .toolbar { AccessibleTitleToolbarContent(titleView: accessibleTitleView(accessibilityLabel)) }
+        }
+    }
+
+    private func accessibleTitleView(_ accessibilityLabel: String) -> AccessibleTitleView {
+        AccessibleTitleView(title: title,
+                            subtitle: subtitle,
+                            accessibilityLabel: accessibilityLabel,
+                            fonts: fonts,
+                            titleColor: theme.colors.contentDefault,
+                            subtitleColor: theme.colors.contentMuted)
+    }
+    #endif
 
     // MARK: Font helpers
 
@@ -108,6 +137,65 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         return (Font(nativeTitleFont), Font(nativeSubtitleFont))
     }
 }
+
+#if !os(macOS) && !os(watchOS) && !os(tvOS)
+// MARK: - Accessible Title View
+
+/// Title and optional subtitle vocalized as a single header element with the given accessibility label
+/// (instead of the title and the subtitle).
+private struct AccessibleTitleView: View {
+
+    let title: String
+    let subtitle: String?
+    let accessibilityLabel: String
+    let fonts: (title: Font, subtitle: Font)?
+    let titleColor: MultipleColorSemanticToken
+    let subtitleColor: MultipleColorSemanticToken
+
+    var body: some View {
+        VStack(alignment: .center, spacing: 0) {
+            Text(title.localized())
+                .font(fonts?.title ?? .system(size: 17, weight: .medium))
+                .foregroundColor(titleColor)
+
+            if let subtitle {
+                Text(subtitle.localized())
+                    .font(fonts?.subtitle ?? .system(size: 12, weight: .medium))
+                    .foregroundColor(subtitleColor)
+            }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(accessibilityLabel.localized()))
+        .accessibilityAddTraits(.isHeader)
+    }
+}
+
+// MARK: - Accessible Title Toolbar Content
+
+/// Principal toolbar content displaying an `AccessibleTitleView`.
+private struct AccessibleTitleToolbarContent: ToolbarContent {
+
+    let titleView: AccessibleTitleView
+
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .principal) { titleView }
+    }
+}
+
+// MARK: - Accessible Title No Glass Toolbar Content
+
+/// Same as `AccessibleTitleToolbarContent` but without the Liquid Glass capsule, so the content looks like a title.
+@available(iOS 26.0, visionOS 26.0, *)
+private struct AccessibleTitleNoGlassToolbarContent: ToolbarContent {
+
+    let titleView: AccessibleTitleView
+
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .principal) { titleView }
+            .sharedBackgroundVisibility(.hidden)
+    }
+}
+#endif
 
 // MARK: - Request Accessible Focus Modifier
 

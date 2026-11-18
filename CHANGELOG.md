@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `action list item` component (Orange-OpenSource/ouds-ios#1771)
+- `accessibilityLabel` parameter for `top toolbar` component (Orange-OpenSourcer/ouds-ios#1900)
 
 ### Changed
 
