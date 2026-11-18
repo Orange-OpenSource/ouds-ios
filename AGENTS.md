@@ -36,6 +36,7 @@ Guides:
 - **`ouds-ios-guide-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
 - **`ouds-ios-guide-migration`** — step-by-step migration guide; covers all breaking changes, removed APIs and deprecated symbols
 - **`ouds-ios-guide-create-theme`** — step-by-step guide to create a custom OUDS theme (subclass OrangeTheme, from scratch on OUDSTheme, mix of providers, local fonts)
+- **`ouds-ios-guide-tokenator-update`** — checks for tokenator updates (suspect generation artifacts, deprecation in protocols, preserved manual additions, header versions)
 
 For pull request reviews and before commit:
 - **.github/copilot-instructions.md** — rules about code smells, architecture and guidelines
@@ -55,6 +56,7 @@ For pull request reviews and before commit:
 - Always load the **`ouds-ios-guide-figma-to-swift`** skill when asked to find or map a Figma token name to its Swift equivalent.
 - Always load the **`ouds-ios-guide-migration`** skill when the user wants to migrate OUDS code or when deprecated OUDS API usages are detected.
 - Always load the **`ouds-ios-guide-create-theme`** skill when the user wants to create a custom OUDS theme or brand theme.
+- Always load the **`ouds-ios-guide-tokenator-update`** skill when reviewing or performing a tokenator / tokens library update, and log every suspect element.
 - Before committing: format → build → fix errors → run tests → lint (see `.github/copilot-instructions.md` §3).
 - Naming: top-level public types and View modifiers are prefixed with `OUDS`; public environment variables and functions only if ambiguous with SwiftUI or other APIs (see `.github/copilot-instructions.md` §2.3).
 - Use `#available` for iOS 26 SDK APIs (min deployment is iOS 15).

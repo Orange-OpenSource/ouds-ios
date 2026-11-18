@@ -35,7 +35,7 @@ body:
       required: false        
   - type: checkboxes
     attributes:
-      label: Core Team - Definition of Done (Swift Package)
+      label: Core Team only - Definition of Done (Swift Package)
       description: For core team only, elements to fill for the Swift Package product to be able to ship the evolutions
       options:
         - label: Module is implemented / updated
@@ -53,7 +53,7 @@ body:
         - label: Retrocompatibility / API break has been checked, or broken API have been flagged as deprecated with a workaround ([see DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md#check-api-breakings))
   - type: checkboxes
     attributes:
-      label: Core Team - Definition of Done (Design System Toolbox)
+      label: Core Team only - Definition of Done (Design System Toolbox)
       description: For core team only, elements to fill for the Design System Toolbox app to be able to ship the evolutions
       options:
         - label: Showcase of module

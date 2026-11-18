@@ -198,12 +198,12 @@ This distribution is intended to solve the duplication / symbol-conflict problem
 
 - Core OUDS version: 1.12.0
 - Core Orange version: 1.2.0
-- Brand Orange version: 2.8.0
+- Brand Orange version: 2.9.0
 - Core Sosh version: 1.4.0
-- Brand Sosh version: 2.8.0
+- Brand Sosh version: 2.9.0
 - Core Wireframe version: 1.5.0
-- Brand Wireframe version: 2.8.0
-- Brand Orange Compact version: 2.8.0
+- Brand Wireframe version: 2.9.0
+- Brand Orange Compact version: 2.9.0
 
 ## 🪲 Bugs, feature requests and discussions
 

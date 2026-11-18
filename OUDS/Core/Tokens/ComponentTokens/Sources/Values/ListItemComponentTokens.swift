@@ -67,14 +67,12 @@ public protocol ListItemComponentTokens {
     var borderRadiusMedia: BorderRadiusSemanticToken { get }
     var borderRadiusMediaRounded: BorderRadiusSemanticToken { get }
     var borderRadiusCurrentIndicator: BorderRadiusSemanticToken { get }
-    var borderRadiusItemOnly: BorderRadiusSemanticToken { get }
 
     // MARK: - Spaces
 
     var spacePaddingInline: SpaceSemanticToken { get }
     var spaceColumnGap: SpaceSemanticToken { get }
     var spaceRowGap: SpaceSemanticToken { get }
-    var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
     var spacePaddingBlockSmall: SpaceSemanticToken { get }
     var spacePaddingBlockDefault: SpaceSemanticToken { get }
     var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
@@ -97,17 +95,35 @@ public protocol ListItemComponentTokens {
     var sizeAssetMedium: SizeSemanticToken { get }
     var sizeAssetLarge: SizeSemanticToken { get }
     var sizeAssetXlarge: SizeSemanticToken { get }
-    var sizeLoader: SizeSemanticToken { get }
-    var sizeFlagHeight: SizeSemanticToken { get }
     var sizeCurrentIndicatorWidth: SizeSemanticToken { get }
-    var sizeErrorIcon: SizeSemanticToken { get }
-    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
-    var sizeIcon: SizeSemanticToken { get }
 
     // MARK: - Deprecated (since tokens library v2.8)
 
     @available(*, deprecated, renamed: "colorBadgeSafetyArea", message: "See MIGRATION.md v3.3.0.")
     var colorBgBadgeSafetyArea: MultipleColorSemanticToken { get }
+
+    // MARK: - Deprecated (since tokens library v2.9 maybe, not spotted before)
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var borderRadiusItemOnly: BorderRadiusSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var sizeErrorIcon: SizeSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var sizeFlagHeight: SizeSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var sizeIcon: SizeSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var sizeLoader: SizeSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
