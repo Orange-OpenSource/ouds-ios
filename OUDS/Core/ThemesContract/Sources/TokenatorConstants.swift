@@ -26,21 +26,21 @@ public enum OUDSVersions {
 
     /// Version of the Orange core tokens library (1.2.0)
     public static let themeOrangeCoreVersion = "1.2.0"
-    /// Version of the Orange brand tokens library (2.8.0)
-    public static let themeOrangeBrandVersion = "2.8.0"
+    /// Version of the Orange brand tokens library (2.9.0)
+    public static let themeOrangeBrandVersion = "2.9.0"
 
     /// Version of the Sosh core tokens library (1.4.0)
     public static let themeSoshCoreVersion = "1.4.0"
-    /// Version of the Sosh brand tokens library (2.8.0)
-    public static let themeSoshBrandVersion = "2.8.0"
+    /// Version of the Sosh brand tokens library (2.9.0)
+    public static let themeSoshBrandVersion = "2.9.0"
 
-    /// Version of the Orange Compact brand tokens library (2.8.0)
-    public static let themeOrangeCompactBrandVersion = "2.8.0"
+    /// Version of the Orange Compact brand tokens library (2.9.0)
+    public static let themeOrangeCompactBrandVersion = "2.9.0"
 
     /// Version of the Wireframe core tokens library (1.5.0)
     public static let themeWireframeCoreVersion = "1.5.0"
-    /// Version of the Wireframe brand tokens library (2.8.0)
-    public static let themeWireframeBrandVersion = "2.8.0"
+    /// Version of the Wireframe brand tokens library (2.9.0)
+    public static let themeWireframeBrandVersion = "2.9.0"
 
     // MARK: - Components versions - Actions
 
@@ -94,14 +94,14 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component quantity input (1.3.1)
     public static let componentQuantityInputVersion = "1.3.1"
 
-    /// Version of the Figma specifications for the component static list item input (1.2.0)
-    public static let componentStaticListItemVersion = "1.2.0"
-    /// Version of the Figma specifications for the component static card item (1.2.0)
-    public static let componentStaticCardItemVersion = "1.2.0"
-    /// Version of the Figma specifications for the component navigation list item (1.2.0)
-    public static let componentNavigationListItemVersion = "1.2.0"
-    /// Version of the Figma specifications for the component naivgation card item (1.2.0)
-    public static let componentNavigationCardItemVersion = "1.2.0"
+    /// Version of the Figma specifications for the component static list item input (1.3.0)
+    public static let componentStaticListItemVersion = "1.3.0"
+    /// Version of the Figma specifications for the component static card item (1.3.0)
+    public static let componentStaticCardItemVersion = "1.3.0"
+    /// Version of the Figma specifications for the component navigation list item (1.3.0)
+    public static let componentNavigationListItemVersion = "1.3.0"
+    /// Version of the Figma specifications for the component naivgation card item (1.3.0)
+    public static let componentNavigationCardItemVersion = "1.3.0"
 
     /// Version of the Figma specifications for the component select input (1.3.1)
     public static let componentSelectInputVersion = "1.3.1"

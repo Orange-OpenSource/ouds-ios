@@ -169,12 +169,16 @@ extension SoshBrandColorRawTokens {
     public static let opacityLochmaraDark960800: ColorRawToken = "#001524CC"
     /// Has for value "#34ACFE14"
     public static let opacityLochmaraLight80080: ColorRawToken = "#34ACFE14"
+    /// Test for support Figma.
     /// Has for value "#FC69991A"
     public static let opacityRaspberry100: ColorRawToken = "#FC69991A"
+    /// Test for support Figma.
     /// Has for value "#960333A3"
     public static let opacityRaspberry640: ColorRawToken = "#960333A3"
+    /// Test for support Figma.
     /// Has for value "#FFE50029"
     public static let opacityTurbo160: ColorRawToken = "#FFE50029"
+    /// Test for support Figma.
     /// Has for value "#665C007A"
     public static let opacityTurbo480: ColorRawToken = "#665C007A"
     /// Has for value "#EDF6FC00"
