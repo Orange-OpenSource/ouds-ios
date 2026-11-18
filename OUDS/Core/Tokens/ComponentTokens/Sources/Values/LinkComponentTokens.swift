@@ -31,7 +31,6 @@ public protocol LinkComponentTokens {
     var sizeMinHeightSmall: SizeSemanticToken { get }
     var sizeMinHeightDefault: SizeSemanticToken { get }
     var sizeMinHeightCompactDensity: SizeSemanticToken { get }
-    var sizeMinWidthSmall: SizeSemanticToken { get }
     var sizeMinWidth: SizeSemanticToken { get }
     var sizeIconSmall: SizeSemanticToken { get }
     var sizeIconDefault: SizeSemanticToken { get }
@@ -58,6 +57,12 @@ public protocol LinkComponentTokens {
     var spaceColumnGapChevronSmall: SpaceSemanticToken { get }
     var spaceColumnGapIconDefault: SpaceSemanticToken { get }
     var spaceColumnGapChevronDefault: SpaceSemanticToken { get }
+
+    // MARK: - Old tokens to keep until components updates
+    // Will be removed with next component update
+
+    @available(*, deprecated, message: "This token is deprecated and should not be used anymore")
+    var sizeMinWidthSmall: SizeSemanticToken { get }
 
     /*
 

@@ -27,10 +27,16 @@ import OUDSTokensSemantic
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public protocol TypographyComponentTokens {
 
-    var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { get }
-    var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { get }
     var colorContentMarker: MultipleColorSemanticToken { get }
     var headingLargeMarker: Bool { get }
+
+    // MARK: - Deprecated (since tokens library v2.9 maybe, not spotted before)
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var spacePaddingBlockTopHeadingLargeMarker: SpaceSemanticToken { get }
+
+    @available(*, deprecated, message: "This token should not be used anymore")
+    var spacePaddingBlockBottomHeadingLargeMarker: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

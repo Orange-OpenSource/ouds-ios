@@ -48,6 +48,7 @@ public protocol CheckboxComponentTokens {
     // Will be removed with next component update
     // See https://github.com/Orange-OpenSource/ouds-ios#1437
 
+    @available(*, deprecated, message: "This token is deprecated and should not be used anymore")
     var sizeIndicator: SizeSemanticToken { get }
 }
 
