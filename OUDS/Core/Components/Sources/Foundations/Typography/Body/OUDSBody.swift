@@ -142,7 +142,7 @@ public struct OUDSBody: View {
 
     public var body: some View {
         styledText
-            .foregroundColor(theme.colors.contentDefault)
+            .modifier(TypographyColorModifier())
             .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
     }
 

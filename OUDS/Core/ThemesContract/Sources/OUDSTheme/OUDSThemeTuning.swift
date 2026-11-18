@@ -48,6 +48,9 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like list item (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
     public let hasRoundedListItems: Bool
 
+    /// If components like card (`OUDSCard`) must have always rounded corners or not
+    public let hasRoundedCard: Bool
+
     /// Defines the tuning for a theme
     ///
     /// - Parameters:
@@ -56,17 +59,20 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     ///    - hasRoundedAlertMessages: If alert messages components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedProgressIndicators: If progress indicators components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedListItems: If list items components must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedCard: If card components must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false,
                 hasRoundedAlertMessages: Bool = false,
                 hasRoundedProgressIndicators: Bool = false,
-                hasRoundedListItems: Bool = false)
+                hasRoundedListItems: Bool = false,
+                hasRoundedCard: Bool = false)
     {
         self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedTextInputs = hasRoundedTextInputs
         self.hasRoundedAlertMessages = hasRoundedAlertMessages
         self.hasRoundedProgressIndicators = hasRoundedProgressIndicators
         self.hasRoundedListItems = hasRoundedListItems
+        self.hasRoundedCard = hasRoundedCard
     }
 }
 
@@ -85,6 +91,7 @@ extension Tuning: Equatable {
             && (lhs.hasRoundedAlertMessages == rhs.hasRoundedAlertMessages)
             && (lhs.hasRoundedProgressIndicators == rhs.hasRoundedProgressIndicators)
             && (lhs.hasRoundedListItems == rhs.hasRoundedListItems)
+            && (lhs.hasRoundedCard == rhs.hasRoundedCard)
     }
 }
 
@@ -106,7 +113,8 @@ extension Tuning {
                                               hasRoundedTextInputs: true,
                                               hasRoundedAlertMessages: false,
                                               hasRoundedProgressIndicators: false,
-                                              hasRoundedListItems: false)
+                                              hasRoundedListItems: false,
+                                              hasRoundedCard: false)
 
     /// The theme tuning for *Max It* contains **rounded corners for buttons**,
     /// **rounded corners for text / PIN code / password / text area inputs**,
@@ -119,12 +127,14 @@ extension Tuning {
                                           hasRoundedTextInputs: true,
                                           hasRoundedAlertMessages: true,
                                           hasRoundedProgressIndicators: true,
-                                          hasRoundedListItems: true)
+                                          hasRoundedListItems: true,
+                                          hasRoundedCard: true)
 
     /// Predefined tuning making everything not rounded.
     public static let nothingRounded = Tuning(hasRoundedButtons: false,
                                               hasRoundedTextInputs: false,
                                               hasRoundedAlertMessages: false,
                                               hasRoundedProgressIndicators: false,
-                                              hasRoundedListItems: false)
+                                              hasRoundedListItems: false,
+                                              hasRoundedCard: false)
 }
