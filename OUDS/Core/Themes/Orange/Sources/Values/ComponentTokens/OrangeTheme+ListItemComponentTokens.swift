@@ -146,6 +146,12 @@ extension OrangeThemeListItemComponentTokensProvider: ListItemComponentTokens {
     @objc open var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
     /// Has for value token spaces.rowGapNone (= 0)
     @objc open var spaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove this old token
+    /// Use instead `colorBadgeSafetyArea`
+    @objc open var colorBgBadgeSafetyArea: MultipleColorSemanticToken { colorBadgeSafetyArea }
 }
 
 // swiftlint:enable identifier_name

@@ -25,4 +25,12 @@ extension OrangeThemePinCodeInputComponentTokensProvider: PinCodeInputComponentT
     @objc open var sizeMinWidthDigitInput: SizeSemanticToken { dimensions._large }
     /// Has for value token spaces.columnGapMedium (= 12)
     @objc open var spaceColumnGapDigitInput: SpaceSemanticToken { spaces.columnGapMedium }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove these old tokens
+    /// Use instead `sizeMaxWidthDigitInput`
+    @objc open var sizeMaxWidth: SizeSemanticToken { sizeMaxWidthDigitInput }
+    /// Use instead `sizeMinWidthDigitInput`
+    @objc open var sizeMinWidth: SizeSemanticToken { sizeMinWidthDigitInput }
 }

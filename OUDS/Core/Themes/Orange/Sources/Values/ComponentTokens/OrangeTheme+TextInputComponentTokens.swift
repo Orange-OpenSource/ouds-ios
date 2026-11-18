@@ -74,4 +74,12 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     @objc open var spacePaddingInlineLeadingTrailingAction: SpaceSemanticToken { spaces.paddingInline2xsmall }
     /// Has for value token spaces.rowGapNone (= 0)
     @objc open var spaceRowGapLabelInput: SpaceSemanticToken { spaces.rowGapNone }
+
+    // MARK: - Deprecated (since tokens library v2.8)
+
+    // TODO: v4 - Remove these tokens
+    /// Use instead spacePaddingBlockHelperText
+    @objc open var spacePaddingBlockTopHelperText: SpaceSemanticToken { spacePaddingBlockHelperText }
+    /// Use instead spacePaddingInlineLeadingTrailingAction
+    @objc open var spacePaddingInlineTrailingAction: SpaceSemanticToken { spacePaddingInlineLeadingTrailingAction }
 }
