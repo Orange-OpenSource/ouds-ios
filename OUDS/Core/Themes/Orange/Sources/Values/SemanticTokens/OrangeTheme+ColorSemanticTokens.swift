@@ -1556,6 +1556,13 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// This token is used in the light mode.
     /// Has for value token repositoryOpacityAccentLow (= "#BD793C14")
     @objc open var surfaceTertiaryLight: ColorSemanticToken { repositoryOpacityAccentLow }
+
+    // MARK: - Deprecated
+
+    // TODO: v4 - Remove these tokens
+
+    @objc open var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
+    @objc open var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
 }
 
 // swiftlint:enable line_length

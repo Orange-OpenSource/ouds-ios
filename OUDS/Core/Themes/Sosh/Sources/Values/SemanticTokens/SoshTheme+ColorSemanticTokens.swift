@@ -1556,6 +1556,13 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// This token is used in the light mode.
     /// Has for value token repositoryOpacityAccentLow (= "#FC69991A")
     @objc public final var surfaceTertiaryLight: ColorSemanticToken { repositoryOpacityAccentLow }
+
+    // MARK: - Deprecated
+
+    // TODO: v4 - Remove these tokens
+
+    @objc public final var overlayFloatingLight: ColorSemanticToken { overlayStickyLight }
+    @objc public final var overlayFloatingDark: ColorSemanticToken { overlayStickyDark }
 }
 
 // swiftlint:enable line_length
