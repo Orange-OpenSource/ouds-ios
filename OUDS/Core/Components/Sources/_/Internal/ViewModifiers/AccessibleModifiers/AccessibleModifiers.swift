@@ -43,7 +43,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        #if os(macOS) || os(watchOS) || os(tvOS)
+        #if os(macOS) || os(watchOS) || os(tvOS) || os(visionOS)
         content
             .navigationTitle(LocalizedStringKey(title))
             .oudsNavigationSubtitle(subtitle)
@@ -93,10 +93,10 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
     // MARK: Helpers
 
-    #if !os(macOS) && !os(watchOS) && !os(tvOS)
+    #if os(iOS)
     @ViewBuilder
     private func contentWithAccessibleTitle(_ content: Content, accessibilityLabel: String) -> some View {
-        if #available(iOS 26.0, visionOS 26.0, *) {
+        if #available(iOS 26.0, *) {
             content
                 .navigationTitle(LocalizedStringKey(title))
                 .toolbar { AccessibleTitleNoGlassToolbarContent(titleView: accessibleTitleView(accessibilityLabel)) }
@@ -138,7 +138,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     }
 }
 
-#if !os(macOS) && !os(watchOS) && !os(tvOS)
+#if os(iOS)
 // MARK: - Accessible Title View
 
 /// Title and optional subtitle vocalized as a single header element with the given accessibility label
@@ -185,7 +185,7 @@ private struct AccessibleTitleToolbarContent: ToolbarContent {
 // MARK: - Accessible Title No Glass Toolbar Content
 
 /// Same as `AccessibleTitleToolbarContent` but without the Liquid Glass capsule, so the content looks like a title.
-@available(iOS 26.0, visionOS 26.0, *)
+@available(iOS 26.0, *)
 private struct AccessibleTitleNoGlassToolbarContent: ToolbarContent {
 
     let titleView: AccessibleTitleView
