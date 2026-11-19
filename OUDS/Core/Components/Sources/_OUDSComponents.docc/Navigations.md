@@ -522,6 +522,11 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
 > the inline compact bar title, not `.navigationSubtitle()` (iOS 26+), which would otherwise keep floating with no visible title next
 > to it. The title itself is displayed only if `hasLargeTitle` is `true`, in which case it appears below the bar (large title mode).
 
+> **VoiceOver label**: if the visual title and subtitle are not satisfying for visually impaired people, a dedicated label can be
+> provided with the `accessibilityLabel` parameter. VoiceOver will then vocalize this label **instead of** the title **and** the
+> subtitle. It is only relevant when there is no large title (`hasLargeTitle` is `false`) and no `principalItem`, otherwise it is not
+> applied. Prefer `nil` to an empty string.
+
 ```swift
 // Apply once on the root NavigationStack to style the system navigation bar
 NavigationStack {
@@ -549,6 +554,10 @@ SomeView()
 // Principal item without hasLargeTitle: neither title nor subtitle are displayed
 SomeView()
     .toolBarTop("Title", principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
+
+// Dedicated VoiceOver label, vocalized instead of title and subtitle (no large title, no principal item)
+SomeView()
+    .toolBarTop("Title", subtitle: "Subtitle", accessibilityLabel: "Label read by VoiceOver")
 
 // Close button — .close takes NO closure, dismiss is handled automatically
 SomeView()
