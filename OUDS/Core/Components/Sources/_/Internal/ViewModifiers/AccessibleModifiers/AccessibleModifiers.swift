@@ -84,7 +84,8 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         .onAppear {
             #if canImport(UIKit) && !os(watchOS)
             DispatchQueue.main.asyncAfter(deadline: deadline) {
-                UIAccessibility.post(notification: .screenChanged, argument: accessibilityLabel ?? title)
+                let announcement = accessibilityLabel.flatMap { $0.isEmpty ? nil : $0.localized() } ?? title
+                UIAccessibility.post(notification: .screenChanged, argument: announcement)
             }
             #endif
         }
