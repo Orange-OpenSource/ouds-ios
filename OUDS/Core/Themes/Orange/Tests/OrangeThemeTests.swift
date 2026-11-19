@@ -36,7 +36,7 @@ struct OrangeThemeTests {
 
     @Test func defaultTuningOfOrangeTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning == Tuning.default)
+        #expect(tuning == Tuning.OrangeFrance)
     }
 
     // MARK: - Tests - Semantic tokens providers

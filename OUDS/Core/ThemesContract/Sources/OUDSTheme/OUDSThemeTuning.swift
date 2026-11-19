@@ -32,41 +32,69 @@ public struct OUDSThemeTuning: @unchecked Sendable {
 
     // MARK: Tuned properties
 
+    /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
+    @available(*, deprecated, renamed: "hasRoundedAlerts", message: "See MIGRATION.md v3.4.0.")
+    public let hasRoundedAlertMessages: Bool // TODO: v4 - Rename to hasRoundedAlerts
+
+    /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
+    public let hasRoundedAlerts: Bool
+
     /// If components like button (`OUDSButton`) must have always rounded corners or not
     public let hasRoundedButtons: Bool
 
+    /// If components like list item (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
+    @available(*, deprecated, renamed: "hasRoundedCardItems", message: "See MIGRATION.md v3.4.0.")
+    public let hasRoundedListItems: Bool // TODO: v4 - Remove
+
+    /// If components like card item based components like `OUDSNavigationListItem` and `OUDSStaticListItem`  with card styles must have always rounded corners or not
+    public let hasRoundedCardItems: Bool
+
+    /// If components like chat input components (classic and assistant) must have always rounded corners or not
+    public let hasRoundedChatInputs: Bool // TODO: #1869, #1790 - Update documentation above with components name
+
     /// If text input components (e.g. `OUDSTextInput`, `OUDSPinCodeInput`, `OUDSPasswordInput` and `OUDSTextArea`)
     /// must have always rounded corners or not
-    public let hasRoundedTextInputs: Bool
+    @available(*, deprecated, renamed: "hasRoundedInputs", message: "See MIGRATION.md v3.4.0.")
+    public let hasRoundedTextInputs: Bool // TODO: v4 - Remove
 
-    /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
-    public let hasRoundedAlertMessages: Bool
+    /// If text input components (e.g. `OUDSTextInput`, `OUDSPinCodeInput`, `OUDSPasswordInput` and `OUDSTextArea`)
+    /// must have always rounded corners or not
+    public let hasRoundedInputs: Bool
+
+    /// If components like modal must have always rounded corners or not
+    public let hasRoundedModals: Bool // TODO: #1582 - Update documentation above with components name
 
     /// If components like progress indicators (e.g. `OUDSCircularProgressIndicator` or `OUDSLinearProgressIndicator`) must have always rounded corners or not
     public let hasRoundedProgressIndicators: Bool
 
-    /// If components like list item (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
-    public let hasRoundedListItems: Bool
-
     /// Defines the tuning for a theme
     ///
     /// - Parameters:
-    ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedTextInputs: If text-based inputs components must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedAlertMessages: If alert messages components must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedProgressIndicators: If progress indicators components must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedListItems: If list items components must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedButtons: If button component must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedChatInputs: If chat input component must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedTextInputs: If text-based inputs component must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedAlertMessages: If alert components must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedModals: If modal-based components must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedProgressIndicators: If progress indicators component must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedListItems: If list and card items based components must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
-                hasRoundedTextInputs: Bool = false,
-                hasRoundedAlertMessages: Bool = false,
+                hasRoundedChatInputs: Bool = false,
+                hasRoundedTextInputs: Bool = false, // TODO: v4 - Rename to hasRoundedInputs
+                hasRoundedAlertMessages: Bool = false, // TODO: v4 - Rename to hasRoundedAlerts, and sort alphabetically
+                hasRoundedModals: Bool = false,
                 hasRoundedProgressIndicators: Bool = false,
-                hasRoundedListItems: Bool = false)
+                hasRoundedListItems: Bool = false) // TODO: v4 - Rename to hasRoundedCardItems, and sort alphabetically
     {
-        self.hasRoundedButtons = hasRoundedButtons
-        self.hasRoundedTextInputs = hasRoundedTextInputs
         self.hasRoundedAlertMessages = hasRoundedAlertMessages
-        self.hasRoundedProgressIndicators = hasRoundedProgressIndicators
+        hasRoundedAlerts = hasRoundedAlertMessages
+        self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedListItems = hasRoundedListItems
+        hasRoundedCardItems = hasRoundedListItems
+        self.hasRoundedChatInputs = hasRoundedChatInputs
+        self.hasRoundedTextInputs = hasRoundedTextInputs
+        hasRoundedInputs = hasRoundedTextInputs
+        self.hasRoundedModals = hasRoundedModals
+        self.hasRoundedProgressIndicators = hasRoundedProgressIndicators
     }
 }
 
@@ -80,11 +108,16 @@ extension Tuning: Equatable {
     ///    - lhs: One of the tuning to test
     ///    - rhs: One of the tuning to test
     public static func == (lhs: Tuning, rhs: Tuning) -> Bool {
-        (lhs.hasRoundedButtons == rhs.hasRoundedButtons)
-            && (lhs.hasRoundedTextInputs == rhs.hasRoundedTextInputs)
-            && (lhs.hasRoundedAlertMessages == rhs.hasRoundedAlertMessages)
-            && (lhs.hasRoundedProgressIndicators == rhs.hasRoundedProgressIndicators)
+        (lhs.hasRoundedAlertMessages == rhs.hasRoundedAlertMessages)
+            && (lhs.hasRoundedAlerts == rhs.hasRoundedAlerts)
+            && (lhs.hasRoundedButtons == rhs.hasRoundedButtons)
             && (lhs.hasRoundedListItems == rhs.hasRoundedListItems)
+            && (lhs.hasRoundedCardItems == rhs.hasRoundedCardItems)
+            && (lhs.hasRoundedChatInputs == rhs.hasRoundedChatInputs)
+            && (lhs.hasRoundedTextInputs == rhs.hasRoundedTextInputs)
+            && (lhs.hasRoundedInputs == rhs.hasRoundedInputs)
+            && (lhs.hasRoundedModals == rhs.hasRoundedModals)
+            && (lhs.hasRoundedProgressIndicators == rhs.hasRoundedProgressIndicators)
     }
 }
 
@@ -95,36 +128,36 @@ extension Tuning {
     /// By default a theme does not have rounded corners at all
     public static let `default` = Tuning()
 
-    /// The theme tuning for *Orange France* is the default one.
-    /// There are no rounded corners.
-    public static let OrangeFrance = Tuning.nothingRounded
+    /// The theme tuning for *Orange France* has nothing rounded but *chat input* based components.
+    public static let OrangeFrance = Tuning(hasRoundedButtons: false,
+                                            hasRoundedChatInputs: true,
+                                            hasRoundedTextInputs: false,
+                                            hasRoundedAlertMessages: false,
+                                            hasRoundedModals: false,
+                                            hasRoundedProgressIndicators: false,
+                                            hasRoundedListItems: false)
 
-    /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**,
-    /// a,d **alert messages**, **progress indicatprs** and **list items**.
-    /// But **text inputs** are not rounded.
-    public static let OrangeBusiness = Tuning(hasRoundedButtons: false,
-                                              hasRoundedTextInputs: true,
-                                              hasRoundedAlertMessages: false,
-                                              hasRoundedProgressIndicators: false,
-                                              hasRoundedListItems: false)
+    /// The theme tuning for *Orange Business* defines everything with rounded corners.
+    public static let OrangeBusiness = Tuning.allRounded
 
-    /// The theme tuning for *Max It* contains **rounded corners for buttons**,
-    /// **rounded corners for text / PIN code / password / text area inputs**,
-    /// **rounded corners for alert messages**,
-    /// **rounded corners list items** and **progress indicators**.
+    /// The theme tuning for *Max It* defines everything with rounded corners.
     public static let MaxIt = Tuning.allRounded
 
     /// Predefined tuning making everything rounded.
     public static let allRounded = Tuning(hasRoundedButtons: true,
+                                          hasRoundedChatInputs: true,
                                           hasRoundedTextInputs: true,
                                           hasRoundedAlertMessages: true,
+                                          hasRoundedModals: true,
                                           hasRoundedProgressIndicators: true,
                                           hasRoundedListItems: true)
 
     /// Predefined tuning making everything not rounded.
     public static let nothingRounded = Tuning(hasRoundedButtons: false,
+                                              hasRoundedChatInputs: false,
                                               hasRoundedTextInputs: false,
                                               hasRoundedAlertMessages: false,
+                                              hasRoundedModals: false,
                                               hasRoundedProgressIndicators: false,
                                               hasRoundedListItems: false)
 }

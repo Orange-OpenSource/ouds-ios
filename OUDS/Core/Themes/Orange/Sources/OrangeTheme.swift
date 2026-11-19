@@ -196,7 +196,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - resourcesBundle: The `Bundle` of the module containing assets to load like images
     ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
-    ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
+    ///    - tuning: A set of configurations to tune a theme, by default `Tuning.OrangeFrance`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
@@ -243,7 +243,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
                          name: String = OrangeTheme.name,
                          fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
-                         tuning: Tuning = Tuning.default)
+                         tuning: Tuning = Tuning.OrangeFrance)
     {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())

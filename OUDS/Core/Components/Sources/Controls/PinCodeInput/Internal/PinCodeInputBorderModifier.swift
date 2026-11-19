@@ -60,7 +60,7 @@ struct PinCodeInputBorderModifier: ViewModifier {
     }
 
     private var borderRadius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedTextInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
+        theme.tuning.hasRoundedInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 }
 #endif

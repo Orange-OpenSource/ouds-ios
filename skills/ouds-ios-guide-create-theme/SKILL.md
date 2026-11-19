@@ -459,21 +459,27 @@ class YourTheme: OrangeTheme {
 ## 5. Tuning & Flags
 
 Tuning controls brand-level UI decisions for corner rounding. Only `OrangeTheme` (and its subclasses) support tuning.
+`OrangeTheme` and `OrangeCompactTheme` use `Tuning.OrangeFrance`.
 
 ```swift
 // Custom tuning:
 let tuning = Tuning(
     hasRoundedButtons:       true,   // rounded corners on buttons
     hasRoundedTextInputs:    true,   // rounded corners on text / PIN / password / text area inputs
-    hasRoundedAlertMessages: false)  // rounded corners on alert messages
+    hasRoundedAlertMessages: false,  // rounded corners on alert messages
+    hasRoundedChatInputs:    true,   // rounded corners on chat inputs
+    hasRoundedModals:        false)  // rounded corners on modals
+
+// Read it with the new names
+tuning.hasRoundedButtons / hasRoundedInputs / hasRoundedAlerts / hasRoundedChatInputs / hasRoundedModals
 
 let theme = OrangeTheme(tuning: tuning)
 // or: YourTheme(tuning: tuning) if your init forwards the parameter
 
 // Predefined tunings:
 OrangeTheme(tuning: Tuning.default)        // all false
-OrangeTheme(tuning: Tuning.OrangeFrance)   // same as default
-OrangeTheme(tuning: Tuning.OrangeBusiness) // rounded inputs + alerts
+OrangeTheme(tuning: Tuning.OrangeFrance)   // all false but chat input (default of Orange themes)
+OrangeTheme(tuning: Tuning.OrangeBusiness) // everything rounded (same as allRounded)
 OrangeTheme(tuning: Tuning.MaxIt)          // everything rounded
 ```
 

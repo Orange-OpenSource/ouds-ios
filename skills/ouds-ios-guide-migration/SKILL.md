@@ -1,13 +1,12 @@
 ---
 name: ouds-ios-guide-migration
-description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to v3.2.0 (current) or prepare for v3.3.0 (upcoming), or when deprecated or removed OUDS APIs are detected in the codebase
+description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to another, or when deprecated or removed OUDS APIs are detected in the codebase
 license: MIT
 ---
 
 # Skill: ouds-ios-guide-migration
 
-Migration guide from **v1.0.0** to **v3.2.0** (current), including preparation for **v3.3.0** (upcoming).
-Covers breaking changes and deprecated symbols; do not describe v3.3.0 as already released.
+Covers breaking changes and deprecated symbols; do not describe v3.3.0 or v3.4.0 as already released.
 For full before/after examples, refer to `MIGRATION.md` in the project root.
 
 ---
@@ -27,6 +26,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSLink.Indicator.back` → `.previous`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)`; `forceOUDSLegacyTabBar` → `forceOUDSLegacyLayout`; `OUDSLegacyTabBarModifier` → `OUDSLegacyLayoutModifier`; `OUDSButton.Style.loading` → `.loading()`; `OUDSTag` `hasLoader:` removed → use `loadingLabel:`/`loadingKey:` inits, now with optional `progress:` |
 | v3.0.0 → v3.2.0 | Low | `OUDSListItemData` — all 6 String/`AttributedString` initializers deprecated; new unified initializers `init(label: Label, …)` / `init(label: some View, accessibilityLabel:, …)` taking `OUDSListItemData.Label` + `OUDSTextualContent` (`.raw` / `.localized` / `.rich`) for `description` / `overline` / `extraLabel` / `helperText`. `OUDSTextualContent` becomes `public @frozen`; both it and `Label` conform to `ExpressibleByStringLiteral`. `Label.text` deprecated in favor of new `Label.textual(OUDSTextualContent, isBold:)`. `OUDSBulletList.Item` — `String` / `AttributedString` / `LocalizedStringKey` initializers deprecated; new `init(_: OUDSTextualContent, …)`. `OUDSTextArea` — `HelperText.plain` / `.rich` deprecated in favor of `.textual(OUDSTextualContent)`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message: OUDSTextualContent)`. `OUDSPasswordInput` — 4 initializers (`helperText` `String?` / `AttributedString`) deprecated; 2 new initializers taking `helperText: OUDSTextualContent?`. `OUDSTextInput` — 4 initializers (`helperText` `String?` / `AttributedString`) deprecated; 2 new initializers taking `helperText: OUDSTextualContent?`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message:)` (also used by `OUDSPasswordInput`). `OUDSPinCodeInput` — 3 initializers (`helperText` `String?` / `AttributedString` / `helperText key: LocalizedStringKey`) deprecated; 1 new initializer taking `helperText: OUDSTextualContent?`; `Status.error(message:)` / `.richError(message:)` deprecated in favor of `.textualError(message: OUDSTextualContent)`. `OUDSCheckboxItemIndeterminate` — 2 initializers (`errorText: String?`) deprecated; 2 new initializers taking `errorText: OUDSTextualContent?`. `OUDSSwitchItem`, `OUDSCheckboxItem` and `OUDSRadioItem` — 4 initializers each (`errorText` `String?` / `AttributedString`) deprecated; 2 new initializers each taking `errorText: OUDSTextualContent?`. `OUDSAlertMessage` — 8 initializers (`String` / `AttributedString` `description`, `[String]` / `[AttributedString]` `bulletList`) deprecated; 2 new initializers (`label:` / `_ key:`) taking `description: OUDSTextualContent?` and `bulletList: [OUDSTextualContent]`. |
 | v3.2.0 → v3.3.0 (upcoming) | Medium | Semantic colors: `contentStatusInverse*` and `opacityTransparentInverse*` removed (internal to Figma); non-inverse `opacityTransparent*` unchanged; `overlayFloating*` → `overlaySticky*` with deprecated aliases. List item `colorBgBadgeSafetyArea` → `colorBadgeSafetyArea`. PIN code input `sizeMinWidth` → `sizeMinWidthDigitInput`, `sizeMaxWidth` → `sizeMaxWidthDigitInput` (deprecated aliases retained; update custom overrides). Text input `spacePaddingBlockTopHelperText` → `spacePaddingBlockHelperText`, `spacePaddingInlineTrailingAction` → `spacePaddingInlineLeadingTrailingAction` (old names deprecated in the protocol). Icon `colorContentStatusWarningInverseInternalShape` and `colorContentStatusWarningInverseExternalShape` removed; no automatic replacement. Raw font `FontRawTokens.familyMonospaceMonaco` removed, not deprecated; no automatic replacement. `OUDSNavigationLink` — `init(title:…)` and `init(_ key: LocalizedStringKey, …)` deprecated; new `init(data: OUDSListItemData, indicatorType:leading:trailing:style:destination:)` with the same content options as `OUDSNavigationListItem`. |
+| v3.3.0 → v3.4.0 (upcoming) | Low | `Tuning` properties renamed (old ones deprecated, removed in v4): `hasRoundedTextInputs` → `hasRoundedInputs`, `hasRoundedAlertMessages` → `hasRoundedAlerts`, `hasRoundedListItems` → `hasRoundedCardItems` (`hasRoundedButtons` and `hasRoundedProgressIndicators` unchanged). New `hasRoundedChatInputs` and `hasRoundedModals`. `Tuning.init` labels unchanged. Predefined tunings changed: `OrangeFrance` rounds chat input (≠ `default`), `OrangeBusiness`/`Sosh`/`Wireframe` = `allRounded`. `OrangeTheme`/`OrangeCompactTheme` default tuning is now `Tuning.OrangeFrance`. |
 
 ---
 
@@ -72,6 +72,10 @@ grep -rnF 'familyMonospaceMonaco' --include="*.swift" .
 
 # Deprecated OUDSNavigationLink initializers (v3.3.0) — title: or LocalizedStringKey as first argument.
 grep -rnE 'OUDSNavigationLink[(](title:|"|_ )' --include="*.swift" .
+
+# Deprecated Tuning properties (v3.4.0) — read access; Tuning.init labels are unchanged.
+grep -rnE '[.]hasRounded(TextInputs|AlertMessages|ListItems)([^[:alnum:]_:]|$)' \
+  --include="*.swift" .
 
 # Breaking changes (v3.0.0)
 grep -rn \
@@ -1089,3 +1093,30 @@ swift build 2>&1 | grep -i "deprecated" | grep -i "OUDSTextualContent"
 
 swift test
 ```
+
+---
+
+## v3.3.0 → v3.4.0
+
+`Tuning` property renames (the old ones are deprecated, removed in v4). Only **reading** changes; `hasRoundedButtons` and `hasRoundedProgressIndicators` are unchanged, and `Tuning.init` parameter labels stay the same until v4.
+
+| Deprecated | New |
+|---|---|
+| `hasRoundedTextInputs` | `hasRoundedInputs` |
+| `hasRoundedAlertMessages` | `hasRoundedAlerts` |
+| `hasRoundedListItems` | `hasRoundedCardItems` |
+
+New properties (and `init` parameters): `hasRoundedChatInputs`, `hasRoundedModals` (default `false`).
+
+```swift
+// Before
+if theme.tuning.hasRoundedTextInputs { … }
+// After
+if theme.tuning.hasRoundedInputs { … }
+
+// init is unchanged (labels), new optional parameters
+let tuning = Tuning(hasRoundedButtons: true, hasRoundedChatInputs: true, hasRoundedModals: true)
+```
+
+Predefined tunings: `OrangeFrance` = nothing rounded but chat input (no longer equal to `default`); `OrangeBusiness`, `Sosh` and `Wireframe` = `allRounded`; `MaxIt`, `allRounded`, `nothingRounded`, `default` unchanged.
+`OrangeTheme` and `OrangeCompactTheme` default to `Tuning.OrangeFrance` (was `Tuning.default`); pass `tuning: Tuning.default` to keep the old behavior.

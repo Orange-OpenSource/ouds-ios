@@ -126,9 +126,9 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
     ///
     /// - Parameters:
     ///    - fontFamily: The font family to apply, by default `OrangeBrandFontRawTokens.familyBrandDefault`
-    ///    - tuning: The `Tuning` to apply to the theme, by default `Tuning.default`
+    ///    - tuning: The `Tuning` to apply to the theme, by default `Tuning.OrangeFrance`
     public init(fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
-                tuning: Tuning = Tuning.default)
+                tuning: Tuning = Tuning.OrangeFrance)
     {
         let borders = OrangeCompactThemeBorderSemanticTokensProvider()
         let colors = OrangeCompactThemeColorSemanticTokensProvider()

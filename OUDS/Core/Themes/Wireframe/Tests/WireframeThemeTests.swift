@@ -34,11 +34,7 @@ struct WireframeThemeTests {
 
     @Test func defaultTuningOfWireframeTheme() {
         let tuning = theme.tuning
-        #expect(tuning.hasRoundedButtons == false)
-        #expect(tuning.hasRoundedTextInputs == false)
-        #expect(tuning.hasRoundedAlertMessages == true)
-        #expect(tuning.hasRoundedProgressIndicators == true)
-        #expect(tuning.hasRoundedListItems == false)
+        #expect(tuning == Tuning.allRounded)
     }
 
     // MARK: - Tests - Font family

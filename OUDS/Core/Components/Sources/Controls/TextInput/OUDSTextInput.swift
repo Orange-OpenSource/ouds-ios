@@ -68,7 +68,7 @@ import SwiftUI
 /// For standard or business-oriented journeys, keep the default corners.
 /// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
-/// To activate the rounded corner behavior, set to true the `hasRoundedTextInputs` values of the `Tuning` object
+/// To activate the rounded corner behavior, set to true the `hasRoundedInputs` values of the `Tuning` object
 /// in your theme configuration (if the theme exposes this property at init).
 /// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
 ///
