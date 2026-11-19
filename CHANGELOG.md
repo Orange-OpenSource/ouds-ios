@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.3.0...develop)
 
+### Added
+
+- `action list item` component (Orange-OpenSource/ouds-ios#1771)
+
 ### Changed
 
 - Definition of rounded corners in `tuning` (Orange-OpenSource/ouds-ios#1891)

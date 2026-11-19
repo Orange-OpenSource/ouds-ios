@@ -49,140 +49,56 @@ OUDSLink(text: "Open outside", indicator: .external, size: .default) { /* the ac
 
 ### List items
 
-The ``OUDSStaticListItem`` displays a non-interactive row of information, while ``OUDSNavigationListItem`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
+The ``OUDSStaticListItem`` displays a non-interactive row of information, ``OUDSNavigationListItem`` adds tap interaction and a navigation affordance indicator (chevron or external link icon),
+and ``OUDSActionListItem`` adds tap interaction to trigger an action without any indicator.
 
-Both components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
+All these components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
 
-#### Static list item
+#### Action list item
 
-Use ``OUDSStaticListItem`` when the row is display-only and should not trigger any action or navigation.
-
-@TabNavigator {
-    @Tab("Orange") {
-        ![A list item component in light and dark modes with Orange theme](component_static_list_item_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A list item component in light and dark modes with Orange compact theme](component_static_list_item_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A list item component in light and dark modes with Sosh theme](component_static_list_item_Sosh)
-    }
-    @Tab("Wireframe") {
-        ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
-    }
-}
-
+Use ``OUDSActionListItem`` when tapping the row should trigger an action which is not a navigation (e.g. make a call, send an email, share content).
+It looks like an ``OUDSNavigationListItem`` but never displays any indicator.
 
 ```swift
-// Simple list item with a label only
-OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
-
-// List item with full textual content
-OUDSStaticListItem(data: OUDSListItemData(
-    label: .textual("Label", isBold: true),
-    description: "Description",
-    overline: "Overline",
-    extraLabel: "Extra label",
-    helperText: "Helper text providing guidance"
-))
-
-// List item with a leading icon and a trailing badge
-let icon = OUDSListItemIcon(status: .info, description: "", size: .medium)
-
-OUDSStaticListItem(
-    data: OUDSListItemData(label: .textual("Notifications")),
-    leading: .icon(icon),
-    trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
-)
-
-// List item with a leading image (static asset)
-OUDSStaticListItem(
-    data: OUDSListItemData(label: .textual("Product")),
-    leading: .image(OUDSListItemImage(asset: Image("product_thumb"), size: .medium))
-)
-
-// List item with a leading async image (from URL)
-OUDSStaticListItem(
-    data: OUDSListItemData(label: .textual("Remote Product")),
-    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
-)
-
-// List item with async image and custom placeholder
-let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com/image.png")) { image in
-    image.resizable()
-} placeholder: {
-    ProgressView()
+// Simple action
+OUDSActionListItem(
+    data: OUDSListItemData(label: .textual("Call us"))
+) {
+    // Start the call
 }
 
-OUDSStaticListItem(
-    data: OUDSListItemData(label: .textual("Loading Product")),
-    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
-)
+// With a leading avatar and a trailing text
+let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
 
-// List item with a trailing image
-OUDSStaticListItem(
-    data: OUDSListItemData(label: .textual("Status")),
-    trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
-)
+OUDSActionListItem(
+    data: OUDSListItemData(label: "Profile", description: "Share your profile"),
+    leading: .avatar(avatar),
+    trailing: .text(.labelMuted("Share"))
+) {
+    // Share the profile
+}
 
-// List item with slot (displayed under texts, before helper text)
-OUDSStaticListItem(
+// With a custom view as trailing
+OUDSActionListItem(
+    data: OUDSListItemData(label: .textual("SMS credit")),
+    trailing: .slot {
+        OUDSCircularProgressIndicator(progress: 0.75)
+    }
+) {
+    // Refill the credit
+}
+
+// With slot and bottomSlot
+OUDSActionListItem(
     data: OUDSListItemData(
-        label: "With slot",
-        textSlot: .init { Text("Additional content") },
-        helperText: "Helper text"
-    )
-)
-
-// List item with bottom slot (displayed under main content, before helper text)
-OUDSStaticListItem(
-    data: OUDSListItemData(
-        label: "With bottom slot",
-        bottomSlot: .init { Text("Bottom content") },
-        helperText: "Helper text"
-    )
-)
-
-// List item with both slot and bottomSlot
-OUDSStaticListItem(
-    data: OUDSListItemData(
-        label: "Label",
+        label: "Settings",
         textSlot: .init { Text("Slot content") },
         bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
     )
-)
-```
-
-##### Rich text content
-
-Every textual field (`label`, `description`, `overline`, `extraLabel`, `helperText`) accepts
-a raw `String`, a localized string or an `AttributedString`. The optional fields use ``OUDSTextualContent``
-(`.raw` / `.localized` / `.rich`) while the label uses ``OUDSListItemData/Label``
-(`.textual` / `.custom`, the `.text` case being deprecated since 3.2.0).
-
-String literals are accepted thanks to `ExpressibleByStringLiteral` on both types, so plain
-text call sites remain concise: `label: "Label", description: "Description"`.
-
-> Note: a bare literal label with no textual field (`OUDSListItemData(label: "Label")`, or with only `textSlot` / `bottomSlot`) may select a
-> deprecated initializer and emit a deprecation warning. Write `label: .textual("Label")` in that case.
-
-```swift
-// Fully styled label and overline (user controls fonts, colors, markdown…)
-let styledLabel = AttributedString.from(text: "Premium",
-                                        foregroundColor: .orange,
-                                        font: .headline)
-let styledOverline = AttributedString.from(text: "FEATURED",
-                                           foregroundColor: .purple,
-                                           font: .caption)
-
-OUDSStaticListItem(data: OUDSListItemData(
-    label: .textual(.rich(styledLabel)),
-    description: "Plain description via string literal",
-    overline: .rich(styledOverline),
-    extraLabel: .localized("extra.label.key"),
-    helperText: .rich(AttributedString("A rich helper"))
-))
+) {
+    // Perform the action
+}
 ```
 
 #### Navigable list item
@@ -319,6 +235,138 @@ OUDSNavigationLink(
 ```
 
 > Note: The initializers of ``OUDSNavigationLink`` taking a `title` or a `LocalizedStringKey` are deprecated since 3.3.0, use the one taking an ``OUDSListItemData`` instead. See the migration guide.
+
+#### Static list item
+
+Use ``OUDSStaticListItem`` when the row is display-only and should not trigger any action or navigation.
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A list item component in light and dark modes with Orange theme](component_static_list_item_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A list item component in light and dark modes with Orange compact theme](component_static_list_item_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A list item component in light and dark modes with Sosh theme](component_static_list_item_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
+    }
+}
+
+
+```swift
+// Simple list item with a label only
+OUDSStaticListItem(data: OUDSListItemData(label: .textual("Label")))
+
+// List item with full textual content
+OUDSStaticListItem(data: OUDSListItemData(
+    label: .textual("Label", isBold: true),
+    description: "Description",
+    overline: "Overline",
+    extraLabel: "Extra label",
+    helperText: "Helper text providing guidance"
+))
+
+// List item with a leading icon and a trailing badge
+let icon = OUDSListItemIcon(status: .info, description: "", size: .medium)
+
+OUDSStaticListItem(
+    data: OUDSListItemData(label: .textual("Notifications")),
+    leading: .icon(icon),
+    trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
+)
+
+// List item with a leading image (static asset)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: .textual("Product")),
+    leading: .image(OUDSListItemImage(asset: Image("product_thumb"), size: .medium))
+)
+
+// List item with a leading async image (from URL)
+OUDSStaticListItem(
+    data: OUDSListItemData(label: .textual("Remote Product")),
+    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
+)
+
+// List item with async image and custom placeholder
+let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com/image.png")) { image in
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+
+OUDSStaticListItem(
+    data: OUDSListItemData(label: .textual("Loading Product")),
+    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
+)
+
+// List item with a trailing image
+OUDSStaticListItem(
+    data: OUDSListItemData(label: .textual("Status")),
+    trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
+)
+
+// List item with slot (displayed under texts, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "With slot",
+        textSlot: .init { Text("Additional content") },
+        helperText: "Helper text"
+    )
+)
+
+// List item with bottom slot (displayed under main content, before helper text)
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "With bottom slot",
+        bottomSlot: .init { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+)
+
+// List item with both slot and bottomSlot
+OUDSStaticListItem(
+    data: OUDSListItemData(
+        label: "Label",
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+)
+```
+
+#### Rich text content
+
+Every textual field (`label`, `description`, `overline`, `extraLabel`, `helperText`) accepts
+a raw `String`, a localized string or an `AttributedString`. The optional fields use ``OUDSTextualContent``
+(`.raw` / `.localized` / `.rich`) while the label uses ``OUDSListItemData/Label``
+(`.textual` / `.custom`, the `.text` case being deprecated since 3.2.0).
+
+String literals are accepted thanks to `ExpressibleByStringLiteral` on both types, so plain
+text call sites remain concise: `label: "Label", description: "Description"`.
+
+> Note: a bare literal label with no textual field (`OUDSListItemData(label: "Label")`, or with only `textSlot` / `bottomSlot`) may select a
+> deprecated initializer and emit a deprecation warning. Write `label: .textual("Label")` in that case.
+
+```swift
+// Fully styled label and overline (user controls fonts, colors, markdown…)
+let styledLabel = AttributedString.from(text: "Premium",
+                                        foregroundColor: .orange,
+                                        font: .headline)
+let styledOverline = AttributedString.from(text: "FEATURED",
+                                           foregroundColor: .purple,
+                                           font: .caption)
+
+OUDSStaticListItem(data: OUDSListItemData(
+    label: .textual(.rich(styledLabel)),
+    description: "Plain description via string literal",
+    overline: .rich(styledOverline),
+    extraLabel: .localized("extra.label.key"),
+    helperText: .rich(AttributedString("A rich helper"))
+))
+```
 
 ### Tab bars
 

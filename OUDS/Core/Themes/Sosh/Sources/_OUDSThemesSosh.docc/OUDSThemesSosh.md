@@ -244,6 +244,9 @@ You cannot derivate the Sosh theme.
 #### List item
 
 @TabNavigator {
+    @Tab("Action") {
+        ![An action list item component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_action_list_item_Sosh.png)
+    }
     @Tab("Static") {
         ![A static list item component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_static_list_item_Sosh.png)
     }
