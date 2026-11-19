@@ -156,7 +156,7 @@ import SwiftUI
 ///
 /// ### Orange Compact
 ///
-/// ![A button component in light and dark modes with Orange Compact theme](comcomponent_action_list_item_OrangeCompact)
+/// ![A button component in light and dark modes with Orange Compact theme](component_action_list_item_OrangeCompact)
 ///
 /// ### Sosh
 ///
