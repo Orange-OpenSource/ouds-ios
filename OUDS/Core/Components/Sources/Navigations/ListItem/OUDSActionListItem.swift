@@ -166,8 +166,8 @@ import SwiftUI
 ///
 /// ![A button component in light and dark modes with Wireframe theme](component_action_list_item_Wireframe)
 ///
-/// - Version: 3.4.0 (Figma component design version)
-/// - Since: 0.0.0 (this is a draft component)
+/// - Version: 0.0.0 (this is a draft component not yet available in Figma)
+/// - Since: 3.4.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSActionListItem: View { // TODO: #1771 - Update documentation hyperlink, and version of component
 
