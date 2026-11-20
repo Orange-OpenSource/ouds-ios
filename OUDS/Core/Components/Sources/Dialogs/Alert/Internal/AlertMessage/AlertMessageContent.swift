@@ -110,7 +110,7 @@ struct AlertMessageContent: View {
         case .negative:
             "core_shared_negative_a11y".localized() + ","
         case .info:
-            "core_alertMessage_info_a11y".localized() + ","
+            "core_shared_info_a11y".localized() + ","
         default:
             ""
         }

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `alert banner` component (Orange-OpenSource/ouds-ios#1665)
 - `action list item` component (Orange-OpenSource/ouds-ios#1771)
 
 ### Changed
@@ -25,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `line tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - `contained tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - `card` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
- 
+
 ### Changed
 
 - OS specificities for `navigation link` and `link` components
