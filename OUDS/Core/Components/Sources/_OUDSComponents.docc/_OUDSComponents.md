@@ -14,7 +14,8 @@ The catalog of all components provided by OUDS. It contains also `View` extensio
 
 Components are grouped in several categories, the same as the ones defined in the *Figma* design kit:
 *Actions* component are for example buttons. *Navigations* group contains links, *inputs* group has checkboxes, radio buttons and switches, *layouts* group is dedicated to things like dividers.
-You can get more details about them in the categories below:
+
+You can get more details about them in the categories below, or [check the wiki on GitHub with curated list of tokens, themes, components and versions](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
 
 - <doc:Actions>
 - <doc:ContentDisplay>
