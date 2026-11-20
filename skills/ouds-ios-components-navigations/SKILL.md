@@ -1,6 +1,6 @@
 ---
 name: ouds-ios-components-navigations
-description: Usage and code examples for OUDS iOS Navigations components — OUDSLink (text, indicator, icon, size), list items (OUDSStaticListItem, OUDSNavigationListItem, OUDSNavigationLink), OUDSTabBar (iOS 15–25 and iOS 26+ APIs) and Toolbars (toolBarTop / toolBarBottom + OUDSToolBarItem with back / close / icon / label / badge / prominent style). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
+description: Usage and code examples for OUDS iOS Navigations components — OUDSLink (text, indicator, icon, size), list items (OUDSStaticListItem, OUDSNavigationListItem, OUDSActionListItem, OUDSNavigationLink), OUDSTabBar (iOS 15–25 and iOS 26+ APIs) and Toolbars (toolBarTop / toolBarBottom + OUDSToolBarItem with back / close / icon / label / badge / prominent style). Load the ouds-ios-framework-usage skill first for imports, themes and image rules.
 license: MIT
 ---
 
@@ -346,6 +346,49 @@ OUDSNavigationListItem(
     trailing: .badge(.standard(.init(accessibilityLabel: "New", status: .accent, size: .small)))
 ) {
     openURL(url)
+}
+```
+
+---
+
+### Action List Item
+
+> Like `OUDSNavigationListItem` without any indicator: use it when tapping the row triggers an action (call, share, …) and not a navigation.
+> Same `data`, `leading`, `trailing` and view modifiers; the `action` closure is required and there is no `indicatorType`.
+
+```swift
+// Simple action
+OUDSActionListItem(data: OUDSListItemData(label: .textual("Call us"))) {
+    // start the call
+}
+
+// With leading/trailing
+OUDSActionListItem(
+    data: OUDSListItemData(label: "Profile", description: "Share your profile"),
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    trailing: .text(.labelMuted("Share"))
+) {
+    // share
+}
+
+// With slot and bottomSlot
+OUDSActionListItem(
+    data: OUDSListItemData(
+        label: "Settings",
+        textSlot: .init { Text("Slot content") },
+        bottomSlot: .init { Text("Bottom content") },
+        helperText: "Helper text"
+    )
+) {
+    // perform the action
+}
+
+// With a custom view in trailing
+OUDSActionListItem(
+    data: OUDSListItemData(label: .textual("SMS credit")),
+    trailing: .slot { OUDSCircularProgressIndicator(progress: 0.75) }
+) {
+    // refill
 }
 ```
 

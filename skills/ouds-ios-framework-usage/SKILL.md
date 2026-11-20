@@ -438,7 +438,7 @@ The same `OUDSTextualContent` (`"literal"` / `.raw(_:)`, `.localized(_:tableName
 
 Item components can be used *edge to edge*: they span the full width of the screen, and a horizontal padding equal to the grid margin is added so the content stays aligned with the other elements of the screen.
 
-Concerned components: `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSRadioItem`, `OUDSSwitchItem`, `OUDSStaticListItem`, `OUDSNavigationListItem`, `OUDSNavigationLink`.
+Concerned components: `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSRadioItem`, `OUDSSwitchItem`, `OUDSStaticListItem`, `OUDSNavigationListItem`, `OUDSActionListItem`, `OUDSNavigationLink`.
 
 Control it with `.isEdgeToEdge(_:)` (available since 3.3.0, default is `true`). The value is propagated through the environment, so it can be set on a container to apply to all the items inside.
 
@@ -473,6 +473,6 @@ Load the matching skill for the component family you need. Each family skill mir
 | Foundations | `ouds-ios-components-foundations` | OUDSDisplay, OUDSHeading, OUDSLabel, OUDSBody, OUDSCode |
 | Indicators | `ouds-ios-components-indicators` | OUDSBadge*, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator, OUDSLinearProgressIndicator |
 | Layouts | `ouds-ios-components-layouts` | OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider |
-| Navigations | `ouds-ios-components-navigations` | OUDSLink, OUDSTabBar, OUDSToolBarItem / `toolBarTop` / `toolBarBottom` |
+| Navigations | `ouds-ios-components-navigations` | OUDSLink, list items (OUDSStaticListItem, OUDSNavigationListItem, OUDSActionListItem, OUDSNavigationLink), OUDSTabBar, OUDSToolBarItem / `toolBarTop` / `toolBarBottom` |
 
 ---

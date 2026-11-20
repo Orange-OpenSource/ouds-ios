@@ -565,6 +565,9 @@ struct YourApp: App {
 #### List item
 
 @TabNavigator {
+    @Tab("Action") {
+        ![An action list item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_action_list_item_Orange.png)
+    }
     @Tab("Static") {
         ![A static list item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_static_list_item_Orange.png)
     }
