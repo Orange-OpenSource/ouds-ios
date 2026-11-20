@@ -39,18 +39,30 @@ extension View {
     ///    - subtitle: An optional subtitle displayed under the title. For iOS >= 26 the native API is used.
     ///       For previous versions of iOS, a `ToolbarItem` with placement `.principal` is used to display `title` and `subtitle`.
     ///       If `hasLargeTitle` is `true`, the subtitle is ignored.
+    ///    - accessibilityLabel: An optional label vocalized by VoiceOver instead of the title and the subtitle, *nil* by default.
+    ///       A custom `.principal` view is used to display the title and subtitle so the label can be applied.
+    ///       **Not applied if `hasLargeTitle` is `true`** (the large title is rendered by the system), the label is then
+    ///       only used for the screen change announcement.
     ///    - hasLargeTitle: Flag to activate the large title. Default is `false`.
     ///
     /// - Returns View: The view with a new modifier
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-    public func oudsNavigationTitle(_ title: String, subtitle: String? = nil, hasLargeTitle: Bool = false) -> some View {
+    public func oudsNavigationTitle(_ title: String,
+                                    subtitle: String? = nil,
+                                    accessibilityLabel: String? = nil,
+                                    hasLargeTitle: Bool = false) -> some View
+    {
         #if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
                                                    subtitle: subtitle,
+                                                   accessibilityLabel: accessibilityLabel,
                                                    hasLargeTitle: hasLargeTitle,
                                                    deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
         #else
-        modifier(AccessibleNavigationTitleModifier(title: title, subtitle: subtitle, hasLargeTitle: hasLargeTitle))
+        modifier(AccessibleNavigationTitleModifier(title: title,
+                                                   subtitle: subtitle,
+                                                   accessibilityLabel: accessibilityLabel,
+                                                   hasLargeTitle: hasLargeTitle))
         #endif
     }
 

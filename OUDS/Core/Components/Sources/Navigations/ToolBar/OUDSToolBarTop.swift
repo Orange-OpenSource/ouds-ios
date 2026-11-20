@@ -152,6 +152,8 @@ public struct OUDSToolBarTop: ViewModifier {
     private let hasLargeTitle: Bool
     /// An optional subtitle displayed below the title if iOS 26+
     private let subtitle: String?
+    /// An optional label vocalized instead of the title and subtitle, if `hasLargeTitle` is `true`
+    private let accessibilityLabel: String?
     /// The items to display in leading position
     @OUDSToolBarItemsBuilder private let leadingItems: () -> [OUDSToolBarItem]
     /// The item to display in principal (center) position (only one item supported)
@@ -163,8 +165,8 @@ public struct OUDSToolBarTop: ViewModifier {
 
     /// `ViewModifier` to define an OUDS top toolbar.
     ///
-    ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)` on view placed
-    ///  inside `NavigationView` or`NavigationStack`.
+    /// You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)` on view placed
+    /// inside `NavigationView` or`NavigationStack`.
     ///
     /// ```swift
     ///     OUDSToolBarTop(title: "Home") {
@@ -175,11 +177,16 @@ public struct OUDSToolBarTop: ViewModifier {
     ///         OUDSToolBarItem(label: "Done") { }
     ///     }
     /// ```
+    /// The *top toolbar* can have an optional label vocalized by Voice Over for a particular case. Indeed, if there is no large title, and no element in principal item,
+    /// the title and the subtitle can be hidden from Voice Over and the given accessibility label can be vocalized instead.
+    /// However it is better to bring meaningfull texts in your navigation instead of tricking the UI with Voice Over dedicated values.
+    ///
     ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed
     ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default. **Never displayed if `principalItem` is not *nil*.**
+    ///   - accessibilityLabel: Optional label vocalized by VoiceOver instead of the *title* and the *subtitle*, *nil* by default, used if no large title nor principal item.
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - principalItem: The item displayed in the principal (center) position, *nil* by default. Only one item is supported.
     ///     If set, the *title* is displayed only if `hasLargeTitle` is `true`, and the *subtitle* is never displayed.
@@ -187,6 +194,7 @@ public struct OUDSToolBarTop: ViewModifier {
     public init(title: String,
                 hasLargeTitle: Bool = false,
                 subtitle: String? = nil,
+                accessibilityLabel: String? = nil,
                 leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
                 principalItem: OUDSToolBarItem? = nil,
                 trailingItems: @escaping () -> [OUDSToolBarItem] = { [] })
@@ -194,6 +202,7 @@ public struct OUDSToolBarTop: ViewModifier {
         self.title = title
         self.hasLargeTitle = hasLargeTitle
         self.subtitle = subtitle
+        self.accessibilityLabel = accessibilityLabel
         self.leadingItems = leadingItems
         self.principalItem = principalItem
         self.trailingItems = trailingItems
@@ -205,6 +214,7 @@ public struct OUDSToolBarTop: ViewModifier {
         content.toolBarTop(title,
                            hasLargeTitle: hasLargeTitle,
                            subtitle: subtitle,
+                           accessibilityLabel: accessibilityLabel,
                            leadingItems: leadingItems,
                            principalItem: principalItem,
                            trailingItems: trailingItems)
@@ -218,7 +228,7 @@ extension View {
     /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading, principal and trailing items.
     ///
     /// The view which contains this *top toolbar* must be placed inside a `NavigationView` or `NavigationStack`,
-    /// otherwise th top toolbar won't appear..
+    /// otherwise the top toolbar won't appear..
     ///
     /// There must be only one *top toolbar*.
     ///
@@ -227,10 +237,15 @@ extension View {
     /// otherwise keep rendering next to the item with no visible title next to it. The title itself is displayed only if `hasLargeTitle`
     /// is `true` (in that case it appears below the bar, in large title mode, not inside it).
     ///
+    /// The *top toolbar* can have an optional label vocalized by Voice Over for a particular case. Indeed, if there is no large title, and no element in principal item,
+    /// the title and the subtitle can be hidden from Voice Over and the given accessibility label can be vocalized instead.
+    /// However it is better to bring meaningfull texts in your navigation instead of tricking the UI with Voice Over dedicated values.
+    ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed for iOS < 26.
     ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default. **Never displayed if `principalItem` is not *nil*.**
+    ///   - accessibilityLabel: Optional label vocalized by VoiceOver instead of the *title* and the *subtitle*, *nil* by default, used if no large title nor principal item.
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - principalItem: The item displayed in the principal (center) position, *nil* by default. Only one item is supported.
     ///     If set, the *title* is displayed only if `hasLargeTitle` is `true`, and the *subtitle* is never displayed.
@@ -239,6 +254,7 @@ extension View {
     public func toolBarTop(_ title: String,
                            hasLargeTitle: Bool = false,
                            subtitle: String? = nil,
+                           accessibilityLabel: String? = nil,
                            @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
                            principalItem: OUDSToolBarItem? = nil,
                            @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
@@ -246,6 +262,7 @@ extension View {
         modifier(ToolBarTopModifier(title: title,
                                     hasLargeTitle: hasLargeTitle,
                                     subtitle: subtitle,
+                                    accessibilityLabel: accessibilityLabel,
                                     leadingItems: leadingItems,
                                     principalItem: principalItem,
                                     trailingItems: trailingItems))

@@ -55,6 +55,10 @@ OUDSTabBar {
 - `principalItem` (at most one item, center position): when set, `subtitle` is **never** displayed (whatever `hasLargeTitle` is —
   `.principal` only replaces the inline bar title, not `.navigationSubtitle()` on iOS 26+); `title` is displayed only if
   `hasLargeTitle: true` (shown below the bar, large mode — never inside the bar next to `principalItem`).
+- `accessibilityLabel` (optional, `nil` by default): use it when the visual title/subtitle is not satisfying for visually impaired
+  people and a dedicated VoiceOver label is needed. VoiceOver then vocalizes this label **instead of** the title **and** the subtitle.
+  Only relevant without large title (`hasLargeTitle: false`) and without `principalItem`; otherwise it is not applied
+  (a warning is logged). Never pass an empty string, use `nil` instead.
 
 **Setup (bottom toolbar):**
 - Never combine with `OUDSTabBar` on the same screen.
@@ -88,6 +92,9 @@ ContentView()
 
 // Top — large title + subtitle (subtitle iOS 26+ only)
 ContentView().toolBarTop("Title", hasLargeTitle: true, subtitle: "Sub")
+
+// Top — dedicated VoiceOver label replacing title + subtitle (no large title, no principalItem)
+ContentView().toolBarTop("Title", subtitle: "Sub", accessibilityLabel: "Label read by VoiceOver")
 
 // Bottom — leading/trailing split
 ContentView()
