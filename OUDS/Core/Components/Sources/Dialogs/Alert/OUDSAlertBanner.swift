@@ -102,7 +102,7 @@ import SwiftUI
 /// ![An alert banner component in light and dark modes with Wireframe theme](component_alertBanner_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 3.3.0
+/// - Since: 3.4.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSAlertBanner: View {
 
@@ -134,7 +134,7 @@ public struct OUDSAlertBanner: View {
     /// - **start**: The banner with mode information with label, description, close button and additional action link.
     /// The content of the banner is at leading and action link can be placed at trailing or at the bottom of banner.
     ///
-    /// - Since: 3.3.0
+    /// - Since: 3.4.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     @frozen public enum Layout {
 
@@ -146,9 +146,9 @@ public struct OUDSAlertBanner: View {
         ///
         /// - Parameters:
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
-        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. Defaults to `neutral`.
+        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. Defaults to `warning`.
         ///   - action: An optional action to be displayed at trailing of the alert banner. It can be used to trigger an action.
-        case center(label: OUDSTextualContent, status: OUDSAlertStatus = .neutral(image: nil), action: (label: String, onClick: () -> Void)? = nil)
+        case center(label: OUDSTextualContent, status: OUDSAlertStatus = .warning, action: (label: String, onClick: () -> Void)? = nil)
 
         /// Used to create an alert banner in start layout.
         ///
@@ -160,14 +160,14 @@ public struct OUDSAlertBanner: View {
         ///
         /// - Parameters:
         ///   - label: Label displayed in the alert banner. Main message that should be short, clear, and readable at a glance.
-        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. Defaults to `neutral`.
+        ///   - status: The status of the alert banner. Its background color and its icon color are based on this status. Defaults to `warning`.
         ///   - description: An optional supplementary text in an alert banner. Use only when additional detail or guidance is needed beyond the label. It should remain
         ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
         ///   - actionLink: An optional action link to be displayed in the alert message. It can be used to trigger an action.
         ///   - alignment: The current vertical alignment of icon, text and action containers.
         ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed .
         case start(label: OUDSTextualContent,
-                   status: OUDSAlertStatus = .neutral(image: nil),
+                   status: OUDSAlertStatus = .warning,
                    description: OUDSTextualContent? = nil,
                    actionLink: OUDSAlertBanner.ActionLink? = nil,
                    alignment: OUDSAlertBanner.Alignment = .top,
@@ -175,7 +175,7 @@ public struct OUDSAlertBanner: View {
     }
 
     /// Defines the vertical alignment of the leading, trailing, and text containers within the banner.
-    /// - Since: 3.3.0
+    /// - Since: 3.4.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     @frozen public enum Alignment {
         /// Containers are aligned to the top of the banner.
@@ -191,7 +191,7 @@ public struct OUDSAlertBanner: View {
 
     // swiftlint:disable nesting
     /// Used to describe the action link display in the `OUDSAlertBanner`
-    /// - Since: 3.3.0
+    /// - Since: 3.4.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     @frozen public struct ActionLink {
 

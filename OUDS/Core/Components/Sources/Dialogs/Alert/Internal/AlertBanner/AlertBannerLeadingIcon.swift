@@ -51,10 +51,7 @@ struct AlertBannerLeadingIcon: View {
             case .info:
                 OUDSImage(name: "Component-alert-info-fill", color: theme.colors.contentOnStatusInfoEmphasized)
             case .warning:
-                ZStack {
-                    OUDSImage(name: "Component-alert-warning-external-shape", color: theme.colors.contentOnStatusWarningEmphasized)
-                    OUDSImage(name: "Component-alert-warning-internal-shape", color: theme.colors.surfaceStatusWarningEmphasized)
-                }
+                OUDSImage(name: "Component-alert-warning-external-shape", color: theme.colors.contentOnStatusWarningEmphasized)
             }
         }
         .frame(width: size, height: size)
