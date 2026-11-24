@@ -75,14 +75,14 @@ struct AlertBannerContent: View {
                 textView(for: description)
                     .labelDefaultMedium(theme)
                     .foregroundColor(foregroundColor)
-                    .padding(.bottom, theme.alert.spacePaddingBlockBottomContent)
+                    .padding(.bottom, descriptionBottomPadding)
             }
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(accessibilityLabel)
         .accessibilitySortPriority(OUDSAlertBanner.textsAccessibilityPriority)
         #if canImport(UIKit)
-            .modifier(AlertBannerFKACustomActionsModifier(actionLink: actionLink, onClose: onClose))
+        .modifier(AlertBannerFKACustomActionsModifier(actionLink: actionLink, onClose: onClose))
         #endif
     }
 
@@ -131,6 +131,10 @@ struct AlertBannerContent: View {
 
     private var horizontalAlignment: HorizontalAlignment {
         isCenterLayout ? .center : .leading
+    }
+
+    private var descriptionBottomPadding: CGFloat {
+        actionLink == nil ? theme.alert.spacePaddingBlockBottomContent : theme.spaces.fixedNone
     }
 }
 
