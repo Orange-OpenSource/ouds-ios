@@ -480,6 +480,10 @@ struct YourApp: App {
 
 ### Dialogs
 
+#### Alert banner
+
+![An alert banner component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertBanner_Orange.png)
+
 #### Alert message
 
 ![An alert message component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Orange.png)

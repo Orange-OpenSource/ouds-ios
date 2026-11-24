@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `alert banner` component (Orange-OpenSource/ouds-ios#1665)
 - `accessibilityLabel` parameter for `top toolbar` component for `iOS / iPadOS` without large title nor principal item (Orange-OpenSourcer/ouds-ios#1900)
 - `action list item` component (Orange-OpenSource/ouds-ios#1771)
 
@@ -26,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `line tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - `contained tabs` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
 - `card` component tokens (tokens library v2.8) (Orange-OpenSource/ouds-ios#1856)
- 
+
 ### Changed
 
 - OS specificities for `navigation link` and `link` components

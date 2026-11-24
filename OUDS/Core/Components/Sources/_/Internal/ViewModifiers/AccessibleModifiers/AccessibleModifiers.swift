@@ -36,9 +36,9 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     let deadline: DispatchTime
     #endif
 
-    @Environment(\.theme) private var theme // NOTE: Seen as unused by Periphery, but is not
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout // NOTE: Seen as unused by Periphery, but is not
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.theme) private var theme
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
