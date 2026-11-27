@@ -255,6 +255,17 @@ You cannot derivate the *Wireframe* theme.
     }
 }
 
+#### Tabs
+
+@TabNavigator {
+    @Tab("Line") {
+        ![Line tabs in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_line_tabs_Wireframe.png)
+    }
+    @Tab("Contained") {
+        ![Contained tabs in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_contained_tabs_Wireframe.png)
+    }
+}
+
 #### Tab bar
 
 @TabNavigator {

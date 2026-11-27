@@ -313,7 +313,7 @@ let package = Package(
             resources: [.process("_/Resources/")]),
         .testTarget(
             name: "OUDSComponents-Tests",
-            dependencies: ["OUDSComponents"],
+            dependencies: ["OUDSComponents", "OUDSThemesContract", "OUDSThemesOrange"],
             path: "OUDS/Core/Components/Tests"),
 
         .target(

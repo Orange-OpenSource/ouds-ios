@@ -343,6 +343,17 @@ You cannot derivate the *Orange Compact* theme.
     }
 }
 
+#### Tabs
+
+@TabNavigator {
+    @Tab("Line") {
+        ![Line tabs in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_line_tabs_OrangeCompact.png)
+    }
+    @Tab("Contained") {
+        ![Contained tabs in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_contained_tabs_OrangeCompact.png)
+    }
+}
+
 #### Tab bar
 
 @TabNavigator {

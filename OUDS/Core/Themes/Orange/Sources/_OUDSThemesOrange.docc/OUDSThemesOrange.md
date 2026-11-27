@@ -576,6 +576,17 @@ struct YourApp: App {
     }
 }
 
+#### Tabs
+
+@TabNavigator {
+    @Tab("Line") {
+        ![Line tabs in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_line_tabs_Orange.png)
+    }
+    @Tab("Contained") {
+        ![Contained tabs in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_contained_tabs_Orange.png)
+    }
+}
+
 #### Tab bar
 
 @TabNavigator {
