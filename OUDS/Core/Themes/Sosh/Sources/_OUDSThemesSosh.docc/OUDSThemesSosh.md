@@ -255,6 +255,17 @@ You cannot derivate the Sosh theme.
     }
 }
 
+#### Tabs
+
+@TabNavigator {
+    @Tab("Line") {
+        ![Line tabs in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_line_tabs_Sosh.png)
+    }
+    @Tab("Contained") {
+        ![Contained tabs in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_contained_tabs_Sosh.png)
+    }
+}
+
 #### Tab bar
 
 @TabNavigator {

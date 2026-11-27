@@ -466,7 +466,7 @@ public struct OUDSTag: View {
     // MARK: - Helpers
 
     /// Forges a string to vocalize with *Voice Over* describing the tag dependign to if loading state or not.
-    private var accessibilityLabel: String {
+    var accessibilityLabel: String {
         if case .loader = type {
             type.label + ", " + "core_common_loading_a11y".localized()
         } else {

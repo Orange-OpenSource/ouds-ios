@@ -9,6 +9,12 @@ Some components can be used for **navigation**.
 
 ## Overview
 
+### Tabs
+
+Use ``OUDSLineTabs`` or ``OUDSContainedTabs`` to switch between related sections
+inside a screen. Both share ``OUDSTabItem`` and a typed selection binding.
+See <doc:Tabs> for illustrations, configuration, accessibility and examples.
+
 ### Links
 
 @TabNavigator {
